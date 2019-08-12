@@ -1,0 +1,1804 @@
+{
+	"creationDate": 1502109413747,
+	"creator": "Ram Purushothaman-Airlock",
+	"description": null,
+	"features": [
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"mx.9b75a4a5-d6a0-4cdf-a9eb-98f54fae664d",
+				"mx.6b959a93-9ce8-4800-913d-23c2f176d4e0"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"configurationSchema": null,
+			"creationDate": 1484653283355,
+			"creator": "Denis Voloshin",
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": true,
+			"description": "",
+			"displayName": null,
+			"enabled": true,
+			"features": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+						"modules.Google modules",
+						"modules.Samsung modules"
+					],
+					"branchStatus": "CHECKED_OUT",
+					"features": [
+						{
+							"additionalInfo": {
+							},
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+								"mx.056819d8-fd30-4028-9911-ec244f8ad5fd"
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"configurationSchema": null,
+							"creationDate": 1491475889994,
+							"creator": "Denis Voloshin",
+							"defaultConfiguration": null,
+							"defaultIfAirlockSystemIsDown": false,
+							"description": "",
+							"displayName": "Google modules",
+							"enabled": true,
+							"features": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+										"modules.Breaking NewsTEST",
+										"modules.Breaking News",
+										"modules.Right Now",
+										"modules.Hourly",
+										"modules.Daily",
+										"modules.Video",
+										"modules.Radar Maps",
+										"modules.Road Conditions",
+										"modules.Outdoor",
+										"modules.Health",
+										"modules.News",
+										"modules.Hurricane Central",
+										"modules.Lifestyle"
+									],
+									"branchStatus": "CHECKED_OUT",
+									"features": [
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1495976241378,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"breaking-news\",\n\t\"description\":\"Displaysbreakingnews.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.breaking.spotlight\",\n\t\"beacon\":\"news:breaking:news:displayed\",\n\t\"adjacentAdParameters\":{\n\t\t\"fam\":\"sev\",\n\t\t\"ch\":\"bn\"\n\t}\n}",
+											"defaultIfAirlockSystemIsDown": false,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"Yoav"
+											],
+											"lastModified": 1495976303198,
+											"minAppVersion": "8.0.1",
+											"name": "Breaking NewsTEST",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rule": {
+												"ruleString": "context.device.locale == \"en_US\""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "DEVELOPMENT",
+											"type": "FEATURE",
+											"uniqueId": "56cf6a2c-1a66-47ca-87e6-b5cc20dbd86a"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1484653284532,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"breaking-news\",\n\t\"description\":\"Displaysbreakingnews.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.breaking.spotlight\",\n\t\"beacon\":\"news:breaking:news:displayed\",\n\t\"adjacentAdParameters\":{\n\t\t\"fam\":\"sev\",\n\t\t\"ch\":\"bn\"\n\t},\n\t\"title\":\"Breaking News\"\n}",
+											"defaultIfAirlockSystemIsDown": false,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"DEV",
+												"QA",
+												"Adina",
+												"REGRESSION"
+											],
+											"lastModified": 1499693437117,
+											"minAppVersion": "8.0.1",
+											"name": "Breaking News",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"rule": {
+												"ruleString": "context.device.locale == \"en_US\" &&\n(context.weatherSummary.contentMode.mode == \"severe1\" ||\ncontext.weatherSummary.contentMode.mode == \"severe2\")"
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "01ed9df2-ff5f-47b3-86ba-33e0484d7f65"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+												"modules.Video Enabled"
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1484653285136,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"current-conditions\",\n\t\"description\":\"Displayscurrentconditions.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.bb\",\n\t\"beacon\":\"weather:current:conditions:displayed\"\n}",
+											"defaultIfAirlockSystemIsDown": true,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"QA",
+												"test",
+												"Adina",
+												"REGRESSION"
+											],
+											"lastModified": 1501569333016,
+											"minAppVersion": "8.0.1",
+											"name": "Right Now",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"rule": {
+												"ruleString": ""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "fb8d3203-3038-4ec0-8a7a-3008d0fd29e7"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+												"modulesHourly.GermanDateFormat",
+												"modulesHourly.SpanishPortugueseDateFormat",
+												"modulesHourly.DisableForRam"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configuration": "{\n\t\"id\":\"hourly\",\n\t\"description\":\"Displays hourly weather information.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.hourly\",\n\t\"beacon\":\"weather:hourly:displayed\",\n\t\"fullDateFormatter\":\"EEEE, d. MMMM\"\n}",
+													"configurationRules": [
+													],
+													"creationDate": 1489117691211,
+													"creator": "Sandeep Kuturu",
+													"description": "",
+													"enabled": true,
+													"internalUserGroups": [
+														"AndroidDEV",
+														"QA",
+														"sandeep"
+													],
+													"lastModified": 1492694610282,
+													"minAppVersion": "8.0.1",
+													"name": "GermanDateFormat",
+													"namespace": "modulesHourly",
+													"noCachedResults": false,
+													"owner": "Sandeep Kuturu",
+													"rolloutPercentage": 100.0,
+													"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+													"rule": {
+														"ruleString": "context.device.locale == \"de_DE\""
+													},
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"stage": "PRODUCTION",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "85b1ab31-5809-4c8e-a335-6ec12934a063"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configuration": "{\n\t\"id\":\"hourly\",\n\t\"description\":\"Displays hourly weather information.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.hourly\",\n\t\"beacon\":\"weather:hourly:displayed\",\n\t\"fullDateFormatter\":\"EEEE, d 'de' MMMM\"\n}",
+													"configurationRules": [
+													],
+													"creationDate": 1489119867890,
+													"creator": "Sandeep Kuturu",
+													"description": "",
+													"enabled": true,
+													"internalUserGroups": [
+														"AndroidDEV",
+														"QA",
+														"sandeep"
+													],
+													"lastModified": 1492694630374,
+													"minAppVersion": "8.0.1",
+													"name": "SpanishPortugueseDateFormat",
+													"namespace": "modulesHourly",
+													"noCachedResults": false,
+													"owner": "Sandeep Kuturu",
+													"rolloutPercentage": 100.0,
+													"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+													"rule": {
+														"ruleString": "context.device.localeLanguage.toLowerCase() == \"es\" || \ncontext.device.localeLanguage.toLowerCase() == \"pt\""
+													},
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"stage": "PRODUCTION",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "d3316157-af0c-413f-843d-6b5403f86734"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configuration": "{\n\t\"featureON\":false\n}",
+													"configurationRules": [
+													],
+													"creationDate": 1493817548778,
+													"creator": "Oren Paikowsky",
+													"description": "Send hate mail to Ram if a problem",
+													"enabled": true,
+													"internalUserGroups": [
+														"QA"
+													],
+													"lastModified": 1501580431008,
+													"minAppVersion": "8.0.1",
+													"name": "DisableForRam",
+													"namespace": "modulesHourly",
+													"noCachedResults": false,
+													"owner": "Oren Paikowsky",
+													"rolloutPercentage": 100.0,
+													"rule": {
+														"ruleString": ""
+													},
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"stage": "DEVELOPMENT",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "80d25a1e-75da-4786-965d-96330df9d0fb"
+												}
+											],
+											"configurationSchema": null,
+											"creationDate": 1484653285677,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"hourly\",\n\t\"description\":\"Displayshourlyweatherinformation.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.hourly\",\n\t\"beacon\":\"weather:hourly:displayed\"\n}",
+											"defaultIfAirlockSystemIsDown": true,
+											"description": "",
+											"displayName": "",
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+											],
+											"lastModified": 1493986445457,
+											"minAppVersion": "8.0.1",
+											"name": "Hourly",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"rule": {
+												"ruleString": ""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "17980e98-7f32-4191-8a4a-f027d4d4b022"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+												"modulesDaily.Ten.Days",
+												"modulesDaily.GermanDateFormat",
+												"modulesDaily.SpanishPortugueseDateFormat"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configuration": "{\n\t\"id\":\"ten-day\",\n\t\"description\":\"Displays ten day forecast.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.10day\",\n\t\"beacon\":\"weather:10-day:displayed\",\n\t\"days\":10\n}",
+													"configurationRules": [
+													],
+													"creationDate": 1485877760963,
+													"creator": "Denis Voloshin",
+													"description": "",
+													"enabled": true,
+													"internalUserGroups": [
+														"QA",
+														"test"
+													],
+													"lastModified": 1492694555805,
+													"minAppVersion": "8.0.1",
+													"name": "Ten.Days",
+													"namespace": "modulesDaily",
+													"noCachedResults": false,
+													"owner": "Denis Voloshin",
+													"rolloutPercentage": 100.0,
+													"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+													"rule": {
+														"ruleString": "context.device.locale == \"ja_JP\""
+													},
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"stage": "PRODUCTION",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "38e5ed11-2f46-4848-847b-962146535464"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configuration": "{\n\t\"id\":\"ten-day\",\n\t\"description\":\"Displays ten day forecast.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.10day\",\n\t\"beacon\":\"weather:10-day:displayed\",\n\t\"days\":15,\n\t\"dateFormatter\":\"d. MMMM\"\n}",
+													"configurationRules": [
+													],
+													"creationDate": 1489123695208,
+													"creator": "Sandeep Kuturu",
+													"description": "",
+													"enabled": true,
+													"internalUserGroups": [
+														"AndroidDEV",
+														"QA",
+														"sandeep"
+													],
+													"lastModified": 1492694569039,
+													"minAppVersion": "8.0.1",
+													"name": "GermanDateFormat",
+													"namespace": "modulesDaily",
+													"noCachedResults": false,
+													"owner": "Sandeep Kuturu",
+													"rolloutPercentage": 100.0,
+													"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+													"rule": {
+														"ruleString": "context.device.locale == \"de_DE\""
+													},
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"stage": "PRODUCTION",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "414b01c1-ec4b-4360-8ad8-7865c257c862"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configuration": "{\n\t\"id\":\"ten-day\",\n\t\"description\":\"Displays ten day forecast.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.10day\",\n\t\"beacon\":\"weather:10-day:displayed\",\n\t\"days\":15,\n\t\"dateFormatter\":\"d 'de' MMMM\"\n}",
+													"configurationRules": [
+													],
+													"creationDate": 1489123736149,
+													"creator": "Sandeep Kuturu",
+													"description": "",
+													"enabled": true,
+													"internalUserGroups": [
+														"AndroidDEV",
+														"QA",
+														"sandeep"
+													],
+													"lastModified": 1492694588583,
+													"minAppVersion": "8.0.1",
+													"name": "SpanishPortugueseDateFormat",
+													"namespace": "modulesDaily",
+													"noCachedResults": false,
+													"owner": "Sandeep Kuturu",
+													"rolloutPercentage": 100.0,
+													"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+													"rule": {
+														"ruleString": "context.device.localeLanguage.toLowerCase() == \"es\" || \ncontext.device.localeLanguage.toLowerCase() == \"pt\""
+													},
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"stage": "PRODUCTION",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "0e3a10b9-f0bc-49c9-af36-75e2c0724949"
+												}
+											],
+											"configurationSchema": null,
+											"creationDate": 1484653286243,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"ten-day\",\n\t\"description\":\"Displaystendayforecast.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.10day\",\n\t\"beacon\":\"weather:10-day:displayed\",\n\t\"days\":15\n}",
+											"defaultIfAirlockSystemIsDown": true,
+											"description": "15 days",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"QA",
+												"test",
+												"Adina"
+											],
+											"lastModified": 1501571082251,
+											"minAppVersion": "8.0.1",
+											"name": "Daily",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"rule": {
+												"ruleString": ""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "ed8ec4a0-068c-4d85-a4b4-0200a52a2054"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1484653287605,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"map\",\n\t\"description\":\"Displaysradarmap.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+											"defaultIfAirlockSystemIsDown": true,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"QA"
+											],
+											"lastModified": 1492798336234,
+											"minAppVersion": "8.0.1",
+											"name": "Radar Maps",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"rule": {
+												"ruleString": ""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "b0032331-da9e-4366-b8ec-89f69098de8e"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1484653288155,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"driving-difficulty\",\n\t\"description\":\"Displaysradarmap.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+											"defaultIfAirlockSystemIsDown": true,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"QA",
+												"test",
+												"Adina"
+											],
+											"lastModified": 1492798799111,
+											"minAppVersion": "8.0.1",
+											"name": "Road Conditions",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"rule": {
+												"ruleString": ""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "d0d566fa-f296-441c-b6c0-990e3ec6a8e4"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1484653290114,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"outdoor\",\n\t\"description\":\"Displaysrunweatherindexinformation.\",\n\t\"type\":\"native\",\n\t\"hideable\":false,\n\t\"adSlot\":\"\",\n\t\"sponsored\":false\n}",
+											"defaultIfAirlockSystemIsDown": false,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"DEV",
+												"QA",
+												"Adina"
+											],
+											"lastModified": 1493056723888,
+											"minAppVersion": "8.0.1",
+											"name": "Outdoor",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"rule": {
+												"ruleString": ""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "16df0769-f380-456e-ba52-6320a56a3825"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+												"mx.01a74552-3761-43d3-bed0-746fb26f5cc2"
+											],
+											"branchFeaturesItems": [
+												"healthmodule.Allergy1Up",
+												"healthmodule.AllergyMaps",
+												"healthmodule.AllergyPersonalization"
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+														"modulesHealth.Config7.7",
+														"modulesHealth.Config7.6"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configuration": "{\n\t\n}",
+															"configurationRules": [
+															],
+															"creationDate": 1487695306535,
+															"creator": "Brandon Rosenbaum",
+															"description": "Config specific to 7.7+ that enables Health module for all locales\/countries.",
+															"enabled": true,
+															"internalUserGroups": [
+																"HealthDEV"
+															],
+															"lastModified": 1492694460666,
+															"minAppVersion": "8.0.1",
+															"name": "Config7.7",
+															"namespace": "modulesHealth",
+															"noCachedResults": false,
+															"owner": "Brandon Rosenbaum",
+															"rolloutPercentage": 100.0,
+															"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+															"rule": {
+																"ruleString": ""
+															},
+															"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+															"stage": "PRODUCTION",
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "389b14dd-7921-468b-ac61-7d077433d81d"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configuration": "{\n\t\"enableFeature\":false\n}",
+															"configurationRules": [
+															],
+															"creationDate": 1487695274143,
+															"creator": "Brandon Rosenbaum",
+															"description": "Config specific to 7.6 that disables Health module outside of \"en_US\" and \"es_US\" locale\/countries.",
+															"enabled": true,
+															"internalUserGroups": [
+																"HealthDEV"
+															],
+															"lastModified": 1492694476337,
+															"minAppVersion": "8.0.1",
+															"name": "Config7.6",
+															"namespace": "modulesHealth",
+															"noCachedResults": false,
+															"owner": "Brandon Rosenbaum",
+															"rolloutPercentage": 100.0,
+															"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+															"rule": {
+																"ruleString": "context.device.locale !== \"en_US\" && \ncontext.device.locale !== \"es_US\""
+															},
+															"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+															"stage": "PRODUCTION",
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "847180bf-f4ba-48cf-8f4d-014d6719fc00"
+														}
+													],
+													"lastModified": 1487695413547,
+													"maxFeaturesOn": 1,
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+													"uniqueId": "01a74552-3761-43d3-bed0-746fb26f5cc2"
+												}
+											],
+											"configurationSchema": null,
+											"creationDate": 1484653289412,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"health\",\n\t\"description\":\"Displayshealthinformation.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"\",\n\t\"beacon\":\"pollen:pollen:displayed\",\n\t\"adjacentAdParameters\":{\n\t\t\"fam\":\"hlth,allergy\",\n\t\t\"ch\":\"pollencast\"\n\t}\n}",
+											"defaultIfAirlockSystemIsDown": false,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"DEV",
+												"QA",
+												"Adina"
+											],
+											"lastModified": 1493907647117,
+											"minAppVersion": "8.0.1",
+											"name": "Health",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"rule": {
+												"ruleString": ""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "f2b01773-d0a1-4b7a-954f-e19cf164e40b"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+												"modulesNews.GermanNews",
+												"modulesNews.en GB news"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configuration": "{\n\t\"id\":\"news\",\n\t\"description\":\"Displays news.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.articles\",\n\t\"beacon\":\"news:news:displayed\",\n\t\"newsDetailsPartnerLogo\":\"focus_online_dark_logo\"\n}",
+													"configurationRules": [
+													],
+													"creationDate": 1489973960849,
+													"creator": "Sandeep Kuturu",
+													"description": "",
+													"enabled": true,
+													"internalUserGroups": [
+														"QA",
+														"test"
+													],
+													"lastModified": 1492694441879,
+													"minAppVersion": "8.0.1",
+													"name": "GermanNews",
+													"namespace": "modulesNews",
+													"noCachedResults": false,
+													"owner": "Sandeep Kuturu",
+													"rolloutPercentage": 100.0,
+													"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+													"rule": {
+														"ruleString": "context.device.locale == \"de_DE\""
+													},
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"stage": "PRODUCTION",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "d4e1b78b-aced-4afb-a016-b829f769647d"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configuration": "{\n\t\"id\":\"news\",\n\t\"description\":\"Displays news.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.articles\",\n\t\"beacon\":\"news:news:displayed\"\n}",
+													"configurationRules": [
+													],
+													"creationDate": 1499968812752,
+													"creator": "Brian Chu",
+													"description": "",
+													"enabled": true,
+													"internalUserGroups": [
+														"QA",
+														"test"
+													],
+													"lastModified": 1499969118057,
+													"minAppVersion": "8.0.1",
+													"name": "en GB news",
+													"namespace": "modulesNews",
+													"noCachedResults": false,
+													"owner": "Brian Chu",
+													"rolloutPercentage": 100.0,
+													"rule": {
+														"ruleString": "context.device.locale == \"en_GB\""
+													},
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"stage": "DEVELOPMENT",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "c3ee4dd2-a38d-4a45-b8fa-7b32d9dc8bb3"
+												}
+											],
+											"configurationSchema": null,
+											"creationDate": 1484653288781,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"news\",\n\t\"description\":\"Displaysnews.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.articles\",\n\t\"beacon\":\"news:news:displayed\"\n}",
+											"defaultIfAirlockSystemIsDown": false,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"QA",
+												"test",
+												"Adina"
+											],
+											"lastModified": 1499968812753,
+											"minAppVersion": "8.0.1",
+											"name": "News",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"rule": {
+												"ruleString": "context.device.locale == \"en_US\" ||  \ncontext.device.locale == \"es_US\"\n"
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "3c5b7112-7d96-4d7b-b9b1-312fa53e521d"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1486903848526,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"hurricane\",\n\t\"description\":\"DisplaysHurricaneCentral\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+											"defaultIfAirlockSystemIsDown": false,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"DEV",
+												"QA",
+												"test"
+											],
+											"lastModified": 1501528756516,
+											"minAppVersion": "8.0.1",
+											"name": "Hurricane Central",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"rule": {
+												"ruleString": "function isHurricaneSeason(){\n    \n    var obsTimeStr = context.weatherSummary.observation.obsTime\n    var obsDate = new Date(obsTimeStr.substring(0,4), parseInt(obsTimeStr.substring(5,7), 10) - 1, obsTimeStr.substring(8,10), 0, 0, 0, 0)\n\n    return  obsDate.getMonth() + 1 >= 3 && \n            obsDate.getMonth() + 1 < 12 &&\n            (context.device.localeCountryCode == \"US\" || context.device.localeCountryCode == \"MX\") && \n            (context.device.localeLanguage == \"en\" || context.device.localeLanguage == \"es\")\n            \n            \/\/ context.device.localeCountryCode == \"US\" &&\n           \/\/ (context.device.localeCountryCode == \"US\" || context.device.localeCountryCode == \"GB\" || context.device.localeCountryCode == \"SP\" || context.device.localeCountryCode == \"ES\") &&\n           \/\/ (context.device.localeLanguage == \"en\" || context.device.localeLanguage == \"es\")\n}\nisHurricaneSeason()"
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "af8d8d27-4167-493f-a6c1-db335275b64f"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+												"modulesLifestyle.comboUSLoc",
+												"modulesLifestyle.comboForNonUSLoc"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configuration": "{\n\t\"module\":[\"allergy\",\n\t\"goRun\",\n\t\"boatAndBeach\",\n\t\"coldAndFlu\",\n\t\"ski\"]\n}",
+													"configurationRules": [
+													],
+													"creationDate": 1501703165762,
+													"creator": "Love Garg",
+													"description": "",
+													"enabled": true,
+													"internalUserGroups": [
+														"HealthDEV"
+													],
+													"lastModified": 1501703399582,
+													"minAppVersion": "8.0.1",
+													"name": "comboUSLoc",
+													"namespace": "modulesLifestyle",
+													"noCachedResults": false,
+													"owner": "Love Garg",
+													"rolloutPercentage": 100.0,
+													"rule": {
+														"ruleString": "context.viewedLocation !== undefined && context.viewedLocation.country == \"US\""
+													},
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"stage": "DEVELOPMENT",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "86b7f975-ff10-4410-84d5-bc57d44ef69f"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configuration": "{\n\t\"module\":[\"allergy\",\n\t\"goRun\",\n\t\"ski\"]\n}",
+													"configurationRules": [
+													],
+													"creationDate": 1501703593994,
+													"creator": "Love Garg",
+													"description": "",
+													"enabled": true,
+													"internalUserGroups": [
+														"HealthDEV"
+													],
+													"lastModified": 1501703623539,
+													"minAppVersion": "8.0.1",
+													"name": "comboForNonUSLoc",
+													"namespace": "modulesLifestyle",
+													"noCachedResults": false,
+													"owner": "Love Garg",
+													"rolloutPercentage": 100.0,
+													"rule": {
+														"ruleString": "context.viewedLocation !== undefined && context.viewedLocation.country != \"US\""
+													},
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"stage": "DEVELOPMENT",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "09652bcb-d8e2-47a4-8f9e-777019901f32"
+												}
+											],
+											"configurationSchema": null,
+											"creationDate": 1491320221819,
+											"creator": "Brandon Rosenbaum",
+											"defaultConfiguration": "{\n\t\"id\":\"lifestyle_combo\",\n\t\"description\":\"Displayslifestylecombomodule.\",\n\t\"type\":\"native\",\n\t\"hideable\":false,\n\t\"adSlot\":\"\",\n\t\"sponsored\":false\n}",
+											"defaultIfAirlockSystemIsDown": false,
+											"description": "",
+											"displayName": "Lifestyle",
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"HealthDEV"
+											],
+											"lastModified": 1501703638451,
+											"minAppVersion": "8.0.1",
+											"name": "Lifestyle",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Brandon Rosenbaum",
+											"rolloutPercentage": 100.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"rule": {
+												"ruleString": ""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "DEVELOPMENT",
+											"type": "FEATURE",
+											"uniqueId": "cc48b5f3-e4dd-4bc2-9f37-e0c34db59274"
+										}
+									],
+									"lastModified": 1499970336700,
+									"maxFeaturesOn": 14,
+									"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+									"type": "MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "056819d8-fd30-4028-9911-ec244f8ad5fd"
+								}
+							],
+							"internalUserGroups": [
+								"DEV",
+								"Lifestyle QA",
+								"QA"
+							],
+							"lastModified": 1492696051131,
+							"minAppVersion": "8.0.1",
+							"name": "Google modules",
+							"namespace": "modules",
+							"noCachedResults": false,
+							"owner": "Denis Voloshin",
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": "context.device.appFlavor == \"google\""
+							},
+							"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+							"stage": "PRODUCTION",
+							"type": "FEATURE",
+							"uniqueId": "738d3eff-b2b5-45aa-8f57-7c63faba4585"
+						},
+						{
+							"additionalInfo": {
+							},
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+								"mx.5a246314-a6aa-481e-9eec-f73289dcd10c"
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"configurationSchema": null,
+							"creationDate": 1491475932691,
+							"creator": "Denis Voloshin",
+							"defaultConfiguration": null,
+							"defaultIfAirlockSystemIsDown": false,
+							"description": "",
+							"displayName": "Samsung modules",
+							"enabled": true,
+							"features": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+										"modules.Breaking News Samsung",
+										"modules.Right Now Samsung",
+										"modules.Hourly Samsung",
+										"modules.Daily Samsung",
+										"modules.Events Feed",
+										"modules.Video Samsung",
+										"modules.Radar Maps Samsung",
+										"modules.Road Conditions Samsung",
+										"modules.Outdoor Samsung",
+										"modules.Health Samsung",
+										"modules.News Samsung",
+										"modules.Hurricane Central Samsung",
+										"modules.Lifestyle Samsung",
+										"modules.Boat Samsung"
+									],
+									"branchStatus": "CHECKED_OUT",
+									"features": [
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1491476004065,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"breaking-news\",\n\t\"description\":\"Displays breaking news.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.breaking.spotlight\",\n\t\"beacon\":\"news:breaking:news:displayed\",\n\t\"adjacentAdParameters\":{\n\t\t\"fam\":\"sev\",\n\t\t\"ch\":\"bn\"\n\t},\n\t\"title\":\"Breaking News\"\n}",
+											"defaultIfAirlockSystemIsDown": false,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"DEV",
+												"QA",
+												"Adina",
+												"REGRESSION"
+											],
+											"lastModified": 1497622661359,
+											"minAppVersion": "8.0.1",
+											"name": "Breaking News Samsung",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rule": {
+												"ruleString": "context.device.locale == \"en_US\" &&\n(context.weatherSummary.contentMode.mode == \"severe1\" ||\ncontext.weatherSummary.contentMode.mode == \"severe2\")"
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "cc4071af-1ff7-4641-b1e3-247587bd90cc"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+												"modules.Video Enabled Samsung"
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1491476057493,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"current-conditions\",\n\t\"description\":\"Displays current conditions.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.bb\",\n\t\"beacon\":\"weather:current:conditions:displayed\"\n}",
+											"defaultIfAirlockSystemIsDown": true,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"DEV",
+												"QA",
+												"test",
+												"Adina",
+												"REGRESSION"
+											],
+											"lastModified": 1493822059814,
+											"minAppVersion": "8.0.1",
+											"name": "Right Now Samsung",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rule": {
+												"ruleString": ""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "659a2f1a-aab4-4f5d-8711-8f53aef1c63c"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+												"modulesHourlySamsung.testinghourly"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configuration": "{\n\t\n}",
+													"configurationRules": [
+													],
+													"creationDate": 1494244684073,
+													"creator": "Prakhar Sakalley",
+													"description": "",
+													"enabled": false,
+													"internalUserGroups": [
+														"QA"
+													],
+													"lastModified": 1494247138117,
+													"minAppVersion": "8.0.1",
+													"name": "testinghourly",
+													"namespace": "modulesHourlySamsung",
+													"noCachedResults": false,
+													"owner": "Prakhar Sakalley",
+													"rolloutPercentage": 100.0,
+													"rule": {
+														"ruleString": ""
+													},
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"stage": "DEVELOPMENT",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "856eb15f-11cc-4d6f-be72-a2724fc26e15"
+												}
+											],
+											"configurationSchema": null,
+											"creationDate": 1491476104152,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"hourly\",\n\t\"description\":\"Displays hourly weather information.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.hourly\",\n\t\"beacon\":\"weather:hourly:displayed\"\n}",
+											"defaultIfAirlockSystemIsDown": true,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"DEV",
+												"QA",
+												"test",
+												"Adina"
+											],
+											"lastModified": 1494244684073,
+											"minAppVersion": "8.0.1",
+											"name": "Hourly Samsung",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rule": {
+												"ruleString": ""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "ed58244b-a783-41f5-8702-de7163c00685"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+												"modulesVideoSamsung.Canada"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configuration": "{\n\t\"id\":\"video3\",\n\t\"description\":\"Displays video module with 3 thumbnails.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"\",\n\t\"beacon\":\"video:video:displayed\"\n}",
+													"configurationRules": [
+													],
+													"creationDate": 1501178130237,
+													"creator": "Brian Chu",
+													"description": "",
+													"enabled": true,
+													"internalUserGroups": [
+														"VideoDev"
+													],
+													"lastModified": 1501178172023,
+													"minAppVersion": "8.0.1",
+													"name": "Canada",
+													"namespace": "modulesVideoSamsung",
+													"noCachedResults": false,
+													"owner": "Brian Chu",
+													"rolloutPercentage": 100.0,
+													"rule": {
+														"ruleString": "context.device.locale == \"en_CA\""
+													},
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"stage": "DEVELOPMENT",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "8f9f2add-3843-4af8-828b-7cbf8d896b77"
+												}
+											],
+											"configurationSchema": null,
+											"creationDate": 1491476301621,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"video3\",\n\t\"description\":\"Displays video module with 3 thumbnails.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"\",\n\t\"beacon\":\"video:video:displayed\"\n}",
+											"defaultIfAirlockSystemIsDown": true,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"DEV",
+												"QA",
+												"test",
+												"Adina"
+											],
+											"lastModified": 1502120864817,
+											"minAppVersion": "8.0.1",
+											"name": "Video Samsung",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rule": {
+												"ruleString": "context.device.locale == \"en_US\" || \ncontext.device.locale == \"de_DE\" ||\ncontext.device.locale == \"en_GB\" || \ncontext.device.locale == \"es_US\""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "263d5e76-1d38-4670-83e3-6ebe30c0a0fa"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1491476398993,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"map\",\n\t\"description\":\"Displays radar map.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+											"defaultIfAirlockSystemIsDown": false,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"QA",
+												"test"
+											],
+											"lastModified": 1493822144430,
+											"minAppVersion": "8.0.1",
+											"name": "Radar Maps Samsung",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rule": {
+												"ruleString": ""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "51921757-e6ac-48b6-ab64-962d76efc495"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1491476436783,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"driving-difficulty\",\n\t\"description\":\"Displays radar map.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+											"defaultIfAirlockSystemIsDown": true,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"DEV",
+												"QA",
+												"test",
+												"Adina"
+											],
+											"lastModified": 1493822160616,
+											"minAppVersion": "8.0.1",
+											"name": "Road Conditions Samsung",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rule": {
+												"ruleString": ""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "73097f52-16b1-4dc6-a81d-4fb5ece6fb0b"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+												"outdoormodule.Label Samsung"
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1491476588739,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"outdoor\",\n\t\"description\":\"Displays run weather index information.\",\n\t\"type\":\"native\",\n\t\"hideable\":false,\n\t\"adSlot\":\"\",\n\t\"sponsored\":false\n}",
+											"defaultIfAirlockSystemIsDown": true,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"DEV",
+												"QA",
+												"Adina"
+											],
+											"lastModified": 1493822221498,
+											"minAppVersion": "8.0.1",
+											"name": "Outdoor Samsung",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rule": {
+												"ruleString": ""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "933e5ab0-2c72-4118-8990-3994862531a9"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+												"mx.2f0df449-39e8-4937-9e01-07a6cf1f3e6c"
+											],
+											"branchFeaturesItems": [
+												"healthmodule.PersonalizationSamsung"
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+														"modulesHealth.Config2.7 Samsung",
+														"modulesHealth.Config2.6 Samsung"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configuration": "{}",
+															"configurationRules": [
+															],
+															"creationDate": 1491476545966,
+															"creator": "Brandon Rosenbaum",
+															"description": "",
+															"enabled": true,
+															"internalUserGroups": [
+																"HealthDEV"
+															],
+															"lastModified": 1493823759921,
+															"minAppVersion": "8.0.1",
+															"name": "Config2.7 Samsung",
+															"namespace": "modulesHealth",
+															"noCachedResults": false,
+															"owner": "Brandon Rosenbaum",
+															"rolloutPercentage": 100.0,
+															"rule": {
+																"ruleString": ""
+															},
+															"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+															"stage": "PRODUCTION",
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "d3c702d0-9618-4d3d-8f61-fff851f8ec57"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configuration": "{\n\t\"enableFeature\":false\n}",
+															"configurationRules": [
+															],
+															"creationDate": 1491476546693,
+															"creator": "Brandon Rosenbaum",
+															"description": "",
+															"enabled": true,
+															"internalUserGroups": [
+																"HealthDEV"
+															],
+															"lastModified": 1493823776917,
+															"minAppVersion": "8.0.1",
+															"name": "Config2.6 Samsung",
+															"namespace": "modulesHealth",
+															"noCachedResults": false,
+															"owner": "Brandon Rosenbaum",
+															"rolloutPercentage": 100.0,
+															"rule": {
+																"ruleString": "context.device.locale !== \"en_US\" && context.device.locale !== \"es_US\""
+															},
+															"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+															"stage": "PRODUCTION",
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "9015ce16-ed88-4ee8-8cc3-b2d79b60efc5"
+														}
+													],
+													"lastModified": 1491476546693,
+													"maxFeaturesOn": 1,
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+													"uniqueId": "2f0df449-39e8-4937-9e01-07a6cf1f3e6c"
+												}
+											],
+											"configurationSchema": null,
+											"creationDate": 1491476545274,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"health\",\n\t\"description\":\"Displays health information.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"\",\n\t\"beacon\":\"pollen:pollen:displayed\",\n\t\"adjacentAdParameters\":{\n\t\t\"fam\":\"hlth,allergy\",\n\t\t\"ch\":\"pollencast\"\n\t}\n}",
+											"defaultIfAirlockSystemIsDown": false,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"DEV",
+												"QA",
+												"Adina"
+											],
+											"lastModified": 1494447916796,
+											"minAppVersion": "8.0.1",
+											"name": "Health Samsung",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rule": {
+												"ruleString": "true"
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "cdfc2618-1374-4fda-a218-29db3ed00520"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1491476471995,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"news\",\n\t\"description\":\"Displays news.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.articles\",\n\t\"beacon\":\"news:news:displayed\"\n}",
+											"defaultIfAirlockSystemIsDown": true,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"QA",
+												"test",
+												"Adina"
+											],
+											"lastModified": 1493822176576,
+											"minAppVersion": "8.0.1",
+											"name": "News Samsung",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rule": {
+												"ruleString": "context.device.locale == \"en_US\" ||  context.device.locale == \"es_US\";\n"
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "018f79aa-451d-4bb6-b348-f9ae52e280c6"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1491476504153,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"hurricane\",\n\t\"description\":\"Displays Hurricane Central\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+											"defaultIfAirlockSystemIsDown": true,
+											"description": "",
+											"displayName": null,
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"DEV",
+												"QA"
+											],
+											"lastModified": 1501528782153,
+											"minAppVersion": "8.0.1",
+											"name": "Hurricane Central Samsung",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rule": {
+												"ruleString": "function isHurricaneSeason(){\n    \n    var obsTimeStr = context.weatherSummary.observation.obsTime\n    var obsDate = new Date(obsTimeStr.substring(0,4), parseInt(obsTimeStr.substring(5,7), 10) - 1, obsTimeStr.substring(8,10), 0, 0, 0, 0)\n\n    return  obsDate.getMonth() + 1 >= 3 && \n            obsDate.getMonth() + 1 < 12 &&\n            (context.device.localeCountryCode == \"US\" || context.device.localeCountryCode == \"MX\") && \n            (context.device.localeLanguage == \"en\" || context.device.localeLanguage == \"es\")\n}\n\nisHurricaneSeason()"
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "PRODUCTION",
+											"type": "FEATURE",
+											"uniqueId": "d0b42392-360f-4884-b5c5-b3fd3d140179"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+												"modulesLifestyle.comboForUSLoc",
+												"modulesLifestyle.comboNonUSLoc"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configuration": "{\n\t\"module\":[\"allergy\",\n\t\"goRun\",\n\t\"boatAndBeach\",\n\t\"coldAndFlu\",\n\t\"ski\"]\n}",
+													"configurationRules": [
+													],
+													"creationDate": 1501773021772,
+													"creator": "Love Garg",
+													"description": "",
+													"enabled": true,
+													"internalUserGroups": [
+														"HealthDEV"
+													],
+													"lastModified": 1501773052643,
+													"minAppVersion": "8.0.1",
+													"name": "comboForUSLoc",
+													"namespace": "modulesLifestyle",
+													"noCachedResults": false,
+													"owner": "Love Garg",
+													"rolloutPercentage": 100.0,
+													"rule": {
+														"ruleString": "context.viewedLocation !== undefined && context.viewedLocation.country == \"US\""
+													},
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"stage": "DEVELOPMENT",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "a8d87a2b-6df6-42a3-af1e-1b8de8e8aeea"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configuration": "{\n\t\"module\":[\"allergy\",\n\t\"goRun\",\n\t\"ski\"]\n}",
+													"configurationRules": [
+													],
+													"creationDate": 1501773086595,
+													"creator": "Love Garg",
+													"description": "",
+													"enabled": true,
+													"internalUserGroups": [
+														"HealthDEV"
+													],
+													"lastModified": 1501773116501,
+													"minAppVersion": "8.0.1",
+													"name": "comboNonUSLoc",
+													"namespace": "modulesLifestyle",
+													"noCachedResults": false,
+													"owner": "Love Garg",
+													"rolloutPercentage": 100.0,
+													"rule": {
+														"ruleString": "context.viewedLocation !== undefined && context.viewedLocation.country != \"US\""
+													},
+													"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+													"stage": "DEVELOPMENT",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "939f557c-581d-4f62-9c71-2d0473ba7719"
+												}
+											],
+											"configurationSchema": null,
+											"creationDate": 1491476661501,
+											"creator": "Brandon Rosenbaum",
+											"defaultConfiguration": "{\n\t\"id\":\"lifestyle_combo\",\n\t\"description\":\"Displays lifestyle combo module.\",\n\t\"type\":\"native\",\n\t\"hideable\":false,\n\t\"adSlot\":\"\",\n\t\"sponsored\":false\n}",
+											"defaultIfAirlockSystemIsDown": false,
+											"description": "",
+											"displayName": "Lifestyle",
+											"enabled": true,
+											"features": [
+											],
+											"internalUserGroups": [
+												"HealthDEV"
+											],
+											"lastModified": 1501773086595,
+											"minAppVersion": "8.0.1",
+											"name": "Lifestyle Samsung",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Brandon Rosenbaum",
+											"rolloutPercentage": 100.0,
+											"rule": {
+												"ruleString": ""
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "DEVELOPMENT",
+											"type": "FEATURE",
+											"uniqueId": "1fd1ec2e-b0a8-4d09-a8bd-17dbc5cc6b2d"
+										},
+										{
+											"additionalInfo": {
+											},
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"configurationSchema": null,
+											"creationDate": 1491476629901,
+											"creator": "Denis Voloshin",
+											"defaultConfiguration": "{\n\t\"id\":\"boat\",\n\t\"version\":\"1.0\",\n\t\"description\":\"Displays boat and beach information.\",\n\t\"type\":\"html\",\n\t\"hideable\":true,\n\t\"url\":\"\",\n\t\"adSlot\":\"\",\n\t\"sponsored\":false,\n\t\"beacon\":\"boatbeach:boatbeach-displayed\"\n}",
+											"defaultIfAirlockSystemIsDown": false,
+											"description": "",
+											"displayName": null,
+											"enabled": false,
+											"features": [
+											],
+											"internalUserGroups": [
+												"QA"
+											],
+											"lastModified": 1501664063848,
+											"minAppVersion": "8.0.1",
+											"name": "Boat Samsung",
+											"namespace": "modules",
+											"noCachedResults": false,
+											"owner": "Denis Voloshin",
+											"rolloutPercentage": 100.0,
+											"rule": {
+												"ruleString": "false"
+											},
+											"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+											"stage": "DEVELOPMENT",
+											"type": "FEATURE",
+											"uniqueId": "59a29a0b-4a3e-4561-9fc8-0092944f78cc"
+										}
+									],
+									"lastModified": 1499971365020,
+									"maxFeaturesOn": 14,
+									"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+									"type": "MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "5a246314-a6aa-481e-9eec-f73289dcd10c"
+								}
+							],
+							"internalUserGroups": [
+								"DEV",
+								"QA"
+							],
+							"lastModified": 1501863596293,
+							"minAppVersion": "8.0.1",
+							"name": "Samsung modules",
+							"namespace": "modules",
+							"noCachedResults": false,
+							"owner": "Denis Voloshin",
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": "context.device.appFlavor == \"samsung\""
+							},
+							"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+							"stage": "PRODUCTION",
+							"type": "FEATURE",
+							"uniqueId": "f2abe8f4-71f7-412c-8918-b75b6d5a2ba6"
+						}
+					],
+					"lastModified": 1491476952968,
+					"maxFeaturesOn": 1,
+					"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+					"type": "MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "6b959a93-9ce8-4800-913d-23c2f176d4e0"
+				}
+			],
+			"internalUserGroups": [
+				"DEV",
+				"QA",
+				"Activation",
+				"Adina"
+			],
+			"lastModified": 1492442179268,
+			"minAppVersion": "8.0.1",
+			"name": "Airlock Control Over Modules",
+			"namespace": "modules",
+			"noCachedResults": false,
+			"owner": "Denis Voloshin",
+			"rolloutPercentage": 100.0,
+			"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "fa8f67c4-a66e-4576-8350-1e17a849b395"
+		}
+	],
+	"lastModified": 1502109413747,
+	"name": "QA TEST",
+	"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+	"uniqueId": "f5ea6026-28dc-44ef-86ab-bbd294c936eb"
+}

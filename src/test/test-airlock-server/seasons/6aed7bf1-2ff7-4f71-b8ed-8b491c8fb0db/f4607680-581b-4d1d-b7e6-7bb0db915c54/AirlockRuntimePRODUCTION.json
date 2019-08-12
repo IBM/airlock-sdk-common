@@ -1,0 +1,22 @@
+{
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"maxVersion": "7.10",
+	"minVersion": "7.8",
+	"productId": "6aed7bf1-2ff7-4f71-b8ed-8b491c8fb0db",
+	"productName": "MTXGroupingTrueFalse",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "12e557ae-3a4e-43b1-b774-de909b27c3a2"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "f4607680-581b-4d1d-b7e6-7bb0db915c54",
+	"serverVersion": "V2.1",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.1"
+}

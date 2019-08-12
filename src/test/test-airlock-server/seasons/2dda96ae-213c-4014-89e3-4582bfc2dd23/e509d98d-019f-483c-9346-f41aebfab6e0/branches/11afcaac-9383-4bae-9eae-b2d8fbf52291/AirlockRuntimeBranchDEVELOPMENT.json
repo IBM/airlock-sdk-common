@@ -1,0 +1,65 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"watson.Conversation",
+				"watson.voice search"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"features": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"features": [
+					],
+					"name": "Conversation",
+					"namespace": "watson",
+					"rolloutPercentage": 100.0,
+					"type": "FEATURE",
+					"uniqueId": "e167ffa2-fc07-446e-97af-74de2c6ff25c"
+				},
+				{
+					"additionalInfo": {
+					},
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"defaultConfiguration": "{\n    \"flow\" : { \n        \"search_bar\" : true,\n        \"module\" : true,\n        \"widget\": false },\n\t\"placement\":\"right\",\n\t\"icon\":\"https:\/\/v.w-x.co\/watson_voice_search_1.jpg\",\n\t\"size\":\"30\",\n\t\"color\":\"#ff00ff\",\n\t\"method\":\"press_and_hold\",\n\t\"hint\":\"What is the weekend weather?\"\n}",
+					"features": [
+					],
+					"internalUserGroups": [
+						"WatsonDev"
+					],
+					"name": "voice search",
+					"namespace": "watson",
+					"rolloutPercentage": 100.0,
+					"type": "FEATURE",
+					"uniqueId": "895e502a-2c2b-41af-9eaf-b662e390c36d"
+				}
+			],
+			"name": "WatsonAllFeatures",
+			"namespace": "watson",
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "1acea32a-c50d-4de8-ab4f-ee190d30144a"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "Watson",
+	"uniqueId": "11afcaac-9383-4bae-9eae-b2d8fbf52291"
+}

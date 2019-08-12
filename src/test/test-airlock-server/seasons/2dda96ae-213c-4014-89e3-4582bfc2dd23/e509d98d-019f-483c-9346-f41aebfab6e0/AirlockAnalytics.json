@@ -1,0 +1,94 @@
+{
+	"analyticsQuota": 100,
+	"globalDataCollection": {
+		"analyticsDataCollection": {
+			"featuresAndConfigurationsForAnalytics": [
+				"ee453a1b-e46d-478d-83c1-303af28285ab",
+				"6887b409-c814-430c-9cc9-564701253c64",
+				"044eb91e-ba93-42ac-9585-84fcb1a4eae5",
+				"9a65375a-abdf-4b80-907f-bf5d5d92a219",
+				"4e133a74-fb6a-4413-afc8-c4e9b3fa9182",
+				"9f3ba261-d6f4-4765-90b7-9271dd5b37c6",
+				"bd6978cc-0a85-4b9a-a5ba-79cab8f29cfb",
+				"21712e2e-5370-4e57-9379-3e88e52ef377",
+				"d36373eb-1718-4bc3-b737-79a6ac5e0d2b",
+				"a60bae9c-2550-4146-a04c-6071c8672fd0",
+				"003bcd3c-6fd7-4b11-970e-d3e70543fabc",
+				"9bd92570-adfb-41d6-9064-003018a9aefd",
+				"1cdf31c8-9819-491e-95c2-0a71d6acca6e",
+				"7b060d13-23fe-4b77-aa16-f21d47940459",
+				"370fbcd8-16bf-481d-8e8c-ecbe20532760",
+				"34c2cae2-ac1a-40d1-90cb-1fcfe3898a8e",
+				"ab6d011e-335f-40b2-822e-321a0edb8aca",
+				"ba02a536-920c-4ca6-8732-0fd7f15ea539",
+				"3c759081-206d-4923-a58a-7c54e0c8b1e4",
+				"510a5f1e-54a3-48c0-a4a5-38880b26df0e",
+				"71108cc3-c774-4ff3-9aca-7da330558291",
+				"5530e0ea-05f4-4134-b8fd-cfc5e215e9c5",
+				"fd11eca6-0392-46e8-b360-8d521fa69c7f",
+				"e713641e-190d-46e4-9ead-e9cd0c46f527",
+				"18a7eb75-d50e-4cc9-b820-c505c1df6cfa",
+				"383af1eb-9c57-4c0f-b55c-45755614101b",
+				"11675464-e927-4918-8179-9c5da1c1a2cc",
+				"f474a1d8-323e-4f4c-be81-1c85ff77532c"
+			],
+			"featuresAttributesForAnalytics": [
+				{
+					"attributes": [
+						{
+							"name": "analyticsTileName",
+							"type": "REGULAR"
+						}
+					],
+					"id": "044eb91e-ba93-42ac-9585-84fcb1a4eae5"
+				},
+				{
+					"attributes": [
+						{
+							"name": "commonParameters.vab",
+							"type": "REGULAR"
+						}
+					],
+					"id": "21712e2e-5370-4e57-9379-3e88e52ef377"
+				}
+			],
+			"inputFieldsForAnalytics": [
+				"context.weatherSummary.observation.skyCode",
+				"context.weatherSummary.observation.temperature",
+				"context.weatherSummary.observation.feelsLikeTemperature",
+				"context.weatherSummary.contentMode.mode",
+				"context.weatherSummary.nearestWinterStormAlert.phenomenaCode",
+				"context.weatherSummary.nearestWinterStormAlert.severityCode",
+				"context.weatherSummary.nearestWinterStormAlert.significanceCode",
+				"context.weatherSummary.nearestStartPrecip.startTime",
+				"context.weatherSummary.nearestStartPrecip.eventType",
+				"context.weatherSummary.nearestStartPrecip.severity",
+				"context.weatherSummary.todayForecast.night.precipPercentage",
+				"context.weatherSummary.todayForecast.night.precipType",
+				"context.weatherSummary.todayForecast.day.precipType",
+				"context.weatherSummary.todayForecast.day.precipPercentage",
+				"context.weatherSummary.closestLightning.strikeTime",
+				"context.weatherSummary.closestLightning.distance",
+				"context.weatherSummary.tomorrowForecast.night.precipType",
+				"context.weatherSummary.tomorrowForecast.night.precipPercentage",
+				"context.weatherSummary.tomorrowForecast.day.precipType",
+				"context.weatherSummary.tomorrowForecast.day.precipPercentage",
+				"context.profile.settings.segmentation.avr-a",
+				"context.profile.demographics.ageRange",
+				"context.profile.demographics.gender",
+				"context.profile.demographics.dob",
+				"context.device.daysSinceAppInstall",
+				"context.app.media_source",
+				"context.app.campaign",
+				"context.app.af_status"
+			]
+		},
+		"lastModified": 1502458288929,
+		"rolloutPercentage": 100.0,
+		"rule": {
+			"ruleString": "true"
+		},
+		"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0"
+	},
+	"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0"
+}

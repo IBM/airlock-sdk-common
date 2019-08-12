@@ -1,0 +1,20 @@
+{
+	"mostRecentTranslation": 1499877779887,
+	"strings": {
+		"Drawer.PremiumFeatures": "Sign up to activate premium features",
+		"Eight.FirstDaySummer": "The first day of summer",
+		"Five.NextHours": "NEXT [[[1]]] [[[2]]]",
+		"Four.PrecipStarting": "[[[1]]] STARTING [[[2]]]",
+		"General.Today": "Today",
+		"InJuly": "[[[1]]] of July",
+		"One.Rain": "Rain",
+		"ProfileSettings.AlertsCTA": "Get real-time weather alerts",
+		"Seven.EndingSoon": "Ending Soon",
+		"Six.DailyDetails": "Daily Details",
+		"Three.InView": "[[[1]]] IN VIEW",
+		"Two.FeelsLike": "FEELS LIKE",
+		"Units.KM": "KM",
+		"Units.KMH": "KMH",
+		"Units.MPH": "MPH"
+	}
+}

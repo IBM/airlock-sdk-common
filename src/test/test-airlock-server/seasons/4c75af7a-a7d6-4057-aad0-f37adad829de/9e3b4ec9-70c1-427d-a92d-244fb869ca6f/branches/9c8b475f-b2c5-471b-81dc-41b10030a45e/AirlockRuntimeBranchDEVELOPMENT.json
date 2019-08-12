@@ -1,0 +1,33 @@
+{
+	"features": [
+		{
+			"additionalInfo": null,
+			"branchFeatureParentName": "ROOT",
+			"branchStatus": "NEW",
+			"configurationRules": [
+			],
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+			],
+			"minAppVersion": "8.5",
+			"name": "B1.F1",
+			"namespace": "ns",
+			"noCachedResults": false,
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"stage": "DEVELOPMENT",
+			"type": "FEATURE",
+			"uniqueId": "275549f2-5a75-462c-a5ea-5ed74265e175"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "Branch1",
+	"uniqueId": "9c8b475f-b2c5-471b-81dc-41b10030a45e"
+}

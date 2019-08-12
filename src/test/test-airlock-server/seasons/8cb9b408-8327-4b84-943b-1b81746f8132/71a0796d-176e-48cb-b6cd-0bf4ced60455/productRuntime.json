@@ -1,0 +1,14 @@
+{
+	"codeIdentifier": "OrderQAProduct",
+	"name": "OrderQAProduct",
+	"seasons": [
+		{
+			"lastModified": 1543306229638,
+			"maxVersion": null,
+			"minVersion": "8.0",
+			"productId": "8cb9b408-8327-4b84-943b-1b81746f8132",
+			"uniqueId": "71a0796d-176e-48cb-b6cd-0bf4ced60455"
+		}
+	],
+	"uniqueId": "8cb9b408-8327-4b84-943b-1b81746f8132"
+}

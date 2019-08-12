@@ -1,0 +1,17 @@
+{
+  "callOrder": [
+    "doInit",
+    "doSetGroups",
+    "doRefreshAndSync"
+  ],
+  "configuration": {
+    "configPath": "test_data\/configuration\/ConfigurationsWithSubConfig\/7.5_up\/",
+    "goldPath": "gold_files\/configuration\/ConfigurationsWithSubConfig\/7.5_up\/DeviceContextV1\/defaultG\/ProfileV1",
+    "deviceContextFileName": "DeviceContextV1.json",
+    "groupsFileName": "defaultG.json",
+    "profileFileName": "ProfileV1.json",
+    "defaultFileName": "configurations_with_sub_config_first_default.txt",
+    "appVersion": "7.14"
+  },
+  "updates": {}
+}

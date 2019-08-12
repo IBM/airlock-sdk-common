@@ -1,0 +1,31 @@
+{
+	"branches": [
+	],
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "8.0",
+	"productId": "8cb9b408-8327-4b84-943b-1b81746f8132",
+	"productName": "OrderQAProduct",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "42d308a7-fb8a-41f5-bfec-c5b3d1be3f7a"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "71a0796d-176e-48cb-b6cd-0bf4ced60455",
+	"serverVersion": "V4.5",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

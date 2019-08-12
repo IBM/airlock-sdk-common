@@ -1,0 +1,56 @@
+{
+	"features": [
+		{
+			"additionalInfo": null,
+			"branchConfigurationRuleItems": [
+				"testF1.CR1"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchStatus": "NEW",
+			"configurationRules": [
+				{
+					"branchStatus": "NEW",
+					"configuration": "{}",
+					"configurationRules": [
+					],
+					"enabled": false,
+					"internalUserGroups": [
+					],
+					"minAppVersion": "9.1",
+					"name": "CR1",
+					"namespace": "testF1",
+					"noCachedResults": false,
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"stage": "DEVELOPMENT",
+					"type": "CONFIGURATION_RULE",
+					"uniqueId": "45c83716-b47a-4d66-a1b1-461aeee941df"
+				}
+			],
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"enabled": false,
+			"features": [
+			],
+			"internalUserGroups": [
+			],
+			"minAppVersion": "9.1",
+			"name": "F1",
+			"namespace": "test",
+			"noCachedResults": false,
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"stage": "DEVELOPMENT",
+			"type": "FEATURE",
+			"uniqueId": "91c9f3c2-1ee9-499b-88bb-6e13a609409b"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "JM1",
+	"uniqueId": "1eeb1dfd-c992-4fae-b325-56c19443eed5"
+}

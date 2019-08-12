@@ -1,0 +1,14 @@
+{
+	"codeIdentifier": "AndroidTWCStormRadar",
+	"name": "Android TWC Storm Radar",
+	"seasons": [
+		{
+			"lastModified": 1498066931070,
+			"maxVersion": null,
+			"minVersion": "1.1",
+			"productId": "040ed15a-dbe4-4743-a87b-7a85c2eeb617",
+			"uniqueId": "597fa65c-7eeb-4cc9-83d5-af06bb33f092"
+		}
+	],
+	"uniqueId": "040ed15a-dbe4-4743-a87b-7a85c2eeb617"
+}

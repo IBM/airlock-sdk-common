@@ -1,0 +1,40 @@
+{
+	"entitlements": [
+		{
+			"additionalInfo": null,
+			"branchFeatureParentName": "ROOT",
+			"branchStatus": "NEW",
+			"configurationRules": [
+			],
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"enabled": false,
+			"entitlements": [
+			],
+			"includedEntitlements": [
+			],
+			"internalUserGroups": [
+				"QA"
+			],
+			"minAppVersion": "1.0.0",
+			"name": "Pr4Br1",
+			"namespace": "airlockEntitlement",
+			"noCachedResults": false,
+			"purchaseOptions": [
+			],
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": "true"
+			},
+			"stage": "DEVELOPMENT",
+			"type": "ENTITLEMENT",
+			"uniqueId": "4d0153f6-e187-4017-8467-16cc970aaf06"
+		}
+	],
+	"features": [
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "v1.branch",
+	"uniqueId": "239fade5-d68d-4abe-9f98-aefdf10042e5"
+}

@@ -1,0 +1,28 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"defaultConfiguration": "{\n\t\"text\":\"branch1\"\n}",
+			"description": "F21 desc upgrade 12",
+			"features": [
+			],
+			"minAppVersion": "0.1",
+			"name": "F1",
+			"namespace": "ns1",
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "d5c3f1b4-67a6-4970-a8a1-b7f872290773"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "branch1",
+	"uniqueId": "9781aca9-1c3d-4bb5-906f-a4bac0d5cc72"
+}

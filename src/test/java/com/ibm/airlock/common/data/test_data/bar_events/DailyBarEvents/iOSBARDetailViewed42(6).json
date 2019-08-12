@@ -1,0 +1,474 @@
+{
+    "twcRelease": {
+        "appVersion": "9.1.0",
+        "svcCommit": "build-423486",
+        "appName": "The Weather"
+    },
+    "endSession": 1504163318963,
+    "os": {
+        "version": "10.2.1",
+        "platform": "iphone"
+    },
+    "sessionID": "C83F9168-7158-4B91-8D3A-9C0FF88193B3",
+    "network": {
+        "carrierNetworkClass": "unknown",
+        "carrier": "ATT",
+        "networkType": "wifi"
+    },
+    "places": [],
+    "startSession": 1504163143185,
+    "locations": [{
+        "dateTime": 1504163155043,
+        "altitude": 281.9801635742188,
+        "vertAccuracy": 10,
+        "horizAccuracy": 65,
+        "timezoneOffset": -4,
+        "pressure": 980.63,
+        "foreground": true,
+        "coords": {
+            "lon": -84.46028,
+            "lat": 33.89371
+        },
+        "speed": -1
+    }],
+    "metrics": {
+        "timers": [{
+            "duration": 1830.775022506714,
+            "name": "com.weather.SeveralRecords.request",
+            "description": "https:\/\/api.weather.com\/v3\/aggcommon\/vt1observation;vt1hourlyforecast;vt1backgroundImages;vt1dailyForecast;vt1loc;v3-location-point;vt1nowcast;vt1pollenobs;vt1idxPollenDaypart;vt1pastPollen;vt1precipitation;vt1contentMode;vt1idxBreathingDaypart;vt1runweatherhourly;vt1flu;vt1pastFlu;vt1alerts;vt1lightning;v2idxDriveCurrent;vt1currentTides?format=json&language=en-US&apiKey=0c9bc80708be4a519bc80708be6a51c2&units=e&imageGroup=m3&pollenDays=1&pollenStartDate=20170830&geocode=33.89,-84.46",
+            "startEpochMillis": 1504163155061
+        }, {
+            "duration": 1.237988471984863,
+            "name": "com.weather.SeveralRecords.parse",
+            "description": null,
+            "startEpochMillis": 1504163156904
+        }, {
+            "duration": 2.660989761352539,
+            "name": "com.weather.DrivingDifficultyIndex.create",
+            "description": null,
+            "startEpochMillis": 1504163156906
+        }, {
+            "duration": 1.374006271362305,
+            "name": "com.weather.Observation.create",
+            "description": null,
+            "startEpochMillis": 1504163156909
+        }, {
+            "duration": 0.5599856376647949,
+            "name": "com.weather.Location.create",
+            "description": null,
+            "startEpochMillis": 1504163156910
+        }, {
+            "duration": 1.205027103424072,
+            "name": "com.weather.Nowcast.create",
+            "description": null,
+            "startEpochMillis": 1504163156911
+        }, {
+            "duration": 0.9469985961914062,
+            "name": "com.weather.Alert.create",
+            "description": null,
+            "startEpochMillis": 1504163156912
+        }, {
+            "duration": 10.60700416564941,
+            "name": "com.weather.DailyForecast.create",
+            "description": null,
+            "startEpochMillis": 1504163156913
+        }, {
+            "duration": 0.2180337905883789,
+            "name": "com.weather.ContentMode.create",
+            "description": null,
+            "startEpochMillis": 1504163156924
+        }, {
+            "duration": 1.241981983184814,
+            "name": "com.weather.Flu.create",
+            "description": null,
+            "startEpochMillis": 1504163156924
+        }, {
+            "duration": 0.2050399780273438,
+            "name": "com.weather.PollenObservation.create",
+            "description": null,
+            "startEpochMillis": 1504163156925
+        }, {
+            "duration": 2.354025840759277,
+            "name": "com.weather.PollenDaily.create",
+            "description": null,
+            "startEpochMillis": 1504163156925
+        }, {
+            "duration": 0.178992748260498,
+            "name": "com.weather.PastPollen.create",
+            "description": null,
+            "startEpochMillis": 1504163156928
+        }, {
+            "duration": 5.997002124786377,
+            "name": "com.weather.HourlyForecast.create",
+            "description": null,
+            "startEpochMillis": 1504163156928
+        }, {
+            "duration": 0.6729960441589355,
+            "name": "com.weather.Precipitation.create",
+            "description": null,
+            "startEpochMillis": 1504163156934
+        }, {
+            "duration": 0.05996227264404297,
+            "name": "com.weather.Lightning.create",
+            "description": null,
+            "startEpochMillis": 1504163156935
+        }, {
+            "duration": 2.795040607452393,
+            "name": "com.weather.BreathingDay.create",
+            "description": null,
+            "startEpochMillis": 1504163156935
+        }, {
+            "duration": 0.102996826171875,
+            "name": "com.weather.BackgroundImage.create",
+            "description": null,
+            "startEpochMillis": 1504163156937
+        }, {
+            "duration": 0.4510283470153809,
+            "name": "com.weather.PastFlu.create",
+            "description": null,
+            "startEpochMillis": 1504163156938
+        }, {
+            "duration": 0.1839995384216309,
+            "name": "com.weather.TidesDaily.create",
+            "description": null,
+            "startEpochMillis": 1504163156938
+        }, {
+            "duration": 23107.49000310898,
+            "name": "com.weather.coldapplaunch.display",
+            "description": null,
+            "startEpochMillis": 1504163143041
+        }, {
+            "duration": 3268.552958965302,
+            "name": "com.weather.homepageload.display",
+            "description": null,
+            "startEpochMillis": 1504163162880
+        }, {
+            "duration": 10.48600673675537,
+            "name": "com.weather.weatherdata.HPRecord.parse",
+            "description": null,
+            "startEpochMillis": 1504163169146
+        }, {
+            "duration": 6.372034549713135,
+            "name": "com.weather.weatherdata.HPRecord.parse",
+            "description": null,
+            "startEpochMillis": 1504163169188
+        }, {
+            "duration": 19.05298233032227,
+            "name": "com.weather.weatherdata.HTRecord.parse",
+            "description": null,
+            "startEpochMillis": 1504163169209
+        }, {
+            "duration": 5.908012390136719,
+            "name": "com.weather.weatherdata.SkiResorts.parse",
+            "description": null,
+            "startEpochMillis": 1504163169236
+        }, {
+            "duration": 10.71000099182129,
+            "name": "com.weather.weatherdata.HTRecord.parse",
+            "description": null,
+            "startEpochMillis": 1504163169259
+        }, {
+            "duration": 3.012001514434814,
+            "name": "com.weather.weatherdata.HTRecord.parse",
+            "description": null,
+            "startEpochMillis": 1504163169274
+        }, {
+            "duration": 7.732033729553223,
+            "name": "com.weather.weatherdata.HPRecord.parse",
+            "description": null,
+            "startEpochMillis": 1504163169358
+        }, {
+            "duration": 1058.34299325943,
+            "name": "com.google.ad.weather.breaking.spotlight.request",
+            "description": "several_hosts",
+            "startEpochMillis": 1504163192814
+        }, {
+            "duration": 1058.425009250641,
+            "name": "com.weather.ad.weather.breaking.spotlight.display",
+            "description": null,
+            "startEpochMillis": 1504163192814
+        }],
+        "counters": [{
+            "name": "com.google.ads.networkcalls",
+            "count": 1
+        }],
+        "gauges": [{
+            "val": 734.9335670471191,
+            "name": "com.weather.applaunch.networkbytestranfered",
+            "epochMillis": 1504163166149,
+            "units": "MB"
+        }, {
+            "val": 86,
+            "name": "com.weather.applaunch.memory",
+            "epochMillis": 1504163166149,
+            "units": "MB"
+        }]
+    },
+    "nameSpace": "com.weather",
+    "user": {
+        "entitlements": [],
+        "adId": "8501949E-9F84-4D28-8683-3C5AEBFB1CA3",
+        "followMeEnabled": true,
+        "registered": false,
+        "userType": "prod",
+        "id": "nZbYeIvovKHKY",
+        "gpsEnabled": true,
+        "authenticatedUsing": "anon",
+        "pushAlertsEnabled": false,
+        "limitedAdId": "8501949E-9F84-4D28-8683-3C5AEBFB1CA3"
+    },
+    "device": {
+        "deviceType": "mobile",
+        "model": "N61AP",
+        "locale": "en_US",
+        "manufacturer": "Apple"
+    },
+    "events": [{
+        "dateTime": 1504163145526,
+        "eventData": {
+            "productId": "7900f30b-8f47-4829-95c5-9d4d6e8564ee",
+            "seasonId": "",
+            "airlockVersion": "V3.0",
+            "context_app_af_status": null,
+            "context_app_media_source": null,
+            "context_app_campaign": null,
+            "feature_headsup_Breaking-News-Video-150": "Off"
+        },
+        "name": "airlock-config"
+    }, {
+        "dateTime": 1504163146008,
+        "eventData": {
+            "method": "ftl",
+            "foreground": true,
+            "target": null
+        },
+        "name": "app-launch"
+    }, {
+        "dateTime": 1504163157873,
+        "eventData": {
+            "context_weatherSummary_todayForecast_night_precipPercentage": 100,
+            "context_weatherSummary_nearestStartPrecip_startTime": "2017-08-31T03:00:00-04:00",
+            "context_weatherSummary_observation_skyCode": 27,
+            "context_weatherSummary_tomorrowForecast_night_precipPercentage": 80,
+            "context_weatherSummary_observation_feelsLikeTemperature": 68,
+            "context_weatherSummary_tomorrowForecast_day_precipPercentage": 80,
+            "context_weatherSummary_todayForecast_night_precipType": "rain",
+            "context_weatherSummary_todayForecast_day_precipType": null,
+            "context_weatherSummary_nearestStartPrecip_eventType": 4,
+            "context_weatherSummary_contentMode_mode": "severe1",
+            "context_weatherSummary_nearestStartPrecip_severity": 2,
+            "context_weatherSummary_tomorrowForecast_day_precipType": "rain",
+            "context_weatherSummary_tomorrowForecast_night_precipType": "rain",
+            "context_weatherSummary_todayForecast_day_precipPercentage": null,
+            "context_weatherSummary_observation_temperature": 68
+        },
+        "name": "airlock-config"
+    }, {
+        "dateTime": 1504163160990,
+        "eventData": {
+            "slot": "weather.feed_1",
+            "source": null,
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504163161638,
+        "eventData": {
+            "slot": "weather.feed_3",
+            "source": null,
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504163162383,
+        "eventData": {
+            "slot": "weather.feed_5",
+            "source": null,
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504163165975,
+        "eventData": {
+            "playlist": "pl-hurricane-harvey",
+            "pos": 1,
+            "caption": "Officials Fear Death Toll May Skyrocket",
+            "source": "plus3",
+            "id": "dc1e16a8-f18c-4237-8e02-0a97d34b3cd8",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/830face2.jpg?v=at&w=320&h=180&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1504163173462,
+        "eventData": {
+            "CreativeID": null
+        },
+        "name": "BrandedBackgroundVideoStarted"
+    }, {
+        "dateTime": 1504163192814,
+        "eventData": {
+            "slot": "weather.breaking.spotlight",
+            "source": null,
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504163199717,
+        "eventData": {
+            "name": "breaking-news"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504163200195,
+        "eventData": {
+            "autoplayWatchedSecs": 10.65432897844444,
+            "adClicked": false,
+            "caption": "Rescuers Encounter Strange Sight",
+            "adSecs": 0,
+            "source": "rightnowmodule",
+            "autoplayClicked": false,
+            "watchedSecs": 10.65432897844444,
+            "playlist": "pl-hurricane-harvey",
+            "pos": 0,
+            "contentSecs": 48.215,
+            "adWatchedSecs": 0,
+            "playMethod": "auto",
+            "id": "2afcabe8-1456-446a-a2bf-c7d24b0b0a44",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/fire__871553.jpg?v=at&w=815&h=458&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "video-played"
+    }, {
+        "dateTime": 1504163213493,
+        "eventData": {
+            "slot": "weather.feed_2",
+            "source": null,
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504163220434,
+        "eventData": {
+            "name": "rightnow"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504163225108,
+        "eventData": {
+            "playlist": "pl-hurricane-harvey",
+            "pos": 1,
+            "caption": "Rescuers Encounter Strange Sight",
+            "source": "rightnowmodule",
+            "id": "2afcabe8-1456-446a-a2bf-c7d24b0b0a44",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/fire__871553.jpg?v=ap&w=980&h=551&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1504163234697,
+        "eventData": {
+            "name": "hourly"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504163240187,
+        "eventData": {
+            "name": "daily"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504163245157,
+        "eventData": {
+            "name": "maps"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504163245232,
+        "eventData": {
+            "autoplayWatchedSecs": 13.34940427866667,
+            "adClicked": false,
+            "caption": "Irma Strengthens in the Atlantic",
+            "adSecs": 0,
+            "source": "videomodule",
+            "autoplayClicked": false,
+            "watchedSecs": 13.34940427866667,
+            "playlist": "pl-hurricane-harvey",
+            "pos": 0,
+            "contentSecs": 34.268,
+            "adWatchedSecs": 0,
+            "playMethod": "auto",
+            "id": "cf8e3ed8-24d7-462a-9dda-187e63d2397a",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/830irma1.jpg?v=at&w=815&h=458&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "video-played"
+    }, {
+        "dateTime": 1504163261176,
+        "eventData": {
+            "name": "video"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504163270587,
+        "eventData": {
+            "slot": "weather.feed_4",
+            "source": null,
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504163272110,
+        "eventData": {
+            "name": "hurricane"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504163277675,
+        "eventData": {
+            "name": "lifestyle"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504163282916,
+        "eventData": {
+            "name": "road-condition"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504163312146,
+        "eventData": {
+            "name": "news"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1504163316909,
+        "eventData": {
+            "contentSecs": "4.8",
+            "caption": "Missing Van Recovered in Texas",
+            "source": "nl",
+            "id": "283db24f-6086-4d12-8160-067d2d60bf0b",
+            "articleUrl": "https:\/\/www.weather.com\/storms\/hurricane\/news\/missing-van-recovered-harris-county-texas",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/w\/harveyvan.jpg?v=at&w=320&h=180&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "article-read"
+    }, {
+        "dateTime": 1504163317553,
+        "eventData": {
+            "slot": "weather.feed_5",
+            "source": null,
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }]
+}

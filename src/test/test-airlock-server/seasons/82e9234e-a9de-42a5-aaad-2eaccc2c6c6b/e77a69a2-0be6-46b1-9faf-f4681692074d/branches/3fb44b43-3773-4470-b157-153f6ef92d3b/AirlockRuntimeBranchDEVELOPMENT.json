@@ -1,0 +1,35 @@
+{
+	"features": [
+		{
+			"additionalInfo": {
+			},
+			"branchFeatureParentName": "ROOT",
+			"branchStatus": "NEW",
+			"configurationRules": [
+			],
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"Elik"
+			],
+			"minAppVersion": "1.3.0",
+			"name": "test",
+			"namespace": "elik",
+			"noCachedResults": false,
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"stage": "DEVELOPMENT",
+			"type": "FEATURE",
+			"uniqueId": "3dad1d2e-5c94-408a-9145-d5c91949043a"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "Elik",
+	"uniqueId": "3fb44b43-3773-4470-b157-153f6ef92d3b"
+}

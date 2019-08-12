@@ -1,0 +1,21 @@
+{
+	"codeIdentifier": "ProfilesSimpleCondition",
+	"name": "ProfilesSimpleCondition",
+	"seasons": [
+		{
+			"lastModified": 1543476895181,
+			"maxVersion": "7.8",
+			"minVersion": "7.5",
+			"productId": "bba74fa5-4519-470d-bd78-32ae09efcfbe",
+			"uniqueId": "6eca7e26-86a9-4769-a24a-b5e68dec9121"
+		},
+		{
+			"lastModified": 1487686331510,
+			"maxVersion": null,
+			"minVersion": "7.8",
+			"productId": "bba74fa5-4519-470d-bd78-32ae09efcfbe",
+			"uniqueId": "4c048220-e32c-4263-ac95-b275accb9d9d"
+		}
+	],
+	"uniqueId": "bba74fa5-4519-470d-bd78-32ae09efcfbe"
+}

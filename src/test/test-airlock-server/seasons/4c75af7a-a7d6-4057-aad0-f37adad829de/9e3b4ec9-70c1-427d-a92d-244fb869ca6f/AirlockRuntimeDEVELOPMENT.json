@@ -1,0 +1,168 @@
+{
+	"branches": [
+		{
+			"features": [
+				{
+					"additionalInfo": null,
+					"branchFeatureParentName": "ROOT",
+					"branchStatus": "NEW",
+					"configurationRules": [
+					],
+					"defaultConfiguration": null,
+					"defaultIfAirlockSystemIsDown": false,
+					"enabled": true,
+					"features": [
+					],
+					"internalUserGroups": [
+					],
+					"minAppVersion": "8.5",
+					"name": "B1.F1",
+					"namespace": "ns",
+					"noCachedResults": false,
+					"orderingRules": [
+					],
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"stage": "DEVELOPMENT",
+					"type": "FEATURE",
+					"uniqueId": "275549f2-5a75-462c-a5ea-5ed74265e175"
+				}
+			],
+			"inputFieldsForAnalytics": [
+			],
+			"name": "Branch1",
+			"uniqueId": "9c8b475f-b2c5-471b-81dc-41b10030a45e"
+		}
+	],
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"experiments": {
+		"experiments": [
+			{
+				"analytics": {
+					"featuresAndConfigurationsForAnalytics": [
+					],
+					"featuresAttributesForAnalytics": [
+					],
+					"inputFieldsForAnalytics": [
+					]
+				},
+				"controlGroupVariants": [
+				],
+				"enabled": true,
+				"indexExperiment": false,
+				"internalUserGroups": [
+				],
+				"maxVersion": null,
+				"minVersion": "8.4",
+				"name": "Exp1",
+				"owner": null,
+				"productId": "4c75af7a-a7d6-4057-aad0-f37adad829de",
+				"ranges": [
+					{
+						"end": null,
+						"start": 1509523347254
+					}
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": "true"
+				},
+				"stage": "PRODUCTION",
+				"uniqueId": "692d007a-710f-4c24-a263-316567fb6b75",
+				"variants": [
+					{
+						"branchName": "Branch1",
+						"enabled": true,
+						"experimentId": "692d007a-710f-4c24-a263-316567fb6b75",
+						"experimentName": "Exp1",
+						"internalUserGroups": [
+						],
+						"name": "v1",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "true"
+						},
+						"stage": "PRODUCTION",
+						"uniqueId": "db8609fb-d208-48cf-b006-dc68f18fd4f6"
+					}
+				]
+			}
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "8.5",
+	"productId": "4c75af7a-a7d6-4057-aad0-f37adad829de",
+	"productName": "QA.ExpMinVersionRegTest",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": null,
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+				],
+				"minAppVersion": "8.5",
+				"name": "F1",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "7b83e479-243c-4273-b1d2-a582cf567e27"
+			},
+			{
+				"additionalInfo": null,
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+				],
+				"minAppVersion": "8.5",
+				"name": "F2",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "ae413b31-e29d-49c2-8f6f-a49376fb7698"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "a7564f6f-e1f1-40d5-aa5f-d738b9b5cf25"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "9e3b4ec9-70c1-427d-a92d-244fb869ca6f",
+	"serverVersion": "V4.5",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

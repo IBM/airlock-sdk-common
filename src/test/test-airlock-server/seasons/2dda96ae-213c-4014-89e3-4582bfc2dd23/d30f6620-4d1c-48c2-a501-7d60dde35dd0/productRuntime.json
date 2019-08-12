@@ -1,0 +1,21 @@
+{
+	"codeIdentifier": "AndroidWithStreams",
+	"name": "AndroidWithStreams",
+	"seasons": [
+		{
+			"lastModified": 1543236402706,
+			"maxVersion": "8.0.1",
+			"minVersion": "8.0",
+			"productId": "2dda96ae-213c-4014-89e3-4582bfc2dd23",
+			"uniqueId": "e509d98d-019f-483c-9346-f41aebfab6e0"
+		},
+		{
+			"lastModified": 1503388548757,
+			"maxVersion": null,
+			"minVersion": "8.0.1",
+			"productId": "2dda96ae-213c-4014-89e3-4582bfc2dd23",
+			"uniqueId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0"
+		}
+	],
+	"uniqueId": "2dda96ae-213c-4014-89e3-4582bfc2dd23"
+}

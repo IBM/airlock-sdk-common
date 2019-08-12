@@ -1,0 +1,51 @@
+{
+	"creationDate": 1497525731887,
+	"creator": "irit",
+	"description": "branch descr",
+	"features": [
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"configurationSchema": null,
+			"creationDate": 1497525731364,
+			"creator": "Philip",
+			"defaultConfiguration": "{\n\t\"text\":\"branch2\"\n}",
+			"defaultIfAirlockSystemIsDown": false,
+			"description": "F21 desc 12",
+			"displayName": null,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"QA",
+				"DEV"
+			],
+			"lastModified": 1499155565144,
+			"minAppVersion": "0.1",
+			"name": "F2",
+			"namespace": "ns1",
+			"noCachedResults": false,
+			"owner": "Norman",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "4799793c-2d51-4587-b15f-ff0e9852d161",
+			"stage": "DEVELOPMENT",
+			"type": "FEATURE",
+			"uniqueId": "de611dcf-36e6-4b67-bcba-fc1c9056a201"
+		}
+	],
+	"lastModified": 1497525731887,
+	"name": "branch2",
+	"seasonId": "4799793c-2d51-4587-b15f-ff0e9852d161",
+	"uniqueId": "2d931c92-cc12-48ac-8c41-546b14e67bc3"
+}

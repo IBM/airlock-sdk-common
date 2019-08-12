@@ -1,0 +1,117 @@
+{
+  "devS3Path": "http://localhost:8000/test-airlock-server",
+  "defaultLanguage": "en",
+  "productId": "568ddbeb-7d0c-442c-9b65-dec2d9504862",
+  "s3Path": "http://localhost:8000/test-airlock-server",
+  "supportedLanguages": [
+    "en"
+  ],
+  "seasonId": "90b0d000-30c9-4df0-942e-155653ca7dd5",
+  "root": {
+    "features": [
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "GlobalVarInRule",
+        "namespace": "ns",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "79c81237-bbe3-4590-8172-70b6da107260"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "LocalVarInRule",
+        "namespace": "ns",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "9a2853a6-33ba-435e-bd28-44ca654dc059"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "UtilityInRule",
+        "namespace": "ns",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "1bd711ac-b55e-4aeb-8c71-3a24e4fb0f3b"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "VarInUtility",
+        "namespace": "ns",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "c885976e-fabe-4cdb-9f33-881482a0de1b"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "ChangeVarInUtility",
+        "namespace": "ns",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "1bf5fde8-33c4-45df-9e74-7b85d76eb972"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "UseChangedVarInUtility",
+        "namespace": "ns",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "a621d920-e6f9-4e62-9002-e5eeee55fb72"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "DefineGlobalVarInRuleOfFeature1",
+        "namespace": "ns",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "105af669-a9af-46a9-b651-1e104c9e88a6"
+      },
+      {
+        "defaultConfiguration": "{\n\t\"value\":\"Use global variable defined in the rule of Feature1 in the config of Feature2\"\n}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "UseGlobalVarinRuleOfFeature2",
+        "namespace": "ns",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "67f8bf91-ce1c-4648-a0ac-d1b83b5a1071"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "UseGlobalVarIndirectlyInConfigOfFeature3",
+        "namespace": "ns",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "925e626e-b158-484d-ae9d-2dbad87903d1"
+      }
+    ],
+    "type": "ROOT",
+    "uniqueId": "8ac36def-28bb-41ce-a378-46cd77c39d2b"
+  },
+  "version": "V2.5",
+  "productName": "UtilityInRule"
+}

@@ -1,0 +1,20 @@
+{
+	"analyticsQuota": 100,
+	"globalDataCollection": {
+		"analyticsDataCollection": {
+			"featuresAndConfigurationsForAnalytics": [
+			],
+			"featuresAttributesForAnalytics": [
+			],
+			"inputFieldsForAnalytics": [
+			]
+		},
+		"lastModified": 1498567196309,
+		"rolloutPercentage": 100.0,
+		"rule": {
+			"ruleString": "true"
+		},
+		"seasonId": "e73fe6cf-253f-4f9b-a063-6ec26d4403ca"
+	},
+	"seasonId": "e73fe6cf-253f-4f9b-a063-6ec26d4403ca"
+}

@@ -1,0 +1,35 @@
+{
+	"codeIdentifier": "ConfigurationFeatureOn",
+	"name": "ConfigurationFeatureOn",
+	"seasons": [
+		{
+			"lastModified": 1541936398591,
+			"maxVersion": "7.8",
+			"minVersion": "7.5",
+			"productId": "1a768855-1d5d-4413-b60a-ca8c868625cd",
+			"uniqueId": "a6bf06e9-907e-4df3-81db-1cf72cfaece6"
+		},
+		{
+			"lastModified": 1541936414285,
+			"maxVersion": "7.10",
+			"minVersion": "7.8",
+			"productId": "1a768855-1d5d-4413-b60a-ca8c868625cd",
+			"uniqueId": "d761dc4a-e7cc-4304-9624-3971e4f288d0"
+		},
+		{
+			"lastModified": 1491124688973,
+			"maxVersion": "7.14",
+			"minVersion": "7.10",
+			"productId": "1a768855-1d5d-4413-b60a-ca8c868625cd",
+			"uniqueId": "f5e9ea10-0eb4-4c36-8a19-2b4f1fc9e398"
+		},
+		{
+			"lastModified": 1499271944113,
+			"maxVersion": null,
+			"minVersion": "7.14",
+			"productId": "1a768855-1d5d-4413-b60a-ca8c868625cd",
+			"uniqueId": "b4ec34e9-91a1-4f74-ae23-c7c415a8734b"
+		}
+	],
+	"uniqueId": "1a768855-1d5d-4413-b60a-ca8c868625cd"
+}

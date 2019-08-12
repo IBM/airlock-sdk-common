@@ -1,0 +1,28 @@
+{
+	"codeIdentifier": "QA.Product",
+	"name": "QA.Product",
+	"seasons": [
+		{
+			"lastModified": 1541677148050,
+			"maxVersion": "7.8",
+			"minVersion": "7.5",
+			"productId": "0dbc97c5-6003-49d4-b04a-7ca1b79636be",
+			"uniqueId": "ec31d0cb-6454-4150-a24a-8ab71760fd1c"
+		},
+		{
+			"lastModified": 1487683435446,
+			"maxVersion": "7.10",
+			"minVersion": "7.8",
+			"productId": "0dbc97c5-6003-49d4-b04a-7ca1b79636be",
+			"uniqueId": "406c342b-5f52-463f-a81b-516929bf66da"
+		},
+		{
+			"lastModified": 1491126039300,
+			"maxVersion": null,
+			"minVersion": "7.10",
+			"productId": "0dbc97c5-6003-49d4-b04a-7ca1b79636be",
+			"uniqueId": "6591fcb3-e179-46fc-b0a5-99a0ce891b0a"
+		}
+	],
+	"uniqueId": "0dbc97c5-6003-49d4-b04a-7ca1b79636be"
+}

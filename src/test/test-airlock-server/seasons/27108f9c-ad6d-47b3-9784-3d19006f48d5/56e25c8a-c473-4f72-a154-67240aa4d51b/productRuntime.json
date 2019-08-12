@@ -1,0 +1,23 @@
+{
+	"codeIdentifier": "BixbyAPI",
+	"name": "Bixby API",
+	"seasons": [
+		{
+			"lastModified": 1547110426638,
+			"maxVersion": "4.0.0",
+			"minVersion": "1.0.0",
+			"productId": "27108f9c-ad6d-47b3-9784-3d19006f48d5",
+			"runtimeEncryption": false,
+			"uniqueId": "56e25c8a-c473-4f72-a154-67240aa4d51b"
+		},
+		{
+			"lastModified": 1554719171405,
+			"maxVersion": null,
+			"minVersion": "4.0.0",
+			"productId": "27108f9c-ad6d-47b3-9784-3d19006f48d5",
+			"runtimeEncryption": false,
+			"uniqueId": "6dca6ded-fc17-4f78-a321-d65ad861d348"
+		}
+	],
+	"uniqueId": "27108f9c-ad6d-47b3-9784-3d19006f48d5"
+}

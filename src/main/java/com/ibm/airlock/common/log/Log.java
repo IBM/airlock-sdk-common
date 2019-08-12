@@ -1,0 +1,55 @@
+package com.ibm.airlock.common.log;
+
+/**
+ * Created by Denis Voloshin
+ *
+ * Airlock SDK Logger interface, should be platform dependent
+ */
+@SuppressWarnings({"unused", "JavaDoc"})
+public interface Log {
+    /**
+     * Send an error log message.
+     *
+     * @param tag Used to identify the source of a log message.  It usually identifies the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     * @return
+     */
+     int e(String tag, String msg);
+
+    /**
+     * Send a error log message and log the exception.
+     *
+     * @param tag Used to identify the source of a log message.  It usually identifies the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     * @param tr  An exception to log
+     * @return
+     */
+     int e(String tag, String msg, Throwable tr);
+
+    /**
+     * Send an warning log message.
+     *
+     * @param tag Used to identify the source of a log message.  It usually identifies the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     * @return
+     */
+     int w(String tag, String msg);
+
+    /**
+     * Send an debug log message.
+     *
+     * @param tag Used to identify the source of a log message.  It usually identifies the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     * @return
+     */
+     int d(String tag, String msg);
+
+    /**
+     * Send an info log message.
+     *
+     * @param tag Used to identify the source of a log message.  It usually identifies the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     * @return
+     */
+    int i(String tag, String msg);
+}

@@ -1,0 +1,27 @@
+{
+	"features": [
+		{
+			"additionalInfo": {
+			},
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"description": "F21 desc 2",
+			"features": [
+			],
+			"minAppVersion": "0.1",
+			"name": "f2",
+			"namespace": "ns1",
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "02344111-8b66-448e-8586-a1506a9a7a12"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "branch2",
+	"uniqueId": "23fa9c7c-286d-4f90-9e52-dc4e6f89f908"
+}

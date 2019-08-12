@@ -1,0 +1,337 @@
+{
+	"maxVersion": null,
+	"minVersion": "1.0",
+	"productId": "e9ade4c5-9451-465f-9db0-8161a88b6472",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"sem_bucket\":\"com.ibm.research.model.bucket.sem\"\n}",
+						"configurationRules": [
+						],
+						"creationDate": 1522101302774,
+						"creator": "Carmelo Uria",
+						"description": "IBM Object Store Configuration",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1527793959036,
+						"minAppVersion": "1.0",
+						"name": "IBM",
+						"namespace": "MachineModel001MachineMode",
+						"noCachedResults": false,
+						"owner": "Carmelo Uria",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "077adbc4-0bab-4a73-aacb-2f58e2867619",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "ffb04ed1-c507-4199-8f91-b76401f81995"
+					}
+				],
+				"configurationSchema": {
+				},
+				"creationDate": 1508250849381,
+				"creator": "Carmelo Uria",
+				"defaultConfiguration": "{\n\t\"api_key\":\"THcX7XHdtu0W9DHvdo4Fj6QofWh3k7GuBW3wA9cifjMZ\",\n\t\"bucket\":\"com.ibm.research.model.bucket\",\n\t\"storage_type\":\"ibm\",\n\t\"model\":\"Inceptionv3.mlmodel\",\n\t\"model_type\":\"coreML\",\n\t\"resource_instance_id\":\"crn:v1:bluemix:public:cloud-object-storage:global:a\/73fa76a81b48c4562ae8573eb0300112:fba2e925-103b-492d-b292-3bad433e7085::\"\n}",
+				"defaultIfAirlockSystemIsDown": true,
+				"description": "Test the creation of a JS Container",
+				"displayName": "Machine Model Container",
+				"enabled": true,
+				"features": [
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"configurationSchema": {
+							"preferredIndex": 2,
+							"tiletype": "video",
+							"title": "Sean Connery"
+						},
+						"creationDate": 1508432707670,
+						"creator": "Carmelo Uria",
+						"defaultConfiguration": "{\n\t\"test\":\"Testing Configuration part 007\",\n\t\"tensorflow\":\"mobilenet_v1_10_224.tflite\",\n\t\"mlmodel\":\"http:\/\/ciuapps.com\/models\/MobileNet.mlmodel\",\n\t\"encoded\":\"L1VzZXJzL2N1cmlhL0xpYnJhcnkvRGV2ZWxvcGVyL0NvcmVTaW11bGF0b3IvRGV2aWNlcy8zNzQ4QTU0Qy1DMTU5LTREMTAtQjNFOS05RkRFMEMyRTdCODIvZGF0YS9Db250YWluZXJzL0J1bmRsZS9BcHBsaWNhdGlvbi8yRUY4ODQ0MS1GNDdCLTQ1RDEtODU0OC1EQjNDMkE2MTE5NzkvdGZfc2ltcGxlX2V4YW1wbGUuYXBwL21vYmlsZW5ldF92MV8xLjBfMjI0LnRmbGl0ZQ==\"\n}",
+						"defaultIfAirlockSystemIsDown": true,
+						"description": "Test Container",
+						"displayName": "Test Container",
+						"enabled": true,
+						"features": [
+							{
+								"additionalInfo": {
+								},
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"configurationSchema": null,
+								"creationDate": 1521820002283,
+								"creator": "Carmelo Uria",
+								"defaultConfiguration": "{\n    \"model_type\": \"coreML\",\n\t\"model\":\"http:\/\/ciuapps.com\/models\/MobileNet.mlmodel\"\n}",
+								"defaultIfAirlockSystemIsDown": true,
+								"description": "West Coast Model",
+								"displayName": "West Coast Model",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1522164078634,
+								"minAppVersion": "1.0",
+								"name": "WestCoast",
+								"namespace": "MachineModel001",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"owner": "Carmelo Uria",
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": ""
+								},
+								"seasonId": "077adbc4-0bab-4a73-aacb-2f58e2867619",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "c47a3a67-f485-40e1-9cb3-2abd4aa9bf43"
+							},
+							{
+								"additionalInfo": {
+								},
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"configurationSchema": null,
+								"creationDate": 1521820048117,
+								"creator": "Carmelo Uria",
+								"defaultConfiguration": "{\n\t\"model_type\":\"coreML\",\n\t\"model\":\"http:\/\/www.ciuapps.com\/models\/Inceptionv3.mlmodel\"\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "East Coast Model",
+								"displayName": "East Coast Model",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1522164207751,
+								"minAppVersion": "1.0",
+								"name": "EastCoast",
+								"namespace": "MachineModel001",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"owner": "Carmelo Uria",
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": ""
+								},
+								"seasonId": "077adbc4-0bab-4a73-aacb-2f58e2867619",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "413fe709-2006-4f5f-8bb4-7e9d8f383b74"
+							}
+						],
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1521820048117,
+						"minAppVersion": "1.0",
+						"name": "TestContainer",
+						"namespace": "MachineModel001",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"owner": "Carmelo Uria",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "077adbc4-0bab-4a73-aacb-2f58e2867619",
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "450a51fb-f599-484c-bed1-3e3460564a5c"
+					},
+					{
+						"additionalInfo": null,
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1522163485484,
+						"creator": "Carmelo Uria",
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"description": "IBM Object Store Settings",
+						"displayName": "IBM Object Store",
+						"enabled": true,
+						"features": [
+							{
+								"additionalInfo": {
+								},
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"configurationSchema": null,
+								"creationDate": 1522163576009,
+								"creator": "Carmelo Uria",
+								"defaultConfiguration": "{\n\t\"api_key\":\"THcX7XHdtu0W9DHvdo4Fj6QofWh3k7GuBW3wA9cifjMZ\",\n\t\"bucket\":\"com.ibm.research.model.bucket\",\n\t\"storage_type\":\"ibm\",\n\t\"model\":\"MobileNet.mlmodel\",\n\t\"model_type\": \"coreML\",\n\t\"resource_instance_id\":\"crn:v1:bluemix:public:cloud-object-storage:global:a\/73fa76a81b48c4562ae8573eb0300112:fba2e925-103b-492d-b292-3bad433e7085::\"\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "East Coast Model",
+								"displayName": "East Coast",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1522164167396,
+								"minAppVersion": "1.0",
+								"name": "EastCoastIBM",
+								"namespace": "MachineModel001",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"owner": "Carmelo Uria",
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": ""
+								},
+								"seasonId": "077adbc4-0bab-4a73-aacb-2f58e2867619",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "ce9bb054-9464-44c1-b1fd-6fa4492287ed"
+							},
+							{
+								"additionalInfo": {
+								},
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"configurationSchema": null,
+								"creationDate": 1522163632943,
+								"creator": "Carmelo Uria",
+								"defaultConfiguration": "{\n\t\"api_key\":\"THcX7XHdtu0W9DHvdo4Fj6QofWh3k7GuBW3wA9cifjMZ\",\n\t\"bucket\":\"com.ibm.research.model.bucket\",\n\t\"storage_type\":\"ibm\",\n\t\"model\":\"Inceptionv3.mlmodel\",\n\t\"model_type\": \"coreML\",\n\t\"resource_instance_id\":\"crn:v1:bluemix:public:cloud-object-storage:global:a\/73fa76a81b48c4562ae8573eb0300112:fba2e925-103b-492d-b292-3bad433e7085::\"\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "West Coast Model",
+								"displayName": "West Coast",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1522164192310,
+								"minAppVersion": "1.0",
+								"name": "WestCoastIBM",
+								"namespace": "MachineModel001",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"owner": "Carmelo Uria",
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": ""
+								},
+								"seasonId": "077adbc4-0bab-4a73-aacb-2f58e2867619",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "ae6350a0-2477-4524-98cd-9634b2fa2076"
+							}
+						],
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1525448911178,
+						"minAppVersion": "1.0",
+						"name": "IBM",
+						"namespace": "MachineModel001",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"owner": "Carmelo Uria",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "077adbc4-0bab-4a73-aacb-2f58e2867619",
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "1533ce46-82c4-4bbf-9505-cd17b66b6e9b"
+					},
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1525448844983,
+						"creator": "Carmelo Uria",
+						"defaultConfiguration": "{\n\t\"bucket\":\"aws-west-coast\",\n\t\"storage_type\":\"s3\",\n\t\"model\":\"wine.mlmodel\",\n\t\"model_type\":\"coreML\"\n}",
+						"defaultIfAirlockSystemIsDown": true,
+						"description": "Models stored on Amazon S3",
+						"displayName": "Amazon S3",
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1526500364462,
+						"minAppVersion": "1.0",
+						"name": "S3",
+						"namespace": "MachineModel001",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"owner": "Carmelo Uria",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "077adbc4-0bab-4a73-aacb-2f58e2867619",
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "5e0934a2-6394-4e32-a1f1-bedaf07942df"
+					}
+				],
+				"internalUserGroups": [
+					"DEV",
+					"ModelML"
+				],
+				"lastModified": 1527794505806,
+				"minAppVersion": "1.0",
+				"name": "MachineMode",
+				"namespace": "MachineModel001",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Carmelo Uria",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"seasonId": "077adbc4-0bab-4a73-aacb-2f58e2867619",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "30f28e33-acca-4086-8a84-3db2d9219ea3"
+			}
+		],
+		"lastModified": 1539678364221,
+		"seasonId": "077adbc4-0bab-4a73-aacb-2f58e2867619",
+		"type": "ROOT",
+		"uniqueId": "db7284f1-ee36-46be-af39-b619d6cc93b1"
+	},
+	"seasonId": "077adbc4-0bab-4a73-aacb-2f58e2867619",
+	"serverVersion": "V4.5",
+	"version": "V2.5"
+}

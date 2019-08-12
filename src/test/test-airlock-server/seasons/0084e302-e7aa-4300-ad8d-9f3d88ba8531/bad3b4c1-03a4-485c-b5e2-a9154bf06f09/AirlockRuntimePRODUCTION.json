@@ -1,0 +1,22 @@
+{
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"maxVersion": "7.10",
+	"minVersion": "7.8",
+	"productId": "0084e302-e7aa-4300-ad8d-9f3d88ba8531",
+	"productName": "ConfigurationMutualExclusion",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "f5681187-4a90-4f0d-bdad-dd84e58852af"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "bad3b4c1-03a4-485c-b5e2-a9154bf06f09",
+	"serverVersion": "V2.1",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.1"
+}

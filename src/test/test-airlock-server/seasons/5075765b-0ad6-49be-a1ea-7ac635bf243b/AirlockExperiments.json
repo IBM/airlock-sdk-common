@@ -1,0 +1,269 @@
+{
+	"experiments": [
+		{
+			"controlGroupVariants": [
+			],
+			"creationDate": 1500976414716,
+			"creator": "Yoav BenYair",
+			"description": null,
+			"displayName": null,
+			"enabled": true,
+			"hypothesis": null,
+			"indexExperiment": false,
+			"internalUserGroups": [
+				"Yoav"
+			],
+			"lastModified": 1500976902246,
+			"maxVersion": null,
+			"measurements": null,
+			"minVersion": "7.14",
+			"name": "AnalyticsDryRunANDROID",
+			"owner": null,
+			"productId": "5075765b-0ad6-49be-a1ea-7ac635bf243b",
+			"ranges": [
+				{
+					"end": null,
+					"start": 1500976414716
+				}
+			],
+			"rolloutPercentage": 0.2,
+			"rule": {
+				"ruleString": "true"
+			},
+			"stage": "PRODUCTION",
+			"uniqueId": "ab4e5bfe-4ac0-48d3-a1a1-d49f4d4ff88f",
+			"variants": [
+				{
+					"branchName": "AnalyticsDryRunVar1",
+					"creationDate": 1500976499577,
+					"creator": "Yoav BenYair",
+					"description": null,
+					"displayName": null,
+					"enabled": true,
+					"experimentId": "ab4e5bfe-4ac0-48d3-a1a1-d49f4d4ff88f",
+					"internalUserGroups": [
+						"Yoav"
+					],
+					"lastModified": 1500976848895,
+					"name": "Var1",
+					"rolloutPercentage": 25.0,
+					"rule": {
+						"ruleString": "true"
+					},
+					"stage": "PRODUCTION",
+					"uniqueId": "32582c73-235a-4d23-9854-9782f3100938"
+				},
+				{
+					"branchName": "AnalyticsDryRunVar2",
+					"creationDate": 1500976512344,
+					"creator": "Yoav BenYair",
+					"description": null,
+					"displayName": null,
+					"enabled": true,
+					"experimentId": "ab4e5bfe-4ac0-48d3-a1a1-d49f4d4ff88f",
+					"internalUserGroups": [
+						"Yoav"
+					],
+					"lastModified": 1500976859505,
+					"name": "Var2",
+					"rolloutPercentage": 33.3333,
+					"rule": {
+						"ruleString": "true"
+					},
+					"stage": "PRODUCTION",
+					"uniqueId": "5d0a9a1d-f784-440f-9f2c-e2e87a85f273"
+				},
+				{
+					"branchName": "AnalyticsDryRunVar3",
+					"creationDate": 1500976550519,
+					"creator": "Yoav BenYair",
+					"description": null,
+					"displayName": null,
+					"enabled": true,
+					"experimentId": "ab4e5bfe-4ac0-48d3-a1a1-d49f4d4ff88f",
+					"internalUserGroups": [
+						"Yoav"
+					],
+					"lastModified": 1500976870026,
+					"name": "Var3",
+					"rolloutPercentage": 50.0,
+					"rule": {
+						"ruleString": "true"
+					},
+					"stage": "PRODUCTION",
+					"uniqueId": "3b55d0a5-72cd-4e1c-ae91-a1ad98117d77"
+				},
+				{
+					"branchName": "MASTER",
+					"creationDate": 1500976575528,
+					"creator": "Yoav BenYair",
+					"description": null,
+					"displayName": null,
+					"enabled": true,
+					"experimentId": "ab4e5bfe-4ac0-48d3-a1a1-d49f4d4ff88f",
+					"internalUserGroups": [
+						"Yoav"
+					],
+					"lastModified": 1500976880325,
+					"name": "Control",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "true"
+					},
+					"stage": "PRODUCTION",
+					"uniqueId": "3f0ee080-8368-47f5-8873-a76ed92ea63e"
+				}
+			]
+		},
+		{
+			"controlGroupVariants": [
+			],
+			"creationDate": 1502910741655,
+			"creator": "Krishna Chebrolu",
+			"description": "Turning this experiment on would move hurricane central module below breaking news during a major hurricane\/tropical storm for impacted users while rest fallback to master behavior.",
+			"displayName": null,
+			"enabled": true,
+			"hypothesis": null,
+			"indexExperiment": false,
+			"internalUserGroups": [
+				"krishna"
+			],
+			"lastModified": 1504027405265,
+			"maxVersion": null,
+			"measurements": null,
+			"minVersion": "7.14",
+			"name": "Hurricane central module during major storm or hurricane",
+			"owner": null,
+			"productId": "5075765b-0ad6-49be-a1ea-7ac635bf243b",
+			"ranges": [
+				{
+					"end": null,
+					"start": 1502910741655
+				}
+			],
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": "true\n\/\/not sure if breaking news will be on during this time or not. So not adding breaking news check. Need to confirm."
+			},
+			"stage": "DEVELOPMENT",
+			"uniqueId": "26d6410f-b006-4fb3-854e-998fb2ff7a9b",
+			"variants": [
+				{
+					"branchName": "HurricaneCentralModuleForImpacted",
+					"creationDate": 1502910785232,
+					"creator": "Krishna Chebrolu",
+					"description": "Impacted users have hurricane central module below breaking news. This branch exists in both \"7.10 - 8\" and \"8.0 and up\" seasons.",
+					"displayName": null,
+					"enabled": true,
+					"experimentId": "26d6410f-b006-4fb3-854e-998fb2ff7a9b",
+					"internalUserGroups": [
+						"krishna"
+					],
+					"lastModified": 1504028968369,
+					"name": "HC module below BN",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "var phenomenaCodes = [\"HU\",\"HI\",\"HF\",\"TI\",\"TR\",\"TY\"]\nvar significanceCodes = ['W','A','S']\n\nfunction isImpactedUser(){\n    if(context.weatherSummary !== null && context.weatherSummary.nearestWinterStormAlert !== null){\n        var alert = context.weatherSummary.nearestWinterStormAlert;\n        var phenomenaCode = alert.phenomenaCode;\n        var significanceCode = alert.significanceCode;\n        \n        return (phenomenaCodes.indexOf(phenomenaCode) !== -1) && (significanceCodes.indexOf(significanceCode) !== -1);\n    }\n    \n    return false;\n}\n\ntrue || isImpactedUser();"
+					},
+					"stage": "DEVELOPMENT",
+					"uniqueId": "c15a196c-c05a-440e-9157-a29fee07ff09"
+				},
+				{
+					"branchName": "HurricaneCentralModuleNonImpacted",
+					"creationDate": 1503433102673,
+					"creator": "Krishna Chebrolu",
+					"description": "For non-impacted users hc module will be below daily",
+					"displayName": null,
+					"enabled": true,
+					"experimentId": "26d6410f-b006-4fb3-854e-998fb2ff7a9b",
+					"internalUserGroups": [
+						"krishna"
+					],
+					"lastModified": 1504027432891,
+					"name": "HC module below daily",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "true"
+					},
+					"stage": "DEVELOPMENT",
+					"uniqueId": "17c9c497-032e-4ff2-ba54-c76145a732f8"
+				}
+			]
+		},
+		{
+			"controlGroupVariants": [
+			],
+			"creationDate": 1503357179453,
+			"creator": "Krishna Chebrolu",
+			"description": "New video format",
+			"displayName": null,
+			"enabled": false,
+			"hypothesis": null,
+			"indexExperiment": false,
+			"internalUserGroups": [
+				"krishna"
+			],
+			"lastModified": 1503677387009,
+			"maxVersion": null,
+			"measurements": null,
+			"minVersion": "8.2",
+			"name": "New video format",
+			"owner": null,
+			"productId": "5075765b-0ad6-49be-a1ea-7ac635bf243b",
+			"ranges": [
+			],
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": "true"
+			},
+			"stage": "DEVELOPMENT",
+			"uniqueId": "2ecacfa7-c019-41bd-99e6-20647c6a9972",
+			"variants": [
+				{
+					"branchName": "Video format 2",
+					"creationDate": 1503357250448,
+					"creator": "Krishna Chebrolu",
+					"description": "play icon, description, value = video, forward arrow",
+					"displayName": null,
+					"enabled": false,
+					"experimentId": "2ecacfa7-c019-41bd-99e6-20647c6a9972",
+					"internalUserGroups": [
+						"HeadsUp V2",
+						"krishna"
+					],
+					"lastModified": 1503667609621,
+					"name": "Video layout 2",
+					"rolloutPercentage": 50.0,
+					"rule": {
+						"ruleString": "true"
+					},
+					"stage": "DEVELOPMENT",
+					"uniqueId": "012b624f-70a2-4e5d-b5d1-86d778abef27"
+				},
+				{
+					"branchName": "Video format 1",
+					"creationDate": 1503362225172,
+					"creator": "Krishna Chebrolu",
+					"description": "video thumbnail, description, play icon outline. To be removed and this change should be made in master. Amanda said it is fine if 8.0 and 8.1 people see this too. The change is change icon_cta to \"ic_sys_play_circle_outline\" for both top video 2 and breaking news video tiles.",
+					"displayName": null,
+					"enabled": true,
+					"experimentId": "2ecacfa7-c019-41bd-99e6-20647c6a9972",
+					"internalUserGroups": [
+						"krishna"
+					],
+					"lastModified": 1503504086903,
+					"name": "video layout 1",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "true"
+					},
+					"stage": "DEVELOPMENT",
+					"uniqueId": "c630eb22-b5c6-4a21-a0fa-d897b17354c1"
+				}
+			]
+		}
+	],
+	"lastModified": 1504648794353,
+	"maxExperimentsOn": 1,
+	"productId": "5075765b-0ad6-49be-a1ea-7ac635bf243b"
+}

@@ -1,0 +1,14 @@
+{
+	"codeIdentifier": "OverallProductWithStreams",
+	"name": "OverallProductWithStreams",
+	"seasons": [
+		{
+			"lastModified": 1504013427079,
+			"maxVersion": null,
+			"minVersion": "8.0",
+			"productId": "c8e6145a-20aa-4560-9eda-0fa31577dcfe",
+			"uniqueId": "d23dfd2e-3d8c-415e-a81d-9410b6355e1f"
+		}
+	],
+	"uniqueId": "c8e6145a-20aa-4560-9eda-0fa31577dcfe"
+}

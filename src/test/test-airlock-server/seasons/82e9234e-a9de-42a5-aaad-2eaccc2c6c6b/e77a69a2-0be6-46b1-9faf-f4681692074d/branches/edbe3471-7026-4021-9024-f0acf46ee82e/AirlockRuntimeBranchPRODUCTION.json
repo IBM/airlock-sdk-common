@@ -1,0 +1,29 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchOrderingRuleItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"defaultConfiguration": "{\n\t\"showConsentsUserInterface\":true,\n\t\"cmsRefreshInterval\":1,\n\t\"dsrHost\":\"weather.com\"\n}",
+			"features": [
+			],
+			"name": "Privacy",
+			"namespace": "GDPR",
+			"orderingRules": [
+			],
+			"type": "FEATURE",
+			"uniqueId": "e6e6f2bb-acdb-49d8-9457-1293678a6fd6"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "cmsrefreshtime",
+	"uniqueId": "edbe3471-7026-4021-9024-f0acf46ee82e"
+}

@@ -1,0 +1,258 @@
+{
+	"creationDate": 1499333274851,
+	"creator": "Esteban Zia",
+	"description": "Add subfeature in development and subfeature in prod",
+	"features": [
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"ns.SubFeatureInDev",
+				"ns.SubFeatureInProd"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"configurationSchema": null,
+			"creationDate": 1499243782398,
+			"creator": "Esteban Zia",
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"description": "",
+			"displayName": "ParentFeature2",
+			"enabled": true,
+			"features": [
+				{
+					"additionalInfo": {
+					},
+					"branchStatus": "NEW",
+					"configurationRules": [
+					],
+					"configurationSchema": null,
+					"creationDate": 1499333362387,
+					"creator": "Esteban Zia",
+					"defaultConfiguration": "{\n\t\"value\":\"ParentFeature2SubFeature1InBranch\"\n}",
+					"defaultIfAirlockSystemIsDown": false,
+					"description": "",
+					"displayName": "SubFeatureInDev",
+					"enabled": true,
+					"features": [
+					],
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"lastModified": 1499334842863,
+					"minAppVersion": "1.0",
+					"name": "SubFeatureInDev",
+					"namespace": "ns",
+					"noCachedResults": false,
+					"owner": "Esteban Zia",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"seasonId": "284b3e9a-a2bc-498a-b515-c40584ae9741",
+					"stage": "DEVELOPMENT",
+					"type": "FEATURE",
+					"uniqueId": "5a12f423-ec5d-4fb5-b853-d8014aca446f"
+				},
+				{
+					"additionalInfo": {
+					},
+					"branchStatus": "NEW",
+					"configurationRules": [
+					],
+					"configurationSchema": null,
+					"creationDate": 1499333400091,
+					"creator": "Esteban Zia",
+					"defaultConfiguration": "{\n\t\"value\":\"ParentFeature2SubFeature2InBranch\"\n}",
+					"defaultIfAirlockSystemIsDown": false,
+					"description": "",
+					"displayName": "SubFeatureInProd",
+					"enabled": true,
+					"features": [
+					],
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"lastModified": 1499334853294,
+					"minAppVersion": "1.0",
+					"name": "SubFeatureInProd",
+					"namespace": "ns",
+					"noCachedResults": false,
+					"owner": "Esteban Zia",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"seasonId": "284b3e9a-a2bc-498a-b515-c40584ae9741",
+					"stage": "DEVELOPMENT",
+					"type": "FEATURE",
+					"uniqueId": "8a64cc3e-9251-4315-866f-0d3a9400c05b"
+				}
+			],
+			"internalUserGroups": [
+				"DEV",
+				"QA"
+			],
+			"lastModified": 1499333314826,
+			"minAppVersion": "1.0",
+			"name": "ParentFeature2",
+			"namespace": "ns",
+			"noCachedResults": false,
+			"owner": "Esteban Zia",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "284b3e9a-a2bc-498a-b515-c40584ae9741",
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "2e1728aa-5812-4e44-9ab3-23f5e6b68c48"
+		},
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"mx.418d7efc-7468-4bad-8620-967daa189ccf"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"configurationSchema": null,
+			"creationDate": 1499334054042,
+			"creator": "Esteban Zia",
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"description": "",
+			"displayName": "ParentFeatureWithMTX2",
+			"enabled": true,
+			"features": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+						"ns.SubFeatureInMTX12",
+						"ns.SubFeatureInMTX22"
+					],
+					"branchStatus": "CHECKED_OUT",
+					"features": [
+						{
+							"additionalInfo": {
+							},
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"configurationSchema": null,
+							"creationDate": 1499334054042,
+							"creator": "Esteban Zia",
+							"defaultConfiguration": "{\n\t\"value\":\"SubFeatureInMTX1Branch\"\n}",
+							"defaultIfAirlockSystemIsDown": false,
+							"description": "",
+							"displayName": "SubFeatureInMTX1",
+							"enabled": true,
+							"features": [
+							],
+							"internalUserGroups": [
+								"DEV",
+								"QA"
+							],
+							"lastModified": 1499339398863,
+							"minAppVersion": "1.0",
+							"name": "SubFeatureInMTX12",
+							"namespace": "ns",
+							"noCachedResults": false,
+							"owner": "Esteban Zia",
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": ""
+							},
+							"seasonId": "284b3e9a-a2bc-498a-b515-c40584ae9741",
+							"stage": "PRODUCTION",
+							"type": "FEATURE",
+							"uniqueId": "0e648bc7-20de-4233-b3be-223559f0d311"
+						},
+						{
+							"additionalInfo": {
+							},
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"configurationSchema": null,
+							"creationDate": 1499334054042,
+							"creator": "Esteban Zia",
+							"defaultConfiguration": "{\n\t\"value\":\"SubFeatureInMTX2Branch\"\n}",
+							"defaultIfAirlockSystemIsDown": false,
+							"description": "",
+							"displayName": "SubFeatureInMTX2",
+							"enabled": true,
+							"features": [
+							],
+							"internalUserGroups": [
+								"DEV",
+								"QA"
+							],
+							"lastModified": 1499339419913,
+							"minAppVersion": "1.0",
+							"name": "SubFeatureInMTX22",
+							"namespace": "ns",
+							"noCachedResults": false,
+							"owner": "Esteban Zia",
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": ""
+							},
+							"seasonId": "284b3e9a-a2bc-498a-b515-c40584ae9741",
+							"stage": "PRODUCTION",
+							"type": "FEATURE",
+							"uniqueId": "cb8d5e60-5c7c-4b09-929d-4953a964d3de"
+						}
+					],
+					"lastModified": 1499336161600,
+					"maxFeaturesOn": 1,
+					"seasonId": "284b3e9a-a2bc-498a-b515-c40584ae9741",
+					"type": "MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "418d7efc-7468-4bad-8620-967daa189ccf"
+				}
+			],
+			"internalUserGroups": [
+				"DEV",
+				"QA"
+			],
+			"lastModified": 1499336133108,
+			"minAppVersion": "1.0",
+			"name": "ParentFeatureWithMTX2",
+			"namespace": "ns",
+			"noCachedResults": false,
+			"owner": "Esteban Zia",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "284b3e9a-a2bc-498a-b515-c40584ae9741",
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "330abc4b-6846-47cb-8bd4-1f4bb2eb49c5"
+		}
+	],
+	"lastModified": 1499333274851,
+	"name": "branch5",
+	"seasonId": "284b3e9a-a2bc-498a-b515-c40584ae9741",
+	"uniqueId": "06f53575-33df-45af-90c7-b8c920d5579f"
+}

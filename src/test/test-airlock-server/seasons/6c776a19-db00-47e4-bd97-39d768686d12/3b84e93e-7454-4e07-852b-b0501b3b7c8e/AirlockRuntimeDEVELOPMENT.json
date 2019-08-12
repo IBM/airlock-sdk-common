@@ -1,0 +1,779 @@
+{
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"maxVersion": "7.8",
+	"minVersion": "7.6",
+	"productId": "6c776a19-db00-47e4-bd97-39d768686d12",
+	"productName": "MTXGroupingAllTrue",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"branchStatus": "NONE",
+				"features": [
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "A",
+						"namespace": "group1",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "c525ee93-aa3c-4618-a654-e5539a19f800"
+					},
+					{
+						"branchStatus": "NONE",
+						"features": [
+							{
+								"additionalInfo": {
+								},
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "7.5",
+								"name": "B",
+								"namespace": "group1",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "7612b7de-28e5-494d-a723-425731d38b44"
+							},
+							{
+								"additionalInfo": null,
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "7.5",
+								"name": "C",
+								"namespace": "group1",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "2427396f-e64d-4053-b842-1a4330ccb569"
+							},
+							{
+								"additionalInfo": null,
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "7.5",
+								"name": "D",
+								"namespace": "group1",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "8961bc4c-84b1-4f77-8bdc-21dd6adb1de1"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"orderingRules": [
+						],
+						"type": "MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "38055fe0-9ce3-48f6-835a-d94e482d3739"
+					},
+					{
+						"additionalInfo": null,
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "E",
+						"namespace": "group1",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "237dd333-61d2-442b-8dd4-902d4a4fbd2d"
+					}
+				],
+				"maxFeaturesOn": 3,
+				"orderingRules": [
+				],
+				"type": "MUTUAL_EXCLUSION_GROUP",
+				"uniqueId": "f4b1f068-d3f4-4cfd-ab10-218afafbb048"
+			},
+			{
+				"branchStatus": "NONE",
+				"features": [
+					{
+						"branchStatus": "NONE",
+						"features": [
+							{
+								"additionalInfo": null,
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "7.5",
+								"name": "B",
+								"namespace": "group2",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "66dfb7f7-593f-4f84-ab06-c1843e7793c8"
+							},
+							{
+								"additionalInfo": null,
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "7.5",
+								"name": "C",
+								"namespace": "group2",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "3a0c3918-59b9-4dc6-81ba-c0d74c4f9579"
+							},
+							{
+								"additionalInfo": null,
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "7.5",
+								"name": "E",
+								"namespace": "group2",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "2cee84b7-e86f-4a4e-8483-4574ee6d74c4"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"orderingRules": [
+						],
+						"type": "MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "c87f3eaa-f9e3-4808-8d62-5dcb40d71eeb"
+					},
+					{
+						"additionalInfo": null,
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "A",
+						"namespace": "group2",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "13e0d0ab-27e9-42e6-a5e8-d840efad44cb"
+					},
+					{
+						"additionalInfo": null,
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "D",
+						"namespace": "group2",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "91b6609e-a5e3-49f3-a357-af9a43062d63"
+					}
+				],
+				"maxFeaturesOn": 3,
+				"orderingRules": [
+				],
+				"type": "MUTUAL_EXCLUSION_GROUP",
+				"uniqueId": "b27fedcf-01dc-4faf-8e75-7fe7bcc45d6e"
+			},
+			{
+				"branchStatus": "NONE",
+				"features": [
+					{
+						"additionalInfo": null,
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "A",
+						"namespace": "group3",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "a7622375-b7ad-443c-9fe6-5dcc91bd6bff"
+					},
+					{
+						"additionalInfo": null,
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "E",
+						"namespace": "group3",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "63d36686-44dd-4eb3-b361-4ab92e9678db"
+					},
+					{
+						"branchStatus": "NONE",
+						"features": [
+							{
+								"additionalInfo": null,
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "7.5",
+								"name": "B",
+								"namespace": "group3",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "523f4630-a36e-490f-b44e-26f54c7f076b"
+							},
+							{
+								"additionalInfo": null,
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "7.5",
+								"name": "C",
+								"namespace": "group3",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "c76cc70c-fdad-4f99-8bbf-4b4da7ee8dd3"
+							},
+							{
+								"additionalInfo": null,
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "7.5",
+								"name": "D",
+								"namespace": "group3",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "1d64f00a-6229-42e8-8fa6-0c7dc5f4a3bd"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"orderingRules": [
+						],
+						"type": "MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "6c402125-34f4-473b-b877-4f40a05bb607"
+					}
+				],
+				"maxFeaturesOn": 3,
+				"orderingRules": [
+				],
+				"type": "MUTUAL_EXCLUSION_GROUP",
+				"uniqueId": "1569598b-1ca2-4808-8963-17b412844153"
+			},
+			{
+				"branchStatus": "NONE",
+				"features": [
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "A",
+						"namespace": "group4",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "5fef37fa-3e44-40e3-8b5e-b76cd788642e"
+					},
+					{
+						"branchStatus": "NONE",
+						"features": [
+							{
+								"additionalInfo": null,
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "7.5",
+								"name": "B",
+								"namespace": "group4",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "33c745fe-70a7-4152-a034-cce9d8465264"
+							},
+							{
+								"additionalInfo": null,
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "7.5",
+								"name": "C",
+								"namespace": "group4",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "ad8f3f85-a604-443f-85af-6052627d6c91"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"orderingRules": [
+						],
+						"type": "MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "6925f0a1-8392-4994-bb4f-c3413fc89e35"
+					}
+				],
+				"maxFeaturesOn": 1,
+				"orderingRules": [
+				],
+				"type": "MUTUAL_EXCLUSION_GROUP",
+				"uniqueId": "dac1df84-05a7-4510-833f-11f0fc657520"
+			},
+			{
+				"branchStatus": "NONE",
+				"features": [
+					{
+						"additionalInfo": null,
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "A",
+						"namespace": "group5",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "6337a03d-0707-4885-8d90-84b6de44462c"
+					},
+					{
+						"branchStatus": "NONE",
+						"features": [
+							{
+								"additionalInfo": null,
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "7.5",
+								"name": "E",
+								"namespace": "group5",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "8eddf51c-2ea2-497f-ab16-eabcdf8bf568"
+							},
+							{
+								"branchStatus": "NONE",
+								"features": [
+									{
+										"additionalInfo": null,
+										"branchStatus": "NONE",
+										"configurationRules": [
+										],
+										"defaultConfiguration": null,
+										"defaultIfAirlockSystemIsDown": false,
+										"enabled": true,
+										"features": [
+										],
+										"internalUserGroups": [
+											"AndroidDEV"
+										],
+										"minAppVersion": "7.5",
+										"name": "B",
+										"namespace": "group5",
+										"noCachedResults": false,
+										"orderingRules": [
+										],
+										"rolloutPercentage": 100.0,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"ruleString": ""
+										},
+										"stage": "DEVELOPMENT",
+										"type": "FEATURE",
+										"uniqueId": "0c10a79f-8a04-499f-b9d1-c65a8932d99c"
+									},
+									{
+										"additionalInfo": null,
+										"branchStatus": "NONE",
+										"configurationRules": [
+										],
+										"defaultConfiguration": null,
+										"defaultIfAirlockSystemIsDown": false,
+										"enabled": true,
+										"features": [
+										],
+										"internalUserGroups": [
+											"AndroidDEV"
+										],
+										"minAppVersion": "7.5",
+										"name": "C",
+										"namespace": "group5",
+										"noCachedResults": false,
+										"orderingRules": [
+										],
+										"rolloutPercentage": 100.0,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"ruleString": ""
+										},
+										"stage": "DEVELOPMENT",
+										"type": "FEATURE",
+										"uniqueId": "292f5707-517d-4c4c-8446-2a247e0bce7d"
+									}
+								],
+								"maxFeaturesOn": 1,
+								"orderingRules": [
+								],
+								"type": "MUTUAL_EXCLUSION_GROUP",
+								"uniqueId": "f54be247-748d-45c3-9b13-4125156818d9"
+							},
+							{
+								"additionalInfo": null,
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "7.5",
+								"name": "D",
+								"namespace": "group5",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "c0ab44fa-4fc4-48a1-926b-335fc8ce9a8a"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"orderingRules": [
+						],
+						"type": "MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "7d41d496-0616-4e76-b505-0c0a2c2e4a4b"
+					}
+				],
+				"maxFeaturesOn": 4,
+				"orderingRules": [
+				],
+				"type": "MUTUAL_EXCLUSION_GROUP",
+				"uniqueId": "c22438ec-b7ad-4c94-9efe-4640c8170e6a"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "ba7176b8-db42-430b-be9e-06ff28b11931"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "3b84e93e-7454-4e07-852b-b0501b3b7c8e",
+	"serverVersion": "V0",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2"
+}

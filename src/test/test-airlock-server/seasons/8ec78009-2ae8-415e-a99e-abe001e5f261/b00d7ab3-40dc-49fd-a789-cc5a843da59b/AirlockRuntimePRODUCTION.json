@@ -1,0 +1,51 @@
+{
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "2.0",
+	"productId": "8ec78009-2ae8-415e-a99e-abe001e5f261",
+	"productName": "QA.JSFileTest",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": null,
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"minAppVersion": "2.0",
+				"name": "JSFileFeature",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "0f6fe247-4fbf-4249-9f3b-571b5a45e792"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "54cde9df-e997-4b39-9530-4b42bce9562e"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "b00d7ab3-40dc-49fd-a789-cc5a843da59b",
+	"serverVersion": "V2.5",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

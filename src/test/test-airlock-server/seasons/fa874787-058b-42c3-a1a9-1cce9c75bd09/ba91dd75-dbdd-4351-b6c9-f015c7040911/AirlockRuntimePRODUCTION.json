@@ -1,0 +1,38 @@
+{
+	"maxVersion": "7.10",
+	"minVersion": "7.8",
+	"productId": "fa874787-058b-42c3-a1a9-1cce9c75bd09",
+	"root": {
+		"features": [
+			{
+				"additionalInfo": null,
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"minAppVersion": "7.8",
+				"name": "f2",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "09c3b04c-dcd7-4f8e-9e66-e8ec4d97c2a1"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "898f2224-8bc8-4697-915b-925ee287be22"
+	},
+	"seasonId": "ba91dd75-dbdd-4351-b6c9-f015c7040911",
+	"version": "V2.1"
+}

@@ -1,0 +1,118 @@
+{
+    "twcRelease": {
+        "appVersion": "9.1.0",
+        "svcCommit": "build-423502",
+        "appName": "The Weather"
+    },
+    "endSession": 1504239331308,
+    "os": {
+        "version": "10.2.1",
+        "platform": "iphone"
+    },
+    "sessionID": "77ACFECC-199C-43D0-9654-0AA2332600CE",
+    "network": {
+        "carrierNetworkClass": "unknown",
+        "carrier": "ATT",
+        "networkType": "wifi"
+    },
+    "places": [],
+    "startSession": 1504239209061,
+    "locations": [{
+        "dateTime": 1504239215310,
+        "altitude": 281.6800842285156,
+        "vertAccuracy": 10,
+        "horizAccuracy": 65,
+        "timezoneOffset": -4,
+        "foreground": true,
+        "coords": {
+            "lon": -84.46029,
+            "lat": 33.8937
+        },
+        "speed": -1
+    }, {
+        "dateTime": 1504239215329,
+        "altitude": 281.6800842285156,
+        "vertAccuracy": 10,
+        "horizAccuracy": 65,
+        "timezoneOffset": -4,
+        "foreground": true,
+        "coords": {
+            "lon": -84.46029,
+            "lat": 33.8937
+        },
+        "speed": -1
+    }, {
+        "dateTime": 1504239216220,
+        "altitude": 281.6800842285156,
+        "vertAccuracy": 10,
+        "horizAccuracy": 65,
+        "timezoneOffset": -4,
+        "foreground": true,
+        "coords": {
+            "lon": -84.46029,
+            "lat": 33.8937
+        },
+        "speed": -1
+    }, {
+        "dateTime": 1504239216223,
+        "altitude": 281.6800842285156,
+        "vertAccuracy": 10,
+        "horizAccuracy": 65,
+        "timezoneOffset": -4,
+        "foreground": true,
+        "coords": {
+            "lon": -84.46029,
+            "lat": 33.8937
+        },
+        "speed": -1
+    }],
+    "metrics": {
+        "timers": [{
+            "duration": 9987.618029117584,
+            "name": "com.weather.SeveralRecords.request",
+            "description": "https:\/\/api.weather.com\/v2\/turbo\/vt1observation;vt1hourlyforecast;vt1backgroundImages;vt1dailyForecast;vt1loc;v3-location-point;vt1nowcast;vt1pollenobs;vt1idxPollenDaypart;vt1pastPollen;vt1precipitation;vt1contentMode;vt1idxBreathingDaypart;vt1runweatherhourly;vt1flu;vt1pastFlu;vt1alerts;vt1lightning;v2idxDriveCurrent;vt1currentTides?format=json&language=en-US&apiKey=6cb1eb34e7a0cc1c89a5a2521c305363&units=e&imageGroup=m3&pollenDays=1&pollenStartDate=20170831&geocode=33.89,-84.46",
+            "startEpochMillis": 1504239215327
+        }],
+        "counters": [{
+            "name": "com.weather.error.requesting.Turbo",
+            "count": 1
+        }],
+        "gauges": []
+    },
+    "nameSpace": "com.weather",
+    "user": {
+        "entitlements": [],
+        "adId": "8501949E-9F84-4D28-8683-3C5AEBFB1CA3",
+        "followMeEnabled": true,
+        "registered": false,
+        "userType": "prod",
+        "id": "",
+        "gpsEnabled": true,
+        "authenticatedUsing": "unknown",
+        "pushAlertsEnabled": false,
+        "limitedAdId": "8501949E-9F84-4D28-8683-3C5AEBFB1CA3"
+    },
+    "device": {
+        "deviceType": "mobile",
+        "model": "N61AP",
+        "locale": "en_US",
+        "manufacturer": "Apple"
+    },
+    "events": [{
+        "dateTime": 1504239214777,
+        "eventData": {
+            "productId": "7900f30b-8f47-4829-95c5-9d4d6e8564ee",
+            "seasonId": "",
+            "airlockVersion": "V3.0"
+        },
+        "name": "airlock-config"
+    }, {
+        "dateTime": 1504239215057,
+        "eventData": {
+            "method": "ftl",
+            "foreground": true,
+            "target": null
+        },
+        "name": "app-launch"
+    }]
+}

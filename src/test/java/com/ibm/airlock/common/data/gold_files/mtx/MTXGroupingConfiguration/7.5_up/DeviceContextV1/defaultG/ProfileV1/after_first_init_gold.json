@@ -1,0 +1,105 @@
+{
+  "testName": "configuration",
+  "productName": "ConfigurationsWithSubConfig",
+  "productId": "2749cb61-1436-45d2-afdf-d866015b7971",
+  "seasonLogicalName": "7.5_up",
+  "seasonId": "a62947a8-3e24-43bc-bb6c-55e107c123c7",
+  "deviceContextFilePath": "test_data\/mtx\/MTXGroupingConfiguration\/7.5_up\/device_contexts\/DeviceContextV1.json",
+  "groupsFilePath": "test_data\/mtx\/MTXGroupingConfiguration\/7.5_up\/groups\/defaultG.json",
+  "profileFilePath": "test_data\/mtx\/MTXGroupingConfiguration\/7.5_up\/profiles\/ProfileV1.json",
+  "root": {
+    "features": [
+      {
+        "featureAttributes": {
+          "value1": "value1",
+          "value2": "value2",
+          "value3": "value3"
+        },
+        "features": [
+        ],
+        "isON": false,
+        "name": "group1.feature1",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": {
+          "value1": "value1",
+          "value2": "value2",
+          "value3": "value3"
+        },
+        "features": [
+        ],
+        "isON": false,
+        "name": "feature2.feature2",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": {
+          "value1": "value1",
+          "value2": "value2",
+          "value5": "value5"
+        },
+        "features": [
+        ],
+        "isON": false,
+        "name": "feature3.feature3",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": {
+          "value1": "value1"
+        },
+        "features": [
+        ],
+        "isON": false,
+        "name": "feature4.feature4",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": {
+          "value1": "value1",
+          "value2": "value2",
+          "value4": "value4"
+        },
+        "features": [
+        ],
+        "isON": false,
+        "name": "feature5.feature5",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": {
+          "value1": "value1",
+          "value1a": "value1a",
+          "value3": "value3",
+          "value4": "value4",
+          "value5": "value5"
+        },
+        "features": [
+        ],
+        "isON": false,
+        "name": "feature6.feature6",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": {
+          "value": "value3"
+        },
+        "features": [
+        ],
+        "isON": false,
+        "name": "feature7.feature7",
+        "resultTrace": "",
+        "type": "FEATURE"
+      }
+    ],
+    "type": "ROOT",
+    "uniqueId": "a7ba8a16-cf6d-4e80-a78a-9ecae3534180"
+  }
+}

@@ -1,0 +1,23 @@
+{
+	"branches": [
+		{
+			"creationDate": 1509269305953,
+			"creator": "Esteban Zia",
+			"description": null,
+			"lastModified": 1509269305953,
+			"name": "Branch1",
+			"seasonId": "9e3b4ec9-70c1-427d-a92d-244fb869ca6f",
+			"uniqueId": "9c8b475f-b2c5-471b-81dc-41b10030a45e"
+		},
+		{
+			"creationDate": 1509269363204,
+			"creator": "Esteban Zia",
+			"description": null,
+			"lastModified": 1509269363204,
+			"name": "Branch2",
+			"seasonId": "9e3b4ec9-70c1-427d-a92d-244fb869ca6f",
+			"uniqueId": "ade57959-07a8-45cf-8fc8-9d1af357b693"
+		}
+	],
+	"seasonId": "9e3b4ec9-70c1-427d-a92d-244fb869ca6f"
+}

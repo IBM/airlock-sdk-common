@@ -1,0 +1,50 @@
+{
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": "2.0",
+	"minVersion": "1.0",
+	"productId": "fec9177f-15ef-421c-a1e1-8cec493c0cc3",
+	"productName": "QA.WhiteListAndroid",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": null,
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+				],
+				"minAppVersion": "1.0",
+				"name": "f1",
+				"namespace": "wl",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "ba9b77c3-656f-491c-a29c-5b652d4a4266"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "6816907a-2100-4dbb-9b67-7d8ee7d6e151"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "137c8f02-e09d-43d2-bbcd-5b52736c7977",
+	"serverVersion": "V2.5",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

@@ -1,0 +1,312 @@
+{
+	"maxVersion": "7.8",
+	"minVersion": "7.5",
+	"productId": "0dbc97c5-6003-49d4-b04a-7ca1b79636be",
+	"root": {
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": "{\n\t\"a\":\"a\",\n\t\"g\":\"g\",\n\t\"ddddd\":{\n\t\t\"a\":\"f\",\n\t\t\"g\":\"gggg\"\n\t}\n}",
+						"configurationRules": [
+						],
+						"enabled": false,
+						"internalUserGroups": [
+							"QA"
+						],
+						"minAppVersion": "3",
+						"name": "a",
+						"namespace": "nsparent",
+						"noCachedResults": false,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "09a6aa74-0afd-49da-ad58-7f4802bae166"
+					}
+				],
+				"defaultConfiguration": "{\"a\":\"b\",\"h\" :{\"d\":\"g\"}}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+					{
+						"additionalInfo": {
+						},
+						"configurationRules": [
+						],
+						"defaultConfiguration": "{\"a\":\"ddddd\"}",
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": false,
+						"features": [
+						],
+						"internalUserGroups": [
+							"QA"
+						],
+						"minAppVersion": "1.0",
+						"name": "f3",
+						"namespace": "ns",
+						"noCachedResults": false,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "9b870544-fbb9-4e46-b91a-3bfa510eb626"
+					}
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"minAppVersion": "1.0",
+				"name": "parent",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "defbdc2e-5403-4196-9cfe-5709966b7825"
+			},
+			{
+				"features": [
+					{
+						"additionalInfo": null,
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": false,
+						"features": [
+						],
+						"internalUserGroups": [
+							"QA"
+						],
+						"minAppVersion": "1.0",
+						"name": "f2",
+						"namespace": "ns",
+						"noCachedResults": false,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "dbd29f5c-52e9-446e-b2c1-14caefd259dd"
+					},
+					{
+						"additionalInfo": null,
+						"configurationRules": [
+							{
+								"configuration": "{\"background\":\"white\",\"color\":\"blue\"}",
+								"configurationRules": [
+								],
+								"enabled": true,
+								"internalUserGroups": [
+									"QA"
+								],
+								"minAppVersion": "1.0",
+								"name": "conf",
+								"namespace": "nsf1",
+								"noCachedResults": false,
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "efa38961-6584-4abd-8f37-0329c0cc79be"
+							},
+							{
+								"configuration": "{\"f\":\"f\"}",
+								"configurationRules": [
+								],
+								"enabled": false,
+								"internalUserGroups": [
+									"DEV"
+								],
+								"minAppVersion": "t",
+								"name": "dfsdf",
+								"namespace": "nsf1",
+								"noCachedResults": false,
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "3421b4f6-a19b-431b-b931-7af246a48d08"
+							}
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"QA"
+						],
+						"minAppVersion": "1.0",
+						"name": "f1",
+						"namespace": "ns",
+						"noCachedResults": false,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "0181d53b-5365-46ae-a79f-eaba2e50f432"
+					}
+				],
+				"maxFeaturesOn": 1,
+				"type": "MUTUAL_EXCLUSION_GROUP",
+				"uniqueId": "b80e5e48-26ad-46ec-841f-66bdfd50a861"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"minAppVersion": "7.5",
+				"name": "no.cache.f",
+				"namespace": "ns",
+				"noCachedResults": true,
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.profile == \"{}\""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "b0ce24e6-8692-40c4-9dd0-53cd141c6919"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+				],
+				"defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"now\"\n\t},\n\t\"descriptor\":\"SUNRISE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_sunsrise_sunset_icon\"\n\t},\n\t\"analyticsTileName\":\"Sunset\/Sunrise\"\n}",
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"minAppVersion": "1.0",
+				"name": "no.cache.f2",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "fd9d27fd-aa63-4401-9c2b-98af9d63dcf6"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+				],
+				"minAppVersion": "7.5",
+				"name": "f8",
+				"namespace": "ns",
+				"noCachedResults": true,
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.viewedLocation.lon==\"US\""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "72411f1c-b154-44e2-b50c-817f1c3d3f67"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+				],
+				"minAppVersion": "7.5",
+				"name": "f9",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.viewedLocation.lon==\"CO\""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "1e3c8870-3d6a-47fb-9a9f-6983363e57f6"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+				],
+				"minAppVersion": "7.5",
+				"name": "f10",
+				"namespace": "ns",
+				"noCachedResults": true,
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.viewedLocation.lon==\"CO\""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "9b6f8179-1796-462b-b068-c786cd9a9ccc"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "8d3aa6b8-e3ac-4044-a7e9-fa2e0238aeb0"
+	},
+	"seasonId": "ec31d0cb-6454-4150-a24a-8ab71760fd1c",
+	"version": "V2"
+}

@@ -1,0 +1,29 @@
+{
+  "devS3Path": "http://localhost:8000/test-airlock-server",
+  "defaultLanguage": "en",
+  "productId": "e5a3759a-6be6-4791-aac0-62a658706d53",
+  "s3Path": "http://localhost:8000/test-airlock-server",
+  "supportedLanguages": [
+    "en"
+  ],
+  "seasonId": "3a48de16-0ed5-4091-9d02-a4fcb73300c0",
+  "root": {
+    "features": [
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "F1",
+        "namespace": "f1",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "55871a0f-afed-4281-8dd3-27848ea2f8b6"
+      }
+    ],
+    "type": "ROOT",
+    "uniqueId": "c2e36b40-3996-432b-829a-c976e02a92ba"
+  },
+  "version": "V2.5",
+  "productName": "ExperimentsAndVariantsPercentage"
+}

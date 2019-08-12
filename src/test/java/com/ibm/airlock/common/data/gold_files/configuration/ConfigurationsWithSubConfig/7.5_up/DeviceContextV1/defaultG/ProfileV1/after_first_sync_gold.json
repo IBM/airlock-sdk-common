@@ -1,0 +1,63 @@
+{
+  "testName": "configuration",
+  "productName": "ConfigurationsWithSubConfig",
+  "productId": "6f733d14-2d05-4120-a779-c5f1e5e43e55",
+  "seasonLogicalName": "7.5_up",
+  "seasonId": "7e4b1154-e02a-4306-9831-5115bda195d5",
+  "deviceContextFilePath": "test_data\/configuration\/ConfigurationWithRules\/7.5_up\/device_contexts\/DeviceContextV1.json",
+  "groupsFilePath": "test_data\/configuration\/ConfigurationWithRules\/7.5_up\/groups\/defaultG.json",
+  "profileFilePath": "test_data\/configuration\/ConfigurationWithRules\/7.5_up\/profiles\/ProfileV1.json",
+  "root": {
+    "features": [
+      {
+        "featureAttributes": {
+          "value1": "value1",
+          "value2": "value2",
+          "value3": "value3"
+        },
+        "features": [
+        ],
+        "isON": true,
+        "name": "feature1.feature1.aggregate.alltrue",
+        "resultTrace": "Configurations: [defaultConfiguration, feature1feature1.config1, feature1feature1config1.config2, feature1feature1config1.config3]",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": {
+          "value1": "value3"
+        },
+        "features": [
+        ],
+        "isON": true,
+        "name": "feature2.feature2.overwrite.alltrue",
+        "resultTrace": "Configurations: [defaultConfiguration, feature2feature2.config1, feature2feature2config1.config2, feature2feature2config1.config3]",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": {
+          "value1": "value3",
+          "value3": "value3a"
+        },
+        "features": [
+        ],
+        "isON": true,
+        "name": "feature3.feature3.false",
+        "resultTrace": "Configurations: [defaultConfiguration, feature3feature3false.config1, feature3feature3falseconfig1.config3]",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": {
+          "value1": "value4"
+        },
+        "features": [
+        ],
+        "isON": true,
+        "name": "feature4.feature4.overwrite.hierarchy",
+        "resultTrace": "Configurations: [defaultConfiguration, feature4feature4overwritehierarchy.config1, feature4feature4overwritehierarchyconfig1.config2, feature4feature4overwritehierarchyconfig1config2.config3, feature4feature4overwritehierarchyconfig1.config4]",
+        "type": "FEATURE"
+      }
+    ],
+    "type": "ROOT",
+    "uniqueId": "18201f86-025b-4825-b8b9-a7615d4555ec"
+  }
+}

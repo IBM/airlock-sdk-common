@@ -1,0 +1,15 @@
+{
+  "demographics": {
+    "firstName": "John",
+    "email": "jdoe@yahoo.com",
+    "lastName": "Doe",
+    "ageRange": "35-44",
+    "gender": "M",
+    "dob": "1997-09-01",
+    "acceptedTerms": true
+  },
+  "preferences": {
+    "language": "en-US",
+    "locale": "en_US"
+  }
+}

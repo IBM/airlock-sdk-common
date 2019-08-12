@@ -1,0 +1,115 @@
+{
+	"branches": [
+	],
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3.amazonaws.com\/airlockprod\/PROD1\/",
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "1.1",
+	"productId": "040ed15a-dbe4-4743-a87b-7a85c2eeb617",
+	"productName": "Android TWC Storm Radar",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": "{\n    \n}",
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": true,
+				"features": [
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": "{\n\t\"priority\":1,\n\t\"intervalInMin\":15,\n\t\"fastestIntervalInMin\":15,\n\t\"displacementInMts\":100\n}",
+						"defaultIfAirlockSystemIsDown": true,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"QA"
+						],
+						"minAppVersion": "1.4.3",
+						"name": "Location",
+						"namespace": "SensorKit",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "d31aff1d-a332-4484-a196-3669b661e941"
+					}
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"minAppVersion": "1.4.3",
+				"name": "SensorKit",
+				"namespace": "SensorKit",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "80d4dc95-256a-4602-8d2c-7286d9a89eb1"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": "{\n\t\"featureON\":true\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"Ihor Vlasyuk "
+				],
+				"minAppVersion": "1.6",
+				"name": "AdFreeSubscription",
+				"namespace": "InAppPurchase",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "e4f17990-1d1b-40f7-ba31-5d3c0e07f3ff"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "49816f5f-7651-40de-a37b-721277815ddc"
+	},
+	"s3Path": "https:\/\/s.w-x.co\/airlock\/PROD1\/",
+	"seasonId": "597fa65c-7eeb-4cc9-83d5-af06bb33f092",
+	"serverVersion": "V4.5",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

@@ -1,0 +1,65 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+				"RatingsSmartRatings.Smart Ratings Test",
+				"RatingsSmartRatings.Path Configuration"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchOrderingRuleItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchOrderingRuleItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"name": "Smart Ratings Test",
+					"namespace": "RatingsSmartRatings",
+					"type": "CONFIGURATION_RULE",
+					"uniqueId": "07d43db6-4c7c-4134-994a-aecf98043a2a"
+				},
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchOrderingRuleItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"name": "Path Configuration",
+					"namespace": "RatingsSmartRatings",
+					"type": "CONFIGURATION_RULE",
+					"uniqueId": "c1fef3fd-ab52-4f13-a209-c0846f28a788"
+				}
+			],
+			"defaultConfiguration": "{\n\t\"useNative\":false,\n\t\"throttle\":100,\n\t\"launches\":2\n}",
+			"description": "By default, will use custom Smart Ratings system until Apple uses its way of shutting that whole thing down.",
+			"features": [
+			],
+			"name": "Smart Ratings",
+			"namespace": "Ratings",
+			"orderingRules": [
+			],
+			"rule": {
+				"ruleString": "context.device.daysSinceAppInstall <= 30"
+			},
+			"type": "FEATURE",
+			"uniqueId": "c20432a0-566b-412d-9900-b3bac89ab497"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "smart rating",
+	"uniqueId": "2e6711da-bc5e-4bd3-9ac3-e1287cac8a67"
+}

@@ -1,0 +1,2767 @@
+{
+  "devS3Path": "http://localhost:8000/test-airlock-server",
+  "defaultLanguage": "en",
+  "productId": "2dda96ae-213c-4014-89e3-4582bfc2dd23",
+  "s3Path": "http://localhost:8000/test-airlock-server",
+  "supportedLanguages": [
+    "en",
+    "ar",
+    "ca",
+    "cs",
+    "da",
+    "de",
+    "el",
+    "en_AU",
+    "en_GB",
+    "es",
+    "fa",
+    "fi",
+    "fr",
+    "fr_CA",
+    "hi",
+    "hr",
+    "hu",
+    "in",
+    "it",
+    "iw",
+    "ja",
+    "ko",
+    "ms",
+    "nb",
+    "nl",
+    "no",
+    "pl",
+    "pt",
+    "pt_BR",
+    "ro",
+    "ru",
+    "sk",
+    "sv",
+    "th",
+    "tr",
+    "uk",
+    "vi",
+    "zh_CN",
+    "zh_TW"
+  ],
+  "seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+  "root": {
+    "features": [
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": true,
+        "features": [
+          {
+            "features": [],
+            "maxFeaturesOn": 12,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "9b75a4a5-d6a0-4cdf-a9eb-98f54fae664d"
+          },
+          {
+            "features": [
+              {
+                "defaultConfiguration": null,
+                "defaultIfAirlockSystemIsDown": false,
+                "features": [
+                  {
+                    "features": [
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"breaking-news\",\n\t\"description\":\"Displaysbreakingnews.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.breaking.spotlight\",\n\t\"beacon\":\"news:breaking:news:displayed\",\n\t\"adjacentAdParameters\":{\n\t\t\"fam\":\"sev\",\n\t\t\"ch\":\"bn\"\n\t}\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Breaking NewsTEST",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "56cf6a2c-1a66-47ca-87e6-b5cc20dbd86a"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"breaking-news\",\n\t\"description\":\"Displaysbreakingnews.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.breaking.spotlight\",\n\t\"beacon\":\"news:breaking:news:displayed\",\n\t\"adjacentAdParameters\":{\n\t\t\"fam\":\"sev\",\n\t\t\"ch\":\"bn\"\n\t},\n\t\"title\":\"Chasing Eclipse 2017\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Breaking News",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "01ed9df2-ff5f-47b3-86ba-33e0484d7f65"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"current-conditions\",\n\t\"description\":\"Displayscurrentconditions.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.bb\",\n\t\"beacon\":\"weather:current:conditions:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": true,
+                        "features": [
+                          {
+                            "defaultConfiguration": null,
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Video Enabled",
+                            "namespace": "modules",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "c3c2dcea-c9f0-4d25-8e4a-8d7c90d37dbc"
+                          }
+                        ],
+                        "name": "Right Now",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "fb8d3203-3038-4ec0-8a7a-3008d0fd29e7"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"hourly\",\n\t\"description\":\"Displayshourlyweatherinformation.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.hourly\",\n\t\"beacon\":\"weather:hourly:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": true,
+                        "features": [],
+                        "name": "Hourly",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "17980e98-7f32-4191-8a4a-f027d4d4b022"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"ten-day\",\n\t\"description\":\"Displaystendayforecast.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.10day\",\n\t\"beacon\":\"weather:10-day:displayed\",\n\t\"days\":15\n}",
+                        "defaultIfAirlockSystemIsDown": true,
+                        "features": [],
+                        "name": "Daily",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "ed8ec4a0-068c-4d85-a4b4-0200a52a2054"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"video3\",\n\t\"description\":\"Displaysvideomodulewith3thumbnails.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"\",\n\t\"beacon\":\"video:video:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Video",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "bf2080fc-afcd-4ec9-afeb-ca9df3b49620"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"map\",\n\t\"description\":\"Displaysradarmap.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": true,
+                        "features": [],
+                        "name": "Radar Maps",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "b0032331-da9e-4366-b8ec-89f69098de8e"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"driving-difficulty\",\n\t\"description\":\"Displaysradarmap.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": true,
+                        "features": [],
+                        "name": "Road Conditions",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "d0d566fa-f296-441c-b6c0-990e3ec6a8e4"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"outdoor\",\n\t\"description\":\"Displaysrunweatherindexinformation.\",\n\t\"type\":\"native\",\n\t\"hideable\":false,\n\t\"adSlot\":\"\",\n\t\"sponsored\":false\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Outdoor",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "16df0769-f380-456e-ba52-6320a56a3825"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"health\",\n\t\"description\":\"Displayshealthinformation.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"\",\n\t\"beacon\":\"pollen:pollen:displayed\",\n\t\"adjacentAdParameters\":{\n\t\t\"fam\":\"hlth,allergy\",\n\t\t\"ch\":\"pollencast\"\n\t}\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [
+                          {
+                            "defaultConfiguration": null,
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Allergy1Up",
+                            "namespace": "healthmodule",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "793e9c66-ac3b-449b-8345-fe6d02e793b0"
+                          },
+                          {
+                            "defaultConfiguration": null,
+                            "defaultIfAirlockSystemIsDown": true,
+                            "features": [],
+                            "name": "AllergyMaps",
+                            "namespace": "healthmodule",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "ad99edb3-73da-4a94-841f-283ecdfb793a"
+                          },
+                          {
+                            "defaultConfiguration": null,
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "AllergyPersonalization",
+                            "namespace": "healthmodule",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "b2234d09-dbc3-4e32-9a9c-17af91406900"
+                          }
+                        ],
+                        "name": "Health",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "f2b01773-d0a1-4b7a-954f-e19cf164e40b"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"news\",\n\t\"description\":\"Displaysnews.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.articles\",\n\t\"beacon\":\"news:news:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "News",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "3c5b7112-7d96-4d7b-b9b1-312fa53e521d"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"hurricane\",\n\t\"description\":\"DisplaysHurricaneCentral\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Hurricane Central",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "af8d8d27-4167-493f-a6c1-db335275b64f"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"lifestyle_combo\",\n\t\"description\":\"Displayslifestylecombomodule.\",\n\t\"type\":\"native\",\n\t\"hideable\":false,\n\t\"adSlot\":\"\",\n\t\"sponsored\":false\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Lifestyle",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "cc48b5f3-e4dd-4bc2-9f37-e0c34db59274"
+                      }
+                    ],
+                    "maxFeaturesOn": 14,
+                    "type": "MUTUAL_EXCLUSION_GROUP",
+                    "uniqueId": "056819d8-fd30-4028-9911-ec244f8ad5fd"
+                  }
+                ],
+                "name": "Google modules",
+                "namespace": "modules",
+                "noCachedResults": false,
+                "rolloutPercentage": 100,
+                "type": "FEATURE",
+                "uniqueId": "738d3eff-b2b5-45aa-8f57-7c63faba4585"
+              },
+              {
+                "defaultConfiguration": null,
+                "defaultIfAirlockSystemIsDown": false,
+                "features": [
+                  {
+                    "features": [
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"breaking-news\",\n\t\"description\":\"Displays breaking news.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.breaking.spotlight\",\n\t\"beacon\":\"news:breaking:news:displayed\",\n\t\"adjacentAdParameters\":{\n\t\t\"fam\":\"sev\",\n\t\t\"ch\":\"bn\"\n\t},\n\t\"title\":\"Breaking News\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Breaking News Samsung",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "cc4071af-1ff7-4641-b1e3-247587bd90cc"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"current-conditions\",\n\t\"description\":\"Displays current conditions.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.bb\",\n\t\"beacon\":\"weather:current:conditions:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": true,
+                        "features": [
+                          {
+                            "defaultConfiguration": null,
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Video Enabled Samsung",
+                            "namespace": "modules",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "b29a1300-7490-42f5-96f4-ccd13e24f8b6"
+                          }
+                        ],
+                        "name": "Right Now Samsung",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "659a2f1a-aab4-4f5d-8711-8f53aef1c63c"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"hourly\",\n\t\"description\":\"Displays hourly weather information.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.hourly\",\n\t\"beacon\":\"weather:hourly:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": true,
+                        "features": [],
+                        "name": "Hourly Samsung",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "ed58244b-a783-41f5-8702-de7163c00685"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"ten-day\",\n\t\"description\":\"Displays ten day forecast.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.10day\",\n\t\"beacon\":\"weather:10-day:displayed\",\n\t\"days\":15\n}",
+                        "defaultIfAirlockSystemIsDown": true,
+                        "features": [],
+                        "name": "Daily Samsung",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "aaa7a813-416f-431f-9d71-33a2dc6d961a"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"events-feed-module\",\n\t\"description\":\"Displays events feed information.\",\n\t\"type\":\"native\",\n\t\"hideable\":false,\n\t\"adSlot\":\"\",\n\t\"sponsored\":false\n}",
+                        "defaultIfAirlockSystemIsDown": true,
+                        "features": [],
+                        "name": "Events Feed",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "90cacd4a-5409-45f6-beeb-460fe0400c03"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"video3\",\n\t\"description\":\"Displays video module with 3 thumbnails.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"\",\n\t\"beacon\":\"video:video:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": true,
+                        "features": [],
+                        "name": "Video Samsung",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "263d5e76-1d38-4670-83e3-6ebe30c0a0fa"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"map\",\n\t\"description\":\"Displays radar map.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Radar Maps Samsung",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "51921757-e6ac-48b6-ab64-962d76efc495"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"driving-difficulty\",\n\t\"description\":\"Displays radar map.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": true,
+                        "features": [],
+                        "name": "Road Conditions Samsung",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "73097f52-16b1-4dc6-a81d-4fb5ece6fb0b"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"outdoor\",\n\t\"description\":\"Displays run weather index information.\",\n\t\"type\":\"native\",\n\t\"hideable\":false,\n\t\"adSlot\":\"\",\n\t\"sponsored\":false\n}",
+                        "defaultIfAirlockSystemIsDown": true,
+                        "features": [
+                          {
+                            "defaultConfiguration": "{\n\t\"text\":\"DEFAULT\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Label Samsung",
+                            "namespace": "outdoormodule",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "27e36c71-e024-4c83-bcdc-0f0c8daf900f"
+                          }
+                        ],
+                        "name": "Outdoor Samsung",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "933e5ab0-2c72-4118-8990-3994862531a9"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"health\",\n\t\"description\":\"Displays health information.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"\",\n\t\"beacon\":\"pollen:pollen:displayed\",\n\t\"adjacentAdParameters\":{\n\t\t\"fam\":\"hlth,allergy\",\n\t\t\"ch\":\"pollencast\"\n\t}\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [
+                          {
+                            "defaultConfiguration": null,
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "PersonalizationSamsung",
+                            "namespace": "healthmodule",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "fcec381d-3c13-4bc6-9925-bc5a440fc6d6"
+                          }
+                        ],
+                        "name": "Health Samsung",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "cdfc2618-1374-4fda-a218-29db3ed00520"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"news\",\n\t\"description\":\"Displays news.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.articles\",\n\t\"beacon\":\"news:news:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": true,
+                        "features": [],
+                        "name": "News Samsung",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "018f79aa-451d-4bb6-b348-f9ae52e280c6"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"hurricane\",\n\t\"description\":\"Displays Hurricane Central\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": true,
+                        "features": [],
+                        "name": "Hurricane Central Samsung",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "d0b42392-360f-4884-b5c5-b3fd3d140179"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"lifestyle_combo\",\n\t\"description\":\"Displays lifestyle combo module.\",\n\t\"type\":\"native\",\n\t\"hideable\":false,\n\t\"adSlot\":\"\",\n\t\"sponsored\":false\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Lifestyle Samsung",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "1fd1ec2e-b0a8-4d09-a8bd-17dbc5cc6b2d"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"boat\",\n\t\"version\":\"1.0\",\n\t\"description\":\"Displays boat and beach information.\",\n\t\"type\":\"html\",\n\t\"hideable\":true,\n\t\"url\":\"\",\n\t\"adSlot\":\"\",\n\t\"sponsored\":false,\n\t\"beacon\":\"boatbeach:boatbeach-displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Boat Samsung",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "59a29a0b-4a3e-4561-9fc8-0092944f78cc"
+                      }
+                    ],
+                    "maxFeaturesOn": 14,
+                    "type": "MUTUAL_EXCLUSION_GROUP",
+                    "uniqueId": "5a246314-a6aa-481e-9eec-f73289dcd10c"
+                  }
+                ],
+                "name": "Samsung modules",
+                "namespace": "modules",
+                "noCachedResults": false,
+                "rolloutPercentage": 100,
+                "type": "FEATURE",
+                "uniqueId": "f2abe8f4-71f7-412c-8918-b75b6d5a2ba6"
+              }
+            ],
+            "maxFeaturesOn": 1,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "6b959a93-9ce8-4800-913d-23c2f176d4e0"
+          }
+        ],
+        "name": "Airlock Control Over Modules",
+        "namespace": "modules",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "fa8f67c4-a66e-4576-8350-1e17a849b395"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "Allergy",
+            "namespace": "bespoke",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "eaecc91c-8d7a-4c23-ac0c-1e931a5ea7fe"
+          },
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "ColdFlu",
+            "namespace": "bespoke",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "8fa32e48-6867-4892-b67f-63b91de5b1d9"
+          }
+        ],
+        "name": "HealthSubmodules",
+        "namespace": "bespoke",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "f5567f08-2411-467d-aee5-5c6cf7a23766"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "limit.weatherdata",
+            "namespace": "performance",
+            "noCachedResults": true,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "4f6f0f2f-c89c-447e-9b43-b4dbb9c33905"
+          },
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "limit.data",
+            "namespace": "performance",
+            "noCachedResults": true,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "06a88ca7-0695-48ea-b133-ae52866932d2"
+          },
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "limit.location",
+            "namespace": "performance",
+            "noCachedResults": true,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "b9faad8f-63ee-4393-8dda-bf25c5914304"
+          }
+        ],
+        "name": "Limit",
+        "namespace": "performance",
+        "noCachedResults": true,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "3cfb07e5-a108-4428-97ba-8ec6884d9ada"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "Video Module Autoplay",
+            "namespace": "modules",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "5883facc-eda1-4bba-b1b0-f93dd1f93ad9"
+          },
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "Breaking News Video Autoplay",
+            "namespace": "modules",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "925fc684-656c-49f9-9af5-b143d072a8e8"
+          },
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "Right Now Video Autoplay",
+            "namespace": "modules",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "b12080b0-88b7-441a-9bc8-572ac8852290"
+          }
+        ],
+        "name": "Video Autoplay",
+        "namespace": "modules",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "088582bd-3d2b-4015-96da-d2d10c6e9780"
+      },
+      {
+        "features": [
+          {
+            "features": [],
+            "maxFeaturesOn": 1,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "7a7398a0-0f27-49bf-a7ba-3f3df14d5107"
+          }
+        ],
+        "maxFeaturesOn": 1,
+        "type": "MUTUAL_EXCLUSION_GROUP",
+        "uniqueId": "26006289-d3d7-4c89-82df-e1cf1472cbe4"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "BigStates",
+            "namespace": "analytics",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "a3051621-c382-4ef5-a2fe-607a330031e0"
+          },
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "WeatherData",
+            "namespace": "analytics",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "b44d251b-21e5-4b7f-b8e9-437a5c4b1f84"
+          }
+        ],
+        "name": "Rollout Beacon",
+        "namespace": "airlock",
+        "noCachedResults": false,
+        "rolloutPercentage": 5,
+        "type": "FEATURE",
+        "uniqueId": "fc08e80e-d21a-4cec-bcba-4c19525e4182"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "Send Airlock Bar Data",
+        "namespace": "airlock",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "b763fc75-209f-4e2f-9c3f-df7ba9276f89"
+      },
+      {
+        "defaultConfiguration": "{\n\t\"headsUpVersion\":\"headsup.HeadsUp\",\n\t\"anchorVersion\":\"2\"\n}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "HomeScreen",
+        "namespace": "headsup",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "d1868aa5-f225-4872-9a6c-c7eaae1078a6"
+      },
+      {
+        "defaultConfiguration": "{\n\t\"launchesUntilShow\":5,\n\t\"noOfDaysAfterYesPromptAgain\":90,\n\t\"noOfDaysAfterNoPromptAgain\":60,\n\t\"appStoreLink\":\"market://details?id=com.weather.Weather\",\n\t\"initialMessage\":\"\",\n\t\"initialTitle\":\"Are you enjoying The Weather Channel App?\",\n\t\"initalYesButton\":\"YES\",\n\t\"initialNoButton\":\"NOT REALLY\",\n\t\"negativeAnswerTitle\":\"That's not good\",\n\t\"negativeAnswerMessage\":\"Please send us feedback so we can improve\",\n\t\"feedbackButton\":\"SEND FEEDBACK\",\n\t\"noFeedbackButon\":\"NO THANKS\",\n\t\"positiveAnswerTitle\":\"Glad to hear it!\",\n\t\"positiveAnswerMessage\":\"Will you share the love in the Google Play Store?\",\n\t\"rateUsButton\":\"RATE US\",\n\t\"noRatingButton\":\"NO THANKS\",\n\t\"feedbackEmail\":\"feedback@weather.com\",\n\t\"emailSubject\":\"Android App\"\n}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "SmartRatings",
+        "namespace": "analytics",
+        "noCachedResults": false,
+        "rolloutPercentage": 33,
+        "type": "FEATURE",
+        "uniqueId": "c0d5d630-6e1b-4962-826f-25c0820d771e"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [
+          {
+            "defaultConfiguration": "{\n\t\"value\":\"Sign up to active premium features\"\n}",
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "NavDrawer",
+            "namespace": "NavDrawer",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "06c91c83-5d53-4689-8f6a-398ffc7b5312"
+          }
+        ],
+        "name": "AirlockedStrings",
+        "namespace": "Strings",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "91a33b2c-0ca7-4d3c-835f-9b8eaf6286dc"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "ConnectionModeTest",
+        "namespace": "CDN",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "7aee5d8f-133e-4280-af53-2f741c4c76d4"
+      },
+      {
+        "defaultConfiguration": "{\n\t\"enableAll\":false,\n\t\"enabledList\":[]\n}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "Location Search Manager Typeahead",
+        "namespace": "typeahead",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "15812427-154b-46e7-b1b9-8ed728267039"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [
+          {
+            "features": [
+              {
+                "defaultConfiguration": null,
+                "defaultIfAirlockSystemIsDown": false,
+                "features": [
+                  {
+                    "features": [
+                      {
+                        "features": [
+                          {
+                            "defaultConfiguration": "{\n\t\"tiletype\":\"alert\",\n\t\"tileSize\":\"large\",\n\t\"datasource\":\"hourly\",\n\t\"descriptor\":\"NWS ALERT\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_sev\"\n\t},\n\t\"clickthrough\":{\n\t\t\"destination\":\"severe_alert\"\n\t},\n\t\"analyticsTileName\":\"Alert Large\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Hero Alert",
+                            "namespace": "headsupv2",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "4a04bde4-08fb-4b94-9a11-b90d5b83dcf6"
+                          },
+                          {
+                            "defaultConfiguration": "{\n\t\"tiletype\":\"radar\",\n\t\"tileSize\":\"large\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\",\n\t\t\"layer\":\"lightning\"\n\t},\n\t\"descriptor\":\"LIGHTNING\",\n\t\"value\":\"SEE RADAR\",\n\t\"analyticsTileName\":\"Lightning Map\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Hero Lightning",
+                            "namespace": "headsupv2",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "b38f62a6-a334-42ec-9e7c-85f46d4a960d"
+                          },
+                          {
+                            "defaultConfiguration": "{\n\t\"tiletype\":\"video\",\n\t\"tileSize\":\"large\",\n\t\"descriptor\":\"\",\n\t\"value\":\"VIDEO\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":null\n\t},\n\t\"icon_cta\":{\n\t\t\"resourceName\":\"home_video_play_icon\"\n\t},\n\t\"analyticsTileName\":\"Breaking News Video Large\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Hero Breaking News Video",
+                            "namespace": "headsupv2",
+                            "noCachedResults": true,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "9d9f0437-5135-43d6-a0fd-44f920bb96c2"
+                          },
+                          {
+                            "defaultConfiguration": "{\n\t\"tiletype\":\"radar\",\n\t\"tileSize\":\"large\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\"\n\t},\n\t\"descriptor\":\"PRECIPITATION\",\n\t\"value\":\"SEE RADAR\",\n\t\"analyticsTileName\":\"Radar Large\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Hero Radar",
+                            "namespace": "headsupv2",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 75,
+                            "type": "FEATURE",
+                            "uniqueId": "940f2449-802a-4876-ab43-3c60d8275c60"
+                          },
+                          {
+                            "defaultConfiguration": "{\n\t\"tiletype\":\"table\",\n\t\"tileSize\":\"large\",\n\t\"datasource\":\"hourly\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"descriptor\":\"PRECIPITATION\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_rain_icon\"\n\t},\n\t\"analyticsTileName\":\"Precip Start Large\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Hero Precip Start ",
+                            "namespace": "headsupv2",
+                            "noCachedResults": true,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "bd2178af-8188-40a8-91f3-a075635014b6"
+                          },
+                          {
+                            "defaultConfiguration": "{\n\t\"tiletype\":\"table\",\n\t\"tileSize\":\"large\",\n\t\"datasource\":\"hourly\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"descriptor\":\"RAIN ENDING\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_rain_icon\"\n\t},\n\t\"analyticsTileName\":\"Precip End Large\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Hero Precip End",
+                            "namespace": "headsupv2",
+                            "noCachedResults": true,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "1c25f813-869a-4aac-90be-06beb93f7179"
+                          },
+                          {
+                            "defaultConfiguration": "{\n\t\"tiletype\":\"video\",\n\t\"tileSize\":\"large\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_play\"\n\t},\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":null\n\t},\n\t\"analyticsTileName\":\"Top Video Large\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Hero Video",
+                            "namespace": "headsupv2",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "e8ea3be4-292a-4a70-b390-e299a6f352da"
+                          },
+                          {
+                            "defaultConfiguration": null,
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Total Solar Eclipse",
+                            "namespace": "headsupv2",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "7a2e14e6-f240-4c33-9bd4-03ac4b40aca9"
+                          },
+                          {
+                            "defaultConfiguration": "{\n\t\"tiletype\":\"table\",\n\t\"value\":\"\",\n\t\"descriptor\":\"\",\n\t\"datasource\":\"hourly\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"analyticsTileName\":\"Editorial Calendar Large\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Editorial Calendar Table",
+                            "namespace": "headsupv2",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "c3ada577-8592-4093-9078-a52c7e9faac4"
+                          },
+                          {
+                            "defaultConfiguration": "{\n\t\"tiletype\":\"table\",\n\t\"tileSize\":\"large\",\n\t\"datasource\":\"daily\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"fifteen_day\"\n\t},\n\t\"descriptor\":\"TOMORROW\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_tonight_tomorrow_icon\"\n\t},\n\t\"analyticsTileName\":\"Tomorrow's Forecast Large\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Hero Tomorrow Forecast",
+                            "namespace": "headsupv2",
+                            "noCachedResults": true,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "4bf735dd-49c8-46e6-86b3-777d4cb9f22a"
+                          },
+                          {
+                            "defaultConfiguration": "{\n\t\"tiletype\":\"table\",\n\t\"tileSize\":\"large\",\n\t\"datasource\":\"daily\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"fifteen_day\"\n\t},\n\t\"descriptor\":\"LOOK AHEAD\",\n\t\"value\":\"WEEKEND\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_calendar\"\n\t},\n\t\"analyticsTileName\":\"Weekend Forecast Large\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Hero Weekend Forecast",
+                            "namespace": "headsupv2",
+                            "noCachedResults": true,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "fe6df88c-7145-47f1-bbbe-2379d94de011"
+                          },
+                          {
+                            "defaultConfiguration": "{\n\t\"tiletype\":\"table\",\n\t\"tileSize\":\"large\",\n\t\"datasource\":\"hourly\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"descriptor\":\"HOURLY FORECAST\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_tonight_tomorrow_icon\"\n\t},\n\t\"analyticsTileName\":\"Hourly Forecast Large\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Hero Hourly Forecast",
+                            "namespace": "headsupv2",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "75c8291c-7a6b-49cf-b8cf-6f3007d76683"
+                          }
+                        ],
+                        "maxFeaturesOn": 1,
+                        "type": "MUTUAL_EXCLUSION_GROUP",
+                        "uniqueId": "6d4a7db1-6959-41e7-a1b5-cc068fbf431f"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"descriptor\":\"TEST\",\n\t\"value\":\"TESTING\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_car_icon\"\n\t},\n\t\"analyticsTileName\":\"lightning\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Test missing icons",
+                        "namespace": "headsupv2",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "3486c8f6-99fd-483e-9e69-12dceb5523a2"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"alert\",\n\t\"tileSize\":\"small\",\n\t\"descriptor\":\"NWS ALERT\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_orange\"\n\t},\n\t\"clickthrough\":{\n\t\t\"destination\":\"severe_alert\"\n\t},\n\t\"analyticsTileName\":\"Alert Small\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Alert",
+                        "namespace": "headsupv2",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "91b5462b-0609-4b4b-bc92-1e5431068bc4"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"video\",\n\t\"tileSize\":\"small\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":null\n\t},\n\t\"icon_cta\":{\n\t\t\"resourceName\":\"home_video_play_icon\"\n\t},\n\t\"analyticsTileName\":\"Breaking News Video\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Breaking News Video",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "2bb6dd44-6c8b-42d5-83b8-834da10391ab"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\",\n\t\t\"layer\":\"lightning\"\n\t},\n\t\"descriptor\":\"LIGHTNING STRIKE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_lightning_icon\"\n\t},\n\t\"analyticsTileName\":\"lightning\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Real Time Lightning",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "092be593-e667-45b0-800b-02bf8c0ed9a0"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"descriptor\":\"SEVERET-STORMNOW\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"T-StormNow\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "T Storm Impacted Now",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "80c8d06c-e837-4d1f-a549-04c897197f29"
+                      },
+                      {
+                        "defaultConfiguration": null,
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Hurricane Storm Impacted Now",
+                        "namespace": "headsupv2",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "430e7f1a-28d3-466c-8751-4be0fa62a61a"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"winter_storm\"\n\t},\n\t\"descriptor\":\"WINTER STORM LIKELY\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"Winter Storm Now\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Winter Storm Impacted Now",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "1b5e0eb2-8b8b-4de0-b03c-926b2338ab7e"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\"\n\t},\n\t\"descriptor\":\"PRECIPITATION\",\n\t\"value\":\"SEE RADAR\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_radar_light\"\n\t},\n\t\"analyticsTileName\":\"Radar Small\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Radar",
+                        "namespace": "headsupv2",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "056f54c6-c4d7-409b-b1df-0506ab50f107"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"descriptor\":\"PRECIPITATION\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_rain_icon\"\n\t},\n\t\"analyticsTileName\":\"Precip Start Small\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Precip Start",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "9be905c1-eb26-44d3-8b57-3cd340ecf764"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"descriptor\":\"RAIN ENDING\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_rain_icon\"\n\t},\n\t\"analyticsTileName\":\"Precip End Small\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Precip End",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "fbf6c0ba-ad54-4e49-b38f-d5ec25926b46"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"fifteen_day\"\n\t},\n\t\"descriptor\":\"\",\n\t\"value\":\"\",\n\t\"analyticsTileName\":\"Precip Intensity\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Precip Intensity",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "8f6bd44c-ce00-4023-a08e-9c18d670e190"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"winter_storm\"\n\t},\n\t\"descriptor\":\"ACCUMULATION\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_snow\"\n\t},\n\t\"analyticsTileName\":\"snow accumulation\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Forecasted Snow Accumulation",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "d0dcb841-5613-46a6-8d42-43f3e5f8d8bb"
+                      },
+                      {
+                        "defaultConfiguration": null,
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Hurricane Storm Impacted Soon",
+                        "namespace": "headsupv2",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "65b0ec04-2f37-43d7-a6ca-643364daa4b3"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"winter_storm\"\n\t},\n\t\"descriptor\":\"WINTER STORM POSSIBLE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"Winter Storm Forecast\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Winter Storm Forecast",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "1a905e81-91db-47d4-a7d1-c4f08c188703"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"descriptor\":\"SEVERET-STORMIMPACTSOON\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"T-StormSoon\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "T Storm Impact Soon",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "e3a48087-0a64-4da0-b8e5-420fe9152eab"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"GOOD\",\n\t\"descriptor\":\"ROAD CONDITIONS\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"driving_condition\"\n\t},\n\t\"icon\":{\n\t\t\"resourceName\":\"home_car_icon\"\n\t},\n\t\"analyticsTileName\":\"Road Conditions\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Road Conditions",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "0afa2b79-5432-43bb-9f16-f6068497ea8e"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"11:30 AM\",\n\t\"descriptor\":\"This is my event\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"my_events\"\n\t},\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_calendar_12\"\n\t},\n\t\"analyticsTileName\":\"My Events\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Up Next Event",
+                        "namespace": "headsupv2",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "786ebeea-926b-423e-a70e-1e0545789e10"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"\",\n\t\"descriptor\":\"\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"analyticsTileName\":\"Editorial Calendar\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Editorial Calendar",
+                        "namespace": "headsupv2",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "5c0c7534-6168-40e3-9b40-724777189bf6"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"video\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":null\n\t},\n\t\"icon_cta\":{\n\t\t\"resourceName\":\"home_video_play_icon\"\n\t},\n\t\"analyticsTileName\":\"Top Video (video lovers)\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Top Video LoversV2",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 10,
+                        "type": "FEATURE",
+                        "uniqueId": "f93ef652-5e60-4435-996b-8b24baf4b446"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"video\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":null\n\t},\n\t\"icon_cta\":{\n\t\t\"resourceName\":\"home_video_play_icon\"\n\t},\n\t\"analyticsTileName\":\"Top Video (video lovers)\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Top Video Lovers",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 10,
+                        "type": "FEATURE",
+                        "uniqueId": "1c1a9109-cef9-4819-9e42-c2b3f9e6cd9e"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"\",\n\t\"descriptor\":\"\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"allergy\"\n\t},\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_pollen\"\n\t},\n\t\"analyticsTileName\":\"Allergy\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Allergy",
+                        "namespace": "headsupv2",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "03626cd5-6de8-4ec8-b3be-1c5a155a2d5e"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"OUTLOOK\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"boat_and_beach\"\n\t},\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_boat\"\n\t},\n\t\"analyticsTileName\":\"Boat and Beach\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Boat and Beach V2",
+                        "namespace": "headsupv2",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "921c6194-cc11-4012-be0d-09b5923bcaae"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"OUTLOOK\",\n\t\"descriptor\":\"COASTAL CONDITIONS\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"boat_and_beach\"\n\t},\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_boat\"\n\t},\n\t\"analyticsTileName\":\"Boat and Beach\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "BoatAndBeach",
+                        "namespace": "headsupv2",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "4d1e8766-9e5a-4d16-b11c-7971b1dc5932"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"\",\n\t\"descriptor\":\"\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"gorun\"\n\t},\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_run\"\n\t},\n\t\"analyticsTileName\":\"GoRun\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "GoRun",
+                        "namespace": "headsupv2",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "9d619187-7bb7-4035-9e25-9d69b58bfa27"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"now\"\n\t},\n\t\"descriptor\":\"FEELS LIKE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_temperature\"\n\t},\n\t\"analyticsTileName\":\"Feels Like\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Feels Like Message",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "333e1e7c-8e1e-4605-a833-04941ef95d8a"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"video\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":null\n\t},\n\t\"icon_cta\":{\n\t\t\"resourceName\":\"ic_twc_play\"\n\t},\n\t\"analyticsTileName\":\"Top Video\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Top VideoV2",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "59f2a8df-ce06-438b-9951-7e7dd55d76b6"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"video\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":null\n\t},\n\t\"icon_cta\":{\n\t\t\"resourceName\":\"home_video_play_icon\"\n\t},\n\t\"analyticsTileName\":\"Top Video\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [
+                          {
+                            "defaultConfiguration": "{\n\t\"tiletype\":\"video\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":null\n\t},\n\t\"icon_cta\":{\n\t\t\"resourceName\":\"home_video_play_icon\"\n\t},\n\t\"analyticsTileName\":\"Top Video\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Top VideoFix",
+                            "namespace": "headsupv2",
+                            "noCachedResults": true,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "da97e43f-1b36-4ad0-96ca-8efa808f755f"
+                          }
+                        ],
+                        "name": "Top Video",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "661151f5-beb9-4a37-b19a-a599dc3711a6"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"fifteen_day\"\n\t},\n\t\"descriptor\":\"TOMORROW\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_tonight_tomorrow_icon\"\n\t},\n\t\"analyticsTileName\":\"Tomorrow's Forecast Small\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Tomorrow Forecast",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "4f2ed548-3978-41ff-a0c2-a4fe6b166ce6"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"fifteen_day\"\n\t},\n\t\"descriptor\":\"LOOK AHEAD\",\n\t\"value\":\"WEEKEND\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_calendar\"\n\t},\n\t\"analyticsTileName\":\"Weekend Forecast Small\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Weekend Forecast",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "c5879841-9c30-45b8-a77c-b707a269350b"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"now\"\n\t},\n\t\"descriptor\":\"SUNRISE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_sunsrise_sunset_icon\"\n\t},\n\t\"analyticsTileName\":\"Sunset/Sunrise\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Sunrise Sunset Message",
+                        "namespace": "headsupv2",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "a4ebd274-e4d8-434c-84c0-008fa89d97f4"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"datasource\":\"hourly\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"descriptor\":\"HOURLY FORECAST\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_tonight_tomorrow_icon\"\n\t},\n\t\"analyticsTileName\":\"Hourly Forecast Small\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Hourly Forecast",
+                        "namespace": "headsupv2",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "ed742c70-42d4-4e0d-ae3f-f36a83ef0c01"
+                      }
+                    ],
+                    "maxFeaturesOn": 4,
+                    "type": "MUTUAL_EXCLUSION_GROUP",
+                    "uniqueId": "b6307b8e-31fc-4af8-9345-0ceb2fc0bfbc"
+                  }
+                ],
+                "name": "HeadsUp",
+                "namespace": "headsupv2",
+                "noCachedResults": false,
+                "rolloutPercentage": 100,
+                "type": "FEATURE",
+                "uniqueId": "0aafca97-3e17-48f7-9714-769b7f3b771f"
+              },
+              {
+                "defaultConfiguration": null,
+                "defaultIfAirlockSystemIsDown": false,
+                "features": [
+                  {
+                    "features": [
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\"\n\t},\n\t\"descriptor\":\"TEST TILE\",\n\t\"value\":\"NO UTILITY\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_us_flag\"\n\t},\n\t\"analyticsTileName\":\"radar\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "NoUtilityDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "cc09de02-c0f0-4f28-abff-34d00baafb1a"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"video\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":null\n\t},\n\t\"preferredTileIndex\":-1,\n\t\"analyticsTileName\":\"Breaking News Video\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Breaking News VideoDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "230343a4-6d5e-4743-a7a0-2a8239882f52"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\",\n\t\t\"layer\":\"lightning\"\n\t},\n\t\"descriptor\":\"LIGHTNING STRIKE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_lightning_icon\"\n\t},\n\t\"analyticsTileName\":\"lightning\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Real Time LightningDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "6f2c0d42-7dc4-4886-b13b-2741b7e6119b"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"winter_storm\"\n\t},\n\t\"descriptor\":\"WINTER STORM LIKELY\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"Winter Storm Now\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Winter Storm Impacted NowDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "6c39a1f9-f47d-466f-8953-649f4443f024"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"descriptor\":\"SEVERET-STORMNOW\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"T-StormNow\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "T Storm Impacted NowDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "9f4ea220-df65-4dc5-933b-b4748a3ae440"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\"\n\t},\n\t\"descriptor\":\"PRECIPITATION\",\n\t\"value\":\"SEE RADAR\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_radar_light\"\n\t},\n\t\"analyticsTileName\":\"radar\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "RadarDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "981735e8-c821-46d7-9d69-23b70d87e223"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"descriptor\":\"PRECIPITATION\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_rain_icon\"\n\t},\n\t\"analyticsTileName\":\"Precip Start\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Precip StartDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "7a802460-e53e-4e5a-9ffa-a9fcae7bf4bf"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"descriptor\":\"RAIN ENDING\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_rain_icon\"\n\t},\n\t\"analyticsTileName\":\"Precip End\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Precip EndDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "0dd0c55f-934f-450f-b08f-5c2addb0e532"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"video\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":null\n\t},\n\t\"preferredTileIndex\":-1\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Top VideoDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "0ea9dbe1-6504-42e8-a27a-6f756afbe533"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"winter_storm\"\n\t},\n\t\"descriptor\":\"ACCUMULATION\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_snow\"\n\t},\n\t\"analyticsTileName\":\"snow accumulation\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Forecasted Snow AccumulationDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "7ec013de-2266-4bd8-b72f-8444719980b2"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"winter_storm\"\n\t},\n\t\"descriptor\":\"WINTER STORM POSSIBLE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"Winter Storm Forecast\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Winter Storm ForecastDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "685e7211-24f6-415a-bdbf-d13f8c1e8da5"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"descriptor\":\"SEVERET-STORMIMPACTSOON\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"T-StormSoon\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "T Storm Impact SoonDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "98307c27-6102-46ec-ad4d-ef231573b6f5"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"GOOD\",\n\t\"descriptor\":\"ROAD CONDITIONS\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"driving_condition\"\n\t},\n\t\"icon\":{\n\t\t\"resourceName\":\"home_car_icon\"\n\t},\n\t\"analyticsTileName\":\"Road Conditions\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Road ConditionsDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "9df7ba38-fa1e-4ecc-b6b6-5f8023fc9c29"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"\",\n\t\"descriptor\":\"\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"analyticsTileName\":\"Editorial Calendar\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Editorial CalendarDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "e5736796-007b-4bed-a69a-fe169dcd88b4"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"\",\n\t\"descriptor\":\"\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"allergy\"\n\t},\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_pollen\"\n\t},\n\t\"analyticsTileName\":\"Allergy\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "AllergyDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "59e266b5-650c-4888-a7d1-06e19ee629c8"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"\",\n\t\"descriptor\":\"\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"gorun\"\n\t},\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_run\"\n\t},\n\t\"analyticsTileName\":\"GoRun\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "GoRunDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "7a66aec3-d2d3-4591-8733-ac3ec89508f6"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"now\"\n\t},\n\t\"descriptor\":\"FEELS LIKE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_temperature\"\n\t},\n\t\"analyticsTileName\":\"Feels Like\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Feels Like MessageDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "9cfd56b2-6381-4073-a0a5-56bdd7640426"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"fifteen_day\"\n\t},\n\t\"descriptor\":\"TOMORROW\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_tonight_tomorrow_icon\"\n\t},\n\t\"analyticsTileName\":\"Tomorrow's Forecast\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Tomorrow ForecastDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "3cd5b692-7570-4272-a825-4995435ab893"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"fifteen_day\"\n\t},\n\t\"descriptor\":\"LOOK AHEAD\",\n\t\"value\":\"WEEKEND\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_calendar\"\n\t},\n\t\"analyticsTileName\":\"Weekend Forecast\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Weekend ForecastDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "f1a6c19e-c1c5-419b-8dda-0fd06f56d6cc"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"table\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"descriptor\":\"HOURLY FORECAST\",\n\t\"datasource\":\"hourly\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_tonight_tomorrow_icon\"\n\t},\n\t\"analyticsTileName\":\"Hourly Forecast Table\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "HOURLY FORECAST TABLEDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "f92c253e-28bb-4d8d-84c1-cf615666fafd"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"now\"\n\t},\n\t\"descriptor\":\"SUNRISE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_sunsrise_sunset_icon\"\n\t},\n\t\"analyticsTileName\":\"Sunset/Sunrise\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Sunrise Sunset MessageDynamic",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "0582a472-f9d2-4d89-aa13-dee3468213d7"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\"\n\t},\n\t\"descriptor\":\"PRECIPITATION\",\n\t\"value\":\"SEE RADAR\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_radar_light\"\n\t},\n\t\"analyticsTileName\":\"radar\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "RadarDynamicNew",
+                        "namespace": "headsup",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "97ea4b76-f990-4822-9d7f-34dc49ce1b9c"
+                      }
+                    ],
+                    "maxFeaturesOn": 3,
+                    "type": "MUTUAL_EXCLUSION_GROUP",
+                    "uniqueId": "28b8d78e-2f62-4ef0-aaae-79925d012bb2"
+                  }
+                ],
+                "name": "HeadsUpDynamic",
+                "namespace": "headsup",
+                "noCachedResults": false,
+                "rolloutPercentage": 100,
+                "type": "FEATURE",
+                "uniqueId": "e4e55820-9017-4a18-a059-6cd63095e81a"
+              },
+              {
+                "defaultConfiguration": null,
+                "defaultIfAirlockSystemIsDown": false,
+                "features": [
+                  {
+                    "features": [
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"\",\n\t\"descriptor\":\"\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"fifteen_day\"\n\t},\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_calendar\"\n\t},\n\t\"analyticsTileName\":\"WMW\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Watch My Weather",
+                        "namespace": "headsup",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "3a9ff003-d701-4366-9bc2-70e806f63668"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"video\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":null\n\t},\n\t\"preferredTileIndex\":-1,\n\t\"analyticsTileName\":\"Breaking News Video\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Breaking News Video",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "80544c77-64e3-4508-8b28-bfafb38d11dd"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\",\n\t\t\"layer\":\"lightning\"\n\t},\n\t\"descriptor\":\"LIGHTNING STRIKE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_lightning_icon\"\n\t},\n\t\"analyticsTileName\":\"lightning\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Real Time Lightning",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "518ed6bb-5877-4634-82b1-5d97261fca88"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"winter_storm\"\n\t},\n\t\"descriptor\":\"WINTER STORM LIKELY\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"Winter Storm Now\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Winter Storm Impacted Now",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "887ca99d-439b-450c-bb57-49935e45ad20"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"descriptor\":\"SEVERET-STORMNOW\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"T-StormNow\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "T Storm Impacted Now",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "305b1d71-d97f-4446-bfc0-81b1e71a3268"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\"\n\t},\n\t\"descriptor\":\"PRECIPITATION\",\n\t\"value\":\"SEE RADAR\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_radar_light\"\n\t},\n\t\"analyticsTileName\":\"radar\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Radar",
+                        "namespace": "headsup",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "080bf796-53a7-4dd1-8109-ee9eef54e828"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"video\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":null\n\t},\n\t\"preferredTileIndex\":-1\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Top Video",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "e44ce4e4-f636-4571-9c08-c8b272e7f29c"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"descriptor\":\"PRECIPITATION\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_rain_icon\"\n\t},\n\t\"analyticsTileName\":\"Precip Start\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Precip Start",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "9684e04a-9029-48a0-9bb2-66526b722e43"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"descriptor\":\"RAIN ENDING\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_rain_icon\"\n\t},\n\t\"analyticsTileName\":\"Precip End\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Precip End",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "dcbb8419-7051-46b7-8672-cca0e87d633f"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"winter_storm\"\n\t},\n\t\"descriptor\":\"ACCUMULATION\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_snow\"\n\t},\n\t\"analyticsTileName\":\"snow accumulation\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Forecasted Snow Accumulation",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "3b1eb415-acf0-406f-bf89-99a631cd85c5"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"winter_storm\"\n\t},\n\t\"descriptor\":\"WINTER STORM POSSIBLE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"Winter Storm Forecast\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Winter Storm Forecast",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "6fb33801-393c-4c1b-aa2a-3e7ca2f3adff"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"descriptor\":\"SEVERET-STORMIMPACTSOON\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"T-StormSoon\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "T Storm Impact Soon",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "5011786f-f499-4c90-b618-91c7132c73a3"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"GOOD\",\n\t\"descriptor\":\"ROAD CONDITIONS\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"driving_condition\"\n\t},\n\t\"icon\":{\n\t\t\"resourceName\":\"home_car_icon\"\n\t},\n\t\"analyticsTileName\":\"Road Conditions\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Road Conditions",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "deb1306e-a217-4185-b834-d65178930164"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"\",\n\t\"descriptor\":\"\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"analyticsTileName\":\"Editorial Calendar\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Editorial Calendar",
+                        "namespace": "headsup",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "e87fb5d8-ca7b-4864-a78a-4dac3a230bf4"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"\",\n\t\"descriptor\":\"\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"allergy\"\n\t},\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_pollen\"\n\t},\n\t\"analyticsTileName\":\"Allergy\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Allergy",
+                        "namespace": "headsup",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "60ebe556-4790-4b56-90b4-aad0e1604e7a"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"value\":\"\",\n\t\"descriptor\":\"\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"gorun\"\n\t},\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_run\"\n\t},\n\t\"analyticsTileName\":\"GoRun\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "GoRun",
+                        "namespace": "headsup",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "783ffb82-1ca6-44a2-a1fd-55e0cc6b574a"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"now\"\n\t},\n\t\"descriptor\":\"FEELS LIKE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_temperature\"\n\t},\n\t\"analyticsTileName\":\"Feels Like\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Feels Like Message",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "e2dafcaa-74bf-4793-8127-214f18534655"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"fifteen_day\"\n\t},\n\t\"descriptor\":\"TOMORROW\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_tonight_tomorrow_icon\"\n\t},\n\t\"analyticsTileName\":\"Tomorrow's Forecast\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Tomorrow Forecast",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "567d50fc-99f6-49e9-8a90-d941bac99fe6"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"fifteen_day\"\n\t},\n\t\"descriptor\":\"LOOK AHEAD\",\n\t\"value\":\"WEEKEND\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_tonight_tomorrow_icon\"\n\t},\n\t\"analyticsTileName\":\"Weekend Forecast\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Weekend Forecast",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "76e01943-7141-4564-83b8-7e0b467b5ca1"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"now\"\n\t},\n\t\"descriptor\":\"SUNRISE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_sunsrise_sunset_icon\"\n\t},\n\t\"analyticsTileName\":\"Sunset/Sunrise\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Sunrise Sunset Message",
+                        "namespace": "headsup",
+                        "noCachedResults": true,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "8c8b51dc-d99b-427d-bd8c-2f2f8994e93e"
+                      }
+                    ],
+                    "maxFeaturesOn": 3,
+                    "type": "MUTUAL_EXCLUSION_GROUP",
+                    "uniqueId": "71b22113-542d-4f9a-a40b-e162f0e71537"
+                  }
+                ],
+                "name": "HeadsUp",
+                "namespace": "headsup",
+                "noCachedResults": true,
+                "rolloutPercentage": 100,
+                "type": "FEATURE",
+                "uniqueId": "5d9ca06d-1ccc-489b-b8ed-4ea49690bb67"
+              },
+              {
+                "defaultConfiguration": null,
+                "defaultIfAirlockSystemIsDown": false,
+                "features": [],
+                "name": "HeadsUpB",
+                "namespace": "headsup",
+                "noCachedResults": false,
+                "rolloutPercentage": 100,
+                "type": "FEATURE",
+                "uniqueId": "4413b968-e83b-4abd-b960-289886bbb6de"
+              }
+            ],
+            "maxFeaturesOn": 1,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "a3ccf58e-649d-4c9c-ab5b-ca339c3c2c83"
+          }
+        ],
+        "name": "HeadsUpWithAB",
+        "namespace": "headsup",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "9114b37f-5bc4-4055-bc83-d34a99c375f9"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "Plugin Sync",
+        "namespace": "plugin",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "1202a79c-ea34-41d0-90b8-fa105361c2e0"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "WU Layers Cross Link",
+            "namespace": "Layers",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "905a492b-353d-409b-a80c-3f899acd8c5a"
+          },
+          {
+            "defaultConfiguration": "{\n\t\"map_settings_dl_mapping\": {\n\t\t    \"base_url\" : \"https://dsx.weather.com/util/image/w/%s?v=at&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0\",\n\t\t    \"map_alert_preview_flood\" : \"android_map_alert_preview_flood.png\",\n\t\t    \"map_alert_preview_marine\" : \"android_map_alert_preview_marine.png\",\n\t\t    \"map_alert_preview_other\" : \"android_map_alert_preview_other.png\",\n\t\t    \"map_alert_preview_severe\" : \"android_map_alert_preview_severe.png\",\n\t\t    \"map_alert_preview_thunderstorm\" : \"android_map_alert_preview_thunderstorm.png\",\n\t\t    \"map_alert_preview_tropical\" : \"android_map_alert_preview_tropical.png\",\n\t\t    \"map_alert_preview_winter\" : \"android_map_alert_preview_winter.png\",\n\t\t    \"map_layer_preview_clouds\" : \"android_map_layer_preview_clouds.png\",\n\t\t    \"map_layer_preview_ddi\" : \"\tandroid_map_layer_preview_ddi.png\",\n\t\t    \"map_layer_preview_dewpoint\" : \"android_map_layer_preview_dewpoint.png\",\n\t\t    \"map_layer_preview_feels_like\" : \"android_map_layer_preview_feels_like.png\",\n\t\t    \"map_layer_preview_precip\" : \"android_map_layer_preview_precip.png\",\n\t\t    \"map_layer_preview_precip_48hr\" : \"android_map_layer_preview_precip_48hr.png\",\n\t\t    \"map_layer_preview_radar\" : \"android_map_layer_preview_radar.png\",\n\t\t    \"map_layer_preview_radar_clouds\" : \"android_map_layer_preview_radar_clouds.png\",\n\t\t    \"map_layer_preview_snowfall_24\" : \"android_map_layer_preview_snowfall.png\",\n\t\t    \"map_layer_preview_snowfall_48\" : \"android_map_layer_preview_snowfall.png\",\n\t\t    \"map_layer_preview_temp\" : \"android_map_layer_preview_temp.png\",\n\t\t    \"map_layer_preview_temp_change\" : \"android_map_layer_preview_temp_change.png\",\n\t\t    \"map_layer_preview_uv\" : \"android_map_layer_preview_uv.png\",\n\t\t    \"map_layer_preview_wind\" : \"android_map_layer_preview_wind.png\",\n\t\t    \"map_storm_cell_preview\" : \"android_map_storm_cell_preview.png\",\n\t\t    \"map_style_preview_light\" : \"android_map_style_preview_light.jpg\",\n\t\t    \"map_style_preview_dark\" : \"android_map_style_preview_dark.jpg\",\n\t\t    \"map_style_preview_satellite\" : \"android_map_style_preview_satellite.jpg\",\n\t\t    \"map_layer_preview_roads\" : \"android_map_layer_preview_roads.png\",\n\t\t    \"preview_cyclone_tracker\" : \"android_preview_cyclone_tracker.png\"        \n\t}\n}",
+            "defaultIfAirlockSystemIsDown": true,
+            "features": [],
+            "name": "Map Settings",
+            "namespace": "map",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "d23f36d2-aa7d-4034-8b80-b7d1011e31bd"
+          }
+        ],
+        "name": "Map",
+        "namespace": "map",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "2c9a256b-014c-4a64-98e9-f86f824c9b6b"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [
+          {
+            "features": [],
+            "maxFeaturesOn": 12,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "f5f54795-f629-4203-a54b-e47c48b73a03"
+          },
+          {
+            "features": [
+              {
+                "defaultConfiguration": null,
+                "defaultIfAirlockSystemIsDown": false,
+                "features": [
+                  {
+                    "defaultConfiguration": "{\n\t\"id\":\"breaking-news\",\n\t\"description\":\"Displaysbreakingnews.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.breaking.spotlight\",\n\t\"beacon\":\"news:breaking:news:displayed\",\n\t\"adjacentAdParameters\":{\n\t\t\"fam\":\"sev\",\n\t\t\"ch\":\"bn\"\n\t}\n}",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "features": [],
+                    "name": "Breaking NewsQAtest",
+                    "namespace": "modules",
+                    "noCachedResults": false,
+                    "rolloutPercentage": 100,
+                    "type": "FEATURE",
+                    "uniqueId": "9354d9a9-dfe5-4d78-b0cb-8b9bca3a7151"
+                  },
+                  {
+                    "defaultConfiguration": "{\n\t\"id\":\"current-conditions\",\n\t\"description\":\"Displayscurrentconditions.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.bb\",\n\t\"beacon\":\"weather:current:conditions:displayed\"\n}",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "features": [
+                      {
+                        "defaultConfiguration": null,
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Video EnabledQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "a01224c3-fcec-46e5-ba70-e962416282eb"
+                      }
+                    ],
+                    "name": "Right NowQAtest",
+                    "namespace": "modules",
+                    "noCachedResults": false,
+                    "rolloutPercentage": 100,
+                    "type": "FEATURE",
+                    "uniqueId": "5079f5e4-af13-47c0-a3fe-32b10480e0a0"
+                  },
+                  {
+                    "defaultConfiguration": "{\n\t\"id\":\"hourly\",\n\t\"description\":\"Displayshourlyweatherinformation.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.hourly\",\n\t\"beacon\":\"weather:hourly:displayed\"\n}",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "features": [],
+                    "name": "HourlyQAtest",
+                    "namespace": "modules",
+                    "noCachedResults": false,
+                    "rolloutPercentage": 100,
+                    "type": "FEATURE",
+                    "uniqueId": "4fc6f9a9-d6b5-4f07-8825-0dfe1d07f94a"
+                  },
+                  {
+                    "defaultConfiguration": "{\n\t\"id\":\"ten-day\",\n\t\"description\":\"Displaystendayforecast.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.10day\",\n\t\"beacon\":\"weather:10-day:displayed\",\n\t\"days\":15\n}",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "features": [],
+                    "name": "DailyQAtest",
+                    "namespace": "modules",
+                    "noCachedResults": false,
+                    "rolloutPercentage": 100,
+                    "type": "FEATURE",
+                    "uniqueId": "b662394a-28df-478c-bd7e-724e428b0652"
+                  },
+                  {
+                    "defaultConfiguration": "{\n\t\"id\":\"video3\",\n\t\"description\":\"Displaysvideomodulewith3thumbnails.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"\",\n\t\"beacon\":\"video:video:displayed\"\n}",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "features": [],
+                    "name": "VideoQAtest",
+                    "namespace": "modules",
+                    "noCachedResults": false,
+                    "rolloutPercentage": 100,
+                    "type": "FEATURE",
+                    "uniqueId": "51f34197-9a34-4a40-9e64-74cb7c8ecf41"
+                  },
+                  {
+                    "defaultConfiguration": "{\n\t\"id\":\"map\",\n\t\"description\":\"Displaysradarmap.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "features": [],
+                    "name": "Radar MapsQAtest",
+                    "namespace": "modules",
+                    "noCachedResults": false,
+                    "rolloutPercentage": 100,
+                    "type": "FEATURE",
+                    "uniqueId": "54661747-51e5-4da8-92e2-1bd00abd5e9d"
+                  },
+                  {
+                    "defaultConfiguration": "{\n\t\"id\":\"driving-difficulty\",\n\t\"description\":\"Displaysradarmap.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "features": [],
+                    "name": "Road ConditionsQAtest",
+                    "namespace": "modules",
+                    "noCachedResults": false,
+                    "rolloutPercentage": 100,
+                    "type": "FEATURE",
+                    "uniqueId": "8d85a895-0f66-4af0-92da-0f5dc94ccbb2"
+                  },
+                  {
+                    "defaultConfiguration": "{\n\t\"id\":\"news\",\n\t\"description\":\"Displaysnews.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.articles\",\n\t\"beacon\":\"news:news:displayed\"\n}",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "features": [],
+                    "name": "NewsQAtest",
+                    "namespace": "modules",
+                    "noCachedResults": false,
+                    "rolloutPercentage": 100,
+                    "type": "FEATURE",
+                    "uniqueId": "e99d54db-78c1-47f1-8a12-acc93ff1854b"
+                  },
+                  {
+                    "defaultConfiguration": "{\n\t\"id\":\"health\",\n\t\"description\":\"Displayshealthinformation.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"\",\n\t\"beacon\":\"pollen:pollen:displayed\",\n\t\"adjacentAdParameters\":{\n\t\t\"fam\":\"hlth,allergy\",\n\t\t\"ch\":\"pollencast\"\n\t}\n}",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "features": [
+                      {
+                        "defaultConfiguration": null,
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Allergy1UpQAtest",
+                        "namespace": "healthmodule",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "c601a07c-8895-4b3e-80d7-cea5f567e3dd"
+                      },
+                      {
+                        "defaultConfiguration": null,
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "AllergyMapsQAtest",
+                        "namespace": "healthmodule",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "76a9a3af-0056-460f-b928-bd54d190d02e"
+                      }
+                    ],
+                    "name": "HealthQAtest",
+                    "namespace": "modules",
+                    "noCachedResults": false,
+                    "rolloutPercentage": 100,
+                    "type": "FEATURE",
+                    "uniqueId": "af6d0a03-1086-4fe5-bc06-afa2f7f68fcd"
+                  },
+                  {
+                    "defaultConfiguration": "{\n\t\"id\":\"outdoor\",\n\t\"description\":\"Displaysrunweatherindexinformation.\",\n\t\"type\":\"native\",\n\t\"hideable\":false,\n\t\"adSlot\":\"\",\n\t\"sponsored\":false\n}",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "features": [],
+                    "name": "OutdoorQAtest",
+                    "namespace": "modules",
+                    "noCachedResults": false,
+                    "rolloutPercentage": 100,
+                    "type": "FEATURE",
+                    "uniqueId": "42a9a9af-cd4b-4d9c-a78e-3dee1f42814f"
+                  },
+                  {
+                    "defaultConfiguration": "{\n\t\"id\":\"hurricane\",\n\t\"description\":\"DisplaysHurricaneCentral\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "features": [],
+                    "name": "Hurricane CentralQAtest",
+                    "namespace": "modules",
+                    "noCachedResults": false,
+                    "rolloutPercentage": 100,
+                    "type": "FEATURE",
+                    "uniqueId": "af268e30-b419-45e0-adfe-f908205652eb"
+                  },
+                  {
+                    "defaultConfiguration": "{\n\t\"id\":\"lifestyle_combo\",\n\t\"description\":\"Displayslifestylecombomodule.\",\n\t\"type\":\"native\",\n\t\"hideable\":false,\n\t\"adSlot\":\"\",\n\t\"sponsored\":false\n}",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "features": [],
+                    "name": "LifestyleQAtest",
+                    "namespace": "modules",
+                    "noCachedResults": false,
+                    "rolloutPercentage": 100,
+                    "type": "FEATURE",
+                    "uniqueId": "e0ff2568-0c2a-457f-acfc-12d13bf1c50a"
+                  },
+                  {
+                    "defaultConfiguration": "{\n\t\"id\":\"boat\",\n\t\"version\":\"1.0\",\n\t\"description\":\"Displaysboatandbeachinformation.\",\n\t\"type\":\"html\",\n\t\"hideable\":true,\n\t\"url\":\"\",\n\t\"adSlot\":\"\",\n\t\"sponsored\":false,\n\t\"beacon\":\"boatbeach:boatbeach-displayed\",\n\t\"modules\":{\n\t\t\"application\":\"androidflagship\",\n\t\t\"version\":\"6.0.0\",\n\t\t\"modules\":[{\n\t\t\t\"id\":\"AdModule\",\n\t\t\t\"description\":\"spotlightadintheskifeed\",\n\t\t\t\"type\":\"ad\",\n\t\t\t\"adSlot\":\"content.run.spotlight\"\n\t\t},\n\t\t{\n\t\t\t\"id\":\"AdModule\",\n\t\t\t\"description\":\"Firstadinthecoldandflufeed\",\n\t\t\t\"type\":\"ad\",\n\t\t\t\"adSlot\":\"content.run.largeAds\",\n\t\t\t\"additionalParameters\":{\n\t\t\t\t\"transparent\":true\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\":\"boat_and_beach_empty_module\",\n\t\t\t\"description\":\"Displaysemptyboatandbeachmodule.\",\n\t\t\t\"type\":\"native\",\n\t\t\t\"adSlot\":\"\"\n\t\t}]\n\t}\n}",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "features": [],
+                    "name": "BoatQAtest",
+                    "namespace": "modules",
+                    "noCachedResults": false,
+                    "rolloutPercentage": 100,
+                    "type": "FEATURE",
+                    "uniqueId": "dfc6ef5b-11b0-4bdd-831c-7f479760cd45"
+                  }
+                ],
+                "name": "Google modulesQAtest",
+                "namespace": "modules",
+                "noCachedResults": false,
+                "rolloutPercentage": 100,
+                "type": "FEATURE",
+                "uniqueId": "4fb71779-6952-441b-8806-2e4fde549c77"
+              },
+              {
+                "defaultConfiguration": null,
+                "defaultIfAirlockSystemIsDown": false,
+                "features": [
+                  {
+                    "features": [
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"breaking-news\",\n\t\"description\":\"Displays breaking news.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.breaking.spotlight\",\n\t\"beacon\":\"news:breaking:news:displayed\",\n\t\"adjacentAdParameters\":{\n\t\t\"fam\":\"sev\",\n\t\t\"ch\":\"bn\"\n\t}\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Breaking News SamsungQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "884c89e6-b2c0-4123-b30c-a3091821b2f4"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"current-conditions\",\n\t\"description\":\"Displays current conditions.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.bb\",\n\t\"beacon\":\"weather:current:conditions:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [
+                          {
+                            "defaultConfiguration": null,
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Video Enabled SamsungQAtest",
+                            "namespace": "modules",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "189580ad-ee94-4ab8-95b2-eecb5b217982"
+                          }
+                        ],
+                        "name": "Right Now SamsungQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "b4f989d9-73a9-4ada-a160-59c979bbdde1"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"hourly\",\n\t\"description\":\"Displays hourly weather information.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.hourly\",\n\t\"beacon\":\"weather:hourly:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Hourly SamsungQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "0d60104a-b9c1-40a7-af38-3548a132e710"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"ten-day\",\n\t\"description\":\"Displays ten day forecast.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.10day\",\n\t\"beacon\":\"weather:10-day:displayed\",\n\t\"days\":15\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Daily SamsungQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "f866d7b4-03a8-47ea-aef3-7186789897b1"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"events-feed-module\",\n\t\"description\":\"Displays events feed information.\",\n\t\"type\":\"native\",\n\t\"hideable\":false,\n\t\"adSlot\":\"\",\n\t\"sponsored\":false\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Events FeedQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "78490104-b837-4701-9921-fb0d851c6257"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"video3\",\n\t\"description\":\"Displays video module with 3 thumbnails.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"\",\n\t\"beacon\":\"video:video:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Video SamsungQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "8f4f50bd-8301-4830-9442-65b6254f3416"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"map\",\n\t\"description\":\"Displays radar map.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Radar Maps SamsungQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "6fcafbfc-719a-4885-a848-8e28caca413d"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"driving-difficulty\",\n\t\"description\":\"Displays radar map.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Road Conditions SamsungQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "0f9fc38a-0344-4309-95ca-ee3571cd96d0"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"news\",\n\t\"description\":\"Displays news.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.articles\",\n\t\"beacon\":\"news:news:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "News SamsungQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "71ae3729-e868-4f3a-b1ce-034f2e49c776"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"hurricane\",\n\t\"description\":\"Displays Hurricane Central\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"weather.maps\",\n\t\"beacon\":\"map:map:displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Hurricane Central SamsungQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "467f4d09-cd67-4589-86f4-4cae6ee33324"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"health\",\n\t\"description\":\"Displays health information.\",\n\t\"type\":\"native\",\n\t\"adSlot\":\"\",\n\t\"beacon\":\"pollen:pollen:displayed\",\n\t\"adjacentAdParameters\":{\n\t\t\"fam\":\"hlth,allergy\",\n\t\t\"ch\":\"pollencast\"\n\t}\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [
+                          {
+                            "defaultConfiguration": null,
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Allergy1Up SamsungQAtest",
+                            "namespace": "healthmodule",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "d5b6dec6-8dcc-4c5b-a30f-e6cd66c8f8d5"
+                          },
+                          {
+                            "defaultConfiguration": null,
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "AllergyMaps SamsungQAtest",
+                            "namespace": "healthmodule",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "d9cd1dfa-3cc1-4ded-9928-0da74cce6ed9"
+                          },
+                          {
+                            "defaultConfiguration": "{\n\t\"text\":\"NEW\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Label SamsungQAtest",
+                            "namespace": "healthmodule",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "501cda85-58f5-46b9-9474-9721683309a9"
+                          }
+                        ],
+                        "name": "Health SamsungQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "a1b2654b-e2f0-4003-a9e7-5c5dd18cce47"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"outdoor\",\n\t\"description\":\"Displays run weather index information.\",\n\t\"type\":\"native\",\n\t\"hideable\":false,\n\t\"adSlot\":\"\",\n\t\"sponsored\":false\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [
+                          {
+                            "defaultConfiguration": "{\n\t\"text\":\"DEFAULT\"\n}",
+                            "defaultIfAirlockSystemIsDown": false,
+                            "features": [],
+                            "name": "Label SamsungQAtest",
+                            "namespace": "outdoormodule",
+                            "noCachedResults": false,
+                            "rolloutPercentage": 100,
+                            "type": "FEATURE",
+                            "uniqueId": "8b671b0d-d00c-48a0-ba98-9041c4418b00"
+                          }
+                        ],
+                        "name": "Outdoor SamsungQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "93b8a6fb-04e3-44d5-93b5-e802e989cb0f"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"lifestyle_combo\",\n\t\"description\":\"Displays lifestyle combo module.\",\n\t\"type\":\"native\",\n\t\"hideable\":false,\n\t\"adSlot\":\"\",\n\t\"sponsored\":false\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Lifestyle SamsungQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "c32b3b43-fbd0-4ddc-a7f6-063b8f2e627d"
+                      },
+                      {
+                        "defaultConfiguration": "{\n\t\"id\":\"boat\",\n\t\"version\":\"1.0\",\n\t\"description\":\"Displays boat and beach information.\",\n\t\"type\":\"html\",\n\t\"hideable\":true,\n\t\"url\":\"\",\n\t\"adSlot\":\"\",\n\t\"sponsored\":false,\n\t\"beacon\":\"boatbeach:boatbeach-displayed\"\n}",
+                        "defaultIfAirlockSystemIsDown": false,
+                        "features": [],
+                        "name": "Boat SamsungQAtest",
+                        "namespace": "modules",
+                        "noCachedResults": false,
+                        "rolloutPercentage": 100,
+                        "type": "FEATURE",
+                        "uniqueId": "7fdff797-ae5f-43e8-b561-621a02175e13"
+                      }
+                    ],
+                    "maxFeaturesOn": 14,
+                    "type": "MUTUAL_EXCLUSION_GROUP",
+                    "uniqueId": "d57f7fee-9812-4585-b409-f93ae1802481"
+                  }
+                ],
+                "name": "Samsung modulesQAtest",
+                "namespace": "modules",
+                "noCachedResults": false,
+                "rolloutPercentage": 100,
+                "type": "FEATURE",
+                "uniqueId": "80974029-0f5f-456d-9d40-58db38c66d45"
+              }
+            ],
+            "maxFeaturesOn": 1,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "480b2f8e-1076-4db8-9abf-f8e98e65a834"
+          }
+        ],
+        "name": "Airlock Control Over ModulesQAtest",
+        "namespace": "modules",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "1da57232-04ef-4ddf-b846-8cee97c50ca2"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [
+          {
+            "defaultConfiguration": "{\n\t\"adsrequesting\":8001,\n\t\"adsloading\":60001\n}",
+            "defaultIfAirlockSystemIsDown": true,
+            "features": [],
+            "name": "timeoutvalues",
+            "namespace": "videotimeoutvalues",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "bc1379fb-95ac-4476-b7a8-0cb1ce874698"
+          },
+          {
+            "defaultConfiguration": "{\n\t\"videoOrderedList\":\"https://{DSX_SERVER}.weather.com/cms/v4/orderedlist/{LOCALE}/mobile/video/%1$s?api={API_KEY}\",\n\t\"videoProgrammingUrl\":\"https://{DSX_SERVER}.weather.com/cms/v4/list/{LOCALE}/mobile/video/app?api={API_KEY}\",\n\t\"videoAssetQueryUrl\":\"https://{DSX_SERVER}.weather.com/cms/v4/a/{LOCALE}?api={API_KEY}&pg=%2$d%%2C%3$d&q=type%%3A%%24in%%28%%27video%%27%%29%1$s&sort=-lastmodifieddate\",\n\t\"videoDmaUrl\":\"https://{DSX_SERVER}.weather.com/cms/v1/videoList/mobile/%1$s?api={API_KEY}\",\n\t\"videoDedupedCollectionUrl\":\"https://{DSX_SERVER}.weather.com/cms/v1/videos/dedupedCollections/mobile/%1$s/%2$s,%3$s?api={API_KEY}\",\n\t\"videoplaylists\":{\n\t\t\"en_US\":\"pl-editor-picks\",\n\t\t\"en_GB\":\"pl-mobile-en-gb\",\n\t\t\"de_DE\":\"pl-mobile-de-de\",\n\t\t\"en_IN\":\"pl-mobile-en-in\",\n\t\t\"es_US\":\"pl-mobile-es-us\",\n\t\t\"en_CA\":\"pl-mobile-en-ca\"\n\t}\n}",
+            "defaultIfAirlockSystemIsDown": true,
+            "features": [],
+            "name": "links",
+            "namespace": "videofeed",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "60e9908a-5daf-4fec-8aa8-e6d51c57e369"
+          },
+          {
+            "defaultConfiguration": "{\n\t\"videoModulePartnerLogo\":\"\",\n\t\"videoDetailsPartnerLogo\":\"\"\n}",
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "Video Logo Link",
+            "namespace": "video",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "1fbb358e-d344-453c-be11-0ce34afa87cc"
+          },
+          {
+            "defaultConfiguration": "{\n\t\"video_format_old\" : [ \"android_abr\", \"android\", \"video\" ],\n\t\"video_format\" : [ \"android_app\", \"fallback_android_app\" ]\n}",
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "MPX Query Format",
+            "namespace": "video",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "76c99cdc-edb8-4598-9ff6-9c895d3a565e"
+          }
+        ],
+        "name": "Video Activity Control",
+        "namespace": "video",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "1bdc7f44-1c36-4c9f-b421-cb06350d8b0e"
+      },
+      {
+        "defaultConfiguration": "{\n\t\"caption\":\"Tap for sound\"\n}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "Video Autoplay CTA",
+        "namespace": "video",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "7b855689-7e5d-4dec-9d38-94ed1b5d47b8"
+      },
+      {
+        "defaultConfiguration": "{\n\t\"source\":\"default\",\n\t\"application\":\"androidflagship\",\n\t\"version\":\"6.0.0\",\n\t\"scatterShotEnabled\":true,\n\t\"wfxUrl\":\"https://triggers.wfxtriggers.com/json/?resp_type=json&acctid=B88159&current=true&df=1,2,3\",\n\t\"adStartingPosition\":2,\n\t\"adRepeats\":2,\n\t\"adSlotsToPreload\":[\"weather.feed1\",\n\t\"weather.feed2\",\n\t\"weather.feed3\",\n\t\"weather.feed5\"],\n\t\"dtbAndroidSdkTimeoutMs\":400,\n\t\"adUnitPrefixes\":[{\n\t\t\"region\":\"AU\",\n\t\t\"language\":\"en\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_au/\"\n\t},\n\t{\n\t\t\"region\":\"AE\",\n\t\t\"language\":\"ar\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_uae/\"\n\t},\n\t{\n\t\t\"region\":\"US\",\n\t\t\"language\":\"en\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_us/\"\n\t},\n\t{\n\t\t\"region\":\"US\",\n\t\t\"language\":\"es\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_us_es/\"\n\t},\n\t{\n\t\t\"region\":\"GB\",\n\t\t\"language\":\"en\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_uk/\"\n\t},\n\t{\n\t\t\"region\":\"FR\",\n\t\t\"language\":\"fr\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_fr/\"\n\t},\n\t{\n\t\t\"region\":\"ES\",\n\t\t\"language\":\"es\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_es/\"\n\t},\n\t{\n\t\t\"region\":\"DE\",\n\t\t\"language\":\"*\",\n\t\t\"adUnitPrefix\":\"/3673/m_app_droid_phone_wx/\"\n\t},\n\t{\n\t\t\"region\":\"CA\",\n\t\t\"language\":\"en\",\n\t\t\"adUnitPrefix\":\"/7326/en.twc.app.android/\"\n\t},\n\t{\n\t\t\"region\":\"*\",\n\t\t\"language\":\"*\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_intl/\"\n\t}],\n\t\"adSlots\":[{\n\t\t\"slotName\":\"weather.bb\",\n\t\t\"adUnitSuffix\":\"display/bb\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.cc\",\n\t\t\"adUnitSuffix\":\"display/feed/feed_0\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\",\n\t\t\t\"tf\":\"currentc\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.feed1\",\n\t\t\"adUnitSuffix\":\"display/feed/feed_1\",\n\t\t\"sizes\":[\"300x250\",\n\t\t\"320x300\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\",\n\t\t\t\"tf\":\"today\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.feed2\",\n\t\t\"adUnitSuffix\":\"display/feed/feed_2\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.feed3\",\n\t\t\"adUnitSuffix\":\"display/feed/feed_3\",\n\t\t\"sizes\":[\"300x250\",\n\t\t\"320x300\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.feed4\",\n\t\t\"adUnitSuffix\":\"display/feed/feed_4\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.feed5\",\n\t\t\"adUnitSuffix\":\"display/feed/feed_5\",\n\t\t\"sizes\":[\"300x250\",\n\t\t\"320x300\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.maps\",\n\t\t\"adUnitSuffix\":\"display/details/maps\",\n\t\t\"refreshInSeconds\":\"30\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.hourly\",\n\t\t\"adUnitSuffix\":\"display/details/hourly\",\n\t\t\"refreshInSeconds\":\"30\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\",\n\t\t\t\"tf\":\"hourly\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.10day\",\n\t\t\"adUnitSuffix\":\"display/details/10day\",\n\t\t\"refreshInSeconds\":\"30\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\",\n\t\t\t\"tf\":\"10_day\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.severe\",\n\t\t\"adUnitSuffix\":\"display/details/alerts\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.articles\",\n\t\t\"adUnitSuffix\":\"display/details/articles\",\n\t\t\"refreshInSeconds\":\"30\",\n\t\t\"dynamic\":\"true\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.breaking\",\n\t\t\"adUnitSuffix\":\"display/details/breaking\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.alerts\",\n\t\t\"adUnitSuffix\":\"display/details/alerts\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"checkin.history\",\n\t\t\"adUnitSuffix\":\"display/checkin/history\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.beach.spotlight\",\n\t\t\"adUnitSuffix\":\"display/content/boat_beach\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.beach.largeAds\",\n\t\t\"adUnitSuffix\":\"display/content/boat_beach\",\n\t\t\"sizes\":[\"320x300\",\n\t\t\"300x250\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.pollen\",\n\t\t\"adUnitSuffix\":\"content/pollen\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.cold\",\n\t\t\"adUnitSuffix\":\"content/cold\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.run.spotlight\",\n\t\t\"adUnitSuffix\":\"display/content/running\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.run.largeAds\",\n\t\t\"adUnitSuffix\":\"display/content/running\",\n\t\t\"sizes\":[\"320x300\",\n\t\t\"300x250\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.hurricane.feed1\",\n\t\t\"adUnitSuffix\":\"display/details/hurricane\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.hurricane.spotlight\",\n\t\t\"adUnitSuffix\":\"display/details/hurricane\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.hurricane.details\",\n\t\t\"adUnitSuffix\":\"display/details/hc_art\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"video\",\n\t\t\"adUnitSuffix\":\"video\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"video.global\",\n\t\t\"adUnitSuffix\":\"video/global\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"video.local\",\n\t\t\"adUnitSuffix\":\"video/local\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"video.must_see\",\n\t\t\"adUnitSuffix\":\"video/must_see\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"video.tv\",\n\t\t\"adUnitSuffix\":\"video/tv\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.allergy.spotlight\",\n\t\t\"adUnitSuffix\":\"display/content/allergy\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.allergy.details\",\n\t\t\"adUnitSuffix\":\"display/content/allergy\",\n\t\t\"sizes\":[\"300x250\",\n\t\t\"320x300\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.cold.flu.spotlight\",\n\t\t\"adUnitSuffix\":\"display/content/flu\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.cold.flu.details\",\n\t\t\"adUnitSuffix\":\"display/content/flu\",\n\t\t\"sizes\":[\"300x250\",\n\t\t\"320x300\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.breaking.spotlight\",\n\t\t\"adUnitSuffix\":\"display/breaking\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.ski\",\n\t\t\"adUnitSuffix\":\"display/content/ski\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.ski.spotlight\",\n\t\t\"adUnitSuffix\":\"display/content/ski\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.ski.largeAds\",\n\t\t\"adUnitSuffix\":\"display/content/ski\",\n\t\t\"sizes\":[\"320x300\",\n\t\t\"300x250\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.winterstorm.spotlight\",\n\t\t\"adUnitSuffix\":\"display/content/winter_storm_central\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.winterstorm.smallad\",\n\t\t\"adUnitSuffix\":\"display/content/winter_storm_central\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.winterstorm.maps\",\n\t\t\"adUnitSuffix\":\"display/content/winter_storm_central/maps\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t}],\n\t\"commonParameters\":{\n\t\t\"tpid\":\"%%TPID%%\",\n\t\t\"ord\":\"%%ORD%%\",\n\t\t\"plln\":\"%%PLLN%%\",\n\t\t\"zip\":\"%%ZIP%%\",\n\t\t\"hlzip\":\"%%HLZIP%%\",\n\t\t\"dma\":\"%%DMA%%\",\n\t\t\"rmid\":\"%%RMID%%\",\n\t\t\"tile\":\"%%TILE%%\",\n\t\t\"hmid\":\"%%HUMIDITY%%\",\n\t\t\"tmp\":\"%%TMP%%\",\n\t\t\"cc\":\"%%COUNTRY%%\",\n\t\t\"vw\":\"%%VIEW%%\",\n\t\t\"locale\":\"%%LOCALE%%\",\n\t\t\"ct\":\"%%CITY%%\",\n\t\t\"aid\":\"%%AID%%\",\n\t\t\"cid\":\"%%CLARITAS%%\",\n\t\t\"ftl\":\"%%FTL%%\",\n\t\t\"cnd\":\"%%CONDITION%%\",\n\t\t\"tmpr\":\"%%TMPR%%\",\n\t\t\"pos\":\"%%POS%%\",\n\t\t\"ver\":\"%%VER%%\",\n\t\t\"wind\":\"%%WIND%%\",\n\t\t\"sev\":\"%%SEVERE%%\",\n\t\t\"uv\":\"%%UV%%\",\n\t\t\"layer\":\"%%LAYER%%\",\n\t\t\"st\":\"%%STATE%%\",\n\t\t\"h2o\":\"%%H2O%%\",\n\t\t\"faud\":\"%%FAUD%%\",\n\t\t\"fgeo\":\"%%FGEO%%\",\n\t\t\"sg\":\"%%SEGMENT%%\",\n\t\t\"wfxtg\":\"%%WFXTG%%\",\n\t\t\"plat\":\"%%PLATFORM%%\",\n\t\t\"bn\":\"%%BREAKING%%\",\n\t\t\"a\":\"%%AGE%%\",\n\t\t\"g\":\"%%GENDER%%\",\n\t\t\"ppid\":\"%%PPID%%\",\n\t\t\"zcs\":\"%%ZCS%%\",\n\t\t\"hzcs\":\"%%HZCS%%\",\n\t\t\"nzcs\":\"%%NZCS%%\",\n\t\t\"preload_partner\":\"%%PRELOAD_PARTNER%%\",\n\t\t\"launch_partner\":\"%%LAUNCH_PARTNER%%\",\n\t\t\"fhic\":\"%%FHIC%%\",\n\t\t\"floc\":\"%%FLOC%%\",\n\t\t\"fltmpc\":\"%%FLTMPC%%\",\n\t\t\"tmpc\":\"%%TMPC%%\",\n\t\t\"lang\":\"%%LANG%%\",\n\t\t\"lnid\":\"%%LNID%%\",\n\t\t\"ttid\":\"%%TTID%%\",\n\t\t\"vid\":\"%%TTID%%\",\n\t\t\"cmsid\":\"%%CMSID%%\",\n\t\t\"plist\":\"%%PLIST%%\",\n\t\t\"adid\":\"%%ADID%%\",\n\t\t\"cxtg\":\"%%CXTG%%\",\n\t\t\"alert\":\"%%ALERT%%\",\n\t\t\"env\":\"%%ENV%%\",\n\t\t\"dynght\":\"$$DYNGHT$$\",\n\t\t\"ref\":\"$$REF$$\"\n\t},\n\t\"gpt_url\":{\n\t\t\"adurl\":\"https://pubads.g.doubleclick.net/gampad/adx?iu=%%AdUnitPrefix%%%%AdUnitSuffix%%&sz=320x50&mob=js&m=text/oml&c=%%ORD%%&t=cnd%3D%%CONDITION%%%26sev%3D%%SEVERE%%%26ftl%3D%%FTL%%%26hlzip%3D%%HLZIP%%%26h2o%3D%%H2O%%%26tmp%3D%%TMP%%%26tmpr%3D%%TMPR%%%26wind%3D%%WIND%%%26hmid%3D%%HUMIDITY%%%26uv%3D%%UV%%%26plln%3D%%PLLN%%%26cc%3D%%COUNTRY%%%26st%3D%%STATE%%%26zip%3D%%ZIP%%%26dma%3D%%DMA%%%26ct%3D%%CITY%%%26locale%3D%%LOCALE%%%26layer%3D%%LAYER%%%26ver%3D%%VER%%%26ord%3D%%ORD%%%26rmid%3D%%RMID%%%26tile%3D%%TILE%%%26vw%3D%%VIEW%%%26aid%3D%%AID%%%26pos%3D%%POS%%%26sg%3D%%SEGMENT%%%26wfxtg%3D%%WFXTG%%%26faud%3D%%FAUD%%%26fgeo%3D%%FGEO%%%26bn%3D%%BREAKING%%%26a%3D%%AGE%%%26g%3D%%GENDER%%%26ppid%3D%%PPID%%%26plat%3Dwx_droid_phone%26preload_partner%3D%%PRELOAD_PARTNER%%%26launch_partner%3D%%LAUNCH_PARTNER%%%26zcs%3D%%ZCS%%%26hzcs%3D%%HZCS%%%26nzcs%3D%%NZCS%%%26tpid%3D%%TPID%%%26fhic%3D%%FHIC%%%26floc%3D%%FLOC%%%26fltmpc%3D%%FLTMPC%%%26tmpc%3D%%TMPC%%%26lang%3D%%LANG%%%26adid%3D%%ADID%%%26cxtg%3D%%CXTG%%%26alert%3D%%ALERT%%%26env%3D%%ENV%%%26dynght%3D%%DYNGHT%%\",\n\t\t\"IMAVideoAdUrl\":\"https://pubads.g.doubleclick.net/gampad/ads?iu=%%AdUnitPrefix%%%%AdVideoUnitSuffix%%&sz=640x360&ciu_szs=320x50&env=vp&gdfp_req=1&impl=s&m_ast=vast&output=xml_vast3&c=%%ORD%%&unviewed_position_start=1&ad_rule=1&description_url=http%3A%2F%2Fwww.weather.com&content_url=http%3A%2F%2Fwww.weather.com&cust_params=cnd%3D%%CONDITION%%%26sev%3D%%SEVERE%%%26ftl%3D%%FTL%%%26hlzip%3D%%HLZIP%%%26tmp%3D%%TMP%%%26tmpr%3D%%TMPR%%%26wind%3D%%WIND%%%26hmid%3D%%HUMIDITY%%%26uv%3D%%UV%%%26plln%3D%%PLLN%%%26cc%3D%%COUNTRY%%%26st%3D%%STATE%%%26zip%3D%%ZIP%%%26dma%3D%%DMA%%%26ct%3D%%CITY%%%26locale%3D%%LOCALE%%%26layer%3D%%LAYER%%%26ver%3D%%VER%%%26ord%3D%%ORD%%%26rmid%3D%%RMID%%%26tile%3D1%26vw%3D%%VIEW%%%26aid%3D%%AID%%%26sg%3D%%SEGMENT%%%26wfxtg%3D%%WFXTG%%%26faud%3D%%FAUD%%%26fgeo%3D%%FGEO%%%26bn%3D%%BREAKING%%%26a%3D%%AGE%%%26g%3D%%GENDER%%%26ppid%3D%%PPID%%%26plat%3Dwx_droid_phone%26zcs%3D%%ZCS%%%26hzcs%3D%%HZCS%%%26nzcs%3D%%NZCS%%%26tpid%3D%%TPID%%%26fhic%3D%%FHIC%%%26floc%3D%%FLOC%%%26fltmpc%3D%%FLTMPC%%%26tmpc%3D%%TMPC%%%26lang%3D%%LANG%%%26lnid%3D%%LNID%%%26cmsid%3D2177%26ttid%3D%%TTID%%%26vid%3D%%TTID%%%26pos%3dWX_PRER%26h2o%3D%%H2O%%%26plist%3D%%PLIST%%%26adid%3D%%ADID%%%26cxtg%3D%%CXTG%%%26env%3D%%ENV%%%26dynght%3D%%DYNGHT%%%26ref%3D%%REF%%\",\n\t\t\"umuri\":\"umsessionkey=%%RMID%%&UMADPARAMiu=%%AdUnitPrefix%%%%AdUnitSuffix%%&UMPTPARAMcust_params=sz%3D%%SZ%%%26pos%3D%%POS%%%26tile%3D1%26cc%3D%%COUNTRY%%%26st%3D%%STATE%%%26zip%3D%%ZIP%%%26dma%3D%%DMA%%%26tmpr%3D%%TMPR%%%26tmp%3D%%TMP%%%26cnd%3D%%CONDITION%%%26locale%3D%%LOCALE%%%26ver%3D%%VER%%%26plln%3D%%PLLN%%%26wind%3D%%WIND%%%26uv%3D%%UV%%%26hmid%3D%%HUMIDITY%%%26zcs%3D%%ZCS%%%26hzcs%3D%%HZCS%%%26nzcs%3D%%NZCS%%%26sev%3D%%SEVERE%%%26bn%3D%%BREAKING%%%26a%3D%%AGE%%%26g%3D%%GENDER%%%26ppid%3D%%PPID%%%26plat%3Dwx_droid_phone%26sg%3D%%SEGMENT%%%26faud%3D%%FAUD%%%26fgeo%3D%%FGEO%%%26wfxtg%3D%%WFXTG%%%26rmid%3D%%RMID%%%26ftl%3D%%FTL%%%26hlzip%3D%%HLZIP%%%26aid%3D%%AID%%%26ct%3D%%CITY%%%26preload_partner%3D%%PRELOAD_PARTNER%%%26launch_partner%3D%%LAUNCH_PARTNER%%%26tpid%3D%%TPID%%%26fhic%3D%%FHIC%%%26floc%3D%%FLOC%%%26fltmpc%3D%%FLTMPC%%%26tmpc%3D%%TMPC%%%26lang%3D%%LANG%%&UMTP=0\"\n\t}\n}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "AdsConfig",
+        "namespace": "ads",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "277b4132-5d9a-45f3-b35a-826d7bdfdcc4"
+      },
+      {
+        "defaultConfiguration": "{\n\t\"title\":\"Video\",\n\t\"localCategoryTitle\":\"Local\",\n\t\"defaultPlaylistId\":\"pl-editor-picks\",\n\t\"maxVideosPerCategory\":50,\n\t\"selectionUnderlineColor\":\"#2962A9\",\n\t\"defaultColorPalette\":[\"#9575cd\",\n\t\"#5c6bc0\",\n\t\"#42a5f5\",\n\t\"#4cb6ac\",\n\t\"#80c783\",\n\t\"#aed581\"],\n\t\"AlphaOpacityForUnselected\":0.5,\n\t\"AlphaOpacityForUnselectedIcon\":0.5,\n\t\"BrightnessPercentageForUnselected\":100,\n\t\"ContrastForUnselected\":0.8,\n\t\"SaturationForUnselected\":0.3\n}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "Video Categories",
+        "namespace": "video",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "ab365473-9eb6-48e2-bb42-76ef028c9957"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "Segment Report",
+        "namespace": "profile",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "ba8b8911-843b-4a22-8a6c-2ddf125c9f7e"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "Allergy1UpDefault",
+        "namespace": "healthmodule",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "11c311f3-3e97-41fc-98d2-d74358dca567"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": true,
+        "features": [],
+        "name": "AllergyMapsDefault",
+        "namespace": "healthmodule",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "b0012156-ed43-4b6e-a637-09fe1f9fc080"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": true,
+        "features": [],
+        "name": "AllergyPersonalizationDefault",
+        "namespace": "healthmodule",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "01ddf1ed-3b4d-406f-b096-6d899d119cfd"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "DisableMoldHeroDial",
+        "namespace": "healthmodule",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "a451f38c-29b5-41a5-997c-fd34aa8e42da"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "testSegmentation",
+        "namespace": "test",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "cacd6c09-1d0a-4d5a-a4a2-91f30f7057d3"
+      },
+      {
+        "defaultConfiguration": "{\n\t\"source\":\"default\",\n\t\"application\":\"androidflagship\",\n\t\"version\":\"6.0.0\",\n\t\"scatterShotEnabled\":true,\n\t\"wfxUrl\":\"https://triggers.wfxtriggers.com/json/?resp_type=json&acctid=B88159&current=true&df=1,2,3\",\n\t\"adStartingPosition\":2,\n\t\"adRepeats\":2,\n\t\"adSlotsToPreload\":[\"weather.feed1\",\n\t\"weather.feed3\",\n\t\"weather.feed5\"],\n\t\"dtbAndroidSdkTimeoutMs\":400,\n\t\"adUnitPrefixes\":[{\n\t\t\"region\":\"AU\",\n\t\t\"language\":\"en\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_au/\"\n\t},\n\t{\n\t\t\"region\":\"AE\",\n\t\t\"language\":\"ar\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_uae/\"\n\t},\n\t{\n\t\t\"region\":\"US\",\n\t\t\"language\":\"en\",\n\t\t\"adUnitPrefix\":\"/7646/test_app_android_us/\"\n\t},\n\t{\n\t\t\"region\":\"US\",\n\t\t\"language\":\"es\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_us_es/\"\n\t},\n\t{\n\t\t\"region\":\"GB\",\n\t\t\"language\":\"en\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_uk/\"\n\t},\n\t{\n\t\t\"region\":\"FR\",\n\t\t\"language\":\"fr\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_fr/\"\n\t},\n\t{\n\t\t\"region\":\"ES\",\n\t\t\"language\":\"es\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_es/\"\n\t},\n\t{\n\t\t\"region\":\"DE\",\n\t\t\"language\":\"*\",\n\t\t\"adUnitPrefix\":\"/3673/m_app_droid_phone_wx/\"\n\t},\n\t{\n\t\t\"region\":\"CA\",\n\t\t\"language\":\"en\",\n\t\t\"adUnitPrefix\":\"/7326/en.twc.app.android/\"\n\t},\n\t{\n\t\t\"region\":\"*\",\n\t\t\"language\":\"*\",\n\t\t\"adUnitPrefix\":\"/7646/app_android_intl/\"\n\t}],\n\t\"adSlots\":[{\n\t\t\"slotName\":\"weather.bb\",\n\t\t\"adUnitSuffix\":\"display/bb\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.cc\",\n\t\t\"adUnitSuffix\":\"display/feed/feed_0\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\",\n\t\t\t\"tf\":\"currentc\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.feed1\",\n\t\t\"adUnitSuffix\":\"display/feed/feed_1\",\n\t\t\"sizes\":[\"300x250\",\n\t\t\"320x300\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\",\n\t\t\t\"tf\":\"today\"\n\t\t},\n\t\t\"adType\":[\"banner\",\n\t\t\"install\",\n\t\t\"content\"]\n\t},\n\t{\n\t\t\"slotName\":\"weather.feed2\",\n\t\t\"adUnitSuffix\":\"display/feed/feed_2\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.feed3\",\n\t\t\"adUnitSuffix\":\"display/feed/feed_3\",\n\t\t\"sizes\":[\"300x250\",\n\t\t\"320x300\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t},\n\t\t\"adType\":[\"banner\",\n\t\t\"install\",\n\t\t\"content\"]\n\t},\n\t{\n\t\t\"slotName\":\"weather.feed4\",\n\t\t\"adUnitSuffix\":\"display/feed/feed_4\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.feed5\",\n\t\t\"adUnitSuffix\":\"display/feed/feed_5\",\n\t\t\"sizes\":[\"300x250\",\n\t\t\"320x300\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t},\n\t\t\"adType\":[\"banner\",\n\t\t\"install\",\n\t\t\"content\"]\n\t},\n\t{\n\t\t\"slotName\":\"weather.maps\",\n\t\t\"adUnitSuffix\":\"display/details/maps\",\n\t\t\"refreshInSeconds\":\"30\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.hourly\",\n\t\t\"adUnitSuffix\":\"display/details/hourly\",\n\t\t\"refreshInSeconds\":\"30\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\",\n\t\t\t\"tf\":\"hourly\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.10day\",\n\t\t\"adUnitSuffix\":\"display/details/10day\",\n\t\t\"refreshInSeconds\":\"30\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\",\n\t\t\t\"tf\":\"10_day\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.severe\",\n\t\t\"adUnitSuffix\":\"display/details/alerts\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.articles\",\n\t\t\"adUnitSuffix\":\"display/details/articles\",\n\t\t\"refreshInSeconds\":\"30\",\n\t\t\"dynamic\":\"true\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.breaking\",\n\t\t\"adUnitSuffix\":\"display/details/breaking\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.alerts\",\n\t\t\"adUnitSuffix\":\"display/details/alerts\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"checkin.history\",\n\t\t\"adUnitSuffix\":\"display/checkin/history\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.beach.spotlight\",\n\t\t\"adUnitSuffix\":\"display/content/boat_beach\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.beach.largeAds\",\n\t\t\"adUnitSuffix\":\"display/content/boat_beach\",\n\t\t\"sizes\":[\"320x300\",\n\t\t\"300x250\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.pollen\",\n\t\t\"adUnitSuffix\":\"content/pollen\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.cold\",\n\t\t\"adUnitSuffix\":\"content/cold\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.run.spotlight\",\n\t\t\"adUnitSuffix\":\"display/content/running\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.run.largeAds\",\n\t\t\"adUnitSuffix\":\"display/content/running\",\n\t\t\"sizes\":[\"320x300\",\n\t\t\"300x250\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.hurricane.feed1\",\n\t\t\"adUnitSuffix\":\"display/details/hurricane\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.hurricane.spotlight\",\n\t\t\"adUnitSuffix\":\"display/details/hurricane\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.hurricane.details\",\n\t\t\"adUnitSuffix\":\"display/details/hc_art\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"video\",\n\t\t\"adUnitSuffix\":\"video\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"video.global\",\n\t\t\"adUnitSuffix\":\"video/global\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"video.local\",\n\t\t\"adUnitSuffix\":\"video/local\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"video.must_see\",\n\t\t\"adUnitSuffix\":\"video/must_see\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"video.tv\",\n\t\t\"adUnitSuffix\":\"video/tv\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.allergy.spotlight\",\n\t\t\"adUnitSuffix\":\"display/content/allergy\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.allergy.details\",\n\t\t\"adUnitSuffix\":\"display/content/allergy\",\n\t\t\"sizes\":[\"300x250\",\n\t\t\"320x300\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.cold.flu.spotlight\",\n\t\t\"adUnitSuffix\":\"display/content/flu\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.cold.flu.details\",\n\t\t\"adUnitSuffix\":\"display/content/flu\",\n\t\t\"sizes\":[\"300x250\",\n\t\t\"320x300\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"weather.breaking.spotlight\",\n\t\t\"adUnitSuffix\":\"display/breaking\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.ski\",\n\t\t\"adUnitSuffix\":\"display/content/ski\",\n\t\t\"sizes\":[\"320x50\",\n\t\t\"320x80\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.ski.spotlight\",\n\t\t\"adUnitSuffix\":\"display/content/ski\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.ski.largeAds\",\n\t\t\"adUnitSuffix\":\"display/content/ski\",\n\t\t\"sizes\":[\"320x300\",\n\t\t\"300x250\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.winterstorm.spotlight\",\n\t\t\"adUnitSuffix\":\"display/content/winter_storm_central\",\n\t\t\"sizes\":[\"300x25\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"app_sl\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.winterstorm.smallad\",\n\t\t\"adUnitSuffix\":\"display/content/winter_storm_central\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t},\n\t{\n\t\t\"slotName\":\"content.winterstorm.maps\",\n\t\t\"adUnitSuffix\":\"display/content/winter_storm_central/maps\",\n\t\t\"sizes\":[\"320x50\"],\n\t\t\"parameters\":{\n\t\t\t\"pos\":\"top300\",\n\t\t\t\"tile\":\"1\",\n\t\t\t\"plat\":\"wx_droid_phone\"\n\t\t}\n\t}],\n\t\"commonParameters\":{\n\t\t\"tpid\":\"%%TPID%%\",\n\t\t\"ord\":\"%%ORD%%\",\n\t\t\"plln\":\"%%PLLN%%\",\n\t\t\"zip\":\"%%ZIP%%\",\n\t\t\"hlzip\":\"%%HLZIP%%\",\n\t\t\"dma\":\"%%DMA%%\",\n\t\t\"rmid\":\"%%RMID%%\",\n\t\t\"tile\":\"%%TILE%%\",\n\t\t\"hmid\":\"%%HUMIDITY%%\",\n\t\t\"tmp\":\"%%TMP%%\",\n\t\t\"cc\":\"%%COUNTRY%%\",\n\t\t\"vw\":\"%%VIEW%%\",\n\t\t\"locale\":\"%%LOCALE%%\",\n\t\t\"ct\":\"%%CITY%%\",\n\t\t\"aid\":\"%%AID%%\",\n\t\t\"cid\":\"%%CLARITAS%%\",\n\t\t\"ftl\":\"%%FTL%%\",\n\t\t\"cnd\":\"%%CONDITION%%\",\n\t\t\"tmpr\":\"%%TMPR%%\",\n\t\t\"pos\":\"%%POS%%\",\n\t\t\"ver\":\"%%VER%%\",\n\t\t\"wind\":\"%%WIND%%\",\n\t\t\"sev\":\"%%SEVERE%%\",\n\t\t\"uv\":\"%%UV%%\",\n\t\t\"layer\":\"%%LAYER%%\",\n\t\t\"st\":\"%%STATE%%\",\n\t\t\"h2o\":\"%%H2O%%\",\n\t\t\"faud\":\"%%FAUD%%\",\n\t\t\"fgeo\":\"%%FGEO%%\",\n\t\t\"sg\":\"%%SEGMENT%%\",\n\t\t\"wfxtg\":\"%%WFXTG%%\",\n\t\t\"plat\":\"%%PLATFORM%%\",\n\t\t\"bn\":\"%%BREAKING%%\",\n\t\t\"a\":\"%%AGE%%\",\n\t\t\"g\":\"%%GENDER%%\",\n\t\t\"ppid\":\"%%PPID%%\",\n\t\t\"zcs\":\"%%ZCS%%\",\n\t\t\"hzcs\":\"%%HZCS%%\",\n\t\t\"nzcs\":\"%%NZCS%%\",\n\t\t\"preload_partner\":\"%%PRELOAD_PARTNER%%\",\n\t\t\"launch_partner\":\"%%LAUNCH_PARTNER%%\",\n\t\t\"fhic\":\"%%FHIC%%\",\n\t\t\"floc\":\"%%FLOC%%\",\n\t\t\"fltmpc\":\"%%FLTMPC%%\",\n\t\t\"tmpc\":\"%%TMPC%%\",\n\t\t\"lang\":\"%%LANG%%\",\n\t\t\"lnid\":\"%%LNID%%\",\n\t\t\"ttid\":\"%%TTID%%\",\n\t\t\"vid\":\"%%TTID%%\",\n\t\t\"cmsid\":\"%%CMSID%%\",\n\t\t\"plist\":\"%%PLIST%%\",\n\t\t\"adid\":\"%%ADID%%\",\n\t\t\"cxtg\":\"%%CXTG%%\",\n\t\t\"alert\":\"%%ALERT%%\",\n\t\t\"env\":\"%%ENV%%\",\n\t\t\"dynght\":\"$$DYNGHT$$\",\n\t\t\"ref\":\"$$REF$$\"\n\t},\n\t\"gpt_url\":{\n\t\t\"adurl\":\"https://pubads.g.doubleclick.net/gampad/adx?iu=%%AdUnitPrefix%%%%AdUnitSuffix%%&sz=320x50&mob=js&m=text/oml&c=%%ORD%%&t=cnd%3D%%CONDITION%%%26sev%3D%%SEVERE%%%26ftl%3D%%FTL%%%26hlzip%3D%%HLZIP%%%26h2o%3D%%H2O%%%26tmp%3D%%TMP%%%26tmpr%3D%%TMPR%%%26wind%3D%%WIND%%%26hmid%3D%%HUMIDITY%%%26uv%3D%%UV%%%26plln%3D%%PLLN%%%26cc%3D%%COUNTRY%%%26st%3D%%STATE%%%26zip%3D%%ZIP%%%26dma%3D%%DMA%%%26ct%3D%%CITY%%%26locale%3D%%LOCALE%%%26layer%3D%%LAYER%%%26ver%3D%%VER%%%26ord%3D%%ORD%%%26rmid%3D%%RMID%%%26tile%3D%%TILE%%%26vw%3D%%VIEW%%%26aid%3D%%AID%%%26pos%3D%%POS%%%26sg%3D%%SEGMENT%%%26wfxtg%3D%%WFXTG%%%26faud%3D%%FAUD%%%26fgeo%3D%%FGEO%%%26bn%3D%%BREAKING%%%26a%3D%%AGE%%%26g%3D%%GENDER%%%26ppid%3D%%PPID%%%26plat%3Dwx_droid_phone%26preload_partner%3D%%PRELOAD_PARTNER%%%26launch_partner%3D%%LAUNCH_PARTNER%%%26zcs%3D%%ZCS%%%26hzcs%3D%%HZCS%%%26nzcs%3D%%NZCS%%%26tpid%3D%%TPID%%%26fhic%3D%%FHIC%%%26floc%3D%%FLOC%%%26fltmpc%3D%%FLTMPC%%%26tmpc%3D%%TMPC%%%26lang%3D%%LANG%%%26adid%3D%%ADID%%%26cxtg%3D%%CXTG%%%26alert%3D%%ALERT%%%26env%3D%%ENV%%%26dynght%3D%%DYNGHT%%\",\n\t\t\"IMAVideoAdUrl\":\"https://pubads.g.doubleclick.net/gampad/ads?iu=%%AdUnitPrefix%%%%AdVideoUnitSuffix%%&sz=640x360&ciu_szs=320x50&env=vp&gdfp_req=1&impl=s&m_ast=vast&output=xml_vast3&c=%%ORD%%&unviewed_position_start=1&ad_rule=1&description_url=http%3A%2F%2Fwww.weather.com&content_url=http%3A%2F%2Fwww.weather.com&cust_params=cnd%3D%%CONDITION%%%26sev%3D%%SEVERE%%%26ftl%3D%%FTL%%%26hlzip%3D%%HLZIP%%%26tmp%3D%%TMP%%%26tmpr%3D%%TMPR%%%26wind%3D%%WIND%%%26hmid%3D%%HUMIDITY%%%26uv%3D%%UV%%%26plln%3D%%PLLN%%%26cc%3D%%COUNTRY%%%26st%3D%%STATE%%%26zip%3D%%ZIP%%%26dma%3D%%DMA%%%26ct%3D%%CITY%%%26locale%3D%%LOCALE%%%26layer%3D%%LAYER%%%26ver%3D%%VER%%%26ord%3D%%ORD%%%26rmid%3D%%RMID%%%26tile%3D1%26vw%3D%%VIEW%%%26aid%3D%%AID%%%26sg%3D%%SEGMENT%%%26wfxtg%3D%%WFXTG%%%26faud%3D%%FAUD%%%26fgeo%3D%%FGEO%%%26bn%3D%%BREAKING%%%26a%3D%%AGE%%%26g%3D%%GENDER%%%26ppid%3D%%PPID%%%26plat%3Dwx_droid_phone%26zcs%3D%%ZCS%%%26hzcs%3D%%HZCS%%%26nzcs%3D%%NZCS%%%26tpid%3D%%TPID%%%26fhic%3D%%FHIC%%%26floc%3D%%FLOC%%%26fltmpc%3D%%FLTMPC%%%26tmpc%3D%%TMPC%%%26lang%3D%%LANG%%%26lnid%3D%%LNID%%%26cmsid%3D2177%26ttid%3D%%TTID%%%26vid%3D%%TTID%%%26pos%3dWX_PRER%26h2o%3D%%H2O%%%26plist%3D%%PLIST%%%26adid%3D%%ADID%%%26cxtg%3D%%CXTG%%%26env%3D%%ENV%%%26dynght%3D%%DYNGHT%%%26ref%3D%%REF%%\",\n\t\t\"umuri\":\"umsessionkey=%%RMID%%&UMADPARAMiu=%%AdUnitPrefix%%%%AdUnitSuffix%%&UMPTPARAMcust_params=sz%3D%%SZ%%%26pos%3D%%POS%%%26tile%3D1%26cc%3D%%COUNTRY%%%26st%3D%%STATE%%%26zip%3D%%ZIP%%%26dma%3D%%DMA%%%26tmpr%3D%%TMPR%%%26tmp%3D%%TMP%%%26cnd%3D%%CONDITION%%%26locale%3D%%LOCALE%%%26ver%3D%%VER%%%26plln%3D%%PLLN%%%26wind%3D%%WIND%%%26uv%3D%%UV%%%26hmid%3D%%HUMIDITY%%%26zcs%3D%%ZCS%%%26hzcs%3D%%HZCS%%%26nzcs%3D%%NZCS%%%26sev%3D%%SEVERE%%%26bn%3D%%BREAKING%%%26a%3D%%AGE%%%26g%3D%%GENDER%%%26ppid%3D%%PPID%%%26plat%3Dwx_droid_phone%26sg%3D%%SEGMENT%%%26faud%3D%%FAUD%%%26fgeo%3D%%FGEO%%%26wfxtg%3D%%WFXTG%%%26rmid%3D%%RMID%%%26ftl%3D%%FTL%%%26hlzip%3D%%HLZIP%%%26aid%3D%%AID%%%26ct%3D%%CITY%%%26preload_partner%3D%%PRELOAD_PARTNER%%%26launch_partner%3D%%LAUNCH_PARTNER%%%26tpid%3D%%TPID%%%26fhic%3D%%FHIC%%%26floc%3D%%FLOC%%%26fltmpc%3D%%FLTMPC%%%26tmpc%3D%%TMPC%%%26lang%3D%%LANG%%&UMTP=0\"\n\t}\n}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "native",
+        "namespace": "ads",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "2b65413f-f07f-46a2-b015-dc439f1eabf1"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [
+          {
+            "defaultConfiguration": "{\n\t\"requestMethod\":\"POST\",\n\t\"endPoint\":\"sqs.us-east-1.amazonaws.com\",\n\t\"region\":\"us-east-1\",\n\t\"path\":\"events_BAR_android\",\n\t\"service\":\"sqs\",\n\t\"user\":\"events_BAR_android_writer\"\n}",
+            "defaultIfAirlockSystemIsDown": true,
+            "features": [],
+            "name": "LocationUpdateAws",
+            "namespace": "dal",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "61605695-3133-4a35-94cb-71ea0068d3b5"
+          }
+        ],
+        "name": "DalConfig",
+        "namespace": "dal",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "c5c5835f-a993-48b6-b70a-3d7950fd102f"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "Conversation",
+            "namespace": "watson",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "8aab57b2-60b3-432f-96c6-4cc85ec9b053"
+          },
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "voice search",
+            "namespace": "watson",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "73f48c25-c40b-469c-9ce0-9b57f96ad9fa"
+          }
+        ],
+        "name": "WatsonAllFeatures",
+        "namespace": "watson",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "99c972b4-cabc-4392-bb7d-73b45101fe25"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [
+          {
+            "defaultConfiguration": "{\n\t\"icon\":\"https://v.w-x.co/watson_voice_search_1.jpg\",\n\t\"size\":30,\n\t\"method\":\"skip_enter\",\n\t\"hints\":\"What is the weekend weather?\"\n}",
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "googlevoicesearch",
+            "namespace": "searchbar",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "04b92f8c-3308-4f3e-87e1-b4160487e32a"
+          },
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "icon",
+            "namespace": "searchbar",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "55b9e454-7662-487f-8740-40331567c8fb"
+          },
+          {
+            "defaultConfiguration": "{\n\t\"url\" : \"http://twctest.blekko.com:5050/search?q=%1&fmt=%2&qtype=%3&qsort=%4\"\n}",
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "universalsearch",
+            "namespace": "searchbar",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "d5a545c4-7253-4d22-a28a-a7e331a19a9e"
+          }
+        ],
+        "name": "SearchBar",
+        "namespace": "searchbar",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "18fd03b9-7a81-49b9-b94c-e71a72b1e596"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "Segment ReportTemp",
+        "namespace": "profile",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "2d653c5a-103d-4d5f-a177-b61556c083c8"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "JoseminaTest",
+        "namespace": "test",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "dc21a371-0f44-4863-acb3-41d14cc374a8"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "BoatBeachInOutdoorModule",
+        "namespace": "boatbeachmodule",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "4a353d06-c544-4151-bcfc-eac42cac6d18"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "TempTestSegments",
+        "namespace": "temp",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "e1029fd1-41a4-416c-ba75-fa32afeee97e"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "Events",
+        "namespace": "samsung",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "276462cb-9389-4f8e-a115-7f2e54a242f1"
+      },
+      {
+        "defaultConfiguration": "{\n\t\"reportedFields\":[\"ALL\"]\n}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "airlocksdk",
+        "namespace": "performance",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "647508d2-1010-4ab5-8a72-584d8b1251f3"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "NewRelic",
+        "namespace": "analytics",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "b71a285c-9840-4bc1-8e0c-f94bf5c80c4c"
+      },
+      {
+        "defaultConfiguration": "{\n\t\"url\":\"https://www.weather.com/services/ad-choices.html\",\n\t\"isElevated\":false\n}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "Ad Choices",
+        "namespace": "ads",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "0ffadb5d-b7da-4888-94c2-f254ce3505ab"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "CheckNearestWinterStormAlert",
+        "namespace": "test",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "34e85c86-2902-43e9-aefa-e840f83d0ecb"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "ComboModuleDisableLegends",
+        "namespace": "lifestylemodule",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "94c105af-ccb0-46c2-ac6d-af0a099392ee"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "ComboTemporary",
+        "namespace": "healthmodule",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "07544b2c-8b9f-4e09-b865-9c015a2ce850"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "TestContentViewedStream",
+        "namespace": "test",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "0eaf933f-8da8-4bee-97cf-d291b651fec2"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "IritTest",
+        "namespace": "ns1",
+        "noCachedResults": false,
+        "rolloutPercentage": 10,
+        "type": "FEATURE",
+        "uniqueId": "f9ddb190-6109-4784-bf54-361d0cd1404e"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "TestVideoPlayedStream",
+        "namespace": "test",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "8071d612-3a30-4f7d-a320-d3e972d7b98b"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "TestAdViewedStream",
+        "namespace": "test",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "9017162d-8c11-4cf4-b298-0b65ad51e8e8"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "TestVideoAutoPlayedStream",
+        "namespace": "test",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "3b9dcb11-b7e5-44d3-9d29-6446a5afbb05"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "VladAdinaStreamsFeature",
+        "namespace": "Test",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "dc56fda0-940e-4741-a423-bfd265d42281"
+      },
+      {
+        "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\"\n\t},\n\t\"descriptor\":\"TEST GORUN TOMORROW\",\n\t\"value\":\"NO UTILITY\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_us_flag\"\n\t},\n\t\"analyticsTileName\":\"radar\"\n}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "TestGoRunTomorrow",
+        "namespace": "test",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "097572b8-0b31-4d96-a2f7-76ab263e13f4"
+      },
+      {
+        "defaultConfiguration": "{\n\t\"test\":\"josemina\"\n}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "ModuleDetailViewedRate",
+        "namespace": "test",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "b0eb863f-b48d-4688-804e-5f730eda46de"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "VideoPlayedQATest",
+        "namespace": "qa",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "3843a873-33e3-4d2a-aa1c-ca5c08863092"
+      }
+    ],
+    "type": "ROOT",
+    "uniqueId": "59f42f5a-8a23-4ff7-8e24-8ad0e2428920"
+  },
+  "version": "V2.5",
+  "productName": "AndroidWithStreams"
+}

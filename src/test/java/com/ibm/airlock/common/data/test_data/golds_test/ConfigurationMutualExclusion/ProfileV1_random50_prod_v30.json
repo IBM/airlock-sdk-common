@@ -1,0 +1,84 @@
+{
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.contextViewedLocationCountryNoME",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.contextViewedLocationCountry",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.contextViewedLocationCountry1",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.contextDeviceIL",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.contextDeviceIL2",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.maxFeatureOn2",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

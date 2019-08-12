@@ -1,0 +1,35 @@
+{
+	"codeIdentifier": "ConfigurationWithRules",
+	"name": "ConfigurationWithRules",
+	"seasons": [
+		{
+			"lastModified": 1542005695368,
+			"maxVersion": "7.8",
+			"minVersion": "7.5",
+			"productId": "e2eaf6b5-e2e8-4662-8099-bc267327645e",
+			"uniqueId": "e38ae993-3709-457f-97ed-19576a1a5d1a"
+		},
+		{
+			"lastModified": 1542005704328,
+			"maxVersion": "7.10",
+			"minVersion": "7.8",
+			"productId": "e2eaf6b5-e2e8-4662-8099-bc267327645e",
+			"uniqueId": "7d738f42-e953-40b7-97bb-eb0699ac85e3"
+		},
+		{
+			"lastModified": 1542005721529,
+			"maxVersion": "7.14",
+			"minVersion": "7.10",
+			"productId": "e2eaf6b5-e2e8-4662-8099-bc267327645e",
+			"uniqueId": "4906c873-8201-4983-a98f-0dc79b1f2537"
+		},
+		{
+			"lastModified": 1499271954815,
+			"maxVersion": null,
+			"minVersion": "7.14",
+			"productId": "e2eaf6b5-e2e8-4662-8099-bc267327645e",
+			"uniqueId": "9c8f0452-64ac-43bd-856d-32ed53e70be0"
+		}
+	],
+	"uniqueId": "e2eaf6b5-e2e8-4662-8099-bc267327645e"
+}

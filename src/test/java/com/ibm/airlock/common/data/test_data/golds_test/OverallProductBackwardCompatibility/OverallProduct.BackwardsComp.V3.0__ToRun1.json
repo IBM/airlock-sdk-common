@@ -1,0 +1,13 @@
+[
+	{
+		"analyticSummary": "ProfileV1_random50_dev_v30_analytics_summary.json",
+		"context": "ProfileV1.json",
+		"locale": "en",
+		"minAppVer": "8.0.1",
+		"output": "ProfileV1_random50_dev_v30.json",
+		"randomMap": "random50.json",
+		"stage": "DEVELOPMENT",
+		"testName": "ProfileV1_dev",
+		"usergroups": "AndroidDEV,DEV,DEV.QA,QA,test"
+	}
+]

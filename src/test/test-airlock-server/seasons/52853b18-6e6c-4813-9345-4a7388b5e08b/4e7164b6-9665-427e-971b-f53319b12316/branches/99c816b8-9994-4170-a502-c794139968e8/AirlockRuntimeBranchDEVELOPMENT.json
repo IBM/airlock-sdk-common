@@ -1,0 +1,36 @@
+{
+	"features": [
+		{
+			"additionalInfo": {
+			},
+			"branchFeatureParentName": "ROOT",
+			"branchStatus": "NEW",
+			"configurationRules": [
+			],
+			"defaultConfiguration": "{\n\t\"text\":\"branch3\"\n}",
+			"defaultIfAirlockSystemIsDown": false,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"DEV",
+				"QA"
+			],
+			"minAppVersion": "8.0",
+			"name": "F3",
+			"namespace": "ns1",
+			"noCachedResults": false,
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "903e4b23-dfd7-45ee-8d75-c1f88a30e74e"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "branch3",
+	"uniqueId": "99c816b8-9994-4170-a502-c794139968e8"
+}

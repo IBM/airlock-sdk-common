@@ -1,0 +1,18 @@
+{
+  "callOrder": [
+    "doInit",
+    "doSetGroups",
+    "doRefreshAndSync"
+  ],
+  "configuration": {
+    "configPath": "test_data\/multi_branches\/DevProdWithRulesTest\/",
+    "goldPath": "gold_files\/multi_branches\/DevProdWithRulesTest\/ProfileV52\/noG",
+    "deviceContextFileName": "DeviceContextV52.json",
+    "groupsFileName": "noG.json",
+    "profileFileName": "ProfileV1.json",
+    "defaultFileName": "dev_prod_with_rules_test.txt",
+    "randomsMap": "randomMap50.json",
+    "appVersion": "8.0"
+  },
+  "updates": {}
+}

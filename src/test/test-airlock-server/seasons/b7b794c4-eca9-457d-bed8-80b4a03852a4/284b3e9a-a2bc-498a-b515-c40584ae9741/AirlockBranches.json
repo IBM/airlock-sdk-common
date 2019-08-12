@@ -1,0 +1,50 @@
+{
+	"branches": [
+		{
+			"creationDate": 1499239452554,
+			"creator": "Esteban Zia",
+			"description": "Enable a disabled subfeature",
+			"lastModified": 1499239452554,
+			"name": "branch1",
+			"seasonId": "284b3e9a-a2bc-498a-b515-c40584ae9741",
+			"uniqueId": "d73c591a-e1c7-4b1e-8e0e-10586c786d40"
+		},
+		{
+			"creationDate": 1499239759013,
+			"creator": "Esteban Zia",
+			"description": "Add mtx branch",
+			"lastModified": 1499239759013,
+			"name": "branch2",
+			"seasonId": "284b3e9a-a2bc-498a-b515-c40584ae9741",
+			"uniqueId": "305a323a-00c4-4036-ab1d-8fbfa5763719"
+		},
+		{
+			"creationDate": 1499242321035,
+			"creator": "Esteban Zia",
+			"description": "Take branch2 as the base branch and add a subfeature to mtx group.",
+			"lastModified": 1499242321035,
+			"name": "branch3FromBranch2",
+			"seasonId": "284b3e9a-a2bc-498a-b515-c40584ae9741",
+			"uniqueId": "6e72028b-3edf-4f47-8f38-9d945344a89a"
+		},
+		{
+			"creationDate": 1499242897372,
+			"creator": "Esteban Zia",
+			"description": "Parent sub feature disabled in branch (it's sub feature should be also disable)",
+			"lastModified": 1499242897372,
+			"name": "branch4",
+			"seasonId": "284b3e9a-a2bc-498a-b515-c40584ae9741",
+			"uniqueId": "20fbaebb-2144-4d11-ae74-23723ec86d3a"
+		},
+		{
+			"creationDate": 1499333274851,
+			"creator": "Esteban Zia",
+			"description": "Add subfeature in development and subfeature in prod",
+			"lastModified": 1499333274851,
+			"name": "branch5",
+			"seasonId": "284b3e9a-a2bc-498a-b515-c40584ae9741",
+			"uniqueId": "06f53575-33df-45af-90c7-b8c920d5579f"
+		}
+	],
+	"seasonId": "284b3e9a-a2bc-498a-b515-c40584ae9741"
+}

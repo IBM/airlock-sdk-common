@@ -1,0 +1,73 @@
+{
+  "devS3Path": "http://localhost:8000/test-airlock-server",
+  "defaultLanguage": "en",
+  "productId": "1a768855-1d5d-4413-b60a-ca8c868625cd",
+  "s3Path": "http://localhost:8000/test-airlock-server",
+  "supportedLanguages": [
+    "en"
+  ],
+  "seasonId": "f5e9ea10-0eb4-4c36-8a19-2b4f1fc9e398",
+  "root": {
+    "features": [
+      {
+        "defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "turnOffNoDefault",
+        "namespace": "cfo",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "3ccaeffa-190a-46c4-ad06-f7951a4d8232"
+      },
+      {
+        "defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"featureON\":true,\"text\":\"welcome to hell\"}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "turnOffWithDefaultON",
+        "namespace": "cfo",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "214366cd-364c-420a-be38-711b7da5ab6b"
+      },
+      {
+        "defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"featureON\":false,\"text\":\"welcome to hell\"}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "turnOffOn",
+        "namespace": "cfo",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "0b975cd4-906b-47ce-aa88-101848c09c9c"
+      },
+      {
+        "defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "disabledFeature",
+        "namespace": "cfo",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "764a6656-25c3-4669-bf2a-9d138e420f93"
+      },
+      {
+        "defaultConfiguration": "{\n\t\"color\":\"red\"\n}",
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "runtimeError",
+        "namespace": "cfo",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "6ca62459-1d20-4e48-b7df-b474a2256c97"
+      }
+    ],
+    "type": "ROOT",
+    "uniqueId": "8540a4ad-3df5-4ea3-bfc1-cc3d3fe035e6"
+  },
+  "version": "V2.5",
+  "productName": "ConfigurationFeatureOn"
+}

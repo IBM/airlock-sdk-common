@@ -1,0 +1,31 @@
+{
+	"branches": [
+	],
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "7.14",
+	"productId": "0084e302-e7aa-4300-ad8d-9f3d88ba8531",
+	"productName": "ConfigurationMutualExclusion",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "929002fa-04f4-47a4-beed-ca95b409b1da"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "ab8a052e-8a7d-4da7-a5ba-4d1dc62df006",
+	"serverVersion": "V3.0",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

@@ -1,0 +1,28 @@
+{
+	"codeIdentifier": "QA.TreeProduct",
+	"name": "QA.TreeProduct",
+	"seasons": [
+		{
+			"lastModified": 1541677896086,
+			"maxVersion": "7.8",
+			"minVersion": "1.0",
+			"productId": "fa874787-058b-42c3-a1a9-1cce9c75bd09",
+			"uniqueId": "079e423d-2093-4b43-834a-0136ad6242e7"
+		},
+		{
+			"lastModified": 1541677912334,
+			"maxVersion": "7.10",
+			"minVersion": "7.8",
+			"productId": "fa874787-058b-42c3-a1a9-1cce9c75bd09",
+			"uniqueId": "ba91dd75-dbdd-4351-b6c9-f015c7040911"
+		},
+		{
+			"lastModified": 1491125797151,
+			"maxVersion": null,
+			"minVersion": "7.10",
+			"productId": "fa874787-058b-42c3-a1a9-1cce9c75bd09",
+			"uniqueId": "f9493b2a-8242-4194-a188-a6d65c6949b4"
+		}
+	],
+	"uniqueId": "fa874787-058b-42c3-a1a9-1cce9c75bd09"
+}

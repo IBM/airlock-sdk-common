@@ -1,0 +1,22 @@
+{
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"maxVersion": null,
+	"minVersion": "7.8",
+	"productId": "16fb9bda-c4bf-4424-b7dc-929c452b8db8",
+	"productName": "ProductForDebugging",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "451994ca-66b3-4594-8eee-91afae488b7c"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "b3dfc1f3-9dc2-4a1c-bf9c-814cab8cdef8",
+	"serverVersion": "V2.1",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.1"
+}

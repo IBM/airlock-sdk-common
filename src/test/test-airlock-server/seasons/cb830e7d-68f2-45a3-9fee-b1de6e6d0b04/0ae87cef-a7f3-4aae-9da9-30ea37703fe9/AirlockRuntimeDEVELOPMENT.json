@@ -1,0 +1,269 @@
+{
+	"branches": [
+	],
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/DEV3\/",
+	"entitlementsRoot": {
+		"branchStatus": "NONE",
+		"entitlements": [
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": true,
+				"entitlements": [
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"entitlements": [
+						],
+						"includedEntitlements": [
+						],
+						"internalUserGroups": [
+							"QA"
+						],
+						"minAppVersion": "1.0",
+						"name": "Ent11",
+						"namespace": "airlockEntitlement",
+						"noCachedResults": false,
+						"purchaseOptions": [
+							{
+								"additionalInfo": {
+								},
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"internalUserGroups": [
+									"QA"
+								],
+								"minAppVersion": "1.0",
+								"name": "OP3",
+								"namespace": "airlockEntitlement",
+								"noCachedResults": false,
+								"rolloutPercentage": 10.0,
+								"rule": {
+									"ruleString": "true"
+								},
+								"stage": "DEVELOPMENT",
+								"storeProductIds": [
+									{
+										"productId": "prod22",
+										"storeType": "Google Play Store"
+									}
+								],
+								"type": "PURCHASE_OPTIONS",
+								"uniqueId": "749058c9-aed9-44fe-926d-7e49f2e94ee2"
+							}
+						],
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "true"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "ENTITLEMENT",
+						"uniqueId": "fdb2ce35-0e3c-47b9-adf0-f72fb7272e64"
+					}
+				],
+				"includedEntitlements": [
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"minAppVersion": "1.0",
+				"name": "Ent1",
+				"namespace": "airlockEntitlement",
+				"noCachedResults": true,
+				"purchaseOptions": [
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"internalUserGroups": [
+							"QA"
+						],
+						"minAppVersion": "1.0",
+						"name": "OP1",
+						"namespace": "airlockEntitlement",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "true"
+						},
+						"stage": "DEVELOPMENT",
+						"storeProductIds": [
+							{
+								"productId": "prod1",
+								"storeType": "Google Play Store"
+							}
+						],
+						"type": "PURCHASE_OPTIONS",
+						"uniqueId": "01130073-d0cd-4546-a193-13c1d68d399a"
+					},
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"internalUserGroups": [
+							"QA"
+						],
+						"minAppVersion": "1.0",
+						"name": "OP2",
+						"namespace": "airlockEntitlement",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "true"
+						},
+						"stage": "DEVELOPMENT",
+						"storeProductIds": [
+							{
+								"productId": "prod2",
+								"storeType": "Apple App Store"
+							}
+						],
+						"type": "PURCHASE_OPTIONS",
+						"uniqueId": "3ebbeffc-34d4-4c1b-bd2c-5ca5fde4751d"
+					}
+				],
+				"rolloutPercentage": 50.0,
+				"rule": {
+					"ruleString": "true"
+				},
+				"stage": "DEVELOPMENT",
+				"type": "ENTITLEMENT",
+				"uniqueId": "28f51e07-60af-47e4-959f-54df7d1dc1f6"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "dcdefcc6-dd21-43bd-99c4-ce5c00fc519f"
+	},
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "1.0",
+	"productId": "cb830e7d-68f2-45a3-9fee-b1de6e6d0b04",
+	"productName": "EntitlementPercentage.QA",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": null,
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+					{
+						"additionalInfo": null,
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"QA"
+						],
+						"minAppVersion": "1.0",
+						"name": "F11",
+						"namespace": "ns1",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "8cf21859-a441-49dc-91e0-cf1c8418cacf"
+					},
+					{
+						"additionalInfo": null,
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"QA"
+						],
+						"minAppVersion": "1.0",
+						"name": "F12",
+						"namespace": "ns1",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "8596dbee-5ba2-40bd-9f98-6ac20fc14809"
+					}
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"minAppVersion": "1.0",
+				"name": "F1",
+				"namespace": "ns1",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "4301a691-92c5-4aff-8c91-801d82e7093e"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "1d8e0368-0145-419a-a2ac-002e8468d6e6"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/DEV3\/",
+	"seasonId": "0ae87cef-a7f3-4aae-9da9-30ea37703fe9",
+	"serverVersion": "V5.5",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

@@ -1,0 +1,54 @@
+{
+	"creationDate": 1513113931601,
+	"creator": "Karthik Velappan",
+	"description": null,
+	"features": [
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"Layers.HD Satellite",
+				"Layers.StormReports",
+				"Layers.US Only",
+				"Layers.Winter Weather"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"configurationSchema": null,
+			"creationDate": 1506092769201,
+			"creator": "Curtis Halbrook",
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"description": "Configuration for layers menu",
+			"displayName": null,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"iOS_Storm_Radar"
+			],
+			"lastModified": 1512500180792,
+			"minAppVersion": "1.3.0",
+			"name": "Layer Configuration",
+			"namespace": "Layers",
+			"noCachedResults": false,
+			"owner": "Curtis Halbrook",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "65c815a2-0b6e-4b53-bde9-75abcaab6d5b"
+		}
+	],
+	"lastModified": 1513113931601,
+	"name": "nathan 1.3.2",
+	"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+	"uniqueId": "0545ad2a-b14d-4400-9f55-81acdc368dfd"
+}

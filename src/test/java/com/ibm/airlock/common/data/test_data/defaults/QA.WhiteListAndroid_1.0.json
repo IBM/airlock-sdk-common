@@ -1,0 +1,29 @@
+{
+  "devS3Path": "http://localhost:8000/test-airlock-server",
+  "defaultLanguage": "en",
+  "productId": "fec9177f-15ef-421c-a1e1-8cec493c0cc3",
+  "s3Path": "http://localhost:8000/test-airlock-server",
+  "supportedLanguages": [
+    "en"
+  ],
+  "seasonId": "137c8f02-e09d-43d2-bbcd-5b52736c7977",
+  "root": {
+    "features": [
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "f1",
+        "namespace": "wl",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "ba9b77c3-656f-491c-a29c-5b652d4a4266"
+      }
+    ],
+    "type": "ROOT",
+    "uniqueId": "6816907a-2100-4dbb-9b67-7d8ee7d6e151"
+  },
+  "version": "V2.5",
+  "productName": "QA.WhiteListAndroid"
+}

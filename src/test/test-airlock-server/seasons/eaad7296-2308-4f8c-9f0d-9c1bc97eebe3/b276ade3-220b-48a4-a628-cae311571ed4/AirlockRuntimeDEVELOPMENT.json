@@ -1,0 +1,195 @@
+{
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"maxVersion": null,
+	"minVersion": "7.8",
+	"productId": "eaad7296-2308-4f8c-9f0d-9c1bc97eebe3",
+	"productName": "ProfilesComplexCondition",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "7.8",
+				"name": "viewedLocation and userLocation",
+				"namespace": "pcc",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.viewedLocation.country == 'US'  &&  context.currentLocation.country == 'US'"
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "a1e15f53-fcc6-4ff2-810f-9d56062390a3"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "7.8",
+				"name": "viewedLocation and not userLocation",
+				"namespace": "pcc",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.viewedLocation.country.startsWith('US')  &&  context.currentLocation.country != 'US'"
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "987e5b9c-17c5-45cb-907b-ab307e8c0298"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "7.8",
+				"name": "distanceKm and locale",
+				"namespace": "pcc",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.weatherSummary.closestLightning.distance <= 5 && context.device.localeCountryCode != 'en_US'"
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "8de5ae80-bc2b-445d-915a-30bf1d862c63"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "7.8",
+				"name": "alerts phenomenaCode",
+				"namespace": "pcc",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.weatherSummary.nearestWinterStormAlert.severityCode == 1"
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "b036b0ba-e91a-429b-b67f-037341b7c3a5"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "7.8",
+				"name": "lifeStyleIndices and userLocation not NY",
+				"namespace": "pcc",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.weatherSummary.lifeStyleIndices && !context.currentLocation.region.startsWith('NY') "
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "26b0416b-b60b-4d13-aeb6-b945f81c36ca"
+			},
+			{
+				"additionalInfo": null,
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "7.8",
+				"name": "context.weatherSummary.nearestSnowAccumulation",
+				"namespace": "scp",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "range = context.weatherSummary.nearestSnowAccumulation.snowRange.split('-'); range[0] >= 2"
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "c9dba223-0d31-414a-ba1a-d46ddf38e889"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "02fde474-9568-4f44-b25e-9e3f5def95d1"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "b276ade3-220b-48a4-a628-cae311571ed4",
+	"serverVersion": "V2.1",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.1"
+}

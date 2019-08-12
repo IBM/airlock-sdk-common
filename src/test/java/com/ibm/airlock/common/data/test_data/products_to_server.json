@@ -1,0 +1,66 @@
+{
+  "servers": [
+    {
+      "name": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/DEVAUTH2\/",
+      "products": [
+        "ConfigurationMutualExclusion",
+        "ConfigurationNoRules2Configs",
+        "ConfigurationNoRules",
+        "MTXGroupingConfiguration",
+        "MTXGroupingTrueFalse",
+        "NoRule100",
+        "NoRuleGroups",
+        "NoRulePercentageFinegrain",
+        "NoRulePercentage",
+        "AnalyticsProductV25",
+        "ConfigurationFeatureOn",
+        "MTXGroupingAllTrue",
+        "ConfigurationsWithSubConfig",
+        "ConfigurationWithRules",
+        "SDKBranchesSubfeatures",
+        "DevProdWithRulesTest",
+        "AnalyticsWithBranch",
+        "AndroidStreamsExamples"
+      ]
+    },
+    {
+      "name": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/TEST2\/",
+      "products": [
+        "ProductForDebugging",
+        "ProfilesSimpleCondition",
+        "ProfilesComplexCondition",
+        "NoRulePercentageUpgraded",
+        "ChangeFeaturesWithBitmap",
+        "HeadsUpAndGlobalConfigWithTranslation",
+        "AndroidTranslationsANDProdAdds",
+        "OverallProduct",
+        "QA.RulesTrace",
+        "QA.Product",
+        "QA.TreeProduct",
+        "AnalyticsProduct",
+        "QA.Android.WhiteList",
+        "QA.SimpleProduct",
+        "QA.WhiteList",
+        "QA.FeatureUsageTest"
+      ]
+    },
+    {
+      "name": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/DEVAUTH2\/",
+      "products": [
+        "Android Flagship Phone",
+        "OverallProductBackwardCompatibility",
+        "ExperimentInDevWithDevDev",
+        "ExperimentInProdWithDevDev",
+        "ExperimentInProdWithDevProd",
+        "ExperimentInProdWithProdProd",
+        "ExperimentInProdWithProdDev",
+        "OverallProductWithBranches",
+        "ExperimentDisabledInProdWithVariantDisabled",
+        "UtilityInRule",
+        "AnalyticsWithBranch",
+        "AndroidWithStreams",
+        "OrderQAProduct"
+      ]
+    }
+  ]
+}

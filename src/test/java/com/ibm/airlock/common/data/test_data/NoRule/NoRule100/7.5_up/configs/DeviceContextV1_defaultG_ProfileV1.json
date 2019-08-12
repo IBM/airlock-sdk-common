@@ -1,0 +1,16 @@
+{
+  "callOrder": [
+    "doInit",
+    "doSetGroups",
+    "doRefreshAndSync"
+  ],
+  "configuration": {
+    "configPath": "test_data\/NoRule\/NoRule100\/7.5_up\/",
+    "goldPath": "gold_files\/NoRule\/NoRule100\/7.5_up\/DeviceContextV1\/defaultG\/ProfileV1",
+    "deviceContextFileName": "DeviceContextV1.json",
+    "groupsFileName": "defaultG.json",
+    "profileFileName": "ProfileV1.json",
+    "defaultFileName": "no_rule_100_first_default.txt"
+  },
+  "updates": {}
+}

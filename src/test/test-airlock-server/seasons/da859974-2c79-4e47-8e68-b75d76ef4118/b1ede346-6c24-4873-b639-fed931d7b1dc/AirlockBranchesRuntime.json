@@ -1,0 +1,23 @@
+{
+	"branches": [
+		{
+			"creationDate": 1497529512096,
+			"creator": "irit",
+			"description": "branch descr",
+			"lastModified": 1497529512096,
+			"name": "branch1",
+			"seasonId": "b1ede346-6c24-4873-b639-fed931d7b1dc",
+			"uniqueId": "9781aca9-1c3d-4bb5-906f-a4bac0d5cc72"
+		},
+		{
+			"creationDate": 1497529512338,
+			"creator": "irit",
+			"description": "branch descr",
+			"lastModified": 1497529512338,
+			"name": "branch2",
+			"seasonId": "b1ede346-6c24-4873-b639-fed931d7b1dc",
+			"uniqueId": "0b9c467d-a095-498b-aaec-0e2fd9e3e731"
+		}
+	],
+	"seasonId": "b1ede346-6c24-4873-b639-fed931d7b1dc"
+}

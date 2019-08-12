@@ -1,0 +1,44 @@
+{
+	"creationDate": 1509269363204,
+	"creator": "Esteban Zia",
+	"description": null,
+	"features": [
+		{
+			"additionalInfo": null,
+			"branchFeatureParentName": "ROOT",
+			"branchStatus": "NEW",
+			"configurationRules": [
+			],
+			"configurationSchema": null,
+			"creationDate": 1509269440059,
+			"creator": "Esteban Zia",
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"description": "",
+			"displayName": null,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+			],
+			"lastModified": 1509269440059,
+			"minAppVersion": "8.2",
+			"name": "B2.F1",
+			"namespace": "ns",
+			"noCachedResults": false,
+			"owner": "Esteban Zia",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "141b5b40-9ba0-4d44-bb02-06aa20018615",
+			"stage": "DEVELOPMENT",
+			"type": "FEATURE",
+			"uniqueId": "5a82f99c-351a-4892-930f-0a4747c33ccb"
+		}
+	],
+	"lastModified": 1509269363204,
+	"name": "Branch2",
+	"seasonId": "141b5b40-9ba0-4d44-bb02-06aa20018615",
+	"uniqueId": "2292339a-4d0c-4076-bffb-f78be487c909"
+}

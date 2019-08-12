@@ -1,0 +1,46 @@
+{
+	"creationDate": 1520512198852,
+	"creator": "Oren Paikowsky",
+	"description": null,
+	"features": [
+		{
+			"additionalInfo": null,
+			"branchFeatureParentName": "ROOT",
+			"branchStatus": "NEW",
+			"configurationRules": [
+			],
+			"configurationSchema": null,
+			"creationDate": 1520512238458,
+			"creator": "Oren Paikowsky",
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"description": "",
+			"displayName": null,
+			"enabled": false,
+			"features": [
+			],
+			"internalUserGroups": [
+			],
+			"lastModified": 1520512238458,
+			"minAppVersion": "1.0",
+			"name": "VideoPlayer",
+			"namespace": "DaimlerDemo",
+			"noCachedResults": false,
+			"orderingRules": [
+			],
+			"owner": "Oren Paikowsky",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "968698ed-7f8b-4441-8ba5-c452ec64d032",
+			"stage": "DEVELOPMENT",
+			"type": "FEATURE",
+			"uniqueId": "9d815939-3017-4e60-a0ea-daf3e4fbaf1d"
+		}
+	],
+	"lastModified": 1520512198852,
+	"name": "OrensTest",
+	"seasonId": "968698ed-7f8b-4441-8ba5-c452ec64d032",
+	"uniqueId": "e83bb7a6-d008-4160-80e3-a1685afcf7ea"
+}

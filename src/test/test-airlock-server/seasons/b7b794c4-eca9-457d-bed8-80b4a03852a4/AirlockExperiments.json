@@ -1,0 +1,252 @@
+{
+	"experiments": [
+		{
+			"creationDate": 1499333491648,
+			"creator": "Esteban Zia",
+			"description": null,
+			"enabled": true,
+			"hypothesis": null,
+			"internalUserGroups": [
+				"DEV",
+				"QA"
+			],
+			"lastModified": 1499337744733,
+			"maxVersion": null,
+			"measurements": null,
+			"minVersion": "1.0",
+			"name": "SubFeatureMasterDisabledBranchEnabled",
+			"productId": "b7b794c4-eca9-457d-bed8-80b4a03852a4",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": "context.ExperimentNo == 1"
+			},
+			"stage": "PRODUCTION",
+			"uniqueId": "ab51dd02-929e-4f2d-b9a0-eb4f5375ba75",
+			"variants": [
+				{
+					"branchName": "MASTER",
+					"creationDate": 1499333530961,
+					"creator": "Esteban Zia",
+					"description": null,
+					"enabled": true,
+					"experimentId": "ab51dd02-929e-4f2d-b9a0-eb4f5375ba75",
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"lastModified": 1499337846844,
+					"name": "TakeMasterVar",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "context.VariantNo != 1"
+					},
+					"stage": "PRODUCTION",
+					"uniqueId": "0ab7af00-23ce-4599-aa52-fb2fb5562274"
+				},
+				{
+					"branchName": "branch1",
+					"creationDate": 1499333561270,
+					"creator": "Esteban Zia",
+					"description": null,
+					"enabled": true,
+					"experimentId": "ab51dd02-929e-4f2d-b9a0-eb4f5375ba75",
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"lastModified": 1499337822976,
+					"name": "TakeBranch1Var",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "context.VariantNo == 1"
+					},
+					"stage": "PRODUCTION",
+					"uniqueId": "7daf96c9-0809-4068-8cec-b6add36e4611"
+				}
+			]
+		},
+		{
+			"creationDate": 1499336248811,
+			"creator": "Esteban Zia",
+			"description": null,
+			"enabled": true,
+			"hypothesis": null,
+			"internalUserGroups": [
+				"DEV",
+				"QA"
+			],
+			"lastModified": 1499337933495,
+			"maxVersion": null,
+			"measurements": null,
+			"minVersion": "1.0",
+			"name": "Branch2",
+			"productId": "b7b794c4-eca9-457d-bed8-80b4a03852a4",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": "context.ExperimentNo == 2"
+			},
+			"stage": "PRODUCTION",
+			"uniqueId": "ea56ec92-918d-48af-af45-b76493fa88e5",
+			"variants": [
+				{
+					"branchName": "branch2",
+					"creationDate": 1499336294952,
+					"creator": "Esteban Zia",
+					"description": null,
+					"enabled": true,
+					"experimentId": "ea56ec92-918d-48af-af45-b76493fa88e5",
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"lastModified": 1499338122958,
+					"name": "Branch2Variant",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "context.VariantNo == 1"
+					},
+					"stage": "PRODUCTION",
+					"uniqueId": "fc0cf38d-77ae-40a5-895b-4f16843b9d80"
+				}
+			]
+		},
+		{
+			"creationDate": 1499336336310,
+			"creator": "Esteban Zia",
+			"description": null,
+			"enabled": true,
+			"hypothesis": null,
+			"internalUserGroups": [
+				"DEV",
+				"QA"
+			],
+			"lastModified": 1499337950484,
+			"maxVersion": null,
+			"measurements": null,
+			"minVersion": "1.0",
+			"name": "Branch3",
+			"productId": "b7b794c4-eca9-457d-bed8-80b4a03852a4",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": "context.ExperimentNo == 3"
+			},
+			"stage": "PRODUCTION",
+			"uniqueId": "cbb1f932-9d36-4923-8fd5-44170be2d3ff",
+			"variants": [
+				{
+					"branchName": "branch3FromBranch2",
+					"creationDate": 1499336354979,
+					"creator": "Esteban Zia",
+					"description": null,
+					"enabled": true,
+					"experimentId": "cbb1f932-9d36-4923-8fd5-44170be2d3ff",
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"lastModified": 1499338218448,
+					"name": "Branch3Variant",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "context.VariantNo == 1"
+					},
+					"stage": "PRODUCTION",
+					"uniqueId": "e7eb5c85-d97d-4906-889f-ce99f4b22bf2"
+				}
+			]
+		},
+		{
+			"creationDate": 1499336374090,
+			"creator": "Esteban Zia",
+			"description": null,
+			"enabled": true,
+			"hypothesis": null,
+			"internalUserGroups": [
+				"DEV",
+				"QA"
+			],
+			"lastModified": 1499337979937,
+			"maxVersion": null,
+			"measurements": null,
+			"minVersion": "1.0",
+			"name": "Branch4",
+			"productId": "b7b794c4-eca9-457d-bed8-80b4a03852a4",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": "context.ExperimentNo == 4"
+			},
+			"stage": "PRODUCTION",
+			"uniqueId": "de968bae-f114-4807-ba8f-fbda163d4040",
+			"variants": [
+				{
+					"branchName": "branch4",
+					"creationDate": 1499336385217,
+					"creator": "Esteban Zia",
+					"description": null,
+					"enabled": true,
+					"experimentId": "de968bae-f114-4807-ba8f-fbda163d4040",
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"lastModified": 1499338233670,
+					"name": "Branch4Variant",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "context.VariantNo == 1"
+					},
+					"stage": "PRODUCTION",
+					"uniqueId": "ef6024aa-5176-49f5-b2e8-f2b0ef8483c2"
+				}
+			]
+		},
+		{
+			"creationDate": 1499336399836,
+			"creator": "Esteban Zia",
+			"description": null,
+			"enabled": true,
+			"hypothesis": null,
+			"internalUserGroups": [
+				"DEV",
+				"QA"
+			],
+			"lastModified": 1499337997227,
+			"maxVersion": null,
+			"measurements": null,
+			"minVersion": "1.0",
+			"name": "Branch5",
+			"productId": "b7b794c4-eca9-457d-bed8-80b4a03852a4",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": "context.ExperimentNo == 5"
+			},
+			"stage": "PRODUCTION",
+			"uniqueId": "22657de3-0476-4caf-b120-f60fbab331c9",
+			"variants": [
+				{
+					"branchName": "branch5",
+					"creationDate": 1499336714649,
+					"creator": "Esteban Zia",
+					"description": null,
+					"enabled": true,
+					"experimentId": "22657de3-0476-4caf-b120-f60fbab331c9",
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"lastModified": 1499338248313,
+					"name": "Branch5Variant",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "context.VariantNo == 1"
+					},
+					"stage": "PRODUCTION",
+					"uniqueId": "55093357-65e5-4a4c-96c1-ece428f7ea17"
+				}
+			]
+		}
+	],
+	"lastModified": 1499336399836,
+	"maxExperimentsOn": 1,
+	"productId": "b7b794c4-eca9-457d-bed8-80b4a03852a4"
+}

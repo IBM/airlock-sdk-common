@@ -1,0 +1,29 @@
+{
+	"lastModified": 1512470017035,
+	"notifications": [
+		{
+			"cancellationRule": {
+				"ruleString": "(new Date()).getHours()>13"
+			},
+			"configuration": "{\"notification\":{\n\t\"title\":\"QA notification test\",\n\t\"text\":\"QA Test Notification\",\n\t\"dueDate\":(new Date()).getTime() + 10000}}",
+			"enabled": true,
+			"internalUserGroups": [
+				"QA"
+			],
+			"maxNotifications": -1,
+			"minAppVersion": "8.0",
+			"minInterval": -1,
+			"name": "NotifyTestInProd",
+			"registrationRule": {
+				"ruleString": "(new Date()).getHours()>12"
+			},
+			"rolloutPercentage": 100.0,
+			"seasonId": "5befd394-747d-45fb-ae66-a78a2ff80f22",
+			"stage": "PRODUCTION",
+			"uniqueId": "d551a575-af93-439b-999f-e4bfb7706ac0"
+		}
+	],
+	"notificationsLimitations": [
+	],
+	"seasonId": "5befd394-747d-45fb-ae66-a78a2ff80f22"
+}

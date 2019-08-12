@@ -1,0 +1,31 @@
+{
+	"branches": [
+	],
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3.amazonaws.com\/airlockprod\/PROD1\/",
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "6.0",
+	"productId": "23192b92-a24c-4773-b3ef-72a2af52f748",
+	"productName": "WU iOS Flagship",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "2a82d5cf-8da4-44d0-b8b4-df448021542a"
+	},
+	"s3Path": "https:\/\/s.w-x.co\/airlock\/PROD1\/",
+	"seasonId": "f8b757ac-1840-43c3-9f73-d23af487a297",
+	"serverVersion": "V5.0",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

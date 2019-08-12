@@ -1,0 +1,14 @@
+{
+	"codeIdentifier": "QA.NotificationsTest",
+	"name": "QA.NotificationsTest",
+	"seasons": [
+		{
+			"lastModified": 1512470017035,
+			"maxVersion": null,
+			"minVersion": "8.0",
+			"productId": "34571327-6e62-4c2a-b419-a08df6bfc522",
+			"uniqueId": "5befd394-747d-45fb-ae66-a78a2ff80f22"
+		}
+	],
+	"uniqueId": "34571327-6e62-4c2a-b419-a08df6bfc522"
+}

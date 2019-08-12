@@ -1,0 +1,31 @@
+{
+	"branches": [
+	],
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "8.0",
+	"productId": "34571327-6e62-4c2a-b419-a08df6bfc522",
+	"productName": "QA.NotificationsTest",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "e8baf409-858d-4e79-9e23-3911a5ee781f"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "5befd394-747d-45fb-ae66-a78a2ff80f22",
+	"serverVersion": "V4.5",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

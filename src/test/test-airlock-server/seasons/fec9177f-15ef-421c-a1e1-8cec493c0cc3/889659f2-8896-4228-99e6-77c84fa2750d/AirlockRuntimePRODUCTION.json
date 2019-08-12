@@ -1,0 +1,83 @@
+{
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"inputFieldsForAnalytics": [
+		"context.userLocation.country",
+		"context.device.localeCountryCode",
+		"context.device.datetime"
+	],
+	"maxVersion": null,
+	"minVersion": "2.0",
+	"productId": "fec9177f-15ef-421c-a1e1-8cec493c0cc3",
+	"productName": "QA.WhiteListAndroid",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": null,
+				"branchStatus": "NONE",
+				"configAttributesForAnalytics": [
+					"numOfClicks"
+				],
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+				],
+				"minAppVersion": "2.0",
+				"name": "f1",
+				"namespace": "wl",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"sendToAnalytics": true,
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "4ab764c3-81ee-4540-af63-4ead01070023"
+			},
+			{
+				"additionalInfo": null,
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+				],
+				"minAppVersion": "2.0",
+				"name": "f2",
+				"namespace": "wl",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "8be5c0f2-be9b-4517-bd9a-11e901011d3b"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "b620f94f-9391-493b-885f-5d2ff98687c7"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "889659f2-8896-4228-99e6-77c84fa2750d",
+	"serverVersion": "V2.5",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

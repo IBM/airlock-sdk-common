@@ -1,0 +1,13 @@
+{
+  "testName": "S3Path",
+  "productName": "TestAndroidSDK",
+  "productId": "27489740-85a1-4a99-8f57-0130cf5889aa",
+  "seasonLogicalName": "1.0_up",
+  "seasonId": "b4d459e5-b1e8-4db6-b9cd-f2409c378beb",
+  "deviceContextFilePath": "test_data\/S3Path\/TestAndroidSDK\/1.0_up\/device_contexts\/defaultDC.json",
+  "groupsFilePath": "test_data\/S3Path\/TestAndroidSDK\/1.0_up\/groups\/defaultG.json",
+  "profileFilePath": "test_data\/S3Path\/TestAndroidSDK\/1.0_up\/profiles\/ProfileV1.json",
+  "features": {
+    "ns1.f1": true
+  }
+}

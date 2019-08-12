@@ -1,0 +1,1361 @@
+{
+    "places": [{
+        "country": "US",
+        "city": "New York City",
+        "dma": "501",
+        "id": "USNJ0612:1:US",
+        "state": "NY",
+        "tag": "[]",
+        "type": "saved"
+    }, {
+        "country": "US",
+        "city": "Atlanta",
+        "dma": "524",
+        "id": "USGA0653:1:US",
+        "state": "GA",
+        "tag": "[]",
+        "type": "saved"
+    }],
+    "twcRelease": {
+        "appVersion": "8.2.0",
+        "svcCommit": "2323"
+    },
+    "endSession": 1503542531025,
+    "os": {
+        "version": "7.1.1",
+        "platform": "android"
+    },
+    "startSession": 1503542205358,
+    "nameSpace": "com.weather",
+    "sessionID": "c452b860-1b45-4f18-bd0e-a4a115f67dd4",
+    "device": {
+        "deviceType": "mobile",
+        "model": "Nexus 5X",
+        "locale": "en_US",
+        "manufacturer": "LGE"
+    },
+    "user": {
+        "entitlements": "[]",
+        "adId": "b983a742-bed4-44ec-af41-71c1005c809a",
+        "followMeEnabled": true,
+        "registered": false,
+        "id": "4MZstrOfMzVjc",
+        "userType": "prod",
+        "gpsEnabled": true,
+        "authenticatedUsing": "anon",
+        "installId": "8d30b74e-c2fb-40cf-8aec-f280f9a1d1ab",
+        "pushAlertsEnabled": true,
+        "limitedAdId": ""
+    },
+    "events": [{
+        "dateTime": 1503542205357,
+        "eventData": {
+            "method": "ftl",
+            "foreground": true
+        },
+        "name": "app-launch"
+    }, {
+        "dateTime": 1503542209695,
+        "eventData": {
+            "context_weatherSummary_nearestStartPrecip_startTime": "null",
+            "feature_ads_AdsConfig": "On",
+            "context_weatherSummary_observation_skyCode": "null",
+            "context_profile_settings_segmentation_avr-a": "null",
+            "context_app_af_status": "null",
+            "context_weatherSummary_tomorrowForecast_day_precipPercentage": "null",
+            "context_app_campaign": "null",
+            "context_weatherSummary_nearestWinterStormAlert_significanceCode": "null",
+            "context_weatherSummary_todayForecast_day_precipType": "null",
+            "context_profile_demographics_ageRange": "null",
+            "context_weatherSummary_nearestWinterStormAlert_phenomenaCode": "null",
+            "seasonId": "86081671-a82c-428b-bb72-81f4ea6e0603",
+            "context_weatherSummary_nearestStartPrecip_eventType": "null",
+            "context_weatherSummary_nearestStartPrecip_severity": "null",
+            "context_weatherSummary_tomorrowForecast_night_precipType": "null",
+            "context_weatherSummary_todayForecast_day_precipPercentage": "null",
+            "airlockVersion": "V2.5",
+            "context_weatherSummary_tomorrowForecast_day_precipType": "null",
+            "context_weatherSummary_observation_temperature": "null",
+            "context_app_media_source": "null",
+            "context_weatherSummary_todayForecast_night_precipPercentage": "null",
+            "context_device_daysSinceAppInstall": "0",
+            "context_weatherSummary_closestLightning_distance": "null",
+            "productId": "bc479db5-ff58-4138-b5e4-a8400a1f78d5",
+            "context_weatherSummary_tomorrowForecast_night_precipPercentage": "null",
+            "context_weatherSummary_observation_feelsLikeTemperature": "null",
+            "context_profile_demographics_dob": "null",
+            "context_profile_demographics_gender": "null",
+            "context_weatherSummary_todayForecast_night_precipType": "null",
+            "context_weatherSummary_contentMode_mode": "null",
+            "feature_headsupv2_HeadsUp": "On",
+            "context_weatherSummary_nearestWinterStormAlert_severityCode": "null",
+            "context_weatherSummary_closestLightning_strikeTime": "null"
+        },
+        "name": "airlock-config"
+    }, {
+        "dateTime": 1503542225319,
+        "eventData": {
+            "slot": "weather.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542225437,
+        "eventData": {
+            "slot": "weather.feed2",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542221462,
+        "eventData": {
+            "slot": "weather.feed3",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542213744,
+        "eventData": {
+            "context_weatherSummary_nearestStartPrecip_startTime": "null",
+            "feature_ads_AdsConfig": "On",
+            "context_weatherSummary_observation_skyCode": "31",
+            "context_profile_settings_segmentation_avr-a": "null",
+            "context_app_af_status": "null",
+            "context_weatherSummary_tomorrowForecast_day_precipPercentage": "0",
+            "context_app_campaign": "null",
+            "context_weatherSummary_nearestWinterStormAlert_significanceCode": "null",
+            "context_weatherSummary_todayForecast_day_precipType": "null",
+            "context_profile_demographics_ageRange": "null",
+            "context_weatherSummary_nearestWinterStormAlert_phenomenaCode": "null",
+            "context_weatherSummary_nearestStartPrecip_eventType": "null",
+            "context_weatherSummary_nearestStartPrecip_severity": "null",
+            "context_weatherSummary_tomorrowForecast_night_precipType": "rain",
+            "context_weatherSummary_todayForecast_day_precipPercentage": "null",
+            "context_weatherSummary_tomorrowForecast_day_precipType": "rain",
+            "context_weatherSummary_observation_temperature": "75",
+            "context_app_media_source": "null",
+            "context_weatherSummary_todayForecast_night_precipPercentage": "0",
+            "context_device_daysSinceAppInstall": "0",
+            "context_weatherSummary_closestLightning_distance": "null",
+            "context_weatherSummary_tomorrowForecast_night_precipPercentage": "0",
+            "context_weatherSummary_observation_feelsLikeTemperature": "75",
+            "context_profile_demographics_dob": "null",
+            "context_profile_demographics_gender": "null",
+            "context_weatherSummary_todayForecast_night_precipType": "rain",
+            "context_weatherSummary_contentMode_mode": "normal",
+            "feature_headsupv2_HeadsUp": "On",
+            "context_weatherSummary_nearestWinterStormAlert_severityCode": "null",
+            "context_weatherSummary_closestLightning_strikeTime": "null"
+        },
+        "name": "airlock-config"
+    }, {
+        "dateTime": 1503542225864,
+        "eventData": {
+            "slot": "weather.cc",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542214520,
+        "eventData": {
+            "locationId": "USGA0653:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1503542243180,
+        "eventData": {
+            "slot": "weather.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542244791,
+        "eventData": {
+            "slot": "weather.feed2",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542234882,
+        "eventData": {
+            "slot": "weather.feed3",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542238608,
+        "eventData": {
+            "slot": "weather.feed5",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542235119,
+        "eventData": {
+            "context_weatherSummary_observation_feelsLikeTemperature": "74",
+            "context_weatherSummary_observation_temperature": "74",
+            "context_app_af_status": "Organic"
+        },
+        "name": "airlock-config"
+    }, {
+        "dateTime": 1503542241268,
+        "eventData": {
+            "slot": "weather.cc",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542235452,
+        "eventData": {
+            "playlist": "pl-editor-picks",
+            "pos": 1,
+            "caption": "Gulf Coast in Danger",
+            "id": "c332bd6d-9bdd-4038-842b-6705baf09411",
+            "source": "plus3",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/823harvey1.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542235453,
+        "eventData": {
+            "name": "current-conditions"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1503542235705,
+        "eventData": {
+            "locationId": "USNJ0612:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1503542235815,
+        "eventData": {
+            "playlist": "pl-editor-picks",
+            "pos": 1,
+            "caption": "Gulf Coast in Danger",
+            "id": "c332bd6d-9bdd-4038-842b-6705baf09411",
+            "source": "plus3",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/823harvey1.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542244433,
+        "eventData": {
+            "playlist": "pl-editor-picks",
+            "pos": 1,
+            "caption": "Why We Fear Slow-Moving Tropical Storms",
+            "id": "445aebaa-a297-4557-b7eb-b690cbd93fcc",
+            "source": "rightnow",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/823slow2.jpg?v=ap&w=980&h=551&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542255380,
+        "eventData": {
+            "name": "hourly"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1503542259691,
+        "eventData": {
+            "autoplayWatchedSecs": 13,
+            "adClicked": false,
+            "caption": "Why We Fear Slow-Moving Tropical Storms",
+            "source": "rightnowmodel",
+            "adSecs": 0,
+            "watchedSecs": 13,
+            "playlist": "pl-editor-picks",
+            "pos": 0,
+            "contentSecs": 66,
+            "playMethod": "auto",
+            "adWatchedSecs": 0,
+            "id": "445aebaa-a297-4557-b7eb-b690cbd93fcc",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/823slow2.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "video-played"
+    }, {
+        "dateTime": 1503542265572,
+        "eventData": {
+            "name": "ten-day"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1503542274084,
+        "eventData": {
+            "name": "hourly"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542274150,
+        "eventData": {
+            "slot": "weather.hourly",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542276486,
+        "eventData": {
+            "locationId": "USNJ0612:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1503542281450,
+        "eventData": {
+            "slot": "weather.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542285759,
+        "eventData": {
+            "slot": "weather.feed2",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542282049,
+        "eventData": {
+            "slot": "weather.feed3",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542280655,
+        "eventData": {
+            "slot": "weather.feed5",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542285208,
+        "eventData": {
+            "name": "video"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1503542294679,
+        "eventData": {
+            "name": "daily"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542294930,
+        "eventData": {
+            "slot": "weather.10day",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542296718,
+        "eventData": {
+            "locationId": "USNJ0612:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1503542307766,
+        "eventData": {
+            "slot": "weather.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542307389,
+        "eventData": {
+            "slot": "weather.feed2",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542303346,
+        "eventData": {
+            "slot": "weather.feed3",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542300791,
+        "eventData": {
+            "slot": "weather.feed5",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542299333,
+        "eventData": {
+            "playlist": "pl-editor-picks",
+            "pos": 1,
+            "caption": "Flame-Throwing Drone Gets Job Done",
+            "id": "ae198392-281f-4b10-8130-084e77ee3b14",
+            "source": "videomodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/823drone1.jpg?v=ap&w=980&h=551&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542333239,
+        "eventData": {
+            "autoplayWatchedSecs": 32,
+            "adClicked": false,
+            "caption": "Flame-Throwing Drone Gets Job Done",
+            "source": "videomodule",
+            "adSecs": 0,
+            "watchedSecs": 32,
+            "playlist": "pl-editor-picks",
+            "pos": 0,
+            "contentSecs": 39,
+            "playMethod": "auto",
+            "adWatchedSecs": 0,
+            "id": "ae198392-281f-4b10-8130-084e77ee3b14",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/823drone1.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "video-played"
+    }, {
+        "dateTime": 1503542310608,
+        "eventData": {
+            "playlist": "pl-editor-picks",
+            "pos": 2,
+            "caption": "Hong Kong on High Alert",
+            "id": "46a75376-c62f-474c-bc4a-a21f07548bb4",
+            "source": "videomodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/0823_Hato_Update_Danielle_1_1280x720_16112197522.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542310609,
+        "eventData": {
+            "playlist": "pl-editor-picks",
+            "pos": 3,
+            "caption": "What Turned the Sky Red",
+            "id": "6c6e10e5-d547-4717-900b-501a9b756f05",
+            "source": "videomodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/823sand.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542322074,
+        "eventData": {
+            "name": "map"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1503542333618,
+        "eventData": {
+            "sub": "Local",
+            "name": "video"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542333670,
+        "eventData": {
+            "name": "video"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542334752,
+        "eventData": {
+            "source": "f5e357e1061e42b99b3d2a20ac99012b",
+            "type": "pre",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542336011,
+        "eventData": {
+            "sub": "Local",
+            "name": "video"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542337012,
+        "eventData": {
+            "source": "f5e357e1061e42b99b3d2a20ac99012b",
+            "type": "pre",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542338305,
+        "eventData": {
+            "sub": "pl-eclipse",
+            "name": "video"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542338844,
+        "eventData": {
+            "source": "03adf6cf4a6641cb8b45a9e47fcd1aee",
+            "type": "pre",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542340461,
+        "eventData": {
+            "sub": "pl-rockets-are-cool",
+            "name": "video"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542341417,
+        "eventData": {
+            "source": "509ad87e32934b6f9a1b2b962118ee66",
+            "type": "pre",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542342423,
+        "eventData": {
+            "sub": "pl-editor-picks",
+            "name": "video"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542343530,
+        "eventData": {
+            "source": "c332bd6d9bdd4038842b6705baf09411",
+            "type": "pre",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542345172,
+        "eventData": {
+            "sub": "pl-crazimals",
+            "name": "video"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542346037,
+        "eventData": {
+            "source": "08f1109d94244596885e94bfd1ee99ea",
+            "type": "pre",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542347394,
+        "eventData": {
+            "sub": "pl-brb",
+            "name": "video"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542351432,
+        "eventData": {
+            "source": "68a9a0d8dfd04827a3410385f8249d6c",
+            "type": "pre",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542352163,
+        "eventData": {
+            "sub": "pl-usofadventure",
+            "name": "video"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542353574,
+        "eventData": {
+            "sub": "pl-the-lift",
+            "name": "video"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542354555,
+        "eventData": {
+            "source": "7d09c9b9ce3c474996f92f68c4b9ef2f",
+            "type": "pre",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542355110,
+        "eventData": {
+            "source": "68fa3752893843ebaab5bc5cc51b9cd0",
+            "type": "pre",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542356300,
+        "eventData": {
+            "sub": "pl-the-ari-effect",
+            "name": "video"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542360027,
+        "eventData": {
+            "source": "6c6e10e5d5474717900b501a9b756f05",
+            "type": "pre",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542362170,
+        "eventData": {
+            "playlist": "pl-editor-picks",
+            "pos": 1,
+            "caption": "Flame-Throwing Drone Gets Job Done",
+            "id": "ae198392-281f-4b10-8130-084e77ee3b14",
+            "source": "videomodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/823drone1.jpg?v=ap&w=980&h=551&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542362171,
+        "eventData": {
+            "playlist": "pl-editor-picks",
+            "pos": 2,
+            "caption": "Hong Kong on High Alert",
+            "id": "46a75376-c62f-474c-bc4a-a21f07548bb4",
+            "source": "videomodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/0823_Hato_Update_Danielle_1_1280x720_16112197522.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542362172,
+        "eventData": {
+            "playlist": "pl-editor-picks",
+            "pos": 3,
+            "caption": "What Turned the Sky Red",
+            "id": "6c6e10e5-d547-4717-900b-501a9b756f05",
+            "source": "videomodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/823sand.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542362624,
+        "eventData": {
+            "locationId": "USNJ0612:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1503542370191,
+        "eventData": {
+            "slot": "weather.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542374702,
+        "eventData": {
+            "slot": "weather.feed2",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542369558,
+        "eventData": {
+            "slot": "weather.feed3",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542373403,
+        "eventData": {
+            "slot": "weather.feed5",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542387145,
+        "eventData": {
+            "name": "maps"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542387146,
+        "eventData": {
+            "name": "road-condition"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542388341,
+        "eventData": {
+            "slot": "weather.maps",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542398776,
+        "eventData": {
+            "slot": "weather.maps",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542401933,
+        "eventData": {
+            "locationId": "USNJ0612:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1503542412363,
+        "eventData": {
+            "slot": "weather.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542414824,
+        "eventData": {
+            "slot": "weather.feed2",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542407270,
+        "eventData": {
+            "slot": "weather.feed3",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542407143,
+        "eventData": {
+            "slot": "weather.feed5",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542414545,
+        "eventData": {
+            "name": "outdoor"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1503542417384,
+        "eventData": {
+            "name": "road-condition"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542417384,
+        "eventData": {
+            "name": "road-condition"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542418095,
+        "eventData": {
+            "slot": "weather.maps",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542422877,
+        "eventData": {
+            "slot": "weather.maps",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542429624,
+        "eventData": {
+            "locationId": "USNJ0612:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1503542447319,
+        "eventData": {
+            "slot": "weather.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542439884,
+        "eventData": {
+            "slot": "weather.feed2",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542447164,
+        "eventData": {
+            "slot": "weather.feed3",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542448943,
+        "eventData": {
+            "slot": "weather.feed5",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542454271,
+        "eventData": {
+            "slot": "weather.feed4",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542445295,
+        "eventData": {
+            "name": "health"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1503542454898,
+        "eventData": {
+            "name": "go-run"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542455580,
+        "eventData": {
+            "slot": "content.run.spotlight",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542459444,
+        "eventData": {
+            "slot": "content.run.largeAds",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542456921,
+        "eventData": {
+            "sub": "tomorrow",
+            "name": "go-run"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542457061,
+        "eventData": {
+            "slot": "content.run.spotlight",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542461503,
+        "eventData": {
+            "slot": "content.run.largeAds",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542460061,
+        "eventData": {
+            "sub": "this-week",
+            "name": "go-run"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542460313,
+        "eventData": {
+            "slot": "content.run.spotlight",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542464216,
+        "eventData": {
+            "slot": "content.run.largeAds",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542463560,
+        "eventData": {
+            "locationId": "USNJ0612:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1503542463817,
+        "eventData": {
+            "slot": "weather.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542463830,
+        "eventData": {
+            "slot": "weather.feed2",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542463837,
+        "eventData": {
+            "slot": "weather.feed3",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542463844,
+        "eventData": {
+            "slot": "weather.feed4",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542463850,
+        "eventData": {
+            "slot": "weather.feed5",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542466500,
+        "eventData": {
+            "name": "boat-beach"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542471402,
+        "eventData": {
+            "slot": "content.beach.spotlight",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542470384,
+        "eventData": {
+            "locationId": "USNJ0612:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1503542476143,
+        "eventData": {
+            "slot": "weather.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542478170,
+        "eventData": {
+            "slot": "weather.feed2",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542475061,
+        "eventData": {
+            "slot": "weather.feed3",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542473442,
+        "eventData": {
+            "slot": "weather.feed4",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542473943,
+        "eventData": {
+            "slot": "weather.feed5",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542475472,
+        "eventData": {
+            "name": "news"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1503542480092,
+        "eventData": {
+            "playlist": "null",
+            "pos": 1,
+            "caption": "Harvey a Gulf Coast Flood Danger",
+            "id": "ef38c20e-4109-4193-a47e-fd2a61cdf6ab",
+            "source": "newsmodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/w\/harvey-stall-potential-22aug17.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542489889,
+        "eventData": {
+            "playlist": "null",
+            "pos": 2,
+            "caption": "Watching the Southeast Coast Closely",
+            "id": "ffc6a50e-53f4-409c-b5d1-a94b744b4734",
+            "source": "newsmodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/w\/invest92l_wed_eve.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542489890,
+        "eventData": {
+            "playlist": "null",
+            "pos": 3,
+            "caption": "Texas Coast Prepares for Harvey",
+            "id": "8b9f1558-7a8e-41c1-9621-2a2cdf9a1cc1",
+            "source": "newsmodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/w\/ap_17235702118167.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542495333,
+        "eventData": {
+            "name": "news"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542495396,
+        "eventData": {
+            "slot": "weather.articles",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542496295,
+        "eventData": {
+            "slot": "weather.articles",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542499383,
+        "eventData": {
+            "contentSecs": 4,
+            "caption": "Harvey a Gulf Coast Flood Danger",
+            "id": "ef38c20e-4109-4193-a47e-fd2a61cdf6ab",
+            "source": "newsmodule",
+            "articleURL": "\/storms\/hurricane\/news\/tropical-storm-hurricane-harvey-gulf-of-mexico-forecast",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/w\/harvey-stall-potential-22aug17.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "article-read"
+    }, {
+        "dateTime": 1503542499616,
+        "eventData": {
+            "playlist": "null",
+            "pos": 1,
+            "caption": "Harvey a Gulf Coast Flood Danger",
+            "id": "ef38c20e-4109-4193-a47e-fd2a61cdf6ab",
+            "source": "newsmodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/w\/harvey-stall-potential-22aug17.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542499622,
+        "eventData": {
+            "playlist": "null",
+            "pos": 2,
+            "caption": "Watching the Southeast Coast Closely",
+            "id": "ffc6a50e-53f4-409c-b5d1-a94b744b4734",
+            "source": "newsmodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/w\/invest92l_wed_eve.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542499622,
+        "eventData": {
+            "playlist": "null",
+            "pos": 3,
+            "caption": "Texas Coast Prepares for Harvey",
+            "id": "8b9f1558-7a8e-41c1-9621-2a2cdf9a1cc1",
+            "source": "newsmodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/w\/ap_17235702118167.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503542500183,
+        "eventData": {
+            "locationId": "USNJ0612:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1503542510324,
+        "eventData": {
+            "slot": "weather.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542511336,
+        "eventData": {
+            "slot": "weather.feed2",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542509792,
+        "eventData": {
+            "slot": "weather.feed3",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542508686,
+        "eventData": {
+            "slot": "weather.feed4",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542500489,
+        "eventData": {
+            "slot": "weather.feed5",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542501316,
+        "eventData": {
+            "slot": "weather.articles",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542501385,
+        "eventData": {
+            "slot": "weather.articles",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542503987,
+        "eventData": {
+            "name": "hurricane"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1503542526046,
+        "eventData": {
+            "name": "hurricane"
+        },
+        "name": "detail-viewed"
+    }, {
+        "dateTime": 1503542526617,
+        "eventData": {
+            "slot": "weather.hurricane.spotlight",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542526623,
+        "eventData": {
+            "slot": "weather.hurricane.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542526902,
+        "eventData": {
+            "slot": "weather.hurricane.spotlight",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542526906,
+        "eventData": {
+            "slot": "weather.hurricane.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542528856,
+        "eventData": {
+            "locationId": "USNJ0612:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1503542529006,
+        "eventData": {
+            "slot": "weather.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542529011,
+        "eventData": {
+            "slot": "weather.feed2",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542529017,
+        "eventData": {
+            "slot": "weather.feed3",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542529024,
+        "eventData": {
+            "slot": "weather.feed5",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503542530884,
+        "name": "app-exit"
+    }],
+    "currentLocation": {
+        "dateTime": 1503542531735,
+        "altitude": 0,
+        "vertAccuracy": 0,
+        "timezoneOffset": -4.0,
+        "horizAccuracy": 0,
+        "pressure": 978.8945922851562,
+        "coords": {
+            "lng": -84.46006,
+            "lat": 33.89254
+        }
+    },
+    "network": {
+        "carrier": "none",
+        "carrierNetworkClass": "unknown",
+        "networkType": "wifi"
+    }
+}

@@ -1,0 +1,107 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"mx.487a73a2-b97e-48cb-a6b8-9145a127be7e"
+			],
+			"branchOrderingRuleItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"features": [
+			],
+			"minAppVersion": "8.0",
+			"name": "F5.1",
+			"namespace": "nf",
+			"orderingRules": [
+			],
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "52351bf3-ce0c-4f22-bff6-34370609cb76"
+		},
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"ns.F6A",
+				"ns.F6B",
+				"ns.F6C"
+			],
+			"branchOrderingRuleItems": [
+				"mx.81035c76-f565-4d0f-90b1-a78b9dcce4ad"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"features": [
+			],
+			"minAppVersion": "8.0",
+			"name": "F6",
+			"namespace": "ns",
+			"orderingRules": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchOrderingRuleItems": [
+						"nsF1.OrderingRule6.2",
+						"nsF1.OrderingRule6.1"
+					],
+					"branchStatus": "CHECKED_OUT",
+					"maxFeaturesOn": 1,
+					"orderingRules": [
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchOrderingRuleItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"minAppVersion": "8.0",
+							"name": "OrderingRule6.2",
+							"namespace": "nsF1",
+							"orderingRules": [
+							],
+							"rolloutPercentage": 100.0,
+							"type": "ORDERING_RULE",
+							"uniqueId": "4945ea5c-cc3c-4983-8330-df21ccce1170"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchOrderingRuleItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"minAppVersion": "8.0",
+							"name": "OrderingRule6.1",
+							"namespace": "nsF1",
+							"orderingRules": [
+							],
+							"rolloutPercentage": 100.0,
+							"type": "ORDERING_RULE",
+							"uniqueId": "fead6055-f005-48e3-8b86-143ba946cb39"
+						}
+					],
+					"type": "ORDERING_RULE_MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "81035c76-f565-4d0f-90b1-a78b9dcce4ad"
+				}
+			],
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "ca96aa14-eebd-4a06-922b-53805739bbe6"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "testbranch",
+	"uniqueId": "dc34a693-370a-4be0-aaac-0c295af1009e"
+}

@@ -1,0 +1,38 @@
+{
+	"branches": [
+	],
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/DEV3\/",
+	"entitlementsRoot": {
+		"branchStatus": "NONE",
+		"entitlements": [
+		],
+		"type": "ROOT",
+		"uniqueId": "d9306704-f600-48e4-b560-2047a92ca6dc"
+	},
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "1.0.0",
+	"productId": "fabe49c1-f72a-4899-930f-7b8087974f54",
+	"productName": "EntitlementBranches.QA",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "fe312985-9e62-45c3-955e-852f31600b96"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/DEV3\/",
+	"seasonId": "8d1381c0-03ac-468a-9f8d-94668017cdc7",
+	"serverVersion": "V5.5",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

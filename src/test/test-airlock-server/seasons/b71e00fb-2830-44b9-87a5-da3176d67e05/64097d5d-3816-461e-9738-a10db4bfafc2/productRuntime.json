@@ -1,0 +1,35 @@
+{
+	"codeIdentifier": "NoRule100",
+	"name": "NoRule100",
+	"seasons": [
+		{
+			"lastModified": 1543393685949,
+			"maxVersion": "7.8",
+			"minVersion": "7.5",
+			"productId": "b71e00fb-2830-44b9-87a5-da3176d67e05",
+			"uniqueId": "11a14048-13ab-46a1-8ac7-b3d3b16c0ba6"
+		},
+		{
+			"lastModified": 1487696376052,
+			"maxVersion": "7.10",
+			"minVersion": "7.8",
+			"productId": "b71e00fb-2830-44b9-87a5-da3176d67e05",
+			"uniqueId": "64097d5d-3816-461e-9738-a10db4bfafc2"
+		},
+		{
+			"lastModified": 1543393702073,
+			"maxVersion": "7.14",
+			"minVersion": "7.10",
+			"productId": "b71e00fb-2830-44b9-87a5-da3176d67e05",
+			"uniqueId": "70b07209-c832-4ff7-b249-2b963eb568f9"
+		},
+		{
+			"lastModified": 1499540133429,
+			"maxVersion": null,
+			"minVersion": "7.14",
+			"productId": "b71e00fb-2830-44b9-87a5-da3176d67e05",
+			"uniqueId": "8e9513c6-5dbc-42ec-b874-ac4a341f3984"
+		}
+	],
+	"uniqueId": "b71e00fb-2830-44b9-87a5-da3176d67e05"
+}

@@ -1,0 +1,22 @@
+{
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"maxVersion": "7.8",
+	"minVersion": "7.6",
+	"productId": "2749cb61-1436-45d2-afdf-d866015b7971",
+	"productName": "MTXGroupingConfiguration",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "8b7f89ff-4341-4abd-a65e-4e2e58ca0517"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "a62947a8-3e24-43bc-bb6c-55e107c123c7",
+	"serverVersion": "V0",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2"
+}

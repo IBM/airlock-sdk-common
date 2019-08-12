@@ -1,0 +1,58 @@
+{
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "feature1.feature1.aggregate.alltrue",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "feature2.feature2.overwrite.alltrue",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "feature3.feature3.false",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "feature4.feature4.overwrite.hierarchy",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

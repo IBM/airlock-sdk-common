@@ -1,0 +1,67 @@
+[
+	{
+		"context": "ProfileV1.json",
+		"locale": "en",
+		"minAppVer": "9.0",
+		"output": "ProfileV1_randomMap50_NoExp_dev_v41.json",
+		"randomMap": "randomMap50_NoExp.json",
+		"stage": "DEVELOPMENT",
+		"testName": "NoExp_dev",
+		"usergroups": "AndroidDEV,DEV,DEV.QA,QA,test"
+	},
+	{
+		"testName": "NoExp_prod"
+	},
+	{
+		"context": "ProfileV1.json",
+		"locale": "en",
+		"minAppVer": "9.0",
+		"output": "ProfileV1_randomMap50_Exp1_Var1_dev_v41.json",
+		"randomMap": "randomMap50_Exp1_Var1.json",
+		"stage": "DEVELOPMENT",
+		"testName": "Exp1_Var1_dev",
+		"usergroups": "AndroidDEV,DEV,DEV.QA,QA,test"
+	},
+	{
+		"testName": "Exp1_Var1_prod"
+	},
+	{
+		"context": "ProfileV1.json",
+		"locale": "en",
+		"minAppVer": "9.0",
+		"output": "ProfileV1_randomMap50_Exp1_Var2_dev_v41.json",
+		"randomMap": "randomMap50_Exp1_Var2.json",
+		"stage": "DEVELOPMENT",
+		"testName": "Exp1_Var2_dev",
+		"usergroups": "AndroidDEV,DEV,DEV.QA,QA,test"
+	},
+	{
+		"testName": "Exp1_Var2_prod"
+	},
+	{
+		"context": "ProfileV1.json",
+		"locale": "en",
+		"minAppVer": "9.0",
+		"output": "ProfileV1_randomMap50_Exp2_Var3_dev_v41.json",
+		"randomMap": "randomMap50_Exp2_Var3.json",
+		"stage": "DEVELOPMENT",
+		"testName": "Exp2_Var3_dev",
+		"usergroups": "AndroidDEV,DEV,DEV.QA,QA,test"
+	},
+	{
+		"testName": "Exp2_Var3_prod"
+	},
+	{
+		"context": "ProfileV1.json",
+		"locale": "en",
+		"minAppVer": "9.0",
+		"output": "ProfileV1_randomMap50_Exp2_Var4_dev_v41.json",
+		"randomMap": "randomMap50_Exp2_Var4.json",
+		"stage": "DEVELOPMENT",
+		"testName": "Exp2_Var4_dev",
+		"usergroups": "AndroidDEV,DEV,DEV.QA,QA,test"
+	},
+	{
+		"testName": "Exp2_Var4_prod"
+	}
+]

@@ -1,0 +1,191 @@
+{
+    "places": [{
+        "country": "US",
+        "city": "Sutton",
+        "dma": "743",
+        "id": "USAK0234:1:US",
+        "state": "AK",
+        "tag": "[]",
+        "type": "saved"
+    }, {
+        "country": "US",
+        "city": "Atlanta",
+        "dma": "524",
+        "id": "USGA0653:1:US",
+        "state": "GA",
+        "tag": "[]",
+        "type": "saved"
+    }],
+    "twcRelease": {
+        "appVersion": "8.2.0",
+        "svcCommit": "2323"
+    },
+    "endSession": 1503533823037,
+    "os": {
+        "version": "7.1.1",
+        "platform": "android"
+    },
+    "startSession": 1503533796578,
+    "nameSpace": "com.weather",
+    "sessionID": "174f12c1-7e22-4062-9c6a-93821fcde2f4",
+    "device": {
+        "deviceType": "mobile",
+        "model": "Nexus 5X",
+        "locale": "en_US",
+        "manufacturer": "LGE"
+    },
+    "user": {
+        "entitlements": "[]",
+        "adId": "b983a742-bed4-44ec-af41-71c1005c809a",
+        "followMeEnabled": true,
+        "registered": false,
+        "id": "UMgkqetLmaNFt",
+        "userType": "dev",
+        "gpsEnabled": true,
+        "authenticatedUsing": "anon",
+        "installId": "d0d0c022-8011-44ad-aca0-180d3a6d272e",
+        "pushAlertsEnabled": true,
+        "limitedAdId": ""
+    },
+    "events": [{
+        "dateTime": 1503533796575,
+        "eventData": {
+            "method": "clean",
+            "foreground": true
+        },
+        "name": "app-launch"
+    }, {
+        "dateTime": 1503533800442,
+        "eventData": {
+            "context_weatherSummary_nearestStartPrecip_startTime": "null",
+            "feature_ads_AdsConfig": "On",
+            "context_weatherSummary_observation_skyCode": "32",
+            "context_app_af_status": "Organic",
+            "context_weatherSummary_tomorrowForecast_day_precipPercentage": "0",
+            "context_app_campaign": "null",
+            "context_weatherSummary_nearestWinterStormAlert_significanceCode": "null",
+            "context_weatherSummary_todayForecast_day_precipType": "null",
+            "context_weatherSummary_nearestWinterStormAlert_phenomenaCode": "null",
+            "seasonId": "86081671-a82c-428b-bb72-81f4ea6e0603",
+            "context_weatherSummary_nearestStartPrecip_eventType": "null",
+            "context_weatherSummary_nearestStartPrecip_severity": "null",
+            "context_weatherSummary_tomorrowForecast_night_precipType": "rain",
+            "context_weatherSummary_todayForecast_day_precipPercentage": "null",
+            "airlockVersion": "V2.5",
+            "context_weatherSummary_tomorrowForecast_day_precipType": "rain",
+            "context_weatherSummary_observation_temperature": "80",
+            "context_app_media_source": "null",
+            "context_weatherSummary_todayForecast_night_precipPercentage": "0",
+            "context_device_daysSinceAppInstall": "0",
+            "context_weatherSummary_closestLightning_distance": "null",
+            "productId": "bc479db5-ff58-4138-b5e4-a8400a1f78d5",
+            "context_weatherSummary_tomorrowForecast_night_precipPercentage": "0",
+            "context_weatherSummary_observation_feelsLikeTemperature": "83",
+            "context_weatherSummary_todayForecast_night_precipType": "rain",
+            "context_weatherSummary_contentMode_mode": "normal",
+            "feature_headsupv2_HeadsUp": "On",
+            "context_weatherSummary_nearestWinterStormAlert_severityCode": "null",
+            "context_weatherSummary_closestLightning_strikeTime": "null"
+        },
+        "name": "airlock-config"
+    }, {
+        "dateTime": 1503533800579,
+        "eventData": {
+            "locationId": "USGA0653:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1503533800820,
+        "eventData": {
+            "locationId": "USGA0653:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1503533801134,
+        "eventData": {
+            "slot": "weather.cc",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503533815812,
+        "eventData": {
+            "context_weatherSummary_nearestStartPrecip_startTime": "2017-08-23T16:15:00-08:00",
+            "feature_ads_AdsConfig": "On",
+            "context_weatherSummary_observation_skyCode": "11",
+            "context_app_af_status": "Organic",
+            "context_weatherSummary_tomorrowForecast_day_precipPercentage": "50",
+            "feature_headsupv2_Radar": "On",
+            "context_app_campaign": "null",
+            "context_weatherSummary_nearestWinterStormAlert_significanceCode": "null",
+            "context_weatherSummary_todayForecast_day_precipType": "null",
+            "context_weatherSummary_nearestWinterStormAlert_phenomenaCode": "null",
+            "context_weatherSummary_nearestStartPrecip_eventType": "1",
+            "context_weatherSummary_nearestStartPrecip_severity": "1",
+            "context_weatherSummary_tomorrowForecast_night_precipType": "rain",
+            "context_weatherSummary_todayForecast_day_precipPercentage": "null",
+            "context_weatherSummary_tomorrowForecast_day_precipType": "rain",
+            "context_weatherSummary_observation_temperature": "57",
+            "context_app_media_source": "null",
+            "context_weatherSummary_todayForecast_night_precipPercentage": "100",
+            "context_device_daysSinceAppInstall": "0",
+            "context_weatherSummary_closestLightning_distance": "null",
+            "context_weatherSummary_tomorrowForecast_night_precipPercentage": "40",
+            "context_weatherSummary_observation_feelsLikeTemperature": "55",
+            "context_weatherSummary_todayForecast_night_precipType": "rain",
+            "context_weatherSummary_contentMode_mode": "normal",
+            "feature_headsupv2_HeadsUp": "On",
+            "context_weatherSummary_nearestWinterStormAlert_severityCode": "null",
+            "context_weatherSummary_closestLightning_strikeTime": "null"
+        },
+        "name": "airlock-config"
+    }, {
+        "dateTime": 1503533815969,
+        "eventData": {
+            "locationId": "USAK0234:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1503533815999,
+        "eventData": {
+            "playlist": "pl-the-ari-effect",
+            "pos": 1,
+            "caption": "Gulf Coast in Danger",
+            "id": "c332bd6d-9bdd-4038-842b-6705baf09411",
+            "source": "plus3",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/823harvey1.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1503533818030,
+        "eventData": {
+            "type": "vbbg",
+            "clicked": false,
+            "creativeId": "104542185377",
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1503533822840,
+        "name": "app-exit"
+    }],
+    "currentLocation": {
+        "dateTime": 1503533823403,
+        "altitude": 0,
+        "vertAccuracy": 0,
+        "timezoneOffset": -4.0,
+        "horizAccuracy": 0,
+        "pressure": 977.3413696289062,
+        "coords": {
+            "lng": -84.46025,
+            "lat": 33.89374
+        }
+    },
+    "network": {
+        "carrier": "none",
+        "carrierNetworkClass": "unknown",
+        "networkType": "wifi"
+    }
+}

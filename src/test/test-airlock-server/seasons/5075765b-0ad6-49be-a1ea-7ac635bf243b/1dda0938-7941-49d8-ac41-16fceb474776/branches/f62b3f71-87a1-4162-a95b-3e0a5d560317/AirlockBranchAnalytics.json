@@ -1,0 +1,22 @@
+{
+	"analyticsQuota": 100,
+	"globalDataCollection": {
+		"analyticsDataCollection": {
+			"featuresAndConfigurationsForAnalytics": [
+				"e28644d1-2937-41be-8113-7a7ad1b827ab",
+				"6d911f7d-4441-40f2-b1f3-f9b9511de066"
+			],
+			"featuresAttributesForAnalytics": [
+			],
+			"inputFieldsForAnalytics": [
+			]
+		},
+		"lastModified": 1504111258892,
+		"rolloutPercentage": 100.0,
+		"rule": {
+			"ruleString": "true"
+		},
+		"seasonId": "1dda0938-7941-49d8-ac41-16fceb474776"
+	},
+	"seasonId": "1dda0938-7941-49d8-ac41-16fceb474776"
+}

@@ -1,0 +1,199 @@
+{
+  "testName": "NoRule",
+  "productName": "NoRulePercentage",
+  "productId": "58d87dcc-32c5-403f-af9f-d0cc8e89cc5e",
+  "seasonLogicalName": "7.5_up",
+  "seasonId": "6e28d1b6-69ca-4739-ac12-e9215567b02b",
+  "deviceContextFilePath": "test_data\/NoRule\/NoRulePercentage\/7.5_up\/device_contexts\/DeviceContextV1.json",
+  "groupsFilePath": "test_data\/NoRule\/NoRulePercentage\/7.5_up\/groups\/defaultG.json",
+  "profileFilePath": "test_data\/NoRule\/NoRulePercentage\/7.5_up\/profiles\/ProfileV1.json",
+  "root": {
+    "features": [
+      {
+        "featureAttributes": {
+        },
+        "features": [
+        ],
+        "isON": false,
+        "name": "R1 L1 100",
+        "namespace": "ns1",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": {
+        },
+        "features": [
+        ],
+        "isON": false,
+        "name": "R2 L1 60",
+        "namespace": "ns1",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": {
+        },
+        "features": [
+          {
+            "featureAttributes": {
+            },
+            "features": [
+              {
+                "featureAttributes": {
+                },
+                "features": [
+                ],
+                "isON": false,
+                "name": "R32 L2 30",
+                "namespace": "ns1",
+                "resultTrace": "",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": {
+                },
+                "features": [
+                ],
+                "isON": false,
+                "name": "R33 L2 10",
+                "namespace": "ns1",
+                "resultTrace": "",
+                "type": "FEATURE"
+              }
+            ],
+            "isON": false,
+            "name": "R31 L2 50",
+            "namespace": "ns1",
+            "resultTrace": "",
+            "type": "FEATURE"
+          }
+        ],
+        "isON": false,
+        "name": "R3 L1 80",
+        "namespace": "ns1",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": {
+        },
+        "features": [
+          {
+            "features": [
+              {
+                "featureAttributes": {
+                },
+                "features": [
+                ],
+                "isON": false,
+                "name": "R41 L2 30",
+                "namespace": "ns1",
+                "resultTrace": "",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": {
+                },
+                "features": [
+                ],
+                "isON": false,
+                "name": "R42 L2 20",
+                "namespace": "ns1",
+                "resultTrace": "",
+                "type": "FEATURE"
+              }
+            ],
+            "maxFeaturesOn": 1,
+            "type": "MUTUAL_EXCLUSION_GROUP"
+          }
+        ],
+        "isON": false,
+        "name": "R4 L1 40",
+        "namespace": "ns1",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": {
+        },
+        "features": [
+          {
+            "featureAttributes": {
+            },
+            "features": [
+            ],
+            "isON": false,
+            "name": "R51 L2 40",
+            "namespace": "ns1",
+            "resultTrace": "",
+            "type": "FEATURE"
+          },
+          {
+            "featureAttributes": {
+            },
+            "features": [
+              {
+                "features": [
+                  {
+                    "featureAttributes": {
+                    },
+                    "features": [
+                    ],
+                    "isON": false,
+                    "name": "R521 L3 50",
+                    "namespace": "ns1",
+                    "resultTrace": "",
+                    "type": "FEATURE"
+                  },
+                  {
+                    "featureAttributes": {
+                    },
+                    "features": [
+                    ],
+                    "isON": false,
+                    "name": "R522 L3 100",
+                    "namespace": "ns1",
+                    "resultTrace": "",
+                    "type": "FEATURE"
+                  },
+                  {
+                    "featureAttributes": {
+                    },
+                    "features": [
+                    ],
+                    "isON": false,
+                    "name": "R523 L3 20",
+                    "namespace": "ns1",
+                    "resultTrace": "",
+                    "type": "FEATURE"
+                  }
+                ],
+                "maxFeaturesOn": 1,
+                "type": "MUTUAL_EXCLUSION_GROUP"
+              }
+            ],
+            "isON": false,
+            "name": "R52 L2 40",
+            "namespace": "ns1",
+            "resultTrace": "",
+            "type": "FEATURE"
+          }
+        ],
+        "isON": false,
+        "name": "R5 L1 50",
+        "namespace": "ns1",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "features": [
+        ],
+        "maxFeaturesOn": 1,
+        "type": "MUTUAL_EXCLUSION_GROUP"
+      }
+    ],
+    "type": "ROOT",
+    "uniqueId": "2438efbd-df2d-4088-bcaa-27a4787e8437"
+  }
+}

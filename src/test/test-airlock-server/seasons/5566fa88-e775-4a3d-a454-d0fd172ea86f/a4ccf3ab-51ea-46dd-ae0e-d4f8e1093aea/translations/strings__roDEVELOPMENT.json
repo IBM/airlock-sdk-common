@@ -1,0 +1,20 @@
+{
+	"mostRecentTranslation": 1499877779887,
+	"strings": {
+		"Drawer.PremiumFeatures": "\u00cenregistreaz\u0103-te pentru a activa func\u0163iile premium",
+		"Eight.FirstDaySummer": "Prima zi a verii",
+		"Five.NextHours": "URM\u0102TOARELE [[[1]]] [[[2]]]]",
+		"Four.PrecipStarting": "Incepe [[[1]]] [[[2]]]",
+		"General.Today": "AST\u0102ZI",
+		"InJuly": "[[[1]]] iulie",
+		"One.Rain": "Ploaie",
+		"ProfileSettings.AlertsCTA": "Ob\u021bine alerte meteo \u00een timp real",
+		"Seven.EndingSoon": "[[[1]]] se termin\u0103 \u00een cur\u00e2nd",
+		"Six.DailyDetails": "DETALII PE ZILE",
+		"Three.InView": "[[[1]]] PE RADAR",
+		"Two.FeelsLike": "Temperatur\u0103 resim\u021bit\u0103",
+		"Units.KM": "KM",
+		"Units.KMH": "KMH",
+		"Units.MPH": "MPH"
+	}
+}

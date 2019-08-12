@@ -1,0 +1,113 @@
+{
+	"branches": [
+		{
+			"creationDate": 1500655912558,
+			"creator": "Brian Chu",
+			"description": null,
+			"lastModified": 1500655912558,
+			"name": "Localized Video and News",
+			"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0",
+			"uniqueId": "0dc8352b-a9dd-4141-91c7-5d657b22f967"
+		},
+		{
+			"creationDate": 1500655935236,
+			"creator": "Brian Chu",
+			"description": null,
+			"lastModified": 1500655935236,
+			"name": "Watson",
+			"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0",
+			"uniqueId": "11afcaac-9383-4bae-9eae-b2d8fbf52291"
+		},
+		{
+			"creationDate": 1500976288261,
+			"creator": "Yoav BenYair",
+			"description": null,
+			"lastModified": 1500976288261,
+			"name": "AnalyticsDryRunVar1",
+			"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0",
+			"uniqueId": "41b2e050-f1ee-4c21-9eef-36a99c0c0f90"
+		},
+		{
+			"creationDate": 1500976299723,
+			"creator": "Yoav BenYair",
+			"description": null,
+			"lastModified": 1500976299723,
+			"name": "AnalyticsDryRunVar2",
+			"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0",
+			"uniqueId": "24da3ed7-58a9-49bb-93df-ae89bcf6ef03"
+		},
+		{
+			"creationDate": 1500976313835,
+			"creator": "Yoav BenYair",
+			"description": null,
+			"lastModified": 1500976313835,
+			"name": "AnalyticsDryRunVar3",
+			"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0",
+			"uniqueId": "b6b676a3-c45e-44e5-991c-3b0754c44c9f"
+		},
+		{
+			"creationDate": 1501703062259,
+			"creator": "Terrell Black",
+			"description": null,
+			"lastModified": 1501703062259,
+			"name": "Northstar.Terrell",
+			"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0",
+			"uniqueId": "ca47836a-f472-486e-baf6-07c53309810c"
+		},
+		{
+			"creationDate": 1501781223422,
+			"creator": "Krishna Chebrolu",
+			"description": null,
+			"lastModified": 1501781223422,
+			"name": "krishna",
+			"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0",
+			"uniqueId": "ab5d013c-61ff-4849-985a-6b27d57efa54"
+		},
+		{
+			"creationDate": 1501872875092,
+			"creator": "Amit Gundewar",
+			"description": null,
+			"lastModified": 1501872875092,
+			"name": "Radar B",
+			"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0",
+			"uniqueId": "af0f2890-cdc4-4781-80d6-640d7a06a960"
+		},
+		{
+			"creationDate": 1502108139840,
+			"creator": "Denis Voloshin",
+			"description": null,
+			"lastModified": 1502108139840,
+			"name": "Samsung modules test",
+			"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0",
+			"uniqueId": "3b435102-71bb-4b3c-bed6-cf6ec9debc12"
+		},
+		{
+			"creationDate": 1502109413747,
+			"creator": "Ram Purushothaman-Airlock",
+			"description": null,
+			"lastModified": 1502109413747,
+			"name": "QA TEST",
+			"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0",
+			"uniqueId": "722df6cc-42be-47fa-96b1-c356f18d4071"
+		},
+		{
+			"creationDate": 1502910168989,
+			"creator": "Krishna Chebrolu",
+			"description": "Move hurricane central module after breaking news module when there is a major hurricane\/tropical storm.",
+			"lastModified": 1502910168989,
+			"name": "IncreaseHurricaneCentralPriority",
+			"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0",
+			"uniqueId": "50ead763-242d-4e9b-adeb-2424c70a53b1"
+		},
+		{
+			"creationDate": 1502981209819,
+			"creator": "Amit Gundewar",
+			"description": "To test changes for tiles in production",
+			"lastModified": 1502981209819,
+			"name": "Northstar",
+			"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0",
+			"uniqueId": "2abb6b26-9903-49c8-8eef-7e7291fe6139"
+		}
+	],
+	"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0"
+}

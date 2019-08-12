@@ -1,0 +1,71 @@
+{
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "cfo.turnOffNoDefault",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "cfo.turnOffWithDefaultON",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "cfo.turnOffOn",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "cfo.disabledFeature",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Rule disabled",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "cfo.runtimeError",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

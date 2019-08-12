@@ -1,0 +1,16 @@
+{
+  "callOrder": [
+    "doInit",
+    "doSetGroups",
+    "doRefreshAndSync"
+  ],
+  "configuration": {
+    "configPath": "test_data\/prod_dev\/OverallProduct\/7.5_up\/",
+    "goldPath": "gold_files\/prod_dev\/OverallProduct\/7.5_up\/DeviceContextV3\/noG\/ProfileV1",
+    "deviceContextFileName": "DeviceContextV3.json",
+    "groupsFileName": "noG.json",
+    "profileFileName": "ProfileV1.json",
+    "defaultFileName": "overall_product_first_default.txt"
+  },
+  "updates": {}
+}

@@ -1,0 +1,38 @@
+{
+	"branches": [
+	],
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/DEV3\/",
+	"entitlementsRoot": {
+		"branchStatus": "NONE",
+		"entitlements": [
+		],
+		"type": "ROOT",
+		"uniqueId": "b0b51638-4436-4f0a-884f-07e035ef77f4"
+	},
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "1.0",
+	"productId": "148472d7-514c-40ba-a391-67f7e4d3c16e",
+	"productName": "PremiumSDK",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "efc98fea-024d-420d-a47d-8de9f7ef5a48"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/DEV3\/",
+	"seasonId": "a61f0135-1f75-4cc6-a90a-9e5c536f5c80",
+	"serverVersion": "V5.5",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

@@ -1,0 +1,14 @@
+{
+	"codeIdentifier": "iOSTWCStormRadar",
+	"name": "iOS TWC Storm Radar ",
+	"seasons": [
+		{
+			"lastModified": 1498066895530,
+			"maxVersion": null,
+			"minVersion": "1.1",
+			"productId": "82e9234e-a9de-42a5-aaad-2eaccc2c6c6b",
+			"uniqueId": "e77a69a2-0be6-46b1-9faf-f4681692074d"
+		}
+	],
+	"uniqueId": "82e9234e-a9de-42a5-aaad-2eaccc2c6c6b"
+}

@@ -1,0 +1,73 @@
+{
+	"creationDate": 1511622450098,
+	"creator": "Josemina Magdalen",
+	"description": null,
+	"features": [
+		{
+			"additionalInfo": null,
+			"branchConfigurationRuleItems": [
+				"testF1.CR1"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchStatus": "NEW",
+			"configurationRules": [
+				{
+					"branchStatus": "NEW",
+					"configuration": "{}",
+					"configurationRules": [
+					],
+					"creationDate": 1511622473357,
+					"creator": "Josemina Magdalen",
+					"description": "",
+					"enabled": false,
+					"internalUserGroups": [
+					],
+					"lastModified": 1511622473357,
+					"minAppVersion": "9.1",
+					"name": "CR1",
+					"namespace": "testF1",
+					"noCachedResults": false,
+					"owner": "Josemina Magdalen",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+					"stage": "DEVELOPMENT",
+					"type": "CONFIGURATION_RULE",
+					"uniqueId": "45c83716-b47a-4d66-a1b1-461aeee941df"
+				}
+			],
+			"configurationSchema": null,
+			"creationDate": 1511622462198,
+			"creator": "Josemina Magdalen",
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"description": "",
+			"displayName": null,
+			"enabled": false,
+			"features": [
+			],
+			"internalUserGroups": [
+			],
+			"lastModified": 1511622462198,
+			"minAppVersion": "9.1",
+			"name": "F1",
+			"namespace": "test",
+			"noCachedResults": false,
+			"owner": "Josemina Magdalen",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+			"stage": "DEVELOPMENT",
+			"type": "FEATURE",
+			"uniqueId": "91c9f3c2-1ee9-499b-88bb-6e13a609409b"
+		}
+	],
+	"lastModified": 1511622450098,
+	"name": "JM1",
+	"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+	"uniqueId": "1eeb1dfd-c992-4fae-b325-56c19443eed5"
+}

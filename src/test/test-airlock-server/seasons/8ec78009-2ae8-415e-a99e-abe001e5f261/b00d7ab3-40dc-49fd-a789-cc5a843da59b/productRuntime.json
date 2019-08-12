@@ -1,0 +1,21 @@
+{
+	"codeIdentifier": "QA.JSFileTest",
+	"name": "QA.JSFileTest",
+	"seasons": [
+		{
+			"lastModified": 1494747809598,
+			"maxVersion": "2.0",
+			"minVersion": "1.0",
+			"productId": "8ec78009-2ae8-415e-a99e-abe001e5f261",
+			"uniqueId": "b28c1e28-e3c3-4639-8219-e3583def5ee4"
+		},
+		{
+			"lastModified": 1494750057777,
+			"maxVersion": null,
+			"minVersion": "2.0",
+			"productId": "8ec78009-2ae8-415e-a99e-abe001e5f261",
+			"uniqueId": "b00d7ab3-40dc-49fd-a789-cc5a843da59b"
+		}
+	],
+	"uniqueId": "8ec78009-2ae8-415e-a99e-abe001e5f261"
+}

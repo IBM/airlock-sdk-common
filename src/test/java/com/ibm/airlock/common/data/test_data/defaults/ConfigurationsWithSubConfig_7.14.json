@@ -1,0 +1,62 @@
+{
+  "devS3Path": "http://localhost:8000/test-airlock-server",
+  "defaultLanguage": "en",
+  "productId": "6f733d14-2d05-4120-a779-c5f1e5e43e55",
+  "s3Path": "http://localhost:8000/test-airlock-server",
+  "supportedLanguages": [
+    "en"
+  ],
+  "seasonId": "f372f5fe-3236-4fa9-9ec0-77e7b672e77c",
+  "root": {
+    "features": [
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "feature1.aggregate.alltrue",
+        "namespace": "feature1",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "bd6032e1-1872-4224-87ae-5e362abe67e6"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "feature2.overwrite.alltrue",
+        "namespace": "feature2",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "80cb7b07-9968-45ad-b69c-e7d631d6b7e9"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "feature3.false",
+        "namespace": "feature3",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "fd0ac178-2465-473f-8991-f108cf04a0b4"
+      },
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [],
+        "name": "feature4.overwrite.hierarchy",
+        "namespace": "feature4",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "34e5e623-849d-45a6-a392-df56d6268a72"
+      }
+    ],
+    "type": "ROOT",
+    "uniqueId": "95ee0bcf-194d-48df-9051-71b74962558e"
+  },
+  "version": "V2.5",
+  "productName": "ConfigurationsWithSubConfig"
+}

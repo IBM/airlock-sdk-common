@@ -1,0 +1,19 @@
+{
+	"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+	"streams": [
+		{
+			"enabled": true,
+			"filter": "true",
+			"internalUserGroups": [
+			],
+			"minAppVersion": "8.0.1",
+			"name": "production stream qa test",
+			"processor": "if (typeof cache.sum == 'undefined'){cache.sum = 0}\nfor(i=0;i<events.length;i++){cache.sum += 1}\nresult.count = cache.sum",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "PRODUCTION",
+			"uniqueId": "914f3b91-f23e-46f8-946d-b2c03497390b"
+		}
+	]
+}

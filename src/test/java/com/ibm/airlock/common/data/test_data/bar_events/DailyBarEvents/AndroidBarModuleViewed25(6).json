@@ -1,0 +1,394 @@
+{
+    "places": [{
+        "country": "US",
+        "city": "Atlanta",
+        "dma": "524",
+        "id": "USGA0653:1:US",
+        "state": "GA",
+        "tag": "[]",
+        "type": "saved"
+    }],
+    "twcRelease": {
+        "appVersion": "8.2.0",
+        "svcCommit": "2345"
+    },
+    "endSession": 1504622509707,
+    "os": {
+        "version": "7.1.1",
+        "platform": "android"
+    },
+    "startSession": 1504622439119,
+    "nameSpace": "com.weather",
+    "sessionID": "c3e276b3-4e6a-460f-ba2c-4491ca941097",
+    "device": {
+        "deviceType": "mobile",
+        "model": "Nexus 5X",
+        "locale": "en_US",
+        "manufacturer": "LGE"
+    },
+    "user": {
+        "entitlements": "[]",
+        "adId": "b983a742-bed4-44ec-af41-71c1005c809a",
+        "followMeEnabled": true,
+        "registered": false,
+        "id": "eqf-uqeX7stao",
+        "userType": "prod",
+        "gpsEnabled": true,
+        "authenticatedUsing": "anon",
+        "installId": "4f166827-c300-4fdc-a1b5-d450735b80c2",
+        "pushAlertsEnabled": true,
+        "limitedAdId": ""
+    },
+    "events": [{
+        "dateTime": 1504622439103,
+        "eventData": {
+            "method": "ftl",
+            "foreground": true
+        },
+        "name": "app-launch"
+    }, {
+        "dateTime": 1504622446826,
+        "eventData": {
+            "context_weatherSummary_nearestStartPrecip_startTime": "null",
+            "feature_ads_AdsConfig": "On",
+            "context_weatherSummary_observation_skyCode": "null",
+            "context_profile_settings_segmentation_avr-a": "null",
+            "context_app_af_status": "null",
+            "context_weatherSummary_tomorrowForecast_day_precipPercentage": "null",
+            "context_app_campaign": "null",
+            "context_weatherSummary_nearestWinterStormAlert_significanceCode": "null",
+            "context_weatherSummary_todayForecast_day_precipType": "null",
+            "context_profile_demographics_ageRange": "null",
+            "context_weatherSummary_nearestWinterStormAlert_phenomenaCode": "null",
+            "seasonId": "86081671-a82c-428b-bb72-81f4ea6e0603",
+            "context_weatherSummary_nearestStartPrecip_eventType": "null",
+            "context_weatherSummary_nearestStartPrecip_severity": "null",
+            "context_weatherSummary_tomorrowForecast_night_precipType": "null",
+            "context_weatherSummary_todayForecast_day_precipPercentage": "null",
+            "airlockVersion": "V2.5",
+            "context_weatherSummary_tomorrowForecast_day_precipType": "null",
+            "context_weatherSummary_observation_temperature": "null",
+            "context_app_media_source": "null",
+            "context_weatherSummary_todayForecast_night_precipPercentage": "null",
+            "context_device_daysSinceAppInstall": "0",
+            "context_weatherSummary_closestLightning_distance": "null",
+            "productId": "bc479db5-ff58-4138-b5e4-a8400a1f78d5",
+            "context_weatherSummary_tomorrowForecast_night_precipPercentage": "null",
+            "context_weatherSummary_observation_feelsLikeTemperature": "null",
+            "context_profile_demographics_dob": "null",
+            "context_profile_demographics_gender": "null",
+            "context_weatherSummary_todayForecast_night_precipType": "null",
+            "context_weatherSummary_contentMode_mode": "null",
+            "feature_headsupv2_HeadsUp": "On",
+            "context_weatherSummary_nearestWinterStormAlert_severityCode": "null",
+            "context_weatherSummary_closestLightning_strikeTime": "null"
+        },
+        "name": "airlock-config"
+    }, {
+        "dateTime": 1504622449799,
+        "eventData": {
+            "slot": "weather.cc",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504622451070,
+        "eventData": {
+            "slot": "weather.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504622451087,
+        "eventData": {
+            "slot": "weather.feed2",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504622451102,
+        "eventData": {
+            "slot": "weather.feed3",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504622451430,
+        "eventData": {
+            "context_weatherSummary_nearestStartPrecip_startTime": "null",
+            "feature_ads_AdsConfig": "On",
+            "context_weatherSummary_observation_skyCode": "34",
+            "context_profile_settings_segmentation_avr-a": "null",
+            "context_app_af_status": "null",
+            "context_weatherSummary_tomorrowForecast_day_precipPercentage": "20",
+            "context_app_campaign": "null",
+            "context_weatherSummary_nearestWinterStormAlert_significanceCode": "null",
+            "context_weatherSummary_todayForecast_day_precipType": "rain",
+            "context_profile_demographics_ageRange": "null",
+            "context_weatherSummary_nearestWinterStormAlert_phenomenaCode": "null",
+            "context_weatherSummary_nearestStartPrecip_eventType": "null",
+            "context_weatherSummary_nearestStartPrecip_severity": "null",
+            "context_weatherSummary_tomorrowForecast_night_precipType": "rain",
+            "context_weatherSummary_todayForecast_day_precipPercentage": "40",
+            "feature_modules_Breaking-News": "On",
+            "context_weatherSummary_tomorrowForecast_day_precipType": "rain",
+            "context_weatherSummary_observation_temperature": "76",
+            "context_app_media_source": "null",
+            "context_weatherSummary_todayForecast_night_precipPercentage": "20",
+            "context_device_daysSinceAppInstall": "0",
+            "context_weatherSummary_closestLightning_distance": "null",
+            "context_weatherSummary_tomorrowForecast_night_precipPercentage": "0",
+            "context_weatherSummary_observation_feelsLikeTemperature": "76",
+            "context_profile_demographics_dob": "null",
+            "context_profile_demographics_gender": "null",
+            "context_weatherSummary_todayForecast_night_precipType": "rain",
+            "context_weatherSummary_contentMode_mode": "severe1",
+            "feature_headsupv2_HeadsUp": "On",
+            "context_weatherSummary_nearestWinterStormAlert_severityCode": "null",
+            "context_weatherSummary_closestLightning_strikeTime": "null"
+        },
+        "name": "airlock-config"
+    }, {
+        "dateTime": 1504622452004,
+        "eventData": {
+            "locationId": "USGA0653:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1504622452193,
+        "eventData": {
+            "slot": "weather.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504622452197,
+        "eventData": {
+            "slot": "weather.feed2",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504622452206,
+        "eventData": {
+            "slot": "weather.feed3",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504622452212,
+        "eventData": {
+            "slot": "weather.feed5",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504622452735,
+        "eventData": {
+            "locationId": "USGA0653:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1504622452845,
+        "eventData": {
+            "slot": "weather.cc",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504622460444,
+        "eventData": {
+            "slot": "weather.breaking.spotlight",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504622461115,
+        "eventData": {
+            "playlist": "pl-hurricane-irma",
+            "pos": 1,
+            "caption": "U.S. Danger: Hurricane Irma 175 MPH Cat. 5",
+            "id": "d76491b4-775c-49b0-ba36-887080138e16",
+            "source": "plus3",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/stuuurmdd.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1504622461116,
+        "eventData": {
+            "name": "breaking-news"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504622464602,
+        "eventData": {
+            "name": "current-conditions"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504622468021,
+        "eventData": {
+            "playlist": "pl-the-lift",
+            "pos": 1,
+            "caption": "Evacuations Ordered, Interstate Closed",
+            "id": "3a65ae4c-ccd8-469e-9e15-e09b7e47bf32",
+            "source": "rightnow",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/wildfireeeee.jpg?v=ap&w=980&h=551&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1504622470043,
+        "eventData": {
+            "name": "hourly"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504622474231,
+        "eventData": {
+            "autoplayWatchedSecs": 5,
+            "adClicked": false,
+            "caption": "Evacuations Ordered, Interstate Closed",
+            "source": "rightnowmodel",
+            "adSecs": 0,
+            "watchedSecs": 5,
+            "playlist": "pl-the-lift",
+            "pos": 0,
+            "contentSecs": 55,
+            "playMethod": "auto",
+            "adWatchedSecs": 0,
+            "id": "3a65ae4c-ccd8-469e-9e15-e09b7e47bf32",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/wildfireeeee.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "video-played"
+    }, {
+        "dateTime": 1504622474242,
+        "eventData": {
+            "name": "ten-day"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504622475963,
+        "eventData": {
+            "name": "map"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504622482990,
+        "eventData": {
+            "name": "video"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504622484757,
+        "eventData": {
+            "playlist": "pl-the-lift",
+            "pos": 1,
+            "caption": "Big Chill Coming South",
+            "id": "b54f18fd-984c-44a1-8144-c0eb47394ac7",
+            "source": "videomodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/bigchilly.jpg?v=ap&w=980&h=551&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1504622499096,
+        "eventData": {
+            "autoplayWatchedSecs": 13,
+            "adClicked": false,
+            "caption": "Big Chill Coming South",
+            "source": "videomodule",
+            "adSecs": 0,
+            "watchedSecs": 13,
+            "playlist": "pl-the-lift",
+            "pos": 0,
+            "contentSecs": 56,
+            "playMethod": "auto",
+            "adWatchedSecs": 0,
+            "id": "b54f18fd-984c-44a1-8144-c0eb47394ac7",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/bigchilly.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "video-played"
+    }, {
+        "dateTime": 1504622486391,
+        "eventData": {
+            "playlist": "pl-hurricane-irma",
+            "pos": 2,
+            "caption": "Plane Flies Into Irma's Eyewall",
+            "id": "ae053f66-032e-4e30-8a8e-fe2b5428a3dd",
+            "source": "videomodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/plane22.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1504622486391,
+        "eventData": {
+            "playlist": "pl-the-lift",
+            "pos": 3,
+            "caption": "Billboard Toppled Like a Domino",
+            "id": "36ff38e7-c99d-410d-beac-f1346b8cf352",
+            "source": "videomodule",
+            "thumbnailURL": "https:\/\/dsx.weather.com\/\/util\/image\/v\/typhoonwinds.jpg?v=at&w=650&h=366&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+        },
+        "name": "content-viewed"
+    }, {
+        "dateTime": 1504622487948,
+        "eventData": {
+            "slot": "weather.feed4",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1504622488281,
+        "eventData": {
+            "name": "hurricane"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504622505658,
+        "eventData": {
+            "name": "health"
+        },
+        "name": "module-viewed"
+    }, {
+        "dateTime": 1504622509654,
+        "name": "app-exit"
+    }],
+    "currentLocation": {
+        "dateTime": 1504622510027,
+        "altitude": 0,
+        "vertAccuracy": 0,
+        "timezoneOffset": -4.0,
+        "horizAccuracy": 0,
+        "pressure": 981.3701171875,
+        "coords": {
+            "lng": -84.46021,
+            "lat": 33.89336
+        }
+    },
+    "network": {
+        "carrier": "none",
+        "carrierNetworkClass": "unknown",
+        "networkType": "wifi"
+    }
+}

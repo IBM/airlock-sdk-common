@@ -1,0 +1,291 @@
+{
+	"branches": [
+	],
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "7.14",
+	"productId": "1a768855-1d5d-4413-b60a-ca8c868625cd",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"color\":\"red\",\n\t\"size\":2,\n\t\"alert\":false,\n\t\"background\":\"white\",\n\t\"icon\":\"a.jpg\",\n\t\"text\":\"welcometohell\",\n\t\"featureON\":false\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.14",
+						"name": "turnOff",
+						"namespace": "cfoturnOn",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "9c7d4b0b-8321-449e-bfe7-622d926bf1c7"
+					}
+				],
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "7.14",
+				"name": "turnOffNoDefault",
+				"namespace": "cfo",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "99c4a6af-8fbb-4379-a7fd-8cb79144b0f1"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"featureON\":false,\"text\":\"welcome to hell\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.14",
+						"name": "turnOff",
+						"namespace": "cfoturnOffWithDefaultON",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "3e207a8f-0ed1-4a7b-9709-111717f3a1fa"
+					}
+				],
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"featureON\":true,\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "7.14",
+				"name": "turnOffWithDefaultON",
+				"namespace": "cfo",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.currentLocation.region == \"NY\""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "943093ba-d9b2-4256-9ab2-9f7254d60309"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"featureON\":false,\"text\":\"welcome to hell\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.14",
+						"name": "turnOffOn",
+						"namespace": "cfoturnOffOn",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "89b7f8c0-ecc2-4c15-8c2e-7e6c88f451e0"
+					},
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"featureON\":true,\"text\":\"welcome to hell\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.14",
+						"name": "turnOffOn2",
+						"namespace": "cfoturnOffOn",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "04131aa8-4553-4bbe-9318-e95534c875a9"
+					}
+				],
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"featureON\":false,\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "7.14",
+				"name": "turnOffOn",
+				"namespace": "cfo",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.weatherSummary.closestLightning.distance > 5"
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "1af0254e-dc68-4a92-9b52-3a5cb9df481e"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"featureON\":true,\"text\":\"welcome to hell\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.14",
+						"name": "turnOn",
+						"namespace": "cfodisabledFeature",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "72f4e44b-c010-49ec-907c-7cb3c1bcab84"
+					}
+				],
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": false,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "7.14",
+				"name": "disabledFeature",
+				"namespace": "cfo",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "586a3448-f0ce-4791-b81e-7b30aaa0f6b9"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"featureON\":true,\"text\":\"welcome to hell\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.14",
+						"name": "runtimeErrorOn",
+						"namespace": "cforuntimeError",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": "context.viewedLocation.lon \/ 0 > 1"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "3dfedd11-6120-4e75-850e-e771708a1ca9"
+					}
+				],
+				"defaultConfiguration": "{\n\t\"color\":\"red\"\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "7.14",
+				"name": "runtimeError",
+				"namespace": "cfo",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "016f3bf3-4a7c-43ed-9334-c2d42e6e3bf2"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "b07f7927-4dc5-4345-b1c6-3f5f49117622"
+	},
+	"seasonId": "b4ec34e9-91a1-4f74-ae23-c7c415a8734b",
+	"serverVersion": "V3.0",
+	"version": "V2.5"
+}

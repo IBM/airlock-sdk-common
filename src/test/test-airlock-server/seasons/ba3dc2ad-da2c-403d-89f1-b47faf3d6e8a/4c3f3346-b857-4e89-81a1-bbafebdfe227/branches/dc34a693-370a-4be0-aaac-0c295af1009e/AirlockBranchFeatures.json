@@ -1,0 +1,491 @@
+{
+	"creationDate": 1515065123492,
+	"creator": "Esteban Zia",
+	"description": null,
+	"features": [
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"mx.487a73a2-b97e-48cb-a6b8-9145a127be7e"
+			],
+			"branchOrderingRuleItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"configurationSchema": null,
+			"creationDate": 1514196649653,
+			"creator": "Esteban Zia",
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": true,
+			"description": "ordering rule for mtx under parent feature",
+			"displayName": null,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"DEV",
+				"QA"
+			],
+			"lastModified": 1514969785484,
+			"minAppVersion": "8.0",
+			"name": "F5.1",
+			"namespace": "nf",
+			"noCachedResults": false,
+			"orderingRules": [
+			],
+			"owner": "Esteban Zia",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "52351bf3-ce0c-4f22-bff6-34370609cb76"
+		},
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"ns.F6A",
+				"ns.F6B",
+				"ns.F6C"
+			],
+			"branchOrderingRuleItems": [
+				"mx.81035c76-f565-4d0f-90b1-a78b9dcce4ad"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"configurationSchema": null,
+			"creationDate": 1514198052910,
+			"creator": "Esteban Zia",
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": true,
+			"description": "ordering rules mx - always first wins",
+			"displayName": null,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"DEV",
+				"QA"
+			],
+			"lastModified": 1514970347711,
+			"minAppVersion": "8.0",
+			"name": "F6",
+			"namespace": "ns",
+			"noCachedResults": false,
+			"orderingRules": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchOrderingRuleItems": [
+						"nsF1.OrderingRule6.2",
+						"nsF1.OrderingRule6.1"
+					],
+					"branchStatus": "CHECKED_OUT",
+					"lastModified": 1514970726465,
+					"maxFeaturesOn": 1,
+					"orderingRules": [
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchOrderingRuleItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configuration": "{\"944e948c-456c-4b44-a32d-fac5cebf63a1\":\"10.0\",\"70ba2b6a-642d-43ed-b77b-092d41c1fc7d\":\"1.0\",\"1806aa8a-0642-4d17-848f-e6776003eebc\":\"5.0\"}",
+							"creationDate": 1514198052911,
+							"creator": "Esteban Zia",
+							"description": "",
+							"enabled": true,
+							"internalUserGroups": [
+								"DEV",
+								"QA"
+							],
+							"lastModified": 1514970466112,
+							"minAppVersion": "8.0",
+							"name": "OrderingRule6.2",
+							"namespace": "nsF1",
+							"noCachedResults": false,
+							"orderingRules": [
+							],
+							"owner": "Esteban Zia",
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": ""
+							},
+							"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+							"stage": "PRODUCTION",
+							"type": "ORDERING_RULE",
+							"uniqueId": "4945ea5c-cc3c-4983-8330-df21ccce1170"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchOrderingRuleItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configuration": "{\"70ba2b6a-642d-43ed-b77b-092d41c1fc7d\":\"10\",\"944e948c-456c-4b44-a32d-fac5cebf63a1\":\"1.0\",\"1806aa8a-0642-4d17-848f-e6776003eebc\":\"5.0\"}",
+							"creationDate": 1514198052911,
+							"creator": "Esteban Zia",
+							"description": "ordering rule1",
+							"enabled": true,
+							"internalUserGroups": [
+								"DEV",
+								"QA"
+							],
+							"lastModified": 1514970501531,
+							"minAppVersion": "8.0",
+							"name": "OrderingRule6.1",
+							"namespace": "nsF1",
+							"noCachedResults": false,
+							"orderingRules": [
+							],
+							"owner": "Esteban Zia",
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": ""
+							},
+							"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+							"stage": "PRODUCTION",
+							"type": "ORDERING_RULE",
+							"uniqueId": "fead6055-f005-48e3-8b86-143ba946cb39"
+						}
+					],
+					"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+					"type": "ORDERING_RULE_MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "81035c76-f565-4d0f-90b1-a78b9dcce4ad"
+				}
+			],
+			"owner": "Esteban Zia",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "ca96aa14-eebd-4a06-922b-53805739bbe6"
+		},
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"mx.739b8f32-3a9e-45e5-a227-a4677172b7c1",
+				"mx.76e2231f-9d6a-4286-9558-792b279d83e9"
+			],
+			"branchOrderingRuleItems": [
+				"OR1.OR4.1",
+				"OR1.OR4.2"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"features": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+						"mtx4.F4.3",
+						"mtx4.F4.4"
+					],
+					"branchOrderingRuleItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"features": [
+						{
+							"additionalInfo": null,
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchOrderingRuleItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"configurationSchema": null,
+							"creationDate": 1514200571149,
+							"creator": "Esteban Zia",
+							"defaultConfiguration": null,
+							"defaultIfAirlockSystemIsDown": false,
+							"description": "",
+							"displayName": null,
+							"enabled": true,
+							"features": [
+							],
+							"internalUserGroups": [
+								"DEV",
+								"QA"
+							],
+							"lastModified": 1514200571149,
+							"minAppVersion": "8.0",
+							"name": "F4.3",
+							"namespace": "mtx4",
+							"noCachedResults": false,
+							"orderingRules": [
+							],
+							"owner": "Esteban Zia",
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": ""
+							},
+							"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+							"stage": "DEVELOPMENT",
+							"type": "FEATURE",
+							"uniqueId": "b83827a0-4f59-4114-9b72-f6f354e208c9"
+						},
+						{
+							"additionalInfo": null,
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchOrderingRuleItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"configurationSchema": null,
+							"creationDate": 1514200595241,
+							"creator": "Esteban Zia",
+							"defaultConfiguration": null,
+							"defaultIfAirlockSystemIsDown": false,
+							"description": "",
+							"displayName": null,
+							"enabled": true,
+							"features": [
+							],
+							"internalUserGroups": [
+								"DEV",
+								"QA"
+							],
+							"lastModified": 1514200595241,
+							"minAppVersion": "8.0",
+							"name": "F4.4",
+							"namespace": "mtx4",
+							"noCachedResults": false,
+							"orderingRules": [
+							],
+							"owner": "Esteban Zia",
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": ""
+							},
+							"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+							"stage": "DEVELOPMENT",
+							"type": "FEATURE",
+							"uniqueId": "fd82c8d2-49f0-489d-b22c-6bdb063fee45"
+						}
+					],
+					"lastModified": 1514200664516,
+					"maxFeaturesOn": 1,
+					"orderingRules": [
+					],
+					"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+					"type": "MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "739b8f32-3a9e-45e5-a227-a4677172b7c1"
+				},
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+						"nf.F4.1",
+						"nf.F4.2"
+					],
+					"branchOrderingRuleItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"features": [
+						{
+							"additionalInfo": {
+							},
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchOrderingRuleItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"configurationSchema": null,
+							"creationDate": 1514200498572,
+							"creator": "Esteban Zia",
+							"defaultConfiguration": null,
+							"defaultIfAirlockSystemIsDown": false,
+							"description": "desc",
+							"displayName": null,
+							"enabled": true,
+							"features": [
+							],
+							"internalUserGroups": [
+								"DEV",
+								"QA"
+							],
+							"lastModified": 1520235776444,
+							"minAppVersion": "8.0",
+							"name": "F4.1",
+							"namespace": "nf",
+							"noCachedResults": false,
+							"orderingRules": [
+							],
+							"owner": "Esteban Zia",
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": ""
+							},
+							"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+							"stage": "DEVELOPMENT",
+							"type": "FEATURE",
+							"uniqueId": "3e8df291-a5da-487e-8311-b7adb9a60c9a"
+						},
+						{
+							"additionalInfo": {
+							},
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchOrderingRuleItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"configurationSchema": null,
+							"creationDate": 1514200528330,
+							"creator": "Esteban Zia",
+							"defaultConfiguration": null,
+							"defaultIfAirlockSystemIsDown": false,
+							"description": "",
+							"displayName": null,
+							"enabled": true,
+							"features": [
+							],
+							"internalUserGroups": [
+								"DEV",
+								"QA"
+							],
+							"lastModified": 1514200536321,
+							"minAppVersion": "8.0",
+							"name": "F4.2",
+							"namespace": "nf",
+							"noCachedResults": false,
+							"orderingRules": [
+							],
+							"owner": "Esteban Zia",
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": ""
+							},
+							"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+							"stage": "DEVELOPMENT",
+							"type": "FEATURE",
+							"uniqueId": "5f7e1e17-faaa-4e26-bc91-5b253c058800"
+						}
+					],
+					"lastModified": 1514200644595,
+					"maxFeaturesOn": 1,
+					"orderingRules": [
+					],
+					"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+					"type": "MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "76e2231f-9d6a-4286-9558-792b279d83e9"
+				}
+			],
+			"lastModified": 1514970625118,
+			"maxFeaturesOn": 2,
+			"orderingRules": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchOrderingRuleItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configuration": "{\"739b8f32-3a9e-45e5-a227-a4677172b7c1\":\"10.0\",\"76e2231f-9d6a-4286-9558-792b279d83e9\":\"1.0\"}",
+					"creationDate": 1514201678483,
+					"creator": "Joe",
+					"description": "",
+					"enabled": true,
+					"internalUserGroups": [
+						"QA",
+						"DEV"
+					],
+					"lastModified": 1514970701615,
+					"minAppVersion": "8.0",
+					"name": "OR4.1",
+					"namespace": "OR1",
+					"noCachedResults": false,
+					"orderingRules": [
+					],
+					"owner": null,
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "context.userLocation.country==\"US\""
+					},
+					"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+					"stage": "PRODUCTION",
+					"type": "ORDERING_RULE",
+					"uniqueId": "46496843-5a28-4f4b-a3f4-b9c28558438b"
+				},
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchOrderingRuleItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configuration": "{\"739b8f32-3a9e-45e5-a227-a4677172b7c1\":\"1.0\",\"76e2231f-9d6a-4286-9558-792b279d83e9\":\"10.0\"}",
+					"creationDate": 1514201684230,
+					"creator": "Joe",
+					"description": "",
+					"enabled": true,
+					"internalUserGroups": [
+						"QA",
+						"DEV"
+					],
+					"lastModified": 1514970711802,
+					"minAppVersion": "8.0",
+					"name": "OR4.2",
+					"namespace": "OR1",
+					"noCachedResults": false,
+					"orderingRules": [
+					],
+					"owner": null,
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "context.userLocation.country==\"FR\""
+					},
+					"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+					"stage": "PRODUCTION",
+					"type": "ORDERING_RULE",
+					"uniqueId": "b6a1f882-0512-476e-90c7-fc061bda921a"
+				}
+			],
+			"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+			"type": "MUTUAL_EXCLUSION_GROUP",
+			"uniqueId": "f8ef4ca2-3bc7-4819-8c52-75f104ca5aec"
+		}
+	],
+	"lastModified": 1515065123492,
+	"name": "testbranch",
+	"seasonId": "4c3f3346-b857-4e89-81a1-bbafebdfe227",
+	"uniqueId": "dc34a693-370a-4be0-aaac-0c295af1009e"
+}

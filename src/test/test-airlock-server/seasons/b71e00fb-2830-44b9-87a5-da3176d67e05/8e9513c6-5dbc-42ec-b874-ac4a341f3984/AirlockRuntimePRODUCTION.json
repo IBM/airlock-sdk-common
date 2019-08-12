@@ -1,0 +1,31 @@
+{
+	"branches": [
+	],
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "7.14",
+	"productId": "b71e00fb-2830-44b9-87a5-da3176d67e05",
+	"productName": "NoRule100",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "d5433f14-66f2-4c19-a088-a97b5cb78d13"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "8e9513c6-5dbc-42ec-b874-ac4a341f3984",
+	"serverVersion": "V3.0",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

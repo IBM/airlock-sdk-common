@@ -1,0 +1,35 @@
+{
+	"codeIdentifier": "ConfigurationNoRules2Configs",
+	"name": "ConfigurationNoRules2Configs",
+	"seasons": [
+		{
+			"lastModified": 1542005352015,
+			"maxVersion": "7.8",
+			"minVersion": "7.5",
+			"productId": "cc5ef7a6-d2b7-4ede-8609-9f1c75c29e2a",
+			"uniqueId": "d4ce699a-ebb1-4730-945b-a3d37aa57321"
+		},
+		{
+			"lastModified": 1541939858382,
+			"maxVersion": "7.10",
+			"minVersion": "7.8",
+			"productId": "cc5ef7a6-d2b7-4ede-8609-9f1c75c29e2a",
+			"uniqueId": "827b084a-192d-4891-962d-60b72a3d69d2"
+		},
+		{
+			"lastModified": 1542005367742,
+			"maxVersion": "7.14",
+			"minVersion": "7.10",
+			"productId": "cc5ef7a6-d2b7-4ede-8609-9f1c75c29e2a",
+			"uniqueId": "f0ecb6ee-3cf9-49a9-a6b2-88704832fbaa"
+		},
+		{
+			"lastModified": 1499540026137,
+			"maxVersion": null,
+			"minVersion": "7.14",
+			"productId": "cc5ef7a6-d2b7-4ede-8609-9f1c75c29e2a",
+			"uniqueId": "4519b125-c998-48f7-b329-265c62715a74"
+		}
+	],
+	"uniqueId": "cc5ef7a6-d2b7-4ede-8609-9f1c75c29e2a"
+}

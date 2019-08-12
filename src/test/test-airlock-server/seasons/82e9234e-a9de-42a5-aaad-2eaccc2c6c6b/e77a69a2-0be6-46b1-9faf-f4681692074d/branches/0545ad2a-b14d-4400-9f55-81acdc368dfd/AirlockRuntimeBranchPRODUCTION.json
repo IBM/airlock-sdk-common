@@ -1,0 +1,28 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"Layers.HD Satellite",
+				"Layers.StormReports",
+				"Layers.US Only",
+				"Layers.Winter Weather"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"features": [
+			],
+			"name": "Layer Configuration",
+			"namespace": "Layers",
+			"type": "FEATURE",
+			"uniqueId": "65c815a2-0b6e-4b53-bde9-75abcaab6d5b"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "nathan 1.3.2",
+	"uniqueId": "0545ad2a-b14d-4400-9f55-81acdc368dfd"
+}

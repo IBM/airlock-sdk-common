@@ -1,0 +1,30 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchOrderingRuleItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"features": [
+			],
+			"minAppVersion": "1.5.2",
+			"name": "AdFreeSubscription",
+			"namespace": "InAppPurchase",
+			"orderingRules": [
+			],
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "e4f17990-1d1b-40f7-ba31-5d3c0e07f3ff"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "Test IAP",
+	"uniqueId": "447651b1-6bd2-4fa0-aba9-a55378faafe1"
+}

@@ -1,0 +1,27 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"defaultConfiguration": "{\n\t\"text\":\"branch1\"\n}",
+			"features": [
+			],
+			"minAppVersion": "0.1",
+			"name": "F1",
+			"namespace": "ns1",
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "3bb933e7-0fe8-4b58-8a8e-28e28a245cf3"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "branch1",
+	"uniqueId": "dd1abf11-011b-49d8-8d4d-0f05f277e25f"
+}

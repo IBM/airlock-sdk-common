@@ -1,0 +1,28 @@
+{
+	"codeIdentifier": "OverallProductBackwardCompatibility",
+	"name": "OverallProductBackwardCompatibility",
+	"seasons": [
+		{
+			"lastModified": 1543318571807,
+			"maxVersion": "8.0",
+			"minVersion": "7.10",
+			"productId": "53b00ff1-7fd0-4240-b19f-28f32c4b7134",
+			"uniqueId": "c7bc3989-b2d3-407f-8be2-8fac04d8acd5"
+		},
+		{
+			"lastModified": 1543318593832,
+			"maxVersion": "9",
+			"minVersion": "8.0",
+			"productId": "53b00ff1-7fd0-4240-b19f-28f32c4b7134",
+			"uniqueId": "b47d460a-7442-4db8-bac9-821877952738"
+		},
+		{
+			"lastModified": 1499072581070,
+			"maxVersion": null,
+			"minVersion": "9",
+			"productId": "53b00ff1-7fd0-4240-b19f-28f32c4b7134",
+			"uniqueId": "95948355-6781-482a-847b-52668c32ac6a"
+		}
+	],
+	"uniqueId": "53b00ff1-7fd0-4240-b19f-28f32c4b7134"
+}

@@ -1,0 +1,24 @@
+{
+	"branches": [
+	],
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "1.0",
+	"productId": "e9ade4c5-9451-465f-9db0-8161a88b6472",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "db7284f1-ee36-46be-af39-b619d6cc93b1"
+	},
+	"seasonId": "077adbc4-0bab-4a73-aacb-2f58e2867619",
+	"serverVersion": "V4.5",
+	"version": "V2.5"
+}

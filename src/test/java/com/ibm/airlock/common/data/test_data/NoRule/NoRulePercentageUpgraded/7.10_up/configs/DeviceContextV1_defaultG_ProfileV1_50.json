@@ -1,0 +1,19 @@
+{
+  "callOrder": [
+    "doInit",
+    "doSetGroups",
+    "doRefreshAndSync"
+  ],
+  "configuration": {
+    "configPath": "test_data\/NoRule\/NoRulePercentageUpgraded\/7.10_up\/",
+    "goldPath": "gold_files\/NoRule\/NoRulePercentageUpgraded\/7.10_up\/DeviceContextV1\/defaultG\/ProfileV1",
+    "deviceContextFileName": "DeviceContextV1.json",
+    "groupsFileName": "defaultG.json",
+    "profileFileName": "ProfileV1.json",
+    "defaultFileName": "no_rule_percentage_upgraded_first_default.txt",
+    "randomsMap": "randomMap50.json",
+    "userRandomNumber": 50,
+    "appVersion": "7.10"
+  },
+  "updates": {}
+}

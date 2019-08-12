@@ -1,0 +1,349 @@
+{
+	"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+	"streams": [
+		{
+			"enabled": true,
+			"filter": "event.name === \"content-viewed\"",
+			"internalUserGroups": [
+				"AndroidDEV"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "contentViewed10",
+			"processor": "if (typeof cache.sum == 'undefined'){cache.sum = 0}\nfor(i=0;i<events.length;i++){cache.sum += 1}\nresult.contentViewedModulus5 = cache.sum%5",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "5a3e64af-708a-4b01-9068-b6699282c768"
+		},
+		{
+			"enabled": true,
+			"filter": "event.name === \"video-played\" && event.eventData.playMethod.toLowerCase() === \"user\" && true",
+			"internalUserGroups": [
+				"AndroidDEV"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "videoPlayedCounter",
+			"processor": "if (typeof cache.sum == 'undefined'){cache.sum = 0}\nresult.countprevious = cache.sum\nfor(i=0;i<events.length;i++){cache.sum += 1}\nresult.count = cache.sum",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "b5e40d75-4734-4c89-ac6e-7f3c9c94f869"
+		},
+		{
+			"enabled": true,
+			"filter": "event.name === \"ad-viewed\"",
+			"internalUserGroups": [
+				"AndroidDEV"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "adViewedCounter",
+			"processor": "if (typeof cache.sum == 'undefined'){cache.sum = 0}\nfor(i=0;i<events.length;i++){cache.sum += 1}\nresult.adViewedCount = cache.sum",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "db2915b0-065b-4468-ba38-8dcee2287e9d"
+		},
+		{
+			"enabled": true,
+			"filter": "event.name === \"video-played\"  && event.eventData.playMethod.toLowerCase() !== \"user\"",
+			"internalUserGroups": [
+				"AndroidDEV"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "video auto play",
+			"processor": "if (typeof cache.sum == 'undefined'){cache.sum = 0}\nfor(i=0;i<events.length;i++){cache.sum += 1}\nresult.count = cache.sum",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "5b8bfb8c-408f-4042-943e-ceb98b4e0997"
+		},
+		{
+			"enabled": true,
+			"filter": "event.name === \"ad-viewed\" && event.eventData.slot.startsWith(\"weather.\") && \n(event.eventData.type === \"ban\" || event.eventData.type === \"bbg\" || event.eventData.type === \"pre\" || event.eventData.type === \"vbbg\")",
+			"internalUserGroups": [
+				"AndroidDEV"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "VladAdinaStream",
+			"processor": "\/\/trace.write(\"start of stream processor script\");\n\nif(typeof(cache) === \"undefined\") {\n    cache = {};\n}\n\nif(typeof(cache.types) === \"undefined\") {\n    cache.types = {};\n    cache.types.bbg = 0;\n    cache.types.pre = 0;\n    cache.types.ban = 0;\n    cache.types.vbbg = 0;\n    cache.successful = 0;\n    cache.hasCreativeId = 0;\n    cache.total = 0;\n    cache.errors = [];\n    cache.clicked = 0;\n}\n\nfor (var ev in events) {\n    \n    var eventData = events[ev].eventData;\n    \n    cache.total += 1;\n    \n    if (typeof(eventData) === \"undefined\") {\n        cache.errors.push(\"eventData undefined for event: \" + JSON.stringify(events[ev]));\n        continue;\n    }\n    \n    if (typeof(eventData.clicked) !== \"undefined\" && eventData.clicked)\n        cache.clicked += 1;\n    if (typeof(eventData.successful) !== \"undefined\" && eventData.successful)\n        cache.successful += 1;  \n    if (typeof(eventData.type) === \"undefined\"){\n        cache.errors.push(\"eventData.type is undefined for event: \"+JSON.stringify(events[ev]));\n        continue;\n    }\n    \n    if (eventData.type === \"pre\"){\n        cache.types.pre += 1;\n    } else if (eventData.type === \"ban\") {\n        cache.types.ban += 1;\n    } else if (eventData.type === \"bbg\"){\n        cache.types.bbg += 1;\n        cache.hasCreativeId += 1;\n    } else if (eventData.type === \"vbbg\"){\n        cache.types.vbbg += 1;\n        cache.hasCreativeId += 1;\n    } else {\n        cache.errors.push(\"Unknown event type for event: \"+JSON.stringify(events[ev]));\n    }\n}\n\nresult.types = {};\nresult.types.bbg = cache.types.bbg;\nresult.types.pre = cache.types.pre;\nresult.types.ban = cache.types.ban;\nresult.types.vbbg = cache.types.vbbg;\nresult.successful = cache.successful;\nresult.hasCreateId = cache.hasCreativeId;\nresult.failed = cache.total - cache.successful;\nresult.total = cache.total;\nresult.clicked = cache.clicked;\nresult.errors = cache.errors;\n\n\/\/trace.write(\"Result write complete: \" + result);\n",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "5310e23d-69e8-4ed5-bef4-cf7236691937"
+		},
+		{
+			"enabled": true,
+			"filter": "event.name === \"detail-viewed\" && event.eventData.name!== undefined && event.eventData.name.toLowerCase() === \"go-run\" && event.eventData.sub !== undefined && event.eventData.sub.toLowerCase() === \"tomorrow\"",
+			"internalUserGroups": [
+				"AndroidDEV"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "GoRunTomorrowCounter",
+			"processor": "if (typeof cache == 'undefined'){cache = {}}\nif (typeof cache.sum === 'undefined'){cache.sum = 0}\nif (typeof result === 'undefined') {result = {}}\nfor(i=0;i<events.length;i++){cache.sum += 1}\nresult.count = cache.sum",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "8c64c43f-4cc7-4884-85ff-bd957e93e754"
+		},
+		{
+			"enabled": true,
+			"filter": "event.name === \"detail-viewed\" || event.name === \"module-viewed\" ",
+			"internalUserGroups": [
+				"Adina",
+				"AndroidDEV"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "Clickthru",
+			"processor": "if (cache === undefined) { var cache = {} }\r\nif (result === undefined) { var result = {} }\r\nif (cache.moduleViewedCount === undefined) { cache.moduleViewedCount = 0 }\r\nif (cache.detailViewedCount === undefined) { cache.detailViewedCount = 0 }\r\n\r\n\r\nfor (var i in events){\r\n    if (typeof(events[i].eventData.name) !== \"undefined\" &&\r\n        events[i].eventData.name === \"hourly\"){\r\n        \r\n        if (events[i].name === \"module-viewed\") {\r\n\t        cache.moduleViewedCount += 1;\r\n        }\r\n        \r\n        if (events[i].name === \"detail-viewed\") {\r\n\t        cache.detailViewedCount += 1;\r\n        }\r\n    }\r\n}\r\nresult.moduleViewedCount = cache.moduleViewedCount;\r\nresult.detailViewedCount = cache.detailViewedCount;\r\nresult.showViews =  printCounter(result.moduleViewedCount);\r\n\r\n\/\/ Making sure we avoid division by zero\r\nif (cache.moduleViewedCount === 0) {\r\n    result.detailVSmodule = 0\r\n} else {\r\n    result.detailVSmodule = cache.detailViewedCount \/ cache.moduleViewedCount;\r\n}",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "c55e1d75-173e-492a-ab5d-2c29075f13a3"
+		},
+		{
+			"enabled": true,
+			"filter": "event.name === \"video-played\"",
+			"internalUserGroups": [
+				"AndroidDEV"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "video played qa test",
+			"processor": "if (typeof cache.sum == 'undefined'){cache.sum = 0}\nfor(i=0;i<events.length;i++){cache.sum += 1}\nresult.count = cache.sum\nif (typeof cache.summary == 'undefined'){cache.summary = \"\"}\nfor(i=0;i<events.length;i++){cache.summary += events[i].eventData}",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "dec67c56-2bce-4b63-bbac-090f8ac3ddfa"
+		},
+		{
+			"enabled": true,
+			"filter": "false",
+			"internalUserGroups": [
+			],
+			"minAppVersion": "1",
+			"name": "stam1",
+			"processor": "false",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "33c81d9e-f95f-45ca-a156-77222683e5ec"
+		},
+		{
+			"enabled": true,
+			"filter": "false",
+			"internalUserGroups": [
+			],
+			"minAppVersion": "1",
+			"name": "stam2",
+			"processor": "false",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "51698684-b60e-4f96-9b48-901706c97b5c"
+		},
+		{
+			"enabled": true,
+			"filter": "false",
+			"internalUserGroups": [
+			],
+			"minAppVersion": "1",
+			"name": "stam3",
+			"processor": "false",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "3efa0fde-112f-4635-b766-8e09be9d2b49"
+		},
+		{
+			"enabled": true,
+			"filter": "event.name === \"video-played\"",
+			"internalUserGroups": [
+				"AndroidDEV"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "video played qa test 2",
+			"processor": "if (typeof cache.sum == 'undefined'){cache.sum = 0}\nfor(i=0;i<events.length;i++){cache.sum -= 1}\nresult.count = cache.sum",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "69f9f5e5-d213-477f-ac69-b04fe19c591d"
+		},
+		{
+			"enabled": true,
+			"filter": "true",
+			"internalUserGroups": [
+			],
+			"minAppVersion": "8.0.1",
+			"name": "production stream qa test",
+			"processor": "if (typeof cache.sum == 'undefined'){cache.sum = 0}\nfor(i=0;i<events.length;i++){cache.sum += 1}\nresult.count = cache.sum",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "PRODUCTION",
+			"uniqueId": "914f3b91-f23e-46f8-946d-b2c03497390b"
+		},
+		{
+			"enabled": true,
+			"filter": "true",
+			"internalUserGroups": [
+				"AndroidDEV"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "percentage stream qa test",
+			"processor": "if (typeof cache.sum == 'undefined'){cache.sum = 0}\nfor(i=0;i<events.length;i++){cache.sum += 1}\nresult.count = cache.sum",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 60.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "377d426a-690f-45fc-b22a-0386c27b2479"
+		},
+		{
+			"enabled": true,
+			"filter": "event.nosuchfield === \"video-played\"",
+			"internalUserGroups": [
+				"AndroidDEV"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "filter exception stream qa test",
+			"processor": "if (typeof cache.sum == 'undefined'){cache.sum = 0}\nfor(i=0;i<events.length;i++){cache.sum -= 1}\nresult.count = cache.sum",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "2e8e9559-5b2c-47b4-b4ed-e791dbc309ba"
+		},
+		{
+			"enabled": true,
+			"filter": "event.name === \"app-launch\"",
+			"internalUserGroups": [
+				"AndroidDEV"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "processor exception stream qa test",
+			"processor": "if (typeof cache.sum == 'undefined'){cache.sum = 0}\nfor (i=0;i<events.length;i++){\n   if (events[i].eventData.method.toLowerCase() == \"ftl\") {cache.sum += 1}\n}\nresult.count = cache.sum",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "34d40ed0-4d95-479e-b474-25ea7d49ca02"
+		},
+		{
+			"enabled": true,
+			"filter": "(event.name === \"detail-viewed\" && \nevent.eventData.name.toLowerCase() === \"go-run\") || \n(event.name === \"app-launch\" && \"fetch\" !== event.eventData.method.toLowerCase());",
+			"internalUserGroups": [
+				"AndroidDEV",
+				"Rachel"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "GoRunUsage",
+			"processor": "MAX_SESSIONS = 30;\r\n\r\nif (cache.sessions === undefined) {\r\n    trace(\"sessions undefined\");\r\n    cache.sessions = [];\r\n} else{\r\n    trace(\"start with \" + cache.sessions.length + \" events in cache\");\r\n}\r\nvar sessions = cache.sessions;\r\n\r\n\/\/ create the buckets\r\nsessions = createBucketPerSessions(sessions, events);\r\n\/\/ sort the events after the buckets created\r\nsessions = sortEventsInBuckets(sessions, events, \"detail-viewed\", \"go-run\");\r\n\/\/cleanup\r\nsessions = removeExtraBuckets(sessions, MAX_SESSIONS); \r\n\/\/count\r\nvar eventsCount = countEventsInBuckets(sessions);\r\n\r\n\/\/ update cache\r\ntrace(\"update cache\");\r\ncache.sessions = sessions\r\n\r\n\/\/update result\r\ntrace(\"update result\");\r\nresult.count = eventsCount;\r\nif (eventsCount === 0){\r\n    result.label = \"gorun-none\";\r\n}else if (eventsCount  <= 3){\r\n    result.label = \"gorun-occasional\";\r\n}else{\r\n    result.label = \"gorun-heavy\";\r\n}\r\n",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "b1718a8c-6f51-4f37-a9eb-30e3e1622a46"
+		},
+		{
+			"enabled": true,
+			"filter": "(event.name === \"video-played\" && event.eventData.playMethod.toLowerCase() === \"auto\" && \r\nevent.eventData.autoplayClicked === true) \r\n|| (event.name === \"video-played\" && event.eventData.playMethod.toLowerCase() === \"user\")\r\n|| (event.name === \"video-played\" && event.eventData.playMethod.toLowerCase() === \"next-video-auto\")\r\n|| (event.name === \"app-launch\" && \"fetch\" !== event.eventData.method.toLowerCase());",
+			"internalUserGroups": [
+				"AndroidDEV",
+				"Rachel"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "User Initiated Video Usage",
+			"processor": "\r\nMAX_SESSIONS = 3;\r\nEVENT_NAME = \"video-played\";\r\nif (cache.sessions === undefined) {\r\n    trace(\"sessions undefined\");\r\n    cache.sessions = [];\r\n}\r\nelse{\r\n    trace(\"start with \" + cache.sessions.length + \" events in cache\");\r\n}\r\nvar sessions = cache.sessions;\r\n\r\n\/\/ create the buckets\r\nsessions = createBucketPerSessions(sessions, events);\r\n\/\/ sort the events after the buckets created\r\nsessions = sortEventsInBuckets(sessions, events, \"video-played\");\r\n\/\/cleanup\r\nsessions = removeExtraBuckets(sessions, MAX_SESSIONS); \r\n\/\/count\r\nvar eventsCount = countEventsInBuckets(sessions);\r\n\r\n\/\/ update cache\r\ntrace(\"update cache\");\r\ncache.sessions = sessions\r\n\r\n\/\/update result\r\ntrace(\"update result\");\r\nresult.count = eventsCount;\r\nif (eventsCount === 0){\r\n    result.label = \"video-none\";\r\n}else if (eventsCount  <= 3){\r\n    result.label = \"video-occasional\";\r\n}else{\r\n    result.label = \"video-heavy\";\r\n}\r\n",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "243557db-234a-4325-b95f-7abad30b6144"
+		},
+		{
+			"enabled": true,
+			"filter": "(event.name === \"detail-viewed\" && \nevent.eventData.name.toLowerCase() === \"allergy\") || \n(event.name === \"app-launch\" && \"fetch\" !== event.eventData.method.toLowerCase());",
+			"internalUserGroups": [
+				"Rachel"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "AllergyUsage",
+			"processor": "\r\nMAX_SESSIONS = 30;\r\nif (cache.sessions === undefined) {\r\n    trace(\"sessions undefined\");\r\n    cache.sessions = [];\r\n} else {\r\n    trace(\"start with \" + cache.sessions.length + \" events in cache\");\r\n}\r\nvar sessions = cache.sessions;\r\n\r\n\/\/ create the buckets\r\nsessions = createBucketPerSessions(sessions, events);\r\n\/\/ sort the events after the buckets created\r\nsessions = sortEventsInBuckets(sessions, events, \"detail-viewed\", \"allergy\");\r\n\/\/cleanup\r\nsessions = removeExtraBuckets(sessions, MAX_SESSIONS); \r\n\/\/count\r\nvar eventsCount = countEventsInBuckets(sessions);\r\n\r\n\/\/ update cache\r\ntrace(\"update cache\");\r\ncache.sessions = sessions\r\n\r\n\/\/update result\r\ntrace(\"update result\");\r\nresult.count = eventsCount;\r\nif (eventsCount === 0){\r\n    result.label = \"allergy-none\";\r\n}else if (eventsCount  <= 3){\r\n    result.label = \"allergy-occasional\";\r\n}else{\r\n    result.label = \"allergy-heavy\";\r\n}\r\n",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "86788822-66f0-4d3a-803d-39ebcb70c0fd"
+		},
+		{
+			"enabled": true,
+			"filter": "(event.name === \"app-launch\" && \"fetch\" !== event.eventData.method.toLowerCase());",
+			"internalUserGroups": [
+				"Rachel"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "ActiveDaysCount",
+			"processor": "\nif (cache.lastEpoch === undefined){\n    cache.lastEpoch = new Date(0);\n}\nif (cache.count === undefined){\n    cache.count = 0;\n}\n\nvar lastDate;\nvar lastYear;\nvar lastMonth;\nvar lastDay;\n\/\/FOR DEBUG\nvar lastMinutes;\n\nupdateLastDate (cache.lastEpoch);\ntrace(\"lastDate = \" + cache.lastEpoch + \"lastYear = \" + lastYear + \" lastMonth \" +\n    lastMonth + \" lastDay \" +lastDay + \" lastMin \" + lastMinutes);\n\nfor (var e in events){\n    if (events[e].name === \"app-launch\"){\n        currentDate = new Date(events[e].dateTime);\n        trace(\"currentDate = \" + currentDate + \"Year = \" + currentDate.getFullYear() + \" Month \" +\n            currentDate.getMonth() + \" Day \" +currentDate.getDate() + \" minute = \" + currentDate.getMinutes());\n        if (currentDate.getDate() != lastDay || currentDate.getMonth() != lastMonth || \n        currentDate.getFullYear() != lastYear\n        \/\/ || currentDate.getMinutes() !== lastMinutes\n        ){\n            trace(\"newDay\");\n            cache.count = cache.count + 1;\n            updateLastDate(events[e].dateTime);\n        }\n        else{\n            trace(\"same day\");\n        }\n    }\n}\n\n\/\/update result\nresult.count = cache.count;\n\nfunction updateLastDate(dateInMs){\n    cache.lastEpoch = dateInMs;\n     lastDate  = new Date(dateInMs);\n     lastYear  = lastDate.getFullYear();\n     lastMonth = lastDate.getMonth();\n     lastDay   = lastDate.getDate();\n    \/\/FOR DEBUG\n     lastMinutes   = lastDate.getMinutes();\n}\n",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "41739a54-1b07-4169-b7e6-4023e6fce163"
+		},
+		{
+			"enabled": true,
+			"filter": "(event.name === \"detail-viewed\" && \nevent.eventData.name.toLowerCase() === \"maps\") || \n(event.name === \"app-launch\" && \"fetch\" !== event.eventData.method.toLowerCase());",
+			"internalUserGroups": [
+				"Rachel"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "Radar Habits",
+			"processor": "\r\nMAX_SESSIONS = 30;\r\nif (cache.sessions === undefined) {\r\n    trace(\"sessions undefined\");\r\n    cache.sessions = [];\r\n}\r\nelse{\r\n    trace(\"start with \" + cache.sessions.length + \" events in cache\");\r\n}\r\nvar sessions = cache.sessions;\r\n\r\n\/\/ create the buckets\r\nsessions = createBucketPerSessions(sessions, events);\r\n\/\/ sort the events after the buckets created\r\nsessions = sortEventsInBuckets(sessions, events, \"detail-viewed\", \"maps\");\r\n\/\/cleanup\r\nsessions = removeExtraBuckets(sessions, MAX_SESSIONS); \r\n\/\/count\r\nvar eventsCount = countEventsInBuckets(sessions);\r\n\r\n\/\/ update cache\r\ntrace(\"update cache\");\r\ncache.sessions = sessions\r\n\r\n\/\/update result\r\ntrace(\"update result\");\r\nresult.count = eventsCount;\r\nif (eventsCount === 0){\r\n    result.label = \"maps-none\";\r\n}else if (eventsCount  <= 3){\r\n    result.label = \"maps-occasional\";\r\n}else{\r\n    result.label = \"maps-heavy\";\r\n}\r\n",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "a28d64cd-cc6e-443d-9caf-52ee59d254b9"
+		},
+		{
+			"enabled": true,
+			"filter": "(event.name === \"video-played\" && event.eventData.playMethod.toLowerCase() === \"auto\" && \r\nevent.eventData.autoplayClicked === true) \r\n|| (event.name === \"video-played\" && event.eventData.playMethod.toLowerCase() === \"user\")\r\n|| (event.name === \"video-played\" && event.eventData.playMethod.toLowerCase() === \"next-video-auto\")\r\n|| (event.name === \"app-launch\" && \"fetch\" !== event.eventData.method.toLowerCase());",
+			"internalUserGroups": [
+				"Rachel"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "Favorite Video Categories",
+			"processor": "\r\nMAX_SESSIONS = 30;\r\nif (cache.sessions === undefined) {\r\n    cache.sessions = [];\r\n}\r\n\r\nvar sessions = cache.sessions;\r\n\r\n\/\/ create the buckets\r\nsessions = createBucketPerSessions(sessions, events);\r\n\/\/ sort the events after the buckets created\r\nsessions = sortVideoPlayedEvents(sessions, events);\r\n\/\/cleanup\r\nsessions = removeExtraBuckets(sessions, MAX_SESSIONS); \r\n\/\/count\r\nvar eventsSum = countEventsInBuckets(sessions);\r\n\r\nvar sortedCategoriesArr = sortEventsSum(eventsSum);\r\n\/\/ update cache\r\n\r\ncache.sessions = sessions;\r\n\/\/update result\r\n\r\nresult.playlistSum = sortedCategoriesArr;\r\n\r\n\/\/------------------ FUNCTIONS ----------------------\r\n\r\n\/\/ create the buckets\r\nfunction createBucketPerSessions(buckets, allEvents){\r\n    trace(\"createBucketPerSessions\");\r\n    for (var e in allEvents) {\r\n        if (allEvents[e].name === \"app-launch\"){\r\n            trace(\"event app launch\");\r\n            buckets.push({\r\n                date: allEvents[e].dateTime,\r\n                playList : {}\r\n            });\r\n        }  \r\n    }\r\n    return buckets\r\n}\r\n\r\n\/\/ sort the events after the buckets created\r\nfunction sortVideoPlayedEvents(sessionBuckets, allEvents)\r\n{\r\n    trace(\"sortVideoPlayedEvents\");\r\n    var sortedEvents = sessionBuckets;\r\n    for (var i in allEvents) {\r\n        try {\r\n            var currentEvent = allEvents[i];\r\n            if (currentEvent.name === \"video-played\"){\r\n                var eventDate = currentEvent.dateTime;\r\n                for (var j = sortedEvents.length -1 ; j >= 0; j--){\r\n                    if (sortedEvents[j].date < eventDate){\r\n                        \/\/ put in the correct playlist count\r\n                        trace(\"add to bucket number \" + j);\r\n                        var currentPlayList = currentEvent.eventData.playlist.toLowerCase();\r\n                        if (sortedEvents[j].playList[currentPlayList] === undefined){\r\n                            sortedEvents[j].playList[currentPlayList] = 1;\r\n                        } else{\r\n                            sortedEvents[j].playList[currentPlayList] = sortedEvents[j].playList[currentPlayList] + 1;\r\n                        }\r\n                        break;\r\n                    }\r\n                }\r\n            }\r\n        } catch(err) {\r\n           trace(err.name + \":\" + err.message); \r\n        }\r\n    }\r\n    return sortedEvents;\r\n}\r\n\r\n\/\/count the events\r\nfunction countEventsInBuckets (buckets){\r\n    trace(\"countEventsInBuckets\");\r\n    var outputObj = {};\r\n    for (var j in buckets){\r\n        var bucket = buckets[j];\r\n        if (bucket !== undefined ) {\r\n            var oneBucketPlayList = bucket.playList;\r\n            \r\n            var oneBucketPlayListArr = Object.keys(oneBucketPlayList);\r\n\r\n            for (var p in oneBucketPlayListArr) {\r\n                var playListName = oneBucketPlayListArr[p];\r\n    \r\n                if (outputObj[playListName] === undefined) {\r\n                    outputObj[playListName] = oneBucketPlayList[playListName];\r\n                } else {\r\n                    outputObj[playListName] += oneBucketPlayList[playListName];\r\n                }\r\n            }            \r\n        }\r\n        else{\r\n            trace(\"buckets[j] = undefined\");\r\n        }\r\n    }\r\n\r\n    return outputObj;\r\n}\r\n\r\nfunction sortEventsSum(eventsSum) {\r\n    \r\n    var sortedArr = [];\r\n    \r\n    var eventsSumKeys = Object.keys(eventsSum);\r\n\r\n    for (var key in eventsSumKeys) {\r\n        var plName = eventsSumKeys[key];\r\n        var plCount = eventsSum[plName];\r\n        \r\n        sortedArr.push({\r\n            name: plName,\r\n            count : plCount\r\n        });\r\n    }\r\n    \r\n    sortedArr.sort(function(a, b){return b.count - a.count});\r\n    return sortedArr;\r\n}\r\n\r\n",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "df438499-672c-4a10-944a-29f18476bc5f"
+		},
+		{
+			"enabled": true,
+			"filter": "event.name === \"video-played\" && event.eventData.playMethod.toLowerCase() === \"auto\"",
+			"internalUserGroups": [
+				"Rachel"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "VideoAutoplayAverageSecWatched",
+			"processor": "if (cache.count === undefined) {\n\tcache.count = 0;\n} \n\nif (cache.total === undefined) {\n\tcache.total = 0;\n}\n\nif (cache.avrageWatchedSecs === undefined) {\n\tcache.avrageWatchedSecs = 0;\n}\n\nfor (var ev in events) {\n    try {\n\t    cache.count += 1;\n\t    cache.total += events[ev].eventData.watchedSecs;\n    } catch (err) {\n        trace(err.name + \":\" + err.message);\n    }    \n}\n\nif (cache.count > 0) {\n    cache.avrageWatchedSecs = cache.total\/cache.count;\n}    \n\nif (cache.count >= 10) {\n\tresult.avrageWatchedSecs = cache.avrageWatchedSecs; \n}\n",
+			"queueSizeKB": 1024,
+			"rolloutPercentage": 100.0,
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "DEVELOPMENT",
+			"uniqueId": "11eefd4f-2ec7-4694-81ae-5b85b6c90db2"
+		}
+	]
+}

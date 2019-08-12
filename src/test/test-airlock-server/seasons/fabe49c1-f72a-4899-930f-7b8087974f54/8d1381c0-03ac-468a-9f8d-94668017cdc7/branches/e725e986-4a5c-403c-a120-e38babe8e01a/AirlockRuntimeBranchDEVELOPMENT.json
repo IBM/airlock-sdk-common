@@ -1,0 +1,435 @@
+{
+	"entitlements": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchEntitlementItems": [
+				"purchase.P11"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchPurchaseOptionsItems": [
+				"purchasens.OP1",
+				"airlockEntitlement.OP12"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"enabled": false,
+			"entitlements": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchEntitlementItems": [
+					],
+					"branchPurchaseOptionsItems": [
+						"purchaseP11.OP11"
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"entitlements": [
+					],
+					"minAppVersion": "1.0.0",
+					"name": "P11",
+					"namespace": "purchase",
+					"purchaseOptions": [
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchEntitlementItems": [
+							],
+							"branchPurchaseOptionsItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"enabled": false,
+							"minAppVersion": "1.0.0",
+							"name": "OP11",
+							"namespace": "purchaseP11",
+							"rolloutPercentage": 100.0,
+							"type": "PURCHASE_OPTIONS",
+							"uniqueId": "8bd33183-fdb1-4d9f-9f0a-673ccde04622"
+						}
+					],
+					"rolloutPercentage": 10.0,
+					"type": "ENTITLEMENT",
+					"uniqueId": "adba4e60-408b-4326-83c7-0d7232b62dc2"
+				}
+			],
+			"includedEntitlements": [
+			],
+			"minAppVersion": "1.0.0",
+			"name": "P1",
+			"namespace": "purchase",
+			"purchaseOptions": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchEntitlementItems": [
+					],
+					"branchPurchaseOptionsItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"minAppVersion": "1.0.0",
+					"name": "OP1",
+					"namespace": "purchasens",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "false"
+					},
+					"type": "PURCHASE_OPTIONS",
+					"uniqueId": "ee5daf60-b8b4-4c71-b239-d828292e3769"
+				},
+				{
+					"additionalInfo": {
+					},
+					"branchStatus": "NEW",
+					"configurationRules": [
+					],
+					"defaultConfiguration": null,
+					"defaultIfAirlockSystemIsDown": false,
+					"enabled": true,
+					"internalUserGroups": [
+						"QA"
+					],
+					"minAppVersion": "1.0",
+					"name": "OP12",
+					"namespace": "airlockEntitlement",
+					"noCachedResults": false,
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "true"
+					},
+					"stage": "DEVELOPMENT",
+					"storeProductIds": [
+						{
+							"productId": "product.id.7",
+							"storeType": "Google Play Store"
+						}
+					],
+					"type": "PURCHASE_OPTIONS",
+					"uniqueId": "729368f2-e396-4446-a68e-03d326b6ac67"
+				}
+			],
+			"rolloutPercentage": 100.0,
+			"type": "ENTITLEMENT",
+			"uniqueId": "5c8a53d4-572b-4ccc-86f4-7a35f8b31b35"
+		},
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchEntitlementItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchPurchaseOptionsItems": [
+				"purchaseP2.OP2"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"defaultConfiguration": "{\n\t\"testAttr\":\"testAttrValue\"\n}",
+			"entitlements": [
+			],
+			"minAppVersion": "1.0.0",
+			"name": "P2",
+			"namespace": "purchase",
+			"purchaseOptions": [
+			],
+			"rolloutPercentage": 50.0,
+			"type": "ENTITLEMENT",
+			"uniqueId": "d2612f26-8bfa-4fc8-a961-2f5c192c37f4"
+		},
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchEntitlementItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchPurchaseOptionsItems": [
+				"airlockEntitlement.OP1",
+				"airlockEntitlement.OP31 New"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"entitlements": [
+			],
+			"name": "P3",
+			"namespace": "airlockEntitlement",
+			"purchaseOptions": [
+				{
+					"additionalInfo": {
+					},
+					"branchConfigurationRuleItems": [
+					],
+					"branchEntitlementItems": [
+					],
+					"branchPurchaseOptionsItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"name": "OP1",
+					"namespace": "airlockEntitlement",
+					"storeProductIds": [
+						{
+							"productId": "product.id4",
+							"storeType": "Google Play Store"
+						}
+					],
+					"type": "PURCHASE_OPTIONS",
+					"uniqueId": "04fdfaf2-8259-4a44-b2b6-911a3a06b865"
+				},
+				{
+					"additionalInfo": null,
+					"branchStatus": "NEW",
+					"configurationRules": [
+					],
+					"defaultConfiguration": null,
+					"defaultIfAirlockSystemIsDown": false,
+					"enabled": true,
+					"internalUserGroups": [
+						"QA"
+					],
+					"minAppVersion": "1.0.0",
+					"name": "OP31 New",
+					"namespace": "airlockEntitlement",
+					"noCachedResults": false,
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "true"
+					},
+					"stage": "DEVELOPMENT",
+					"storeProductIds": [
+						{
+							"productId": "product.id.op31",
+							"storeType": "Google Play Store"
+						}
+					],
+					"type": "PURCHASE_OPTIONS",
+					"uniqueId": "529a2efc-1464-4458-a349-2cfe852d09ba"
+				}
+			],
+			"type": "ENTITLEMENT",
+			"uniqueId": "97e9b32b-bfd1-43e2-b769-1676a6ac10b6"
+		},
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchEntitlementItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchPurchaseOptionsItems": [
+				"airlockEntitlement.OP4",
+				"airlockEntitlement.OP5"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"entitlements": [
+			],
+			"name": "P4",
+			"namespace": "airlockEntitlement",
+			"purchaseOptions": [
+			],
+			"type": "ENTITLEMENT",
+			"uniqueId": "d14823de-11d7-43a6-bfd9-9b1e38acaf62"
+		},
+		{
+			"additionalInfo": {
+			},
+			"branchFeatureParentName": "ROOT",
+			"branchPurchaseOptionsItems": [
+			],
+			"branchStatus": "NEW",
+			"configurationRules": [
+			],
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": true,
+			"enabled": true,
+			"entitlements": [
+			],
+			"includedEntitlements": [
+			],
+			"internalUserGroups": [
+				"QA"
+			],
+			"minAppVersion": "1.0.0",
+			"name": "P6",
+			"namespace": "airlockEntitlement",
+			"noCachedResults": false,
+			"purchaseOptions": [
+			],
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": "true"
+			},
+			"stage": "DEVELOPMENT",
+			"type": "ENTITLEMENT",
+			"uniqueId": "320d0574-5c16-403e-9d3a-5afcdabbbe28"
+		},
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchEntitlementItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchPurchaseOptionsItems": [
+				"airlockEntitlement.OP6",
+				"airlockEntitlement.OP7"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"entitlements": [
+			],
+			"name": "P5",
+			"namespace": "airlockEntitlement",
+			"purchaseOptions": [
+			],
+			"type": "ENTITLEMENT",
+			"uniqueId": "b24fa57d-490c-404c-8f48-900a68f51a08"
+		},
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchEntitlementItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchPurchaseOptionsItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"entitlements": [
+			],
+			"name": "P7",
+			"namespace": "airlockEntitlement",
+			"purchaseOptions": [
+			],
+			"type": "ENTITLEMENT",
+			"uniqueId": "09fbdfb7-b328-4893-a8ba-73ad1b066629"
+		},
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchEntitlementItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchPurchaseOptionsItems": [
+				"airlockEntitlement.P8 OP1"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"entitlements": [
+			],
+			"name": "P8",
+			"namespace": "airlockEntitlement",
+			"purchaseOptions": [
+				{
+					"additionalInfo": {
+					},
+					"branchConfigurationRuleItems": [
+					],
+					"branchEntitlementItems": [
+					],
+					"branchPurchaseOptionsItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"name": "P8 OP1",
+					"namespace": "airlockEntitlement",
+					"type": "PURCHASE_OPTIONS",
+					"uniqueId": "95c2b4ea-7bc1-4c8b-be56-05e411ba6bb9"
+				}
+			],
+			"type": "ENTITLEMENT",
+			"uniqueId": "22c41471-8ee6-47cd-9f8a-fb56803c7552"
+		},
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchEntitlementItems": [
+				"mx.e224e73d-df02-45a9-8d8d-f4c991594198"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchPurchaseOptionsItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"defaultConfiguration": "{\n\t\"description\":\"Ads Free2\"\n}",
+			"entitlements": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchEntitlementItems": [
+						"airlockEntitlement.P111",
+						"airlockEntitlement.P112",
+						"airlockEntitlement.P113"
+					],
+					"branchFeaturesItems": [
+					],
+					"branchOrderingRuleItems": [
+					],
+					"branchPurchaseOptionsItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"entitlements": [
+					],
+					"maxFeaturesOn": 2,
+					"type": "ENTITLEMENT_MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "e224e73d-df02-45a9-8d8d-f4c991594198"
+				}
+			],
+			"name": "P11",
+			"namespace": "airlockEntitlement",
+			"purchaseOptions": [
+			],
+			"type": "ENTITLEMENT",
+			"uniqueId": "2a5f3d5d-cbaf-43e2-9e7f-bee8cad31590"
+		}
+	],
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchEntitlementItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"ns1.F11",
+				"ns1.F12"
+			],
+			"branchOrderingRuleItems": [
+			],
+			"branchPurchaseOptionsItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"enabled": false,
+			"features": [
+			],
+			"minAppVersion": "1.0.0",
+			"name": "F1",
+			"namespace": "ns1",
+			"orderingRules": [
+			],
+			"premium": false,
+			"premiumRule": null,
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "257f7547-2f01-4e26-8faf-7db3f00fea76"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "Ent.QA.Branch",
+	"uniqueId": "e725e986-4a5c-403c-a120-e38babe8e01a"
+}

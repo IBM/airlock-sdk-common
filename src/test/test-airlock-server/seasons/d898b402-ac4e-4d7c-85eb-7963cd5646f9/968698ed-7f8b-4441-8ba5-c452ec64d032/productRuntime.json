@@ -1,0 +1,14 @@
+{
+	"codeIdentifier": "FloorElevationPOC",
+	"name": "Floor Elevation POC",
+	"seasons": [
+		{
+			"lastModified": 1501053744798,
+			"maxVersion": null,
+			"minVersion": "1.0",
+			"productId": "d898b402-ac4e-4d7c-85eb-7963cd5646f9",
+			"uniqueId": "968698ed-7f8b-4441-8ba5-c452ec64d032"
+		}
+	],
+	"uniqueId": "d898b402-ac4e-4d7c-85eb-7963cd5646f9"
+}

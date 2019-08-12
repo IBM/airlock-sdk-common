@@ -1,0 +1,21 @@
+{
+	"codeIdentifier": "ChangeFeaturesWithBitmap",
+	"name": "ChangeFeaturesWithBitmap",
+	"seasons": [
+		{
+			"lastModified": 1543477047687,
+			"maxVersion": "7.10",
+			"minVersion": "7.8",
+			"productId": "c2a37477-6779-4f89-afae-5dce8a61caa7",
+			"uniqueId": "9f52643e-5fd4-46a9-baa1-cad87dfafd71"
+		},
+		{
+			"lastModified": 1491125533478,
+			"maxVersion": null,
+			"minVersion": "7.10",
+			"productId": "c2a37477-6779-4f89-afae-5dce8a61caa7",
+			"uniqueId": "78c604ae-28e3-4f61-a417-af59645e6288"
+		}
+	],
+	"uniqueId": "c2a37477-6779-4f89-afae-5dce8a61caa7"
+}

@@ -1,0 +1,38 @@
+{
+	"branches": [
+	],
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"entitlementsRoot": {
+		"branchStatus": "NONE",
+		"entitlements": [
+		],
+		"type": "ROOT",
+		"uniqueId": "70c19887-3795-481d-a13e-097c235f314d"
+	},
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": "4.0.0",
+	"minVersion": "1.0.0",
+	"productId": "27108f9c-ad6d-47b3-9784-3d19006f48d5",
+	"productName": "Bixby API",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "5dee0cfa-fc90-4534-9042-ba995f062bbb"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "56e25c8a-c473-4f72-a154-67240aa4d51b",
+	"serverVersion": "V5.0",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

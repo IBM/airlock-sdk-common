@@ -1,0 +1,359 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"mx.266e4ff4-1dc3-4c98-894e-0bb1f8b84a00",
+				"mx.86eb0688-4624-4e3f-b32c-bf9f761cb3b1"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"features": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+						"modules.Google modules",
+						"modules.Samsung modules"
+					],
+					"branchStatus": "CHECKED_OUT",
+					"features": [
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+								"mx.bb17054f-36f2-4539-950c-21f82df6e13d"
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"features": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+										"modules.Breaking NewsTEST",
+										"modules.Right Now",
+										"modules.Hourly",
+										"modules.Daily",
+										"modules.Video",
+										"modules.Radar Maps",
+										"modules.Road Conditions",
+										"modules.Outdoor",
+										"modules.Health",
+										"modules.News",
+										"modules.Lifestyle"
+									],
+									"branchStatus": "CHECKED_OUT",
+									"features": [
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+												"modules.Video Enabled"
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"features": [
+											],
+											"name": "Right Now",
+											"namespace": "modules",
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"type": "FEATURE",
+											"uniqueId": "20d8319e-0a16-445e-826d-263c700fae02"
+										}
+									],
+									"maxFeaturesOn": 14,
+									"type": "MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "bb17054f-36f2-4539-950c-21f82df6e13d"
+								}
+							],
+							"name": "Google modules",
+							"namespace": "modules",
+							"type": "FEATURE",
+							"uniqueId": "f3763768-8250-4dc4-9c62-bb07976bad3b"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+								"mx.99908173-e9cb-46d1-a563-88ed14833a28"
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"features": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+										"modules.Breaking News Samsung",
+										"modules.Right Now Samsung",
+										"modules.Hourly Samsung",
+										"modules.Daily Samsung",
+										"modules.Events Feed",
+										"modules.Video Samsung",
+										"modules.Radar Maps Samsung",
+										"modules.Road Conditions Samsung",
+										"modules.Outdoor Samsung",
+										"modules.Health Samsung",
+										"modules.News Samsung"
+									],
+									"branchStatus": "CHECKED_OUT",
+									"features": [
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"features": [
+											],
+											"name": "Breaking News Samsung",
+											"namespace": "modules",
+											"type": "FEATURE",
+											"uniqueId": "c48fa394-228f-4a53-ad4a-a94f8d01b15c"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+												"modules.Video Enabled Samsung"
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"features": [
+											],
+											"name": "Right Now Samsung",
+											"namespace": "modules",
+											"type": "FEATURE",
+											"uniqueId": "1a2209f4-3f81-43ab-917b-6616e29d1f75"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"features": [
+											],
+											"name": "Hourly Samsung",
+											"namespace": "modules",
+											"type": "FEATURE",
+											"uniqueId": "c7416cb7-68ed-403b-92c1-624e0116e9e1"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"modulesDaily.Ten.Days Samsung"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"name": "Ten.Days Samsung",
+													"namespace": "modulesDaily",
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "d4b93b87-7217-4ff3-a516-c4d1baa4e92c"
+												}
+											],
+											"features": [
+											],
+											"name": "Daily Samsung",
+											"namespace": "modules",
+											"type": "FEATURE",
+											"uniqueId": "0c0f7403-2d0f-4004-b2d8-8217df7884d7"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"features": [
+											],
+											"name": "Events Feed",
+											"namespace": "modules",
+											"type": "FEATURE",
+											"uniqueId": "a1a5ee56-5376-42bf-960b-94e0dc000fae"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"features": [
+											],
+											"name": "Video Samsung",
+											"namespace": "modules",
+											"type": "FEATURE",
+											"uniqueId": "70a662a6-6974-4b27-8710-293517e19320"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"features": [
+											],
+											"name": "Radar Maps Samsung",
+											"namespace": "modules",
+											"type": "FEATURE",
+											"uniqueId": "cd2a4d9f-76f1-41de-8044-7af57571bfae"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"features": [
+											],
+											"name": "Road Conditions Samsung",
+											"namespace": "modules",
+											"type": "FEATURE",
+											"uniqueId": "c77c659b-ce43-4c4f-b51c-17d43158e58f"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+												"outdoormodule.Label Samsung"
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"features": [
+											],
+											"name": "Outdoor Samsung",
+											"namespace": "modules",
+											"type": "FEATURE",
+											"uniqueId": "690cc880-4b35-4b12-89da-85be2f6062de"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"mx.f21423a9-6ded-4aba-a22f-94f4d63f8997"
+											],
+											"branchFeaturesItems": [
+												"healthmodule.PersonalizationSamsung"
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+														"modulesHealth.Config2.7 Samsung",
+														"modulesHealth.Config2.6 Samsung"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"name": "Config2.7 Samsung",
+															"namespace": "modulesHealth",
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "a64160df-5c6e-4370-b099-b5f26a21f10f"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"name": "Config2.6 Samsung",
+															"namespace": "modulesHealth",
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "e2aa3d59-bca8-4ba6-89b4-14341590bd31"
+														}
+													],
+													"maxFeaturesOn": 1,
+													"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+													"uniqueId": "f21423a9-6ded-4aba-a22f-94f4d63f8997"
+												}
+											],
+											"features": [
+											],
+											"name": "Health Samsung",
+											"namespace": "modules",
+											"type": "FEATURE",
+											"uniqueId": "d0ce5f45-2cd5-4f1b-87b4-2f7068f90801"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"features": [
+											],
+											"name": "News Samsung",
+											"namespace": "modules",
+											"type": "FEATURE",
+											"uniqueId": "4bd02faa-d3e1-4392-9d83-df87aae18620"
+										}
+									],
+									"maxFeaturesOn": 14,
+									"type": "MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "99908173-e9cb-46d1-a563-88ed14833a28"
+								}
+							],
+							"name": "Samsung modules",
+							"namespace": "modules",
+							"type": "FEATURE",
+							"uniqueId": "1287baf5-cb13-4031-b723-1d7daa1a662b"
+						}
+					],
+					"maxFeaturesOn": 1,
+					"type": "MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "86eb0688-4624-4e3f-b32c-bf9f761cb3b1"
+				}
+			],
+			"name": "Airlock Control Over Modules",
+			"namespace": "modules",
+			"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+			"type": "FEATURE",
+			"uniqueId": "97f2600f-756d-4eb6-bb61-35617ed35f4b"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "IncreaseHurricaneCentralPriority",
+	"uniqueId": "50ead763-242d-4e9b-adeb-2424c70a53b1"
+}

@@ -1,0 +1,24 @@
+{
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "7.10",
+	"productId": "2efb44f1-505d-4e0e-95ec-ee1c84852173",
+	"productName": "QA.RulesTrace",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "95f5bdf1-c977-4b3a-9794-744fdb924b46"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "e8a79a02-5e0c-4a4a-b06e-24aa8faffef6",
+	"serverVersion": "V2.5",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

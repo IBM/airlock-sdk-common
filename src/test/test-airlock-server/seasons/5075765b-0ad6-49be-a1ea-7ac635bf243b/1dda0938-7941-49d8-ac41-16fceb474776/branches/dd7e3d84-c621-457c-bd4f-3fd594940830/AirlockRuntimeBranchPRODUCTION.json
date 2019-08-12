@@ -1,0 +1,2916 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"mx.2822deb3-8d6c-4854-880d-fbd5366d58cc"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"features": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+						"headsupv2.HeadsUp",
+						"headsup.HeadsUpDynamic",
+						"headsup.HeadsUp"
+					],
+					"branchStatus": "CHECKED_OUT",
+					"features": [
+						{
+							"branchConfigurationRuleItems": [
+								"headsupv2HeadsUpV2.Basic",
+								"headsupv2HeadsUpV2.Extended Forecast"
+							],
+							"branchFeaturesItems": [
+								"mx.04b51399-f570-46b5-bb5a-2d3f5b7cd0ed"
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+									],
+									"minAppVersion": "8.0",
+									"name": "Basic",
+									"namespace": "headsupv2HeadsUpV2",
+									"rolloutPercentage": 100.0,
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "23f976d4-d6cf-4e23-a1ea-1501bbc08f1c"
+								},
+								{
+									"branchConfigurationRuleItems": [
+										"headsupv2HeadsUpV2ExtendedForecast.japanese"
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"minAppVersion": "8.0",
+											"name": "japanese",
+											"namespace": "headsupv2HeadsUpV2ExtendedForecast",
+											"rolloutPercentage": 100.0,
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "abba963f-4641-48df-a8df-283459f9c5a8"
+										}
+									],
+									"minAppVersion": "8.0",
+									"name": "Extended Forecast",
+									"namespace": "headsupv2HeadsUpV2",
+									"rolloutPercentage": 100.0,
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "08e11f2b-d1a3-483b-87f9-b7fd735966bb"
+								}
+							],
+							"features": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+										"mx.eb329911-6674-4169-b1ae-3fefbd752446",
+										"headsupv2.Breaking News Video",
+										"headsupv2.Real Time Lightning",
+										"headsupv2.Radar",
+										"headsupv2.Precip Start",
+										"headsupv2.Precip End",
+										"headsupv2.Precip Intensity",
+										"headsupv2.Forecasted Snow Accumulation",
+										"headsupv2.Road Conditions",
+										"headsupv2.Editorial Calendar",
+										"headsupv2.Allergy",
+										"headsupv2.BoatAndBeach",
+										"headsupv2.GoRun",
+										"headsupv2.Feels Like Message",
+										"headsupv2.Top VideoV2",
+										"headsupv2.Tomorrow Forecast",
+										"headsupv2.Weekend Forecast",
+										"headsupv2.Sunrise Sunset Message",
+										"headsupv2.Hourly Forecast"
+									],
+									"branchStatus": "CHECKED_OUT",
+									"features": [
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+												"headsupv2.Hero Radar",
+												"headsupv2.Hero Precip Start ",
+												"headsupv2.Hero Precip End",
+												"headsupv2.Editorial Calendar Table",
+												"headsupv2.Hero Tomorrow Forecast",
+												"headsupv2.Hero Weekend Forecast",
+												"headsupv2.Hero Hourly Forecast"
+											],
+											"branchStatus": "CHECKED_OUT",
+											"features": [
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2HeroRadar.Basic",
+														"mx.4f6d0583-ac4f-4f8e-a340-d36ac5e6c89e"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Basic",
+															"namespace": "headsupv2HeroRadar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "94865f36-3f3a-4295-94af-013909b9ee99"
+														},
+														{
+															"branchConfigurationRuleItems": [
+																"headsupv2HeroRadar.Rain",
+																"headsupv2HeroRadar.Snow",
+																"headsupv2HeroRadar.Mix",
+																"headsupv2HeroRadar.Storm"
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Rain",
+																	"namespace": "headsupv2HeroRadar",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "7c3a3c9f-2cbe-4285-8b78-31777b83f78b"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Snow",
+																	"namespace": "headsupv2HeroRadar",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "e3eccca3-7656-489c-a130-40b7f023cf22"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Mix",
+																	"namespace": "headsupv2HeroRadar",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "d9c583ad-6075-472a-aacf-af03dbf0bf4f"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Storm",
+																	"namespace": "headsupv2HeroRadar",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "1ce35b71-76b5-4999-b03f-fd1f53b54dc8"
+																}
+															],
+															"maxFeaturesOn": 1,
+															"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+															"uniqueId": "4f6d0583-ac4f-4f8e-a340-d36ac5e6c89e"
+														}
+													],
+													"features": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Hero Radar",
+													"namespace": "headsupv2",
+													"rolloutPercentage": 75.0,
+													"type": "FEATURE",
+													"uniqueId": "6d911f7d-4441-40f2-b1f3-f9b9511de066"
+												},
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2HeroPrecipStart.Basic",
+														"mx.850ac5d2-92a2-43ae-a31e-b34effc07373"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Basic",
+															"namespace": "headsupv2HeroPrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "09ccce0e-c478-42d7-84a5-723aa5b8c3fe"
+														},
+														{
+															"branchConfigurationRuleItems": [
+																"headsupv2HeroPrecipStart.RainStarting",
+																"headsupv2HeroPrecipStart.Rain Likely",
+																"headsupv2HeroPrecipStart.Rain Possible",
+																"headsupv2HeroPrecipStart.Light Snow",
+																"headsupv2HeroPrecipStart.Snow Starting",
+																"headsupv2HeroPrecipStart.Snow Likely",
+																"headsupv2HeroPrecipStart.Light Snow Likely",
+																"headsupv2HeroPrecipStart.Snow Possible",
+																"headsupv2HeroPrecipStart.Light Snow Possible",
+																"headsupv2HeroPrecipStart.Mix Starting",
+																"headsupv2HeroPrecipStart.Mix Likely",
+																"headsupv2HeroPrecipStart.Mix Possible",
+																"headsupv2HeroPrecipStart.Storms Starting",
+																"headsupv2HeroPrecipStart.Storms Likely",
+																"headsupv2HeroPrecipStart.Storms Possible",
+																"headsupv2HeroPrecipStart.Disable Tile"
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "RainStarting",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "97d514bc-3898-4733-bb61-a72fd9b2bcf7"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Rain Likely",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "b5eb7c79-e996-4fb2-b36e-9901bf272763"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Rain Possible",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "7e810eb8-a829-4a4b-81dc-9b7166b5b52a"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Light Snow",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "e00f5203-9c40-4235-8aae-be96f9c274d5"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Snow Starting",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "75644ad7-7d5b-413a-b2d2-4497a08ba43b"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Snow Likely",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "4a84dfac-58fa-43ef-9e12-ae9e205343a1"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Light Snow Likely",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "2c47a8de-cde4-4a9d-8220-ff1f70a00b17"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Snow Possible",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "698651d2-d12b-4056-bf02-79d892d1d143"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Light Snow Possible",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "cb2aee24-13ba-4061-9535-6c494a9ae3eb"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Mix Starting",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "4cdab136-6542-4769-91f8-d5c120aa6985"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Mix Likely",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "cf24cdaf-1b17-4ade-bf34-7e1f3a3b6676"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Mix Possible",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "6cb44405-ec68-4320-acb0-355d7d8d4d39"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Storms Starting",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "add15380-1319-4206-a2b8-05c05707d031"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Storms Likely",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "db995e2e-8b57-4e06-8416-149d4ce8ce3a"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Storms Possible",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "93551bb0-bac0-4f9d-b1b4-a68dbabf87b3"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Disable Tile",
+																	"namespace": "headsupv2HeroPrecipStart",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "7303fce7-59c5-42b1-801c-2ebc843f0c9b"
+																}
+															],
+															"maxFeaturesOn": 1,
+															"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+															"uniqueId": "850ac5d2-92a2-43ae-a31e-b34effc07373"
+														}
+													],
+													"features": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Hero Precip Start ",
+													"namespace": "headsupv2",
+													"rolloutPercentage": 100.0,
+													"type": "FEATURE",
+													"uniqueId": "fee8931a-240a-4132-9f68-3c3f1806c607"
+												},
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2HeroPrecipEnd.Basic",
+														"mx.73ba06aa-a7c0-43e0-9a43-2964e804fb88"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Basic",
+															"namespace": "headsupv2HeroPrecipEnd",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "c5ceff52-4783-40db-bb4d-5ba083fa16c0"
+														},
+														{
+															"branchConfigurationRuleItems": [
+																"headsupv2HeroPrecipEnd.Rain Ending",
+																"headsupv2HeroPrecipEnd.Snow Ending",
+																"headsupv2HeroPrecipEnd.Mix Ending",
+																"headsupv2HeroPrecipEnd.Storms Ending",
+																"headsupv2HeroPrecipEnd.Disable Tile"
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Rain Ending",
+																	"namespace": "headsupv2HeroPrecipEnd",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "7c8a7f64-1dc5-4ddb-9dd4-bb21a4c09609"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Snow Ending",
+																	"namespace": "headsupv2HeroPrecipEnd",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "1f718329-52f9-4c1b-a39c-6f68bb76de1c"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Mix Ending",
+																	"namespace": "headsupv2HeroPrecipEnd",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "537d5ede-2e49-4224-aaf7-e2e44011bf59"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Storms Ending",
+																	"namespace": "headsupv2HeroPrecipEnd",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "433b30e1-eed5-4ea9-9c8f-4fdffeff284f"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Disable Tile",
+																	"namespace": "headsupv2HeroPrecipEnd",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "332013e9-ddbc-4937-b0e1-15f6a539783e"
+																}
+															],
+															"maxFeaturesOn": 1,
+															"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+															"uniqueId": "73ba06aa-a7c0-43e0-9a43-2964e804fb88"
+														}
+													],
+													"features": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Hero Precip End",
+													"namespace": "headsupv2",
+													"rolloutPercentage": 100.0,
+													"type": "FEATURE",
+													"uniqueId": "9db2c66e-6c07-4a08-8acc-b849c2f68c7b"
+												},
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2EditorialCalendar.Basic Table",
+														"mx.bcf99612-6191-4c1a-8c53-070fa167e063"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Basic Table",
+															"namespace": "headsupv2EditorialCalendar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "5d971e7c-f322-4572-9060-00911b4626a2"
+														},
+														{
+															"branchConfigurationRuleItems": [
+																"headsupv2EditorialCalendar.Labor Day Hourly Table",
+																"headsupv2EditorialCalendar.Labor Day Daily Table",
+																"headsupv2EditorialCalendar.Fourth of July Daily Table",
+																"headsupv2EditorialCalendar.Fourth of July Hourly Table",
+																"headsupv2EditorialCalendar.First Day of Summer Table",
+																"headsupv2EditorialCalendar.Fathers Day Table",
+																"headsupv2EditorialCalendar.Memorial Day Daily Table",
+																"headsupv2EditorialCalendar.Memorial Day Hourly Table",
+																"headsupv2EditorialCalendar.No Event Table"
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Labor Day Hourly Table",
+																	"namespace": "headsupv2EditorialCalendar",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "2300f0d4-9bed-4a61-b4ef-7ab91ca7202f"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Labor Day Daily Table",
+																	"namespace": "headsupv2EditorialCalendar",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "7776a8d7-4d5a-4c45-9646-2f18d8d25455"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Fourth of July Daily Table",
+																	"namespace": "headsupv2EditorialCalendar",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "b6dd4e99-d8b1-4b8d-ad5e-c7062ca14e5a"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Fourth of July Hourly Table",
+																	"namespace": "headsupv2EditorialCalendar",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "533adc07-f9c5-451f-938c-9b094c03f987"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "First Day of Summer Table",
+																	"namespace": "headsupv2EditorialCalendar",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "2651d45d-51e5-4571-8076-44d3348a49ee"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Fathers Day Table",
+																	"namespace": "headsupv2EditorialCalendar",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "ce7e0c09-5c85-47fb-a8de-b6e73024540e"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Memorial Day Daily Table",
+																	"namespace": "headsupv2EditorialCalendar",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "a0f5bd48-9421-4f80-acd9-7fc650d33b6a"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Memorial Day Hourly Table",
+																	"namespace": "headsupv2EditorialCalendar",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "599deaeb-1a9f-42de-96af-20661649772d"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "No Event Table",
+																	"namespace": "headsupv2EditorialCalendar",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "e154234a-f577-4044-8fc5-d300e1d3dd51"
+																}
+															],
+															"maxFeaturesOn": 1,
+															"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+															"uniqueId": "bcf99612-6191-4c1a-8c53-070fa167e063"
+														}
+													],
+													"features": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Editorial Calendar Table",
+													"namespace": "headsupv2",
+													"rolloutPercentage": 100.0,
+													"type": "FEATURE",
+													"uniqueId": "bc900475-f970-47f4-8a54-f16580e77c0f"
+												},
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2HeroTomorrowForecast.Basic",
+														"mx.51e1cc83-e00a-4143-982b-c2204d097878"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Basic",
+															"namespace": "headsupv2HeroTomorrowForecast",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "dead9b3d-7b5b-48c5-8cde-66efa5dc2cd1"
+														},
+														{
+															"branchConfigurationRuleItems": [
+																"headsupv2HeroTomorrowForecast.Rain",
+																"headsupv2HeroTomorrowForecast.Snow",
+																"headsupv2HeroTomorrowForecast.Mix",
+																"headsupv2HeroTomorrowForecast.Clear",
+																"headsupv2HeroTomorrowForecast.Disable Tile"
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Rain",
+																	"namespace": "headsupv2HeroTomorrowForecast",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "16d09650-17ce-4521-9723-5e11baad574f"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Snow",
+																	"namespace": "headsupv2HeroTomorrowForecast",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "0dac3799-060e-4f7e-82e6-b16e80d1a6de"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Mix",
+																	"namespace": "headsupv2HeroTomorrowForecast",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "48729c36-c7cb-46a6-9677-3f2092409dd9"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Clear",
+																	"namespace": "headsupv2HeroTomorrowForecast",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "4feceefd-9f56-4329-b857-416e6dedc05b"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Disable Tile",
+																	"namespace": "headsupv2HeroTomorrowForecast",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "8d536761-b41a-454b-88ad-4f730097f82e"
+																}
+															],
+															"maxFeaturesOn": 1,
+															"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+															"uniqueId": "51e1cc83-e00a-4143-982b-c2204d097878"
+														}
+													],
+													"features": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Hero Tomorrow Forecast",
+													"namespace": "headsupv2",
+													"rolloutPercentage": 100.0,
+													"type": "FEATURE",
+													"uniqueId": "ec9587cd-a8e6-4101-99fe-086aa06c29bf"
+												},
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2HeroWeekendForecast.Basic",
+														"mx.49de4e0b-3647-4731-a9ef-ad0b13245da0"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Basic",
+															"namespace": "headsupv2HeroWeekendForecast",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "94a1ff64-3c2b-4a7d-9549-a49ba02f0e42"
+														},
+														{
+															"branchConfigurationRuleItems": [
+																"headsupv2HeroWeekendForecast.After Midnight",
+																"headsupv2HeroWeekendForecast.Before Midnight"
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "After Midnight",
+																	"namespace": "headsupv2HeroWeekendForecast",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "61064295-a281-4ca8-a92e-e37057e2f32a"
+																},
+																{
+																	"branchConfigurationRuleItems": [
+																	],
+																	"branchFeaturesItems": [
+																	],
+																	"branchStatus": "CHECKED_OUT",
+																	"configurationRules": [
+																	],
+																	"minAppVersion": "8.0",
+																	"name": "Before Midnight",
+																	"namespace": "headsupv2HeroWeekendForecast",
+																	"rolloutPercentage": 100.0,
+																	"type": "CONFIGURATION_RULE",
+																	"uniqueId": "be7fc765-dee2-41c5-89b7-260b9b3075ca"
+																}
+															],
+															"maxFeaturesOn": 1,
+															"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+															"uniqueId": "49de4e0b-3647-4731-a9ef-ad0b13245da0"
+														}
+													],
+													"features": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Hero Weekend Forecast",
+													"namespace": "headsupv2",
+													"rolloutPercentage": 100.0,
+													"type": "FEATURE",
+													"uniqueId": "e7759671-5d01-4b44-b60a-2721f563a73d"
+												},
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2HeroHourlyForecast.Basic"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Basic",
+															"namespace": "headsupv2HeroHourlyForecast",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "e34ad6ea-8530-4e71-ae53-f56e7e3e36f1"
+														}
+													],
+													"features": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Hero Hourly Forecast",
+													"namespace": "headsupv2",
+													"rolloutPercentage": 100.0,
+													"type": "FEATURE",
+													"uniqueId": "c0fef426-5799-478e-b059-d77ad4a1133a"
+												}
+											],
+											"maxFeaturesOn": 1,
+											"type": "MUTUAL_EXCLUSION_GROUP",
+											"uniqueId": "eb329911-6674-4169-b1ae-3fefbd752446"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2BreakingNewsVideo.MTX Features"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "MTX Features",
+													"namespace": "headsupv2BreakingNewsVideo",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "38b80da5-104d-4092-86f8-40c69c03d666"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Breaking News Video",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "8aace916-2626-488c-bf17-92ff9f09a712"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2RealTimeLightning.Basic"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Basic",
+													"namespace": "headsupv2RealTimeLightning",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "d9fd16e2-fbd7-4cf7-aa8e-bef91bed44ed"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Real Time Lightning",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "f990aa12-1f0e-49d8-92f8-916873c4e69e"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2Radar.Basic",
+												"headsupv2Radar.MTX Features",
+												"mx.0063f8be-88ca-4d92-8bc8-0a87e96141ef",
+												"headsupv2Radar.Radar Lovers Control Group"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Basic",
+													"namespace": "headsupv2Radar",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "50c7a211-f7b9-4c22-adac-2c046df5684a"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "MTX Features",
+													"namespace": "headsupv2Radar",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "799078e2-e8e9-4a80-a281-7988a96cc252"
+												},
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2Radar.Rain",
+														"headsupv2Radar.Snow",
+														"headsupv2Radar.Mix",
+														"headsupv2Radar.Storm"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Rain",
+															"namespace": "headsupv2Radar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "89f130bb-e6c3-46a5-b696-0324cb084307"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Snow",
+															"namespace": "headsupv2Radar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "46e3442b-f6df-41cf-b3a2-c93bc1d6fe6d"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Mix",
+															"namespace": "headsupv2Radar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "b51c62aa-2acb-4e55-92c2-dbc27acea6b0"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Storm",
+															"namespace": "headsupv2Radar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "2774c2c3-89e2-4115-89cf-333cea23f363"
+														}
+													],
+													"maxFeaturesOn": 1,
+													"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+													"uniqueId": "0063f8be-88ca-4d92-8bc8-0a87e96141ef"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Radar Lovers Control Group",
+													"namespace": "headsupv2Radar",
+													"rolloutPercentage": 50.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "e803f21d-6697-400b-95e6-20ac68c1e1e5"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Radar",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "cbe74fc7-22c8-48f3-b02c-831a152f16c2"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2PrecipStart.Basic",
+												"headsupv2PrecipStart.MTX Features",
+												"mx.33f30de5-4ba0-435e-98b8-8bb6807a1825"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Basic",
+													"namespace": "headsupv2PrecipStart",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "aa854ae3-8cbc-4d89-9409-041ac453c606"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "MTX Features",
+													"namespace": "headsupv2PrecipStart",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "63779774-1010-43e7-a135-e40e08962b8a"
+												},
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2PrecipStart.RainStarting",
+														"headsupv2PrecipStart.Rain Likely",
+														"headsupv2PrecipStart.Rain Possible",
+														"headsupv2PrecipStart.Light Snow",
+														"headsupv2PrecipStart.Snow Starting",
+														"headsupv2PrecipStart.Snow Likely",
+														"headsupv2PrecipStart.Light Snow Likely",
+														"headsupv2PrecipStart.Snow Possible",
+														"headsupv2PrecipStart.Light Snow Possible",
+														"headsupv2PrecipStart.Mix Starting",
+														"headsupv2PrecipStart.Mix Likely",
+														"headsupv2PrecipStart.Mix Possible",
+														"headsupv2PrecipStart.Storms Starting",
+														"headsupv2PrecipStart.Storms Likely",
+														"headsupv2PrecipStart.Storms Possible",
+														"headsupv2PrecipStart.Disable Tile"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "RainStarting",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "f04994fc-ec10-4a14-8b45-6d45567dab2b"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Rain Likely",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "f75d010d-b14f-47fc-9525-ed8c05921c2f"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Rain Possible",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "31951bb8-de43-4248-8f6d-e58d330183fe"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Light Snow",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "87aa3997-4953-4520-9b40-7efe696ec05b"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Snow Starting",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "3ab991bb-c2f0-4420-a0f7-7c8f7ab80076"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Snow Likely",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "a62974e0-35e1-4348-822e-ee52a4ca296c"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Light Snow Likely",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "ee3c2be2-2607-47de-ad36-6d0a8c80dd9a"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Snow Possible",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "31122f91-4129-4bff-b303-1701bc48255e"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Light Snow Possible",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "1d16d588-c941-4d0d-b4d8-950794f59c1c"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Mix Starting",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "bdf97dca-bdca-4675-abc8-5a735022a1d9"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Mix Likely",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "f9163a63-eb7e-4506-ac8c-5b99f6bdbd19"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Mix Possible",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "facf4980-cd1b-4661-be7c-8bb9b2a0fb04"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Storms Starting",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "d1376f7e-8d80-440d-b2b8-b584283c4bb0"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Storms Likely",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "16a655fc-0876-4d95-ade2-11174d64fd70"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Storms Possible",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "8fb855a0-7854-4241-86cb-33d3f46874dc"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Disable Tile",
+															"namespace": "headsupv2PrecipStart",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "607b9218-50d4-474b-9a0a-0c33075a2e88"
+														}
+													],
+													"maxFeaturesOn": 1,
+													"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+													"uniqueId": "33f30de5-4ba0-435e-98b8-8bb6807a1825"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Precip Start",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "70d6f186-075a-40e5-9267-20c7687cee9e"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2PrecipEnd.Basic",
+												"headsupv2PrecipEnd.MTX Features",
+												"mx.a6437ecd-6d35-47c0-b426-15fd1756bebb"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Basic",
+													"namespace": "headsupv2PrecipEnd",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "eb2d4be0-351c-49cc-af5f-f8ed6da594fb"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "MTX Features",
+													"namespace": "headsupv2PrecipEnd",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "b132963c-9c21-43de-b14f-f8d1b67d8517"
+												},
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2PrecipEnd.Rain Ending",
+														"headsupv2PrecipEnd.Snow Ending",
+														"headsupv2PrecipEnd.Mix Ending",
+														"headsupv2PrecipEnd.Storms Ending",
+														"headsupv2PrecipEnd.Disable Tile"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Rain Ending",
+															"namespace": "headsupv2PrecipEnd",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "4d1ce6ba-ad4a-4330-bd34-0699338b6f1f"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Snow Ending",
+															"namespace": "headsupv2PrecipEnd",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "1b79dd46-b33d-40db-b018-7fe4b136b25c"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Mix Ending",
+															"namespace": "headsupv2PrecipEnd",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "46452ff7-5f76-4574-aa3d-b858cb7e7425"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Storms Ending",
+															"namespace": "headsupv2PrecipEnd",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "ce41cc60-66bf-49cb-b74d-5887f50f2995"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Disable Tile",
+															"namespace": "headsupv2PrecipEnd",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "64d23371-e62f-4473-a417-26c5d9942dfc"
+														}
+													],
+													"maxFeaturesOn": 1,
+													"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+													"uniqueId": "a6437ecd-6d35-47c0-b426-15fd1756bebb"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Precip End",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "5b5bfd25-a5c6-4279-80e4-2688e0b29917"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2PrecipIntensity.Basic Datapoint",
+												"headsupv2PrecipIntensity.MTX Features",
+												"mx.986b47dd-24bb-49cc-b12a-0dac6bb191e4"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Basic Datapoint",
+													"namespace": "headsupv2PrecipIntensity",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "3ceaee28-c3fa-4b56-bc5b-a197fd5bae50"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "MTX Features",
+													"namespace": "headsupv2PrecipIntensity",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "38929924-f080-453a-ab3e-6f47585ba936"
+												},
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2PrecipIntensity.Heavy Rain Datapoint",
+														"headsupv2PrecipIntensity.Moderate Rain Datapoint",
+														"headsupv2PrecipIntensity.Disable Precip Intensity"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Heavy Rain Datapoint",
+															"namespace": "headsupv2PrecipIntensity",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "154eca8e-98d1-4726-af2c-8cd8e37e91d5"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Moderate Rain Datapoint",
+															"namespace": "headsupv2PrecipIntensity",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "9db53187-4982-46b4-b247-dc5d35a5c34b"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Disable Precip Intensity",
+															"namespace": "headsupv2PrecipIntensity",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "659a364d-2c53-4ae6-aa4a-86b702fbaacc"
+														}
+													],
+													"maxFeaturesOn": 1,
+													"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+													"uniqueId": "986b47dd-24bb-49cc-b12a-0dac6bb191e4"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Precip Intensity",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "e7e1c284-c77f-497c-8d8e-431ff892e33d"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2ForecastedSnowAccumulation.ShowRange"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "ShowRange",
+													"namespace": "headsupv2ForecastedSnowAccumulation",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "e50cb2de-91dd-45ba-b6c1-f658385b723a"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Forecasted Snow Accumulation",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "14beb998-f336-4113-9fd4-2b33553cb318"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2RoadConditions.WINDY",
+												"headsupv2RoadConditions.FOGGY",
+												"headsupv2RoadConditions.WET",
+												"headsupv2RoadConditions.PONDING",
+												"headsupv2RoadConditions.SNOWY",
+												"headsupv2RoadConditions.ICY"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "WINDY",
+													"namespace": "headsupv2RoadConditions",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "5e21cb04-919f-421f-aa06-0316360c197e"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "FOGGY",
+													"namespace": "headsupv2RoadConditions",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "4a29cc92-4d1d-4799-aa17-4378e2dd5e74"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "WET",
+													"namespace": "headsupv2RoadConditions",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "601875bb-616d-4564-8c21-36a57c08cbf4"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "PONDING",
+													"namespace": "headsupv2RoadConditions",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "356ccbc2-325c-494d-8c4d-3713f5fc8e1f"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "SNOWY",
+													"namespace": "headsupv2RoadConditions",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "db430069-8b86-4034-be87-54931033fd81"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "ICY",
+													"namespace": "headsupv2RoadConditions",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "293b2416-684a-4e92-ae89-fa60b623a0a8"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Road Conditions",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "ef351bb0-d8fb-478b-95af-61c5dc7f1ec0"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2EditorialCalendar.Basic",
+												"headsupv2EditorialCalendar.MTX Features",
+												"mx.e870657c-a7e9-4ea0-b428-97880c38c6f0"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Basic",
+													"namespace": "headsupv2EditorialCalendar",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "f0d106e6-0c63-4913-93e9-d2fa65d4aecb"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "MTX Features",
+													"namespace": "headsupv2EditorialCalendar",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "0acf8158-e767-4fab-904d-9b49fdd67f6c"
+												},
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2EditorialCalendar.Perseids meteor shower UK",
+														"headsupv2EditorialCalendar.Perseids meteor shower US",
+														"headsupv2EditorialCalendar.First Day of fall",
+														"headsupv2EditorialCalendar.Labor Day Hourly",
+														"headsupv2EditorialCalendar.Labor Day Daily",
+														"headsupv2EditorialCalendar.Fourth of July Daily",
+														"headsupv2EditorialCalendar.Fourth of July Hourly",
+														"headsupv2EditorialCalendar.First Day of Summer",
+														"headsupv2EditorialCalendar.Fathers Day",
+														"headsupv2EditorialCalendar.Memorial Day Daily",
+														"headsupv2EditorialCalendar.Memorial Day Hourly",
+														"headsupv2EditorialCalendar.No Event"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Perseids meteor shower UK",
+															"namespace": "headsupv2EditorialCalendar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "428fb4a3-3207-4400-92eb-1bfdb751c7f7"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Perseids meteor shower US",
+															"namespace": "headsupv2EditorialCalendar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "94ef075f-2fb3-493e-95e6-68f28bc93685"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "First Day of fall",
+															"namespace": "headsupv2EditorialCalendar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "41e92326-e92a-4cf8-b9f7-53ef9de64023"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Labor Day Hourly",
+															"namespace": "headsupv2EditorialCalendar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "decac5d1-70dd-4a5b-8829-977abe2146ac"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Labor Day Daily",
+															"namespace": "headsupv2EditorialCalendar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "fe679708-905d-4fa1-8dec-586d9a7d764f"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Fourth of July Daily",
+															"namespace": "headsupv2EditorialCalendar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "63be7e00-e71e-4546-9718-ae2655feeefa"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Fourth of July Hourly",
+															"namespace": "headsupv2EditorialCalendar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "068adc1f-f853-407f-a1c1-977fa350ce35"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "First Day of Summer",
+															"namespace": "headsupv2EditorialCalendar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "8d0b5b8a-46d4-4754-96d4-7a62cd153311"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Fathers Day",
+															"namespace": "headsupv2EditorialCalendar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "8f982d4b-2032-4859-a005-59a44969d134"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Memorial Day Daily",
+															"namespace": "headsupv2EditorialCalendar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "c8e23783-0fae-4fcb-914b-81537e3d1d25"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Memorial Day Hourly",
+															"namespace": "headsupv2EditorialCalendar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "a03ee507-bce3-4922-aa4a-cf15431f486a"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "No Event",
+															"namespace": "headsupv2EditorialCalendar",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "67390458-476a-439b-8dbf-4c34dd17d70d"
+														}
+													],
+													"maxFeaturesOn": 1,
+													"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+													"uniqueId": "e870657c-a7e9-4ea0-b428-97880c38c6f0"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Editorial Calendar",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "db890f95-28df-4670-834e-51b208e58502"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2Allergy.Time Window",
+												"headsupv2Allergy.Basic"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Time Window",
+													"namespace": "headsupv2Allergy",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "701c5304-e4ae-4519-a4e7-41ef855774fe"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Basic",
+													"namespace": "headsupv2Allergy",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "b1f4d244-7c3c-4c79-b4c9-fb127be47d94"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Allergy",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "d9bbbc5c-810b-4895-9525-029b356c0550"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "BoatAndBeach",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "ee7fd003-21db-47b5-9c4e-efaaa8b3ec6f"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2GoRun.Time Window",
+												"headsupv2GoRun.Good",
+												"headsupv2GoRun.Ideal"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Time Window",
+													"namespace": "headsupv2GoRun",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "502eb050-0fbb-4d32-9a0c-53b9cb388c02"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Good",
+													"namespace": "headsupv2GoRun",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "daf0e841-1d61-46df-b33a-59cb2f9cb9a4"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Ideal",
+													"namespace": "headsupv2GoRun",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "50dc33f9-d479-4ff7-9d42-9520a8aab1f0"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "GoRun",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "2541be1e-2cfc-4d06-a818-a8f5d85ee930"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2FeelsLikeMessage.Basic"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Basic",
+													"namespace": "headsupv2FeelsLikeMessage",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "26520baa-07dc-43f3-8984-87c0880230dc"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Feels Like Message",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "809b0849-661e-439a-a840-99d4e2059818"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2TopVideo.MTX FeaturesV2",
+												"headsupv2TopVideo.Top Video Lovers ControlV2"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "MTX FeaturesV2",
+													"namespace": "headsupv2TopVideo",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "4044b678-3156-410b-b5cb-7fcf10a162b4"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Top Video Lovers ControlV2",
+													"namespace": "headsupv2TopVideo",
+													"rolloutPercentage": 20.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "3902c144-98ba-45dd-bb83-a7889fb890f8"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Top VideoV2",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "b75b79ad-ed8d-40f3-805e-a8412f6e31a6"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2TomorrowForecast.Basic",
+												"headsupv2TomorrowForecast.MTX Features",
+												"mx.a6d70a4b-7953-4bb6-93c9-81c142a7c9b7"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Basic",
+													"namespace": "headsupv2TomorrowForecast",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "bc6e9e9e-3c92-4508-a068-8344206d860d"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "MTX Features",
+													"namespace": "headsupv2TomorrowForecast",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "c125b1dd-d548-410a-b94d-f254ca2f346c"
+												},
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2TomorrowForecast.Rain",
+														"headsupv2TomorrowForecast.Snow",
+														"headsupv2TomorrowForecast.Mix",
+														"headsupv2TomorrowForecast.Clear",
+														"headsupv2TomorrowForecast.Disable Tile"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Rain",
+															"namespace": "headsupv2TomorrowForecast",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "91b66a05-70c8-491f-8d84-c086b5120b7a"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Snow",
+															"namespace": "headsupv2TomorrowForecast",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "1d70ea5b-a351-4f94-9835-6e1ecbe32130"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Mix",
+															"namespace": "headsupv2TomorrowForecast",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "9779770c-767c-4a7a-90c8-dd27f33a8933"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Clear",
+															"namespace": "headsupv2TomorrowForecast",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "136c6dca-d356-4f99-bed7-0f1b5507ed91"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Disable Tile",
+															"namespace": "headsupv2TomorrowForecast",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "ed8de7d7-180d-4ff6-994c-66bb5eff239e"
+														}
+													],
+													"maxFeaturesOn": 1,
+													"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+													"uniqueId": "a6d70a4b-7953-4bb6-93c9-81c142a7c9b7"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Tomorrow Forecast",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "85c5dcf4-4161-49f0-b764-99fb5b097178"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2WeekendForecast.Basic",
+												"headsupv2WeekendForecast.MTX Features",
+												"mx.44270444-5e9f-4bb0-a514-255a3d913f27"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Basic",
+													"namespace": "headsupv2WeekendForecast",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "737206af-5715-459d-8601-3e0a10fe5e54"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "MTX Features",
+													"namespace": "headsupv2WeekendForecast",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "e6448c60-1c1d-48f2-a673-e8348ad154ac"
+												},
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2WeekendForecast.After Midnight",
+														"headsupv2WeekendForecast.Before Midnight"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "After Midnight",
+															"namespace": "headsupv2WeekendForecast",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "962e0f01-0b7d-404d-b3c8-d5a80c59a52f"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Before Midnight",
+															"namespace": "headsupv2WeekendForecast",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "edf2bdf5-02d2-48c8-97e5-b1027323f9bc"
+														}
+													],
+													"maxFeaturesOn": 1,
+													"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+													"uniqueId": "44270444-5e9f-4bb0-a514-255a3d913f27"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Weekend Forecast",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "ffe76c0e-a5ea-40f3-9aa0-f1102e70528f"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"mx.da513da3-d7a3-4650-82a9-ee34c96cd30e"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+														"headsupv2SunriseSunsetMessage.Sunrise",
+														"headsupv2SunriseSunsetMessage.Sunset"
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Sunrise",
+															"namespace": "headsupv2SunriseSunsetMessage",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "bf3cd19d-b8b0-417c-acc9-8e35d20833d5"
+														},
+														{
+															"branchConfigurationRuleItems": [
+															],
+															"branchFeaturesItems": [
+															],
+															"branchStatus": "CHECKED_OUT",
+															"configurationRules": [
+															],
+															"minAppVersion": "8.0",
+															"name": "Sunset",
+															"namespace": "headsupv2SunriseSunsetMessage",
+															"rolloutPercentage": 100.0,
+															"type": "CONFIGURATION_RULE",
+															"uniqueId": "095d134f-adde-4927-8968-c28011acb18f"
+														}
+													],
+													"maxFeaturesOn": 1,
+													"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+													"uniqueId": "da513da3-d7a3-4650-82a9-ee34c96cd30e"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Sunrise Sunset Message",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "e43a66e2-29cb-4af4-afb5-d0ebe2eece1a"
+										},
+										{
+											"branchConfigurationRuleItems": [
+												"headsupv2HourlyForecast.Basic",
+												"headsupv2HourlyForecast.MTX Features"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Basic",
+													"namespace": "headsupv2HourlyForecast",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "1884dafd-ec4e-472e-b4e2-59e720f1c4a7"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "MTX Features",
+													"namespace": "headsupv2HourlyForecast",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "c4b85a92-730b-4a1e-922d-06a751b7c068"
+												}
+											],
+											"features": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Hourly Forecast",
+											"namespace": "headsupv2",
+											"rolloutPercentage": 100.0,
+											"type": "FEATURE",
+											"uniqueId": "44aa9836-1783-4605-b033-f0569309122b"
+										}
+									],
+									"maxFeaturesOn": 4,
+									"type": "MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "04b51399-f570-46b5-bb5a-2d3f5b7cd0ed"
+								}
+							],
+							"minAppVersion": "8.0",
+							"name": "HeadsUp",
+							"namespace": "headsupv2",
+							"rolloutPercentage": 100.0,
+							"sendToAnalytics": true,
+							"type": "FEATURE",
+							"uniqueId": "e28644d1-2937-41be-8113-7a7ad1b827ab"
+						},
+						{
+							"branchConfigurationRuleItems": [
+								"headsupHeadsUpDynamic.Dynamic"
+							],
+							"branchFeaturesItems": [
+								"mx.77e94715-a678-4ae0-a965-c09cfc104eb6"
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+									],
+									"minAppVersion": "8.0",
+									"name": "Dynamic",
+									"namespace": "headsupHeadsUpDynamic",
+									"rolloutPercentage": 100.0,
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "5e7c6461-62fd-49cb-9f86-b8bed1e5329f"
+								}
+							],
+							"features": [
+							],
+							"minAppVersion": "8.0",
+							"name": "HeadsUpDynamic",
+							"namespace": "headsup",
+							"rolloutPercentage": 100.0,
+							"type": "FEATURE",
+							"uniqueId": "1b91647e-11e6-461f-975c-6fb26a4529df"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+								"mx.6ae2766c-27c9-4ead-9e76-f5deeb040dd0"
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"features": [
+							],
+							"minAppVersion": "8.0",
+							"name": "HeadsUp",
+							"namespace": "headsup",
+							"rolloutPercentage": 100.0,
+							"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+							"type": "FEATURE",
+							"uniqueId": "58f7b8e2-5d47-422d-9b70-faebd63f91d3"
+						}
+					],
+					"maxFeaturesOn": 1,
+					"type": "MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "2822deb3-8d6c-4854-880d-fbd5366d58cc"
+				}
+			],
+			"minAppVersion": "8.0",
+			"name": "HeadsUpWithAB",
+			"namespace": "headsup",
+			"rolloutPercentage": 100.0,
+			"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+			"type": "FEATURE",
+			"uniqueId": "2734e24e-ae5f-4312-af23-bda5798505e8"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "Northstar",
+	"uniqueId": "dd7e3d84-c621-457c-bd4f-3fd594940830"
+}

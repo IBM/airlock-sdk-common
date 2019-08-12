@@ -1,0 +1,213 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+				"trDistance.ConfigProdSchemaProdUtilityProd6"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"name": "ConfigProdSchemaProdUtilityProd6",
+					"namespace": "trDistance",
+					"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+					"type": "CONFIGURATION_RULE",
+					"uniqueId": "d3404554-0b98-4b7f-87ab-945cc6e63ab4"
+				}
+			],
+			"features": [
+			],
+			"name": "FeatureProdSchemaProdUtilityProd6",
+			"namespace": "tr",
+			"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+			"type": "FEATURE",
+			"uniqueId": "28bb1244-fdd2-42f8-9d7f-17415eb38ed7"
+		},
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"tr.MTXDevProd14b",
+				"tr.MTXDevProd14a"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"features": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"features": [
+					],
+					"name": "MTXDevProd14a",
+					"namespace": "tr",
+					"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+					"type": "FEATURE",
+					"uniqueId": "8ea0b525-ced9-4e89-97ad-20d1a654d765"
+				}
+			],
+			"type": "MUTUAL_EXCLUSION_GROUP",
+			"uniqueId": "fe45550b-3730-48c2-a512-13f532b25a24"
+		},
+		{
+			"branchConfigurationRuleItems": [
+				"mx.7d4a2f0e-673b-4fa5-b05c-a3ec806f3895"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+				{
+					"branchConfigurationRuleItems": [
+						"trMTXinMTXConfigsProdDefaultOff.Config2",
+						"trMTXinMTXConfigsProdDefaultOff.Config1"
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+						{
+							"branchConfigurationRuleItems": [
+								"mx.e8cb41ff-67ee-499a-b633-8071579a6d8c"
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+										"trMTXinMTXConfigsProdDefaultOffConfig2.Config2a",
+										"trMTXinMTXConfigsProdDefaultOffConfig2.Config2b"
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"name": "Config2a",
+											"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "0bb49cdb-4b30-498b-bd07-5b93c03386ee"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"name": "Config2b",
+											"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "4188eefe-ea4f-411f-afec-5fe5bca16423"
+										}
+									],
+									"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "e8cb41ff-67ee-499a-b633-8071579a6d8c"
+								}
+							],
+							"name": "Config2",
+							"namespace": "trMTXinMTXConfigsProdDefaultOff",
+							"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "5424f368-d0b2-46bf-a93c-0e5db74bf5ec"
+						},
+						{
+							"branchConfigurationRuleItems": [
+								"mx.3e677bc8-a61c-4ba9-8c55-9b3bc7de1a85"
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+										"trMTXinMTXConfigsProdDefaultOffConfig1.Config1a",
+										"trMTXinMTXConfigsProdDefaultOffConfig1.Config1b"
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"name": "Config1a",
+											"namespace": "trMTXinMTXConfigsProdDefaultOffConfig1",
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "b1119043-efb1-4c83-ab17-8a4e50c9da47"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"name": "Config1b",
+											"namespace": "trMTXinMTXConfigsProdDefaultOffConfig1",
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "be87af5a-8c9c-4e1a-aaa7-5838497112a6"
+										}
+									],
+									"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "3e677bc8-a61c-4ba9-8c55-9b3bc7de1a85"
+								}
+							],
+							"name": "Config1",
+							"namespace": "trMTXinMTXConfigsProdDefaultOff",
+							"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "dfbecfd1-01b1-4b9f-afed-bd0a3bf4ec5d"
+						}
+					],
+					"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "7d4a2f0e-673b-4fa5-b05c-a3ec806f3895"
+				}
+			],
+			"features": [
+			],
+			"name": "MTXinMTXConfigsProdDefaultOff",
+			"namespace": "tr",
+			"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+			"type": "FEATURE",
+			"uniqueId": "9fb022de-36a8-4a67-af0c-7fa3e3f569a6"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "Branch2",
+	"uniqueId": "5866e71a-deb1-48b2-abac-546961689d3c"
+}

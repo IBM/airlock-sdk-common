@@ -1,0 +1,98 @@
+{
+    "twcRelease": {
+        "appVersion": "9.1.0",
+        "svcCommit": "build-423511",
+        "appName": "The Weather"
+    },
+    "endSession": 1504488427391,
+    "os": {
+        "version": "10.2.1",
+        "platform": "iphone"
+    },
+    "sessionID": "BA353A57-2D67-44CA-804A-7A43233296B7",
+    "network": {
+        "carrierNetworkClass": "unknown",
+        "carrier": "ATT",
+        "networkType": "wifi"
+    },
+    "places": [],
+    "startSession": 1504488156638,
+    "locations": [{
+        "dateTime": 1504488159521,
+        "altitude": 281.6453247070312,
+        "vertAccuracy": 10,
+        "horizAccuracy": 65,
+        "timezoneOffset": -4,
+        "foreground": true,
+        "coords": {
+            "lon": -84.46029,
+            "lat": 33.8937
+        },
+        "speed": -1
+    }, {
+        "dateTime": 1504488160550,
+        "altitude": 281.6257934570312,
+        "vertAccuracy": 11.99764800864144,
+        "horizAccuracy": 65,
+        "timezoneOffset": -4,
+        "foreground": true,
+        "coords": {
+            "lon": -84.46029,
+            "lat": 33.8937
+        },
+        "speed": -1
+    }],
+    "metrics": {
+        "timers": [{
+            "duration": 18775.32196044922,
+            "name": "com.weather.SeveralRecords.request",
+            "description": "https:\/\/api.weather.com\/v3\/aggcommon\/vt1observation;vt1hourlyforecast;vt1backgroundImages;vt1dailyForecast;vt1loc;v3-location-point;vt1nowcast;vt1pollenobs;vt1idxPollenDaypart;vt1pastPollen;vt1precipitation;vt1contentMode;vt1idxBreathingDaypart;vt1runweatherhourly;vt1flu;vt1pastFlu;vt1alerts;vt1lightning;v2idxDriveCurrent;vt1currentTides?format=json&language=en-US&apiKey=0c9bc80708be4a519bc80708be6a51c2&units=e&imageGroup=m3&pollenDays=1&pollenStartDate=20170902&geocode=33.89,-84.46",
+            "startEpochMillis": 1504488159560
+        }],
+        "counters": [{
+            "name": "com.weather.error.requesting.Turbo",
+            "count": 1
+        }],
+        "gauges": []
+    },
+    "nameSpace": "com.weather",
+    "user": {
+        "entitlements": [],
+        "adId": "8501949E-9F84-4D28-8683-3C5AEBFB1CA3",
+        "followMeEnabled": true,
+        "registered": false,
+        "userType": "prod",
+        "id": "8nZ7BkJgXErFx",
+        "gpsEnabled": true,
+        "authenticatedUsing": "anon",
+        "pushAlertsEnabled": true,
+        "limitedAdId": "8501949E-9F84-4D28-8683-3C5AEBFB1CA3"
+    },
+    "device": {
+        "deviceType": "mobile",
+        "model": "N61AP",
+        "locale": "en_US",
+        "manufacturer": "Apple"
+    },
+    "events": [{
+        "dateTime": 1504488158570,
+        "eventData": {
+            "productId": "7900f30b-8f47-4829-95c5-9d4d6e8564ee",
+            "seasonId": "",
+            "airlockVersion": "V3.0",
+            "context_app_af_status": null,
+            "context_app_media_source": null,
+            "context_app_campaign": null,
+            "feature_headsup_Breaking-News-Video-150": "Off"
+        },
+        "name": "airlock-config"
+    }, {
+        "dateTime": 1504488159267,
+        "eventData": {
+            "method": "ftl",
+            "foreground": true,
+            "target": null
+        },
+        "name": "app-launch"
+    }]
+}

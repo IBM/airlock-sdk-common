@@ -1,0 +1,30 @@
+{
+	"mostRecentTranslation": 1497784271727,
+	"strings": {
+		"General.Sunrise": "SUNRISE",
+		"General.Sunset": "SUNSET",
+		"General.TODAY": "AUJOURD'HUI",
+		"General.TONIGHT": "TONIGHT",
+		"HeadsUp.ACCUMULATION": "ACCUMULATION",
+		"HeadsUp.LookAhead": "LOOK AHEAD",
+		"HeadsUp.MIX": "MIX",
+		"HeadsUp.PRECIPITATION": "PRECIPITATION",
+		"HeadsUp.RAIN": "RAIN",
+		"HeadsUp.SNOW": "SNOW",
+		"HeadsUp.STORMS": "STORMS",
+		"HeadsUp.SeeRadar": "SEE RADAR",
+		"HeadsUp.WeekendForecast": "WEEKEND FORECAST",
+		"Units.AM": "AM",
+		"Units.CM": "CM",
+		"Units.Feet": "FT",
+		"Units.InchMercury": "IN",
+		"Units.Inches": "IN",
+		"Units.KM": "KM",
+		"Units.KMH": "KMH",
+		"Units.MPH": "MPH",
+		"Units.Meter": "M",
+		"Units.Miles": "MI",
+		"Units.MiliBars": "MB",
+		"Units.PM": "PM"
+	}
+}

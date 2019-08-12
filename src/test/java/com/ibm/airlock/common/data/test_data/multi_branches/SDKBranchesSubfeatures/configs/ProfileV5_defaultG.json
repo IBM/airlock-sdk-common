@@ -1,0 +1,18 @@
+{
+  "callOrder": [
+    "doInit",
+    "doSetGroups",
+    "doRefreshAndSync"
+  ],
+  "configuration": {
+    "configPath": "test_data\/multi_branches\/SDKBranchesSubfeatures\/",
+    "goldPath": "gold_files\/multi_branches\/SDKBranchesSubfeatures\/ProfileV5\/defaultG",
+    "deviceContextFileName": "DeviceContextV5.json",
+    "groupsFileName": "defaultG.json",
+    "profileFileName": "ProfileV1.json",
+    "defaultFileName": "sdk_branches_subfeatures.txt",
+    "randomsMap": "randomMap50.json",
+    "appVersion": "8.0"
+  },
+  "updates": {}
+}

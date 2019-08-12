@@ -1,0 +1,107 @@
+{
+    "places": [{
+        "country": "US",
+        "city": "New York City",
+        "dma": "501",
+        "id": "USNJ0612:1:US",
+        "state": "NY",
+        "tag": "[]",
+        "type": "saved"
+    }],
+    "twcRelease": {
+        "appVersion": "8.1.0",
+        "svcCommit": "2300"
+    },
+    "endSession": 1502982094078,
+    "os": {
+        "version": "7.1.1",
+        "platform": "android"
+    },
+    "startSession": 1502982037084,
+    "nameSpace": "com.weather",
+    "sessionID": "8be51f7b-b396-4a4a-9c8f-c1d715d087e9",
+    "device": {
+        "deviceType": "mobile",
+        "model": "Android SDK built for x86",
+        "locale": "en_US",
+        "manufacturer": "unknown"
+    },
+    "user": {
+        "entitlements": "[]",
+        "adId": "cb6564e4-83e0-4438-bb7e-30bfc17edfc0",
+        "followMeEnabled": false,
+        "registered": false,
+        "id": "MbL0oqeg10pH3",
+        "userType": "prod",
+        "gpsEnabled": true,
+        "authenticatedUsing": "anon",
+        "installId": "b9dd97c4-f036-4c1d-94fd-087a43ce4ccb",
+        "pushAlertsEnabled": false,
+        "limitedAdId": ""
+    },
+    "events": [{
+        "dateTime": 1502982037066,
+        "eventData": {
+            "method": "ftl",
+            "foreground": true
+        },
+        "name": "app-launch"
+    }, {
+        "dateTime": 1502982068821,
+        "eventData": {
+            "productId": "bc479db5-ff58-4138-b5e4-a8400a1f78d5",
+            "seasonId": "6f8cba0d-8e46-4c6b-8b70-9bac3cc5a085",
+            "airlockVersion": "V2.5"
+        },
+        "name": "airlock-config"
+    }, {
+        "dateTime": 1502982086075,
+        "eventData": {
+            "slot": "weather.feed1",
+            "type": "ban",
+            "clicked": false,
+            "successful": true
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1502982074720,
+        "eventData": {
+            "slot": "weather.feed3",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1502982074781,
+        "eventData": {
+            "locationId": "USNJ0612:1:US"
+        },
+        "name": "location-displayed"
+    }, {
+        "dateTime": 1502982076743,
+        "eventData": {
+            "slot": "weather.cc",
+            "type": "ban",
+            "clicked": false,
+            "successful": false
+        },
+        "name": "ad-viewed"
+    }, {
+        "dateTime": 1502982093952,
+        "name": "app-exit"
+    }],
+    "currentLocation": {
+        "dateTime": 1502982094135,
+        "altitude": 0,
+        "vertAccuracy": 0,
+        "timezoneOffset": -4.0,
+        "horizAccuracy": 0,
+        "pressure": 0.0
+    },
+    "network": {
+        "carrier": "none",
+        "carrierNetworkClass": "umts",
+        "networkType": "mobile"
+    }
+}

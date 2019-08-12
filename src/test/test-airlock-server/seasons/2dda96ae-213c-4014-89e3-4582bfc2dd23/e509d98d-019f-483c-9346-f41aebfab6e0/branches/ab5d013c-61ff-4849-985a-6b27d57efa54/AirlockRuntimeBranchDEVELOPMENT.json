@@ -1,0 +1,808 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+				"headsupHeadsUpWithAB.HeadsUp Fallback"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"mx.70cef66b-fbe3-4c5e-b38c-af3eeac43270"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"name": "HeadsUp Fallback",
+					"namespace": "headsupHeadsUpWithAB",
+					"rolloutPercentage": 100.0,
+					"type": "CONFIGURATION_RULE",
+					"uniqueId": "f862668b-e53b-4899-af89-ab7de6246df9"
+				}
+			],
+			"features": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+						"headsup.HeadsUpDev",
+						"headsupv2.HeadsUp",
+						"headsup.HeadsUpHourlyFirstStatic",
+						"headsup.HeadsUpDailyFirstStatic",
+						"headsup.HeadsUpDynamic",
+						"headsup.HeadsUp"
+					],
+					"branchStatus": "CHECKED_OUT",
+					"features": [
+						{
+							"additionalInfo": {
+							},
+							"branchConfigurationRuleItems": [
+								"headsupHeadsUpDev.Dynamic Video Size"
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "NEW",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "NEW",
+									"configuration": "{\n\t\"supportsDynamicVideoTile\":true\n}",
+									"configurationRules": [
+									],
+									"enabled": true,
+									"internalUserGroups": [
+										"HeadsUp_Dynamic_Video_Siz"
+									],
+									"minAppVersion": "8.0",
+									"name": "Dynamic Video Size",
+									"namespace": "headsupHeadsUpDev",
+									"noCachedResults": false,
+									"rolloutPercentage": 100.0,
+									"rule": {
+										"ruleString": ""
+									},
+									"stage": "DEVELOPMENT",
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "7f1a4e8b-5633-446c-a695-ffb028ab0295"
+								}
+							],
+							"defaultConfiguration": "{\n\t\"anchorVersion\":2,\n\t\"supportsTableTile\":true,\n\t\"supportsAlertTile\":true\n}",
+							"defaultIfAirlockSystemIsDown": false,
+							"enabled": true,
+							"features": [
+							],
+							"internalUserGroups": [
+								"HeadsUp_Dev"
+							],
+							"minAppVersion": "8.0",
+							"name": "HeadsUpDev",
+							"namespace": "headsup",
+							"noCachedResults": false,
+							"rolloutPercentage": 100.0,
+							"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+							"rule": {
+								"ruleString": ""
+							},
+							"stage": "DEVELOPMENT",
+							"type": "FEATURE",
+							"uniqueId": "75ba0b79-9e95-4a35-a398-3469437f5f37"
+						},
+						{
+							"branchConfigurationRuleItems": [
+								"headsupv2HeadsUpV2.Basic",
+								"headsupv2HeadsUpV2.Extended Forecast",
+								"headsupv2HeadsUpV2.Alert Tile feature"
+							],
+							"branchFeaturesItems": [
+								"mx.d0e4ed04-0f4e-435d-8ddf-bd12aded73a0"
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+									],
+									"name": "Basic",
+									"namespace": "headsupv2HeadsUpV2",
+									"rolloutPercentage": 100.0,
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "5cc7cc82-0234-411c-aa4d-fef539b01ca7"
+								},
+								{
+									"branchConfigurationRuleItems": [
+										"headsupv2HeadsUpV2ExtendedForecast.japanese"
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"name": "japanese",
+											"namespace": "headsupv2HeadsUpV2ExtendedForecast",
+											"rolloutPercentage": 100.0,
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "c273960c-7ab8-4b2c-8d85-63406e30afa4"
+										}
+									],
+									"name": "Extended Forecast",
+									"namespace": "headsupv2HeadsUpV2",
+									"rolloutPercentage": 100.0,
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "bc6d4b0a-f548-45e3-97cf-e3ee83f46e3c"
+								},
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+									],
+									"minAppVersion": "8.1",
+									"name": "Alert Tile feature",
+									"namespace": "headsupv2HeadsUpV2",
+									"rolloutPercentage": 100.0,
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "3f106546-f965-4fe1-8fd1-70a9e51db59f"
+								}
+							],
+							"features": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+										"mx.52ff2a22-0104-49ae-b03d-3b8de84dcf75",
+										"headsupv2.Test missing icons",
+										"headsupv2.Alert",
+										"headsupv2.Breaking News Video",
+										"headsupv2.Real Time Lightning",
+										"headsupv2.T Storm Impacted Now",
+										"headsupv2.Winter Storm Impacted Now",
+										"headsupv2.Radar",
+										"headsupv2.Precip Start",
+										"headsupv2.Precip End",
+										"headsupv2.Precip Intensity",
+										"headsupv2.Forecasted Snow Accumulation",
+										"headsupv2.Winter Storm Forecast",
+										"headsupv2.T Storm Impact Soon",
+										"headsupv2.Road Conditions",
+										"headsupv2.Editorial Calendar",
+										"headsupv2.Top Video LoversV2",
+										"headsupv2.Top Video Lovers",
+										"headsupv2.Allergy",
+										"headsupv2.Boat and Beach V2",
+										"headsupv2.BoatAndBeach",
+										"headsupv2.GoRun",
+										"headsupv2.Feels Like Message",
+										"headsupv2.Top VideoV2",
+										"headsupv2.Top Video",
+										"headsupv2.Tomorrow Forecast",
+										"headsupv2.Weekend Forecast",
+										"headsupv2.Sunrise Sunset Message",
+										"headsupv2.Hourly Forecast"
+									],
+									"branchStatus": "CHECKED_OUT",
+									"features": [
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+												"headsupv2.krishna tile",
+												"headsupv2.Hero Alert",
+												"headsupv2.Hero Lightning",
+												"headsupv2.Hero Breaking News Video",
+												"headsupv2.Hero Radar",
+												"headsupv2.Hero Precip Start ",
+												"headsupv2.Hero Precip End",
+												"headsupv2.Hero Video",
+												"headsupv2.Total Solar Eclipse",
+												"headsupv2.Editorial Calendar Table",
+												"headsupv2.Hero Tomorrow Forecast",
+												"headsupv2.Hero Weekend Forecast",
+												"headsupv2.Hero Hourly Forecast"
+											],
+											"branchStatus": "CHECKED_OUT",
+											"features": [
+												{
+													"additionalInfo": {
+													},
+													"branchStatus": "NEW",
+													"configurationRules": [
+													],
+													"defaultConfiguration": "{\n\t\"tiletype\":\"table\",\n\t\"tileSize\":\"large\",\n\t\"datasource\":\"hourly\",\n\t\"descriptor\":\"Krishna tile\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_orange\"\n\t},\n\t\"clickthrough\":{\n\t\t\"destination\":\"severe_alert\"\n\t},\n\t\"analyticsTileName\":\"krishna tile\"\n}",
+													"defaultIfAirlockSystemIsDown": false,
+													"enabled": false,
+													"features": [
+													],
+													"internalUserGroups": [
+														"krishna"
+													],
+													"minAppVersion": "8.0",
+													"name": "krishna tile",
+													"namespace": "headsupv2",
+													"noCachedResults": false,
+													"rolloutPercentage": 100.0,
+													"rule": {
+														"ruleString": ""
+													},
+													"stage": "DEVELOPMENT",
+													"type": "FEATURE",
+													"uniqueId": "9f877ef3-4e02-438b-ad9e-7e660efc2ff1"
+												}
+											],
+											"maxFeaturesOn": 1,
+											"type": "MUTUAL_EXCLUSION_GROUP",
+											"uniqueId": "52ff2a22-0104-49ae-b03d-3b8de84dcf75"
+										}
+									],
+									"maxFeaturesOn": 3,
+									"type": "MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "d0e4ed04-0f4e-435d-8ddf-bd12aded73a0"
+								}
+							],
+							"name": "HeadsUp",
+							"namespace": "headsupv2",
+							"rolloutPercentage": 100.0,
+							"sendToAnalytics": true,
+							"type": "FEATURE",
+							"uniqueId": "9bd92570-adfb-41d6-9064-003018a9aefd"
+						},
+						{
+							"additionalInfo": {
+							},
+							"branchConfigurationRuleItems": [
+								"headsupHeadsUpHourlyFirstStatic.Basic",
+								"mx.28d46c3a-a26f-437a-b9ca-9206c243e390"
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "NEW",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "NEW",
+									"configuration": "{\n\t\"anchorVersion\":2,\n\t\"supportsTableTile\":true,\n\t\"supportsAlertTile\":false\n}",
+									"configurationRules": [
+									],
+									"enabled": true,
+									"internalUserGroups": [
+										"HeadsUp_Static_Hourly"
+									],
+									"minAppVersion": "8.0",
+									"name": "Basic",
+									"namespace": "headsupHeadsUpHourlyFirstStatic",
+									"noCachedResults": false,
+									"rolloutPercentage": 100.0,
+									"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+									"rule": {
+										"ruleString": ""
+									},
+									"stage": "DEVELOPMENT",
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "6b27dd38-6819-4539-85ed-a1882fc3888b"
+								},
+								{
+									"branchConfigurationRuleItems": [
+										"headsupHeadsUpHourlyFirstStatic.enUS",
+										"headsupHeadsUpHourlyFirstStatic.deDE"
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "NEW",
+									"configurationRules": [
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "NEW",
+											"configuration": "{\n\t\"featureON\":false\n}",
+											"configurationRules": [
+											],
+											"enabled": true,
+											"internalUserGroups": [
+												"And_Northstar"
+											],
+											"minAppVersion": "8.0",
+											"name": "enUS",
+											"namespace": "headsupHeadsUpHourlyFirstStatic",
+											"noCachedResults": false,
+											"rolloutPercentage": 100.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"rule": {
+												"ruleString": "context.device.localeCountryCode === \"US\""
+											},
+											"stage": "DEVELOPMENT",
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "38fe3d4c-b571-4295-b18a-569da8f801bc"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "NEW",
+											"configuration": "{\n\t\"featureON\":false\n}",
+											"configurationRules": [
+											],
+											"enabled": true,
+											"internalUserGroups": [
+											],
+											"minAppVersion": "8.0",
+											"name": "deDE",
+											"namespace": "headsupHeadsUpHourlyFirstStatic",
+											"noCachedResults": false,
+											"rolloutPercentage": 95.0,
+											"rolloutPercentageBitmap": "\/+\/\/\/\/\/vf\/\/\/\/\/+fDw==",
+											"rule": {
+												"ruleString": "context.device.locale === \"de_DE\""
+											},
+											"stage": "DEVELOPMENT",
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "31efb6b0-18c9-40a1-9333-71e805c4ea82"
+										}
+									],
+									"maxFeaturesOn": 1,
+									"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "28d46c3a-a26f-437a-b9ca-9206c243e390"
+								}
+							],
+							"defaultConfiguration": null,
+							"defaultIfAirlockSystemIsDown": false,
+							"enabled": true,
+							"features": [
+							],
+							"internalUserGroups": [
+								"HeadsUp_Static_Hourly"
+							],
+							"minAppVersion": "8.0",
+							"name": "HeadsUpHourlyFirstStatic",
+							"namespace": "headsup",
+							"noCachedResults": false,
+							"rolloutPercentage": 100.0,
+							"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+							"rule": {
+								"ruleString": "context.device.screenHeight >= (236 + 194.5 + 0.25 * context.device.screenHeight) && (context.device.localeCountryCode === \"US\" ||\ncontext.device.locale === \"de_DE\")"
+							},
+							"stage": "DEVELOPMENT",
+							"type": "FEATURE",
+							"uniqueId": "3e8010a1-456d-4588-83e1-82c32250c263"
+						},
+						{
+							"additionalInfo": {
+							},
+							"branchConfigurationRuleItems": [
+								"headsupHeadsUpDailyFirstStatic.Basic",
+								"mx.33b5fe07-584e-46c2-86ec-26fce592cd10"
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "NEW",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "NEW",
+									"configuration": "{\n\t\"anchorVersion\":2,\n\t\"supportsTableTile\":true,\n\t\"supportsAlertTile\":false\n}",
+									"configurationRules": [
+									],
+									"enabled": true,
+									"internalUserGroups": [
+										"HeadsUp_Static_Daily"
+									],
+									"minAppVersion": "8.0",
+									"name": "Basic",
+									"namespace": "headsupHeadsUpDailyFirstStatic",
+									"noCachedResults": false,
+									"rolloutPercentage": 100.0,
+									"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+									"rule": {
+										"ruleString": ""
+									},
+									"stage": "DEVELOPMENT",
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "9bcf3939-0737-492a-ba91-2764e5fa288b"
+								},
+								{
+									"branchConfigurationRuleItems": [
+										"headsupHeadsUpDailyFirstStatic.enUS",
+										"headsupHeadsUpDailyFirstStatic.deDE"
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "NEW",
+									"configurationRules": [
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "NEW",
+											"configuration": "{\n\t\"featureON\":false\n}",
+											"configurationRules": [
+											],
+											"enabled": true,
+											"internalUserGroups": [
+											],
+											"minAppVersion": "8.0",
+											"name": "enUS",
+											"namespace": "headsupHeadsUpDailyFirstStatic",
+											"noCachedResults": false,
+											"rolloutPercentage": 99.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/7\/\/\/\/\/\/\/Dw==",
+											"rule": {
+												"ruleString": "context.device.localeCountryCode === \"US\""
+											},
+											"stage": "DEVELOPMENT",
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "016bd169-98ee-4423-bc1f-ca60dd05ddd1"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "NEW",
+											"configuration": "{\n\t\"featureON\":false\n}",
+											"configurationRules": [
+											],
+											"enabled": true,
+											"internalUserGroups": [
+											],
+											"minAppVersion": "8.0",
+											"name": "deDE",
+											"namespace": "headsupHeadsUpDailyFirstStatic",
+											"noCachedResults": false,
+											"rolloutPercentage": 95.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/+3\/\/\/2\/+Dw==",
+											"rule": {
+												"ruleString": "context.device.locale === \"de_DE\""
+											},
+											"stage": "DEVELOPMENT",
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "40f70b74-c6d0-4527-8c50-ca65dbebd45b"
+										}
+									],
+									"maxFeaturesOn": 1,
+									"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "33b5fe07-584e-46c2-86ec-26fce592cd10"
+								}
+							],
+							"defaultConfiguration": null,
+							"defaultIfAirlockSystemIsDown": false,
+							"enabled": true,
+							"features": [
+							],
+							"internalUserGroups": [
+								"HeadsUp_Static_Daily"
+							],
+							"minAppVersion": "8.0",
+							"name": "HeadsUpDailyFirstStatic",
+							"namespace": "headsup",
+							"noCachedResults": false,
+							"rolloutPercentage": 100.0,
+							"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+							"rule": {
+								"ruleString": "context.device.screenHeight >= (236 + 194.5 + 0.25 * context.device.screenHeight) && (context.device.localeCountryCode === \"US\" ||\ncontext.device.locale === \"de_DE\")"
+							},
+							"stage": "DEVELOPMENT",
+							"type": "FEATURE",
+							"uniqueId": "bb732742-7b4d-428b-ab32-7d84f6ff1f76"
+						},
+						{
+							"branchConfigurationRuleItems": [
+								"headsupHeadsUpDynamic.Dynamic",
+								"mx.012ac7bb-4b87-4eab-aa36-7469f6d68581",
+								"mx.30b529af-87c1-4155-bc39-9ce75e73b434",
+								"headsupHeadsUpDynamic.DynamicVideoSupport",
+								"headsupHeadsUpDynamic.Rollback Table Tile",
+								"headsupHeadsUpDynamic.Extended Forecast"
+							],
+							"branchFeaturesItems": [
+								"mx.17090e11-7e3d-4c60-b94b-3fd87e9cfd59"
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+									],
+									"name": "Dynamic",
+									"namespace": "headsupHeadsUpDynamic",
+									"rolloutPercentage": 100.0,
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "1a3bab19-f065-45ed-b8a2-03506c35de23"
+								},
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+									],
+									"maxFeaturesOn": 1,
+									"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "012ac7bb-4b87-4eab-aa36-7469f6d68581"
+								},
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+									],
+									"maxFeaturesOn": 1,
+									"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "30b529af-87c1-4155-bc39-9ce75e73b434"
+								},
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+									],
+									"name": "DynamicVideoSupport",
+									"namespace": "headsupHeadsUpDynamic",
+									"rolloutPercentage": 100.0,
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "c7274a14-d68c-44c5-a97c-b2d9d47b8886"
+								},
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+									],
+									"name": "Rollback Table Tile",
+									"namespace": "headsupHeadsUpDynamic",
+									"rolloutPercentage": 100.0,
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "fd670cb6-4282-462b-ad3f-f600c7137679"
+								},
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+									],
+									"name": "Extended Forecast",
+									"namespace": "headsupHeadsUpDynamic",
+									"rolloutPercentage": 100.0,
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "43b7a767-36ee-48b0-83cb-4b314d3f22cb"
+								}
+							],
+							"features": [
+							],
+							"name": "HeadsUpDynamic",
+							"namespace": "headsup",
+							"rolloutPercentage": 100.0,
+							"type": "FEATURE",
+							"uniqueId": "6887b409-c814-430c-9cc9-564701253c64"
+						},
+						{
+							"branchConfigurationRuleItems": [
+								"headsupHeadsUp.Basic",
+								"headsupHeadsUp.Dynamic",
+								"mx.a9b04405-ffe0-4e3d-a079-16eed99d5529",
+								"mx.c8e913a9-715e-4cdd-aa8d-a8fecf547a9f"
+							],
+							"branchFeaturesItems": [
+								"mx.cc1e1f87-367b-45f3-9070-71f50dea969f"
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+									],
+									"name": "Basic",
+									"namespace": "headsupHeadsUp",
+									"rolloutPercentage": 100.0,
+									"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "2e31a509-6f5c-45a3-b112-717363583746"
+								},
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+									],
+									"name": "Dynamic",
+									"namespace": "headsupHeadsUp",
+									"rolloutPercentage": 100.0,
+									"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "4be48197-91ee-48d2-a758-e75e2fb44c62"
+								},
+								{
+									"branchConfigurationRuleItems": [
+										"headsupHeadsUp.enUS Small Screens",
+										"headsupHeadsUp.enUS Table",
+										"headsupHeadsUp.enUS Control"
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"name": "enUS Small Screens",
+											"namespace": "headsupHeadsUp",
+											"rolloutPercentage": 100.0,
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "89538433-46ee-43b5-a8ed-0cd7a26b1671"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"name": "enUS Table",
+											"namespace": "headsupHeadsUp",
+											"rolloutPercentage": 1.0,
+											"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "8282b9a3-f422-49c7-b906-133313721153"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"name": "enUS Control",
+											"namespace": "headsupHeadsUp",
+											"rolloutPercentage": 1.0,
+											"rolloutPercentageBitmap": "AAAAAAAAAAAAAAAAAA==",
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "5119d903-165f-4703-a9cf-cdc894fef6dd"
+										}
+									],
+									"maxFeaturesOn": 1,
+									"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "a9b04405-ffe0-4e3d-a079-16eed99d5529"
+								},
+								{
+									"branchConfigurationRuleItems": [
+										"headsupHeadsUp.deDE Small Screen",
+										"headsupHeadsUp.deDE Table",
+										"headsupHeadsUp.deDE Control"
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"name": "deDE Small Screen",
+											"namespace": "headsupHeadsUp",
+											"rolloutPercentage": 100.0,
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "e21d46c1-2006-4d61-adc1-a22574be8d67"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"name": "deDE Table",
+											"namespace": "headsupHeadsUp",
+											"rolloutPercentage": 5.0,
+											"rolloutPercentageBitmap": "AIQAAABACAAAAAgAAA==",
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "e35aa10b-830f-4481-8b82-1bd861a885a8"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"name": "deDE Control",
+											"namespace": "headsupHeadsUp",
+											"rolloutPercentage": 5.0,
+											"rolloutPercentageBitmap": "RAAAAAAIACAAAAAACA==",
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "c9d80b65-3eb4-4222-8d59-398d616de86d"
+										}
+									],
+									"maxFeaturesOn": 1,
+									"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "c8e913a9-715e-4cdd-aa8d-a8fecf547a9f"
+								}
+							],
+							"features": [
+							],
+							"name": "HeadsUp",
+							"namespace": "headsup",
+							"rolloutPercentage": 100.0,
+							"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+							"type": "FEATURE",
+							"uniqueId": "7dc04f9e-9982-420f-b4c2-010a26821102"
+						}
+					],
+					"maxFeaturesOn": 1,
+					"type": "MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "70cef66b-fbe3-4c5e-b38c-af3eeac43270"
+				}
+			],
+			"name": "HeadsUpWithAB",
+			"namespace": "headsup",
+			"rolloutPercentage": 100.0,
+			"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+			"type": "FEATURE",
+			"uniqueId": "e83520c7-7dd4-4260-bb66-3a267f8b1a9d"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "krishna",
+	"uniqueId": "ab5d013c-61ff-4849-985a-6b27d57efa54"
+}

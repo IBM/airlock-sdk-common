@@ -1,0 +1,70 @@
+{
+	"branches": [
+	],
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "7.14",
+	"productId": "5566fa88-e775-4a3d-a454-d0fd172ea86f",
+	"productName": "SDKStringsTranslations",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "06d5aa09-783e-42ec-939d-32f6ddd1ab3c"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "a4ccf3ab-51ea-46dd-ae0e-d4f8e1093aea",
+	"serverVersion": "V3.0",
+	"supportedLanguages": [
+		"en",
+		"ar",
+		"ca",
+		"cs",
+		"da",
+		"de",
+		"el",
+		"es",
+		"fa",
+		"fi",
+		"fr",
+		"iw",
+		"hi",
+		"hr",
+		"hu",
+		"in",
+		"it",
+		"ja",
+		"ko",
+		"ms",
+		"nb",
+		"no",
+		"nl",
+		"pl",
+		"pt",
+		"ro",
+		"ru",
+		"sk",
+		"sv",
+		"th",
+		"tr",
+		"uk",
+		"vi",
+		"zh_CN",
+		"zh_TW",
+		"en_AU",
+		"en_GB",
+		"fr_CA",
+		"pt_BR",
+		"he"
+	],
+	"version": "V2.5"
+}

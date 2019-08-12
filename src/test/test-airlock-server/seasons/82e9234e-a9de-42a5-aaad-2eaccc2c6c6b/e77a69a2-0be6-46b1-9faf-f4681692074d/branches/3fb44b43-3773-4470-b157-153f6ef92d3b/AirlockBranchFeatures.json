@@ -1,0 +1,46 @@
+{
+	"creationDate": 1510684786016,
+	"creator": "Elik Katz",
+	"description": null,
+	"features": [
+		{
+			"additionalInfo": {
+			},
+			"branchFeatureParentName": "ROOT",
+			"branchStatus": "NEW",
+			"configurationRules": [
+			],
+			"configurationSchema": null,
+			"creationDate": 1510684814365,
+			"creator": "Elik Katz",
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"description": "",
+			"displayName": null,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"Elik"
+			],
+			"lastModified": 1510684924933,
+			"minAppVersion": "1.3.0",
+			"name": "test",
+			"namespace": "elik",
+			"noCachedResults": false,
+			"owner": "Elik Katz",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+			"stage": "DEVELOPMENT",
+			"type": "FEATURE",
+			"uniqueId": "3dad1d2e-5c94-408a-9145-d5c91949043a"
+		}
+	],
+	"lastModified": 1510684786016,
+	"name": "Elik",
+	"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+	"uniqueId": "3fb44b43-3773-4470-b157-153f6ef92d3b"
+}

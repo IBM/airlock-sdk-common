@@ -1,0 +1,18 @@
+{
+  "dateTime": 1499837541338,
+  "eventData": {
+    "id": "3fd41b84-6216-4d68-9246-05202b71af12",
+    "source": "rightnowmodel",
+    "pos": 0,
+    "playlist": "pl-crazimals",
+    "playMethod": "auto",
+    "caption": "Time for a Baby Goat vs Chicken Smackdown!",
+    "thumbnailURL": "https://dsx.weather.com//util/image/v/GOAT_VS_CHICKEN_1280x720_14718533645.jpg?v\\u003dat\\u0026w\\u003d650\\u0026h\\u003d366\\u0026api\\u003d7db9fe61-7414-47b5-9871-e17d87b8b6a0",
+    "adSecs": 0,
+    "contentSecs": 32,
+    "watchedSecs": 7,
+    "adWatchedSecs": 0,
+    "adClicked": false
+  },
+  "name": "video-played"
+}

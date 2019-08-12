@@ -1,0 +1,45 @@
+{
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CNR2C.ConfigCompleteOverwrite",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CNR2C.ConfigOverwrite1Param",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CNR2C.ConfigOverwriteDifferentParam",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

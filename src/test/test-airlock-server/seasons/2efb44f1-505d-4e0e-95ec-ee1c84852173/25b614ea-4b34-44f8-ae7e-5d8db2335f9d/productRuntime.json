@@ -1,0 +1,28 @@
+{
+	"codeIdentifier": "QA.RulesTrace",
+	"name": "QA.RulesTrace",
+	"seasons": [
+		{
+			"lastModified": 1543477118408,
+			"maxVersion": "7.8",
+			"minVersion": "7.5",
+			"productId": "2efb44f1-505d-4e0e-95ec-ee1c84852173",
+			"uniqueId": "25b614ea-4b34-44f8-ae7e-5d8db2335f9d"
+		},
+		{
+			"lastModified": 1543477132346,
+			"maxVersion": "7.10",
+			"minVersion": "7.8",
+			"productId": "2efb44f1-505d-4e0e-95ec-ee1c84852173",
+			"uniqueId": "c8a1611c-9ce4-40be-97b4-7fa1e3f36f2f"
+		},
+		{
+			"lastModified": 1491125749384,
+			"maxVersion": null,
+			"minVersion": "7.10",
+			"productId": "2efb44f1-505d-4e0e-95ec-ee1c84852173",
+			"uniqueId": "e8a79a02-5e0c-4a4a-b06e-24aa8faffef6"
+		}
+	],
+	"uniqueId": "2efb44f1-505d-4e0e-95ec-ee1c84852173"
+}

@@ -1,0 +1,14 @@
+{
+	"codeIdentifier": "WUAndroidFlagship",
+	"name": "WU Android Flagship",
+	"seasons": [
+		{
+			"lastModified": 1548950369277,
+			"maxVersion": null,
+			"minVersion": "6.0",
+			"productId": "e47c6cb5-288e-4ef4-a897-f22bd6782cad",
+			"uniqueId": "4817971a-b2e8-4d08-b2ea-907a4cd6b240"
+		}
+	],
+	"uniqueId": "e47c6cb5-288e-4ef4-a897-f22bd6782cad"
+}

@@ -1,0 +1,804 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"analytics.BigStates",
+				"analytics.WeatherData"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"features": [
+				{
+					"branchConfigurationRuleItems": [
+						"analyticsBigStates.StateName",
+						"analyticsBigStates.StaticText",
+						"analyticsBigStates.Location",
+						"analyticsBigStates.Fahrenheit"
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"minAppVersion": "8.0",
+							"name": "StateName",
+							"namespace": "analyticsBigStates",
+							"rolloutPercentage": 100.0,
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "2ede4ac6-403f-41fc-ae63-9aab92bbe3c0"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configuration": "{\n\t\"StaticText\":\"This is a static text\"\n}",
+							"configurationRules": [
+							],
+							"enabled": true,
+							"internalUserGroups": [
+								"Lioz"
+							],
+							"minAppVersion": "8.0",
+							"name": "StaticText",
+							"namespace": "analyticsBigStates",
+							"noCachedResults": false,
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": ""
+							},
+							"sendToAnalytics": true,
+							"stage": "PRODUCTION",
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "8e11f22c-d616-4345-8f3b-8d6c07b84ed8"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"minAppVersion": "8.0",
+							"name": "Location",
+							"namespace": "analyticsBigStates",
+							"rolloutPercentage": 100.0,
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "b500cee8-135b-4b32-8420-163e99b08291"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"minAppVersion": "8.0",
+							"name": "Fahrenheit",
+							"namespace": "analyticsBigStates",
+							"rolloutPercentage": 100.0,
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "5f09455e-ad3e-497d-94da-a79000346a17"
+						}
+					],
+					"features": [
+					],
+					"minAppVersion": "8.0",
+					"name": "BigStates",
+					"namespace": "analytics",
+					"rolloutPercentage": 100.0,
+					"sendToAnalytics": true,
+					"type": "FEATURE",
+					"uniqueId": "79dd224d-a343-4be9-b07b-24ff405b2200"
+				},
+				{
+					"branchConfigurationRuleItems": [
+						"analyticsWeatherData.AddObservationData",
+						"analyticsWeatherData.AddViewedLocationData",
+						"analyticsWeatherData.AddAlertData",
+						"analyticsWeatherData.AddPrecipData",
+						"analyticsWeatherData.PrecipNight",
+						"analyticsWeatherData.PrecipDay",
+						"analyticsWeatherData.FeelsLikeInFahrenheit"
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configAttributesForAnalytics": [
+						"Country"
+					],
+					"configurationRules": [
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"minAppVersion": "8.0",
+							"name": "AddObservationData",
+							"namespace": "analyticsWeatherData",
+							"rolloutPercentage": 100.0,
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "22a08d43-c832-403d-8a8f-f55c4889984f"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"minAppVersion": "8.0",
+							"name": "AddViewedLocationData",
+							"namespace": "analyticsWeatherData",
+							"rolloutPercentage": 100.0,
+							"sendToAnalytics": true,
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "324086cb-eb55-4483-861e-e7589976b503"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"minAppVersion": "8.0",
+							"name": "AddAlertData",
+							"namespace": "analyticsWeatherData",
+							"rolloutPercentage": 100.0,
+							"sendToAnalytics": true,
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "3f25e890-b255-4ad0-8852-26c01f539f44"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"minAppVersion": "8.0",
+							"name": "AddPrecipData",
+							"namespace": "analyticsWeatherData",
+							"rolloutPercentage": 100.0,
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "d8bb106b-9440-4d99-add4-688008cbf706"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"minAppVersion": "8.0",
+							"name": "PrecipNight",
+							"namespace": "analyticsWeatherData",
+							"rolloutPercentage": 100.0,
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "e597de5e-348f-4e40-a4a4-6ec394e9c9e7"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"minAppVersion": "8.0",
+							"name": "PrecipDay",
+							"namespace": "analyticsWeatherData",
+							"rolloutPercentage": 100.0,
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "7e2a9f2f-bef2-4b4b-8e3c-ebd4c945db2d"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"minAppVersion": "8.0",
+							"name": "FeelsLikeInFahrenheit",
+							"namespace": "analyticsWeatherData",
+							"rolloutPercentage": 100.0,
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "09fdd6e5-3f6c-4831-bc11-55668ff7d621"
+						}
+					],
+					"features": [
+					],
+					"minAppVersion": "8.0",
+					"name": "WeatherData",
+					"namespace": "analytics",
+					"rolloutPercentage": 100.0,
+					"sendToAnalytics": true,
+					"type": "FEATURE",
+					"uniqueId": "282c66a8-a0dc-41e8-8a54-49178a5a7945"
+				}
+			],
+			"minAppVersion": "8.0",
+			"name": "Rollout Beacon",
+			"namespace": "airlock",
+			"rolloutPercentage": 100.0,
+			"sendToAnalytics": true,
+			"type": "FEATURE",
+			"uniqueId": "3b064bcb-a754-4080-9510-596465f44d8a"
+		},
+		{
+			"branchConfigurationRuleItems": [
+				"mx.d3501048-8488-4cfe-a462-a11fc4daeb13"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configAttributesForAnalytics": [
+				"value1",
+				"value2",
+				"value3a",
+				"value3b"
+			],
+			"configurationRules": [
+				{
+					"branchConfigurationRuleItems": [
+						"trMTXinMTXConfigsProdDefaultOff.Config2",
+						"trMTXinMTXConfigsProdDefaultOff.Config1",
+						"trMTXinMTXConfigsProdDefaultOff.Config3"
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+						{
+							"branchConfigurationRuleItems": [
+								"mx.4622ecdd-8948-447d-97ed-f4ce3389b6ec"
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+										"trMTXinMTXConfigsProdDefaultOffConfig2.Config2a",
+										"trMTXinMTXConfigsProdDefaultOffConfig2.Config2b"
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Config2a",
+											"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+											"rolloutPercentage": 100.0,
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "bb53cfa6-e2eb-482f-ae5f-010fbcb8ff8c"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Config2b",
+											"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+											"rolloutPercentage": 100.0,
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "0c95808f-5dd9-484d-b980-c651ff215bda"
+										}
+									],
+									"maxFeaturesOn": 1,
+									"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "4622ecdd-8948-447d-97ed-f4ce3389b6ec"
+								}
+							],
+							"minAppVersion": "8.0",
+							"name": "Config2",
+							"namespace": "trMTXinMTXConfigsProdDefaultOff",
+							"rolloutPercentage": 100.0,
+							"sendToAnalytics": true,
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "b50f600c-0301-486d-a967-94177d609290"
+						},
+						{
+							"branchConfigurationRuleItems": [
+								"mx.8bec5f82-6b1d-4053-a0f1-3d53341600c0"
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+										"trMTXinMTXConfigsProdDefaultOffConfig1.Config1a",
+										"trMTXinMTXConfigsProdDefaultOffConfig1.Config1b"
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Config1a",
+											"namespace": "trMTXinMTXConfigsProdDefaultOffConfig1",
+											"rolloutPercentage": 100.0,
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "7b95d96e-1c0f-4b44-aa08-b9ec1573c727"
+										},
+										{
+											"branchConfigurationRuleItems": [
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+											],
+											"minAppVersion": "8.0",
+											"name": "Config1b",
+											"namespace": "trMTXinMTXConfigsProdDefaultOffConfig1",
+											"rolloutPercentage": 100.0,
+											"type": "CONFIGURATION_RULE",
+											"uniqueId": "8c39256b-2e29-49d8-bbd8-710368c4403e"
+										}
+									],
+									"maxFeaturesOn": 1,
+									"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+									"uniqueId": "8bec5f82-6b1d-4053-a0f1-3d53341600c0"
+								}
+							],
+							"minAppVersion": "8.0",
+							"name": "Config1",
+							"namespace": "trMTXinMTXConfigsProdDefaultOff",
+							"rolloutPercentage": 100.0,
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "b803a73c-b66e-4add-a46f-ad0e951f162b"
+						},
+						{
+							"branchStatus": "NEW",
+							"configuration": "{\n\t\"value3a\":\"config3a\",\n\t\"value3b\":\"config3b\",\n\t\n}",
+							"configurationRules": [
+							],
+							"enabled": true,
+							"internalUserGroups": [
+								"DEV",
+								"QA"
+							],
+							"minAppVersion": "8.0",
+							"name": "Config3",
+							"namespace": "trMTXinMTXConfigsProdDefaultOff",
+							"noCachedResults": false,
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": ""
+							},
+							"sendToAnalytics": true,
+							"stage": "DEVELOPMENT",
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "ca751d1d-e0b5-4d99-85a4-801b1ece4d61"
+						}
+					],
+					"maxFeaturesOn": 1,
+					"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "d3501048-8488-4cfe-a462-a11fc4daeb13"
+				}
+			],
+			"description": "asds",
+			"features": [
+			],
+			"minAppVersion": "8.0",
+			"name": "MTXinMTXConfigsProdDefaultOff",
+			"namespace": "tr",
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "6f11f88c-95eb-41fe-984c-56a9b81d6fbb"
+		},
+		{
+			"branchConfigurationRuleItems": [
+				"mx.26f16a33-f97d-4aa3-93f8-75e40d927fcc"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configAttributesForAnalytics": [
+				"valueConfigb1",
+				"valueConfigb2",
+				"valueConfigb3",
+				"valueConfigb4"
+			],
+			"configurationRules": [
+				{
+					"branchConfigurationRuleItems": [
+						"group1feature1.FeatureProdMTXConfigProd15a",
+						"group1feature1.FeatureProdMTXConfigDev15b"
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configuration": "{\n\t\"value\":\"config2a\",\n\t\"value1\":\"value12\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+							"configurationRules": [
+							],
+							"description": "d",
+							"minAppVersion": "8.0",
+							"name": "FeatureProdMTXConfigProd15a",
+							"namespace": "group1feature1",
+							"rolloutPercentage": 100.0,
+							"sendToAnalytics": true,
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "9b009ffa-5345-459b-9f4e-d7745af92255"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configuration": "{\n\t\"valueConfigb1\":\"configba\",\n\t\"valueConfigb2\":\"value1b\",\n\t\"valueConfigb3\":\"value2b\",\n\t\"valueConfigb4\":\"value3b\"\n}",
+							"configurationRules": [
+							],
+							"enabled": true,
+							"internalUserGroups": [
+								"AndroidDEV"
+							],
+							"minAppVersion": "8.0",
+							"name": "FeatureProdMTXConfigDev15b",
+							"namespace": "group1feature1",
+							"noCachedResults": false,
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": "context.viewedLocation.country==\"FR\""
+							},
+							"stage": "PRODUCTION",
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "9dcb682d-0e1a-456a-80f3-68a5fa869df1"
+						}
+					],
+					"maxFeaturesOn": 1,
+					"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "26f16a33-f97d-4aa3-93f8-75e40d927fcc"
+				}
+			],
+			"features": [
+			],
+			"minAppVersion": "8.0",
+			"name": "FeatureProdMTXConfigProdDev15",
+			"namespace": "group1",
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "fc204198-3ecc-4696-af76-7d40e245f62a"
+		},
+		{
+			"additionalInfo": null,
+			"branchConfigurationRuleItems": [
+				"nsFeatureInBranch1.FeatureInBranch1Config1"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchStatus": "NEW",
+			"configAttributesForAnalytics": [
+				"colors[0]",
+				"colors[1]",
+				"colors[2]",
+				"colors[3]",
+				"value1"
+			],
+			"configurationRules": [
+				{
+					"branchStatus": "NEW",
+					"configuration": "{\n\t\"value1\":\"FeatureInBranch1Config1\",\n\t\n\t\"colors\":[\"red\",\n\t\"green\",\n\t\"blue\",\n\t\"white\"]\n\n}",
+					"configurationRules": [
+					],
+					"enabled": true,
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"minAppVersion": "8.0",
+					"name": "FeatureInBranch1Config1",
+					"namespace": "nsFeatureInBranch1",
+					"noCachedResults": false,
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"stage": "PRODUCTION",
+					"type": "CONFIGURATION_RULE",
+					"uniqueId": "e2374a14-7dfb-41db-8b92-c11106c37cdd"
+				}
+			],
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"DEV",
+				"QA"
+			],
+			"minAppVersion": "8.0",
+			"name": "FeatureInBranch1",
+			"namespace": "ns",
+			"noCachedResults": false,
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"sendToAnalytics": true,
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "ff41cb24-bac0-4ff6-8462-faec13573944"
+		},
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configAttributesForAnalytics": [
+				"colors"
+			],
+			"configurationRules": [
+			],
+			"defaultConfiguration": "{\n\t\"colors\":\"array was here once\"\n}",
+			"features": [
+			],
+			"minAppVersion": "8.0",
+			"name": "Arrays",
+			"namespace": "ns",
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "3ffbc33d-5de5-4b85-988e-ba8ba2ce2498"
+		},
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+				"elikElik.CF1",
+				"elikElik.CF2"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configuration": "{\n\t\"arrayAtt\":[\"value1\",\n\t\"value2\",\n\t\"value3\"]\n}",
+					"configurationRules": [
+					],
+					"minAppVersion": "8.0",
+					"name": "CF1",
+					"namespace": "elikElik",
+					"rolloutPercentage": 100.0,
+					"type": "CONFIGURATION_RULE",
+					"uniqueId": "84953664-839e-46f7-b561-e78096d16ae0"
+				},
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"minAppVersion": "8.0",
+					"name": "CF2",
+					"namespace": "elikElik",
+					"rolloutPercentage": 100.0,
+					"type": "CONFIGURATION_RULE",
+					"uniqueId": "779499ec-ddc8-4f28-beda-f493da3efe10"
+				}
+			],
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"QA"
+			],
+			"minAppVersion": "8.0",
+			"name": "Array2",
+			"namespace": "elik",
+			"noCachedResults": false,
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "1763c2fa-6d3b-411f-baf8-b4ba1af3c4bb"
+		},
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"ads.Main Feed Ads",
+				"ads.Main Screen Banner"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"enabled": true,
+			"features": [
+				{
+					"additionalInfo": {
+					},
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"defaultConfiguration": null,
+					"defaultIfAirlockSystemIsDown": false,
+					"enabled": true,
+					"features": [
+					],
+					"internalUserGroups": [
+						"QA",
+						"DEV"
+					],
+					"minAppVersion": "8.0",
+					"name": "Main Screen Banner",
+					"namespace": "ads",
+					"noCachedResults": false,
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "true"
+					},
+					"sendToAnalytics": true,
+					"stage": "PRODUCTION",
+					"type": "FEATURE",
+					"uniqueId": "2f6a7453-4a9e-40e3-aa93-eaad765a6130"
+				}
+			],
+			"internalUserGroups": [
+				"QA",
+				"DEV"
+			],
+			"minAppVersion": "8.0",
+			"name": "Airlock Control Over Ads",
+			"namespace": "ads",
+			"noCachedResults": false,
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"sendToAnalytics": true,
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "c3fb3fa9-5e62-4a08-9a6b-ec6ed1eed3c5"
+		},
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"mx.3a05bca3-a938-49e0-acd3-927510096b2f"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"features": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+						"ns.NewFeatureInBranch",
+						"tr.FeatureProdMTXProd11a",
+						"tr.FeatureProdMTXDev11b"
+					],
+					"branchStatus": "CHECKED_OUT",
+					"features": [
+						{
+							"additionalInfo": null,
+							"branchStatus": "NEW",
+							"configurationRules": [
+							],
+							"defaultConfiguration": null,
+							"defaultIfAirlockSystemIsDown": false,
+							"enabled": true,
+							"features": [
+							],
+							"internalUserGroups": [
+								"DEV",
+								"QA"
+							],
+							"minAppVersion": "8.0",
+							"name": "NewFeatureInBranch",
+							"namespace": "ns",
+							"noCachedResults": false,
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": ""
+							},
+							"sendToAnalytics": true,
+							"stage": "PRODUCTION",
+							"type": "FEATURE",
+							"uniqueId": "9c6a5f43-2085-4bd5-b0f9-3e7ce4bb61a6"
+						}
+					],
+					"maxFeaturesOn": 1,
+					"type": "MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "3a05bca3-a938-49e0-acd3-927510096b2f"
+				}
+			],
+			"minAppVersion": "8.0",
+			"name": "FeatureProdMTXProdDev11",
+			"namespace": "tr",
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "ba876d94-d965-4bc3-8a5e-e63881df758a"
+		}
+	],
+	"inputFieldsForAnalytics": [
+		"context.userPreferences.is24HourFormat",
+		"context.userPreferences.unitsOfMeasure",
+		"context.userPreferences.isEasternArabicNumerals",
+		"context.device.screenWidth",
+		"context.device.connectionType",
+		"context.device.version"
+	],
+	"name": "Branch1",
+	"uniqueId": "87c2672f-8e6e-4aad-9912-327cdc51b3b4"
+}

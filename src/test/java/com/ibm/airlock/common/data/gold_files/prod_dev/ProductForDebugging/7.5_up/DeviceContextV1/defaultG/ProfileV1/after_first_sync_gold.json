@@ -1,0 +1,48 @@
+{
+  "testName": "prod_dev",
+  "productName": "ProductForDebugging",
+  "productId": "16fb9bda-c4bf-4424-b7dc-929c452b8db8",
+  "seasonLogicalName": "7.5_up",
+  "seasonId": "8d1dc05d-2e66-4fa4-b1a3-da7c9ecc13e0",
+  "deviceContextFilePath": "test_data\/prod_dev\/ProductForDebugging\/7.5_up\/device_contexts\/DeviceContextV1.json",
+  "groupsFilePath": "test_data\/prod_dev\/ProductForDebugging\/7.5_up\/groups\/defaultG.json",
+  "profileFilePath": "test_data\/prod_dev\/ProductForDebugging\/7.5_up\/profiles\/ProfileV1.json",
+  "root": {
+    "features": [
+      {
+        "featureAttributes": {
+          "alert": true,
+          "background": "black",
+          "color": "red",
+          "icon": "a.jpg",
+          "size": 1,
+          "text": "is24HoursOn Default disbaled"
+        },
+        "features": [
+        ],
+        "isON": true,
+        "name": "ns1.NoFieldInProfile.DefaultDisabled",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": {
+          "alert": true,
+          "background": "black",
+          "color": "red",
+          "icon": "a.jpg",
+          "size": 1,
+          "text": "no lightning, default enabled"
+        },
+        "features": [
+        ],
+        "isON": true,
+        "name": "ns1.NoFieldInProfile.DefaultEnabled",
+        "resultTrace": "",
+        "type": "FEATURE"
+      }
+    ],
+    "type": "ROOT",
+    "uniqueId": "0a1e37cb-f554-41be-99a5-5b3c0a37e403"
+  }
+}

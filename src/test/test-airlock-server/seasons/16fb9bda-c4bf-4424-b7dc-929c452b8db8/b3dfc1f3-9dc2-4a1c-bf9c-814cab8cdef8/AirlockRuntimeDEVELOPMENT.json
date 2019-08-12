@@ -1,0 +1,168 @@
+{
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"maxVersion": null,
+	"minVersion": "7.8",
+	"productId": "16fb9bda-c4bf-4424-b7dc-929c452b8db8",
+	"productName": "ProductForDebugging",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"text\":\"closestLightningOn  Default disbaled\"\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "7.8",
+						"name": "ConfigLightning",
+						"namespace": "ns1NoFieldInProfile",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": "context.weatherSummary.closestLightning.distance <=2"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "328eefd2-536a-4afc-8c50-38591d563431"
+					},
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\"text\":\"is24HoursOn Default disbaled\"\t\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "7.8",
+						"name": "is24Hours",
+						"namespace": "ns1NoFieldInProfile",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": "context.userPreferences.is24HourFormat === true"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "c40c9158-28a9-4880-aefc-7b88d6896dce"
+					}
+				],
+				"defaultConfiguration": "{\n\t\"alert\":true,\n\t\"background\":\"black\",\n\t\"color\":\"red\",\n\t\"icon\":\"a.jpg\",\n\t\"size\":1,\n\t\"text\":\"no field, default disabled\"\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "7.8",
+				"name": "NoFieldInProfile.DefaultDisabled",
+				"namespace": "ns1",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "d518614a-e237-4d56-b1cf-b512cbf075e8"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"text\":\"no lightning, default enabled\"\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "7.8",
+						"name": "ConfigLightning",
+						"namespace": "ns1NoFieldInProfileDefaultEnabled",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": "context.weatherSummary.closestLightning.distance <=2"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "174809eb-5a95-4372-81dd-26d71c656052"
+					},
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\"text\":\"no lightning, default enabled\"\t\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "7.8",
+						"name": "is24Hours",
+						"namespace": "ns1NoFieldInProfileDefaultEnabled",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "e27585ab-45e8-454c-8a58-9e6be5d96cf5"
+					}
+				],
+				"defaultConfiguration": "{\n\t\"alert\":true,\n\t\"background\":\"black\",\n\t\"color\":\"red\",\n\t\"icon\":\"a.jpg\",\n\t\"size\":1,\n\t\"text\":\"no field, default enabled\"\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "7.8",
+				"name": "NoFieldInProfile.DefaultEnabled",
+				"namespace": "ns1",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "5225dcf5-8829-4968-93f9-fb4628318e96"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "451994ca-66b3-4594-8eee-91afae488b7c"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "b3dfc1f3-9dc2-4a1c-bf9c-814cab8cdef8",
+	"serverVersion": "V2.1",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.1"
+}

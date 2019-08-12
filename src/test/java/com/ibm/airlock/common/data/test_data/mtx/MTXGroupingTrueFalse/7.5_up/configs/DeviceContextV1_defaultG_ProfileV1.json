@@ -1,0 +1,16 @@
+{
+  "callOrder": [
+    "doInit",
+    "doSetGroups",
+    "doRefreshAndSync"
+  ],
+  "configuration": {
+    "configPath": "test_data\/mtx\/MTXGroupingTrueFalse\/7.5_up\/",
+    "goldPath": "gold_files\/mtx\/MTXGroupingTrueFalse\/7.5_up\/DeviceContextV1\/defaultG\/ProfileV1",
+    "deviceContextFileName": "DeviceContextV1.json",
+    "groupsFileName": "defaultG.json",
+    "profileFileName": "ProfileV1.json",
+    "defaultFileName": "mtx_grouping_true_false_first_default.txt"
+  },
+  "updates": {}
+}

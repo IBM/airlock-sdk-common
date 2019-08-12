@@ -1,0 +1,21 @@
+{
+	"codeIdentifier": "NoRulePercentageUpgraded",
+	"name": "NoRulePercentageUpgraded",
+	"seasons": [
+		{
+			"lastModified": 1543309504490,
+			"maxVersion": "7.10",
+			"minVersion": "7.8",
+			"productId": "6426b205-577e-4171-a48f-2f4dc2039461",
+			"uniqueId": "63cd299d-cd7a-401a-9607-c819bb15521d"
+		},
+		{
+			"lastModified": 1491124457451,
+			"maxVersion": null,
+			"minVersion": "7.10",
+			"productId": "6426b205-577e-4171-a48f-2f4dc2039461",
+			"uniqueId": "c92820c0-afc0-40c0-989c-322a60bf865a"
+		}
+	],
+	"uniqueId": "6426b205-577e-4171-a48f-2f4dc2039461"
+}

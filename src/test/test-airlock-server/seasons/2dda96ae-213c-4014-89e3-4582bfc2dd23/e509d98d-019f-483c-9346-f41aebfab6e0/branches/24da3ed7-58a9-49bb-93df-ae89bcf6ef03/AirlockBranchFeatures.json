@@ -1,0 +1,45 @@
+{
+	"creationDate": 1500976299723,
+	"creator": "Yoav BenYair",
+	"description": null,
+	"features": [
+		{
+			"additionalInfo": null,
+			"branchFeatureParentName": "ROOT",
+			"branchStatus": "NEW",
+			"configurationRules": [
+			],
+			"configurationSchema": null,
+			"creationDate": 1500976751783,
+			"creator": "Yoav BenYair",
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"description": "",
+			"displayName": null,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"Yoav"
+			],
+			"lastModified": 1500976766419,
+			"minAppVersion": "8.0",
+			"name": "ExpTest",
+			"namespace": "test",
+			"noCachedResults": false,
+			"owner": "Yoav BenYair",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0",
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "547c0089-7682-4a2a-a10c-81cbfbb77645"
+		}
+	],
+	"lastModified": 1500976299723,
+	"name": "AnalyticsDryRunVar2",
+	"seasonId": "e509d98d-019f-483c-9346-f41aebfab6e0",
+	"uniqueId": "24da3ed7-58a9-49bb-93df-ae89bcf6ef03"
+}

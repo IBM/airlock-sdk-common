@@ -1,0 +1,32 @@
+{
+	"branches": [
+		{
+			"creationDate": 1509269305953,
+			"creator": "Esteban Zia",
+			"description": null,
+			"lastModified": 1509269305953,
+			"name": "Branch1",
+			"seasonId": "141b5b40-9ba0-4d44-bb02-06aa20018615",
+			"uniqueId": "5ade7fe0-fdde-40a6-8b76-ba5bc5705c71"
+		},
+		{
+			"creationDate": 1509269363204,
+			"creator": "Esteban Zia",
+			"description": null,
+			"lastModified": 1509269363204,
+			"name": "Branch2",
+			"seasonId": "141b5b40-9ba0-4d44-bb02-06aa20018615",
+			"uniqueId": "2292339a-4d0c-4076-bffb-f78be487c909"
+		},
+		{
+			"creationDate": 1509361107744,
+			"creator": "Esteban Zia",
+			"description": null,
+			"lastModified": 1509361107744,
+			"name": "Branch3",
+			"seasonId": "141b5b40-9ba0-4d44-bb02-06aa20018615",
+			"uniqueId": "a16ddf24-f6f6-4a1b-a300-97d853e27ff7"
+		}
+	],
+	"seasonId": "141b5b40-9ba0-4d44-bb02-06aa20018615"
+}

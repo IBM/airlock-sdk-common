@@ -1,0 +1,122 @@
+{
+	"creationDate": 1497525731593,
+	"creator": "irit",
+	"description": "branch descr",
+	"features": [
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"configurationSchema": null,
+			"creationDate": 1497525730990,
+			"creator": "Philip",
+			"defaultConfiguration": "{\n\t\"text\":\"branch1\"\n}",
+			"defaultIfAirlockSystemIsDown": false,
+			"description": "F21 desc 1",
+			"displayName": null,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"QA",
+				"DEV"
+			],
+			"lastModified": 1499155554210,
+			"minAppVersion": "0.1",
+			"name": "F1",
+			"namespace": "ns1",
+			"noCachedResults": false,
+			"owner": "Norman",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "4799793c-2d51-4587-b15f-ff0e9852d161",
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "780f808d-e9e3-4272-8737-b03ea677dff9"
+		},
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+				"ns1F2.CF1"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configuration": "{}",
+					"configurationRules": [
+					],
+					"creationDate": 1497953802268,
+					"creator": "Esteban Zia",
+					"description": "",
+					"enabled": true,
+					"internalUserGroups": [
+					],
+					"lastModified": 1497953802268,
+					"minAppVersion": "0.1",
+					"name": "CF1",
+					"namespace": "ns1F2",
+					"noCachedResults": false,
+					"owner": "Esteban Zia",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"seasonId": "4799793c-2d51-4587-b15f-ff0e9852d161",
+					"stage": "DEVELOPMENT",
+					"type": "CONFIGURATION_RULE",
+					"uniqueId": "a8e31b7c-af82-4839-97c1-37e4ca379d72"
+				}
+			],
+			"configurationSchema": null,
+			"creationDate": 1497525731364,
+			"creator": "Philip",
+			"defaultConfiguration": "{\n\t\"text\":\"master\"\n}",
+			"defaultIfAirlockSystemIsDown": false,
+			"description": "F21 desc 1",
+			"displayName": null,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"QA",
+				"DEV"
+			],
+			"lastModified": 1499081587984,
+			"minAppVersion": "0.1",
+			"name": "F2",
+			"namespace": "ns1",
+			"noCachedResults": false,
+			"owner": "Norman",
+			"rolloutPercentage": 10.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "4799793c-2d51-4587-b15f-ff0e9852d161",
+			"stage": "DEVELOPMENT",
+			"type": "FEATURE",
+			"uniqueId": "de611dcf-36e6-4b67-bcba-fc1c9056a201"
+		}
+	],
+	"lastModified": 1497525731593,
+	"name": "branch1",
+	"seasonId": "4799793c-2d51-4587-b15f-ff0e9852d161",
+	"uniqueId": "4f370cde-d5df-48eb-b112-08fa24718eb7"
+}

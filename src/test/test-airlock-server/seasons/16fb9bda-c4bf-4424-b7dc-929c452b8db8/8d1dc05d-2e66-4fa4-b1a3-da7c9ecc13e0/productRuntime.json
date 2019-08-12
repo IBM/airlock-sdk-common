@@ -1,0 +1,21 @@
+{
+	"codeIdentifier": "ProductForDebugging",
+	"name": "ProductForDebugging",
+	"seasons": [
+		{
+			"lastModified": 1543399816367,
+			"maxVersion": "7.8",
+			"minVersion": "7.5",
+			"productId": "16fb9bda-c4bf-4424-b7dc-929c452b8db8",
+			"uniqueId": "8d1dc05d-2e66-4fa4-b1a3-da7c9ecc13e0"
+		},
+		{
+			"lastModified": 1490097398106,
+			"maxVersion": null,
+			"minVersion": "7.8",
+			"productId": "16fb9bda-c4bf-4424-b7dc-929c452b8db8",
+			"uniqueId": "b3dfc1f3-9dc2-4a1c-bf9c-814cab8cdef8"
+		}
+	],
+	"uniqueId": "16fb9bda-c4bf-4424-b7dc-929c452b8db8"
+}

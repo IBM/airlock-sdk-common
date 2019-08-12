@@ -1,0 +1,11 @@
+{
+  "dateTime": 1499834541338,
+  "eventData": {
+    "clicked": false,
+    "creativeId": "104613459617",
+    "slot": "weather.bb",
+    "successful": true,
+    "type": "bbg"
+  },
+  "name": "ad-viewed"
+}

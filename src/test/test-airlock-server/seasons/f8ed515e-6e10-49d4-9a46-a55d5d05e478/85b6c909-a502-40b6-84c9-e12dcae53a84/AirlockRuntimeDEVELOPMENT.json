@@ -1,0 +1,776 @@
+{
+	"branches": [
+	],
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "8.0",
+	"productId": "f8ed515e-6e10-49d4-9a46-a55d5d05e478",
+	"productName": "ProductWithStreams",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"stream\":context.streams.contentViewed10.contentViewedModulus5,\n\t\"value\": \"config1\"\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "8.0",
+						"name": "US",
+						"namespace": "contentViewedModulus5contentViewedModulus5",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "if (context.viewedLocation.country == \"US\" && context.streams && context.streams.contentViewed10) {true} else {false}"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "7947dba5-576d-4cee-9d08-f0079e441209"
+					},
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"stream\":context.streams.contentViewed10.contentViewedModulus5 + 10,\n\t\"value\": \"config2\"\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "8.0",
+						"name": "FR",
+						"namespace": "contentViewedModulus5contentViewedModulus5",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "if (context.viewedLocation.region == \"FR\" && context.streams && context.streams.contentViewed10){true} else {false}"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "539d281e-e934-4d3c-8159-9d9abf945b85"
+					}
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "contentViewedModulus5",
+				"namespace": "contentViewedModulus5",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "f2b063f5-a10c-4af2-b5ce-60e4656cde06"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configurationRules": [
+							{
+								"branchStatus": "NONE",
+								"configuration": "{\n\t\"stream\": \"config1: \" + context.streams.GoRunTomorrowCounter.count\n}",
+								"configurationRules": [
+								],
+								"enabled": true,
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "Config1",
+								"namespace": "group1feature1",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "if (context.viewedLocation.country != \"US\" && context.streams && context.streams.GoRunTomorrowCounter) {true} else {false}"
+								},
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "65fa167c-6453-4eb1-b50e-75dd1ed22c80"
+							},
+							{
+								"branchStatus": "NONE",
+								"configuration": "{\n\t\"stream\": \"config2: \" + context.streams.GoRunTomorrowCounter.count\n}",
+								"configurationRules": [
+								],
+								"enabled": true,
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "Config2",
+								"namespace": "group1feature1",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "if (context.streams && context.streams.GoRunTomorrowCounter) {true} else {false}"
+								},
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "fa95227a-0283-40c2-a833-339ee050fc1f"
+							},
+							{
+								"branchStatus": "NONE",
+								"configuration": "{\n\t\"stream\": \"config3: \" + context.streams.GoRunTomorrowCounter.count\n}",
+								"configurationRules": [
+								],
+								"enabled": true,
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "Config3",
+								"namespace": "group1feature1",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "if (context.streams && context.streams.GoRunTomorrowCounter) {true} else {false}"
+								},
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "d8d11906-a50f-4355-8f2c-18d1ca06a3cc"
+							}
+						],
+						"maxFeaturesOn": 3,
+						"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "25ae2a40-1265-41da-8e99-5636804cf004"
+					}
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "MTXOfConfig",
+				"namespace": "group1",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "b0742983-2672-4757-b0e6-9d44afac41ba"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"stream\":\"config1: \" + context.streams.VladAdinaStream.total\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV",
+							"QA"
+						],
+						"minAppVersion": "8.0",
+						"name": "Config1",
+						"namespace": "group1FeatureProd3Configurations1NOMTX",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "if (context.streams && context.streams.VladAdinaStream) {true} else  {false}"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "eb334f16-1609-42dc-bf80-39f54ecb805e"
+					},
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"stream\":\"config2: \" + context.streams.VladAdinaStream.total\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV",
+							"QA"
+						],
+						"minAppVersion": "8.0",
+						"name": "Config2",
+						"namespace": "group1FeatureProd3Configurations1NOMTX",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "if (context.streams && context.streams.VladAdinaStream) {true} else  {false}"
+						},
+						"stage": "PRODUCTION",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "c88de368-9d85-4341-b1cf-c7454a3569b8"
+					},
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\t\"stream\":\"config3: \" + context.streams.VladAdinaStream.total\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV",
+							"QA"
+						],
+						"minAppVersion": "8.0",
+						"name": "Config3",
+						"namespace": "group1FeatureProd3Configurations1NOMTX",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "if (context.streams && context.streams.VladAdinaStream) {true} else  {false}"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "197a8a52-a3a7-4354-a93f-56ad9e5218a7"
+					}
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "7.5",
+				"name": "ConfigurationsNOMTX",
+				"namespace": "group1",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "3c5cf618-e805-4caa-95a6-19cd49a77fcb"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configurationRules": [
+							{
+								"branchStatus": "NONE",
+								"configuration": "{\n\t\"value\":\"config2\"\n}",
+								"configurationRules": [
+									{
+										"branchStatus": "NONE",
+										"configurationRules": [
+											{
+												"branchStatus": "NONE",
+												"configuration": "{\n\"stream\": \"Config2a: \" + context.streams.video_auto_play.count\n}",
+												"configurationRules": [
+												],
+												"enabled": true,
+												"internalUserGroups": [
+													"AndroidDEV"
+												],
+												"minAppVersion": "8.0",
+												"name": "Config2a",
+												"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+												"noCachedResults": false,
+												"rolloutPercentage": 100.0,
+												"rule": {
+													"ruleString": "if (context.streams && context.streams.video_auto_play) {true} else {false}"
+												},
+												"stage": "DEVELOPMENT",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "e516a8f3-3a98-4de1-8f0d-b19a11b6f7ce"
+											},
+											{
+												"branchStatus": "NONE",
+												"configuration": "{\n\t\"stream\": \"Config2b: \" + context.streams.video_auto_play.count\n}",
+												"configurationRules": [
+												],
+												"enabled": true,
+												"internalUserGroups": [
+													"AndroidDEV"
+												],
+												"minAppVersion": "8.0",
+												"name": "Config2b",
+												"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+												"noCachedResults": false,
+												"rolloutPercentage": 100.0,
+												"rule": {
+													"ruleString": "if (context.streams && context.streams.video_auto_play) {true} else {false}"
+												},
+												"stage": "PRODUCTION",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "b249dc6b-155c-4a6d-97c0-bce1cd3a3524"
+											}
+										],
+										"maxFeaturesOn": 1,
+										"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+										"uniqueId": "7252e9f9-c319-460d-873a-25376e090048"
+									}
+								],
+								"enabled": true,
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "Config2",
+								"namespace": "trMTXinMTXConfigsProdDefaultOff",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "context.viewedLocation.country == \"FR\""
+								},
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "43974943-5886-454a-9762-c44b9da2ab6b"
+							},
+							{
+								"branchStatus": "NONE",
+								"configuration": "{\n\t\"value\":\"config1\"\n}",
+								"configurationRules": [
+									{
+										"branchStatus": "NONE",
+										"configurationRules": [
+											{
+												"branchStatus": "NONE",
+												"configuration": "{\n\t\"stream\": \"Config1a: \" + context.streams.video_auto_play.count\n}",
+												"configurationRules": [
+												],
+												"enabled": true,
+												"internalUserGroups": [
+													"AndroidDEV"
+												],
+												"minAppVersion": "8.0",
+												"name": "Config1a",
+												"namespace": "trMTXinMTXConfigsProdDefaultOffConfig1",
+												"noCachedResults": false,
+												"rolloutPercentage": 100.0,
+												"rule": {
+													"ruleString": "if (context.streams && context.streams.video_auto_play) {true} else {false}"
+												},
+												"stage": "DEVELOPMENT",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "eca127bb-7590-43e6-8c4e-26f41326456f"
+											},
+											{
+												"branchStatus": "NONE",
+												"configuration": "{\n\t\"stream\": \"Config1b: \" + context.streams.video_auto_play.count\n}",
+												"configurationRules": [
+												],
+												"enabled": true,
+												"internalUserGroups": [
+													"AndroidDEV"
+												],
+												"minAppVersion": "8.0",
+												"name": "Config1b",
+												"namespace": "trMTXinMTXConfigsProdDefaultOffConfig1",
+												"noCachedResults": false,
+												"rolloutPercentage": 100.0,
+												"rule": {
+													"ruleString": "if (context.streams && context.streams.video_auto_play) {true} else {false}"
+												},
+												"stage": "PRODUCTION",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "b0331b47-f51b-4319-9287-0211ab7c9427"
+											}
+										],
+										"maxFeaturesOn": 1,
+										"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+										"uniqueId": "a33f69e4-a109-4203-8c50-5b57fd084564"
+									}
+								],
+								"enabled": true,
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "Config1",
+								"namespace": "trMTXinMTXConfigsProdDefaultOff",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "context.viewedLocation.country == \"US\""
+								},
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "2089fb29-c5bf-4756-a8c2-ee582628f6f7"
+							}
+						],
+						"maxFeaturesOn": 1,
+						"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "51844a90-dc6b-4c69-b558-6e3b076ec500"
+					}
+				],
+				"defaultConfiguration": "{\n\t\"value\":\"default value\"\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "MTXinMTXConfigs",
+				"namespace": "tr",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "4e801e83-cec6-450d-a771-54408a65023e"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"stream\":\"config1\" + context.streams.adViewedCounter.adViewedCount\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "8.0",
+						"name": "Config1",
+						"namespace": "trDistanceFeatureTwoConfigFail",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "if (context.streams && context.streams.adViewedCounter) {true} else {false}"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "a02f6fc1-0539-4854-afc3-1cfee5443efc"
+					},
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\"stream\":\"config2: \" + context.streams.adViewedCounter.adViewedCount\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "8.0",
+						"name": "Config2",
+						"namespace": "trDistanceFeatureTwoConfigFail",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "\nif (context.weatherSummary.pollenData[100] == \"test\" && context.streams && context.streams.adViewedCounter) {true} else {false}"
+						},
+						"stage": "PRODUCTION",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "a3541c24-6b87-4dea-a420-a8d7e9c554a2"
+					}
+				],
+				"defaultConfiguration": "{\n\t\"value\":\"default config\"\n}",
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "FeatureTwoConfigFail",
+				"namespace": "trDistance",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "2b02a536-1196-4cb3-b4e3-6cf305e36759"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"stream\":\"config1\",\n\t\"title\": context.streams.videoPlayedCounter.count\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV",
+							"QA"
+						],
+						"minAppVersion": "8.0",
+						"name": "Config1WithString",
+						"namespace": "group1FeatureProd3Configurations1NOMTX",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "if (context.streams && context.streams.videoPlayedCounter) {true} else {false}"
+						},
+						"stage": "PRODUCTION",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "3483b74d-92ad-44ff-8908-9944ac14e4d6"
+					},
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"stream\":\"config2\",\n\t\"title\": context.streams.videoPlayedCounter.count\n\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV",
+							"QA"
+						],
+						"minAppVersion": "8.0",
+						"name": "Config2WithString",
+						"namespace": "group1FeatureProd3Configurations1NOMTX",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "if (context.streams && context.streams.videoPlayedCounter) {true} else {false}"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "60e8f67b-f954-44e5-905c-0568da924f4c"
+					}
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "ConfigurationsNOMTXWithStrings",
+				"namespace": "group1",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "3dc0ebe8-dc4f-42ed-973b-d5165e10156b"
+			},
+			{
+				"additionalInfo": null,
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"stream\":\"using utility: \" + context.streams.contentViewed10InUtility.contentViewedModulus5\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "8.0",
+						"name": "UseUtil",
+						"namespace": "UseUtilUseUtil",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "if (context.streams && context.streams.contentViewed10InUtility) {true} else {false}"
+						},
+						"stage": "PRODUCTION",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "090bda28-e04c-49f7-9a62-fa82dd5bdb12"
+					}
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "UseUtil",
+				"namespace": "UseUtil",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "99348534-a424-4286-bad5-4af0070ceace"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configurationRules": [
+							{
+								"branchStatus": "NONE",
+								"configuration": "{\n\t\"stream\": \"config1: \" + context.streams.GoRunTomorrowCounterFilterTrue.count\n}",
+								"configurationRules": [
+								],
+								"enabled": true,
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "Config1.true",
+								"namespace": "group1feature1",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "if (context.streams && context.streams.GoRunTomorrowCounterFilterTrue) {true} else {false}"
+								},
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "785111a3-e471-4236-9bd4-21f22906e2e9"
+							}
+						],
+						"maxFeaturesOn": 3,
+						"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "fcf3e9f3-b344-4984-a8ae-229dd97c762d"
+					}
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "FeatureUsingGoRunTomorrowCounterFilterTrue",
+				"namespace": "group1",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "d523a9a1-bd48-4780-b00a-2f720f32cfc4"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configurationRules": [
+							{
+								"branchStatus": "NONE",
+								"configuration": "{\n\t\"stream\": \"config1: \" + context.streams.GoRunTomorrowCounterFilterFalse.count\n}",
+								"configurationRules": [
+								],
+								"enabled": true,
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "Config1.false",
+								"namespace": "group1feature1",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "if (context.streams && context.streams.GoRunTomorrowCounterFilterFalse) {true} else {false}"
+								},
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "5805a4b2-d2ef-4c6c-bbe6-4634d3455471"
+							}
+						],
+						"maxFeaturesOn": 3,
+						"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "2bf1c981-4e63-4cb6-be66-307d246e2e31"
+					}
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "FeatureUsingGoRunTomorrowCounterFilterFalse",
+				"namespace": "group1",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "1d5f85e1-e3ea-4096-87a4-5ea638ee3a28"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "de6c713f-5c0d-4c73-a88b-db1517ae0dcd"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "85b6c909-a502-40b6-84c9-e12dcae53a84",
+	"serverVersion": "V4.0",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

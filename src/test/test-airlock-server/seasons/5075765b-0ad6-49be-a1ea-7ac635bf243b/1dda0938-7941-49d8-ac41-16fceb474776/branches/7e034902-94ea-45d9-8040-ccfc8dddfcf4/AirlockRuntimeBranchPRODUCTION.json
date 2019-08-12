@@ -1,0 +1,40 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+				"videoVideoAutoplayCTA.Basic"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"name": "Basic",
+					"namespace": "videoVideoAutoplayCTA",
+					"rolloutPercentage": 100.0,
+					"type": "CONFIGURATION_RULE",
+					"uniqueId": "887d34a0-bee7-4376-911b-b4ae02d76d33"
+				}
+			],
+			"features": [
+			],
+			"name": "Video Autoplay CTA",
+			"namespace": "video",
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "eea8729d-904f-41c7-ba18-2467f9888c81"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "AnalyticsDryRunVar1",
+	"uniqueId": "7e034902-94ea-45d9-8040-ccfc8dddfcf4"
+}

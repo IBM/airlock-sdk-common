@@ -1,0 +1,242 @@
+{
+	"maxVersion": "7.8",
+	"minVersion": "7.5",
+	"productId": "e2eaf6b5-e2e8-4662-8099-bc267327645e",
+	"root": {
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": "{\n\t\"color\":\"green\",\n\t\"size\":1,\n\t\"alert\":true,\n\t\"background\":\"white\",\n\t\"icon\":\"a.jpg\",\n\t\"text\":\"hello world\"\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "config",
+						"namespace": "contextUserLocationRegionCWR",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": "context.currentLocation.region == 'NY'"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "3a29c3d5-77ba-4049-a898-1f2acd3d6e05"
+					}
+				],
+				"defaultConfiguration": "{\n\t\"color\":\"red\",\n\t\"size\":2,\n\t\"alert\":false,\n\t\"background\":\"white\",\n\t\"icon\":\"a.jpg\",\n\t\"text\":\"welcome to hell\"\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "7.5",
+				"name": "contextUserLocationRegion",
+				"namespace": "CWR",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "1d3ed27d-6aef-454c-a571-8a155d06869c"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": "{\"color\":\"red\",\"size\":5,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to paradise\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "config",
+						"namespace": "contextWeatherLightningDistanceKmCWR",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": "context.weatherSummary.closestLightning.distance <= 5"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "0f3e5db3-a352-496b-8f9f-7dd5496c722d"
+					}
+				],
+				"defaultConfiguration": "{\"color\":\"blue\",\"size\":2,\"alert\":false,\"background\":\"red\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "7.5",
+				"name": "contextWeatherLightningDistanceKm",
+				"namespace": "CWR",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "f6875771-42c2-4b1e-a4a7-312d9d748a87"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": "{\"color\":\"green\",\"size\":2,\"alert\":false,\"background\":\"black\",\"icon\":\"b.jpg\",\"text\":\"hello world\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "config",
+						"namespace": "contextWeatherDsxTeaserTitleCWR",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": "context.testData.dsx.teaserTitle.indexOf('Tornado') != -1"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "f71940bb-0fd2-40ab-b72b-43788c22abc0"
+					},
+					{
+						"configuration": "{\"color\":\"pink\",\"size\":1,\"alert\":true,\"background\":\"brown\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "config2",
+						"namespace": "contextWeatherDsxTeaserTitleCWR",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": "context.testData.dsx.teaserTitle.indexOf('Hurricane') != -1"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "d6bf9ef0-819d-43f8-baa3-17f6641b7631"
+					}
+				],
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "7.5",
+				"name": "contextWeatherDsxTeaserTitle",
+				"namespace": "CWR",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "893e6c04-84ea-433c-8cdb-cad77219093e"
+			},
+			{
+				"additionalInfo": null,
+				"configurationRules": [
+					{
+						"configuration": "{\n\t\"color\":\"green\",\n\t\"text\":\"hello world\"\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "config1",
+						"namespace": "contextWeatherPrecipitationForecastCWR",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": "context.testData.precipitationForecast[0].eventStartLocal && context.testData.precipitationForecast[0].eventStartLocal.startsWith('2016')"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "62ac97b0-a2b3-45fc-bd10-4de1a4789ea5"
+					},
+					{
+						"configuration": "{\"color\":\"magenta\",\"size\":3,\"background\":\"black\",\"icon\":\"a.jpg\",\"text\":\"welcome to paradise\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "config2",
+						"namespace": "contextWeatherPrecipitationForecastCWR",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": "context.testData.precipitationForecast[0].eventStartLocal && context.testData.precipitationForecast[0].eventStartLocal.startsWith('2015')"
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "1a1d801b-6b60-451c-a04a-32f83df91c87"
+					}
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "7.5",
+				"name": "contextWeatherPrecipitationForecast",
+				"namespace": "CWR",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "539e7cc9-92a9-47f9-8dc4-a428f7c72559"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "790e8cac-0882-4148-ba8d-031fd1e7e5f9"
+	},
+	"seasonId": "e38ae993-3709-457f-97ed-19576a1a5d1a",
+	"version": "V2"
+}

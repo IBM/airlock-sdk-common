@@ -1,0 +1,34 @@
+{
+	"features": [
+		{
+			"additionalInfo": null,
+			"branchFeatureParentName": "ROOT",
+			"branchStatus": "NEW",
+			"configurationRules": [
+			],
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"Yoav"
+			],
+			"minAppVersion": "8.0.1",
+			"name": "ExpTest",
+			"namespace": "test",
+			"noCachedResults": false,
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "24a7d6f7-889e-41ab-a149-5b713bc4e5db"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "AnalyticsDryRunVar2",
+	"uniqueId": "c0741b4d-53db-4514-9d00-7c01c61072b1"
+}

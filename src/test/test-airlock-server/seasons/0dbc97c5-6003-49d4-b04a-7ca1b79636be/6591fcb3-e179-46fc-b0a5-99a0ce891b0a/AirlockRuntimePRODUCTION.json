@@ -1,0 +1,260 @@
+{
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"inputFieldsForAnalytics": [
+		"context.device.locale",
+		"context.device.version",
+		"context.weatherSummary.dayForecast.day.dayPartTitle",
+		"context.weatherSummary.dayForecast.day.precipType",
+		"context.weatherSummary.dayForecast.day.thunderEnum",
+		"context.weatherSummary.dayForecast.day.dayPart",
+		"context.weatherSummary.dayForecast.day.precipPercentage",
+		"context.weatherSummary.dayForecast.day.snowRange"
+	],
+	"maxVersion": null,
+	"minVersion": "7.10",
+	"productId": "0dbc97c5-6003-49d4-b04a-7ca1b79636be",
+	"productName": "QA.Product",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"minAppVersion": "7.10",
+				"name": "no.cache.f",
+				"namespace": "ns",
+				"noCachedResults": true,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.profile == \"{}\"\n"
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "10358f4c-8a3c-4a11-adba-e8c69f781c55"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"now\"\n\t},\n\t\"descriptor\":\"SUNRISE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_sunsrise_sunset_icon\"\n\t},\n\t\"analyticsTileName\":\"Sunset\/Sunrise\"\n}",
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"minAppVersion": "7.10",
+				"name": "no.cache.f2",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"sendToAnalytics": true,
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "21158d82-95d3-47dc-b19b-b5a1772718db"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+				],
+				"minAppVersion": "7.10",
+				"name": "f8",
+				"namespace": "ns",
+				"noCachedResults": true,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.viewedLocation.lon==\"US\""
+				},
+				"sendToAnalytics": true,
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "e406266b-7dab-4bc4-b173-a4e8cf24462b"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+				],
+				"minAppVersion": "7.10",
+				"name": "f9",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.viewedLocation.lon==\"CO\""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "6f1b4364-16b3-4002-a35e-98a479f2a232"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+				],
+				"minAppVersion": "7.10",
+				"name": "f10",
+				"namespace": "ns",
+				"noCachedResults": true,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.viewedLocation.lon==\"CO\""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "c8f38188-80eb-4c73-8ca0-d78b96a68eaa"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": false,
+				"features": [
+				],
+				"internalUserGroups": [
+				],
+				"minAppVersion": "7.10",
+				"name": "f7",
+				"namespace": "ns",
+				"noCachedResults": true,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.viewedLocation.lon==\"CO\";"
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "5ec5940c-e27e-42ec-8e01-638de4d7ee39"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+				],
+				"minAppVersion": "7.10",
+				"name": "override.def.val",
+				"namespace": "ns",
+				"noCachedResults": true,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": "context.viewedLocation.lon==\"US\";"
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "d7bf0138-a24e-4a66-b071-bb851f3d50d2"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+				],
+				"minAppVersion": "7.10",
+				"name": "onFeature",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "23115e33-fbe3-41dd-9a8d-8181d553207b"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "8ecaa858-bd36-4648-928f-9eefc6d47185"
+	},
+	"s3Path": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+	"seasonId": "6591fcb3-e179-46fc-b0a5-99a0ce891b0a",
+	"serverVersion": "V2.5",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

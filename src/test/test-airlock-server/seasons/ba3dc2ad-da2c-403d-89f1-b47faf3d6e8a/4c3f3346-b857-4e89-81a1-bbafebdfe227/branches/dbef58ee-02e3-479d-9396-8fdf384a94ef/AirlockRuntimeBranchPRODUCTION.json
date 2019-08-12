@@ -1,0 +1,301 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"ns.F1A",
+				"ns.F1B",
+				"ns.F1C"
+			],
+			"branchOrderingRuleItems": [
+				"nsF1.OrderingRule1",
+				"nsF1.OrderingRule2"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"features": [
+			],
+			"minAppVersion": "8.0",
+			"name": "F1",
+			"namespace": "ns",
+			"orderingRules": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchOrderingRuleItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configuration": "{\"ns.F1B\":\"1\",\"ns.F1A\":\"5.0\",\"ns.F1C\":\"10.0\"}",
+					"minAppVersion": "8.0",
+					"name": "OrderingRule1",
+					"namespace": "nsF1",
+					"orderingRules": [
+					],
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "context.userLocation.country == \"FR\""
+					},
+					"sendToAnalytics": true,
+					"type": "ORDERING_RULE",
+					"uniqueId": "b6d5be19-24c3-416a-9361-0bdd5915bbcc"
+				},
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchOrderingRuleItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configuration": "{\"ns.F1A\":\"1.0\",\"ns.F1B\":\"10.0\",\"ns.F1C\":\"5.0\"}",
+					"minAppVersion": "8.0",
+					"name": "OrderingRule2",
+					"namespace": "nsF1",
+					"orderingRules": [
+					],
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "context.userLocation.country==\"US\""
+					},
+					"sendToAnalytics": true,
+					"type": "ORDERING_RULE",
+					"uniqueId": "ab4a3d49-4fd1-4870-a905-6b1d48daddb3"
+				}
+			],
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "30b70659-15cb-40ed-bf77-15851775afbc"
+		},
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+				"nsF110.Config1.10"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"ns.F1A.10",
+				"ns.F1B.10",
+				"ns.F1C.10"
+			],
+			"branchOrderingRuleItems": [
+				"nsF1.OrderingRule1.10",
+				"nsF1.OrderingRule2.10"
+			],
+			"branchStatus": "NEW",
+			"configurationRules": [
+				{
+					"branchStatus": "NEW",
+					"configuration": "{\n\t\"value\":\"Config1.10\"\n}",
+					"configurationRules": [
+					],
+					"enabled": true,
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"minAppVersion": "8.0",
+					"name": "Config1.10",
+					"namespace": "nsF110",
+					"noCachedResults": false,
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"stage": "PRODUCTION",
+					"type": "CONFIGURATION_RULE",
+					"uniqueId": "8c9ecc6d-2394-4127-ace1-3e8836bc3655"
+				}
+			],
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": true,
+			"enabled": true,
+			"features": [
+				{
+					"additionalInfo": {
+					},
+					"branchStatus": "NEW",
+					"configurationRules": [
+					],
+					"defaultConfiguration": null,
+					"defaultIfAirlockSystemIsDown": false,
+					"enabled": true,
+					"features": [
+					],
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"minAppVersion": "8.0",
+					"name": "F1A.10",
+					"namespace": "ns",
+					"noCachedResults": false,
+					"orderingRules": [
+					],
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"stage": "PRODUCTION",
+					"type": "FEATURE",
+					"uniqueId": "f8f9e3d5-766b-45a7-92fd-0a2652e15b64"
+				},
+				{
+					"additionalInfo": {
+					},
+					"branchConfigurationRuleItems": [
+						"nsF1B10.Config1B.10"
+					],
+					"branchStatus": "NEW",
+					"configurationRules": [
+						{
+							"branchStatus": "NEW",
+							"configuration": "{\n\t\"value\":\"Config1B.10\"\n}",
+							"configurationRules": [
+							],
+							"enabled": true,
+							"internalUserGroups": [
+								"DEV",
+								"QA"
+							],
+							"minAppVersion": "8.0",
+							"name": "Config1B.10",
+							"namespace": "nsF1B10",
+							"noCachedResults": false,
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": ""
+							},
+							"stage": "PRODUCTION",
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "b83f7238-cb5a-4c14-9cd8-05a49bfbe069"
+						}
+					],
+					"defaultConfiguration": null,
+					"defaultIfAirlockSystemIsDown": true,
+					"enabled": true,
+					"features": [
+					],
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"minAppVersion": "8.0",
+					"name": "F1B.10",
+					"namespace": "ns",
+					"noCachedResults": false,
+					"orderingRules": [
+					],
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"stage": "PRODUCTION",
+					"type": "FEATURE",
+					"uniqueId": "6e869239-fe19-488b-bf9d-e5f7233eebd5"
+				},
+				{
+					"additionalInfo": {
+					},
+					"branchStatus": "NEW",
+					"configurationRules": [
+					],
+					"defaultConfiguration": null,
+					"defaultIfAirlockSystemIsDown": true,
+					"enabled": true,
+					"features": [
+					],
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"minAppVersion": "8.0",
+					"name": "F1C.10",
+					"namespace": "ns",
+					"noCachedResults": false,
+					"orderingRules": [
+					],
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"stage": "PRODUCTION",
+					"type": "FEATURE",
+					"uniqueId": "d20936f1-6cd3-4639-b7db-b20099ebe214"
+				}
+			],
+			"internalUserGroups": [
+				"DEV",
+				"QA"
+			],
+			"minAppVersion": "8.0",
+			"name": "F1.10",
+			"namespace": "ns",
+			"noCachedResults": false,
+			"orderingRules": [
+				{
+					"branchStatus": "NEW",
+					"configuration": "{\"ns.F1B.10\":\"10\",\"ns.F1A.10\":\"1.0\",\"ns.F1C.10\":\"5.0\"}",
+					"enabled": true,
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"minAppVersion": "8.0",
+					"name": "OrderingRule1.10",
+					"namespace": "nsF1",
+					"noCachedResults": false,
+					"orderingRules": [
+					],
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "context.userLocation.country == \"FR\""
+					},
+					"sendToAnalytics": true,
+					"stage": "PRODUCTION",
+					"type": "ORDERING_RULE",
+					"uniqueId": "69b63933-8b0e-4b73-b9ca-bf54634244e8"
+				},
+				{
+					"branchStatus": "NEW",
+					"configuration": "{\"ns.F1A.10\":\"10.0\",\"ns.F1B.10\":\"1.0\",\"ns.F1C.10\":\"5.0\"}",
+					"enabled": true,
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"minAppVersion": "8.0",
+					"name": "OrderingRule2.10",
+					"namespace": "nsF1",
+					"noCachedResults": false,
+					"orderingRules": [
+					],
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": "context.userLocation.country==\"US\""
+					},
+					"sendToAnalytics": true,
+					"stage": "PRODUCTION",
+					"type": "ORDERING_RULE",
+					"uniqueId": "4f6c7f07-98fa-4eac-ace1-8d0eb0bd2d54"
+				}
+			],
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "938ac196-0063-4e25-ac16-19412bea7912"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "Branch1",
+	"uniqueId": "dbef58ee-02e3-479d-9396-8fdf384a94ef"
+}

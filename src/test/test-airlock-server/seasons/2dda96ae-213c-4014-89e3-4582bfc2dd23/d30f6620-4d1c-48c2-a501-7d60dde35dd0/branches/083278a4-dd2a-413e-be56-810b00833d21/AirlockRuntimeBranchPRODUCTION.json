@@ -1,0 +1,30 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"mx.9b75a4a5-d6a0-4cdf-a9eb-98f54fae664d",
+				"mx.6b959a93-9ce8-4800-913d-23c2f176d4e0"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"features": [
+			],
+			"name": "Airlock Control Over Modules",
+			"namespace": "modules",
+			"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+			"rule": {
+				"ruleString": "true"
+			},
+			"type": "FEATURE",
+			"uniqueId": "fa8f67c4-a66e-4576-8350-1e17a849b395"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "BranchChanges",
+	"uniqueId": "083278a4-dd2a-413e-be56-810b00833d21"
+}

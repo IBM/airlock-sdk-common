@@ -1,0 +1,269 @@
+{
+	"branches": [
+	],
+	"defaultLanguage": "en",
+	"devS3Path": "https:\/\/s3.amazonaws.com\/airlockprod\/PROD1\/",
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "1.1",
+	"productId": "040ed15a-dbe4-4743-a87b-7a85c2eeb617",
+	"productName": "Android TWC Storm Radar",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": "{\n    \n}",
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": true,
+				"features": [
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": "{\n\t\"priority\":1,\n\t\"intervalInMin\":15,\n\t\"fastestIntervalInMin\":15,\n\t\"displacementInMts\":100\n}",
+						"defaultIfAirlockSystemIsDown": true,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"QA"
+						],
+						"minAppVersion": "1.4.3",
+						"name": "Location",
+						"namespace": "SensorKit",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "d31aff1d-a332-4484-a196-3669b661e941"
+					},
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": "{\n\t\"account\":\"747624766027\",\n\t\"queue\":\"events_sensor_android_storm\",\n\t\"region\":\"us-east-1\",\n\t\"accessKey\":\"AKIAJOBAAEVANVX3AFZA\",\n\t\"secretKey\":\"aobr+n0peHk\/zsCoeHBJErrD0LMBqq8ANnts2IpN\",\n\t\"intervalInMinutes\":120,\n\t\"retries\":10\n}",
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": false,
+						"features": [
+							{
+								"additionalInfo": {
+								},
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA"
+								],
+								"minAppVersion": "1.4.3",
+								"name": "Barometer",
+								"namespace": "SensorKit",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "84c3c82c-5070-4064-ae27-cd066c15f31a"
+							},
+							{
+								"additionalInfo": {
+								},
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA"
+								],
+								"minAppVersion": "1.4.3",
+								"name": "Network",
+								"namespace": "SensorKit",
+								"noCachedResults": false,
+								"orderingRules": [
+								],
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": ""
+								},
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "5de7e7fe-a0af-41a1-8cfd-ea6336d685b9"
+							}
+						],
+						"internalUserGroups": [
+							"QA"
+						],
+						"minAppVersion": "1.4.3",
+						"name": "EventQueue",
+						"namespace": "SensorKit",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "279125ca-e50b-42dd-ac4c-f2731227234b"
+					}
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"minAppVersion": "1.4.3",
+				"name": "SensorKit",
+				"namespace": "SensorKit",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "80d4dc95-256a-4602-8d2c-7286d9a89eb1"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"featureON\":false\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"Derek"
+						],
+						"minAppVersion": "1.5.2",
+						"name": "Default",
+						"namespace": "AnalyticsAnalytics",
+						"noCachedResults": false,
+						"rolloutPercentage": 30.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "d377f816-ebff-493e-8264-e40bafacdf5e"
+					}
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": true,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"Derek"
+				],
+				"minAppVersion": "1.5.2",
+				"name": "Analytics",
+				"namespace": "Analytics",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "445d88db-dade-4b3a-9766-33d8e34ce16f"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"title\":translate(\"premium.remove.ads.text\")\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"QA"
+						],
+						"minAppVersion": "2.0.0",
+						"name": "AdFreeText",
+						"namespace": "InAppPurchaseAdFreeSubscription",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "98c76bf7-42e8-46ae-a64f-c29d7dd367eb"
+					}
+				],
+				"defaultConfiguration": "{\n\t\"featureON\":true\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"Ihor Vlasyuk "
+				],
+				"minAppVersion": "1.6",
+				"name": "AdFreeSubscription",
+				"namespace": "InAppPurchase",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "e4f17990-1d1b-40f7-ba31-5d3c0e07f3ff"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "49816f5f-7651-40de-a37b-721277815ddc"
+	},
+	"s3Path": "https:\/\/s.w-x.co\/airlock\/PROD1\/",
+	"seasonId": "597fa65c-7eeb-4cc9-83d5-af06bb33f092",
+	"serverVersion": "V4.5",
+	"supportedLanguages": [
+		"en"
+	],
+	"version": "V2.5"
+}

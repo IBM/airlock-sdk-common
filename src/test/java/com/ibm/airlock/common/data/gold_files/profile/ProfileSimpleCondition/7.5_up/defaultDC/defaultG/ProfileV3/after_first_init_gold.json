@@ -1,0 +1,31 @@
+{
+  "testName": "profile",
+  "productName": "ProfileSimpleCondition",
+  "productId": "c8e22432-1f66-4283-9787-582abbdd14ce",
+  "seasonLogicalName": "7.5_up",
+  "seasonId": "9ec749ee-ff1a-4023-b2c9-6b88328d2024",
+  "deviceContextFilePath": "test_data\/profile\/ProfileSimpleCondition\/7.5_up\/device_contexts\/defaultDC.json",
+  "groupsFilePath": "test_data\/profile\/ProfileSimpleCondition\/7.5_up\/groups\/defaultG.json",
+  "profileFilePath": "test_data\/profile\/ProfileSimpleCondition\/7.5_up\/profiles\/ProfileV1.json",
+  "features": {
+    "psc.profile.locations.doc.tag": false,
+    "psc.profile.demographics.gender.positive": false,
+    "psc.profile.locations.length": false,
+    "psc.profile.locations.doc.loc.startswith": false,
+    "psc.profile.demographics.acceptedterms": false,
+    "psc.profile.locations.doc.address": false,
+    "psc.profile.demographics.firstname.lowcase ": false,
+    "psc.profile.settings.rwi": false,
+    "psc.profile.demographics.agerange": false,
+    "psc.profile.demographics.gender.negative": false,
+    "psc.profile.preferences.language": false,
+    "psc.profile.demographics.firstname.tolowercase": false,
+    "psc.profile.endpoints.status": false,
+    "psc.profile.userid": false,
+    "psc.profile.preferences.locale": false,
+    "psc.profile.demographics.email": false,
+    "psc.profile.roles": false,
+    "psc.profile.locations.doc.coordinate": false,
+    "psc.profile.demographics.firstname": false
+  }
+}

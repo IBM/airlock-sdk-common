@@ -1,0 +1,71 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+				"qaP1.config1"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"qa.f1",
+				"qa.f2",
+				"qa.f3",
+				"qa.f4",
+				"mx.79d5922e-a9d5-423e-bdaf-883117e7e593"
+			],
+			"branchOrderingRuleItems": [
+				"qaP1.rule1"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchOrderingRuleItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"minAppVersion": "8.0",
+					"name": "config1",
+					"namespace": "qaP1",
+					"rolloutPercentage": 100.0,
+					"type": "CONFIGURATION_RULE",
+					"uniqueId": "257e1f23-413b-495a-b2e4-5964da6c2336"
+				}
+			],
+			"features": [
+			],
+			"minAppVersion": "8.0",
+			"name": "P1",
+			"namespace": "qa",
+			"orderingRules": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchOrderingRuleItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"minAppVersion": "8.0",
+					"name": "rule1",
+					"namespace": "qaP1",
+					"orderingRules": [
+					],
+					"rolloutPercentage": 100.0,
+					"type": "ORDERING_RULE",
+					"uniqueId": "ac1488c0-121d-4831-9707-79d5228d0f21"
+				}
+			],
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "ec1f3c9e-7c9f-443f-822c-65e770bae17c"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "branchForConfig",
+	"uniqueId": "bcf5cca4-705b-46e5-b9bc-e0731c999489"
+}

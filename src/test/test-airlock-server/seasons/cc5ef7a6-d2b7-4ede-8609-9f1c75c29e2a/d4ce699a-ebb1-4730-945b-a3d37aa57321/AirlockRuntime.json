@@ -1,0 +1,238 @@
+{
+	"maxVersion": "7.8",
+	"minVersion": "7.5",
+	"productId": "cc5ef7a6-d2b7-4ede-8609-9f1c75c29e2a",
+	"root": {
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": "{\"color\":\"green\",\"size\":1,\"alert\":true,\"background\":\"black\",\"icon\":\"b.jpg\",\"text\":\"hello world\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "CompleteOverwrite1",
+						"namespace": "ConfigCompleteOverwriteCNR2C",
+						"noCachedResults": false,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "00f7fe48-25e0-4215-8c34-cf797ec22b0b"
+					},
+					{
+						"configuration": "{\"color\":\"yellow\",\"size\":3,\"alert\":true,\"background\":\"magenta\",\"icon\":\"c.jpg\",\"text\":\"welcome to paradise\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "CompleteOverwrite2",
+						"namespace": "ConfigCompleteOverwriteCNR2C",
+						"noCachedResults": false,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "2496a3ac-f3b4-40be-ab70-b924767121a0"
+					}
+				],
+				"defaultConfiguration": "{\n\t\"color\":\"red\",\n\t\"size\":2,\n\t\"alert\":false,\n\t\"background\":\"white\",\n\t\"icon\":\"a.jpg\",\n\t\"text\":\"welcome to hell\"\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "7.5",
+				"name": "ConfigCompleteOverwrite",
+				"namespace": "CNR2C",
+				"noCachedResults": false,
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "7010bc14-5576-45e2-b5c9-44f2c73a3f4c"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": "{\"color\":\"green\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "Overwrite1Param1",
+						"namespace": "ConfigOverwrite1ParamCNR2C",
+						"noCachedResults": false,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "63eae8c8-ecbc-4e36-b9fb-93258b90c5a4"
+					},
+					{
+						"configuration": "{\"color\":\"blue\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "Overwrite1Param2",
+						"namespace": "ConfigOverwrite1ParamCNR2C",
+						"noCachedResults": false,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "5dcfff63-56be-4da2-92d5-e3b8924f322b"
+					},
+					{
+						"configuration": "{\"color\":\"yellow\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "Overwrite1Param",
+						"namespace": "ConfigOverwrite1ParamCNR2C",
+						"noCachedResults": false,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "e749a674-b364-4763-a93a-baf47fd86001"
+					}
+				],
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "7.5",
+				"name": "ConfigOverwrite1Param",
+				"namespace": "CNR2C",
+				"noCachedResults": false,
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "1eda46a5-fe40-44c4-b710-83281eff1190"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": "{\"color\":\"green\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "OverwriteDifferentParam",
+						"namespace": "ConfigOverwriteDifferentParamCNR2C",
+						"noCachedResults": false,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "99fad1d3-92ad-48d5-a950-8f52b57eccf9"
+					},
+					{
+						"configuration": "{\"color\":\"green\",\"size\":3,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"minAppVersion": "7.5",
+						"name": "OverwriteDifferentParam2",
+						"namespace": "ConfigOverwriteDifferentParamCNR2C",
+						"noCachedResults": false,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "f9740943-e090-4581-8cf1-8db1c91c2715"
+					}
+				],
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"minAppVersion": "7.5",
+				"name": "ConfigOverwriteDifferentParam",
+				"namespace": "CNR2C",
+				"noCachedResults": false,
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "5966bbb3-5b75-43b2-a834-2bd1e02465b0"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "4f2988de-18a5-44bf-b2f6-2d25853675e1"
+	},
+	"seasonId": "d4ce699a-ebb1-4730-945b-a3d37aa57321",
+	"version": "V2"
+}

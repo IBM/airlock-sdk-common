@@ -1,0 +1,63 @@
+{
+	"features": [
+		{
+			"additionalInfo": null,
+			"branchFeatureParentName": "ROOT",
+			"branchStatus": "NEW",
+			"configurationRules": [
+			],
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+			],
+			"minAppVersion": "8.2",
+			"name": "B1.F1",
+			"namespace": "ns",
+			"noCachedResults": false,
+			"orderingRules": [
+			],
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "24ae9086-2c64-4303-a869-9c8b37ea9453"
+		},
+		{
+			"additionalInfo": null,
+			"branchFeatureParentName": "ROOT",
+			"branchStatus": "NEW",
+			"configurationRules": [
+			],
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": false,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"QA"
+			],
+			"minAppVersion": "8.2",
+			"name": "B1.F2",
+			"namespace": "ns",
+			"noCachedResults": false,
+			"orderingRules": [
+			],
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"stage": "DEVELOPMENT",
+			"type": "FEATURE",
+			"uniqueId": "7c53c283-2233-4be2-af98-60976aa79f21"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "Branch1",
+	"uniqueId": "5ade7fe0-fdde-40a6-8b76-ba5bc5705c71"
+}

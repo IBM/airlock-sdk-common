@@ -1,0 +1,291 @@
+{
+  "testName": "translation",
+  "productName": "HeadsUpAndGlobalConfigWithTranslation",
+  "productId": "9e73768e-e32d-4a3b-b7ad-08da31e2e96e",
+  "seasonLogicalName": "7.5_up",
+  "seasonId": "b0595a2e-0a0c-44dd-80bc-d77e897e51c6",
+  "deviceContextFilePath": "test_data\/translation\/HeadsUpAndGlobalConfigWithTranslation\/7.5_up\/device_contexts\/DeviceContextV1.json",
+  "groupsFilePath": "test_data\/translation\/HeadsUpAndGlobalConfigWithTranslation\/7.5_up\/groups\/defaultG.json",
+  "profileFilePath": "test_data\/translation\/HeadsUpAndGlobalConfigWithTranslation\/7.5_up\/profiles\/ProfileV1.json",
+  "root": {
+    "features": [
+      {
+        "featureAttributes": "{}",
+        "features": [
+          {
+            "features": [
+              {
+                "featureAttributes": "{\"analyticsTileName\":\"Sunset\\\/Sunrise\",\"icon\":{\"resourceName\":\"home_sunrise\"},\"clickthrough\":{\"destination\":\"now\"},\"descriptor\":\"Lever soleilin French\",\"value\":\"\",\"tiletype\":\"datapoint\"}",
+                "features": [
+                ],
+                "isON": true,
+                "name": "headsup.Sunrise Sunset Message",
+                "resultTrace": "",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "headsup.Real Time Lightning",
+                "resultTrace": "Rule returned false",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "headsup.Winter Storm Impacted Now",
+                "resultTrace": "Rule returned false",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "headsup.Radar",
+                "resultTrace": "Rule returned false",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "headsup.Top Video",
+                "resultTrace": "Rule returned false",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{\"analyticsTileName\":\"Precip Start\",\"icon\":{\"resourceName\":\"home_rain_start_stop\"},\"clickthrough\":{\"destination\":\"hourly\"},\"descriptor\":\"PRECIPITATION\",\"value\":\"\",\"tiletype\":\"datapoint\"}",
+                "features": [
+                ],
+                "isON": true,
+                "name": "headsup.Precip Start",
+                "resultTrace": "",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "headsup.Precip End",
+                "resultTrace": "Rule returned false",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{\"analyticsTileName\":\"Snow Accumulation\",\"icon\":{\"resourceName\":\"home_snow\"},\"clickthrough\":{\"destination\":\"winter_storm\"},\"descriptor\":\"THE ACCUMULATION\",\"value\":\"\",\"tiletype\":\"datapoint\"}",
+                "features": [
+                ],
+                "isON": true,
+                "name": "headsup.Forecasted Snow Accumulation",
+                "resultTrace": "",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "headsup.Winter Storm Forecast",
+                "resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "headsup.Road Conditions",
+                "resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "headsup.Tomorrow Forecast",
+                "resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "headsup.Weekend Forecast",
+                "resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "headsup.Breaking News Video",
+                "resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+                "type": "FEATURE"
+              }
+            ],
+            "maxFeaturesOn": 3,
+            "name": "mx.a40fb163-c387-46d4-a3e5-838a941f6972",
+            "type": "MUTUAL_EXCLUSION_GROUP"
+          }
+        ],
+        "isON": true,
+        "name": "headsup.HeadsUp",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": "{}",
+        "features": [
+          {
+            "features": [
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "modules.Current Conditions",
+                "resultTrace": "Product version is outside of feature version range",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "modules.Breaking News",
+                "resultTrace": "Product version is outside of feature version range",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "modules.Right Now",
+                "resultTrace": "Product version is outside of feature version range",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "modules.Hourly",
+                "resultTrace": "Product version is outside of feature version range",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "modules.Daily",
+                "resultTrace": "Product version is outside of feature version range",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "modules.Video",
+                "resultTrace": "Product version is outside of feature version range",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "modules.Radar Maps",
+                "resultTrace": "Product version is outside of feature version range",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "modules.Road Conditions",
+                "resultTrace": "Product version is outside of feature version range",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "modules.News",
+                "resultTrace": "Product version is outside of feature version range",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "modules.Health",
+                "resultTrace": "Product version is outside of feature version range",
+                "type": "FEATURE"
+              },
+              {
+                "featureAttributes": "{}",
+                "features": [
+                ],
+                "isON": false,
+                "name": "modules.Outdoor",
+                "resultTrace": "Product version is outside of feature version range",
+                "type": "FEATURE"
+              }
+            ],
+            "maxFeaturesOn": 12,
+            "name": "mx.7f04341c-c123-4a1e-a2f6-07e92994a52a",
+            "type": "MUTUAL_EXCLUSION_GROUP"
+          }
+        ],
+        "isON": true,
+        "name": "modules.Airlock Control Over Modules",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": "{}",
+        "features": [
+          {
+            "featureAttributes": "{}",
+            "features": [
+            ],
+            "isON": false,
+            "name": "ads.Main Feed Ads",
+            "resultTrace": "Product version is outside of feature version range",
+            "type": "FEATURE"
+          }
+        ],
+        "isON": true,
+        "name": "ads.Airlock Control Over Ads",
+        "resultTrace": "",
+        "type": "FEATURE"
+      },
+      {
+        "featureAttributes": "{\"distance\":\"KM\",\"display\":\"Aujourd\\\\'hui\"}",
+        "features": [
+        ],
+        "isON": true,
+        "name": "tr.Distance",
+        "resultTrace": "",
+        "type": "FEATURE"
+      }
+    ],
+    "type": "ROOT",
+    "uniqueId": "2d15a13b-bd44-4b2f-a89a-3c1df7ab83a0"
+  }
+}

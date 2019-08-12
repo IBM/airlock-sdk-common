@@ -1,0 +1,14 @@
+{
+	"codeIdentifier": "TestJavaSDK",
+	"name": "TestJavaSDK",
+	"seasons": [
+		{
+			"lastModified": 1522596052737,
+			"maxVersion": null,
+			"minVersion": "9",
+			"productId": "cdd52d55-df5d-4375-ac41-1086e4f1c7a3",
+			"uniqueId": "fe26411e-fd45-4fc3-aef0-63dc154bc009"
+		}
+	],
+	"uniqueId": "cdd52d55-df5d-4375-ac41-1086e4f1c7a3"
+}

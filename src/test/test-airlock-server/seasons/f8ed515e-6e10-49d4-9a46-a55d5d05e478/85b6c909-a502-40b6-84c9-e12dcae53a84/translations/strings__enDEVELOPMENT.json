@@ -1,0 +1,11 @@
+{
+	"mostRecentTranslation": 1504082738826,
+	"strings": {
+		"General.TODAY": "Today",
+		"General.TONIGHT": "Tonight",
+		"General.Today": "TODAY",
+		"General.Tomorrow": "TOMORROW",
+		"General.TomorrowTitleCase": "Tomorrow",
+		"HeadsUp.WinterStormPossibleTitleCase": "Winter storm possible "
+	}
+}

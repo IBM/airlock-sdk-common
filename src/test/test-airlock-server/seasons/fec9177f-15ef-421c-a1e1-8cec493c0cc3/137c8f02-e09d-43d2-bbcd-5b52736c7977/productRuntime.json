@@ -1,0 +1,21 @@
+{
+	"codeIdentifier": "QA.WhiteListAndroid",
+	"name": "QA.WhiteListAndroid",
+	"seasons": [
+		{
+			"lastModified": 1543491347483,
+			"maxVersion": "2.0",
+			"minVersion": "1.0",
+			"productId": "fec9177f-15ef-421c-a1e1-8cec493c0cc3",
+			"uniqueId": "137c8f02-e09d-43d2-bbcd-5b52736c7977"
+		},
+		{
+			"lastModified": 1493106850220,
+			"maxVersion": null,
+			"minVersion": "2.0",
+			"productId": "fec9177f-15ef-421c-a1e1-8cec493c0cc3",
+			"uniqueId": "889659f2-8896-4228-99e6-77c84fa2750d"
+		}
+	],
+	"uniqueId": "fec9177f-15ef-421c-a1e1-8cec493c0cc3"
+}

@@ -1,0 +1,88 @@
+{
+	"creationDate": 1527104460521,
+	"creator": "Karthik Velappan-Airlock",
+	"description": null,
+	"features": [
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+				"GDPRPrivacy.Translated Configuration"
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchOrderingRuleItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchOrderingRuleItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configuration": "{\n\t\"uiConfiguration\":{\n\t\t\"fast-path-screen\":{\n\t\t\t\n\t\t},\n\t\t\"review-settings-screen\":{\n\t\t\t\n\t\t}\n\t}\n}",
+					"configurationRules": [
+					],
+					"creationDate": 1520543318766,
+					"creator": "Gabriel Cortinas",
+					"description": "The UI configuration of the GDPR with all translations applied.",
+					"enabled": true,
+					"internalUserGroups": [
+						"GDPR"
+					],
+					"lastModified": 1525971408559,
+					"minAppVersion": "1.4.2",
+					"name": "Translated Configuration",
+					"namespace": "GDPRPrivacy",
+					"noCachedResults": false,
+					"owner": "Gabriel Cortinas",
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+					"stage": "DEVELOPMENT",
+					"type": "CONFIGURATION_RULE",
+					"uniqueId": "1606809f-56aa-4193-bfb3-45ab2d616afb"
+				}
+			],
+			"configurationSchema": null,
+			"creationDate": 1515513774824,
+			"creator": "Krishna Gudipati",
+			"defaultConfiguration": "{\n\t\"showConsentsUserInterface\":true,\n\t\"cmsRefreshInterval\":1,\n\t\"dsrHost\":\"weather.com\"\n}",
+			"defaultIfAirlockSystemIsDown": true,
+			"description": "",
+			"displayName": null,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"GDPR"
+			],
+			"lastModified": 1527104482009,
+			"minAppVersion": "1.4.3",
+			"name": "Privacy",
+			"namespace": "GDPR",
+			"noCachedResults": false,
+			"orderingRules": [
+			],
+			"owner": "Krishna Gudipati",
+			"rolloutPercentage": 100.0,
+			"rule": {
+				"ruleString": ""
+			},
+			"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "e6e6f2bb-acdb-49d8-9457-1293678a6fd6"
+		}
+	],
+	"lastModified": 1527104460521,
+	"name": "cmsrefreshtime",
+	"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+	"uniqueId": "edbe3471-7026-4021-9024-f0acf46ee82e"
+}

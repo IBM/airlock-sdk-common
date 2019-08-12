@@ -1,0 +1,51 @@
+{
+	"creationDate": 1504447742932,
+	"creator": "Elik Katz",
+	"description": null,
+	"features": [
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"configurationSchema": null,
+			"creationDate": 1497525393391,
+			"creator": "Philip",
+			"defaultConfiguration": "{\n\t\"text\":\"master\"\n}",
+			"defaultIfAirlockSystemIsDown": false,
+			"description": "F21 desc 1",
+			"displayName": null,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"QA",
+				"DEV"
+			],
+			"lastModified": 1499155060256,
+			"minAppVersion": "0.1",
+			"name": "F1",
+			"namespace": "ns1",
+			"noCachedResults": false,
+			"owner": "Norman",
+			"rolloutPercentage": 10.0,
+			"rule": {
+				"ruleString": "true"
+			},
+			"seasonId": "4e7164b6-9665-427e-971b-f53319b12316",
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "e734c7df-3f39-4c17-b549-08b29a451700"
+		}
+	],
+	"lastModified": 1504447742932,
+	"name": "bRANCH 4",
+	"seasonId": "4e7164b6-9665-427e-971b-f53319b12316",
+	"uniqueId": "ee41c1d3-5b39-40cc-bca0-f2ff142e8d59"
+}

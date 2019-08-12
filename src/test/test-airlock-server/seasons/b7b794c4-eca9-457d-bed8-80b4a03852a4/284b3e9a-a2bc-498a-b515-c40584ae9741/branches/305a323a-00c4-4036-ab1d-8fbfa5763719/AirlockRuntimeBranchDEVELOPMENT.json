@@ -1,0 +1,228 @@
+{
+	"features": [
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"mx.0480b9b5-6cb3-4e0e-89e4-74e9ecbd78a4"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"features": [
+				{
+					"branchFeaturesItems": [
+						"ns.SubFeatureInMTX1",
+						"ns.SubFeatureInMTX2"
+					],
+					"branchStatus": "NEW",
+					"features": [
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"defaultConfiguration": "{\n\t\t\"value\":\"SubFeatureInMTX1Branch\"\n}",
+							"features": [
+							],
+							"minAppVersion": "1.0",
+							"name": "SubFeatureInMTX1",
+							"namespace": "ns",
+							"rolloutPercentage": 100.0,
+							"type": "FEATURE",
+							"uniqueId": "28a56208-55a2-4e5c-bcf4-cf858798e134"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"defaultConfiguration": "{\n\t\t\"value\":\"SubFeatureInMTX2Branch\"\n}",
+							"features": [
+							],
+							"minAppVersion": "1.0",
+							"name": "SubFeatureInMTX2",
+							"namespace": "ns",
+							"rolloutPercentage": 100.0,
+							"type": "FEATURE",
+							"uniqueId": "775eba87-896f-4d33-8f48-47199f3fd5e7"
+						}
+					],
+					"maxFeaturesOn": 1,
+					"type": "MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "0480b9b5-6cb3-4e0e-89e4-74e9ecbd78a4"
+				}
+			],
+			"minAppVersion": "1.0",
+			"name": "ParentFeatureWithMTX",
+			"namespace": "ns",
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "b2531db8-b3cb-4411-84b7-42bf46b3d969"
+		},
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"ns.SubFeature1a",
+				"ns.SubFeature2a"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"features": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"defaultConfiguration": "{\n\t\"value\":\"SubFeature1aBranch\"\n}",
+					"features": [
+					],
+					"minAppVersion": "1.0",
+					"name": "SubFeature1a",
+					"namespace": "ns",
+					"rolloutPercentage": 100.0,
+					"stage": "DEVELOPMENT",
+					"type": "FEATURE",
+					"uniqueId": "26dd95d1-2473-4864-a6c6-8ba8706d9c31"
+				},
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"defaultConfiguration": "{\n\t\"value\":\"SubFeature2aBranch\"\n}",
+					"features": [
+					],
+					"minAppVersion": "1.0",
+					"name": "SubFeature2a",
+					"namespace": "ns",
+					"rolloutPercentage": 100.0,
+					"type": "FEATURE",
+					"uniqueId": "22ac2d52-564e-4ff3-bd2f-46f08471ad94"
+				}
+			],
+			"minAppVersion": "1.0",
+			"name": "ParentFeatureWithSubFeatures",
+			"namespace": "ns",
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "59108718-9500-4d81-9d6e-bbe269f767d0"
+		},
+		{
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"mx.418d7efc-7468-4bad-8620-967daa189ccf",
+				"ns.SubFeatureInMTX12"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"features": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+						"ns.SubFeatureInMTX3",
+						"ns.SubFeatureInMTX22"
+					],
+					"branchStatus": "CHECKED_OUT",
+					"features": [
+						{
+							"additionalInfo": {
+							},
+							"branchStatus": "NEW",
+							"configurationRules": [
+							],
+							"defaultConfiguration": "{\n\t\"value\":\"SubFeatureInMTX3\"\n}",
+							"defaultIfAirlockSystemIsDown": false,
+							"enabled": true,
+							"features": [
+							],
+							"internalUserGroups": [
+								"DEV",
+								"QA"
+							],
+							"minAppVersion": "5.0",
+							"name": "SubFeatureInMTX3",
+							"namespace": "ns",
+							"noCachedResults": false,
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": ""
+							},
+							"stage": "DEVELOPMENT",
+							"type": "FEATURE",
+							"uniqueId": "003e75fe-680b-4895-9c2d-4f7138669b9f"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"features": [
+							],
+							"minAppVersion": "1.0",
+							"name": "SubFeatureInMTX22",
+							"namespace": "ns",
+							"rolloutPercentage": 100.0,
+							"type": "FEATURE",
+							"uniqueId": "cb8d5e60-5c7c-4b09-929d-4953a964d3de"
+						}
+					],
+					"maxFeaturesOn": 1,
+					"type": "MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "418d7efc-7468-4bad-8620-967daa189ccf"
+				},
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"defaultConfiguration": "{\n\t\"value\":\"SubFeatureInMTX1\"\n}",
+					"features": [
+					],
+					"minAppVersion": "1.0",
+					"name": "SubFeatureInMTX12",
+					"namespace": "ns",
+					"rolloutPercentage": 100.0,
+					"type": "FEATURE",
+					"uniqueId": "0e648bc7-20de-4233-b3be-223559f0d311"
+				}
+			],
+			"minAppVersion": "1.0",
+			"name": "ParentFeatureWithMTX2",
+			"namespace": "ns",
+			"rolloutPercentage": 100.0,
+			"type": "FEATURE",
+			"uniqueId": "330abc4b-6846-47cb-8bd4-1f4bb2eb49c5"
+		}
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"name": "branch2",
+	"uniqueId": "305a323a-00c4-4036-ab1d-8fbfa5763719"
+}

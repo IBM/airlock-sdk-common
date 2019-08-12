@@ -1,0 +1,21 @@
+{
+	"codeIdentifier": "QA.ExpMinVersionRegTest",
+	"name": "QA.ExpMinVersionRegTest",
+	"seasons": [
+		{
+			"lastModified": 1509269246851,
+			"maxVersion": "8.5",
+			"minVersion": "8.2",
+			"productId": "4c75af7a-a7d6-4057-aad0-f37adad829de",
+			"uniqueId": "141b5b40-9ba0-4d44-bb02-06aa20018615"
+		},
+		{
+			"lastModified": 1509270437647,
+			"maxVersion": null,
+			"minVersion": "8.5",
+			"productId": "4c75af7a-a7d6-4057-aad0-f37adad829de",
+			"uniqueId": "9e3b4ec9-70c1-427d-a92d-244fb869ca6f"
+		}
+	],
+	"uniqueId": "4c75af7a-a7d6-4057-aad0-f37adad829de"
+}

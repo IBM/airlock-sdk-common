@@ -1,0 +1,56 @@
+{
+	"creationDate": 1506275719597,
+	"creator": "Esteban Zia",
+	"description": null,
+	"features": [
+		{
+			"additionalInfo": {
+			},
+			"branchConfigurationRuleItems": [
+			],
+			"branchFeatureParentName": "ROOT",
+			"branchFeaturesItems": [
+				"mx.9b75a4a5-d6a0-4cdf-a9eb-98f54fae664d",
+				"mx.6b959a93-9ce8-4800-913d-23c2f176d4e0"
+			],
+			"branchStatus": "CHECKED_OUT",
+			"configurationRules": [
+			],
+			"configurationSchema": null,
+			"creationDate": 1484653283355,
+			"creator": "Denis Voloshin",
+			"defaultConfiguration": null,
+			"defaultIfAirlockSystemIsDown": true,
+			"description": "",
+			"displayName": null,
+			"enabled": true,
+			"features": [
+			],
+			"internalUserGroups": [
+				"DEV",
+				"QA",
+				"Activation",
+				"Adina"
+			],
+			"lastModified": 1506327720741,
+			"minAppVersion": "8.0.1",
+			"name": "Airlock Control Over Modules",
+			"namespace": "modules",
+			"noCachedResults": false,
+			"owner": "Denis Voloshin",
+			"rolloutPercentage": 100.0,
+			"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+			"rule": {
+				"ruleString": "true"
+			},
+			"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+			"stage": "PRODUCTION",
+			"type": "FEATURE",
+			"uniqueId": "fa8f67c4-a66e-4576-8350-1e17a849b395"
+		}
+	],
+	"lastModified": 1506275719597,
+	"name": "BranchChanges",
+	"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+	"uniqueId": "083278a4-dd2a-413e-be56-810b00833d21"
+}

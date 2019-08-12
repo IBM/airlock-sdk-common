@@ -1,0 +1,14 @@
+{
+	"codeIdentifier": "ExperimentsAndVariantsPercentage",
+	"name": "ExperimentsAndVariantsPercentage",
+	"seasons": [
+		{
+			"lastModified": 1511101227208,
+			"maxVersion": null,
+			"minVersion": "9.0",
+			"productId": "e5a3759a-6be6-4791-aac0-62a658706d53",
+			"uniqueId": "3a48de16-0ed5-4091-9d02-a4fcb73300c0"
+		}
+	],
+	"uniqueId": "e5a3759a-6be6-4791-aac0-62a658706d53"
+}

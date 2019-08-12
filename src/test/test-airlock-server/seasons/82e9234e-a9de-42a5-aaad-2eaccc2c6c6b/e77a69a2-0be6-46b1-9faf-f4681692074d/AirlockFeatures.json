@@ -1,0 +1,1365 @@
+{
+	"maxVersion": null,
+	"minVersion": "1.1",
+	"productId": "82e9234e-a9de-42a5-aaad-2eaccc2c6c6b",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1499082169014,
+				"creator": "Dmytro Shcherbiak",
+				"defaultConfiguration": "{\n\t\"blacklist\":[\"cn\",\n\t\"jp\",\n\t\"za\",\n\t\"kr\",\n\t\"zm\"],\n\t\"realtimeAlertsEnabled\":[\"gb\",\n\t\"ie\",\n\t\"fr\",\n\t\"de\",\n\t\"be\",\n\t\"nl\",\n\t\"ch\",\n\t\"lu\",\n\t\"ca\",\n\t\"us\"],\n\t\"severeAlertsEnabled\":[\"us\",\n\t\"xa\",\n\t\"gb\",\n\t\"at\",\n\t\"ba\",\n\t\"be\",\n\t\"bg\",\n\t\"ch\",\n\t\"cy\",\n\t\"cz\",\n\t\"de\",\n\t\"dk\",\n\t\"ee\",\n\t\"es\",\n\t\"fi\",\n\t\"fr\",\n\t\"gr\",\n\t\"hr\",\n\t\"hu\",\n\t\"ie\",\n\t\"is\",\n\t\"it\",\n\t\"lu\",\n\t\"lv\",\n\t\"mk\",\n\t\"mt\",\n\t\"me\",\n\t\"nl\",\n\t\"no\",\n\t\"pl\",\n\t\"pt\",\n\t\"ro\",\n\t\"rs\",\n\t\"se\",\n\t\"si\",\n\t\"sk\"]\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"displayName": "",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"iOS_Storm_Radar"
+				],
+				"lastModified": 1502486324239,
+				"minAppVersion": "1.1.0",
+				"name": "Push Notifications",
+				"namespace": "PushConfiguration",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Dmytro Shcherbiak",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "0a745d03-1dda-4edb-92b5-41e328d2de31"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1502906741908,
+				"creator": "Curtis Halbrook",
+				"defaultConfiguration": "{\n\t\"productKeys\":[\"618\"]\n}",
+				"defaultIfAirlockSystemIsDown": true,
+				"description": "",
+				"displayName": "Hide Layers During Animation",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"iOS_Storm_Radar"
+				],
+				"lastModified": 1504713030705,
+				"minAppVersion": "1.2.0",
+				"name": "HideDuringAnimation",
+				"namespace": "Layer",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Curtis Halbrook",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "3fd0ba73-25e6-4f4a-bd82-d66be178f51e"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"useNative\":false,\n\t\"throttle\":100,\n\t\"launches\":2\n}",
+						"configurationRules": [
+						],
+						"creationDate": 1504713796681,
+						"creator": "Qaish Kanchwala",
+						"description": "This is used to test smart ratings prompt",
+						"enabled": true,
+						"internalUserGroups": [
+							"IOS_Storm_Radar_QA"
+						],
+						"lastModified": 1520439127283,
+						"minAppVersion": "1.4.1",
+						"name": "Smart Ratings Test",
+						"namespace": "RatingsSmartRatings",
+						"noCachedResults": true,
+						"owner": "Qaish Kanchwala",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "07d43db6-4c7c-4134-994a-aecf98043a2a"
+					},
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"itunesPath\":\"https:\/\/itunes.apple.com\/us\/app\/storm-radar-with-noaa-weather\/id1216396545?mt=8&action=write-review\"\n}",
+						"configurationRules": [
+						],
+						"creationDate": 1519755439981,
+						"creator": "Curtis Halbrook",
+						"description": "Adds a configuration value to change the path to iTunes for ratings",
+						"enabled": true,
+						"internalUserGroups": [
+							"STORMRADAR-539"
+						],
+						"lastModified": 1520439095118,
+						"minAppVersion": "1.4.1",
+						"name": "Path Configuration",
+						"namespace": "RatingsSmartRatings",
+						"noCachedResults": false,
+						"owner": "Curtis Halbrook",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"stage": "PRODUCTION",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "c1fef3fd-ab52-4f13-a209-c0846f28a788"
+					}
+				],
+				"configurationSchema": null,
+				"creationDate": 1502909590298,
+				"creator": "Curtis Halbrook",
+				"defaultConfiguration": "{\n\t\"useNative\":false,\n\t\"throttle\":100,\n\t\"launches\":4\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "By default, will use custom Smart Ratings system until Apple uses its way of shutting that whole thing down. Turned on 9\/11\/18 100%",
+				"displayName": null,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"iOS_Storm_Radar"
+				],
+				"lastModified": 1539017944867,
+				"minAppVersion": "2.0",
+				"name": "Smart Ratings",
+				"namespace": "Ratings",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Curtis Halbrook",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": "context.device.daysSinceAppInstall <= 30\n&& context.device.daysSinceAppInstall >= 270;"
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "c20432a0-566b-412d-9900-b3bac89ab497"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"useQA\":true\n}",
+						"configurationRules": [
+						],
+						"creationDate": 1504029368381,
+						"creator": "Curtis Halbrook",
+						"description": "Uses the QA server for Radar Images - DO NOT MOVE TO PRODUCTION  - THIS WILL BREAK THE APP",
+						"enabled": true,
+						"internalUserGroups": [
+							"IOS_Storm_Radar_QA"
+						],
+						"lastModified": 1504713080419,
+						"minAppVersion": "1.2.0",
+						"name": "UseQA",
+						"namespace": "EnvironmentSUNServer",
+						"noCachedResults": false,
+						"owner": "Curtis Halbrook",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "3f1baa26-61ec-4b12-a5a2-11f3a850259e"
+					}
+				],
+				"configurationSchema": null,
+				"creationDate": 1504027552867,
+				"creator": "Curtis Halbrook",
+				"defaultConfiguration": "{\n\t\"useQA\":false\n}",
+				"defaultIfAirlockSystemIsDown": true,
+				"description": "Settings values for Pangea.",
+				"displayName": "Pangea Settings",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"iOS_Storm_Radar"
+				],
+				"lastModified": 1504713127756,
+				"minAppVersion": "1.2.0",
+				"name": "PangeaSettings",
+				"namespace": "Environment",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Curtis Halbrook",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "adce36fb-abb9-48b5-a17f-5306c572a814"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1505303636363,
+				"creator": "Curtis Halbrook",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": true,
+				"description": "Ad Configuration Items",
+				"displayName": "",
+				"enabled": true,
+				"features": [
+					{
+						"branchStatus": "NONE",
+						"features": [
+							{
+								"branchStatus": "NONE",
+								"features": [
+									{
+										"additionalInfo": {
+										},
+										"branchStatus": "NONE",
+										"configurationRules": [
+										],
+										"configurationSchema": null,
+										"creationDate": 1505303817175,
+										"creator": "Curtis Halbrook",
+										"defaultConfiguration": "{\n\t\"iPad\":[{\n\t\t\"adUnitPrefixes\":[{\n\t\t\t\"region\":\"US\",\n\t\t\t\"language\":\"en\",\n\t\t\t\"adUnitPrefix\":\"\/7646\/app_stormradar_ipad\/\"\n\t\t},\n\t\t{\n\t\t\t\"region\":\"US\",\n\t\t\t\"language\":\"es\",\n\t\t\t\"adUnitPrefix\":\"\/7646\/app_stormradar_ipad_us_es\/\"\n\t\t},\n\t\t{\n\t\t\t\"region\":\"*\",\n\t\t\t\"language\":\"*\",\n\t\t\t\"adUnitPrefix\":\"\/7646\/app_stormradar_ipad_intl\/\"\n\t\t}]\n\t},\n\t{\n\t\t\"adSlots\":[{\n\t\t\t\"slotName\":\"weather.radar\",\n\t\t\t\"adUnitSuffix\":\"radar\",\n\t\t\t\"parameters\":[{\n\t\t\t\t\"name\":\"pos\",\n\t\t\t\t\"value\":\"ipad_728\"\n\t\t\t}],\n\t\t\t\"static_parms\":{\n\t\t\t\t\"plat\":\"stormradar_ipad\",\n\t\t\t\t\"pos\":\"ipad_728\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"slotName\":\"weather.radar.alerts\",\n\t\t\t\"adUnitSuffix\":\"radar\/alerts\",\n\t\t\t\"parameters\":[{\n\t\t\t\t\"name\":\"pos\",\n\t\t\t\t\"value\":\"ipad_728\"\n\t\t\t}],\n\t\t\t\"static_parms\":{\n\t\t\t\t\"plat\":\"stormradar_ipad\",\n\t\t\t\t\"pos\":\"ipad_728\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"slotName\":\"weather.radar.currentcond\",\n\t\t\t\"adUnitSuffix\":\"radar\/currentcond\",\n\t\t\t\"parameters\":[{\n\t\t\t\t\"name\":\"pos\",\n\t\t\t\t\"value\":\"ipad_728\"\n\t\t\t}],\n\t\t\t\"static_parms\":{\n\t\t\t\t\"plat\":\"stormradar_ipad\",\n\t\t\t\t\"pos\":\"ipad_728\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"slotName\":\"weather.radar.expandedcond\",\n\t\t\t\"adUnitSuffix\":\"radar\/expandedcond\",\n\t\t\t\"parameters\":[{\n\t\t\t\t\"name\":\"pos\",\n\t\t\t\t\"value\":\"ipad_728\"\n\t\t\t}],\n\t\t\t\"static_parms\":{\n\t\t\t\t\"plat\":\"stormradar_ipad\",\n\t\t\t\t\"pos\":\"ipad_728\"\n\t\t\t}\n\t\t}]\n\t}],\n\t\"iPhone\":[{\n\t\t\"adUnitPrefixes\":[{\n\t\t\t\"region\":\"US\",\n\t\t\t\"language\":\"en\",\n\t\t\t\"adUnitPrefix\":\"\/7646\/app_stormradar_iphone\/\"\n\t\t},\n\t\t{\n\t\t\t\"region\":\"US\",\n\t\t\t\"language\":\"es\",\n\t\t\t\"adUnitPrefix\":\"\/7646\/app_stormradar_iphone_us_es\/\"\n\t\t},\n\t\t{\n\t\t\t\"region\":\"*\",\n\t\t\t\"language\":\"*\",\n\t\t\t\"adUnitPrefix\":\"\/7646\/app_stormradar_iphone_intl\/\"\n\t\t}]\n\t},\n\t{\n\t\t\"adSlots\":[{\n\t\t\t\"slotName\":\"weather.radar\",\n\t\t\t\"adUnitSuffix\":\"radar\",\n\t\t\t\"parameters\":[{\n\t\t\t\t\"name\":\"pos\",\n\t\t\t\t\"value\":\"top300\"\n\t\t\t}],\n\t\t\t\"static_parms\":{\n\t\t\t\t\"plat\":\"stormradar_iphone\",\n\t\t\t\t\"pos\":\"top300\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"slotName\":\"weather.radar.alerts\",\n\t\t\t\"adUnitSuffix\":\"radar\/alerts\",\n\t\t\t\"parameters\":[{\n\t\t\t\t\"name\":\"pos\",\n\t\t\t\t\"value\":\"top300\"\n\t\t\t}],\n\t\t\t\"static_parms\":{\n\t\t\t\t\"plat\":\"stormradar_iphone\",\n\t\t\t\t\"pos\":\"top300\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"slotName\":\"weather.radar.currentcond\",\n\t\t\t\"adUnitSuffix\":\"radar\/currentcond\",\n\t\t\t\"parameters\":[{\n\t\t\t\t\"name\":\"pos\",\n\t\t\t\t\"value\":\"top300\"\n\t\t\t}],\n\t\t\t\"static_parms\":{\n\t\t\t\t\"plat\":\"stormradar_iphone\",\n\t\t\t\t\"pos\":\"top300\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"slotName\":\"weather.radar.expandedcond\",\n\t\t\t\"adUnitSuffix\":\"radar\/expandedcond\",\n\t\t\t\"parameters\":[{\n\t\t\t\t\"name\":\"pos\",\n\t\t\t\t\"value\":\"top300\"\n\t\t\t}],\n\t\t\t\"static_parms\":{\n\t\t\t\t\"plat\":\"stormradar_iphone\",\n\t\t\t\t\"pos\":\"top300\"\n\t\t\t}\n\t\t}]\n\t}],\n\t\"gpt_url\":{\n\t\t\"umuri\":\"UMADPARAMiu=%%adunit%%&UMPTPARAMcust_params=sz%3D%%sz%%%26pos%3D%%pos%%%26tile%3D%%tile%%%26cc%3D%%cc%%%26st%3D%%st%%%26zip%3D%%zip%%%26dma%3D%%dma%%%26cid%3D%%cid%%%26tmpr%3D%%tmpr%%%26tmp%3D%%tmp%%%26cnd%3D%%cnd%%%26locale%3D%%locale%%%26dvice%3D%%dvice%%%26ver%3D%%ver%%%26plln%3D%%plln%%%26wind%3D%%wind%%%26uv%3D%%uv%%%26hmid%3D%%hmid%%%26lat%3D%%lat%%%26lng%3D%%lng%%%26piq%3D%%piq%%%26zcs%3D%%zcs%%%26sg%3D%%SEGMENT%%%26faud%3D%%FAUD%%%26mlayer%3D%%MLAYER%%\"\n\t}\n}",
+										"defaultIfAirlockSystemIsDown": true,
+										"description": "The configuration for the ad system",
+										"displayName": null,
+										"enabled": true,
+										"features": [
+										],
+										"internalUserGroups": [
+											"iOS_Storm_Radar"
+										],
+										"lastModified": 1507068269358,
+										"minAppVersion": "1.3.0",
+										"name": "Slot Configuration",
+										"namespace": "Ads",
+										"noCachedResults": false,
+										"orderingRules": [
+										],
+										"owner": "Curtis Halbrook",
+										"rolloutPercentage": 100.0,
+										"rule": {
+											"ruleString": ""
+										},
+										"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+										"stage": "PRODUCTION",
+										"type": "FEATURE",
+										"uniqueId": "a7e15799-fba4-46f0-89fc-d14db55e9218"
+									}
+								],
+								"lastModified": 1505305848925,
+								"maxFeaturesOn": 1,
+								"orderingRules": [
+								],
+								"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+								"type": "MUTUAL_EXCLUSION_GROUP",
+								"uniqueId": "79acbb0b-5275-412d-b68b-55302f1887d8"
+							}
+						],
+						"lastModified": 1505304116697,
+						"maxFeaturesOn": 1,
+						"orderingRules": [
+						],
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"type": "MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "2edced82-fd51-47bd-ba8e-96c001c34ba6"
+					},
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1506017853412,
+						"creator": "Curtis Halbrook",
+						"defaultConfiguration": "{\n\t\"refresh\":30,\n\t\"lockout\":3\n}",
+						"defaultIfAirlockSystemIsDown": true,
+						"description": "Sets the refresh times for user idle and lockout behavior",
+						"displayName": null,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"iOS_Storm_Radar"
+						],
+						"lastModified": 1507068278806,
+						"minAppVersion": "1.3.0",
+						"name": "Refresh Times",
+						"namespace": "Ads",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"owner": "Curtis Halbrook",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "f7ae243b-e031-4602-a4af-4b89b95659e4"
+					}
+				],
+				"internalUserGroups": [
+					"iOS_Storm_Radar"
+				],
+				"lastModified": 1507068257140,
+				"minAppVersion": "1.3.0",
+				"name": "Ads Configuration",
+				"namespace": "Ads",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Curtis Halbrook",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "9a81db55-c402-42ef-b62c-fd9d8b6b1f64"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1505815581209,
+				"creator": "Dmytro Shcherbiak",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"displayName": null,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"iOS_Storm_Radar"
+				],
+				"lastModified": 1507065570685,
+				"minAppVersion": "1.3.0",
+				"name": "Forecast15Days",
+				"namespace": "Forecasts",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Dmytro Shcherbiak",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "0e34cdb7-4af7-4e0e-ba9b-4d519bc35ced"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1505918047861,
+				"creator": "Dmytro Shcherbiak",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"displayName": null,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"iOS_Storm_Radar"
+				],
+				"lastModified": 1507065582467,
+				"minAppVersion": "1.3.0",
+				"name": "Forecast48Hours",
+				"namespace": "Forecasts",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Dmytro Shcherbiak",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "79eb5859-c673-4110-9cbb-8f15df672aca"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1506092769201,
+				"creator": "Curtis Halbrook",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "Configuration for layers menu",
+				"displayName": null,
+				"enabled": true,
+				"features": [
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1506092867215,
+						"creator": "Curtis Halbrook",
+						"defaultConfiguration": "{\n\t\"showPrompt\":\"true\"\n}",
+						"defaultIfAirlockSystemIsDown": true,
+						"description": "Enables\/Disables the GOES16 sat view for CONUS",
+						"displayName": null,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"iOS_Storm_Radar"
+						],
+						"lastModified": 1507065670057,
+						"minAppVersion": "1.3.0",
+						"name": "HD Satellite",
+						"namespace": "Layers",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"owner": "Curtis Halbrook",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "5d3b5362-6b6a-45dc-8af3-13f1e52ed22a"
+					},
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+							{
+								"branchStatus": "NONE",
+								"configuration": "{\n\t\n}",
+								"configurationRules": [
+								],
+								"creationDate": 1510678878600,
+								"creator": "Curtis Halbrook",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"iOS_Storm_Radar"
+								],
+								"lastModified": 1513100420905,
+								"minAppVersion": "1.3.2",
+								"name": "US Only",
+								"namespace": "LayersStormReports",
+								"noCachedResults": false,
+								"owner": "Curtis Halbrook",
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "context.device.localeCountryCode ==\"US\""
+								},
+								"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "11ab68a7-b649-4991-9ce2-88f646be0e01"
+							}
+						],
+						"configurationSchema": null,
+						"creationDate": 1510678229931,
+						"creator": "Curtis Halbrook",
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"description": "Enables or disables Storm Report layer",
+						"displayName": "Storm Reports",
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"iOS_Storm_Radar"
+						],
+						"lastModified": 1513100408933,
+						"minAppVersion": "1.3.2",
+						"name": "StormReports",
+						"namespace": "Layers",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"owner": "Curtis Halbrook",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.device.localeCountryCode == \"US\""
+						},
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "cfe5504e-0551-4a29-8cef-b4245c910708"
+					},
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1510750087263,
+						"creator": "Curtis Halbrook",
+						"defaultConfiguration": "{\n\t\"layerNames\":[\"localStormReports\"]\n}",
+						"defaultIfAirlockSystemIsDown": true,
+						"description": "A TEMPORARY feature to control which layers are available only in the US.",
+						"displayName": "Layers Restricted to US",
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"iOS_Storm_Radar"
+						],
+						"lastModified": 1513100442670,
+						"minAppVersion": "1.3.2",
+						"name": "US Only",
+						"namespace": "Layers",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"owner": "Curtis Halbrook",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "2ebb201b-e01f-42a6-8baa-45b3a82825d2"
+					},
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1512500180792,
+						"creator": "Curtis Halbrook",
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": true,
+						"description": "Enable\/Disable Winter Weather",
+						"displayName": "Winter Weather",
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"iOS_Storm_Radar"
+						],
+						"lastModified": 1513098929750,
+						"minAppVersion": "1.3.2",
+						"name": "Winter Weather",
+						"namespace": "Layers",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"owner": "Curtis Halbrook",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "ba61992c-ce6f-4fd8-9f2c-bc463a993de3"
+					},
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1514578006731,
+						"creator": "Curtis Halbrook",
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": true,
+						"description": "Designates whether local storm reports are on or off.  They should be \"on\" only for en_US locales",
+						"displayName": "Local Storm Reports",
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"iOS_Storm_Radar"
+						],
+						"lastModified": 1515184055045,
+						"minAppVersion": "1.4.0",
+						"name": "Local Storm Reports",
+						"namespace": "Layers",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"owner": "Curtis Halbrook",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.device.locale == \"en_US\""
+						},
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "7d07cee1-49d5-413c-abb7-5aef70a6eccb"
+					}
+				],
+				"internalUserGroups": [
+					"iOS_Storm_Radar"
+				],
+				"lastModified": 1514578006731,
+				"minAppVersion": "1.3.0",
+				"name": "Layer Configuration",
+				"namespace": "Layers",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Curtis Halbrook",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "65c815a2-0b6e-4b53-bde9-75abcaab6d5b"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1511798763403,
+				"creator": "Curtis Halbrook",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": true,
+				"description": "Configuration for Maps behaviors",
+				"displayName": "Maps",
+				"enabled": true,
+				"features": [
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+							{
+								"branchStatus": "NONE",
+								"configurationRules": [
+									{
+										"branchStatus": "NONE",
+										"configuration": "{\n\t\"styles\":{\n\t\t\"light\":\"mapbox:\/\/styles\/weather\/cja1hk6znafpv2sqp1c3z63wb\",\n\t\t\"dark\":\"mapbox:\/\/styles\/weather\/cja1iodhlag4i2rnvsw14wkhu\",\n\t\t\"sat\":\"\"\n\t}\n}",
+										"configurationRules": [
+										],
+										"creationDate": 1511798777556,
+										"creator": "Curtis Halbrook",
+										"description": "Limits the styles to locales that are in India, regardless of language",
+										"enabled": true,
+										"internalUserGroups": [
+											"iOS_Storm_Radar"
+										],
+										"lastModified": 1513096014166,
+										"minAppVersion": "1.3.2",
+										"name": "India",
+										"namespace": "MapsMapStyles",
+										"noCachedResults": false,
+										"owner": "Curtis Halbrook",
+										"rolloutPercentage": 100.0,
+										"rule": {
+											"ruleString": "context.device.localeCountryCode == \"IN\""
+										},
+										"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+										"stage": "PRODUCTION",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "0aea8356-f4d0-4852-b1b7-abb983ad6774"
+									},
+									{
+										"branchStatus": "NONE",
+										"configuration": "{\n\t\"styles\":{\n\t\t\"light\":\"mapbox:\/\/styles\/weather\/cion9j5bj001pazno5y6pn5rm\",\n\t\t\"dark\":\"mapbox:\/\/styles\/weather\/cj33f7tyx000e2so55o3vhq3d\",\n\t\t\"sat\":\"mapbox:\/\/styles\/weather\/cioq7os6y0002axkr2n9r9krn\"\n\t}\n}",
+										"configurationRules": [
+										],
+										"creationDate": 1511798777556,
+										"creator": "Curtis Halbrook",
+										"description": "Map Styles for English speakers",
+										"enabled": true,
+										"internalUserGroups": [
+											"iOS_Storm_Radar"
+										],
+										"lastModified": 1513096054159,
+										"minAppVersion": "1.3.2",
+										"name": "English",
+										"namespace": "MapsMapStyles",
+										"noCachedResults": false,
+										"owner": "Curtis Halbrook",
+										"rolloutPercentage": 100.0,
+										"rule": {
+											"ruleString": "context.device.localeLanguage == \"en\""
+										},
+										"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+										"stage": "PRODUCTION",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "96f7579e-89e2-4dc2-a55a-3ec8111512da"
+									},
+									{
+										"branchStatus": "NONE",
+										"configuration": "{\n\t\"styles\":{\n\t\t\"light\":\"mapbox:\/\/styles\/weather\/ciovn441u0021bmne4qhqs0x4\",\n\t\t\"dark\":\"mapbox:\/\/styles\/weather\/cj34xlyyx004m2snzis2pht0z\",\n\t\t\"sat\":\"mapbox:\/\/styles\/weather\/ciovo0af5001zbsnqq6cj2p5x\"\n\t}\n}",
+										"configurationRules": [
+										],
+										"creationDate": 1511798777556,
+										"creator": "Curtis Halbrook",
+										"description": "maps styles for German speakers",
+										"enabled": true,
+										"internalUserGroups": [
+											"iOS_Storm_Radar"
+										],
+										"lastModified": 1513096065417,
+										"minAppVersion": "1.3.2",
+										"name": "German",
+										"namespace": "MapsMapStyles",
+										"noCachedResults": false,
+										"owner": "Curtis Halbrook",
+										"rolloutPercentage": 100.0,
+										"rule": {
+											"ruleString": "context.device.localeLanguage == \"de\""
+										},
+										"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+										"stage": "PRODUCTION",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "17acd5d5-2adf-4017-b81a-210314cfabf9"
+									},
+									{
+										"branchStatus": "NONE",
+										"configuration": "{\n\t\"styles\":{\n\t\t\"light\":\"mapbox:\/\/styles\/weather\/ciovnae63002fatncn1w7rx1t\",\n\t\t\"dark\":\"mapbox:\/\/styles\/weather\/cj34v29ai004u2ro0ic41kfai\",\n\t\t\"sat\":\"mapbox:\/\/styles\/weather\/ciovpjyq5002barm3f8mppry8\"\n\t}\n}",
+										"configurationRules": [
+										],
+										"creationDate": 1511798777556,
+										"creator": "Curtis Halbrook",
+										"description": "Maps styles for French speakers",
+										"enabled": true,
+										"internalUserGroups": [
+											"iOS_Storm_Radar"
+										],
+										"lastModified": 1513096247265,
+										"minAppVersion": "1.3.2",
+										"name": "French",
+										"namespace": "MapsMapStyles",
+										"noCachedResults": false,
+										"owner": "Curtis Halbrook",
+										"rolloutPercentage": 100.0,
+										"rule": {
+											"ruleString": "context.device.localeLanguage == \"fr\""
+										},
+										"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+										"stage": "PRODUCTION",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "63894a94-a51d-4315-934a-4108de7320c4"
+									},
+									{
+										"branchStatus": "NONE",
+										"configuration": "{\n\t\"styles\":{\n\t\t\"light\":\"mapbox:\/\/styles\/weather\/ciovnf2js0026bpnkkmrjdadp\",\n\t\t\"dark\":\"mapbox:\/\/styles\/weather\/cj34uzu5r004f2rpoclx1u46v\",\n\t\t\"sat\":\"mapbox:\/\/styles\/weather\/ciovpmv1s002oarm7n1c0qgqj\"\n\t}\n}",
+										"configurationRules": [
+										],
+										"creationDate": 1511798777557,
+										"creator": "Curtis Halbrook",
+										"description": "Maps Styles for Spanish Speakers",
+										"enabled": true,
+										"internalUserGroups": [
+											"iOS_Storm_Radar"
+										],
+										"lastModified": 1513096372721,
+										"minAppVersion": "1.3.2",
+										"name": "Spanish",
+										"namespace": "MapsMapStyles",
+										"noCachedResults": false,
+										"owner": "Curtis Halbrook",
+										"rolloutPercentage": 100.0,
+										"rule": {
+											"ruleString": "context.device.localeLanguage == \"es\""
+										},
+										"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+										"stage": "PRODUCTION",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "95c64fc7-80a1-4255-83b7-c63d5ac6f251"
+									},
+									{
+										"branchStatus": "NONE",
+										"configuration": "{\n\t\"styles\":{\n\t\t\"light\":\"mapbox:\/\/styles\/weather\/ciovniko40021aynmmnj8ry2e\",\n\t\t\"dark\":\"mapbox:\/\/styles\/weather\/cj34v5zvh000c2rmz993hb9j0\",\n\t\t\"sat\":\"mapbox:\/\/styles\/weather\/ciovppmbe002gatncxstfatsj\"\n\t}\n}",
+										"configurationRules": [
+										],
+										"creationDate": 1511798777557,
+										"creator": "Curtis Halbrook",
+										"description": "Maps styles for the Russian language",
+										"enabled": true,
+										"internalUserGroups": [
+											"iOS_Storm_Radar"
+										],
+										"lastModified": 1513096383260,
+										"minAppVersion": "1.3.2",
+										"name": "Russian",
+										"namespace": "MapsStyles",
+										"noCachedResults": false,
+										"owner": "Curtis Halbrook",
+										"rolloutPercentage": 100.0,
+										"rule": {
+											"ruleString": "context.device.localeLanguage == \"ru\""
+										},
+										"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+										"stage": "PRODUCTION",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "643b7afe-df02-4616-a2a4-4ea0633a66ec"
+									},
+									{
+										"branchStatus": "NONE",
+										"configuration": "{\n\t\"styles\":{\n\"light\" :  \"mapbox:\/\/styles\/weather\/ciovnpmv10027bpnk9x6738ii\",\n    \"dark\" : \"mapbox:\/\/styles\/weather\/cj34xoy8o005b2smddhgbt8pw\",\n    \"sat\" : \"mapbox:\/\/styles\/weather\/ciovpsmlv002gb5nk5ukbfgfw\"\n\t}\n}",
+										"configurationRules": [
+										],
+										"creationDate": 1511798777557,
+										"creator": "Curtis Halbrook",
+										"description": "Maps styles for Chinese speakers",
+										"enabled": true,
+										"internalUserGroups": [
+											"iOS_Storm_Radar"
+										],
+										"lastModified": 1513096391831,
+										"minAppVersion": "1.3.2",
+										"name": "Chinese",
+										"namespace": "MapsStyles",
+										"noCachedResults": false,
+										"owner": "Curtis Halbrook",
+										"rolloutPercentage": 100.0,
+										"rule": {
+											"ruleString": "context.device.localeLanguage == \"zh\""
+										},
+										"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+										"stage": "PRODUCTION",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "6a6cb09d-ccc6-42f6-ba85-4d9d2d130e2a"
+									},
+									{
+										"branchStatus": "NONE",
+										"configuration": "{\n\t\"styles\":{\n\t\t\"light\":\"mapbox:\/\/styles\/weather\/ciovnwqic0020awm3k8yve2vt\",\n\t\t\"dark\":\"mapbox:\/\/styles\/weather\/ciovp0aff002fasnhlwcbf081\",\n\t\t\"sat\":\"mapbox:\/\/styles\/weather\/ciovq0fsf002db3khiitv3nh3\"\n\t}\n}",
+										"configurationRules": [
+										],
+										"creationDate": 1511798777558,
+										"creator": "Curtis Halbrook",
+										"description": "Non-specific locale\/language",
+										"enabled": true,
+										"internalUserGroups": [
+											"iOS_Storm_Radar"
+										],
+										"lastModified": 1513096402019,
+										"minAppVersion": "1.3.2",
+										"name": "Unspecified",
+										"namespace": "MapsStyles",
+										"noCachedResults": false,
+										"owner": "Curtis Halbrook",
+										"rolloutPercentage": 100.0,
+										"rule": {
+											"ruleString": ""
+										},
+										"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+										"stage": "PRODUCTION",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "4079f879-5ec7-48b0-9645-a863bbe9f614"
+									}
+								],
+								"lastModified": 1513630318512,
+								"maxFeaturesOn": 1,
+								"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+								"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+								"uniqueId": "1febe3ea-a731-41ee-bcfe-8efe65caf785"
+							}
+						],
+						"configurationSchema": null,
+						"creationDate": 1511798777555,
+						"creator": "Curtis Halbrook",
+						"defaultConfiguration": "{\n\t\"styles\":{\n\t\t\"light\":\"mapbox:\/\/styles\/weather\/cion9j5bj001pazno5y6pn5rm\",\n\t\t\"dark\":\"mapbox:\/\/styles\/weather\/cj33f7tyx000e2so55o3vhq3d\",\n\t\t\"sat\":\"mapbox:\/\/styles\/weather\/cioq7os6y0002axkr2n9r9krn\"\n\t}\n}",
+						"defaultIfAirlockSystemIsDown": true,
+						"description": "Contains possible maps styles for various locales and languages.\n\nEach configuration must have at least a \"light\", which will default to the Default config's value (the English language's \"light\" map) if it doesn't specify at least one.",
+						"displayName": null,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"iOS_Storm_Radar"
+						],
+						"lastModified": 1513096000968,
+						"minAppVersion": "1.3.2",
+						"name": "Styles",
+						"namespace": "Maps",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"owner": "Curtis Halbrook",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "e8303acc-a57e-4b50-a22d-25eee8b8ef59"
+					}
+				],
+				"internalUserGroups": [
+					"iOS_Storm_Radar"
+				],
+				"lastModified": 1513095990413,
+				"minAppVersion": "1.3.2",
+				"name": "Maps",
+				"namespace": "Maps",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Curtis Halbrook",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "02028dd3-cb4e-45ea-a320-55270bc97c22"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\t\"uiConfiguration\":{\n\t\t\"fast-path-screen\":{\n\t\t\t\n\t\t},\n\t\t\"review-settings-screen\":{\n\t\t\t\n\t\t}\n\t}\n}",
+						"configurationRules": [
+						],
+						"creationDate": 1520543318766,
+						"creator": "Gabriel Cortinas",
+						"description": "The UI configuration of the GDPR with all translations applied.",
+						"enabled": true,
+						"internalUserGroups": [
+							"GDPR"
+						],
+						"lastModified": 1525971408559,
+						"minAppVersion": "1.4.2",
+						"name": "Translated Configuration",
+						"namespace": "GDPRPrivacy",
+						"noCachedResults": false,
+						"owner": "Gabriel Cortinas",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "1606809f-56aa-4193-bfb3-45ab2d616afb"
+					}
+				],
+				"configurationSchema": null,
+				"creationDate": 1515513774824,
+				"creator": "Krishna Gudipati",
+				"defaultConfiguration": "{\n\t\"showConsentsUserInterface\":true,\n\t\"cmsRefreshInterval\":60,\n\t\"dsrHost\":\"weather.com\"\n}",
+				"defaultIfAirlockSystemIsDown": true,
+				"description": "",
+				"displayName": null,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"GDPR"
+				],
+				"lastModified": 1527012885801,
+				"minAppVersion": "1.4.3",
+				"name": "Privacy",
+				"namespace": "GDPR",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Krishna Gudipati",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "e6e6f2bb-acdb-49d8-9457-1293678a6fd6"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1523026549383,
+				"creator": "Nidal Fakhouri",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"displayName": null,
+				"enabled": true,
+				"features": [
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1523026724115,
+						"creator": "Nidal Fakhouri",
+						"defaultConfiguration": "{\n\t\"minutesBetweenBackgroundFixes\":1,\n\t\"mechanismToGetFix\":\"startupdatinglocation\",\n\t\"enableVisitsTracking\":true,\n\t\"enableHeadingTracking\":false,\n\t\"maxLocationAgeInSeconds\":60,\n\t\"maxSecondsToWaitForFix\":20,\n\t\"minimumAcceptableAccuracyInMeters\":1000,\n\t\"accuracyInMetersAtOrBelowWhichToStopSearching\":100,\n\t\"metersOfMovementBeforeGeneratingANewFix\":10\n}",
+						"defaultIfAirlockSystemIsDown": false,
+						"description": "",
+						"displayName": null,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1531330647229,
+						"minAppVersion": "1.4.4",
+						"name": "LBS Sensor",
+						"namespace": "sensors",
+						"noCachedResults": true,
+						"orderingRules": [
+						],
+						"owner": "Nidal Fakhouri",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "cbe969f6-4121-4d32-89fa-da3022a02383"
+					},
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1523026753598,
+						"creator": "Nidal Fakhouri",
+						"defaultConfiguration": "{\n\t\"pressureSampleBufferSize\":8,\n\t\"shouldContinuouslyReportPressure\":false\n}",
+						"defaultIfAirlockSystemIsDown": false,
+						"description": "",
+						"displayName": null,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1531330666408,
+						"minAppVersion": "1.4.4",
+						"name": "Barometric Pressure Sensor",
+						"namespace": "sensors",
+						"noCachedResults": true,
+						"orderingRules": [
+						],
+						"owner": "Nidal Fakhouri",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "0eeaa9a0-5698-47ca-8adf-745eeacaf5d7"
+					},
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+							{
+								"branchStatus": "NONE",
+								"configuration": "{\n\t\"endpoint\":\"https:\/\/weather.com\/api\/v1\/p\/p\",\n\t\"accessKey\":\"AKIAI3CEUBRB7KUDGPEA\",\n\t\"secretKey\":\"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\",\n\t\"account\":\"867004954650\",\n\t\"remoteQueue\":\"events_sensor_ios_storm_dev\"\n}",
+								"configurationRules": [
+								],
+								"creationDate": 1531855662681,
+								"creator": "Karthik Velappan-Airlock",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"SensorDataReporting"
+								],
+								"lastModified": 1531855682476,
+								"minAppVersion": "2.1",
+								"name": "QA",
+								"namespace": "sensorsReporter",
+								"noCachedResults": false,
+								"owner": "Karthik Velappan-Airlock",
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": ""
+								},
+								"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "13ba2ef2-d2d5-4cab-86bb-e422feee6e37"
+							}
+						],
+						"configurationSchema": null,
+						"creationDate": 1523026787408,
+						"creator": "Nidal Fakhouri",
+						"defaultConfiguration": "{\n\t\"endpoint\":\"https:\/\/weather.com\/api\/v1\/p\/p\",\n\t\"accessKey\":\"AKIAJLRZNJXHLAOWI5UQ\",\n\t\"secretKey\":\"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\",\n\t\"account\":\"747624766027\",\n\t\"remoteQueue\":\"events_sensor_ios_storm\"\n}",
+						"defaultIfAirlockSystemIsDown": false,
+						"description": "",
+						"displayName": null,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"SensorDataReporting"
+						],
+						"lastModified": 1531855993913,
+						"minAppVersion": "2.0",
+						"name": "Reporter",
+						"namespace": "sensors",
+						"noCachedResults": false,
+						"orderingRules": [
+						],
+						"owner": "Nidal Fakhouri",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "addb5e64-5888-4e98-83b0-238d6f1bb59a"
+					}
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1531330685303,
+				"minAppVersion": "1.4.4",
+				"name": "Sensor System",
+				"namespace": "sensors",
+				"noCachedResults": true,
+				"orderingRules": [
+				],
+				"owner": "Nidal Fakhouri",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "e4b1354b-fc83-486f-929c-5797c3f39cbb"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1528796179609,
+				"creator": "Dmytro Shcherbiak",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": true,
+				"description": "",
+				"displayName": "AdFree",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"ad-free-mode"
+				],
+				"lastModified": 1530128803789,
+				"minAppVersion": "2.0",
+				"name": "AdFree",
+				"namespace": "AdFree",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Dmytro Shcherbiak",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": "context.device.locale == \"en_US\""
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "2f07747f-b33d-4214-8833-4d4696246ee5"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1529584486128,
+				"creator": "Dmytro Shcherbiak",
+				"defaultConfiguration": "{\n\t\"crashReporting\":1,\n\t\"applicationToken\":\"AA6305b5ce9c9f10c09ca919a2df58a0702ce6cd4e\"\n}",
+				"defaultIfAirlockSystemIsDown": true,
+				"description": "",
+				"displayName": "NewRelic",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"iOS_Storm_Radar"
+				],
+				"lastModified": 1530272599176,
+				"minAppVersion": "2.1",
+				"name": "NewRelic",
+				"namespace": "NewRelic",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Dmytro Shcherbiak",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "406d6114-f6c9-4a01-b230-a07448f024e9"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1542198458642,
+				"creator": "Dmytro Shcherbiak",
+				"defaultConfiguration": "{\n\t\"date\":\"2018-11-13\"\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "Date to clear mapbox cache",
+				"displayName": "ClearMapboxCache",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"iOS_Storm_Radar"
+				],
+				"lastModified": 1542200234965,
+				"minAppVersion": "1.4",
+				"name": "ClearMapboxCache",
+				"namespace": "ClearMapboxCache",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Dmytro Shcherbiak",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "aaef5b4b-c98e-4f36-9a60-15c190c67ecb"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1544802870877,
+				"creator": "Nidal Fakhouri",
+				"defaultConfiguration": "{\n\t\"sunApiKey\":\"84fcff5ffe3b4336bcff5ffe3b833610\"\n}",
+				"defaultIfAirlockSystemIsDown": true,
+				"description": "",
+				"displayName": null,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1544803459703,
+				"minAppVersion": "2.1.0",
+				"name": "Sun API Key",
+				"namespace": "APIKeys",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"owner": "Nidal Fakhouri",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "6d3864f3-b2f5-4bf0-8d23-1b1c55776417"
+			}
+		],
+		"lastModified": 1544802870877,
+		"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+		"type": "ROOT",
+		"uniqueId": "845fe91e-d145-474a-9d72-214392fa75be"
+	},
+	"seasonId": "e77a69a2-0be6-46b1-9faf-f4681692074d",
+	"serverVersion": "V4.5",
+	"version": "V2.5"
+}

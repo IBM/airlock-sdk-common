@@ -1,0 +1,41 @@
+{
+	"branches": [
+		{
+			"creationDate": 1497525394070,
+			"creator": "irit",
+			"description": "branch descr",
+			"lastModified": 1497525394070,
+			"name": "branch1",
+			"seasonId": "4e7164b6-9665-427e-971b-f53319b12316",
+			"uniqueId": "ae0e7a26-2a89-41c9-a9b7-7dc8a0ec4f8a"
+		},
+		{
+			"creationDate": 1497525394317,
+			"creator": "irit",
+			"description": "branch descr",
+			"lastModified": 1497525394317,
+			"name": "branch2",
+			"seasonId": "4e7164b6-9665-427e-971b-f53319b12316",
+			"uniqueId": "6ea8bb60-6680-43a1-b364-7a7326e23be0"
+		},
+		{
+			"creationDate": 1497530679609,
+			"creator": "Esteban Zia",
+			"description": null,
+			"lastModified": 1497530679609,
+			"name": "branch3",
+			"seasonId": "4e7164b6-9665-427e-971b-f53319b12316",
+			"uniqueId": "99c816b8-9994-4170-a502-c794139968e8"
+		},
+		{
+			"creationDate": 1504447742932,
+			"creator": "Elik Katz",
+			"description": null,
+			"lastModified": 1504447742932,
+			"name": "bRANCH 4",
+			"seasonId": "4e7164b6-9665-427e-971b-f53319b12316",
+			"uniqueId": "ee41c1d3-5b39-40cc-bca0-f2ff142e8d59"
+		}
+	],
+	"seasonId": "4e7164b6-9665-427e-971b-f53319b12316"
+}

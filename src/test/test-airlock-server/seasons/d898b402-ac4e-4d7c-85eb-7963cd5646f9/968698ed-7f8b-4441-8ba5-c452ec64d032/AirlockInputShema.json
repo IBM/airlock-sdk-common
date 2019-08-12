@@ -1,0 +1,11 @@
+{
+	"inputSchema": {
+		"properties": {
+			"context": {
+			}
+		},
+		"type": "object"
+	},
+	"lastModified": 1501053744798,
+	"seasonId": "968698ed-7f8b-4441-8ba5-c452ec64d032"
+}

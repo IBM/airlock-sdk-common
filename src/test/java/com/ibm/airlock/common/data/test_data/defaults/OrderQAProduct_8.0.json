@@ -1,0 +1,114 @@
+{
+  "devS3Path": "http://localhost:8000/test-airlock-server",
+  "defaultLanguage": "en",
+  "productId": "8cb9b408-8327-4b84-943b-1b81746f8132",
+  "s3Path": "http://localhost:8000/test-airlock-server",
+  "supportedLanguages": [
+    "en"
+  ],
+  "seasonId": "71a0796d-176e-48cb-b6cd-0bf4ced60455",
+  "root": {
+    "features": [
+      {
+        "defaultConfiguration": null,
+        "defaultIfAirlockSystemIsDown": false,
+        "features": [
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "f1",
+            "namespace": "qa",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "15dbcf18-252f-4312-aa7c-4c0d5d3f09cc"
+          },
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "f2",
+            "namespace": "qa",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "b932299e-6c6b-404a-9e09-0f86a94242d3"
+          },
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "f3",
+            "namespace": "qa",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "dbfb5d78-57f9-41b7-bae1-3d4b64908399"
+          },
+          {
+            "defaultConfiguration": null,
+            "defaultIfAirlockSystemIsDown": false,
+            "features": [],
+            "name": "f4",
+            "namespace": "qa",
+            "noCachedResults": false,
+            "rolloutPercentage": 100,
+            "type": "FEATURE",
+            "uniqueId": "869202ab-7e8e-439d-949f-a11edad2eb4b"
+          },
+          {
+            "features": [
+              {
+                "defaultConfiguration": null,
+                "defaultIfAirlockSystemIsDown": false,
+                "features": [],
+                "name": "f6",
+                "namespace": "qa",
+                "noCachedResults": false,
+                "rolloutPercentage": 100,
+                "type": "FEATURE",
+                "uniqueId": "786ca6bd-7835-4052-b9a5-10f703d3c4ee"
+              },
+              {
+                "defaultConfiguration": null,
+                "defaultIfAirlockSystemIsDown": false,
+                "features": [],
+                "name": "f5",
+                "namespace": "qa",
+                "noCachedResults": false,
+                "rolloutPercentage": 100,
+                "type": "FEATURE",
+                "uniqueId": "87760178-00b8-42c3-8b72-24040c646f35"
+              },
+              {
+                "defaultConfiguration": null,
+                "defaultIfAirlockSystemIsDown": false,
+                "features": [],
+                "name": "f7",
+                "namespace": "qa",
+                "noCachedResults": false,
+                "rolloutPercentage": 100,
+                "type": "FEATURE",
+                "uniqueId": "57404c31-ad6f-4830-98ee-0b38f3efafce"
+              }
+            ],
+            "maxFeaturesOn": 1,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "79d5922e-a9d5-423e-bdaf-883117e7e593"
+          }
+        ],
+        "name": "P1",
+        "namespace": "qa",
+        "noCachedResults": false,
+        "rolloutPercentage": 100,
+        "type": "FEATURE",
+        "uniqueId": "ec1f3c9e-7c9f-443f-822c-65e770bae17c"
+      }
+    ],
+    "type": "ROOT",
+    "uniqueId": "42d308a7-fb8a-41f5-bfec-c5b3d1be3f7a"
+  },
+  "version": "V2.5",
+  "productName": "OrderQAProduct"
+}

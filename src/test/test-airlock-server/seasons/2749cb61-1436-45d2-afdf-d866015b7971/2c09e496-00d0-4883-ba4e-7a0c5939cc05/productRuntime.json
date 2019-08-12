@@ -1,0 +1,35 @@
+{
+	"codeIdentifier": "MTXGroupingConfiguration",
+	"name": "MTXGroupingConfiguration",
+	"seasons": [
+		{
+			"lastModified": 1542012489634,
+			"maxVersion": "7.8",
+			"minVersion": "7.6",
+			"productId": "2749cb61-1436-45d2-afdf-d866015b7971",
+			"uniqueId": "a62947a8-3e24-43bc-bb6c-55e107c123c7"
+		},
+		{
+			"lastModified": 1487696802540,
+			"maxVersion": "7.10",
+			"minVersion": "7.8",
+			"productId": "2749cb61-1436-45d2-afdf-d866015b7971",
+			"uniqueId": "2c09e496-00d0-4883-ba4e-7a0c5939cc05"
+		},
+		{
+			"lastModified": 1542012507717,
+			"maxVersion": "7.14",
+			"minVersion": "7.10",
+			"productId": "2749cb61-1436-45d2-afdf-d866015b7971",
+			"uniqueId": "f9012058-c904-4bfa-ab54-ce3d8f2be710"
+		},
+		{
+			"lastModified": 1499540094886,
+			"maxVersion": null,
+			"minVersion": "7.14",
+			"productId": "2749cb61-1436-45d2-afdf-d866015b7971",
+			"uniqueId": "ec7b5e0d-1024-4053-87cb-5681210937c2"
+		}
+	],
+	"uniqueId": "2749cb61-1436-45d2-afdf-d866015b7971"
+}
