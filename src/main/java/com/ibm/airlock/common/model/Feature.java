@@ -524,12 +524,15 @@ public class Feature implements Serializable {
         if (children == null || child == null) {
             return;
         }
-        //?? todo
+        Feature featureToRemove = null;
         for (Feature current : children) {
             if (current.getName().equals(child.getName())) {
-                children.remove(current);
+                featureToRemove = current;
+                break;
             }
-            return;
+        }
+        if (featureToRemove != null){
+            children.remove(featureToRemove);
         }
     }
 
