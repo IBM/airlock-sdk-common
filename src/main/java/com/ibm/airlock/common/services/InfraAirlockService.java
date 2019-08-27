@@ -848,7 +848,7 @@ public class InfraAirlockService {
                         }
 
                         @Override
-                        public void onResponse(Call call, Response response) throws IOException {
+                        public void onResponse(Call call, Response response) {
                             try {
                                 parseDefaultFile(responseBody, true);
                                 response.body().close();
@@ -1205,7 +1205,7 @@ public class InfraAirlockService {
                 }
 
                 @Override
-                public void onResponse(Call call, final Response response) throws IOException {
+                public void onResponse(Call call, final Response response) {
                     printPerformanceLog("Total pull time of IfProductChanged file:", startPullWithIfProductChanged);
                     //the resource hasn't been updated since the last fetching, do nothing.
                     if (response.code() == 304) {

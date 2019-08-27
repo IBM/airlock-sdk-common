@@ -14,7 +14,6 @@ import java.util.Map;
 /**
  * Created by Denis Voloshin on 20/02/2019.
  */
-@SuppressWarnings("MethodDoesntCallSuperMethod")
 public class EntitlementsBranchMerger extends FeaturesBranchMerger {
 
     @Override

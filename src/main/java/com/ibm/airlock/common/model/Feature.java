@@ -524,6 +524,7 @@ public class Feature implements Serializable {
         if (children == null || child == null) {
             return;
         }
+        //?? todo
         for (Feature current : children) {
             if (current.getName().equals(child.getName())) {
                 children.remove(current);

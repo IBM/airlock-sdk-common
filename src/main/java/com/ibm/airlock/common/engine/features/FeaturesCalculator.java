@@ -516,13 +516,10 @@ public class FeaturesCalculator {
         // if the is-premium flag is off, there is no need to eval a rule
         if (isPremium(feature)) {
             premiumRuleResult = invoker.evaluate(getPremiumRuleString(feature));
-            switch (premiumRuleResult.result) {
-                case ERROR:
-                    premiumRuleResult = new ScriptInvoker.Output(getFallback(feature, fallback).premiumRuleOn ?
-                            ScriptInvoker.Result.TRUE : ScriptInvoker.Result.FALSE);
-                    break;
-                default:
-                    //do nothing
+            //do nothing
+            if (premiumRuleResult.result == ScriptInvoker.Result.ERROR) {
+                premiumRuleResult = new ScriptInvoker.Output(getFallback(feature, fallback).premiumRuleOn ?
+                        ScriptInvoker.Result.TRUE : ScriptInvoker.Result.FALSE);
             }
         }
 

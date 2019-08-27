@@ -192,7 +192,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
                 calculatedExperimentsArray.put(calculatedExperiment);
             }
             ph.write(Constants.JSON_FIELD_DEVICE_EXPERIMENTS_LIST, (new JSONObject().put(Constants.JSON_FIELD_EXPERIMENTS, calculatedExperimentsArray).toString()));
-        } catch (JSONException e) {
+        } catch (JSONException ignored) {
 
         }
     }

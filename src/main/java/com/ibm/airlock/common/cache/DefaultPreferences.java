@@ -81,7 +81,7 @@ public class DefaultPreferences implements SharedPreferences {
             for (String key : preferences.keys()) {
                 all.put(key, preferences.get(key, ""));
             }
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         return all;
     }

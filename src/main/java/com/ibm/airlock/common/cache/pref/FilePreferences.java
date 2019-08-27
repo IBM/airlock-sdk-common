@@ -133,7 +133,7 @@ public class FilePreferences extends AbstractPreferences {
     }
 
     @Override
-    protected void removeNodeSpi() throws BackingStoreException {
+    protected void removeNodeSpi() {
         isRemoved = true;
 //        if(!file.isDirectory()){
 //            flush();
@@ -141,14 +141,14 @@ public class FilePreferences extends AbstractPreferences {
     }
 
     @Override
-    protected String[] keysSpi() throws BackingStoreException {
+    protected String[] keysSpi() {
         synchronized (root) {
             return root.keySet().toArray(new String[0]);
         }
     }
 
     @Override
-    protected String[] childrenNamesSpi() throws BackingStoreException {
+    protected String[] childrenNamesSpi() {
         return children.keySet().toArray(new String[0]);
     }
 

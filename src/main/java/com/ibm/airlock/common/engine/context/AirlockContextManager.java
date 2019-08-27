@@ -23,8 +23,6 @@ public class AirlockContextManager {
     @Nullable
     private Script jsTranslations;
 
-    private final String name;
-
     private final SafeContextFactory safeContextFactory;
 
 
@@ -40,9 +38,8 @@ public class AirlockContextManager {
     private final Hashtable<String, String> preCompiledScriptsMD5 = new Hashtable<>();
 
     public AirlockContextManager(String name) {
-        this.name = name;
-        currentContext = new StateFullContext(this.name);
-        runtimeContext = new StateFullContext(this.name);
+        currentContext = new StateFullContext(name);
+        runtimeContext = new StateFullContext(name);
         safeContextFactory = new SafeContextFactory();
     }
 
@@ -77,7 +74,7 @@ public class AirlockContextManager {
         Context rhino = safeContextFactory.makeContext().enter();
 
         try {
-            String md5 = ganerateMD5(script);
+            String md5 = generateMD5(script);
             if (!md5.equals(preCompiledScriptsMD5.get(JS_UTILS_SCRIPT))) {
                 jsUtilsScript = rhino.compileString(script, "jsFunctions", 1, null);
                 preCompiledScriptsMD5.put(JS_UTILS_SCRIPT, md5);
@@ -105,7 +102,7 @@ public class AirlockContextManager {
                 "\")";
 
         try {
-            String md5 = ganerateMD5(translations);
+            String md5 = generateMD5(translations);
             if (!md5.equals(preCompiledScriptsMD5.get(JS_TRANSLATIONS_SCRIPT))) {
                 jsTranslations = rhino.compileString(translations, "jsTranslations", 1, null);
                 preCompiledScriptsMD5.put(JS_TRANSLATIONS_SCRIPT, md5);
@@ -131,7 +128,7 @@ public class AirlockContextManager {
         return jsTranslations;
     }
 
-    private String ganerateMD5(String script) throws NoSuchAlgorithmException {
+    private String generateMD5(String script) throws NoSuchAlgorithmException {
         MessageDigest m = MessageDigest.getInstance("MD5");
         m.update(script.getBytes(), 0, script.length());
         return new BigInteger(1, m.digest()).toString(16);

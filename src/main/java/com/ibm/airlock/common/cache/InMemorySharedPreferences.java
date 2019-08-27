@@ -66,11 +66,11 @@ public class InMemorySharedPreferences implements SharedPreferences {
     }
 
     @Override
-    public void removeNode() throws BackingStoreException {
+    public void removeNode() {
 
     }
 
-    @SuppressWarnings({"unused", "JavaDoc"})
+    @SuppressWarnings({"unused"})
     class InMemoryEditor implements Editor {
 
         @Override

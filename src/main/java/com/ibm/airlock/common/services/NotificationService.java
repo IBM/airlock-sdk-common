@@ -455,7 +455,6 @@ public class NotificationService {
     }
 
 
-    @SuppressWarnings("VariableNotUsedInsideIf")
     public void setNotificationIntent(Object notificationIntent) {
         notificationIntent = notificationIntent;
         isSupported = notificationIntent != null;
@@ -488,7 +487,7 @@ public class NotificationService {
                 }
             }
 
-        } catch (JSONException e) {
+        } catch (JSONException ignored) {
         }
         return null;
     }

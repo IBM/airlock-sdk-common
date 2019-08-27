@@ -10,8 +10,6 @@ import java.util.Map;
 public abstract class ScriptInvoker {
     final Map<String, String> scriptObjects;
     int evalCounter = 2;
-    @Nullable
-    private AirlockContextManager airlockScriptScope;
 
     // the map contains key/value pairs, where the key is the name of a JavaScript object ("profile", "context", etc)
     // and the value is the JSON string that will construct it.
@@ -56,7 +54,6 @@ public abstract class ScriptInvoker {
     }
 
     public void setAirlockScriptScope(AirlockContextManager airlockScriptScope) {
-        this.airlockScriptScope = airlockScriptScope;
     }
 
 }

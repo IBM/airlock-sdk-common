@@ -34,21 +34,19 @@ public interface AirlockProductDebugger {
      * @param userGroups List of the selected user groups.
      * @throws JSONException if the provided value breaks the JSON serialization process.
      */
-    void setDeviceUserGroups(String... userGroups) throws TimeoutException;
+    void setDeviceUserGroups(String... userGroups);
 
 
     /**
      * @return Array of airlock users group names
-     * @throws InterruptedException
      */
-    JSONArray getUserGroups() throws InterruptedException, TimeoutException, IOException;
+    JSONArray getUserGroups();
 
     /**
      * synchronously downloads the current remote airlock configuration from the server.
      *
-     * @throws AirlockNotInitializedException if the Airlock SDK has not been initialized.
      */
-    void pullFeatures() throws AirlockNotInitializedException, InterruptedException, TimeoutException, IOException;
+    void pullFeatures();
 
     /**
      * Initializes AirlockProductManager with application information.
@@ -59,10 +57,8 @@ public interface AirlockProductDebugger {
      * @param defaultConfiguration Defaults file. This defaults file should be part of the application. You can get this by running the Airlock
      *                             Code Assistant plugin.
      * @param productVersion       The application version. Use periods to separate between major and minor version numbers, for example: 6.3.4
-     * @throws AirlockInvalidFileException Thrown when the defaults file does not contain the proper content.
-     * @throws IOException                 Thrown when the defaults file cannot be opened.
      */
-    void initSDK(String directory, String defaultConfiguration, String productVersion) throws AirlockInvalidFileException, IOException;
+    void initSDK(String directory, String defaultConfiguration, String productVersion);
 
 
     /**
@@ -104,7 +100,7 @@ public interface AirlockProductDebugger {
      * @return returns the list of development branches
      */
     @CheckForNull
-    JSONArray getDevelopmentBranches() throws InterruptedException, TimeoutException, IOException;
+    JSONArray getDevelopmentBranches();
 
 
     /**
@@ -129,7 +125,7 @@ public interface AirlockProductDebugger {
     /**
      * Triggers a stream processing
      */
-    void runStreamProcessing(String name) throws ScriptInitException;
+    void runStreamProcessing(String name);
 
 
     /**
