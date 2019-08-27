@@ -5,5 +5,5 @@ package com.ibm.airlock.common.util;
  */
 
 public interface Base64Decoder {
-    public byte[] decode(String str);
+    byte[] decode(String str);
 }

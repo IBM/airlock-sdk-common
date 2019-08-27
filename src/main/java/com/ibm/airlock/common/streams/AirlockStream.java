@@ -517,7 +517,7 @@ public class AirlockStream {
             objectAsJSON.put("result", getResult());
             objectAsJSON.put("events", this.events.toString());
             objectAsJSON.put("trace", this.trace.toJSONArray());
-            StringBuffer pendingEvents = new StringBuffer("[");
+            StringBuilder pendingEvents = new StringBuilder("[");
             int arrayLength = this.pendingEvents.length();
             for (int i = 0; i < arrayLength; i++) {
                 JSONObject eventObject = (JSONObject) this.pendingEvents.get(i);

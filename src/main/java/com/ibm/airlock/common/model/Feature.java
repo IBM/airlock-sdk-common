@@ -147,6 +147,7 @@ public class Feature implements Serializable {
      *
      * @return New feature that is a clone of this one.
      */
+    @SuppressWarnings("MethodDoesntCallSuperMethod")
     @Override
     public Feature clone() {
         Feature result = getNew();
@@ -373,7 +374,7 @@ public class Feature implements Serializable {
         if (analyticsAppliedRules == null) {
             return null;
         } else {
-            return new ArrayList<String>(analyticsAppliedRules);
+            return new ArrayList<>(analyticsAppliedRules);
         }
     }
 

@@ -17,7 +17,7 @@ public class FeaturesBranchMerger {
 
 
     public Map<String, JSONObject> getItemMap(JSONObject in, boolean useId) throws JSONException {
-        Map<String, JSONObject> out = new HashMap<String, JSONObject>();
+        Map<String, JSONObject> out = new HashMap<>();
         mapItem(in, out, useId);
         return out;
     }
@@ -166,7 +166,7 @@ public class FeaturesBranchMerger {
 
         // get child names from master
         JSONArray newNames = new JSONArray();
-        TreeSet<String> nameSet = new TreeSet<String>();
+        TreeSet<String> nameSet = new TreeSet<>();
         JSONArray source = clonedMaster.optJSONArray(getChildrenName());
 
         if (source != null) {
@@ -312,7 +312,7 @@ public class FeaturesBranchMerger {
             return;
         }
 
-        Map<String, JSONObject> overrideKids = new HashMap<String, JSONObject>();
+        Map<String, JSONObject> overrideKids = new HashMap<>();
         if (source != null) {
             for (int i = 0; i < source.length(); ++i) {
                 JSONObject child = source.getJSONObject(i);

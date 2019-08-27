@@ -16,27 +16,27 @@ import java.util.Date;
 
 public interface AirlockProductManager {
 
-    public InfraAirlockService getInfraAirlockService();
+    InfraAirlockService getInfraAirlockService();
 
-    public PercentageService getPercentageService();
+    PercentageService getPercentageService();
 
-    public StreamsService getStreamsService();
+    StreamsService getStreamsService();
 
-    public BranchesService getBranchesService();
+    BranchesService getBranchesService();
 
-    public UserGroupsService getUserGroupsService();
+    UserGroupsService getUserGroupsService();
 
-    public FeaturesService getFeaturesService();
+    FeaturesService getFeaturesService();
 
-    public EntitlementsService getEntitlementsService();
+    EntitlementsService getEntitlementsService();
 
-    public ProductInfoService getProductInfoService();
+    ProductInfoService getProductInfoService();
 
-    public AnalyticsService getAnalyticsService();
+    AnalyticsService getAnalyticsService();
 
-    public StringsService getStringsService();
+    StringsService getStringsService();
 
-    public NotificationService getNotificationService();
+    NotificationService getNotificationService();
 
 
 //    /**
@@ -55,7 +55,7 @@ public interface AirlockProductManager {
 //
 //
 
-    public AirlockClient createClient(String clientId) throws AirlockInvalidFileException;
+    AirlockClient createClient(String clientId) throws AirlockInvalidFileException;
 //
 //    /**
 //     * Initializes AirlockManager with application information.
@@ -93,7 +93,7 @@ public interface AirlockProductManager {
      *
      * @return The model provider mode that the SDK is using.
      */
-    public RemoteConfigurationAsyncFetcher.DataProviderType getDataProviderType();
+    RemoteConfigurationAsyncFetcher.DataProviderType getDataProviderType();
 
     /**
      * Sets the model provider mode that is configured for the SDK instance. Airlock must be initialized;
@@ -101,44 +101,44 @@ public interface AirlockProductManager {
      *
      * @param type The DataProviderType to be used.
      */
-    public void setDataProviderType(RemoteConfigurationAsyncFetcher.DataProviderType type);
+    void setDataProviderType(RemoteConfigurationAsyncFetcher.DataProviderType type);
 
 
     /**
      * Method nullifies the last pull timestamp to initial value.
      */
-    public void resetLastPullTime();
+    void resetLastPullTime();
 
     /**
      * Returns the date and time of the last calculate.
      *
      * @return the date and time of the last calculate.
      */
-    public Date getLastCalculateTime();
+    Date getLastCalculateTime();
 
     /**
      * Returns the date and time when calculate results were synchronized with the current feature set.
      *
      * @return the date of the last sync time.
      */
-    public Date getLastSyncTime();
+    Date getLastSyncTime();
 
     /**
      * Returns the date and time of the last successfully completed pull request from the server.
      *
      * @return the date and time
      */
-    public Date getLastPullTime();
+    Date getLastPullTime();
 
 
     @TestOnly
-    public void reset(boolean simulateUninstall);
+    void reset(boolean simulateUninstall);
 
     @TestOnly
-    public void reset();
+    void reset();
 
-    public Context getContext();
+    Context getContext();
 
-    public String getAirlockUserUniqueId() throws AirlockNotInitializedException;
+    String getAirlockUserUniqueId() throws AirlockNotInitializedException;
 }
 

@@ -131,7 +131,7 @@ public class PercentageService {
         if (streams != null) {
             Map<String, Double> streamsMap = new HashMap();
             for (AirlockStream stream : streams) {
-                streamsMap.put(stream.getName(), new Double(stream.getRolloutPercentage()));
+                streamsMap.put(stream.getName(), (double) stream.getRolloutPercentage());
             }
             percentageMap.put(PercentageManager.Sections.STREAMS.name, streamsMap);
         }
@@ -199,7 +199,7 @@ public class PercentageService {
         JSONObject randomMap = persistenceHandler.getRandomMap();
         Double percentage = percentageMap.get(section.name).get(name);
         if (percentage == null) {
-            percentage = Double.valueOf(0);
+            percentage = (double) 0;
         }
 
         //do nothing is the given percentage is 0 or 100 since we can't put anything in the given range
@@ -236,7 +236,7 @@ public class PercentageService {
 
         Double percentage = percentageMap.get(section.name).get(name);
         if (percentage == null) {
-            percentage = Double.valueOf(0);
+            percentage = (double) 0;
         }
         int threshold = (int) Math.floor(percentage * 10000);
         if (threshold == 1000000) {
@@ -267,7 +267,7 @@ public class PercentageService {
     public Double getPercentage(PercentageManager.Sections section, String name) {
         String sectionName;
         if (section == null || section.name() == null || this.percentageMap.get(section.name().toLowerCase()) == null) {
-            return Double.valueOf(0);
+            return (double) 0;
         } else {
             sectionName = section.name();
         }
@@ -275,9 +275,6 @@ public class PercentageService {
     }
 
     public boolean isEmpty() {
-        if (percentageMap == null || percentageMap.get(PercentageManager.Sections.FEATURES.name()) == null) {
-            return true;
-        }
-        return false;
+        return percentageMap == null || percentageMap.get(PercentageManager.Sections.FEATURES.name()) == null;
     }
 }

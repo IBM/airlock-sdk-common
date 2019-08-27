@@ -232,7 +232,7 @@ public class BaseRawFeaturesJsonParser {
         if (appliedRules != null && !(appliedRules instanceof JSONArray)) {
             return null;
         } else {
-            List<String> listdata = new ArrayList<String>();
+            List<String> listdata = new ArrayList<>();
             JSONArray jArray = (JSONArray) appliedRules;
             if (jArray != null) {
                 for (int i = 0; i < jArray.length(); i++) {
@@ -263,7 +263,7 @@ public class BaseRawFeaturesJsonParser {
                 arrayAtIndex = Integer.valueOf(arrayIndex[1].substring(0, arrayIndex[1].length() - 1));
             }
             Object value = object.opt(nextObj);
-            if (value != null && arrayAtIndex > -1 && value instanceof JSONArray) {
+            if (arrayAtIndex > -1 && value instanceof JSONArray) {
                 value = ((JSONArray) value).optJSONArray(arrayAtIndex);
             }
 

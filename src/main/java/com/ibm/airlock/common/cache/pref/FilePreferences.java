@@ -10,7 +10,6 @@ import java.util.logging.Logger;
 import java.util.prefs.AbstractPreferences;
 import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
-import java.util.regex.Pattern;
 
 /**
  * Preferences implementation that stores to a user-defined file. See FilePreferencesFactory.
@@ -42,8 +41,8 @@ public class FilePreferences extends AbstractPreferences {
         super(parent, name);
 
         log.log(Level.INFO, "Instantiating node " + name);
-        root = new TreeMap<String, String>();
-        children = new TreeMap<String, FilePreferences>();
+        root = new TreeMap<>();
+        children = new TreeMap<>();
 
         if (!name.isEmpty() && parent != null) {
             if (name.endsWith(".pref")) {
@@ -237,7 +236,7 @@ public class FilePreferences extends AbstractPreferences {
                         throw new BackingStoreException(e);
                     }
 
-                    List<String> toRemove = new ArrayList<String>();
+                    List<String> toRemove = new ArrayList<>();
 
                     // Make a list of all direct children of this node to be removed
                     final Enumeration<?> pnen = p.propertyNames();

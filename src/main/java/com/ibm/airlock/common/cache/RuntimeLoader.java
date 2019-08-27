@@ -12,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
 
 import static com.ibm.airlock.common.util.Constants.SP_RAW_RULES;
@@ -130,11 +131,7 @@ public abstract class RuntimeLoader {
 
     private String decrypt(byte[] data) throws GeneralSecurityException {
         if (encryptionKey == null || encryptionKey.isEmpty()){
-            try {
-                return new String(data, "UTF-8");
-            } catch (UnsupportedEncodingException e) {
-                //utf-8 is always supported
-            }
+            return new String(data, StandardCharsets.UTF_8);
         }
         try {
             data = Decryptor.decryptAES(data, encryptionKey.getBytes());
@@ -142,7 +139,7 @@ public abstract class RuntimeLoader {
                 data = Gzip.decompress(data);
             }
             return new String(data
-                    , "UTF-8");
+                    , StandardCharsets.UTF_8);
         } catch (IOException e) {
             //log decompress error
         }
@@ -163,9 +160,7 @@ public abstract class RuntimeLoader {
                 outBuffer =  ous.toByteArray();
                 return decrypt(outBuffer);
             }
-        } catch (GeneralSecurityException e) {
-            throw  new AirlockException(e.getMessage());
-        } catch (IOException e) {
+        } catch (GeneralSecurityException | IOException e) {
             throw  new AirlockException(e.getMessage());
         } finally {
             try {

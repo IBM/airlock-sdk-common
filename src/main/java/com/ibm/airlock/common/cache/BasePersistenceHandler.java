@@ -469,6 +469,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
 
             File list = new File(context.getFilesDir().toString());
             File[] files = list.listFiles();
+            //noinspection ForLoopReplaceableByForEach
             for (int i = 0; i < files.length; i++) {
                 if (filesShouldBeDeleted.containsKey(files[i].getName())) {
                     files[i].delete();
@@ -535,10 +536,8 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
                 return inMemoryPreferences.get(preferenceName);
             }
             final long startTime = System.currentTimeMillis();
-            FileInputStream fis = null;
             ByteArrayOutputStream result = new ByteArrayOutputStream();
-            try {
-                fis = context.openFileInput(preferenceName);
+            try (FileInputStream fis = context.openFileInput(preferenceName)) {
                 long fisLength = fis.getChannel().size();
                 if (fisLength > 0) {
                     byte[] buffer = new byte[(int) fis.getChannel().size()];
@@ -561,11 +560,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
                 Logger.log.w(TAG, "Failed to get value for: " + preferenceName + " from file system. got exception while converting content to JSON");
             } catch (Exception e) {
                 Logger.log.w(TAG, "Failed to get value for: " + preferenceName + " from file system. got exception while converting content to JSON");
-            } finally {
-                try {
-                    fis.close();
-                } catch (Throwable ignore) {
-                }
             }
             Logger.log.d(TAG, "Read from file system of : " + preferenceName + " took : " + (System.currentTimeMillis() - startTime));
         }

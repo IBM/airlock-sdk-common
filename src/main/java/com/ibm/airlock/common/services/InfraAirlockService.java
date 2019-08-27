@@ -1345,7 +1345,7 @@ public class InfraAirlockService {
                     response.body().close();
                     JSONObject responseAsJson = new JSONObject(responseBody);
                     JSONArray products = responseAsJson.getJSONArray(Constants.JSON_FEATURE_FIELD_PRODUCTS);
-                    List<Servers.Product> productList = new ArrayList<Servers.Product>();
+                    List<Servers.Product> productList = new ArrayList<>();
                     if (products != null && products.length() > 0) {
                         // find my product by the id
                         for (int i = 0; i < products.length(); i++) {
@@ -1572,10 +1572,8 @@ public class InfraAirlockService {
     private boolean isSeasonValidVersion(String minVersion, String maxVersion) {
         AirlockVersionComparator comparator = new AirlockVersionComparator();
         if (comparator.compare(minVersion, appVersion) <= 0) {
-            if (maxVersion.equalsIgnoreCase("null") || maxVersion.isEmpty() ||
-                    comparator.compare(maxVersion, appVersion) > 0) {
-                return true;
-            }
+            return maxVersion.equalsIgnoreCase("null") || maxVersion.isEmpty() ||
+                    comparator.compare(maxVersion, appVersion) > 0;
         }
         return false;
     }

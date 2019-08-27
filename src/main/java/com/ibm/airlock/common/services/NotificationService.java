@@ -53,8 +53,8 @@ public class NotificationService {
         productDiComponent.inject(this);
     }
 
-    private boolean isEnabled() {
-        return notifications != null && !notifications.isEmpty();
+    private boolean isDisabled() {
+        return notifications == null || notifications.isEmpty();
     }
 
     public void calculateAndSaveNotifications(ScriptInvoker invoker) throws JSONException {
@@ -63,7 +63,7 @@ public class NotificationService {
             return;
         }
 
-        if (!isEnabled()) {
+        if (isDisabled()) {
             return;
         }
 
@@ -151,10 +151,7 @@ public class NotificationService {
         for (int i = 0; i < pendingNotifications.length(); i++) {
             JSONObject singleNotification = pendingNotifications.getJSONObject(i);
             String notificationUniqueId = singleNotification.optString("name");
-            if (notificationsToCancel.contains(notificationUniqueId) || !serverNotificationIds.contains(notificationUniqueId)) {
-                //if notification was cancelled - just remove it from the pending list...
-            } else {
-                //notification exists and remains existing
+            if (!notificationsToCancel.contains(notificationUniqueId) && serverNotificationIds.contains(notificationUniqueId)) {
                 outputArray.put(singleNotification);
             }
         }
@@ -268,7 +265,7 @@ public class NotificationService {
         try {
             JSONArray notificationsArray = getAirlockNotifications();
             //notifications are stored as LinkedHashMap since the order on airlock is important for defining the maxNotifications implementation
-            notifications = new LinkedHashMap<String, AirlockNotification>();
+            notifications = new LinkedHashMap<>();
 
             if (notificationsArray != null) {
                 try {
@@ -308,7 +305,7 @@ public class NotificationService {
 
     public void updateNotificationsEnablement() {
 
-        if (!isEnabled()) {
+        if (isDisabled()) {
             return;
         }
         for (com.ibm.airlock.common.notifications.AirlockNotification notification : notifications.values()) {
@@ -461,11 +458,7 @@ public class NotificationService {
     @SuppressWarnings("VariableNotUsedInsideIf")
     public void setNotificationIntent(Object notificationIntent) {
         notificationIntent = notificationIntent;
-        if (notificationIntent != null) {
-            isSupported = true;
-        } else {
-            isSupported = false;
-        }
+        isSupported = notificationIntent != null;
     }
 
     public Map<String, AirlockNotification> getNotifications() {

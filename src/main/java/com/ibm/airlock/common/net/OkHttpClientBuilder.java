@@ -8,6 +8,6 @@ import okhttp3.OkHttpClient;
  */
 
 public interface OkHttpClientBuilder {
-    public OkHttpClient create(String encryptionKey);
-    public OkHttpClient create();
+    OkHttpClient create(String encryptionKey);
+    OkHttpClient create();
 }

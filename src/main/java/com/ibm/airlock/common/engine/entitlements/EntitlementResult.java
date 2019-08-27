@@ -25,11 +25,11 @@ class EntitlementResult extends Result {
         this.attributes = result.attributes;
         this.configRuleStatuses = result.configRuleStatuses;
         this.analyticsAppliedRules = result.getAnalyticsAppliedRules();
-        this.percentage = result.getPercentage();;
+        this.percentage = result.getPercentage();
         this.orderingWeight = result.getOrderingWeight();
         this.type = result.getType();
-        this.isPremium = result.isPremium();;
-        this.isPurchased = result.isPurchased();;
+        this.isPremium = result.isPremium();
+        this.isPurchased = result.isPurchased();
     }
 
     private EntitlementResult(boolean accept, String trace) {

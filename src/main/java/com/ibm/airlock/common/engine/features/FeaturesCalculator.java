@@ -54,7 +54,7 @@ public class FeaturesCalculator {
         boolean accept = obj.optBoolean(Constants.JSON_FEATURE_FIELD_DEF_VAL, false);
         JSONObject attributes = getDefaultConfiguration(obj);
         return new Fallback(accept,
-                fallback.containsKey(getName(obj)) ? fallback.get(getName(obj).toLowerCase()).premiumRuleOn : false,
+                fallback.containsKey(getName(obj)) && fallback.get(getName(obj).toLowerCase()).premiumRuleOn,
                 attributes);
     }
 
@@ -652,12 +652,12 @@ public class FeaturesCalculator {
             }
         } else {
             featureResult.setPremium(false);
-            if (!isPurchased(additionalData, feature, featureResult)) {
-                featureResult.setPurchased(false);
-                featureResult.setTrace(Result.FEATURE_PREMIUM_RULE_OFF_NO_PURCHASED);
-            } else {
+            if (isPurchased(additionalData, feature, featureResult)) {
                 featureResult.setPurchased(true);
                 featureResult.setTrace(Result.FEATURE_PREMIUM_RULE_OFF_PURCHASED);
+            } else {
+                featureResult.setPurchased(false);
+                featureResult.setTrace(Result.FEATURE_PREMIUM_RULE_OFF_NO_PURCHASED);
             }
         }
     }
@@ -725,7 +725,7 @@ public class FeaturesCalculator {
                         }
                     }
                 }
-                return Double.valueOf(weight_b).compareTo(Double.valueOf(weight_a));
+                return Double.compare(weight_b, weight_a);
             }
         });
 

@@ -177,7 +177,7 @@ public class Entitlement extends Feature {
 
     @Override
     protected Entitlement getNew() {
-        return new Entitlement(getName(), isOn(), getSource(), new ArrayList<PurchaseOption>(purchaseOptions));
+        return new Entitlement(getName(), isOn(), getSource(), new ArrayList<>(purchaseOptions));
     }
 
 }

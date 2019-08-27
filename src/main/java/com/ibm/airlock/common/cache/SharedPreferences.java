@@ -95,7 +95,7 @@ public interface SharedPreferences {
      * back to the original {@link SharedPreferences} until you call {@link #doCommit}
      * or {@link #apply}
      */
-    public interface Editor {
+    interface Editor {
 
         /**
          * Mark in the editor that a preference value should be removed, which
@@ -220,7 +220,7 @@ public interface SharedPreferences {
         Editor putBoolean(String key, boolean value);
 
 
-        public void putString(String spSeasonId, String seasonId);
+        void putString(String spSeasonId, String seasonId);
         
         
     }

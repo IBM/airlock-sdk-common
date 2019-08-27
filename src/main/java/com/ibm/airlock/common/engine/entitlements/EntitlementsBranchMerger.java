@@ -80,7 +80,7 @@ public class EntitlementsBranchMerger extends FeaturesBranchMerger {
             return;
         }
 
-        Map<String, JSONObject> overrideKids = new HashMap<String, JSONObject>();
+        Map<String, JSONObject> overrideKids = new HashMap<>();
         if (purchaseOptions != null) {
             for (int i = 0; i < purchaseOptions.length(); ++i) {
                 JSONObject child = purchaseOptions.getJSONObject(i);

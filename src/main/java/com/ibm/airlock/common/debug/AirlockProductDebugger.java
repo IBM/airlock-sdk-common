@@ -25,7 +25,7 @@ public interface AirlockProductDebugger {
      * @return a list of user groups selected for the device.
      */
     @CheckForNull
-    public List<String> getSelectedDeviceUserGroups();
+    List<String> getSelectedDeviceUserGroups();
 
 
     /**
@@ -34,21 +34,21 @@ public interface AirlockProductDebugger {
      * @param userGroups List of the selected user groups.
      * @throws JSONException if the provided value breaks the JSON serialization process.
      */
-    public void setDeviceUserGroups(String... userGroups) throws TimeoutException;
+    void setDeviceUserGroups(String... userGroups) throws TimeoutException;
 
 
     /**
      * @return Array of airlock users group names
      * @throws InterruptedException
      */
-    public JSONArray getUserGroups() throws InterruptedException, TimeoutException, IOException;
+    JSONArray getUserGroups() throws InterruptedException, TimeoutException, IOException;
 
     /**
      * synchronously downloads the current remote airlock configuration from the server.
      *
      * @throws AirlockNotInitializedException if the Airlock SDK has not been initialized.
      */
-    public void pullFeatures() throws AirlockNotInitializedException, InterruptedException, TimeoutException, IOException;
+    void pullFeatures() throws AirlockNotInitializedException, InterruptedException, TimeoutException, IOException;
 
     /**
      * Initializes AirlockProductManager with application information.
@@ -62,91 +62,91 @@ public interface AirlockProductDebugger {
      * @throws AirlockInvalidFileException Thrown when the defaults file does not contain the proper content.
      * @throws IOException                 Thrown when the defaults file cannot be opened.
      */
-    public void initSDK(String directory, String defaultConfiguration, String productVersion) throws AirlockInvalidFileException, IOException;
+    void initSDK(String directory, String defaultConfiguration, String productVersion) throws AirlockInvalidFileException, IOException;
 
 
     /**
      * @return returns the last airlock context the feature rules were calculated with.
      */
     @CheckForNull
-    public JSONObject getLastCalculatedContext();
+    JSONObject getLastCalculatedContext();
 
 
     /**
      * @return returns translated strings table.
      */
     @CheckForNull
-    public JSONObject getTranslatedStringsTable();
+    JSONObject getTranslatedStringsTable();
 
 
     /**
      * @return returns Streams java-script utils.
      */
     @CheckForNull
-    public JSONObject getStreamsJavaScriptUils();
+    JSONObject getStreamsJavaScriptUils();
 
 
     /**
      * @return returns Java Script utils.
      */
     @CheckForNull
-    public JSONObject getJavaScriptUils();
+    JSONObject getJavaScriptUils();
 
 
     /**
      * @return returns remote features configuration
      */
     @CheckForNull
-    public JSONObject getRawFeatureConfiguration();
+    JSONObject getRawFeatureConfiguration();
 
 
     /**
      * @return returns the list of development branches
      */
     @CheckForNull
-    public JSONArray getDevelopmentBranches() throws InterruptedException, TimeoutException, IOException;
+    JSONArray getDevelopmentBranches() throws InterruptedException, TimeoutException, IOException;
 
 
     /**
      * @return returns the list of streams
      */
     @CheckForNull
-    public List<String> getStreams();
+    List<String> getStreams();
 
 
     /**
      * @return returns a stream configuration as a string in JSON format.
      */
     @CheckForNull
-    public JSONObject getStream(String name);
+    JSONObject getStream(String name);
 
     /**
      * Clears a stream model
      */
-    public void clearStream(String name);
+    void clearStream(String name);
 
 
     /**
      * Triggers a stream processing
      */
-    public void runStreamProcessing(String name) throws ScriptInitException;
+    void runStreamProcessing(String name) throws ScriptInitException;
 
 
     /**
      * Sets a new value for  airlock stream roll-out percentage.
      */
-    public void setStreamRolloutPercentage(String name, long percentage);
+    void setStreamRolloutPercentage(String name, long percentage);
 
 
     /**
      * Sets a development branch, the airlock product is running with.
      */
-    public void setDevelopmentBranch(String branchName);
+    void setDevelopmentBranch(String branchName);
 
     /**
      * Gets a development branch, the airlock product is running with.
      */
-    public String getSelectedDevelopmentBranch();
+    String getSelectedDevelopmentBranch();
 
 
     /**
@@ -154,13 +154,13 @@ public interface AirlockProductDebugger {
      *
      * @param enable
      */
-    public void enableResponsiveMode(boolean enable);
+    void enableResponsiveMode(boolean enable);
 
 
     /**
      * Disable all development branches.
      */
-    public void disableAllDevelopmentBranches();
+    void disableAllDevelopmentBranches();
 
 
     /**
@@ -169,11 +169,11 @@ public interface AirlockProductDebugger {
      * @return a list of user groups selected for the device.
      */
     @CheckForNull
-    public List<Feature> getCurrentFeaturesState();
+    List<Feature> getCurrentFeaturesState();
 
 
     /**
      * Sets a new value for  airlock feature roll-out percentage.
      */
-    public void setFeatureRolloutPercentage(String featureName, int percentage);
+    void setFeatureRolloutPercentage(String featureName, int percentage);
 }

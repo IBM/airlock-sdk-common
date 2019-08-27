@@ -166,8 +166,7 @@ public class StreamsService {
 
             //run filters on event and add event to queue if needed
             //If thread was changed need to init the context again...
-            for (int i = 0; i < streams.size(); i++) {
-                AirlockStream stream = streams.get(i);
+            for (AirlockStream stream : streams) {
                 if (stream == null || !stream.isProcessingEnabled() || !stream.isEnabled()) {
                     continue;
                 }
@@ -305,9 +304,9 @@ public class StreamsService {
         if (traceResult != null) {
             String traceResultStr = Context.toString(traceResult);
             String[] traceResultArray = traceResultStr.split(",");
-            for (int i = 0; i < traceResultArray.length; i++) {
-                if (!traceResultArray[i].isEmpty()) {
-                    stream.putTraceRecord(traceResultArray[i]);
+            for (String s : traceResultArray) {
+                if (!s.isEmpty()) {
+                    stream.putTraceRecord(s);
                 }
             }
         }

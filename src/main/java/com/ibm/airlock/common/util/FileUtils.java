@@ -3,7 +3,6 @@ package com.ibm.airlock.common.util;
 import java.io.*;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -99,10 +98,9 @@ public class FileUtils {
         FileWriter writer = new FileWriter(outputFile, true);
         ArrayList<File> files = FolderUtils.allFilesFromFolder(folderPath);
 
-        for(int i = 0; i < files.size(); ++i) {
-            File current = files.get(i);
+        for (File current : files) {
             FileInputStream fin = new FileInputStream(current);
-            byte[] fileContent = new byte[(int)current.length()];
+            byte[] fileContent = new byte[(int) current.length()];
             fin.read(fileContent);
             fin.close();
             writer.write(new String(fileContent));
@@ -116,39 +114,13 @@ public class FileUtils {
             destFile.createNewFile();
         }
 
-        FileInputStream fis = null;
-        FileOutputStream fos = null;
-        FileChannel source = null;
-        FileChannel destination = null;
-
-        try {
-            fis = new FileInputStream(sourceFile);
-            fos = new FileOutputStream(destFile);
-            source = fis.getChannel();
-            destination = fos.getChannel();
+        try (FileInputStream fis = new FileInputStream(sourceFile); FileOutputStream fos = new FileOutputStream(destFile); FileChannel source = fis.getChannel(); FileChannel destination = fos.getChannel()) {
             long count = 0L;
             long size = source.size();
 
-            while(count < size) {
+            while (count < size) {
                 count += destination.transferFrom(source, count, size - count);
             }
-        } finally {
-            if (source != null) {
-                source.close();
-            }
-
-            if (destination != null) {
-                destination.close();
-            }
-
-            if (fis != null) {
-                fis.close();
-            }
-
-            if (fos != null) {
-                fos.close();
-            }
-
         }
 
     }

@@ -13,28 +13,28 @@ import java.io.InputStream;
 
 public interface Context {
 
-    public String getAirlockProductName();
+    String getAirlockProductName();
 
-    public String getEncryptionKey();
+    String getEncryptionKey();
 
-    public String getSeasonId();
+    String getSeasonId();
 
-    public String getInstanceId();
+    String getInstanceId();
 
-    public String getAppVersion();
+    String getAppVersion();
 
-    public File getFilesDir();
+    File getFilesDir();
 
-    public SharedPreferences getSharedPreferences(String spName, int modePrivate);
+    SharedPreferences getSharedPreferences(String spName, int modePrivate);
 
-    public void deleteFile(String key);
+    void deleteFile(String key);
 
-    public FileInputStream openFileInput(String preferenceName) throws FileNotFoundException;
+    FileInputStream openFileInput(String preferenceName) throws FileNotFoundException;
 
-    public FileOutputStream openFileOutput(String name,
-            int mode) throws FileNotFoundException;
+    FileOutputStream openFileOutput(String name,
+                                    int mode) throws FileNotFoundException;
 
-    public Object getSystemService(String name);
+    Object getSystemService(String name);
 
-    public InputStream openRawResource(int name);
+    InputStream openRawResource(int name);
 }
