@@ -3,6 +3,7 @@ package com.ibm.airlock.common.util;
 import java.io.*;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
