@@ -1,17 +1,12 @@
 package com.ibm.airlock.common.debug;
 
-import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.TimeoutException;
 import javax.annotation.CheckForNull;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import com.ibm.airlock.common.exceptions.AirlockInvalidFileException;
-import com.ibm.airlock.common.exceptions.AirlockNotInitializedException;
 import com.ibm.airlock.common.model.Feature;
-import com.ibm.airlock.common.engine.ScriptInitException;
 
 
 /**
@@ -148,7 +143,7 @@ public interface AirlockProductDebugger {
     /**
      * Enables or disable airlock responsive mode.
      *
-     * @param enable
+     * @param enable true to enable responsive mode
      */
     void enableResponsiveMode(boolean enable);
 

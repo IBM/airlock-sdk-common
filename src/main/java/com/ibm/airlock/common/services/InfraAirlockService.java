@@ -377,8 +377,8 @@ public class InfraAirlockService {
     /**
      * Reads the stored user groups list from the device.
      *
-     * @param ph
-     * @param context
+     * @param ph handle to persitence handler
+     * @param context the context used
      */
     private void readUserGroupsFromDevice(PersistenceHandler ph, Context context) {
         // stub
@@ -1452,7 +1452,7 @@ public class InfraAirlockService {
      * Calculates the status of the features according to the pullFeatures results and return the Features as a tree.
      *
      * @param context an user profile context
-     * @param locale
+     * @param locale locale to be used on calculation
      */
     public Feature calculateFeatures(@Nullable JSONObject context, String locale) {
         final JSONObject runtimeFeatures = persistenceHandler.readJSON(Constants.SP_RAW_RULES);
@@ -1753,7 +1753,7 @@ public class InfraAirlockService {
     /**
      * Returns supported country by language, if there is any return empty string
      *
-     * @param language
+     * @param language the input language
      * @return supported country by language
      */
     private String getSupportedCountryByLanguage(String language) {

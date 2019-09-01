@@ -397,7 +397,7 @@ public class NotificationService {
     /**
      * method to update the pending notification list by deleting
      *
-     * @param notificationsToRemove
+     * @param notificationsToRemove list of notification names to remove
      */
     public void removeFiredNotifications(List<String> notificationsToRemove) {
 
@@ -456,7 +456,7 @@ public class NotificationService {
 
 
     public void setNotificationIntent(Object notificationIntent) {
-        notificationIntent = notificationIntent;
+        this.notificationIntent = notificationIntent;
         isSupported = notificationIntent != null;
     }
 

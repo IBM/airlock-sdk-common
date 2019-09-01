@@ -357,7 +357,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     /**
      * The reason this has a seperate method is because it is called when app stopps - so we need to persist synchronously
      *
-     * @param jsonAsString
+     * @param jsonAsString the json value as string
      */
     @Override
     public abstract void writeStream(String name, String jsonAsString);
@@ -556,8 +556,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
                 Logger.log.w(TAG, "Failed to get value for: " + preferenceName + " from file system. File not found.");
             } catch (IOException e) {
                 Logger.log.w(TAG, "Failed to get value for: " + preferenceName + " from file system. got exception while converting content to string");
-            } catch (JSONException e) {
-                Logger.log.w(TAG, "Failed to get value for: " + preferenceName + " from file system. got exception while converting content to JSON");
             } catch (Exception e) {
                 Logger.log.w(TAG, "Failed to get value for: " + preferenceName + " from file system. got exception while converting content to JSON");
             }

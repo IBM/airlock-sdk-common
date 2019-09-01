@@ -7,7 +7,6 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.prefs.BackingStoreException;
 
 /**
  * Used for unit tests

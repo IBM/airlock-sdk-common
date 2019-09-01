@@ -28,7 +28,7 @@ public class DefaultAirlockClient implements AirlockClient {
 
     /**
      * Returns client unique id
-     * @return
+     * @return the client unique id
      */
     public String getId() {
         return id;

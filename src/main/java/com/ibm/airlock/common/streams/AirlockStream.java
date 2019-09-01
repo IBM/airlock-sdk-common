@@ -113,7 +113,7 @@ public class AirlockStream {
     public void loadStreamRuntimeDataFormDisk() {
         JSONObject persistedStreamData = persistenceHandler.readStream(name);
         String events = persistedStreamData.optString("events");
-        JSONArray eventsArray = null;
+        JSONArray eventsArray = new JSONArray();
         if (!events.isEmpty()) {
             try {
                 eventsArray = new JSONArray(events);
@@ -125,7 +125,7 @@ public class AirlockStream {
 
         String pendingEvents = persistedStreamData.optString("pendingEvents");
         if (!pendingEvents.isEmpty()) {
-            JSONArray pendingEventsArray = null;
+            JSONArray pendingEventsArray = new JSONArray();
             try {
                 pendingEventsArray = new JSONArray(pendingEvents);
             } catch (JSONException e) {

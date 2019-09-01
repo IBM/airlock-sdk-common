@@ -103,7 +103,7 @@ public class AirlockNotification {
             if (threshold <= 0) {
                 isProcessingEnabled = false;
             } else if (threshold < 100.0) {
-                Integer userFeatureRand = notificationsRandomNumber.optInt(getName(), -1);
+                int userFeatureRand = notificationsRandomNumber.optInt(getName(), -1);
                 if (userFeatureRand == -1) {
                     isProcessingEnabled = false;
                 }else{

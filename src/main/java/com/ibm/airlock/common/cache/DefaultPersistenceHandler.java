@@ -237,7 +237,8 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
     /**
      * The reason this has a seperate method is because it is called when app stops - so we need to persist synchronously
      *
-     * @param jsonAsString
+     * @param streamName the name of stream to be written
+     * @param jsonAsString the json value as string
      */
     @Override
     public void writeStream(String streamName, String jsonAsString) {

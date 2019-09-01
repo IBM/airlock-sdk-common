@@ -16,13 +16,13 @@ public class DefaultContext implements Context {
     private static final String DEFAULT_SEASON_ID = "DEFAULT_SEASON_ID";
     private static final String DEFAULT_PRODUCT_ID = "DEFAULT_PRODUCT_ID";
 
-    private File contextFolder;
-    private String airlockProductName;
-    private String encryptionKey;
+    private final File contextFolder;
+    private final String airlockProductName;
+    private final String encryptionKey;
     private String appVersion;
-    private String instanceId;
-    private String productId;
-    private String seasonId;
+    private final String instanceId;
+    private final String productId;
+    private final String seasonId;
 
 
     public DefaultContext(String instanceId, String rootFolder, String defaults, String encryptionKey, String appVersion) {

@@ -133,16 +133,14 @@ public class FileUtils {
         byte[] buffer = new byte[1024];
         FileOutputStream fos = new FileOutputStream(zipFilePath);
         ZipOutputStream zos = new ZipOutputStream(fos);
-        Iterator var8 = allFiles.iterator();
 
-        while(var8.hasNext()) {
-            File file = (File)var8.next();
+        for (File file : allFiles) {
             ZipEntry ze = new ZipEntry(file.getAbsolutePath());
             zos.putNextEntry(ze);
             FileInputStream in = new FileInputStream(file);
 
             int len;
-            while((len = in.read(buffer)) > 0) {
+            while ((len = in.read(buffer)) > 0) {
                 zos.write(buffer, 0, len);
             }
 

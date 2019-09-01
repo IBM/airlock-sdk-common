@@ -53,7 +53,7 @@ public interface PersistenceHandler {
      * Stores a map of user groups
      * each group could be selected on not.
      *
-     * @throws JSONException
+     * @throws JSONException the JSON exception thrown
      */
     void storeDeviceUserGroups(@Nullable List<String> userGroups, StreamsService streamsManage);
 
@@ -125,10 +125,13 @@ public interface PersistenceHandler {
     void write(String key, String value);
 
     void write(String key, JSONObject value);
+
     /**
+     *
      * The reason this has a seperate method is because it is called when app stopps - so we need to persist synchronously
      *
-     * @param jsonAsString
+     * @param name the stream name that is being written
+     * @param jsonAsString the stream as json string
      */
     void writeStream(String name, String jsonAsString);
 
