@@ -13,7 +13,7 @@ public class CalculateErrorItem {
     private String resultError;
 
     /**
-     * Ctor for CalculateErrorItem class
+     * Constructor for CalculateErrorItem class
      *
      * @param featureName feature name
      * @param resultError error details

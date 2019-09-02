@@ -89,6 +89,7 @@ public class DefaultContext implements Context {
 
     @Override
     public void deleteFile(String key) {
+        //noinspection ResultOfMethodCallIgnored
         new File(key).delete();
     }
 

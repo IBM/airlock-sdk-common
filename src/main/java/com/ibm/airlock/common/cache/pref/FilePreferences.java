@@ -214,6 +214,7 @@ public class FilePreferences extends AbstractPreferences {
 
     @Override
     public void removeNode() throws BackingStoreException {
+        //noinspection ResultOfMethodCallIgnored
         file.delete();
         children.clear();
         super.removeNode();

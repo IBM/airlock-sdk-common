@@ -1518,14 +1518,7 @@ public class InfraAirlockService {
                                   @Nullable Collection<String> purchasedProductIds) {
 
         final JSONObject runtimeFeatures = persistenceHandler.readJSON(Constants.SP_RAW_RULES);
-        if (runtimeFeatures == null) {
-            Logger.log.e(TAG, AirlockMessages.LOG_CALCULATE_MISSING_PULL_RESULT);
-            return;
-        }
         JSONObject translations = persistenceHandler.readJSON(Constants.SP_RAW_TRANSLATIONS);
-        if (translations == null) {
-            translations = new JSONObject();
-        }
         JSONObject translationStrings = translations.has(Constants.JSON_TRANSLATION_STRING) ?
                 translations.getJSONObject(Constants.JSON_TRANSLATION_STRING) : new JSONObject();
 

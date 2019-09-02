@@ -1,7 +1,6 @@
 package com.ibm.airlock.common.engine;
 
 import java.util.Hashtable;
-import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -112,9 +111,7 @@ public class AirlockEnginePerformanceMetric {
         Set<Long> reportsKeyPerThread = metricPerThread.keySet();
         TreeSet<Long> mutableSet = new TreeSet<>(reportsKeyPerThread);
 
-        Iterator<Long> iterator = mutableSet.iterator();
-        while (iterator.hasNext()) {
-            Long key = iterator.next();
+        for (Long key : mutableSet) {
             reports.put(metricPerThread.get(key).toString(), key);
         }
         return reports;

@@ -36,10 +36,12 @@ public class FeaturesList<T extends Feature> {
         features = new Hashtable<>();
     }
 
-    public FeaturesList(String json, Feature.Source source) {
+    public FeaturesList(@Nullable String json, Feature.Source source) {
         try {
             if (json == null || json.isEmpty()) {
                 features = new Hashtable<>();
+                json = "";
+
             }
             JSONObject root = new JSONObject(json);
             JSONObject featuresArray = root.optJSONObject(getRooName());
@@ -138,7 +140,8 @@ public class FeaturesList<T extends Feature> {
      *
      * @param newValues The list to be merged with
      */
-    private synchronized void merge(FeaturesList newValues, boolean addCachedFeatures,  boolean storeChangesList) {
+    @SuppressWarnings("SameParameterValue")
+    private synchronized void merge(FeaturesList newValues, boolean addCachedFeatures, boolean storeChangesList) {
         List<String> changedFeatures = null;
         if (storeChangesList) {//this is for future use - returning ti user the changes features...
             changedFeatures = new ArrayList<>();
@@ -205,7 +208,6 @@ public class FeaturesList<T extends Feature> {
 
                 //find all parent children which already processed and add parent reference to them
                 List<Feature> children = currentFeatureClone.getChildren();
-                int childrenSize = children.size();
                 for (Feature child : children) {
                     // the child has new parent - remove it from the children list
                     if (newFeaturesMap.containsKey(child.getName().toLowerCase(Locale.getDefault()))) {
@@ -280,7 +282,7 @@ public class FeaturesList<T extends Feature> {
 
         JSONObject toReturn = new JSONObject();
         try {
-            result.put(Constants.JSON_FEATURE_IS_ON, root.isOn());
+            result.put(Constants.JSON_FEATURE_IS_ON, Objects.requireNonNull(root).isOn());
             result.put(Constants.JSON_FEATURES_ATTRS, root.getConfiguration());
             result.put(Constants.JSON_FEATURE_SOURCE, root.getSource());
             result.put(Constants.JSON_FEATURE_FIELD_FEATURES, parseChildren(root, new JSONArray()));
@@ -317,7 +319,7 @@ public class FeaturesList<T extends Feature> {
 
     private JSONArray parseChildren(Feature root, JSONArray childrenArray) {
         List<Feature> children = root.getChildren();
-        if (children == null || children.isEmpty()) {
+        if (children.isEmpty()) {
             return childrenArray;
         }
         List<Feature> features = new ArrayList<>(children);
@@ -333,6 +335,7 @@ public class FeaturesList<T extends Feature> {
         return childrenArray;
     }
 
+    @SuppressWarnings("unused")
     @TestOnly
     public String printableToString() {
         StringBuilder sb = new StringBuilder();
@@ -343,6 +346,7 @@ public class FeaturesList<T extends Feature> {
         return sb.toString();
     }
 
+    @SuppressWarnings("unused")
     public List<String> getLatestSyncChangedFeatures() {
         return latestSyncChangedFeatures;
     }

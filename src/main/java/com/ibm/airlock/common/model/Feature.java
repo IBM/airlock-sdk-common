@@ -30,6 +30,7 @@ import javax.annotation.Nullable;
  *
  * @author Denis Voloshin
  */
+@SuppressWarnings("unused")
 public class Feature implements Serializable {
 
     private static final String TAG = "Airlock.Feature";
@@ -301,7 +302,7 @@ public class Feature implements Serializable {
      *
      * @param configuration The new configuration to be set.
      */
-    public void setConfiguration(JSONObject configuration) {
+    public void setConfiguration(@Nullable JSONObject configuration) {
         if (configuration != null) {
             this.configuration = configuration;
         }
@@ -441,6 +442,7 @@ public class Feature implements Serializable {
         this.percentage = percentage;
     }
 
+    @SuppressWarnings("unused")
     public BranchStatus getBranchStatus() {
         return branchStatus;
     }
@@ -566,10 +568,8 @@ public class Feature implements Serializable {
 
             if (children != null && !children.isEmpty()) {
                 JSONArray childrenArray = new JSONArray();
-                if (children != null && !children.isEmpty()) {
-                    for (Feature child : children) {
-                        childrenArray.put(child.toJsonObject());
-                    }
+                for (Feature child : children) {
+                    childrenArray.put(child.toJsonObject());
                 }
                 childJson.put(Constants.JSON_FEATURE_FIELD_FEATURES, childrenArray);
             }
@@ -673,7 +673,7 @@ public class Feature implements Serializable {
     }
 
     public void mergeAnalyticsAppliedOrderRules(JSONArray appliedOrderRules) {
-        TreeSet<String> set = new TreeSet();
+        TreeSet<String> set = new TreeSet<>();
         for (int i = 0; i < appliedOrderRules.length(); i++) {
             set.add(appliedOrderRules.getString(i));
         }

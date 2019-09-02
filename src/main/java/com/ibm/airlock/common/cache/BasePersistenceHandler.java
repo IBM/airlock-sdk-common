@@ -472,6 +472,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
             //noinspection ForLoopReplaceableByForEach
             for (int i = 0; i < files.length; i++) {
                 if (filesShouldBeDeleted.containsKey(files[i].getName())) {
+                    //noinspection ResultOfMethodCallIgnored
                     files[i].delete();
                 }
             }

@@ -92,7 +92,7 @@ public class RhinoScriptInvoker extends ScriptInvoker {
 
         //create and enter safe execution context
         SafeContextFactory safeContextFactory = new SafeContextFactory();
-        rhino = safeContextFactory.makeContext().enter();
+        rhino = Context.enter();
 
         try {
             long start;

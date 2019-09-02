@@ -17,6 +17,7 @@ public class FilePreferencesFactory implements PreferencesFactory {
     @Override
     public Preferences userRoot() {
         if (rootPreferences == null) {
+            //noinspection ResultOfMethodCallIgnored
             new File(getAirlockCacheDirectory()).mkdir();
             rootPreferences = new FilePreferences(null, "");
         }

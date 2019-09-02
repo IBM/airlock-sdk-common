@@ -14,7 +14,7 @@ public class AnalyticsService {
     private static final String TAG = "AnalyticsService";
 
     @Inject
-    InfraAirlockService infraAirlockService;
+    private InfraAirlockService infraAirlockService;
 
 
     public void init(ProductDiComponent productDiComponent) {

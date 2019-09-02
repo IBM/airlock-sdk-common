@@ -19,8 +19,7 @@ import okhttp3.ResponseBody;
 
 public class ResponseExtractor implements Interceptor {
 
-    @SuppressWarnings("FieldCanBeLocal")
-    private static String TAG = "ResponseExtractor";
+    private static final String TAG = "ResponseExtractor";
 
     @Override
     public Response intercept(Chain chain) throws IOException {

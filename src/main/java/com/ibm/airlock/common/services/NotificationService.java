@@ -237,11 +237,6 @@ public class NotificationService {
         calculateAndSaveNotifications(invoker);
     }
 
-    @TestOnly
-    public void clearNotifications() {
-
-    }
-
     private JSONArray getAirlockNotifications() throws JSONException {
         JSONObject jsonObject = persistenceHandler.readJSON(Constants.SP_NOTIFICATIONS);
         notificationsLimitations = jsonObject.optJSONArray("notificationsLimitations");
@@ -337,6 +332,7 @@ public class NotificationService {
         return size;
     }
 
+    @SuppressWarnings("EmptyMethod")
     protected void scheduleNotificationAlarm(long dueDate) {
         //On base class do nothing - on Extending class should implement real alarm set
 

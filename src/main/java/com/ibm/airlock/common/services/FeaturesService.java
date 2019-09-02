@@ -1,7 +1,6 @@
 package com.ibm.airlock.common.services;
 
 import com.ibm.airlock.common.AirlockCallback;
-import com.ibm.airlock.common.exceptions.AirlockNotInitializedException;
 import com.ibm.airlock.common.dependency.ProductDiComponent;
 import com.ibm.airlock.common.model.Feature;
 import com.ibm.airlock.common.model.FeaturesList;

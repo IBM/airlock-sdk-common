@@ -23,9 +23,6 @@ public class AirlockContextManager {
     @Nullable
     private Script jsTranslations;
 
-    private final SafeContextFactory safeContextFactory;
-
-
     private final StateFullContext currentContext;
 
     private final StateFullContext runtimeContext;
@@ -40,7 +37,7 @@ public class AirlockContextManager {
     public AirlockContextManager(String name) {
         currentContext = new StateFullContext(name);
         runtimeContext = new StateFullContext(name);
-        safeContextFactory = new SafeContextFactory();
+        SafeContextFactory safeContextFactory = new SafeContextFactory();
     }
 
     public synchronized void overideRuntimeWithCurrentContext(){
@@ -71,7 +68,7 @@ public class AirlockContextManager {
     public void setJsUtilsScript(String script) {
 
         //create and enter safe execution context
-        Context rhino = safeContextFactory.makeContext().enter();
+        Context rhino = Context.enter();
 
         try {
             String md5 = generateMD5(script);
@@ -92,7 +89,7 @@ public class AirlockContextManager {
     public void setJsTranslationsScript(String script) {
 
         //create and enter safe execution context
-        Context rhino = safeContextFactory.makeContext().enter();
+        Context rhino = Context.enter();
 
 
         String translations = "\nvar " +

@@ -61,6 +61,7 @@ class FolderUtils {
     }
 
     private static ArrayList<File> allFilesFromDirectory(File dir, ArrayList<File> list) {
+        //noinspection ResultOfMethodCallIgnored
         dir.setReadOnly();
         File[] files = dir.listFiles();
 
@@ -74,6 +75,7 @@ class FolderUtils {
             }
         }
 
+        //noinspection ResultOfMethodCallIgnored
         dir.setWritable(true);
         return list;
     }
