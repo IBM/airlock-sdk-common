@@ -42,8 +42,8 @@ public class ResponseExtractor implements Interceptor {
     /**
      * Checks if an input stream is gzipped.
      *
-     * @param in
-     * @return
+     * @param in bytes input
+     * @return true if is Gzipped
      */
     public static boolean isGZipped(byte[] in) {
         byte[] twoBytes = Arrays.copyOfRange(in, 0, 2);

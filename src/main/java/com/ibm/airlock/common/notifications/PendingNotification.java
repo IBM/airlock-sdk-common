@@ -6,7 +6,7 @@ import org.json.JSONObject;
 /**
  * Created by SEitan on 21/11/2017.
  */
-@SuppressWarnings("ClassOnlyUsedInOnePackage")
+@SuppressWarnings({"ClassOnlyUsedInOnePackage", "unused"})
 public class PendingNotification {
     private final String uniqueId;
 
