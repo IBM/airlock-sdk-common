@@ -20,6 +20,7 @@ import javax.annotation.Nullable;
  *
  * @author Denis Voloshin
  */
+@SuppressWarnings("unused")
 public interface PersistenceHandler {
 
     void init(Context c, AirlockCallback callback);
@@ -128,7 +129,7 @@ public interface PersistenceHandler {
 
     /**
      *
-     * The reason this has a seperate method is because it is called when app stopps - so we need to persist synchronously
+     * The reason this has a separate method is because it is called when app stops - so we need to persist synchronously
      *
      * @param name the stream name that is being written
      * @param jsonAsString the stream as json string
@@ -136,7 +137,7 @@ public interface PersistenceHandler {
     void writeStream(String name, String jsonAsString);
 
     /**
-     * The reason this has a seperate method is because it is called when app stopps - so we need to persist synchronously
+     * The reason this has a separate method is because it is called when app stops - so we need to persist synchronously
      */
     JSONObject readStream(String name);
 
@@ -154,6 +155,7 @@ public interface PersistenceHandler {
 
     void clearExperiments();
 
+    @SuppressWarnings("unused")
     @TestOnly
     void clear();
 
@@ -176,10 +178,13 @@ public interface PersistenceHandler {
 
     void setPreSyncedFeaturesMap(FeaturesList syncServerFeatureList);
 
+    @CheckForNull
     JSONObject getNotificationsRandomMap();
+
     void setNotificationsRandomMap(JSONObject randomMap);
 
     JSONObject getExperimentsRandomMap();
+
     void setExperimentsRandomMap(JSONObject randomMap);
 
     void clearRuntimeData();

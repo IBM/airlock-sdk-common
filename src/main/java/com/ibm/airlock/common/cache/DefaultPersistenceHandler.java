@@ -158,10 +158,12 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
 
 
         // try to delete hidden files
-        if (versionFolder != null && versionFolder.listFiles() != null && versionFolder.listFiles().length > 0) {
-            for (File file : versionFolder.listFiles()) {
-                if (file.getName().startsWith(".")) {
-                    file.delete();
+        if (versionFolder != null){
+            if (versionFolder.listFiles() != null && versionFolder.listFiles().length > 0) {
+                for (File file : versionFolder.listFiles()) {
+                    if (file.getName().startsWith(".")) {
+                        file.delete();
+                    }
                 }
             }
         }

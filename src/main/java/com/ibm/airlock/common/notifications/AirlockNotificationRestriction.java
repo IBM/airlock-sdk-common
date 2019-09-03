@@ -25,6 +25,7 @@ public class AirlockNotificationRestriction {
         return minInterval;
     }
 
+    @SuppressWarnings("unused")
     public String getName() {
         return name;
     }

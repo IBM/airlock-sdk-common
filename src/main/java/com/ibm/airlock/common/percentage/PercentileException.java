@@ -5,6 +5,7 @@ package com.ibm.airlock.common.percentage;
  *
  * @author Denis Voloshin
  */
+@SuppressWarnings("unused")
 class PercentileException extends Exception {
     PercentileException(String message) {
         super(message);

@@ -5,7 +5,7 @@ import com.ibm.airlock.common.services.NotificationService;
 /**
  * @author  Denis Voloshin
  */
-@SuppressWarnings({"ClassOnlyUsedInOnePackage", "WeakerAccess"})
+@SuppressWarnings({"ClassOnlyUsedInOnePackage", "WeakerAccess", "unused"})
 public class DefaultNotificationsManager extends NotificationService {
     @Override
     public void scheduleNotificationAlarm(long dueDate){
