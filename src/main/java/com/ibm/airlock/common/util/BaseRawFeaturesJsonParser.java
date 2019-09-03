@@ -210,6 +210,7 @@ public class BaseRawFeaturesJsonParser {
         return obj.optJSONArray(Constants.JSON_APPLIED_REORDERED_RULE_NAMES);
     }
 
+    @CheckForNull
     public static JSONArray getReorderedChildren(JSONObject obj) throws JSONException {
         return obj.optJSONArray(Constants.JSON_FIELD_REORDERED_CHILDREN);
     }

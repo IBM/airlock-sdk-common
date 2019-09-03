@@ -47,12 +47,14 @@ class FolderUtils {
             File[] content = item.listFiles();
             ArrayList<String> contentNames = new ArrayList();
 
-            for (File file : content) {
-                if (file.isDirectory()) {
-                    map = mapContent(file, map);
-                }
+            if (content != null) {
+                for (File file : content) {
+                    if (file.isDirectory()) {
+                        map = mapContent(file, map);
+                    }
 
-                contentNames.add(file.getName());
+                    contentNames.add(file.getName());
+                }
             }
 
             map.put(item.getName(), contentNames);
@@ -65,15 +67,18 @@ class FolderUtils {
         dir.setReadOnly();
         File[] files = dir.listFiles();
 
-        for (File file : files) {
-            if (file.isFile() && !list.contains(file)) {
-                list.add(file);
-            }
+        if (files != null){
+            for (File file : files) {
+                if (file.isFile() && !list.contains(file)) {
+                    list.add(file);
+                }
 
-            if (file.isDirectory()) {
-                allFilesFromDirectory(file, list);
+                if (file.isDirectory()) {
+                    allFilesFromDirectory(file, list);
+                }
             }
         }
+
 
         //noinspection ResultOfMethodCallIgnored
         dir.setWritable(true);

@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import java.util.List;
  * @author eitan.schreiber
  */
 
+@SuppressWarnings("WeakerAccess")
 public class AirlockStream {
 
     private static final String STREAM_CACHE_IN_MEMORY_CACHE = "cache";
@@ -95,10 +97,12 @@ public class AirlockStream {
         runtimeData.put(RESULTS_IN_MEMORY_CACHE, "");
     }
 
-    public AirlockStream(String name, boolean processingEnabled, String result) {
+    public AirlockStream(String name, boolean processingEnabled,@Nullable String result) {
         this.name = name;
         this.processingEnabled = processingEnabled;
-        runtimeData.put(RESULTS_IN_MEMORY_CACHE, result);
+        if (result != null){
+            runtimeData.put(RESULTS_IN_MEMORY_CACHE, result);
+        }
     }
 
     public void clearTrace() {
@@ -140,10 +144,12 @@ public class AirlockStream {
         setLastProcessedTime(persistedStreamData.optString("lastProcessedTime", ""));
     }
 
+    @SuppressWarnings("unused")
     public String[] getTraceRecords() {
         return trace.getTraceArr();
     }
 
+    @SuppressWarnings("unused")
     public String getLastProcessedTime() {
         return lastProcessedTime;
     }
@@ -168,6 +174,7 @@ public class AirlockStream {
         }
     }
 
+    @CheckForNull
     public JSONObject popPendingEvent() {
         JSONObject event = null;
         synchronized (pendingEventsLock) {
@@ -182,6 +189,7 @@ public class AirlockStream {
         return enabled;
     }
 
+    @SuppressWarnings("unused")
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
@@ -190,6 +198,7 @@ public class AirlockStream {
         return internalUserGroups;
     }
 
+    @CheckForNull
     public String getMinAppVersion() {
         return minAppVersion;
     }
@@ -198,6 +207,7 @@ public class AirlockStream {
         return rolloutPercentage;
     }
 
+    @SuppressWarnings("unused")
     public void setRolloutPercentage(long rolloutPercentage) {
         this.rolloutPercentage = rolloutPercentage;
     }
@@ -218,6 +228,7 @@ public class AirlockStream {
         return name;
     }
 
+    @SuppressWarnings("unused")
     public String getId() {
         return id;
     }
@@ -231,16 +242,19 @@ public class AirlockStream {
     }
 
     @TestOnly
+    @CheckForNull
     public String getResultForTest() {
         return runtimeData.get(RESULTS_IN_MEMORY_CACHE);
     }
 
     @TestOnly
+    @CheckForNull
     public String getCacheForTest() {
         return runtimeData.get(STREAM_CACHE_IN_MEMORY_CACHE);
     }
 
 
+    @CheckForNull
     public String getCache() {
         if (runtimeData.get(STREAM_CACHE_IN_MEMORY_CACHE) == null) {
             loadStreamRuntimeDataFormDisk();
@@ -252,6 +266,7 @@ public class AirlockStream {
         runtimeData.put(STREAM_CACHE_IN_MEMORY_CACHE, cache);
     }
 
+    @CheckForNull
     public String getResult() {
         if (runtimeData.get(RESULTS_IN_MEMORY_CACHE) == null) {
             loadStreamRuntimeDataFormDisk();
@@ -278,9 +293,9 @@ public class AirlockStream {
             setProcessingEnabled("Stream reached maxCacheSize");
         }
         if (events != null) {
-            int eventsInKillo = events.toString().length() * 2 / KILOBYTE;
-            if (eventsInKillo > maxEventsSize) {
-                if (eventsInKillo > DEF_MAX_EVENTS_SIZE) {
+            int eventsInKilo = events.toString().length() * 2 / KILOBYTE;
+            if (eventsInKilo > maxEventsSize) {
+                if (eventsInKilo > DEF_MAX_EVENTS_SIZE) {
                     setProcessingEnabled("Stream reached maxEventsSize");
                 } else {
                     maxEventsSize = DEF_MAX_EVENTS_SIZE;
@@ -325,7 +340,7 @@ public class AirlockStream {
     }
 
     /**
-     * identifies of stream processin should be running
+     * identifies of stream processing should be running
      * It depends on number ov events or on max size of events
      */
     public boolean shouldProcess() {
@@ -370,8 +385,8 @@ public class AirlockStream {
             if (threshold <= 0) {
                 isProcessingEnabled = false;
             } else if (threshold < 100.0) {
-                Integer userFeatureRand = streamsRandomNumber.optInt(getName());
-                if (userFeatureRand == null) {
+                int userFeatureRand = streamsRandomNumber.optInt(getName());
+                if (userFeatureRand == 0) {
                     isProcessingEnabled = false;
                 } else {
                     isProcessingEnabled = userFeatureRand <= threshold * 10000;
@@ -427,7 +442,7 @@ public class AirlockStream {
         return processingEnabled;
     }
 
-    public synchronized void setProcessingEnabled(String disableReason) {
+    public synchronized void setProcessingEnabled(@Nullable String disableReason) {
         if (disableReason == null) {
             this.processingEnabled = true;
         } else {
@@ -440,6 +455,7 @@ public class AirlockStream {
     /**
      * the method is used by debug screen only
      */
+    @SuppressWarnings("unused")
     public void clearEvents() {
         this.events = new JSONArray();
     }

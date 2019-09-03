@@ -45,6 +45,7 @@ public class DefaultAirlockProductManager extends AbstractAirlockProductManager 
         InfraAirlockService.setFeaturesMapTimeToLive(TimeUnit.SECONDS.toMillis(10)); // 10 seconds
     }
 
+    @SuppressWarnings("WeakerAccess")
     public DefaultAirlockProductManager(String productName, String airlockDefaults, String encryptionKey, String appVersion) {
         super(productName, airlockDefaults, encryptionKey, appVersion);
     }
@@ -119,6 +120,7 @@ public class DefaultAirlockProductManager extends AbstractAirlockProductManager 
      * AirlockProductManagerBuilder object allows to build {@link AirlockProductManager}
      * later {@link AirlockProductManager} might be used to create an instance of {@link AirlockClient}.
      */
+    @SuppressWarnings("WeakerAccess")
     public static class AirlockProductManagerBuilder {
         protected String airlockDefaults;
         protected String encryptionKey = "";
