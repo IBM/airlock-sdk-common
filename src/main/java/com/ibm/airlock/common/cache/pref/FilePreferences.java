@@ -183,9 +183,9 @@ public class FilePreferences extends AbstractPreferences {
                 getPath(sb);
                 String path = sb.toString();
 
-                final Enumeration<?> pnen = p.propertyNames();
-                while (pnen.hasMoreElements()) {
-                    String propKey = (String) pnen.nextElement();
+                final Enumeration<?> pNames = p.propertyNames();
+                while (pNames.hasMoreElements()) {
+                    String propKey = (String) pNames.nextElement();
                     if (propKey.startsWith(path)) {
                         String subKey = propKey.substring(path.length());
                         // Only load immediate descendants
@@ -240,9 +240,9 @@ public class FilePreferences extends AbstractPreferences {
                     List<String> toRemove = new ArrayList<>();
 
                     // Make a list of all direct children of this node to be removed
-                    final Enumeration<?> pnen = p.propertyNames();
-                    while (pnen.hasMoreElements()) {
-                        String propKey = (String) pnen.nextElement();
+                    final Enumeration<?> pNames = p.propertyNames();
+                    while (pNames.hasMoreElements()) {
+                        String propKey = (String) pNames.nextElement();
                         if (propKey.startsWith(path)) {
                             String subKey = propKey.substring(path.length());
                             // Only do immediate descendants

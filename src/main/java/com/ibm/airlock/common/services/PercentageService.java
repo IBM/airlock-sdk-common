@@ -39,7 +39,7 @@ public class PercentageService {
         this.percentageMap.put(PercentageManager.Sections.STREAMS.name, new HashMap<String, Double>());
         this.percentageMap.put(PercentageManager.Sections.NOTIFICATIONS.name, new HashMap<String, Double>());
         try {
-            if (persistenceHandler.readJSON(Constants.SP_FEATURES_PERCENAGE_MAP).toString().equals("{}")) {
+            if (persistenceHandler.readJSON(Constants.SP_FEATURES_PERCENTAGE_MAP).toString().equals("{}")) {
                 if (persistenceHandler.readJSON(Constants.SP_RAW_RULES).optJSONObject(Constants.JSON_FIELD_ROOT) != null) {
                     generateFeaturesPercentageMap(persistenceHandler.readJSON(Constants.SP_RAW_RULES).getJSONObject(Constants.JSON_FIELD_ROOT));
                 }
@@ -51,7 +51,7 @@ public class PercentageService {
                 }
 
                 generateStreamsPercentageMap(this.streamsService.getStreams());
-                persistenceHandler.write(Constants.SP_FEATURES_PERCENAGE_MAP, new JSONObject(percentageMap).toString());
+                persistenceHandler.write(Constants.SP_FEATURES_PERCENTAGE_MAP, new JSONObject(percentageMap).toString());
 
             }
         } catch (final JSONException e) {
@@ -92,11 +92,11 @@ public class PercentageService {
 
         }
         generateStreamsPercentageMap(this.streamsService.getStreams());
-        persistenceHandler.write(Constants.SP_FEATURES_PERCENAGE_MAP, new JSONObject(percentageMap).toString());
+        persistenceHandler.write(Constants.SP_FEATURES_PERCENTAGE_MAP, new JSONObject(percentageMap).toString());
     }
 
     public void reInit() throws JSONException {
-        if (persistenceHandler.readJSON(Constants.SP_FEATURES_PERCENAGE_MAP).toString().equals("{}")) {
+        if (persistenceHandler.readJSON(Constants.SP_FEATURES_PERCENTAGE_MAP).toString().equals("{}")) {
             if (persistenceHandler.readJSON(Constants.SP_RAW_RULES).optJSONObject(Constants.JSON_FIELD_ROOT) != null) {
                 percentageMap.get(PercentageManager.Sections.FEATURES.name).clear();
                 generateFeaturesPercentageMap(persistenceHandler.readJSON(Constants.SP_RAW_RULES).getJSONObject(Constants.JSON_FIELD_ROOT));
@@ -109,7 +109,7 @@ public class PercentageService {
                         getJSONObject(Constants.JSON_FIELD_ENTITLEMENT_ROOT));
             }
             generateStreamsPercentageMap(this.streamsService.getStreams());
-            persistenceHandler.write(Constants.SP_FEATURES_PERCENAGE_MAP, new JSONObject(percentageMap).toString());
+            persistenceHandler.write(Constants.SP_FEATURES_PERCENTAGE_MAP, new JSONObject(percentageMap).toString());
         }
     }
 

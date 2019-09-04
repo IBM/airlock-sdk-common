@@ -3,6 +3,7 @@ package com.ibm.airlock.common.cache;
 import java.util.Map;
 import java.util.Set;
 import java.util.prefs.BackingStoreException;
+import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
 
 
@@ -55,8 +56,8 @@ public interface SharedPreferences {
      * @param defValue Value to return if this preference does not exist.
      * @return Returns the preference value if it exists, or defValue.  Throws ClassCastException if there is a preference with this name that is not a String.
      */
-    @Nullable
-    String getString(String key, @Nullable String defValue);
+    @CheckForNull
+    String getString(String key, String defValue);
 
 
     /**
@@ -166,7 +167,7 @@ public interface SharedPreferences {
          *  if you were already ignoring the return value.
          * <p>
          * <p>You don't need to worry about Android component
-         * lifecycles and their interaction with {@code apply()}
+         * life cycles and their interaction with {@code apply()}
          * writing to disk.  The framework makes sure in-flight disk
          * writes from {@code apply()} complete before switching
          * states.

@@ -11,6 +11,8 @@ import com.ibm.airlock.common.util.Gzip;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
@@ -33,7 +35,7 @@ public abstract class RuntimeLoader {
     protected final String pathToFiles;
     protected final String encryptionKey;
 
-    protected RuntimeLoader(String pathToFiles, String encryptionKey){
+    protected RuntimeLoader(String pathToFiles,@Nullable String encryptionKey){
         this.encryptionKey = encryptionKey;
         this.pathToFiles = pathToFiles;
     }
@@ -71,21 +73,22 @@ public abstract class RuntimeLoader {
                 //Do nothing
             }
             if (usageStreams != null && usageStreams.length() > 0) {
+                JSONObject randomsMap = persistenceHandler.getStreamsRandomMap();
                 try {
                     JSONObject newStreamsRandoms = RandomUtils.calculateStreamsRandoms(usageStreams,
-                            persistenceHandler.getStreamsRandomMap().length() > 0 ? persistenceHandler.getStreamsRandomMap() : new JSONObject());
+                            randomsMap != null ? persistenceHandler.getStreamsRandomMap() : new JSONObject());
                     persistenceHandler.setStreamsRandomMap(newStreamsRandoms);
                 } catch (Exception e) {
                     return;
                 }
             }
 
-            //Need to call the upateStreams method - so we do not call the regular persistTempResult method
+            //Need to call the updateStreams method - so we do not call the regular persistTempResult method
             persistenceHandler.write(Constants.SP_FEATURE_USAGE_STREAMS, runtimeContent);
             productManager.getStreamsService().updateStreams();
         }
 
-        //Need to call the upateStreams method - so we do not call the regular persistTempResult method
+        //Need to call the updateStreams method - so we do not call the regular persistTempResult method
         persistenceHandler.write(Constants.SP_FEATURE_USAGE_STREAMS, runtimeContent);
         productManager.getStreamsService().updateStreams();
 
@@ -105,11 +108,12 @@ public abstract class RuntimeLoader {
             productManager.getNotificationService().initNotifications();
         }
 
-        // clear SP_FEATURES_PERCENAGE_MAP because we want to reload it when the PercentageManager
+        // clear SP_FEATURES_PERCENTAGE_MAP because we want to reload it when the PercentageManager
         // methods will be call
-        productManager.getInfraAirlockService().persistenceHandler.write(Constants.SP_FEATURES_PERCENAGE_MAP, "{}");
+        productManager.getInfraAirlockService().persistenceHandler.write(Constants.SP_FEATURES_PERCENTAGE_MAP, "{}");
     }
 
+    @CheckForNull
     protected abstract InputStream getInputStream(String featuresUtils);
 
     private String loadRuntimeFile(String name) throws AirlockException {
@@ -117,7 +121,7 @@ public abstract class RuntimeLoader {
         InputStream inputStream = getInputStream(name);
 
         if (inputStream == null){
-            throw new AirlockException("faild to get " +  name + " output stream");
+            throw new AirlockException("failed to get " +  name + " output stream");
         }
 
         String runtimeContent = readContentAndDecrypt(inputStream);
@@ -129,6 +133,7 @@ public abstract class RuntimeLoader {
         return  runtimeContent;
     }
 
+    @CheckForNull
     private String decrypt(byte[] data) throws GeneralSecurityException {
         if (encryptionKey == null || encryptionKey.isEmpty()){
             return new String(data, StandardCharsets.UTF_8);
@@ -146,6 +151,7 @@ public abstract class RuntimeLoader {
         return null;
     }
 
+    @CheckForNull
     private String readContentAndDecrypt(InputStream inputStream) throws AirlockException {
         ByteArrayOutputStream ous = null;
         byte[] outBuffer;
@@ -156,10 +162,10 @@ public abstract class RuntimeLoader {
             while ((read = inputStream.read(buffer)) != -1) {
                 ous.write(buffer, 0, read);
             }
-            if (ous != null){
-                outBuffer =  ous.toByteArray();
-                return decrypt(outBuffer);
-            }
+
+            outBuffer =  ous.toByteArray();
+            return decrypt(outBuffer);
+
         } catch (GeneralSecurityException | IOException e) {
             throw  new AirlockException(e.getMessage());
         } finally {
@@ -171,12 +177,9 @@ public abstract class RuntimeLoader {
             }
 
             try {
-                if (inputStream != null) {
-                    inputStream.close();
-                }
+                inputStream.close();
             } catch (IOException ignored) {
             }
         }
-        return null;
     }
 }

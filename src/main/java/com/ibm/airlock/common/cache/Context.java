@@ -1,5 +1,6 @@
 package com.ibm.airlock.common.cache;
 
+import javax.annotation.CheckForNull;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -25,6 +26,7 @@ public interface Context {
 
     File getFilesDir();
 
+    @CheckForNull
     SharedPreferences getSharedPreferences(String spName, int modePrivate);
 
     void deleteFile(String key);

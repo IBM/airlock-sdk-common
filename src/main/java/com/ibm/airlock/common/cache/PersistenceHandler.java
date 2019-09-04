@@ -121,6 +121,7 @@ public interface PersistenceHandler {
     @CheckForNull
     Set<String> readSet(String key);
 
+    @CheckForNull
     String read(String key, String defaultValue);
 
     void write(String key, String value);

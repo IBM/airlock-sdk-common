@@ -4,7 +4,6 @@ import com.ibm.airlock.common.log.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
 import java.io.File;
 import java.util.HashSet;
@@ -86,7 +85,6 @@ public class DefaultPreferences implements SharedPreferences {
         return all;
     }
 
-    @CheckForNull
     @Override
     public String getString(String key, @Nullable String defValue) {
         String result = null;
@@ -99,8 +97,11 @@ public class DefaultPreferences implements SharedPreferences {
         } catch (Exception e) {
             Logger.log.w(TAG, e.getMessage());
         }
-        if (result != null || (result == null && defValue != null)) {
+        if (result != null || defValue != null) {
             inMemoryCache.put(key, result == null ? defValue : result, DEFAULT_IN_MEMORY_EXPIRATION_PERIOD);
+        }
+        if (defValue == null){
+            defValue = "";
         }
         return result == null ? defValue : result;
     }
@@ -211,7 +212,7 @@ public class DefaultPreferences implements SharedPreferences {
         }
 
         @Override
-        public void putString(String key, String value) {
+        public void putString(String key,@Nullable String value) {
             if (value == null) {
                 return;
             }

@@ -105,6 +105,7 @@ public class AirlockStream {
         }
     }
 
+    @SuppressWarnings("unused")
     public void clearTrace() {
         trace.clearTrace();
     }

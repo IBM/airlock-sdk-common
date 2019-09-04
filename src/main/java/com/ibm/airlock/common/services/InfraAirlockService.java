@@ -972,9 +972,9 @@ public class InfraAirlockService {
                         persistTempResult(Constants.SP_RAW_JS_FUNCTIONS, JSON_JS_FUNCTIONS_FIELD_NAME_TEMP);
                         persistTempResult(Constants.SP_LAST_JS_UTILS_FULL_DOWNLOAD_TIME, SP_LAST_JS_UTILS_DOWNLOAD_TIME_TEMP);
 
-                        // clear SP_FEATURES_PERCENAGE_MAP because we want to reload it when the PercentageManager
+                        // clear SP_FEATURES_PERCENTAGE_MAP because we want to reload it when the PercentageManager
                         // methods will be call
-                        persistenceHandler.write(Constants.SP_FEATURES_PERCENAGE_MAP, "{}");
+                        persistenceHandler.write(Constants.SP_FEATURES_PERCENTAGE_MAP, "{}");
 
                         //Streams
                         if (tempResultsHolder.get(STREAMS_TEMP) != null) {

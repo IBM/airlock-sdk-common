@@ -40,6 +40,7 @@ public class DefaultContext implements Context {
 
         contextFolder = new File(rootFolder + File.separator + airlockProductName + File.separator + seasonId);
         if (!contextFolder.exists()) {
+            //noinspection ResultOfMethodCallIgnored
             contextFolder.mkdirs();
         }
     }
@@ -113,7 +114,7 @@ public class DefaultContext implements Context {
         throw new UnsupportedOperationException();
     }
 
-    public static String getSeasonId(JSONObject defaultsJSON) {
+    private static String getSeasonId(JSONObject defaultsJSON) {
         return defaultsJSON.optString("seasonId");
     }
 

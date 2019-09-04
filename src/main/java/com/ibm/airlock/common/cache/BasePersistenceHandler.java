@@ -33,7 +33,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
                     Constants.SP_RAW_JS_FUNCTIONS, Constants.SP_RAW_TRANSLATIONS, Constants
                     .SP_RANDOMS, Constants.SP_FEATURE_USAGE_STREAMS,
                     Constants.SP_NOTIFICATIONS, Constants.SP_FIRED_NOTIFICATIONS, Constants.SP_NOTIFICATIONS_HISTORY,
-                    Constants.SP_FEATURES_PERCENAGE_MAP, Constants.SP_SYNCED_FEATURES_LIST,
+                    Constants.SP_FEATURES_PERCENTAGE_MAP, Constants.SP_SYNCED_FEATURES_LIST,
                     Constants.SP_SERVER_FEATURE_LIST, Constants.SP_PRE_SYNCED_FEATURES_LIST,
                     Constants.SP_FEATURE_UTILS_STREAMS
 
@@ -43,7 +43,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
                     Constants.SP_RAW_TRANSLATIONS, Constants.SP_RANDOMS, Constants
                     .SP_FEATURE_USAGE_STREAMS, Constants.SP_NOTIFICATIONS,
                     Constants.SP_FIRED_NOTIFICATIONS, Constants.SP_NOTIFICATIONS_HISTORY,
-                    Constants.SP_FEATURES_PERCENAGE_MAP, Constants.SP_SYNCED_FEATURES_LIST,
+                    Constants.SP_FEATURES_PERCENTAGE_MAP, Constants.SP_SYNCED_FEATURES_LIST,
                     Constants.SP_SERVER_FEATURE_LIST, Constants.SP_PRE_SYNCED_FEATURES_LIST,
                     Constants.SP_PRE_SYNCED_ENTITLEMENTS_LIST, Constants.SP_SYNCED_ENTITLEMENTS_LIST
 
@@ -81,6 +81,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     @Override
     public FeaturesList getCachedPreSyncedFeaturesMap() {
         String featureValues = read(Constants.SP_PRE_SYNCED_FEATURES_LIST, "");
+        //noinspection ConstantConditions
         if (featureValues.isEmpty()) {
             return new FeaturesList();
         }
@@ -90,6 +91,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     @Override
     public FeaturesList getCachedSyncedFeaturesMap() {
         String featureValues = read(Constants.SP_SYNCED_FEATURES_LIST, "");
+        //noinspection ConstantConditions
         if (featureValues.isEmpty()) {
             return new FeaturesList();
         }
@@ -100,6 +102,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     @Override
     public FeaturesList getCachedFeatureMap() {
         String featureValues = read(Constants.SP_SERVER_FEATURE_LIST, "");
+        //noinspection ConstantConditions
         if (featureValues.isEmpty()) {
             return new FeaturesList();
         }
@@ -201,6 +204,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      */
     @Override
     public String getDevelopBranchName() {
+        //noinspection ConstantConditions
         return read(Constants.SP_DEVELOP_BRANCH_NAME, "").trim();
     }
 
@@ -219,6 +223,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      */
     @Override
     public String getLastBranchName() {
+        //noinspection ConstantConditions
         return read(Constants.SP_BRANCH_NAME, JSON_FIELD_ROOT);
     }
 
@@ -237,6 +242,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      */
     @Override
     public String getDevelopBranchId() {
+        //noinspection ConstantConditions
         return read(Constants.SP_DEVELOP_BRANCH_ID, "").trim();
     }
 
@@ -255,6 +261,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      */
     @Override
     public String getDevelopBranch() {
+        //noinspection ConstantConditions
         return read(Constants.SP_DEVELOP_BRANCH, "").trim();
     }
 
@@ -278,6 +285,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     public List<String> getDeviceUserGroups() {
         List<String> result = new ArrayList<>();
         String groups = read(Constants.SP_USER_GROUPS, "");
+        //noinspection ConstantConditions
         if (groups.isEmpty()) {
             return result;
         }
@@ -302,11 +310,11 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     @Override
     @CheckForNull
     public Set<String> readSet(@Nullable String key) {
-        if (key == null || preferences.getString(key, key) == null) {
+        if (key == null) {
             return null;
         }
         try {
-            JSONArray array = new JSONArray(preferences.getString(key, key));
+            @SuppressWarnings("ConstantConditions") JSONArray array = new JSONArray(preferences.getString(key, key));
             Set<String> set = new HashSet<String>() {
             };
             int len = array.length();
@@ -320,6 +328,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     }
 
 
+    @SuppressWarnings("ConstantConditions")
     String readFromMemory(String key, String defaultValue) {
         if (inMemoryPreferences.containsKey(key) && inMemoryPreferences.get(key) != null) {
             return inMemoryPreferences.get(key).toString();
@@ -333,6 +342,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
         }
     }
 
+    @CheckForNull
     @Override
     public String read(String key, String defaultValue) {
         String value;
@@ -355,7 +365,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     public abstract void write(String key, JSONObject value);
 
     /**
-     * The reason this has a seperate method is because it is called when app stopps - so we need to persist synchronously
+     * The reason this has a separate method is because it is called when app stops - so we need to persist synchronously
      *
      * @param jsonAsString the json value as string
      */
@@ -365,7 +375,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     public abstract void deleteStream(String name);
 
     /**
-     * The reason this has a seperate method is because it is called when app stopps - so we need to persist synchronously
+     * The reason this has a separate method is because it is called when app stops - so we need to persist synchronously
      */
     @Override
     public abstract JSONObject readStream(String name);
@@ -412,7 +422,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
 
     protected void updateSeasonIdAndClearRuntimeData(String seasonId) {
         String currentId = preferences.getString(Constants.SP_SEASON_ID, "");
-        if (!currentId.equalsIgnoreCase(seasonId)) {
+        if (currentId != null && !currentId.equalsIgnoreCase(seasonId)) {
             resetSeason(seasonId);
         }
     }
@@ -467,15 +477,17 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
                 filesShouldBeDeleted.put(file, file);
             }
 
-            File list = new File(context.getFilesDir().toString());
+            File list = new File(context.getFilesDir().getPath());
             File[] files = list.listFiles();
-            //noinspection ForLoopReplaceableByForEach
-            for (int i = 0; i < files.length; i++) {
-                if (filesShouldBeDeleted.containsKey(files[i].getName())) {
-                    //noinspection ResultOfMethodCallIgnored
-                    files[i].delete();
+            if (files != null){
+                for (File file : files) {
+                    if (filesShouldBeDeleted.containsKey(file.getName())) {
+                        //noinspection ResultOfMethodCallIgnored
+                        file.delete();
+                    }
                 }
             }
+
         }
         inMemoryPreferences.clear();
     }
@@ -497,6 +509,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     public boolean isInitialized() {
         boolean result = false;
         if (preferences != null) {
+            //noinspection ConstantConditions
             result = !read(Constants.SP_SEASON_ID, "").isEmpty();
         }
         return result;

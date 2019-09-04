@@ -183,7 +183,7 @@ public class Constants {
     public static final String SP_LAST_NOTIFICATIONS_FULL_DOWNLOAD_TIME = "airlock.lastNotificationsDownloadTime";
     public static final String SP_CURRENT_LOCALE = "airlock.current.locale";
     public static final String SP_PRODUCT_KEY = "airlock.product.key";
-    public static final String SP_FEATURES_PERCENAGE_MAP = "airlock.feature.percentage.map";
+    public static final String SP_FEATURES_PERCENTAGE_MAP = "airlock.feature.percentage.map";
 
     // select Server field
     public static final String SP_CURRENT_SERVER = "airlock.CurrentServer";
