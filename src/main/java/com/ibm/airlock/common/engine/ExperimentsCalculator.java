@@ -62,6 +62,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
 
         //no pre-selected branch
         if (branchInfo == null) {
+            @SuppressWarnings("ConstantConditions")
             JSONObject previousExperimentInfo = new JSONObject(ph.read(Constants.SP_EXPERIMENT_INFO, "{}"));
             String previousVariantId = previousExperimentInfo.optString(Constants.JSON_FIELD_VARIANT);
             long previousDateJoined = previousExperimentInfo.optLong(JSON_FIELD_VARIANT_DATE_JOINED);
@@ -76,7 +77,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
                 }
             } else {
                 branchInfo = findExperiments(ph, runtimeFeatures, invoker, additionalData, fallback);
-                if (branchInfo != null && !branchInfo.isEmpty()) {
+                if (!branchInfo.isEmpty()) {
                     if (!previousVariantId.isEmpty() && branchInfo.get(0).variant != null && branchInfo.get(0).variant.equals(previousVariantId)) {
                         branchInfo.get(0).dateJoinedVariant = previousDateJoined;
                     } else {
@@ -115,10 +116,6 @@ public class ExperimentsCalculator extends FeaturesCalculator {
         JSONObject rootFeatures = getRoot(runtimeTree);
         AirlockEnginePerformanceMetric.getAirlockEnginePerformanceMetric().report(AirlockEnginePerformanceMetric.BRANCH_MERGING, start);
 
-
-        if (rootFeatures == null) {
-            return new CalculationResults();
-        }
         EntitlementsCalculator entitlementsCalculator = new EntitlementsCalculator();
 
         final JSONObject entitlements = entitlementsCalculator.calculate(infraAirlockService, runtimeTree,
@@ -210,7 +207,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
     }
 
 
-    private static JSONObject applyBranchesToMainRuntimeTree(PersistenceHandler ph, @Nullable JSONObject masterAndBranches, List<BranchInfo> branchInfo) throws JSONException,
+    private static JSONObject applyBranchesToMainRuntimeTree(PersistenceHandler ph, @Nullable JSONObject masterAndBranches,@Nullable List<BranchInfo> branchInfo) throws JSONException,
             FeaturesBranchMerger.MergeException {
         if (masterAndBranches == null) {
             return new JSONObject();
@@ -410,7 +407,6 @@ public class ExperimentsCalculator extends FeaturesCalculator {
             }
         }
     }
-
 
     private List<BranchInfo> findExperiments(PersistenceHandler ph, @Nullable JSONObject parent, ScriptInvoker invoker, AdditionalData additionalData, Map<String,
             Fallback> fallback) {

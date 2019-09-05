@@ -62,10 +62,10 @@ public class EntitlementsBranchMerger extends FeaturesBranchMerger {
         JSONArray purchaseOptions = in.optJSONArray(Constants.JSON_FIELD_PURCHASE_OPTIONS);
         if (purchaseOptions != null) {
             for (int i = 0; i < purchaseOptions.length(); ++i) {
-                JSONObject purchasOption = purchaseOptions.optJSONObject(i);
-                if (purchasOption != null) {
-                    String key = useId ? getId(purchasOption) : getName(purchasOption);
-                    out.put(key, purchasOption);
+                JSONObject purchaseOption = purchaseOptions.optJSONObject(i);
+                if (purchaseOption != null) {
+                    String key = useId ? getId(purchaseOption) : getName(purchaseOption);
+                    out.put(key, purchaseOption);
                 }
 
             }

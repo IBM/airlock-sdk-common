@@ -66,10 +66,10 @@ public class AirlockEnginePerformanceMetric {
 //        if (metricPerThread.containsKey(Thread.currentThread().getId())) {
 //            metricPerThread.get(Thread.currentThread().getId()).put(metricName, System.currentTimeMillis() - startPoint);
 //        }
-        getThreadHash(Thread.currentThread().getId()).put(metricName, System.currentTimeMillis() - startPoint);
+        getThreadHash().put(metricName, System.currentTimeMillis() - startPoint);
     }
 
-    private Hashtable<String, Long> getThreadHash(Long threadId){
+    private Hashtable<String, Long> getThreadHash(){
         if(!metricPerThread.containsKey(Thread.currentThread().getId())){
             Hashtable<String, Long> threadReport = new Hashtable<>();
             metricPerThread.put(Thread.currentThread().getId(), threadReport);
@@ -95,7 +95,7 @@ public class AirlockEnginePerformanceMetric {
         if(!isMeasuringStarted){
             return;
         }
-        getThreadHash(Thread.currentThread().getId()).put(metricName, value);
+        getThreadHash().put(metricName, value);
 
     }
 

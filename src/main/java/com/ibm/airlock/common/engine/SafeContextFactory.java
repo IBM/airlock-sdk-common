@@ -12,6 +12,7 @@ import org.mozilla.javascript.Scriptable;
  *
  * @author Denis Voloshin
  */
+@SuppressWarnings("unused")
 public class SafeContextFactory extends ContextFactory {
 
 

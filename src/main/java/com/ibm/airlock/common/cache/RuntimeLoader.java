@@ -22,7 +22,6 @@ import static com.ibm.airlock.common.util.Constants.SP_RAW_RULES;
 @SuppressWarnings("AbstractClassNeverImplemented")
 public abstract class RuntimeLoader {
 
-    private static final String TAG = "airlock.RuntimeLoader";
     private static final String FEATURES = "features";
     private static final String FEATURES_UTILS = "jsFunctions";
     private static final String TRANSLATIONS = "translations";

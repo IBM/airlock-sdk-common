@@ -175,7 +175,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      * Stores a map of user groups
      * each group could be selected on not.
      *
-     * @throws JSONException
+     * @throws JSONException on case of JSON parsing error
      */
     @Override
     public void storeDeviceUserGroups(@Nullable List<String> userGroups, @Nullable StreamsService streamsService) {

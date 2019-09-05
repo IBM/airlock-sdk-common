@@ -72,6 +72,7 @@ public class FeaturesCalculator {
         }
     }
 
+    @CheckForNull
     private static FeatureStage getStage(JSONObject obj) {
         String str = obj.optString(Constants.JSON_FEATURE_FIELD_STAGE);
         if (FeatureStage.DEVELOPMENT.toString().equals(str)) {
@@ -165,8 +166,8 @@ public class FeaturesCalculator {
         } else if (threshold >= 100.0) {
             return true;
         } else {
-            Integer userFeatureRand = data.featureRandomNumber.optInt(getName(obj));
-            if (userFeatureRand == null) {
+            int userFeatureRand = data.featureRandomNumber.optInt(getName(obj));
+            if (userFeatureRand == 0) {
                 return false;
             }
             return userFeatureRand <= threshold * 10000;
@@ -227,6 +228,7 @@ public class FeaturesCalculator {
         }
     }
 
+    @SuppressWarnings("SpellCheckingInspection")
     private static boolean isUncached(JSONObject json) {
         return json.optBoolean(Constants.JSON_FEATURE_FIELD_NO_CACHED_RES, false);
     }
@@ -282,7 +284,7 @@ public class FeaturesCalculator {
     public JSONObject calculate(@Nullable InfraAirlockService infraAirlockService, @Nullable JSONObject features,
                                 @Nullable JSONObject context,
                                 String functions,
-                                JSONObject translations,
+                                @Nullable JSONObject translations,
                                 @Nullable List<String> userGroups,
                                 @Nullable Map<String, Fallback> fallback,
                                 @Nullable String productVersion,
@@ -292,7 +294,7 @@ public class FeaturesCalculator {
             throws
             JSONException,
             ScriptInitException {
-        if (features == null || getRoot(features) == null) {
+        if (features == null || getRoot(features).length() == 0) {
             return new JSONObject();
         }
 
@@ -336,17 +338,16 @@ public class FeaturesCalculator {
         return Constants.JSON_FEATURE_FIELD_FEATURES;
     }
 
-    @CheckForNull
     protected JSONObject getRoot(@Nullable JSONObject obj) {
         if (obj == null) {
-            return null;
+            return new JSONObject();
         }
         return obj.optJSONObject(Constants.JSON_FIELD_ROOT);
     }
 
 
     protected int doFeatureGroup(
-            @Nullable JSONObject parent,
+            JSONObject parent,
             String childName,
             ScriptInvoker invoker,
             AdditionalData additionalData,
@@ -354,7 +355,7 @@ public class FeaturesCalculator {
             Fallback> fallback,
             Map<String, Result> out) throws JSONException {
 
-        if (parent == null) {
+        if (parent.length() == 0) {
             return 0;
         }
 
@@ -366,13 +367,13 @@ public class FeaturesCalculator {
         int groupMutexCount = mutexCount(parent);
         boolean groupIsMutex = (groupMutexCount > 0);
         boolean hasReOrderingRules = hasReOrderingRule(parent);
-        boolean hasDirectOrWithinMXGroupeReOrderingRule = hasDirectOrWithinMXOrderingRule(parent);
+        boolean hasDirectOrWithinMXGroupReOrderingRule = hasDirectOrWithinMXOrderingRule(parent);
 
         // holds feature calculated results for the pruning loop
         TreeMap<String, Result> featureCalculatedResults = null;
         JSONArray reorderTrace = null;
 
-        if (hasReOrderingRules || hasDirectOrWithinMXGroupeReOrderingRule) {
+        if (hasReOrderingRules || hasDirectOrWithinMXGroupReOrderingRule) {
             reorderTrace = new JSONArray();
             additionalData.reorderedFeatures.put(extendedName(parent), reorderTrace);
         }
@@ -413,7 +414,11 @@ public class FeaturesCalculator {
         }
 
         int successes = 0;
-        for (int i = 0; i < array.length(); ++i) {
+        int arrayLength = 0;
+        if (array != null){
+            arrayLength = array.length();
+        }
+        for (int i = 0; i < arrayLength; ++i) {
             JSONObject child = array.getJSONObject(i);
             Result result;
 
@@ -434,11 +439,9 @@ public class FeaturesCalculator {
             result.setOrderingWeight(child.optDouble(Constants.JSON_ORDERED_WEIGTH, 0));
 
             // send reordered feature  for analytics
-            if (hasReOrderingRules || hasDirectOrWithinMXGroupeReOrderingRule) {
+            if (hasReOrderingRules || hasDirectOrWithinMXGroupReOrderingRule) {
                 reorderTrace.put(featureName);
             }
-
-            result = result == null ? new Result(false, Result.RULE_SKIPPED) : result;
 
             if (!result.isAccept()) {
                 propagateFail(child, childName, result, out); // pass false to all children
@@ -747,7 +750,7 @@ public class FeaturesCalculator {
         // minAppVersion is now mandatory, so fail if missing
         String minAppVersion = getMinAppVersion(obj);
         AirlockVersionComparator comparator = new AirlockVersionComparator();
-        if (minAppVersion == null || comparator.compare(minAppVersion, additionalData.productVersion) > 0) {
+        if (comparator.compare(minAppVersion, additionalData.productVersion) > 0) {
             return new Result(false, Result.RULE_VERSIONED);
         }
 
@@ -965,10 +968,6 @@ public class FeaturesCalculator {
 
     private Feature.Type resolveFeatureType(String type, Feature.Type defaultValue) {
 
-        if (type == null) {
-            return defaultValue;
-        }
-
         try {
             return Feature.Type.valueOf(type.trim());
         } catch (IllegalArgumentException ex) {
@@ -1179,7 +1178,7 @@ public class FeaturesCalculator {
             this.appliedOrderRulesForAnalytics = new TreeMap<>();
 
             if (purchasedIdsList != null) {
-                this.purchasedProductIds = new Hashtable();
+                this.purchasedProductIds = new Hashtable<>();
                 for (String purchaseId : purchasedIdsList) {
                     purchasedProductIds.put(purchaseId, purchaseId);
                 }
@@ -1188,7 +1187,7 @@ public class FeaturesCalculator {
             }
 
             if (purchaseToProductId != null) {
-                this.purchaseToProductId = new Hashtable(purchaseToProductId);
+                this.purchaseToProductId = new Hashtable<>(purchaseToProductId);
 
             } else {
                 this.purchaseToProductId = new Hashtable<>();

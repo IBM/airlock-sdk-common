@@ -1598,7 +1598,7 @@ public class InfraAirlockService {
             String jsFunctions = persistenceHandler.read(Constants.SP_RAW_JS_FUNCTIONS, "");
 
             populateWithBuildInAirlockContextFields(airlockContext);
-            airlockContextManager.overideRuntimeWithCurrentContext();
+            airlockContextManager.overwriteRuntimeWithCurrentContext();
             airlockContextManager.getRuntimeContext().mergeWith(airlockSharedContext);
             airlockContextManager.setJsTranslationsScript(translationStrings.toString());
             airlockContextManager.setJsUtilsScript(jsFunctions);

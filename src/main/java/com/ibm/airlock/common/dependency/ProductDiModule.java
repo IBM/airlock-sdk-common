@@ -77,83 +77,83 @@ public class ProductDiModule {
     }
 
     @Provides
-    public InfraAirlockService providsBaseAirlockService() {
+    public InfraAirlockService provideBaseAirlockService() {
         return infraAirlockService;
     }
 
     @Provides
-    public StreamsService providsStreamsManagere() {
+    public StreamsService provideStreamsManagere() {
         return streamsService;
     }
 
     @Provides
-    public UserGroupsService providsUserGroupsService() {
+    public UserGroupsService provideUserGroupsService() {
         return userGroupsService;
     }
 
     @Provides
-    public BranchesService providsBranchesService() {
+    public BranchesService provideBranchesService() {
         return branchesService;
     }
 
     @Provides
-    public EntitlementsService providsEntitlementsService() {
+    public EntitlementsService provideEntitlementsService() {
         return entitlementsService;
     }
 
     @Provides
-    public FeaturesService providsFeaturesService() {
+    public FeaturesService provideFeaturesService() {
         return featuresService;
     }
 
     @Provides
-    public ContextService providsContextService() {
+    public ContextService provideContextService() {
         return contextService;
     }
 
     @Provides
-    public PercentageService providsPersistenceService() {
+    public PercentageService providePersistenceService() {
         return percentageService;
     }
 
     @Provides
-    public StringsService providsStreamsService() {
+    public StringsService provideStreamsService() {
         return stringsService;
     }
 
     @Provides
-    public ProductInfoService providsProductInfoService() {
+    public ProductInfoService provideProductInfoService() {
         return productInfoService;
     }
 
     @Provides
-    public AnalyticsService providsAnalyticsService() {
+    public AnalyticsService provideAnalyticsService() {
         return analyticsService;
     }
 
     @Provides
-    public NotificationService providsNotificationService() {
+    public NotificationService provideNotificationService() {
         return notificationService;
     }
 
     @Provides
-    public Context providsContext() {
+    public Context provideContext() {
         return productContext;
     }
 
     @Provides
     @Named("defaultFile")
-    public String providsDefaultFile() {
+    public String provideDefaultFile() {
         return defaultFile;
     }
 
     @Provides
-    public String providsAppVersiob() {
+    public String provideAppVersiob() {
         return appVersion;
     }
 
     @Provides
-    public AirlockContextManager providsAirlockContextManager() {
+    public AirlockContextManager provideAirlockContextManager() {
         return contextManager;
     }
 }

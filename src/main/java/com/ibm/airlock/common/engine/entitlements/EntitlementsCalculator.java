@@ -2,7 +2,6 @@ package com.ibm.airlock.common.engine.entitlements;
 
 import com.ibm.airlock.common.engine.Result;
 import com.ibm.airlock.common.engine.ScriptInvoker;
-import com.ibm.airlock.common.engine.entitlements.EntitlementResult;
 import com.ibm.airlock.common.engine.features.FeaturesCalculator;
 import com.ibm.airlock.common.model.Feature;
 import com.ibm.airlock.common.util.Constants;
@@ -11,10 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
@@ -28,10 +24,9 @@ public class EntitlementsCalculator extends FeaturesCalculator {
 
 
     @Override
-    @CheckForNull
     protected JSONObject getRoot(@Nullable JSONObject feature) {
         if (feature == null) {
-            return null;
+            return new JSONObject();
         }
         return feature.optJSONObject(Constants.JSON_FIELD_ENTITLEMENT_ROOT);
     }
@@ -88,6 +83,9 @@ public class EntitlementsCalculator extends FeaturesCalculator {
                         }
                     }
                 } else {
+                    if (results == null){
+                        results = new TreeMap<>();
+                    }
                     doFeatureGroup(
                             options.getJSONObject(i),
                             Constants.JSON_FIELD_PURCHASE_OPTIONS,
@@ -105,11 +103,11 @@ public class EntitlementsCalculator extends FeaturesCalculator {
         EntitlementResult purchaseResult = new EntitlementResult(result);
 
         if (getNodeType(feature) == Feature.Type.PURCHASE_OPTIONS) {
-            purchaseResult.setStorePoductId(getPurchaseStoreIds(feature));
+            purchaseResult.setStoreProductId(getPurchaseStoreIds(feature));
         }
 
         if (getNodeType(feature) == Feature.Type.ENTITLEMENT) {
-            purchaseResult.setPuchasesOptions(getPurchaseOptions(feature));
+            purchaseResult.setPurchasesOptions(getPurchaseOptions(feature));
         }
 
         return result;
@@ -149,6 +147,9 @@ public class EntitlementsCalculator extends FeaturesCalculator {
     @Override
     protected JSONObject embedOneChild(JSONObject feature, String childName, Map<String, Result> resultMap, AdditionalData additionalData) throws JSONException {
         JSONObject embedChild = super.embedOneChild(feature, childName, resultMap, additionalData);
+        if (embedChild == null){
+            embedChild = new JSONObject();
+        }
 
         if (getNodeType(feature) == Feature.Type.ENTITLEMENT) {
             JSONArray children = embedChildren(feature, Constants.JSON_FIELD_PURCHASE_OPTIONS, resultMap, additionalData);
@@ -196,7 +197,7 @@ public class EntitlementsCalculator extends FeaturesCalculator {
         return purchaseToProductIdMap;
     }
 
-    private List getPurchaseProductIds(JSONObject purchase, Map<String, List<String>> purchaseToProductIdMap) {
+    private List<String> getPurchaseProductIds(JSONObject purchase, Map<String, List<String>> purchaseToProductIdMap) {
 
         // parse mutex
         if (mutexCount(purchase) > 0) {

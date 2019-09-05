@@ -1,6 +1,5 @@
 package com.ibm.airlock.common.engine.context;
 
-import com.ibm.airlock.common.engine.SafeContextFactory;
 import org.json.JSONObject;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Script;
@@ -61,7 +60,6 @@ public class StateFullContext {
     public StateFullContext(String contextVarName) {
         //create and enter safe execution context
         this.contextVarName = escapeContextVarName(contextVarName);
-        SafeContextFactory safeContextFactory = new SafeContextFactory();
         Context rhino = Context.enter();
         mergeDeepFunction = rhino.compileString(jsonMergeMethod + " ; var " + this.contextVarName + " = {};", "mergeDeep", 1, null);
         scope = rhino.initStandardObjects();
@@ -86,7 +84,6 @@ public class StateFullContext {
             ReentrantReadWriteLock.WriteLock writeLock = reentrantReadWriteLock.writeLock();
             try {
                 writeLock.lock();
-                SafeContextFactory safeContextFactory = new SafeContextFactory();
                 Context rhino = Context.enter();
                 rhino.evaluateString(scope, this.contextVarName + " = " + context, "<cmd>", 1, null);
             } finally {
@@ -104,7 +101,6 @@ public class StateFullContext {
         try {
             reentrantReadWriteLock.writeLock().lock();
             //create and enter safe execution context
-            SafeContextFactory safeContextFactory = new SafeContextFactory();
             Context rhino = Context.enter();
             String contextScript = this.contextVarName + " = mergeDeep(" + this.contextVarName + ',' + context + ')';
             rhino.evaluateString(scope, contextScript, "<cmd>", 1, null);
@@ -122,7 +118,6 @@ public class StateFullContext {
     public void removeContextField(String path) {
         try {
             reentrantReadWriteLock.writeLock().lock();
-            SafeContextFactory safeContextFactory = new SafeContextFactory();
             Context rhino = Context.enter();
             rhino.evaluateString(scope, "if (" + this.contextVarName + '.' + path + "){ delete " + this.contextVarName + '.' + path + " }", "<cmd>", 1, null);
             Context.exit();
@@ -134,7 +129,6 @@ public class StateFullContext {
 
 
     private Scriptable doScopeClone() {
-        SafeContextFactory safeContextFactory = new SafeContextFactory();
         Context rhino = Context.enter();
 
         Scriptable scope = rhino.initStandardObjects();
@@ -156,7 +150,7 @@ public class StateFullContext {
     /**
      * This context has high priority upon the given the result is assign to the this context
      *
-     * @param stateFullContext
+     * @param stateFullContext context to be merged
      */
     public void mergeWith(@Nullable StateFullContext stateFullContext) {
         try {
@@ -165,7 +159,6 @@ public class StateFullContext {
                 return;
             }
             scope.setPrototype(stateFullContext.doScopeClone());
-            SafeContextFactory safeContextFactory = new SafeContextFactory();
             Context rhino = Context.enter();
             String contextScript = this.contextVarName + " = mergeDeep(" + stateFullContext.contextVarName + ',' + this.contextVarName + ')';
             rhino.evaluateString(scope, contextScript, "<cmd>", 1, null);
@@ -177,7 +170,6 @@ public class StateFullContext {
     }
 
     private String doToString() {
-        SafeContextFactory safeContextFactory = new SafeContextFactory();
         Context rhino = Context.enter();
         Object context = rhino.evaluateString(scope, "JSON.stringify(" + this.contextVarName + ')', "<cmd>", 1, null);
         Context.exit();

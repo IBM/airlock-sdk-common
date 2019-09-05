@@ -19,7 +19,6 @@ public interface SharedPreferences {
      * @param key      The name of the preference to retrieve.
      * @param defValue Value to return if this preference does not exist.
      * @return Returns the preference value if it exists, or defValue.  Throws ClassCastException if there is a preference with this name that is not a boolean.
-     * @throws ClassCastException
      */
     boolean isBooleanTrue(String key, boolean defValue);
 
@@ -29,7 +28,6 @@ public interface SharedPreferences {
      * @param key      The name of the preference to retrieve.
      * @param defValue Value to return if this preference does not exist.
      * @return Returns the preference value if it exists, or defValue.  Throws ClassCastException if there is a preference with this name that is not a long.
-     * @throws ClassCastException
      */
     long getLong(String key, long defValue);
 
@@ -44,7 +42,6 @@ public interface SharedPreferences {
      * @return Returns a map containing a list of pairs key/value representing
      * the preferences.
      *
-     * @throws NullPointerException
      */
     Map<String, ?> getAll();
 
@@ -80,7 +77,6 @@ public interface SharedPreferences {
      * @param key      The name of the preference to retrieve.
      * @param defValue Value to return if this preference does not exist.
      * @return Returns the preference value if it exists, or defValue.  Throws ClassCastException if there is a preference with this name that is not an int.
-     * @throws ClassCastException
      */
     int getInt(String key, int defValue);
 

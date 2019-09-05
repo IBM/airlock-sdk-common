@@ -1,6 +1,5 @@
 package com.ibm.airlock.common.engine.context;
 
-import com.ibm.airlock.common.engine.SafeContextFactory;
 import com.ibm.airlock.common.util.Constants;
 import com.ibm.airlock.common.util.Strings;
 import org.json.JSONObject;
@@ -37,10 +36,9 @@ public class AirlockContextManager {
     public AirlockContextManager(String name) {
         currentContext = new StateFullContext(name);
         runtimeContext = new StateFullContext(name);
-        SafeContextFactory safeContextFactory = new SafeContextFactory();
     }
 
-    public synchronized void overideRuntimeWithCurrentContext(){
+    public synchronized void overwriteRuntimeWithCurrentContext(){
         runtimeContext.update(currentContext.toString(),true);
     }
 

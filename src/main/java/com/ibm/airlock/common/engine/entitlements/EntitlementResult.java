@@ -6,6 +6,7 @@ import com.ibm.airlock.common.engine.Result;
 import java.util.Collections;
 import java.util.List;
 import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
 
 /**
  * The class represents rule engine result for purchase element,
@@ -16,8 +17,9 @@ import javax.annotation.CheckForNull;
  */
 class EntitlementResult extends Result {
 
-    private List<String> puchasesOptions = Collections.emptyList();
-    private String storePoductId;
+    private List<String> purchasesOptions = Collections.emptyList();
+    @Nullable
+    private String storeProductId;
 
     public EntitlementResult(Result result) {
         this(result.isAccept(), result.getTrace());
@@ -36,20 +38,20 @@ class EntitlementResult extends Result {
         super(accept, trace);
     }
 
+    public List<String> getPurchasesOptions() {
+        return purchasesOptions;
+    }
+
+    public void setPurchasesOptions(List<String> purchasesOptions) {
+        this.purchasesOptions = purchasesOptions;
+    }
+
     @CheckForNull
-    public List<String> getPuchasesOptions() {
-        return puchasesOptions;
+    public String getStoreProductId() {
+        return storeProductId;
     }
 
-    public void setPuchasesOptions(List<String> puchasesOptions) {
-        this.puchasesOptions = puchasesOptions;
-    }
-
-    public String getStorePoductId() {
-        return storePoductId;
-    }
-
-    public void setStorePoductId(String storePoductId) {
-        this.storePoductId = storePoductId;
+    public void setStoreProductId(@Nullable String storeProductId) {
+        this.storeProductId = storeProductId;
     }
 }

@@ -244,7 +244,6 @@ public class FilePreferences extends AbstractPreferences {
                     while (pNames.hasMoreElements()) {
                         String propKey = (String) pNames.nextElement();
                         if (propKey.startsWith(path)) {
-                            String subKey = propKey.substring(path.length());
                             // Only do immediate descendants
                             toRemove.add(propKey);
 

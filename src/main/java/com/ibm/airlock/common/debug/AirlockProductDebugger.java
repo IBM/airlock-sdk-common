@@ -74,14 +74,14 @@ public interface AirlockProductDebugger {
      * @return returns Streams java-script utils.
      */
     @CheckForNull
-    JSONObject getStreamsJavaScriptUils();
+    JSONObject getStreamsJavaScriptUtils();
 
 
     /**
      * @return returns Java Script utils.
      */
     @CheckForNull
-    JSONObject getJavaScriptUils();
+    JSONObject getJavaScriptUtils();
 
 
     /**

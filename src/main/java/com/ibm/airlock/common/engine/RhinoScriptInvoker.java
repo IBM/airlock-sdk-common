@@ -23,7 +23,6 @@ import javax.annotation.Nullable;
  * Java script engine wrapper, the class is based in Rhino library to evaluate JS code. Created by DenisV on 8/22/16.
  */
 public class RhinoScriptInvoker extends ScriptInvoker {
-    private static final String TAG = "airlock.RhinoInvoker";
 
     // function definitions and device context objects are added into the shared scope.
     // all queries will use a new scope that refers to the shared scope
@@ -90,8 +89,6 @@ public class RhinoScriptInvoker extends ScriptInvoker {
             }
         }
 
-        //create and enter safe execution context
-        SafeContextFactory safeContextFactory = new SafeContextFactory();
         rhino = Context.enter();
 
         try {
@@ -135,11 +132,12 @@ public class RhinoScriptInvoker extends ScriptInvoker {
         }
     }
 
-    private synchronized void initJSfunctions(Scriptable sharedScope, String funtions, Context rhino) {
+    @SuppressWarnings("SpellCheckingInspection")
+    private synchronized void initJSfunctions(Scriptable sharedScope, String functions, Context rhino) {
         if (this.airlockContextManager != null) {
             Script jsUtilsScript = this.airlockContextManager.getJsUtilsScript();
             if (jsUtilsScript == null) {
-                jsUtilsScript = rhino.compileString(funtions, "jsFunctions", 1, null);
+                jsUtilsScript = rhino.compileString(functions, "jsFunctions", 1, null);
             }
             // a method after proguard equals to 'exec'
             jsUtilsScript.exec(rhino, sharedScope);

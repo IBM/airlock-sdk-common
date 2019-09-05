@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
 import java.util.*;
 
@@ -61,7 +62,7 @@ public class FeaturesBranchMerger {
         }
     }
 
-    private Feature.Type resolveFeatureType(String type, Feature.Type defaultValue) {
+    private Feature.Type resolveFeatureType(@Nullable String type, Feature.Type defaultValue) {
 
         if (type == null) {
             return defaultValue;
@@ -134,9 +135,8 @@ public class FeaturesBranchMerger {
                     mergeRootNames(override, clonedMaster);
                     resolveChildren(override, nameMap, getBranchItemsName(), getChildrenName());
                     nameMap.put(getName(override), override);
-                    clonedMaster = override;
                 } else {
-                    overrideItem(clonedMaster, override, nameMap);
+                    overrideItem(override, nameMap);
                 }
             }
 
@@ -194,7 +194,7 @@ public class FeaturesBranchMerger {
         override.put(Constants.JSON_FIELD_BRANCH_FEATURES_ITEMS, newNames);
     }
 
-    private void overrideItem(JSONObject out, JSONObject override, Map<String, JSONObject> nameMap) throws Exception {
+    private void overrideItem(JSONObject override, Map<String, JSONObject> nameMap) throws Exception {
         String parentName = override.getString(Constants.JSON_FIELD_BRANCH_FEATURE_PARENT_NAME);
         JSONObject parent = nameMap.get(parentName);
         if (parent == null) {
@@ -265,6 +265,7 @@ public class FeaturesBranchMerger {
 
     }
 
+    @CheckForNull
     private JSONArray getChildrenByType(JSONObject parent, Feature.Type type) {
         switch (type) {
             case CONFIGURATION_RULE:
@@ -383,11 +384,11 @@ public class FeaturesBranchMerger {
     }
 
     private void removeResiduals(JSONObject item) throws JSONException {
-        removeChidren(item, getChildrenName());
-        removeChidren(item, Constants.JSON_FEATURE_FIELD_CONFIGURATION_RULES);
+        removeChildren(item, getChildrenName());
+        removeChildren(item, Constants.JSON_FEATURE_FIELD_CONFIGURATION_RULES);
     }
 
-    private void removeChidren(JSONObject item, String childKey) throws JSONException {
+    private void removeChildren(JSONObject item, String childKey) throws JSONException {
         JSONArray array = item.optJSONArray(childKey);
         if (array == null || array.length() == 0) {
             return;
@@ -443,7 +444,7 @@ public class FeaturesBranchMerger {
             for (int i = 0; i < in.length(); ++i) {
                 Object item = in.get(i);
                 if (deepClone) {
-                    item = cloneJson(item, deepClone);
+                    item = cloneJson(item, true);
                 }
                 out.put(item);
             }
@@ -458,7 +459,7 @@ public class FeaturesBranchMerger {
 
                 Object item = in.get(key);
                 if (deepClone) {
-                    item = cloneJson(item, deepClone);
+                    item = cloneJson(item, true);
                 }
                 out.put(key, item);
                 // Get key somehow? itr.getKey() ???
@@ -467,7 +468,7 @@ public class FeaturesBranchMerger {
             return out;
         }
 
-        //the rest are immmutable so no need to clone (null, Boolean, String, Integer, Double, Short)
+        //the rest are immutable so no need to clone (null, Boolean, String, Integer, Double, Short)
         return obj;
     }
 
