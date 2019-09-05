@@ -4,7 +4,6 @@ package com.ibm.airlock.common.util;
  * Created by Denis Voloshin on 02/11/2017.
  */
 
-@SuppressWarnings("ClassOnlyUsedInOnePackage")
 public class Pair<L, R> {
 
     private final L left;

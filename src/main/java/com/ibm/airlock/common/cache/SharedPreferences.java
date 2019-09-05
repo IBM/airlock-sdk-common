@@ -2,8 +2,6 @@ package com.ibm.airlock.common.cache;
 
 import java.util.Map;
 import java.util.Set;
-import java.util.prefs.BackingStoreException;
-import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
 
 
@@ -19,7 +17,6 @@ public interface SharedPreferences {
      * @param key      The name of the preference to retrieve.
      * @param defValue Value to return if this preference does not exist.
      * @return Returns the preference value if it exists, or defValue.  Throws ClassCastException if there is a preference with this name that is not a boolean.
-     * @throws ClassCastException
      */
     boolean isBooleanTrue(String key, boolean defValue);
 
@@ -29,10 +26,8 @@ public interface SharedPreferences {
      * @param key      The name of the preference to retrieve.
      * @param defValue Value to return if this preference does not exist.
      * @return Returns the preference value if it exists, or defValue.  Throws ClassCastException if there is a preference with this name that is not a long.
-     * @throws ClassCastException
      */
     long getLong(String key, long defValue);
-
 
     /**
      * Retrieve all values from the preferences.
@@ -43,11 +38,8 @@ public interface SharedPreferences {
      *
      * @return Returns a map containing a list of pairs key/value representing
      * the preferences.
-     *
-     * @throws NullPointerException
      */
     Map<String, ?> getAll();
-
 
     /**
      * Retrieve a String value from the preferences.
@@ -56,9 +48,8 @@ public interface SharedPreferences {
      * @param defValue Value to return if this preference does not exist.
      * @return Returns the preference value if it exists, or defValue.  Throws ClassCastException if there is a preference with this name that is not a String.
      */
-    @CheckForNull
-    String getString(String key, String defValue);
-
+    @Nullable
+    String getString(String key, @Nullable String defValue);
 
     /**
      * Create a new Editor for these preferences, through which you can make
@@ -73,22 +64,17 @@ public interface SharedPreferences {
      */
     Editor edit();
 
-
     /**
      * Retrieve an int value from the preferences.
      *
      * @param key      The name of the preference to retrieve.
      * @param defValue Value to return if this preference does not exist.
      * @return Returns the preference value if it exists, or defValue.  Throws ClassCastException if there is a preference with this name that is not an int.
-     * @throws ClassCastException
      */
     int getInt(String key, int defValue);
 
     @Nullable
     Set<String> getStringSet(String key, Object o);
-
-
-    void removeNode() throws BackingStoreException;
 
     /**
      * Interface used for modifying values in a {@link SharedPreferences}
@@ -164,10 +150,10 @@ public interface SharedPreferences {
          * <p>
          * <p>As {@link SharedPreferences} instances are singletons within
          * a process, it's safe to replace any instance of {@link #doCommit} with
-         *  if you were already ignoring the return value.
+         * if you were already ignoring the return value.
          * <p>
          * <p>You don't need to worry about Android component
-         * life cycles and their interaction with {@code apply()}
+         * lifecycles and their interaction with {@code apply()}
          * writing to disk.  The framework makes sure in-flight disk
          * writes from {@code apply()} complete before switching
          * states.
@@ -201,16 +187,6 @@ public interface SharedPreferences {
         Editor putLong(String key, long value);
 
         /**
-         * Set a float value in the preferences editor, to be written back once
-         * {@link #doCommit} or {@link #apply} are called.
-         *
-         * @param key   The name of the preference to modify.
-         * @param value The new value for the preference.
-         * @return Returns a reference to the same Editor object, so you can chain put calls together.
-         */
-        Editor putFloat(String key, float value);
-
-        /**
          * Set a boolean value in the preferences editor, to be written back
          * once {@link #doCommit} or {@link #apply} are called.
          *
@@ -220,9 +196,6 @@ public interface SharedPreferences {
          */
         Editor putBoolean(String key, boolean value);
 
-
-        void putString(String spSeasonId, String seasonId);
-        
-        
+        void putString(String key, @Nullable String value);
     }
 }

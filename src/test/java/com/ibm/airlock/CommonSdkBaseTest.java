@@ -1,5 +1,7 @@
 package com.ibm.airlock;
 
+import com.ibm.airlock.common.AirlockClient;
+import com.ibm.airlock.common.AirlockProductSeasonManager;
 import com.ibm.airlock.common.exceptions.AirlockInvalidFileException;
 import com.ibm.airlock.common.AirlockProductManager;
 import com.ibm.airlock.common.DefaultAirlockProductManager;
@@ -37,11 +39,9 @@ public class CommonSdkBaseTest extends AbstractBaseTest {
     }
 
     public void createClientInstance() throws AirlockInvalidFileException{
-        AirlockProductManager airlockProductManager = DefaultAirlockProductManager.builder().withAirlockDefaults(slurp(getDefaultFile(), 1024)).
-                withAppVersion(m_appVersion).build();
-        airlockClient = airlockProductManager.createClient ("111-111-111-111");
+        airlockProductSeasonManager = new AirlockProductSeasonManager(m_productName, slurp(getDefaultFile(), 1024), "", m_appVersion);
+        airlockClient = airlockProductSeasonManager.createClient("111-111-111-111");
         manager = airlockClient.getAirlockProductManager();
-        mockedContext = airlockProductManager.getContext();
     }
 
     @Override
@@ -51,12 +51,13 @@ public class CommonSdkBaseTest extends AbstractBaseTest {
         m_appVersion = version;
         //reset
         if (reset && manager != null) {
-            manager.reset();
-            createClientInstance();
+            //manager.reset();
+            //createClientInstance();
         }
         //set user groups
         if (groups != null) {
-            manager.getUserGroupsService().setDeviceUserGroups(groups);
+            airlockProductSeasonManager.setDeviceUserGroups(groups);
+            airlockClient.getAirlockProductManager().getUserGroupsService().setDeviceUserGroups(groups);
         }
         //set locale
         if (locale != null) {

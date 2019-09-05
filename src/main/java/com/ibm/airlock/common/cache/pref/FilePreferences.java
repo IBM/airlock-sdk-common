@@ -1,10 +1,18 @@
 package com.ibm.airlock.common.cache.pref;
 
 import com.ibm.airlock.common.cache.PersistenceEncryptor;
+
+import javax.annotation.Nullable;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Enumeration;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Properties;
+import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.prefs.AbstractPreferences;
@@ -12,14 +20,13 @@ import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 
 /**
- * Preferences implementation that stores to a user-defined file. See FilePreferencesFactory.
- *
- * @author David Croft (<a href="http://www.davidc.net">www.davidc.net</a>)
- * @version $Id: FilePreferences.java 283 2009-06-18 17:06:58Z david $
+ * Preferences implementation that stores Java Preferences to a user-defined file.
+ * See FilePreferencesFactory.
  */
 public class FilePreferences extends AbstractPreferences {
     private static final Logger log = Logger.getLogger(FilePreferences.class.getName());
 
+    private static final String PATH_DELIMITER = ".";
     private final Map<String, String> root;
     private final Map<String, FilePreferences> children;
     private final File file;
@@ -28,16 +35,22 @@ public class FilePreferences extends AbstractPreferences {
     @Override
     public Preferences node(String path) {
         //noinspection DynamicRegexReplaceableByCompiledPattern
-        return super.node(path.replace("\\","/"));
+        return super.node(path.replace("\\", "/"));
     }
 
     @Override
-    public  boolean nodeExists(String pathName) throws BackingStoreException {
+    public boolean nodeExists(String pathName) throws BackingStoreException {
         //noinspection DynamicRegexReplaceableByCompiledPattern
-        return super.nodeExists(pathName.replace("\\","/"));
+        return super.nodeExists(pathName.replace("\\", "/"));
     }
 
-    public FilePreferences(AbstractPreferences parent, String name) {
+    /**
+     *  Ctor for FilePreferences
+     * @param parent FilePreferences parent
+     * @param name FilePreferences name
+     */
+    @SuppressWarnings("OverridableMethodCallDuringObjectConstruction")
+    FilePreferences(@Nullable AbstractPreferences parent, String name) {
         super(parent, name);
 
         log.log(Level.INFO, "Instantiating node " + name);
@@ -46,19 +59,19 @@ public class FilePreferences extends AbstractPreferences {
 
         if (!name.isEmpty() && parent != null) {
             if (name.endsWith(".pref")) {
-                this.file = new File(parent.absolutePath() + File.separator + name);
+                file = new File(parent.absolutePath() + File.separator + name);
                 if (!file.exists()) {
                     try {
-                        if (this.file.createNewFile()) {
-                            log.log(Level.INFO, "File [" + this.file.getAbsolutePath() + "] created");
+                        if (file.createNewFile()) {
+                            log.log(Level.INFO, "File [" + file.getAbsolutePath() + "] created");
                         } else {
-                            log.log(Level.SEVERE, "File [" + this.file.getAbsolutePath() + "] creation failed");
+                            log.log(Level.SEVERE, "File [" + file.getAbsolutePath() + "] creation failed");
                         }
                     } catch (IOException e) {
-                        log.log(Level.SEVERE, "File [" + this.file.getAbsolutePath() + "] creation failed, error:" + e.getMessage());
+                        log.log(Level.SEVERE, "File [" + file.getAbsolutePath() + "] creation failed, error:" + e.getMessage());
                     }
                 } else {
-                    log.log(Level.INFO, "File [" + this.file.getAbsolutePath() + "] already exits");
+                    log.log(Level.INFO, "File [" + file.getAbsolutePath() + "] already exits");
                 }
 
                 try {
@@ -67,16 +80,16 @@ public class FilePreferences extends AbstractPreferences {
                     log.log(Level.SEVERE, "Unable to sync on creation of node " + name, e);
                 }
             } else {
-                this.file = new File(parent.absolutePath() + File.separator + name);
-                if (!this.file.exists()) {
-                    boolean done = this.file.mkdir();
-                    log.log(Level.INFO, "Folder [" + file.getAbsolutePath() + ']' + (done ? " created" : " creation failed"));
+                file = new File(parent.absolutePath() + File.separator + name);
+                if (!file.exists()) {
+                    boolean done = file.mkdir();
+                    log.log(Level.INFO, String.format("Folder [%s]%s", file.getAbsolutePath(), done ? " created" : " creation failed"));
                 } else {
                     log.log(Level.INFO, "Folder [" + file.getAbsolutePath() + "] folder exists");
                 }
             }
         } else {
-            this.file = new File("");
+            file = new File("");
         }
     }
 
@@ -101,14 +114,13 @@ public class FilePreferences extends AbstractPreferences {
         }
     }
 
+    @SuppressWarnings("MethodDoesntCallSuperMethod")
     @Override
     public void put(String key, String value) {
         if (key == null || value == null) {
             throw new NullPointerException();
         }
-
         putSpi(key, value);
-
     }
 
     @Override
@@ -123,30 +135,23 @@ public class FilePreferences extends AbstractPreferences {
         synchronized (root) {
             root.remove(key);
         }
-//        try {
-//            if(!file.isDirectory()){
-//                flush();
-//            }
-//        } catch (BackingStoreException e) {
-//            log.log(Level.SEVERE, "Unable to flush after removing " + key, e);
-//        }
     }
 
     @Override
     protected void removeNodeSpi() {
-        isRemoved = true;
-//        if(!file.isDirectory()){
-//            flush();
-//        }
+        synchronized (file){
+            isRemoved = true;
+        }
     }
 
+    @SuppressWarnings("ZeroLengthArrayAllocation")
     @Override
     protected String[] keysSpi() {
         synchronized (root) {
             return root.keySet().toArray(new String[0]);
         }
     }
-
+    @SuppressWarnings("ZeroLengthArrayAllocation")
     @Override
     protected String[] childrenNamesSpi() {
         return children.keySet().toArray(new String[0]);
@@ -159,7 +164,6 @@ public class FilePreferences extends AbstractPreferences {
             child = new FilePreferences(this, name);
             children.put(name, child);
         }
-        //clearCache();
         return child;
     }
 
@@ -183,15 +187,14 @@ public class FilePreferences extends AbstractPreferences {
                 getPath(sb);
                 String path = sb.toString();
 
-                final Enumeration<?> pNames = p.propertyNames();
-                while (pNames.hasMoreElements()) {
-                    String propKey = (String) pNames.nextElement();
+                final Enumeration<?> propertyNames = p.propertyNames();
+                while (propertyNames.hasMoreElements()) {
+                    String propKey = (String) propertyNames.nextElement();
                     if (propKey.startsWith(path)) {
                         String subKey = propKey.substring(path.length());
                         // Only load immediate descendants
-                        synchronized (root) {
-                            root.put(subKey, p.getProperty(propKey));
-                        }
+                        root.put(subKey, p.getProperty(propKey));
+
 
                     }
                 }
@@ -201,14 +204,15 @@ public class FilePreferences extends AbstractPreferences {
         }
     }
 
+    @SuppressWarnings("CastToConcreteClass")
     private void getPath(StringBuilder sb) {
         final Preferences parent = parent();
         if (parent == null) {
             return;
         }
 
-        ((FilePreferences)parent).getPath(sb);
-        sb.append(name()).append('.');
+        ((FilePreferences) parent).getPath(sb);
+        sb.append(name()).append(PATH_DELIMITER);
     }
 
 
@@ -233,18 +237,17 @@ public class FilePreferences extends AbstractPreferences {
                 if (file.exists()) {
                     try {
                         p.load(PersistenceEncryptor.decryptAES(file));
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         throw new BackingStoreException(e);
                     }
 
-                    List<String> toRemove = new ArrayList<>();
+                    Collection<String> toRemove = new ArrayList<>();
 
                     // Make a list of all direct children of this node to be removed
-                    final Enumeration<?> pNames = p.propertyNames();
-                    while (pNames.hasMoreElements()) {
-                        String propKey = (String) pNames.nextElement();
+                    final Enumeration<?> propertyNames = p.propertyNames();
+                    while (propertyNames.hasMoreElements()) {
+                        String propKey = (String) propertyNames.nextElement();
                         if (propKey.startsWith(path)) {
-                            String subKey = propKey.substring(path.length());
                             // Only do immediate descendants
                             toRemove.add(propKey);
 
@@ -257,15 +260,15 @@ public class FilePreferences extends AbstractPreferences {
                     }
                 }
 
-                synchronized (root) {
-                    // If this node hasn't been removed, add back in any values
-                    if (!isRemoved) {
-                        Set<String> keySet = new HashSet(root.keySet());
-                        for (String s : keySet) {
-                            p.setProperty(path + s, root.get(s));
-                        }
+                // If this node hasn't been removed, add back in any values
+                if (!isRemoved) {
+                    //noinspection unchecked
+                    Iterable<String> keySet = new HashSet(root.keySet());
+                    for (String s : keySet) {
+                        p.setProperty(path + s, root.get(s));
                     }
                 }
+
 
                 FileOutputStream fo = new FileOutputStream(file);
                 p.store(fo, "FilePreferences");

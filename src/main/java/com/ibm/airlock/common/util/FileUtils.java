@@ -3,6 +3,7 @@ package com.ibm.airlock.common.util;
 import java.io.*;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -98,9 +99,10 @@ public class FileUtils {
         FileWriter writer = new FileWriter(outputFile, true);
         ArrayList<File> files = FolderUtils.allFilesFromFolder(folderPath);
 
-        for (File current : files) {
+        for(int i = 0; i < files.size(); ++i) {
+            File current = files.get(i);
             FileInputStream fin = new FileInputStream(current);
-            byte[] fileContent = new byte[(int) current.length()];
+            byte[] fileContent = new byte[(int)current.length()];
             fin.read(fileContent);
             fin.close();
             writer.write(new String(fileContent));
@@ -111,17 +113,42 @@ public class FileUtils {
 
     public static void copy(File sourceFile, File destFile) throws IOException {
         if (!destFile.exists()) {
-            //noinspection ResultOfMethodCallIgnored
             destFile.createNewFile();
         }
 
-        try (FileInputStream fis = new FileInputStream(sourceFile); FileOutputStream fos = new FileOutputStream(destFile); FileChannel source = fis.getChannel(); FileChannel destination = fos.getChannel()) {
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+        FileChannel source = null;
+        FileChannel destination = null;
+
+        try {
+            fis = new FileInputStream(sourceFile);
+            fos = new FileOutputStream(destFile);
+            source = fis.getChannel();
+            destination = fos.getChannel();
             long count = 0L;
             long size = source.size();
 
-            while (count < size) {
+            while(count < size) {
                 count += destination.transferFrom(source, count, size - count);
             }
+        } finally {
+            if (source != null) {
+                source.close();
+            }
+
+            if (destination != null) {
+                destination.close();
+            }
+
+            if (fis != null) {
+                fis.close();
+            }
+
+            if (fos != null) {
+                fos.close();
+            }
+
         }
 
     }
@@ -133,14 +160,16 @@ public class FileUtils {
         byte[] buffer = new byte[1024];
         FileOutputStream fos = new FileOutputStream(zipFilePath);
         ZipOutputStream zos = new ZipOutputStream(fos);
+        Iterator var8 = allFiles.iterator();
 
-        for (File file : allFiles) {
+        while(var8.hasNext()) {
+            File file = (File)var8.next();
             ZipEntry ze = new ZipEntry(file.getAbsolutePath());
             zos.putNextEntry(ze);
             FileInputStream in = new FileInputStream(file);
 
             int len;
-            while ((len = in.read(buffer)) > 0) {
+            while((len = in.read(buffer)) > 0) {
                 zos.write(buffer, 0, len);
             }
 

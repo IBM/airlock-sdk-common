@@ -12,6 +12,7 @@ import dagger.Module;
 import dagger.Provides;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 
 @Module
@@ -37,21 +38,21 @@ public class ProductDiModule {
     protected NotificationService notificationService;
     protected AirlockContextManager contextManager;
 
-    public ProductDiModule(){
+    public ProductDiModule() {
 
     }
 
-    public ProductDiModule(Context productContext, String defaultFile,
-                           String productName, String appVersion, String key) {
+    public ProductDiModule(Context productContext, ConnectionManager connectionManager, PersistenceHandler persistenceHandler,
+                           String defaultFile, String productName, String appVersion, String key) {
         this.productContext = productContext;
         this.productName = productName;
         this.appVersion = appVersion;
         this.key = key;
         this.defaultFile = defaultFile;
+        this.connectionManager = connectionManager;
+        this.persistenceHandler = persistenceHandler;
         contextManager = new AirlockContextManager(productName);
         infraAirlockService = new InfraAirlockService();
-        connectionManager = new OkHttpConnectionManager(new BaseOkHttpClientBuilder(), key);
-        persistenceHandler = new DefaultPersistenceHandler(productContext);
         streamsService = new StreamsService();
         userGroupsService = new UserGroupsService();
         branchesService = new BranchesService();

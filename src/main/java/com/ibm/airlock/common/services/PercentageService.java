@@ -39,7 +39,7 @@ public class PercentageService {
         this.percentageMap.put(PercentageManager.Sections.STREAMS.name, new HashMap<String, Double>());
         this.percentageMap.put(PercentageManager.Sections.NOTIFICATIONS.name, new HashMap<String, Double>());
         try {
-            if (persistenceHandler.readJSON(Constants.SP_FEATURES_PERCENTAGE_MAP).toString().equals("{}")) {
+            if (persistenceHandler.readJSON(Constants.SP_FEATURES_PERCENAGE_MAP).toString().equals("{}")) {
                 if (persistenceHandler.readJSON(Constants.SP_RAW_RULES).optJSONObject(Constants.JSON_FIELD_ROOT) != null) {
                     generateFeaturesPercentageMap(persistenceHandler.readJSON(Constants.SP_RAW_RULES).getJSONObject(Constants.JSON_FIELD_ROOT));
                 }
@@ -51,7 +51,7 @@ public class PercentageService {
                 }
 
                 generateStreamsPercentageMap(this.streamsService.getStreams());
-                persistenceHandler.write(Constants.SP_FEATURES_PERCENTAGE_MAP, new JSONObject(percentageMap).toString());
+                persistenceHandler.write(Constants.SP_FEATURES_PERCENAGE_MAP, new JSONObject(percentageMap).toString());
 
             }
         } catch (final JSONException e) {
@@ -92,11 +92,11 @@ public class PercentageService {
 
         }
         generateStreamsPercentageMap(this.streamsService.getStreams());
-        persistenceHandler.write(Constants.SP_FEATURES_PERCENTAGE_MAP, new JSONObject(percentageMap).toString());
+        persistenceHandler.write(Constants.SP_FEATURES_PERCENAGE_MAP, new JSONObject(percentageMap).toString());
     }
 
     public void reInit() throws JSONException {
-        if (persistenceHandler.readJSON(Constants.SP_FEATURES_PERCENTAGE_MAP).toString().equals("{}")) {
+        if (persistenceHandler.readJSON(Constants.SP_FEATURES_PERCENAGE_MAP).toString().equals("{}")) {
             if (persistenceHandler.readJSON(Constants.SP_RAW_RULES).optJSONObject(Constants.JSON_FIELD_ROOT) != null) {
                 percentageMap.get(PercentageManager.Sections.FEATURES.name).clear();
                 generateFeaturesPercentageMap(persistenceHandler.readJSON(Constants.SP_RAW_RULES).getJSONObject(Constants.JSON_FIELD_ROOT));
@@ -109,7 +109,7 @@ public class PercentageService {
                         getJSONObject(Constants.JSON_FIELD_ENTITLEMENT_ROOT));
             }
             generateStreamsPercentageMap(this.streamsService.getStreams());
-            persistenceHandler.write(Constants.SP_FEATURES_PERCENTAGE_MAP, new JSONObject(percentageMap).toString());
+            persistenceHandler.write(Constants.SP_FEATURES_PERCENAGE_MAP, new JSONObject(percentageMap).toString());
         }
     }
 
@@ -131,7 +131,7 @@ public class PercentageService {
         if (streams != null) {
             Map<String, Double> streamsMap = new HashMap();
             for (AirlockStream stream : streams) {
-                streamsMap.put(stream.getName(), (double) stream.getRolloutPercentage());
+                streamsMap.put(stream.getName(), new Double(stream.getRolloutPercentage()));
             }
             percentageMap.put(PercentageManager.Sections.STREAMS.name, streamsMap);
         }
@@ -199,7 +199,7 @@ public class PercentageService {
         JSONObject randomMap = persistenceHandler.getRandomMap();
         Double percentage = percentageMap.get(section.name).get(name);
         if (percentage == null) {
-            percentage = (double) 0;
+            percentage = Double.valueOf(0);
         }
 
         //do nothing is the given percentage is 0 or 100 since we can't put anything in the given range
@@ -236,7 +236,7 @@ public class PercentageService {
 
         Double percentage = percentageMap.get(section.name).get(name);
         if (percentage == null) {
-            percentage = (double) 0;
+            percentage = Double.valueOf(0);
         }
         int threshold = (int) Math.floor(percentage * 10000);
         if (threshold == 1000000) {
@@ -267,7 +267,7 @@ public class PercentageService {
     public Double getPercentage(PercentageManager.Sections section, String name) {
         String sectionName;
         if (section == null || section.name() == null || this.percentageMap.get(section.name().toLowerCase()) == null) {
-            return (double) 0;
+            return Double.valueOf(0);
         } else {
             sectionName = section.name();
         }
@@ -275,6 +275,9 @@ public class PercentageService {
     }
 
     public boolean isEmpty() {
-        return percentageMap == null || percentageMap.get(PercentageManager.Sections.FEATURES.name()) == null;
+        if (percentageMap == null || percentageMap.get(PercentageManager.Sections.FEATURES.name()) == null) {
+            return true;
+        }
+        return false;
     }
 }

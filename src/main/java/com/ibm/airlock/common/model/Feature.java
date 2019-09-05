@@ -30,7 +30,6 @@ import javax.annotation.Nullable;
  *
  * @author Denis Voloshin
  */
-@SuppressWarnings("unused")
 public class Feature implements Serializable {
 
     private static final String TAG = "Airlock.Feature";
@@ -148,7 +147,6 @@ public class Feature implements Serializable {
      *
      * @return New feature that is a clone of this one.
      */
-    @SuppressWarnings("MethodDoesntCallSuperMethod")
     @Override
     public Feature clone() {
         Feature result = getNew();
@@ -302,7 +300,7 @@ public class Feature implements Serializable {
      *
      * @param configuration The new configuration to be set.
      */
-    public void setConfiguration(@Nullable JSONObject configuration) {
+    public void setConfiguration(JSONObject configuration) {
         if (configuration != null) {
             this.configuration = configuration;
         }
@@ -375,7 +373,7 @@ public class Feature implements Serializable {
         if (analyticsAppliedRules == null) {
             return null;
         } else {
-            return new ArrayList<>(analyticsAppliedRules);
+            return new ArrayList<String>(analyticsAppliedRules);
         }
     }
 
@@ -442,7 +440,6 @@ public class Feature implements Serializable {
         this.percentage = percentage;
     }
 
-    @SuppressWarnings("unused")
     public BranchStatus getBranchStatus() {
         return branchStatus;
     }
@@ -526,15 +523,11 @@ public class Feature implements Serializable {
         if (children == null || child == null) {
             return;
         }
-        Feature featureToRemove = null;
         for (Feature current : children) {
             if (current.getName().equals(child.getName())) {
-                featureToRemove = current;
-                break;
+                children.remove(current);
             }
-        }
-        if (featureToRemove != null){
-            children.remove(featureToRemove);
+            return;
         }
     }
 
@@ -568,8 +561,10 @@ public class Feature implements Serializable {
 
             if (children != null && !children.isEmpty()) {
                 JSONArray childrenArray = new JSONArray();
-                for (Feature child : children) {
-                    childrenArray.put(child.toJsonObject());
+                if (children != null && !children.isEmpty()) {
+                    for (Feature child : children) {
+                        childrenArray.put(child.toJsonObject());
+                    }
                 }
                 childJson.put(Constants.JSON_FEATURE_FIELD_FEATURES, childrenArray);
             }
@@ -673,7 +668,7 @@ public class Feature implements Serializable {
     }
 
     public void mergeAnalyticsAppliedOrderRules(JSONArray appliedOrderRules) {
-        TreeSet<String> set = new TreeSet<>();
+        TreeSet<String> set = new TreeSet();
         for (int i = 0; i < appliedOrderRules.length(); i++) {
             set.add(appliedOrderRules.getString(i));
         }

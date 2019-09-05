@@ -1,6 +1,7 @@
 package com.ibm.airlock.common.services;
 
 import com.ibm.airlock.common.AirlockCallback;
+import com.ibm.airlock.common.exceptions.AirlockNotInitializedException;
 import com.ibm.airlock.common.dependency.ProductDiComponent;
 import com.ibm.airlock.common.model.Feature;
 import com.ibm.airlock.common.model.FeaturesList;
@@ -80,6 +81,7 @@ public class FeaturesService {
      *
      * @param context             the airlock context provided by caller
      * @param purchasedProductIds the list of purchased product an user bought so far.
+     * @throws AirlockNotInitializedException if the Airlock SDK has not been initialized
      * @throws JSONException                  if the pullFeature results, the userProfile or the deviceProfile is not in the correct JSON format.
      */
     public void calculateFeatures(@Nullable JSONObject context, Collection<String> purchasedProductIds) throws JSONException {

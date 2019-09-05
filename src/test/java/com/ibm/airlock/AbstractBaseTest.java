@@ -2,6 +2,7 @@ package com.ibm.airlock;
 
 import com.ibm.airlock.common.*;
 import com.ibm.airlock.common.cache.Context;
+import com.ibm.airlock.common.cache.SeasonPersistenceHandler;
 import com.ibm.airlock.common.exceptions.AirlockInvalidFileException;
 import com.ibm.airlock.common.exceptions.AirlockNotInitializedException;
 import com.ibm.airlock.common.model.Feature;
@@ -49,6 +50,8 @@ public abstract class AbstractBaseTest {
     public static final String URL_AIRLOCK_DEFAULTS_STRING_FORMAT = "%sseasons/%s/%s/AirlockDefaults.json";
     public static final String ADMIN_URL_AIRLOCK_DEFAULTS_STRING_FORMAT = "%s/products/seasons/%s/defaults";
 
+
+    protected AirlockProductSeasonManager airlockProductSeasonManager;
     protected AirlockProductManager manager;
     protected Context mockedContext;
     protected AirlockClient airlockClient;
@@ -104,7 +107,7 @@ public abstract class AbstractBaseTest {
         }
         //reset
         if (reset) {
-            manager.reset();
+            //manager.reset();
         }
         //set user groups
         if (groups != null) {
@@ -446,7 +449,7 @@ public abstract class AbstractBaseTest {
         final CountDownLatch latch = new CountDownLatch(1);
 
         final List<Exception> error = new ArrayList<>();
-        manager.getFeaturesService().pullFeatures(new AirlockCallback() {
+        airlockProductSeasonManager.pullFeatures(new AirlockCallback() {
             @Override
             public void onFailure(Exception e) {
                 error.add(e);
@@ -486,6 +489,10 @@ public abstract class AbstractBaseTest {
         }
     }
 
+    public AirlockProductSeasonManager getAirlockProductSeasonManager() {
+        return airlockProductSeasonManager;
+    }
+
     public AirlockProductManager getManager() {
         return manager;
     }
@@ -513,9 +520,9 @@ public abstract class AbstractBaseTest {
 
     public abstract void setLocale(Locale locale);
 
-    public Context getContext() {
-        return mockedContext;
-    }
+//    public Context getContext() {
+//        return mockedContext;
+//    }
 
     public void setM_appVersion(String m_appVersion) {
         this.m_appVersion = m_appVersion;

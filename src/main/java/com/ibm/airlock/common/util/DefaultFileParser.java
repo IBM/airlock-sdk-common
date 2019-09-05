@@ -139,18 +139,18 @@ public class DefaultFileParser {
     //returns the value in the SharedPreference
     //throws AirlockInvalidFileException if @mandatory = true and the name doesn't exist in the JsonObject
 
-    private static void setConfigurationProperty(PersistenceHandler sp, String propertyName, String sharePreferenceName, JSONObject defaultConfig,
+    private static String setConfigurationProperty(PersistenceHandler sp, String propertyName, String sharePreferenceName, JSONObject defaultConfig,
                                                    boolean mandatory) throws AirlockInvalidFileException {
-        setConfigurationProperty(sp, propertyName, sharePreferenceName, defaultConfig, mandatory, true);
+        return setConfigurationProperty(sp, propertyName, sharePreferenceName, defaultConfig, mandatory, true);
     }
 
-    private static void setConfigurationProperty(PersistenceHandler sp, String propertyName, String sharePreferenceName, JSONObject defaultConfig,
+    private static String setConfigurationProperty(PersistenceHandler sp, String propertyName, String sharePreferenceName, JSONObject defaultConfig,
                                                    boolean mandatory, boolean overwriteIfExist) throws AirlockInvalidFileException {
         // not overwrite and exist - return the value from preferences.
         if (!overwriteIfExist) {
             String spValue = sp.read(sharePreferenceName, "");
             if (!spValue.isEmpty()) {
-                return;
+                return spValue;
             }
         }
         String value = defaultConfig.optString(propertyName);
@@ -159,6 +159,6 @@ public class DefaultFileParser {
         } else if (mandatory) {
             throw new AirlockInvalidFileException(String.format(AirlockMessages.ERROR_MISSING_OR_EMPTY_VALUE_FORMATTED, propertyName));
         }
-        return;
+        return value;
     }
 }

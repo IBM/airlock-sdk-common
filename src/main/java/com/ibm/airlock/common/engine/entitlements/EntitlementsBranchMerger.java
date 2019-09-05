@@ -14,6 +14,7 @@ import java.util.Map;
 /**
  * Created by Denis Voloshin on 20/02/2019.
  */
+@SuppressWarnings("MethodDoesntCallSuperMethod")
 public class EntitlementsBranchMerger extends FeaturesBranchMerger {
 
     @Override
@@ -52,7 +53,7 @@ public class EntitlementsBranchMerger extends FeaturesBranchMerger {
     @Override
     protected void resolveChildren(JSONObject override, Map<String, JSONObject> nameMap, String nameKey, String childKey) throws Exception {
         super.resolveChildren(override, nameMap, nameKey, childKey);
-        resolvePurchaseOptions(override, nameMap, Constants.JSON_FIELD_PURCHASE_OPTIONS);
+        resolvePurchaseOptions(override, nameMap, Constants.JSON_FIELD_BRANCH_PURCHASE_OPTION_ITEMS, Constants.JSON_FIELD_PURCHASE_OPTIONS);
     }
 
 
@@ -72,14 +73,14 @@ public class EntitlementsBranchMerger extends FeaturesBranchMerger {
         }
     }
 
-    private void resolvePurchaseOptions(JSONObject override, Map<String, JSONObject> nameMap, String childKey) throws Exception {
-        JSONArray names = override.optJSONArray(Constants.JSON_FIELD_BRANCH_PURCHASE_OPTION_ITEMS);
+    private void resolvePurchaseOptions(JSONObject override, Map<String, JSONObject> nameMap, String nameKey, String childKey) throws Exception {
+        JSONArray names = override.optJSONArray(nameKey);
         JSONArray purchaseOptions = override.optJSONArray(childKey);
         if (names == null || names.length() == 0) {
             return;
         }
 
-        Map<String, JSONObject> overrideKids = new HashMap<>();
+        Map<String, JSONObject> overrideKids = new HashMap<String, JSONObject>();
         if (purchaseOptions != null) {
             for (int i = 0; i < purchaseOptions.length(); ++i) {
                 JSONObject child = purchaseOptions.getJSONObject(i);

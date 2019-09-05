@@ -47,14 +47,12 @@ class FolderUtils {
             File[] content = item.listFiles();
             ArrayList<String> contentNames = new ArrayList();
 
-            if (content != null) {
-                for (File file : content) {
-                    if (file.isDirectory()) {
-                        map = mapContent(file, map);
-                    }
-
-                    contentNames.add(file.getName());
+            for(int i = 0; i < content.length; ++i) {
+                if (content[i].isDirectory()) {
+                    map = mapContent(content[i], map);
                 }
+
+                contentNames.add(content[i].getName());
             }
 
             map.put(item.getName(), contentNames);
@@ -63,24 +61,19 @@ class FolderUtils {
     }
 
     private static ArrayList<File> allFilesFromDirectory(File dir, ArrayList<File> list) {
-        //noinspection ResultOfMethodCallIgnored
         dir.setReadOnly();
         File[] files = dir.listFiles();
 
-        if (files != null){
-            for (File file : files) {
-                if (file.isFile() && !list.contains(file)) {
-                    list.add(file);
-                }
+        for(int i = 0; i < files.length; ++i) {
+            if (files[i].isFile() && !list.contains(files[i])) {
+                list.add(files[i]);
+            }
 
-                if (file.isDirectory()) {
-                    allFilesFromDirectory(file, list);
-                }
+            if (files[i].isDirectory()) {
+                allFilesFromDirectory(files[i], list);
             }
         }
 
-
-        //noinspection ResultOfMethodCallIgnored
         dir.setWritable(true);
         return list;
     }
@@ -92,8 +85,8 @@ class FolderUtils {
     public static HashMap<String, File> folderContentArrayToHashMap(File[] content) {
         HashMap<String, File> map = new HashMap();
 
-        for (File file : content) {
-            map.put(file.getName(), file);
+        for(int i = 0; i < content.length; ++i) {
+            map.put(content[i].getName(), content[i]);
         }
 
         return map;
@@ -102,7 +95,8 @@ class FolderUtils {
     public static HashMap<String, File> folderContentArrayToHashMap(ArrayList<File> content) {
         HashMap<String, File> map = new HashMap();
 
-        for (File file : content) {
+        for(int i = 0; i < content.size(); ++i) {
+            File file = content.get(i);
             map.put(file.getName(), file);
         }
 

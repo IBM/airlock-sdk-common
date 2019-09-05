@@ -4,8 +4,6 @@ import com.ibm.airlock.common.cache.PersistenceHandler;
 import com.ibm.airlock.common.dependency.ProductDiComponent;
 import com.ibm.airlock.common.streams.AirlockStream;
 import com.ibm.airlock.common.util.Constants;
-
-import org.jetbrains.annotations.TestOnly;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -166,7 +164,8 @@ public class StreamsService {
 
             //run filters on event and add event to queue if needed
             //If thread was changed need to init the context again...
-            for (AirlockStream stream : streams) {
+            for (int i = 0; i < streams.size(); i++) {
+                AirlockStream stream = streams.get(i);
                 if (stream == null || !stream.isProcessingEnabled() || !stream.isEnabled()) {
                     continue;
                 }
@@ -304,15 +303,14 @@ public class StreamsService {
         if (traceResult != null) {
             String traceResultStr = Context.toString(traceResult);
             String[] traceResultArray = traceResultStr.split(",");
-            for (String s : traceResultArray) {
-                if (!s.isEmpty()) {
-                    stream.putTraceRecord(s);
+            for (int i = 0; i < traceResultArray.length; i++) {
+                if (!traceResultArray[i].isEmpty()) {
+                    stream.putTraceRecord(traceResultArray[i]);
                 }
             }
         }
     }
 
-    @TestOnly
     public void clearStreams() {
         if (streams != null) {
             streams = new CopyOnWriteArrayList<>();
@@ -492,7 +490,6 @@ public class StreamsService {
     }
 
     //This method should not be synchronized since it is being called only by tests
-    @TestOnly
     public void clearAllStreams() {
         if (streams != null) {
             if (isEnabled()) {

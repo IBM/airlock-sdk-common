@@ -28,7 +28,7 @@ public class DefaultAirlockClient implements AirlockClient {
 
     /**
      * Returns client unique id
-     * @return the client unique id
+     * @return
      */
     public String getId() {
         return id;
@@ -46,7 +46,7 @@ public class DefaultAirlockClient implements AirlockClient {
      * @return A cloned list of the ROOT children.
      */
     @Override
-    public List<Feature> getRootFeatures() {
+    public List<Feature> getFeatures() {
         return airlockProductManager.getFeaturesService().getRootFeatures();
     }
 
@@ -101,7 +101,6 @@ public class DefaultAirlockClient implements AirlockClient {
     public void pullFeatures(final AirlockCallback callback) {
         airlockProductManager.getFeaturesService().pullFeatures(callback);
     }
-
 
     /**
      * Synchronizes the latest refreshFeatures results with the current feature set.

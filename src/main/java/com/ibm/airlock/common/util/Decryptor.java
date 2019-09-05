@@ -22,6 +22,27 @@ public class Decryptor {
     private static final int blockSize = 16;
     private static final int headerSize = magic.length + version.length + blockSize;
 
+    private static byte[] getMagicNumber() {
+        return magic;
+    }
+
+
+    private static String getPassphraseSize16(String key) {
+        char controlChar = '\u0014';
+        StringBuilder key16 = new StringBuilder(key + controlChar);
+        if (key16.length() < 16) {
+            while (key16.length() < 16) {
+                key16.append(key).append(controlChar);
+            }
+        }
+        int key16Length = key16.length();
+        if (key16Length > 16) {
+            key16 = new StringBuilder(key16.substring(key16Length - 16, key16Length));
+        }
+        return key16.toString();
+    }
+
+
     public static byte[] decryptAES(byte[] encrypted,byte[] key) throws GeneralSecurityException {
         if (encrypted.length <= headerSize) {
             throw new GeneralSecurityException("input size is too short");
@@ -38,6 +59,8 @@ public class Decryptor {
         cipher.init(Cipher.DECRYPT_MODE, skeySpec, iv);
         return cipher.doFinal(data);
     }
+
+
 
     public static byte[] encryptAES(byte[] plain,byte[] key) throws GeneralSecurityException, IOException {
         Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
@@ -63,6 +86,7 @@ public class Decryptor {
         out.write(encrypted);
         return out.toByteArray();
     }
+
 
     public static boolean isDecryptionRequired(byte[] message) {
         return Arrays.equals(Arrays.copyOfRange(message, 0, magic.length), magic);

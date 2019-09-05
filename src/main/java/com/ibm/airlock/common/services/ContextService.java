@@ -41,6 +41,7 @@ public class ContextService {
 
         new Thread() {
             @Override
+            @SuppressWarnings("MethodDoesntCallSuperMethod")
             public void run() {
                 infraAirlockService.getPersistenceHandler().write(Constants.SP_CURRENT_CONTEXT,
                         infraAirlockService.getAirlockContextManager().getCurrentContext().toString());

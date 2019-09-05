@@ -9,8 +9,35 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- *  Defines the external airlock client API
- *  which allows to get airlock basic services
+ * Defines the external airlock client API
+ * which allows to get airlock basic services
+ *
+ *   <pre>
+ *
+ *
+ *       AirlockClient client = DefaultAirlockProductManager.builder()
+ *                 .withAirlockDefaults("Airlock Defaults as String in JSON")
+ *                 .withAppVersion(m_appVersion).build().createClient("111-111-111");
+ *
+ *
+ *       client.pullFeatures(new AirlockCallback() {
+ *
+ *               public void onFailure(Exception e) {
+ *                    ....
+ *               }
+ *
+ *
+ *               public void onSuccess(String msg) {
+ *                   client.syncFeatures();
+ *                   client.getFeature("ns.feature").isOn());
+ *               }
+ *        });
+ *
+ *   </>
+ *
+ *
+ *
+ *
  */
 public interface AirlockClient {
 
@@ -18,12 +45,12 @@ public interface AirlockClient {
     AirlockProductManager getAirlockProductManager();
 
     /**
-     * Returns a cloned list of the ROOT children features.
-     * This method is safe to traverse through its returned List, since it clones all the child features.
+     * Returns a cloned list of all features.
+     * This method is safe to traverse through its returned List, since it clones all the features.
      *
-     * @return A cloned list of the ROOT children.
+     * @return A cloned list of all features.
      */
-     List<Feature> getRootFeatures();
+    List<Feature> getFeatures();
 
     /**
      * Returns the feature object by its name.
@@ -34,7 +61,7 @@ public interface AirlockClient {
      * @return Returns the feature object.
      */
 
-     Feature getFeature(String featureName);
+    Feature getFeature(String featureName);
 
 
     /**
@@ -42,9 +69,9 @@ public interface AirlockClient {
      *
      * @param context             the airlock context provided by caller
      * @param purchasedProductIds the list of purchased product an user bought so far.
-     * @throws JSONException                  if the pullFeature results, the userProfile or the deviceProfile is not in the correct JSON format.
+     * @throws JSONException if the pullFeature results, the userProfile or the deviceProfile is not in the correct JSON format.
      */
-     void calculateFeatures(@Nullable JSONObject context, Collection<String> purchasedProductIds);
+    void calculateFeatures(@Nullable JSONObject context, Collection<String> purchasedProductIds);
 
 
     /**
@@ -55,19 +82,19 @@ public interface AirlockClient {
      * @param airlockContext the airlock runtime context
      * @throws JSONException if the pullFeature results, the userProfile or the deviceProfile is not in the correct JSON format.
      */
-     void calculateFeatures(@Nullable JSONObject userProfile, @Nullable JSONObject airlockContext);
+    void calculateFeatures(@Nullable JSONObject userProfile, @Nullable JSONObject airlockContext);
+
     /**
      * Asynchronously downloads the current list of features from the server.
      *
      * @param callback Callback to be called when the function returns.
      */
-     void pullFeatures(final AirlockCallback callback);
+    void pullFeatures(final AirlockCallback callback);
 
 
     /**
      * Synchronizes the latest refreshFeatures results with the current feature set.
      * Updates LastSyncTime.
-     *
      */
-     void syncFeatures();
+    void syncFeatures();
 }

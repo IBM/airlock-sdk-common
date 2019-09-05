@@ -36,7 +36,6 @@ import com.ibm.airlock.common.util.RandomUtils;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
-import org.jetbrains.annotations.TestOnly;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -342,7 +341,7 @@ public class InfraAirlockService {
     }
 
     /**
-     * Returns the airlock experiment inof for analytics
+     * Returns the airlock experiment info for analytics
      */
     public Map<String, String> getExperimentInfo() {
         HashMap<String, String> experimentInfo = new HashMap<>();
@@ -377,8 +376,8 @@ public class InfraAirlockService {
     /**
      * Reads the stored user groups list from the device.
      *
-     * @param ph handle to persitence handler
-     * @param context the context used
+     * @param ph
+     * @param context
      */
     private void readUserGroupsFromDevice(PersistenceHandler ph, Context context) {
         // stub
@@ -481,7 +480,6 @@ public class InfraAirlockService {
         return persistenceHandler.getDeviceUserGroups();
     }
 
-
     private void doPullJSUtils(final AirlockCallback callback) {
         try {
             final long doPullJSUtilsStart = System.currentTimeMillis();
@@ -530,7 +528,6 @@ public class InfraAirlockService {
         }
     }
 
-
     @CheckForNull
     private String pullTranslationSynchronously(String locale) {
         Set<String> supportedLangSet = getSupportedLanguages();
@@ -563,7 +560,6 @@ public class InfraAirlockService {
 
         return RemoteConfigurationAsyncFetcher.pullTranslationsTable(this, language, country);
     }
-
 
     private void doPullTranslation(final AirlockCallback callback) {
         try {
@@ -848,7 +844,7 @@ public class InfraAirlockService {
                         }
 
                         @Override
-                        public void onResponse(Call call, Response response) {
+                        public void onResponse(Call call, Response response) throws IOException {
                             try {
                                 parseDefaultFile(responseBody, true);
                                 response.body().close();
@@ -972,9 +968,9 @@ public class InfraAirlockService {
                         persistTempResult(Constants.SP_RAW_JS_FUNCTIONS, JSON_JS_FUNCTIONS_FIELD_NAME_TEMP);
                         persistTempResult(Constants.SP_LAST_JS_UTILS_FULL_DOWNLOAD_TIME, SP_LAST_JS_UTILS_DOWNLOAD_TIME_TEMP);
 
-                        // clear SP_FEATURES_PERCENTAGE_MAP because we want to reload it when the PercentageManager
+                        // clear SP_FEATURES_PERCENAGE_MAP because we want to reload it when the PercentageManager
                         // methods will be call
-                        persistenceHandler.write(Constants.SP_FEATURES_PERCENTAGE_MAP, "{}");
+                        persistenceHandler.write(Constants.SP_FEATURES_PERCENAGE_MAP, "{}");
 
                         //Streams
                         if (tempResultsHolder.get(STREAMS_TEMP) != null) {
@@ -1205,7 +1201,7 @@ public class InfraAirlockService {
                 }
 
                 @Override
-                public void onResponse(Call call, final Response response) {
+                public void onResponse(Call call, final Response response) throws IOException {
                     printPerformanceLog("Total pull time of IfProductChanged file:", startPullWithIfProductChanged);
                     //the resource hasn't been updated since the last fetching, do nothing.
                     if (response.code() == 304) {
@@ -1345,7 +1341,7 @@ public class InfraAirlockService {
                     response.body().close();
                     JSONObject responseAsJson = new JSONObject(responseBody);
                     JSONArray products = responseAsJson.getJSONArray(Constants.JSON_FEATURE_FIELD_PRODUCTS);
-                    List<Servers.Product> productList = new ArrayList<>();
+                    List<Servers.Product> productList = new ArrayList<Servers.Product>();
                     if (products != null && products.length() > 0) {
                         // find my product by the id
                         for (int i = 0; i < products.length(); i++) {
@@ -1452,7 +1448,7 @@ public class InfraAirlockService {
      * Calculates the status of the features according to the pullFeatures results and return the Features as a tree.
      *
      * @param context an user profile context
-     * @param locale locale to be used on calculation
+     * @param locale
      */
     public Feature calculateFeatures(@Nullable JSONObject context, String locale) {
         final JSONObject runtimeFeatures = persistenceHandler.readJSON(Constants.SP_RAW_RULES);
@@ -1478,7 +1474,6 @@ public class InfraAirlockService {
                     // in cache for 30 minutes
                     translatedStringsCache.put(Constants.SP_RAW_TRANSLATIONS + '_' + locale, translations, 30 * 60 * 1000);
                 }
-
             }
         }
 
@@ -1518,7 +1513,14 @@ public class InfraAirlockService {
                                   @Nullable Collection<String> purchasedProductIds) {
 
         final JSONObject runtimeFeatures = persistenceHandler.readJSON(Constants.SP_RAW_RULES);
+        if (runtimeFeatures == null) {
+            Logger.log.e(TAG, AirlockMessages.LOG_CALCULATE_MISSING_PULL_RESULT);
+            return;
+        }
         JSONObject translations = persistenceHandler.readJSON(Constants.SP_RAW_TRANSLATIONS);
+        if (translations == null) {
+            translations = new JSONObject();
+        }
         JSONObject translationStrings = translations.has(Constants.JSON_TRANSLATION_STRING) ?
                 translations.getJSONObject(Constants.JSON_TRANSLATION_STRING) : new JSONObject();
 
@@ -1565,8 +1567,10 @@ public class InfraAirlockService {
     private boolean isSeasonValidVersion(String minVersion, String maxVersion) {
         AirlockVersionComparator comparator = new AirlockVersionComparator();
         if (comparator.compare(minVersion, appVersion) <= 0) {
-            return maxVersion.equalsIgnoreCase("null") || maxVersion.isEmpty() ||
-                    comparator.compare(maxVersion, appVersion) > 0;
+            if (maxVersion.equalsIgnoreCase("null") || maxVersion.isEmpty() ||
+                    comparator.compare(maxVersion, appVersion) > 0) {
+                return true;
+            }
         }
         return false;
     }
@@ -1746,7 +1750,7 @@ public class InfraAirlockService {
     /**
      * Returns supported country by language, if there is any return empty string
      *
-     * @param language the input language
+     * @param language
      * @return supported country by language
      */
     private String getSupportedCountryByLanguage(String language) {
@@ -1857,7 +1861,6 @@ public class InfraAirlockService {
         persistenceHandler.write(Constants.SP_LAST_FEATURES_FULL_DOWNLOAD_TIME, "");
     }
 
-    @TestOnly
     public void resetFeatureLists() {
         FeaturesList syncedList = getSyncedFeaturedList();
         if (syncedList != null) {
@@ -1933,12 +1936,11 @@ public class InfraAirlockService {
     }
 
 
-    @TestOnly
     public InMemoryCache getCachedSyncFeatureList() {
         return syncFeatureList;
     }
 
-    @TestOnly
+
     public InMemoryCache getCachedPreSyncFeatureList() {
         return preSyncServerFeatureList;
     }
@@ -1947,12 +1949,12 @@ public class InfraAirlockService {
         return getPreSyncedFeaturedList();
     }
 
-    @TestOnly
+
     public int getUserRandomNumber() {
         return persistenceHandler.read(Constants.SP_USER_RANDOM_NUMBER, -1);
     }
 
-    @TestOnly
+
     public void setUserRandomNumber(int randomNumber) {
         persistenceHandler.write(Constants.SP_USER_RANDOM_NUMBER, randomNumber);
     }

@@ -1,7 +1,5 @@
 package com.ibm.airlock.common.util;
 
-import javax.annotation.Nullable;
-
 /**
  * @author Denis Voloshin Compare between two strings represent application version
  */
@@ -18,7 +16,7 @@ public class AirlockVersionComparator {
      * @return an integer &lt; 0 if s1 is less than s2, 0 if they are equal, and &gt; 0 if s1 is greater than s2.
      */
 
-    public int compare(@Nullable String s1,@Nullable String s2) {
+    public int compare(String s1, String s2) {
 
         if (s1 != null && s1.equals(s2)) {
             return 0;

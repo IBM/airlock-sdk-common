@@ -3,11 +3,11 @@ package com.ibm.airlock.common.util;
 import com.ibm.airlock.common.model.Feature;
 import com.ibm.airlock.common.percentage.Percentile;
 
-import org.jetbrains.annotations.Nullable;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 
@@ -60,8 +60,8 @@ public class RandomUtils {
                 //noinspection DynamicRegexReplaceableByCompiledPattern
                 name = name.replaceAll("[. ]", "_");
                 if (inputStreamsRandoms.has(name)) {
-                    int previousRandom = inputStreamsRandoms.optInt(name);
-                    outStreamsRandoms.put(name, previousRandom);
+                    Integer previousRandom = inputStreamsRandoms.optInt(name);
+                    outStreamsRandoms.put(name, previousRandom.intValue());
                 } else {
                     outStreamsRandoms.put(name, anyRandom());
                 }
@@ -77,8 +77,8 @@ public class RandomUtils {
         if (type == Feature.Type.FEATURE || type == Feature.Type.CONFIGURATION_RULE) {
             String name = getId(features);
             if (inFeatureRandoms.has(name)) {
-                int previousRandom = inFeatureRandoms.optInt(name);
-                outFeatureRandoms.put(name, previousRandom);
+                Integer previousRandom = inFeatureRandoms.optInt(name);
+                outFeatureRandoms.put(name, previousRandom.intValue());
             } else {
                 double threshold = features.optDouble(Constants.JSON_FEATURE_FIELD_PERCENTAGE, 100.0);
                 String b64 = features.optString(Constants.JSON_FEATURE_FIELD_PERCENTAGE_BITMAP, "").trim();
@@ -134,8 +134,8 @@ public class RandomUtils {
 
     private static void setRandomValue(JSONObject jsonItem, String name, JSONObject inFeatureRandoms, JSONObject outFeatureRandoms, int legacyUserRandomNumber) throws JSONException {
         if (inFeatureRandoms.has(name)) {
-            int previousRandom = inFeatureRandoms.optInt(name);
-            outFeatureRandoms.put(name, previousRandom);
+            Integer previousRandom = inFeatureRandoms.optInt(name);
+            outFeatureRandoms.put(name, previousRandom.intValue());
         } else {
             double threshold = jsonItem.optDouble(Constants.JSON_FEATURE_FIELD_PERCENTAGE, 100.0);
             String b64 = jsonItem.optString(Constants.JSON_FEATURE_FIELD_PERCENTAGE_BITMAP, "").trim();
@@ -286,8 +286,8 @@ public class RandomUtils {
                 //noinspection DynamicRegexReplaceableByCompiledPattern
                 name = name.replaceAll("[. ]", "_");
                 if (inputNotificationsRandoms.has(name)) {
-                    int previousRandom = inputNotificationsRandoms.optInt(name);
-                    outNotificationsRandoms.put(name, previousRandom);
+                    Integer previousRandom = inputNotificationsRandoms.optInt(name);
+                    outNotificationsRandoms.put(name, previousRandom.intValue());
                 } else {
                     outNotificationsRandoms.put(name, anyRandom());
                 }

@@ -54,7 +54,7 @@ public class FeaturesCalculator {
         boolean accept = obj.optBoolean(Constants.JSON_FEATURE_FIELD_DEF_VAL, false);
         JSONObject attributes = getDefaultConfiguration(obj);
         return new Fallback(accept,
-                fallback.containsKey(getName(obj)) && fallback.get(getName(obj).toLowerCase()).premiumRuleOn,
+                fallback.containsKey(getName(obj)) ? fallback.get(getName(obj).toLowerCase()).premiumRuleOn : false,
                 attributes);
     }
 
@@ -516,10 +516,13 @@ public class FeaturesCalculator {
         // if the is-premium flag is off, there is no need to eval a rule
         if (isPremium(feature)) {
             premiumRuleResult = invoker.evaluate(getPremiumRuleString(feature));
-            //do nothing
-            if (premiumRuleResult.result == ScriptInvoker.Result.ERROR) {
-                premiumRuleResult = new ScriptInvoker.Output(getFallback(feature, fallback).premiumRuleOn ?
-                        ScriptInvoker.Result.TRUE : ScriptInvoker.Result.FALSE);
+            switch (premiumRuleResult.result) {
+                case ERROR:
+                    premiumRuleResult = new ScriptInvoker.Output(getFallback(feature, fallback).premiumRuleOn ?
+                            ScriptInvoker.Result.TRUE : ScriptInvoker.Result.FALSE);
+                    break;
+                default:
+                    //do nothing
             }
         }
 
@@ -649,12 +652,12 @@ public class FeaturesCalculator {
             }
         } else {
             featureResult.setPremium(false);
-            if (isPurchased(additionalData, feature, featureResult)) {
-                featureResult.setPurchased(true);
-                featureResult.setTrace(Result.FEATURE_PREMIUM_RULE_OFF_PURCHASED);
-            } else {
+            if (!isPurchased(additionalData, feature, featureResult)) {
                 featureResult.setPurchased(false);
                 featureResult.setTrace(Result.FEATURE_PREMIUM_RULE_OFF_NO_PURCHASED);
+            } else {
+                featureResult.setPurchased(true);
+                featureResult.setTrace(Result.FEATURE_PREMIUM_RULE_OFF_PURCHASED);
             }
         }
     }
@@ -722,7 +725,7 @@ public class FeaturesCalculator {
                         }
                     }
                 }
-                return Double.compare(weight_b, weight_a);
+                return Double.valueOf(weight_b).compareTo(Double.valueOf(weight_a));
             }
         });
 

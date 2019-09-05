@@ -1,11 +1,11 @@
 package com.ibm.airlock.common;
 
 import com.ibm.airlock.common.cache.Context;
+import com.ibm.airlock.common.dependency.ProductDiComponent;
 import com.ibm.airlock.common.exceptions.AirlockInvalidFileException;
 import com.ibm.airlock.common.exceptions.AirlockNotInitializedException;
 import com.ibm.airlock.common.net.RemoteConfigurationAsyncFetcher;
 import com.ibm.airlock.common.services.*;
-import org.jetbrains.annotations.TestOnly;
 
 import java.util.Date;
 
@@ -38,55 +38,9 @@ public interface AirlockProductManager {
 
     NotificationService getNotificationService();
 
-
-//    /**
-//     * Initializes AirlockManager with application information.
-//     * InitSDK loads the defaults file specified by the defaultFileId and
-//     * merges it with the current feature set.
-//     *
-//     * @param appContext     The current airlock context.
-//     * @param defaultFileId  Resource ID of the defaults file. This defaults file should be part of the application. You can get this by running the Airlock
-//     *                       Code Assistant plugin.
-//     * @param productVersion The application version. Use periods to separate between major and minor version numbers, for example: 6.3.4
-//     * @throws AirlockInvalidFileException Thrown when the defaults file does not contain the proper content.
-//     * @throws IOException                 Thrown when the defaults file cannot be opened.
-//     */
-//    public void initSDK(Context appContext, int defaultFileId, String productVersion) throws AirlockInvalidFileException, IOException;
-//
-//
-
     AirlockClient createClient(String clientId) throws AirlockInvalidFileException;
-//
-//    /**
-//     * Initializes AirlockManager with application information.
-//     * InitSDK loads the defaults file specified by the defaultFileId and
-//     * merges it with the current feature set.
-//     *
-//     * @param appContext     The current airlock context.
-//     * @param defaultFile    Defaults file. This defaults file should be part of the application. You can get this by running the Airlock
-//     *                       Code Assistant plugin.
-//     * @param productVersion The application version. Use periods to separate between major and minor version numbers, for example: 6.3.4
-//     * @param key            Encryption key will be used to encrype/decrypt the cached model
-//     * @throws AirlockInvalidFileException Thrown when the defaults file does not contain the proper content.
-//     * @throws IOException                 Thrown when the defaults file cannot be opened.
-//     */
-//    public void initSDK(Context appContext, String defaultFile, String productVersion, String key) throws AirlockInvalidFileException, IOException;
-//
 
-//    /**
-//     * Initializes AirlockManager with application information.
-//     * InitSDK loads the defaults file specified by the defaultFileId and
-//     * merges it with the current feature set.
-//     *
-//     * @param appContext     The current airlock context.
-//     * @param defaultFile    Defaults file. This defaults file should be part of the application. You can get this by running the Airlock
-//     *                       Code Assistant plugin.
-//     * @param productVersion The application version. Use periods to separate between major and minor version numbers, for example: 6.3.4
-//     * @throws AirlockInvalidFileException Thrown when the defaults file does not contain the proper content.
-//     * @throws IOException                 Thrown when the defaults file cannot be opened.
-//     */
-//    public void initSDK(Context appContext, String defaultFile, String productVersion) throws AirlockInvalidFileException, IOException;
-//
+    void initServices(ProductDiComponent productDiComponent) throws AirlockInvalidFileException;
 
     /**
      * Returns the model provider mode that the SDK is using.
@@ -131,10 +85,16 @@ public interface AirlockProductManager {
     Date getLastPullTime();
 
 
-    @TestOnly
+    /**
+     * Asynchronously downloads the current list of features from the server.
+     *
+     * @param callback Callback to be called when the function returns.
+     */
+    void pullFeatures(final AirlockCallback callback);
+
+
     void reset(boolean simulateUninstall);
 
-    @TestOnly
     void reset();
 
     Context getContext();

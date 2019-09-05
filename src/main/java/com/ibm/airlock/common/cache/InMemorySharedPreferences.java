@@ -1,19 +1,16 @@
 package com.ibm.airlock.common.cache;
 
-import org.jetbrains.annotations.TestOnly;
-
-import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+
 /**
  * Used for unit tests
  */
 @SuppressWarnings("unused")
-@TestOnly
 public class InMemorySharedPreferences implements SharedPreferences {
 
     private final Map<String, Object> preferences = new ConcurrentHashMap<>();
@@ -21,7 +18,7 @@ public class InMemorySharedPreferences implements SharedPreferences {
 
     @Override
     public boolean isBooleanTrue(String key, boolean defValue) {
-        if(!preferences.containsKey(key)){
+        if (!preferences.containsKey(key)) {
             return defValue;
         }
         return Boolean.valueOf(preferences.get(key).toString());
@@ -29,7 +26,7 @@ public class InMemorySharedPreferences implements SharedPreferences {
 
     @Override
     public long getLong(String key, long defValue) {
-        if(!preferences.containsKey(key)){
+        if (!preferences.containsKey(key)) {
             return defValue;
         }
         return Long.valueOf(preferences.get(key).toString());
@@ -40,10 +37,10 @@ public class InMemorySharedPreferences implements SharedPreferences {
         return Collections.unmodifiableMap(preferences);
     }
 
-    @CheckForNull
+    @Nullable
     @Override
     public String getString(String key, @Nullable String defValue) {
-        if(!preferences.containsKey(key)){
+        if (!preferences.containsKey(key)) {
             return defValue;
         }
         return String.valueOf(preferences.get(key).toString());
@@ -65,12 +62,7 @@ public class InMemorySharedPreferences implements SharedPreferences {
         return null;
     }
 
-    @Override
-    public void removeNode() {
-
-    }
-
-    @SuppressWarnings({"unused"})
+    @SuppressWarnings({"unused", "JavaDoc"})
     class InMemoryEditor implements Editor {
 
         @Override
@@ -107,11 +99,6 @@ public class InMemorySharedPreferences implements SharedPreferences {
             return this;
         }
 
-        @Override
-        public Editor putFloat(String key, float value) {
-            preferences.put(key, value);
-            return this;
-        }
 
         @Override
         public Editor putBoolean(String key, boolean value) {
@@ -119,10 +106,9 @@ public class InMemorySharedPreferences implements SharedPreferences {
             return this;
         }
 
-        @SuppressWarnings("ParameterNameDiffersFromOverriddenParameter")
         @Override
-        public void putString(String key, String value) {
-            preferences.put(key,value);
+        public void putString(String key, @Nullable String value) {
+            preferences.put(key, value);
         }
     }
 }

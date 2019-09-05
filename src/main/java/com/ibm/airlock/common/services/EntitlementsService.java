@@ -4,7 +4,6 @@ import com.ibm.airlock.common.dependency.ProductDiComponent;
 import com.ibm.airlock.common.model.Entitlement;
 import com.ibm.airlock.common.model.PurchaseOption;
 import com.ibm.airlock.common.util.Constants;
-import org.jetbrains.annotations.TestOnly;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -120,7 +119,6 @@ public class EntitlementsService {
         return entitlement == null ? new Entitlement() : entitlement;
     }
 
-    @TestOnly
     public void addPurchasedProductsId(String productId) {
         JSONArray productIdsArray = new JSONArray(infraAirlockService.getPersistenceHandler().
                 read(Constants.PURCHASED_IDS_FOR_DEBUG, "[]"));
@@ -141,7 +139,6 @@ public class EntitlementsService {
         infraAirlockService.getPersistenceHandler().write(Constants.PURCHASED_IDS_FOR_DEBUG, productIdsArray.toString());
     }
 
-    @TestOnly
     public void removePurchasedProductId(String productId) {
         JSONArray productIdsArray = new JSONArray(infraAirlockService.getPersistenceHandler().
                 read(Constants.PURCHASED_IDS_FOR_DEBUG, "[]"));
@@ -154,7 +151,6 @@ public class EntitlementsService {
         infraAirlockService.getPersistenceHandler().write(Constants.PURCHASED_IDS_FOR_DEBUG, newProductIdsArray.toString());
     }
 
-    @TestOnly
     public void clearPurchasedProductId(String productId) {
         infraAirlockService.getPersistenceHandler().write(Constants.PURCHASED_IDS_FOR_DEBUG, new JSONArray().toString());
     }

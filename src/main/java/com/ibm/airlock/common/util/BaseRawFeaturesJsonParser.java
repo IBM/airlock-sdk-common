@@ -210,7 +210,6 @@ public class BaseRawFeaturesJsonParser {
         return obj.optJSONArray(Constants.JSON_APPLIED_REORDERED_RULE_NAMES);
     }
 
-    @CheckForNull
     public static JSONArray getReorderedChildren(JSONObject obj) throws JSONException {
         return obj.optJSONArray(Constants.JSON_FIELD_REORDERED_CHILDREN);
     }
@@ -233,7 +232,7 @@ public class BaseRawFeaturesJsonParser {
         if (appliedRules != null && !(appliedRules instanceof JSONArray)) {
             return null;
         } else {
-            List<String> listdata = new ArrayList<>();
+            List<String> listdata = new ArrayList<String>();
             JSONArray jArray = (JSONArray) appliedRules;
             if (jArray != null) {
                 for (int i = 0; i < jArray.length(); i++) {
@@ -264,7 +263,7 @@ public class BaseRawFeaturesJsonParser {
                 arrayAtIndex = Integer.valueOf(arrayIndex[1].substring(0, arrayIndex[1].length() - 1));
             }
             Object value = object.opt(nextObj);
-            if (arrayAtIndex > -1 && value instanceof JSONArray) {
+            if (value != null && arrayAtIndex > -1 && value instanceof JSONArray) {
                 value = ((JSONArray) value).optJSONArray(arrayAtIndex);
             }
 

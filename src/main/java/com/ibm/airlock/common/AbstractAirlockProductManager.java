@@ -26,10 +26,13 @@ public abstract class AbstractAirlockProductManager implements AirlockProductMan
 
     protected ProductDiComponent productDiComponent;
     protected String productName;
-    protected Context context;
     protected String airlockDefaults;
     protected String encryptionKey;
     protected String appVersion;
+
+
+    @Inject
+    protected Context context;
 
     @Inject
     public StreamsService streamsService;
@@ -70,6 +73,7 @@ public abstract class AbstractAirlockProductManager implements AirlockProductMan
     @Inject
     protected NotificationService notificationService;
 
+
     public Context getContext() {
         return context;
     }
@@ -81,8 +85,11 @@ public abstract class AbstractAirlockProductManager implements AirlockProductMan
         this.appVersion = appVersion;
     }
 
-    protected void initServices(ProductDiComponent productDiComponent, InfraAirlockService infraAirlockService) {
-        this.infraAirlockService = infraAirlockService;
+    @Override
+    public void initServices(ProductDiComponent productDiComponent) throws AirlockInvalidFileException {
+        streamsService.init(productDiComponent);
+        infraAirlockService.init(productDiComponent);
+        notificationService.init(productDiComponent);
         userGroupsService.init(productDiComponent);
         branchesService.init(productDiComponent);
         featuresService.init(productDiComponent);

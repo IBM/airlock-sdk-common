@@ -4,7 +4,6 @@ package com.ibm.airlock.common.notifications;
  * Created by SEitan on 04/12/2017.
  */
 
-@SuppressWarnings("ClassOnlyUsedInOnePackage")
 public class AirlockNotificationRestriction {
 
     private final int maxAllowed;
@@ -25,7 +24,6 @@ public class AirlockNotificationRestriction {
         return minInterval;
     }
 
-    @SuppressWarnings("unused")
     public String getName() {
         return name;
     }

@@ -13,7 +13,6 @@ import java.util.List;
 /**
  * Created by SEitan on 21/11/2017.
  */
-@SuppressWarnings("unused")
 public class AirlockNotification {
     private final String registrationRule;
     private final String cancellationRule;
@@ -31,6 +30,7 @@ public class AirlockNotification {
     private final long minInterval;
     private JSONArray firedHistory;
     private JSONArray registrationHistory;
+    private int currentHistoryIndex;
     private boolean isPending;
     private final String id;
     private final PersistenceHandler ph;
@@ -85,7 +85,7 @@ public class AirlockNotification {
         boolean isProcessingEnabled = true;
         String disableReason ="";
         if (enabled) {
-            //check minapp version
+            //check minapp verison
             AirlockVersionComparator comparator = new AirlockVersionComparator();
             if (this.minAppVersion == null || comparator.compare(this.minAppVersion, appVersion) > 0) {
                 isProcessingEnabled = false;
@@ -103,7 +103,7 @@ public class AirlockNotification {
             if (threshold <= 0) {
                 isProcessingEnabled = false;
             } else if (threshold < 100.0) {
-                int userFeatureRand = notificationsRandomNumber.optInt(getName(), -1);
+                Integer userFeatureRand = notificationsRandomNumber.optInt(getName(), -1);
                 if (userFeatureRand == -1) {
                     isProcessingEnabled = false;
                 }else{

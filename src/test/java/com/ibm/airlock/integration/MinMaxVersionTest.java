@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 
+import com.ibm.airlock.common.AirlockProductSeasonManager;
 import org.json.JSONException;
 import org.junit.Assert;
 import org.junit.Test;
@@ -53,6 +54,7 @@ public class MinMaxVersionTest extends BaseTestModel {
     private void minVersionTest(String version, boolean expectException, boolean clearCache) {
 
         AirlockProductManager manager = testHelper.getManager();
+        AirlockProductSeasonManager airlockProductSeasonManager = testHelper.getAirlockProductSeasonManager();
         try {
             //Product version should be >= 7.6 (Mismatch season bug was here - should be verified)
             String defaultFile = testHelper.getDataFileContent("test_data/defaults/airlock_defaults_qa_max_version_product_78.json");
@@ -66,7 +68,7 @@ public class MinMaxVersionTest extends BaseTestModel {
 
         final CountDownLatch latch = new CountDownLatch(1);
         try {
-            manager.getFeaturesService().pullFeatures(new AirlockCallback() {
+            airlockProductSeasonManager.pullFeatures(new AirlockCallback() {
                 @Override
                 public void onFailure(Exception e) {
                     m_failMessage = e.getClass().getName() + ": " + e.getMessage();

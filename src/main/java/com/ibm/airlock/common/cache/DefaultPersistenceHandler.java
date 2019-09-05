@@ -2,6 +2,7 @@ package com.ibm.airlock.common.cache;
 
 
 import com.ibm.airlock.common.AirlockCallback;
+import com.ibm.airlock.common.cache.pref.FilePreferences;
 import com.ibm.airlock.common.cache.pref.FilePreferencesFactory;
 import com.ibm.airlock.common.log.Logger;
 import com.ibm.airlock.common.util.Constants;
@@ -15,10 +16,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
@@ -32,50 +30,29 @@ import java.util.prefs.Preferences;
 public class DefaultPersistenceHandler extends BasePersistenceHandler {
 
     private static final String TAG = "DefaultPersistenceHandler";
-
-    public static final int DEFAULT_IN_MEMORY_EXPIRATION_PERIOD = 10 * 1000; // on minute
-
-    private final Hashtable<String, ReentrantReadWriteLock> persistenceFilesReadWriteLocks = new Hashtable<>();
     private final ReentrantReadWriteLock streamsReadWriteLock = new ReentrantReadWriteLock(true);
 
-
-    private final Set<String> instanceRuntimeFiles = new HashSet<>(Arrays.asList(
+    private final Collection<String> instanceRuntimeFiles = new HashSet<>(Arrays.asList(
             Constants.SP_CURRENT_CONTEXT,
-            Constants.SP_FIRED_NOTIFICATIONS, Constants.SP_NOTIFICATIONS_HISTORY,
+            Constants.SP_FIRED_NOTIFICATIONS,
+            Constants.SP_NOTIFICATIONS_HISTORY,
             Constants.SP_SYNCED_FEATURES_LIST,
             Constants.SP_SERVER_FEATURE_LIST,
             Constants.SP_PRE_SYNCED_FEATURES_LIST
-
     ));
 
-
-    private final Set<String> instancePreferenceKeys = new HashSet<>(Arrays.asList(
+    private final Collection<String> instanceReferenceKeys = new HashSet<>(Arrays.asList(
             Constants.SP_LAST_CALCULATE_TIME, Constants.SP_LAST_SYNC_TIME
     ));
 
-    private DefaultPreferences defaultPreferences;
-
-    private final String productName;
 
     public DefaultPersistenceHandler(Context context) {
-        this.context = context;
-        productName = this.context.getAirlockProductName();
-
-        preferences = new DefaultPreferences(FilePreferencesFactory.getAirlockCacheDirectory() + File.separator +
-                context.getAirlockProductName() + File.separator + context.getSeasonId());
-
+        super(context);
         init(context);
 
-        defaultPreferences = new DefaultPreferences(FilePreferencesFactory.getAirlockCacheDirectory() + File.separator +
+        preferences = new DefaultPreferences(FilePreferencesFactory.getAirlockCacheDirectory() + File.separator +
                 context.getAirlockProductName() + File.separator + context.getSeasonId() +
                 File.separator + context.getAppVersion() + File.separator + context.getInstanceId());
-
-        //init read/write locks
-        for (String filePersistPreference : filePersistPreferences) {
-            if (!persistenceFilesReadWriteLocks.containsKey(filePersistPreference)) {
-                persistenceFilesReadWriteLocks.put(filePersistPreference, new ReentrantReadWriteLock(true));
-            }
-        }
 
         for (String filePersistPreference : instanceRuntimeFiles) {
             if (!persistenceFilesReadWriteLocks.containsKey(filePersistPreference)) {
@@ -90,23 +67,13 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
     }
 
     @Override
-    public void setContext(Context context) {
-        super.setContext(context);
-        preferences = new DefaultPreferences(FilePreferencesFactory.getAirlockCacheDirectory() + File.separator +
-                context.getAirlockProductName() + File.separator + context.getAppVersion());
-
-        this.defaultPreferences = new DefaultPreferences(FilePreferencesFactory.getAirlockCacheDirectory() + File.separator +
-                context.getAirlockProductName() + File.separator + context.getSeasonId() +
-                File.separator + (context.getAppVersion() + File.separator + context.getInstanceId()));
-    }
-
-
-    private String getResourcePersistenceLocation(String resourceName) {
+    public String getResourcePersistenceLocation(String resourceName) {
         if (instanceRuntimeFiles.contains(resourceName)) {
             return context.getFilesDir() + File.separator + context.getAppVersion()
                     + File.separator + context.getInstanceId();
+        } else {
+            return context.getFilesDir() + File.separator + context.getAppVersion();
         }
-        return context.getFilesDir().getAbsolutePath();
     }
 
     @Override
@@ -116,8 +83,7 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
 
     @Override
     public synchronized void init(Context context) {
-        this.context = context;
-        this.inMemoryPreferences = new InMemoryCache();
+        inMemoryPreferences = new InMemoryCache();
     }
 
     @Override
@@ -142,80 +108,29 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
 
     }
 
-    private synchronized void destroy() {
+    public synchronized void destroy() {
         clearInstanceRuntimeFiles();
         clearStreams();
 
         // remove instance preferences node
         try {
-            defaultPreferences.removeNode();
+            ((DefaultPreferences) preferences).removeNode();
         } catch (BackingStoreException e) {
             Logger.log.e(TAG, e.getLocalizedMessage());
-        }
-
-        // delete version folder if any instance is left
-        File versionFolder = new File(context.getFilesDir() + File.separator + context.getAppVersion());
-
-
-        // try to delete hidden files
-        File[] files = versionFolder.listFiles();
-        if (files != null) {
-            if (files.length > 0) {
-                for (File file : files) {
-                    if (file.getName().startsWith(".")) {
-                        //noinspection ResultOfMethodCallIgnored
-                        file.delete();
-                    }
-                }
-            } else {
-                try {
-                    Preferences.userRoot().node(context.getFilesDir() + File.separator + context.getAppVersion()).removeNode();
-                } catch (BackingStoreException e) {
-                    Logger.log.e(TAG, e.getLocalizedMessage());
-                }
-            }
-        }
-
-        files = context.getFilesDir().listFiles();
-        if (files != null) {
-
-            // delete season folder if any version is left
-            boolean seasonFolderShouldBeDeleted = true;
-
-            for (File file : files) {
-                if (file.isDirectory()) {
-                    seasonFolderShouldBeDeleted = false;
-                }
-            }
-
-            if (seasonFolderShouldBeDeleted) {
-                for (String fileName : filePersistPreferences) {
-                    //noinspection ResultOfMethodCallIgnored
-                    new File(context.getFilesDir(), fileName).delete();
-                }
-                try {
-                    preferences.removeNode();
-                } catch (BackingStoreException e) {
-                    Logger.log.e(TAG, e.getLocalizedMessage());
-                }
-
-            }
         }
     }
 
     private void clearStreams() {
-
         if (context != null) {
             Context instanceContext = context;
             File folder = new File(instanceContext.getFilesDir() + File.separator + instanceContext.getAppVersion()
                     + File.separator + instanceContext.getInstanceId());
-            File[] files = folder.listFiles();
-            if (files != null) {
-                for (File file : files) {
+            if (folder.listFiles() != null && folder.listFiles().length > 0) {
+                for (File file : folder.listFiles()) {
                     if (file.getName().startsWith(Constants.STREAM_PREFIX)) {
-                        //noinspection ResultOfMethodCallIgnored
                         file.delete();
                     }
+
                 }
             }
         }
@@ -228,7 +143,6 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
             File folder = new File(context.getFilesDir() + File.separator + context.getAppVersion()
                     + File.separator + context.getInstanceId());
             for (String file : instanceRuntimeFiles) {
-                //noinspection ResultOfMethodCallIgnored
                 new File(folder, file).delete();
 
             }
@@ -236,21 +150,17 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
         inMemoryPreferences.clear();
     }
 
-    public String getProductName() {
-        return productName;
-    }
 
     /**
      * The reason this has a separate method is because it is called when app stops - so we need to persist synchronously
      *
-     * @param streamName the name of stream to be written
-     * @param jsonAsString the json value as string
+     * @param jsonAsString
      */
     @Override
-    public void writeStream(String streamName,@Nullable String jsonAsString) {
+    public void writeStream(String streamName, String jsonAsString) {
         if (jsonAsString != null && !jsonAsString.isEmpty()) {
             //if it is a tests mock app (files dir is null) - do not write to file system
-            if (this.context.getFilesDir() != null) {
+            if (context.getFilesDir() != null) {
                 final long startTime = System.currentTimeMillis();
                 FileOutputStream fos = null;
                 try {
@@ -258,7 +168,6 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
                     File outputFile = new File(context.getFilesDir() + File.separator + context.getAppVersion()
                             + File.separator + context.getInstanceId(), Constants.STREAM_PREFIX + streamName);
 
-                    //noinspection ResultOfMethodCallIgnored
                     outputFile.createNewFile();
                     fos = new FileOutputStream(outputFile);
                     if (fos == null) {
@@ -287,43 +196,9 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
     @Override
     public void deleteStream(String name) {
         //if it is a tests mock app (files dir is null) - do not write to file system
-        if (this.context.getFilesDir() != null) {
+        if (context.getFilesDir() != null) {
             context.deleteFile(Constants.STREAM_PREFIX + name);
         }
-    }
-
-    @Override
-    public long read(String key, long defaultValue) {
-        long value = defaultValue;
-
-        if (this.instancePreferenceKeys.contains(key)) {
-            value = defaultPreferences.getLong(key, defaultValue);
-        } else {
-            if (preferences != null) {
-                value = preferences.getLong(key, defaultValue);
-            }
-        }
-        return value;
-    }
-
-    @CheckForNull
-    @Override
-    public String read(String key, String defaultValue) {
-        String value;
-        if (filePersistPreferences.contains(key)) {
-            return readFromMemory(key, defaultValue);
-        } else {
-            value = defaultValue;
-
-            if (this.instancePreferenceKeys.contains(key)) {
-                value = defaultPreferences.getString(key, defaultValue);
-            } else {
-                if (preferences != null) {
-                    value = preferences.getString(key, defaultValue);
-                }
-            }
-        }
-        return value;
     }
 
 
@@ -332,12 +207,9 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
      */
     @Override
     public JSONObject readStream(String name) {
-
         JSONObject value = null;
         name = Constants.STREAM_PREFIX + name;
-        String streamValue = (String) readSinglePreferenceFromFileSystem(name,
-                context.getFilesDir() + File.separator + context.getAppVersion()
-                        + File.separator + context.getInstanceId());
+        String streamValue = (String) readSinglePreferenceFromFileSystem(name);
         if (streamValue != null) {
             try {
                 value = new JSONObject(streamValue);
@@ -352,19 +224,7 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
     }
 
     @Override
-    public void write(String key, long value) {
-        if (instancePreferenceKeys.contains(key)) {
-            defaultPreferences.edit().putLong(key, value);
-            defaultPreferences.edit().doCommit();
-        } else {
-            preferences.edit().putLong(key, value);
-            preferences.edit().doCommit();
-        }
-    }
-
-
-    @Override
-    public void write(String key,@Nullable String value) {
+    public void write(String key, String value) {
         if (filePersistPreferences.contains(key)) {
             if (value != null && !value.isEmpty()) {
                 if (saveAsJSONPreferences.contains(key)) {
@@ -376,31 +236,28 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
                 } else {
                     inMemoryPreferences.put(key, value, DEFAULT_IN_MEMORY_EXPIRATION_PERIOD);
                 }
-                new Thread(new FilePreferencesPersister(key, value)).start();
+                new Thread(new FilePreferencesPersistent(key, value)).start();
 
             } else {
                 //remove model
                 inMemoryPreferences.remove(key);
                 //context.deleteFile(key);
                 File fileDel = new File(context.getFilesDir(), key);
-                //noinspection ResultOfMethodCallIgnored
                 fileDel.delete();
             }
         } else {
-            if (value != null){
-                if (key.equals(Constants.SP_SEASON_ID)) {
-                    updateSeasonIdAndClearRuntimeData(value);
-                    return;
-                }
-                if (instancePreferenceKeys.contains(key)) {
-                    defaultPreferences.edit().putString(key, value);
-                    defaultPreferences.edit().doCommit();
-                } else {
-                    preferences.edit().putString(key, value);
-                    preferences.edit().doCommit();
-                }
+            if (key.equals(Constants.SP_SEASON_ID)) {
+                updateSeasonIdAndClearRuntimeData(value);
+                return;
             }
+            preferences.edit().putString(key, value);
+            preferences.edit().doCommit();
         }
+    }
+
+    @Override
+    String getFileSystemLocationByPreferenceName(String preferenceName) {
+        return getResourcePersistenceLocation(preferenceName) + File.separator + preferenceName;
     }
 
     @Override
@@ -408,119 +265,13 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
         write(key, value.toString());
     }
 
-    private ReentrantReadWriteLock getWriteReadLocker(String resourceName) {
-        if (persistenceFilesReadWriteLocks.containsKey(resourceName)) {
-            return persistenceFilesReadWriteLocks.get(resourceName);
-        } else {
+    @Override
+    protected ReentrantReadWriteLock getWriteReadLocker(String resourceName) {
+        ReentrantReadWriteLock lock = super.getWriteReadLocker(resourceName);
+        if (lock == null) {
             return streamsReadWriteLock;
         }
-    }
-
-    @CheckForNull
-    private synchronized Object readSinglePreferenceFromFileSystem(String preferenceName, String folder) {
-        //because of synchronization it is possible to reach this method but the value is inMemory...
-        if (inMemoryPreferences.containsKey(preferenceName)) {
-            return inMemoryPreferences.get(preferenceName);
-        }
-        Object preferenceValue = null;
-        InputStream fis = null;
-        ByteArrayOutputStream result = new ByteArrayOutputStream();
-
-        try {
-            // get read/write lock for the specific file.
-            getWriteReadLocker(preferenceName).readLock().lock();
-
-            File fileInput = new File(folder, preferenceName);
-            if (!fileInput.exists()) {
-                return null;
-            }
-            fis = PersistenceEncryptor.decryptAES(fileInput);
-            if (fis != null) {
-                byte[] buffer = new byte[fis.available()];
-                int length;
-                while ((length = fis.read(buffer)) != -1) {
-                    result.write(buffer, 0, length);
-                }
-
-                if (saveAsJSONPreferences.contains(preferenceName)) {
-                    preferenceValue = new JSONObject(result.toString("UTF-8"));
-                } else {
-                    preferenceValue = result.toString("UTF-8");
-                }
-                inMemoryPreferences.put(preferenceName, preferenceValue);
-            }
-        } catch (IOException | JSONException e) {
-            Logger.log.e(TAG, e.getMessage(), e);
-        } finally {
-            try {
-                getWriteReadLocker(preferenceName).readLock().unlock();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            try {
-                if (fis != null) {
-                    fis.close();
-                }
-            } catch (Throwable ignore) {
-            }
-        }
-        return preferenceValue;
-    }
-
-    @Override
-    @CheckForNull
-    @Nullable
-    protected synchronized Object readSinglePreferenceFromFileSystem(String preferenceName) {
-        if (instanceRuntimeFiles.contains(preferenceName)) {
-            return readSinglePreferenceFromFileSystem(preferenceName,
-                    context.getFilesDir() + File.separator + context.getAppVersion()
-                            + File.separator + context.getInstanceId());
-        }
-
-        return readSinglePreferenceFromFileSystem(preferenceName, context.getFilesDir().getAbsolutePath());
-    }
-
-
-    class FilePreferencesPersister implements Runnable {
-        private final String key;
-        private final String value;
-
-        FilePreferencesPersister(String key, String value) {
-            this.key = key;
-            this.value = value;
-        }
-
-        @Override
-        public void run() {
-            FileOutputStream fos = null;
-            try {
-                // wait for read/write lock for the specific file.
-                getWriteReadLocker(key).writeLock().lock();
-
-                File outputFile = new File(new File(getResourcePersistenceLocation(key)), key);
-                //noinspection ResultOfMethodCallIgnored
-                outputFile.createNewFile();
-                fos = new FileOutputStream(outputFile);
-
-                if (fos == null) {
-                    //On tests that use mock context the FileOutputStream could be null...
-                    return;
-                }
-                fos.write(value.getBytes());
-                fos.flush();
-                PersistenceEncryptor.encryptAES(outputFile);
-            } catch (IOException e) {
-                Logger.log.w(TAG, "Failed to persist content of: " + key + " to file system. Error: " + e.getMessage());
-            } finally {
-                try {
-                    //noinspection ConstantConditions
-                    fos.close();
-                } catch (IOException e) {
-                    Logger.log.w(TAG, "Failed to close File Output stream of: " + key + " : " + e.getMessage());
-                }
-                getWriteReadLocker(key).writeLock().unlock();
-            }
-        }
+        return lock;
     }
 
     private class FilePreferencesReader implements Runnable {

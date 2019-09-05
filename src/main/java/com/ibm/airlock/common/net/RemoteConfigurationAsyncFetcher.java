@@ -10,7 +10,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-import javax.annotation.CheckForNull;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.Hashtable;
@@ -24,7 +24,6 @@ import java.util.concurrent.TimeUnit;
  *
  * @author Denis Voloshin
  */
-@SuppressWarnings("SpellCheckingInspection")
 public class RemoteConfigurationAsyncFetcher {
 
     //indicates whether any of remote config file has been changed
@@ -41,113 +40,139 @@ public class RemoteConfigurationAsyncFetcher {
     private static final String URL_BRANCH_FORMAT = "%sseasons/%s/%s/branches/%s/AirlockRuntimeBranch%s.json";//s3path seasonId
 
     private static final String URL_SERVER_LIST_STRING_FORMAT = "%sops/airlockServers.json";//s3path
+    private static final String URL_FEATURE_USAGE_RULES_STRING_FORMAT = "%sseasons/%s/%s/AirlockStreams%s.json";//s3path
+    private static final String URL_FEATURE_USAGE_UTILS_STRING_FORMAT = "%sseasons/%s/%s/AirlockStreamsUtilities%s.txt";//s3path
+    private static final String URL_NOTIFICATIONS_STRING_FORMAT = "%sseasons/%s/%s/AirlockNotifications%s.json";//s3path
     //s3path, productId, seasonId,language, (can be empty)country, dev/prod
     private static final String URL_TRANSLATIONS_STRING_FORMAT = "%sseasons/%s/%s/translations/strings__%s%s%s.json";
-    private static final String URL_PROD_SUFFIX = "PRODUCTION";
-    private static final String URL_DEV_SUFFIX = "DEVELOPMENT";
+    private static final String URL_PROD_SUFIX = "PRODUCTION";
+    private static final String URL_DEV_SUFIX = "DEVELOPMENT";
     private static final String TAG = "airlock.RemoteConfigurationAsyncFetcher";
     private static final String IF_MODIFIED_SINCE = "If-Modified-Since";
     //by default the model comes from the cached channel
 
     public static void pullFeaturesConfiguration(InfraAirlockService cache, final Callback callbackListener) {
-        String lastTime = cache.getPersistenceHandler().read(Constants.SP_LAST_FEATURES_FULL_DOWNLOAD_TIME, "");
-        sendRequest(cache, callbackListener, getPullFeaturesUrl(cache), lastTime);
+        String url = getPullFeaturesUrl(cache);
+        String lastTime = cache.getPersistenceHandler().read(Constants.SP_LAST_FEATURES_FULL_DOWNLOAD_TIME, "");        AirlockDAOCallback wrapperCallback = new AirlockDAOCallback(callbackListener);
+        cache.getConnectionManager().sendRequest(url, createIdModifiedSinceHeader(lastTime), wrapperCallback);
     }
 
     public static void pullServerList(InfraAirlockService cache, Callback callbackListener) {
         String productsUrl = String.format(URL_SERVER_LIST_STRING_FORMAT, getDefaultServerUrl(cache));
-        sendRequest(cache, productsUrl, callbackListener);
+        cache.getConnectionManager().sendRequest(productsUrl, callbackListener);
     }
 
     public static void pullStreams(InfraAirlockService cache, Callback callbackListener) {
-        String lastTime = cache.getPersistenceHandler().read(Constants.SP_LAST_STREAMS_FULL_DOWNLOAD_TIME, "");
-        sendRequest(cache, callbackListener, getPullFeaturesUrl(cache), lastTime);
+        String url = getPullStreamsUrl(cache);
+        String lastTime = cache.getPersistenceHandler().read(Constants.SP_LAST_STREAMS_FULL_DOWNLOAD_TIME, "");        AirlockDAOCallback wrapperCallback = new AirlockDAOCallback(callbackListener);
+        cache.getConnectionManager().sendRequest(getPullStreamsUrl(cache), createIdModifiedSinceHeader(lastTime), wrapperCallback);
     }
 
     public static void pullFeatureUsageUIUtils(InfraAirlockService cache, Callback callbackListener) {
-        String lastTime = cache.getPersistenceHandler().read(Constants.SP_LAST_STREAMS_JS_UTILS_DOWNLOAD_TIME, "");
-        sendRequest(cache, callbackListener, getPullFeaturesUrl(cache), lastTime);
+        String url =getPullStreamsUtilitiesUrl(cache);
+        String lastTime = cache.getPersistenceHandler().read(Constants.SP_LAST_STREAMS_JS_UTILS_DOWNLOAD_TIME, "");        AirlockDAOCallback wrapperCallback = new AirlockDAOCallback(callbackListener);
+        cache.getConnectionManager().sendRequest(getPullStreamsUtilitiesUrl(cache), createIdModifiedSinceHeader(lastTime), wrapperCallback);
     }
 
     public static void pullNotifications(InfraAirlockService cache, Callback callbackListener) {
-        String lastTime = cache.getPersistenceHandler().read(Constants.SP_LAST_NOTIFICATIONS_FULL_DOWNLOAD_TIME, "");
-        sendRequest(cache, callbackListener, getPullFeaturesUrl(cache), lastTime);
+        String url =getPullNotificationsUrl(cache);
+        String lastTime = cache.getPersistenceHandler().read(Constants.SP_LAST_NOTIFICATIONS_FULL_DOWNLOAD_TIME, "");        AirlockDAOCallback wrapperCallback = new AirlockDAOCallback(callbackListener);
+        cache.getConnectionManager().sendRequest(getPullNotificationsUrl(cache), createIdModifiedSinceHeader(lastTime), wrapperCallback);
     }
 
     public static void pullDefaultFile(InfraAirlockService cache, Servers.Server server, Servers.Product product, Callback callbackListener) {
-        String pullDefaultUrl = String.format(URL_DOWNLOAD_DEFAULTS_STRING_FORMAT, getServerUrl(cache, server),
+        String pullDefaultUtl = String.format(URL_DOWNLOAD_DEFAULTS_STRING_FORMAT, getServerUrl(cache, server),
                 product.getProductId(), product.getSeasonId());
-        sendRequest(cache, pullDefaultUrl, callbackListener);
+        cache.getConnectionManager().sendRequest(pullDefaultUtl, callbackListener);
     }
 
     public static void pullUserGroups(InfraAirlockService cache, Callback callbackListener) {
         String url = String.format(URL_USER_GROUPS_STRING_FORMAT, getServerUrl(cache),
                 cache.getPersistenceHandler().read(Constants.SP_CURRENT_PRODUCT_ID, ""),
                 cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""));
-        sendRequest(cache, url, callbackListener);
+        cache.getConnectionManager().sendRequest(url, callbackListener);
     }
 
     public static void pullBranches(InfraAirlockService cache, Callback callbackListener) {
         String url = String.format(URL_BRANCHES_FORMAT, getServerUrl(cache),
                 cache.getPersistenceHandler().read(Constants.SP_CURRENT_PRODUCT_ID, ""),
                 cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""));
-        sendRequest(cache, url, callbackListener);
+        cache.getConnectionManager().sendRequest(url, callbackListener);
     }
 
     public static void pullBranchById(InfraAirlockService cache, String branchId, Callback callbackListener) {
         String url = String.format(URL_BRANCH_FORMAT, getServerUrl(cache), cache.getPersistenceHandler().read(Constants.SP_CURRENT_PRODUCT_ID, ""),
-                cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""), branchId, getUrlSuffix(cache));
-        sendRequest(cache, url, callbackListener);
+                cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""), branchId, getUrlSufix(cache));
+        cache.getConnectionManager().sendRequest(url, callbackListener);
     }
 
     public static void checkIfProductChanged(InfraAirlockService cache, String server, String productId, String sessionId, Callback callbackListener) {
         String translationsUrl = String.format(URL_PRODUCT_CHANGED_FILE, server,
                 productId, sessionId);
-        sendRequest(cache, callbackListener, translationsUrl, "");
+        AirlockDAOCallback wrapperCallback = new AirlockDAOCallback(callbackListener);
+        cache.getConnectionManager().sendRequest(translationsUrl, createIdModifiedSinceHeader(""), wrapperCallback);
     }
 
     public static void checkIfProductChanged(InfraAirlockService cache, Callback callbackListener) {
+
         String translationsUrl = String.format(URL_PRODUCT_CHANGED_FILE, getServerUrl(cache),
                 cache.getPersistenceHandler().read(Constants.SP_CURRENT_PRODUCT_ID, ""), cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""));
-        String lastTime = cache.getPersistenceHandler().read(Constants.SP_LAST_TIME_PRODUCT_CHANGED, "");
-        sendRequest(cache, callbackListener, translationsUrl, lastTime);
+        String lastTime = cache.getPersistenceHandler().read(Constants.SP_LAST_TIME_PRODUCT_CHANGED, "");        AirlockDAOCallback wrapperCallback = new AirlockDAOCallback(callbackListener);
+        cache.getConnectionManager().sendRequest(translationsUrl, createIdModifiedSinceHeader(lastTime), wrapperCallback);
     }
 
     public static void pullJSUtils(InfraAirlockService cache, Callback callbackListener) {
         String jsUtilsUrl = String.format(URL_REFRESH_JS_UTILS_STRING_FORMAT, getServerUrl(cache),
-                cache.getPersistenceHandler().read(Constants.SP_CURRENT_PRODUCT_ID, ""), cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""), getUrlSuffix(cache));
-        String lastTime = cache.getPersistenceHandler().read(Constants.SP_LAST_JS_UTILS_FULL_DOWNLOAD_TIME, "");
-        sendRequest(cache, callbackListener, jsUtilsUrl, lastTime);
+                cache.getPersistenceHandler().read(Constants.SP_CURRENT_PRODUCT_ID, ""), cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""), getUrlSufix(cache));
+        String lastTime = cache.getPersistenceHandler().read(Constants.SP_LAST_JS_UTILS_FULL_DOWNLOAD_TIME, "");        AirlockDAOCallback wrapperCallback = new AirlockDAOCallback(callbackListener);
+        cache.getConnectionManager().sendRequest(jsUtilsUrl, createIdModifiedSinceHeader(lastTime), wrapperCallback);
     }
 
     public static void pullTranslationsTable(InfraAirlockService cache, String language, String country, Callback callbackListener) {
         String url = getPullTranslationsUrl(cache, language, country);
-        String lastTime = cache.getPersistenceHandler().read(Constants.SP_LAST_TRANS_FULL_DOWNLOAD_TIME, "");
-        sendRequest(cache, callbackListener, url, lastTime);
+        String lastTime = cache.getPersistenceHandler().read(Constants.SP_LAST_TRANS_FULL_DOWNLOAD_TIME, "");        AirlockDAOCallback wrapperCallback = new AirlockDAOCallback(callbackListener);
+        cache.getConnectionManager().sendRequest(url, createIdModifiedSinceHeader(lastTime), wrapperCallback);
     }
 
     //public for tests
     public static String getPullFeaturesUrl(InfraAirlockService cache) {
         return String.format(URL_REFRESH_FEATURES_STRING_FORMAT, getServerUrl(cache),
-                cache.getPersistenceHandler().read(Constants.SP_CURRENT_PRODUCT_ID, ""), cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""), getUrlSuffix(cache));
+                cache.getPersistenceHandler().read(Constants.SP_CURRENT_PRODUCT_ID, ""), cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""), getUrlSufix(cache));
+    }
+
+    //public for tests
+    private static String getPullStreamsUrl(InfraAirlockService cache) {
+        return String.format(URL_FEATURE_USAGE_RULES_STRING_FORMAT, getServerUrl(cache),
+                cache.getPersistenceHandler().read(Constants.SP_CURRENT_PRODUCT_ID, ""), cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""), getUrlSufix(cache));
+    }
+
+    //public for tests
+    private static String getPullStreamsUtilitiesUrl(InfraAirlockService cache) {
+        return String.format(URL_FEATURE_USAGE_UTILS_STRING_FORMAT, getServerUrl(cache),
+                cache.getPersistenceHandler().read(Constants.SP_CURRENT_PRODUCT_ID, ""), cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""), getUrlSufix(cache));
+    }
+
+    //public for tests
+    private static String getPullNotificationsUrl(InfraAirlockService cache) {
+        return String.format(URL_NOTIFICATIONS_STRING_FORMAT, getServerUrl(cache),
+                cache.getPersistenceHandler().read(Constants.SP_CURRENT_PRODUCT_ID, ""), cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""), getUrlSufix(cache));
     }
 
     //public for tests
     public static String getPullTranslationsUrl(InfraAirlockService cache, String language, String country) {
         return String.format(URL_TRANSLATIONS_STRING_FORMAT, getServerUrl(cache),
-                cache.getPersistenceHandler().read(Constants.SP_CURRENT_PRODUCT_ID, ""), cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""), language, country, getUrlSuffix(cache));
+                cache.getPersistenceHandler().read(Constants.SP_CURRENT_PRODUCT_ID, ""), cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""), language, country, getUrlSufix(cache));
     }
 
-    private static String getUrlSuffix(InfraAirlockService cache) {
+    private static String getUrlSufix(InfraAirlockService cache) {
         List<String> userGroups = cache.getPersistenceHandler().getDeviceUserGroups();
         if (userGroups.isEmpty()) {
-            return URL_PROD_SUFFIX;
+            return URL_PROD_SUFIX;
         }
-        return URL_DEV_SUFFIX;
+        return URL_DEV_SUFIX;
     }
 
 
-    @CheckForNull
     public static String pullTranslationsTable(final InfraAirlockService cache, final String language, final String country) {
 
         final CountDownLatch completeBlock = new CountDownLatch(1);
@@ -182,7 +207,7 @@ public class RemoteConfigurationAsyncFetcher {
                 completeBlock.countDown();
             }
         };
-        sendRequest(cache, wrapperCallback, getPullTranslationsUrl(cache, language, country), "");
+        cache.getConnectionManager().sendRequest(getPullTranslationsUrl(cache, language, country), createIdModifiedSinceHeader(""), wrapperCallback);
 
         try {
             if (!completeBlock.await(10000, TimeUnit.SECONDS)) {
@@ -202,8 +227,7 @@ public class RemoteConfigurationAsyncFetcher {
 
     private static String getDefaultServerUrl(InfraAirlockService cache) {
         String serverUrl;
-        ConnectionManager connectionManager = cache.getConnectionManager();
-        if (connectionManager != null && connectionManager.getDataProviderType() == DataProviderType.DIRECT_MODE) {
+        if (cache.getConnectionManager().getDataProviderType() == DataProviderType.DIRECT_MODE) {
             serverUrl = cache.getServers().getDefaultServer().getUrl();
         } else {
             serverUrl = cache.getServers().getDefaultServer().getCdnOverride();
@@ -217,8 +241,7 @@ public class RemoteConfigurationAsyncFetcher {
         if (server == null) {
             server = cache.getServers().getCurrentServer();
         }
-        ConnectionManager connectionManager = cache.getConnectionManager();
-        if (connectionManager != null && connectionManager.getDataProviderType() == DataProviderType.DIRECT_MODE) {
+        if (cache.getConnectionManager().getDataProviderType() == DataProviderType.DIRECT_MODE) {
             serverUrl = server.getUrl();
         } else {
             serverUrl = server.getCdnOverride();
@@ -227,16 +250,27 @@ public class RemoteConfigurationAsyncFetcher {
         return serverUrl.endsWith("/") ? serverUrl : serverUrl + '/';
     }
 
+    private static String getAmazonS3UrlOld(InfraAirlockService cache) {
+        String amazonS3Url;
+        if (cache.getConnectionManager().getDataProviderType() == DataProviderType.DIRECT_MODE) {
+            amazonS3Url = cache.getPersistenceHandler().read(Constants.SP_DIRECT_S3PATH, "");
+        } else {
+            amazonS3Url = cache.getPersistenceHandler().read(Constants.SP_CACHED_S3PATH, "");
+        }
+        amazonS3Url = amazonS3Url.trim();
+        return amazonS3Url.endsWith("/") ? amazonS3Url : amazonS3Url + '/';
+    }
+
     public static void pullProducts(InfraAirlockService cache, @Nullable Servers.Server server, Callback callbackListener) {
         String productsUrl = String.format(URL_PRODUCT_STRING_FORMAT, getServerUrl(cache, server),
                 cache.getPersistenceHandler().read(Constants.SP_CURRENT_PRODUCT_ID, ""),
                 cache.getPersistenceHandler().read(Constants.SP_SEASON_ID, ""));
-        sendRequest(cache, productsUrl, callbackListener);
+        cache.getConnectionManager().sendRequest(productsUrl, callbackListener);
     }
 
     private static Hashtable<String, String> createIdModifiedSinceHeader(String lastModifiedData) {
         Hashtable<String, String> headers = new Hashtable<>();
-        if (!lastModifiedData.trim().isEmpty()) {
+        if (lastModifiedData != null && !lastModifiedData.trim().isEmpty()) {
             headers.put(IF_MODIFIED_SINCE, lastModifiedData);
         }
         return headers;
@@ -245,7 +279,6 @@ public class RemoteConfigurationAsyncFetcher {
     /**
      * Data provider modes the airlock supports
      */
-    @SuppressWarnings("unused")
     public enum DataProviderType {
         /**
          * Without cache, could be slow but the changes is effected immediately
@@ -262,7 +295,6 @@ public class RemoteConfigurationAsyncFetcher {
             value = newValue;
         }
 
-        @SuppressWarnings("unused")
         public static DataProviderType getType(int value) {
             for (DataProviderType type : DataProviderType.values()) {
                 if (type.value == value) {
@@ -303,21 +335,6 @@ public class RemoteConfigurationAsyncFetcher {
                 }
                 callback.onResponse(call, response);
             }
-        }
-    }
-
-    private static void sendRequest(InfraAirlockService cache, Callback callbackListener, String url,String lastTime) {
-        AirlockDAOCallback wrapperCallback = new AirlockDAOCallback(callbackListener);
-        ConnectionManager connectionManager = cache.getConnectionManager();
-        if (connectionManager != null){
-            connectionManager.sendRequest(url, createIdModifiedSinceHeader(lastTime), wrapperCallback);
-        }
-    }
-
-    private static void sendRequest(InfraAirlockService cache, String url, Callback callbackListener){
-        ConnectionManager connectionManager = cache.getConnectionManager();
-        if (connectionManager != null){
-            connectionManager.sendRequest(url, callbackListener);
         }
     }
 }

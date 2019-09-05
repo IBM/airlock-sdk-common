@@ -15,7 +15,7 @@ import javax.inject.Inject;
 import java.io.IOException;
 
 @SuppressWarnings({"WeakerAccess", "unused"})
-public class BranchesService {
+public class    BranchesService {
 
     private static final String TAG = "BranchesService";
 

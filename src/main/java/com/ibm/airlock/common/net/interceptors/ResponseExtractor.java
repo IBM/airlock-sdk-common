@@ -19,7 +19,7 @@ import okhttp3.ResponseBody;
 
 public class ResponseExtractor implements Interceptor {
 
-    private static final String TAG = "ResponseExtractor";
+    private static String TAG = "ResponseExtractor";
 
     @Override
     public Response intercept(Chain chain) throws IOException {
@@ -42,8 +42,8 @@ public class ResponseExtractor implements Interceptor {
     /**
      * Checks if an input stream is gzipped.
      *
-     * @param in bytes input
-     * @return true if is Gzipped
+     * @param in
+     * @return
      */
     public static boolean isGZipped(byte[] in) {
         byte[] twoBytes = Arrays.copyOfRange(in, 0, 2);

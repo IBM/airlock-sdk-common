@@ -12,12 +12,11 @@ import com.ibm.airlock.common.notifications.AirlockNotificationRestriction;
 import com.ibm.airlock.common.notifications.PendingNotification;
 import com.ibm.airlock.common.util.Constants;
 import com.ibm.airlock.common.util.RandomUtils;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.TestOnly;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -53,8 +52,8 @@ public class NotificationService {
         productDiComponent.inject(this);
     }
 
-    private boolean isDisabled() {
-        return notifications == null || notifications.isEmpty();
+    private boolean isEnabled() {
+        return notifications != null && !notifications.isEmpty();
     }
 
     public void calculateAndSaveNotifications(ScriptInvoker invoker) throws JSONException {
@@ -63,7 +62,7 @@ public class NotificationService {
             return;
         }
 
-        if (isDisabled()) {
+        if (!isEnabled()) {
             return;
         }
 
@@ -151,7 +150,10 @@ public class NotificationService {
         for (int i = 0; i < pendingNotifications.length(); i++) {
             JSONObject singleNotification = pendingNotifications.getJSONObject(i);
             String notificationUniqueId = singleNotification.optString("name");
-            if (!notificationsToCancel.contains(notificationUniqueId) && serverNotificationIds.contains(notificationUniqueId)) {
+            if (notificationsToCancel.contains(notificationUniqueId) || !serverNotificationIds.contains(notificationUniqueId)) {
+                //if notification was cancelled - just remove it from the pending list...
+            } else {
+                //notification exists and remains existing
                 outputArray.put(singleNotification);
             }
         }
@@ -237,6 +239,11 @@ public class NotificationService {
         calculateAndSaveNotifications(invoker);
     }
 
+
+    public void clearNotifications() {
+
+    }
+
     private JSONArray getAirlockNotifications() throws JSONException {
         JSONObject jsonObject = persistenceHandler.readJSON(Constants.SP_NOTIFICATIONS);
         notificationsLimitations = jsonObject.optJSONArray("notificationsLimitations");
@@ -260,7 +267,7 @@ public class NotificationService {
         try {
             JSONArray notificationsArray = getAirlockNotifications();
             //notifications are stored as LinkedHashMap since the order on airlock is important for defining the maxNotifications implementation
-            notifications = new LinkedHashMap<>();
+            notifications = new LinkedHashMap<String, AirlockNotification>();
 
             if (notificationsArray != null) {
                 try {
@@ -300,7 +307,7 @@ public class NotificationService {
 
     public void updateNotificationsEnablement() {
 
-        if (isDisabled()) {
+        if (!isEnabled()) {
             return;
         }
         for (com.ibm.airlock.common.notifications.AirlockNotification notification : notifications.values()) {
@@ -308,7 +315,6 @@ public class NotificationService {
         }
     }
 
-    @TestOnly
     public void updateNotificationsConfigurations(List<String> configurations) {
         if (configurations == null || configurations.isEmpty()) {
             return;
@@ -323,7 +329,6 @@ public class NotificationService {
         }
     }
 
-    @TestOnly
     public int getNotificationsSize() {
         int size = 0;
         if (notifications != null) {
@@ -332,7 +337,6 @@ public class NotificationService {
         return size;
     }
 
-    @SuppressWarnings("EmptyMethod")
     protected void scheduleNotificationAlarm(long dueDate) {
         //On base class do nothing - on Extending class should implement real alarm set
 
@@ -393,7 +397,7 @@ public class NotificationService {
     /**
      * method to update the pending notification list by deleting
      *
-     * @param notificationsToRemove list of notification names to remove
+     * @param notificationsToRemove
      */
     public void removeFiredNotifications(List<String> notificationsToRemove) {
 
@@ -451,9 +455,14 @@ public class NotificationService {
     }
 
 
+    @SuppressWarnings("VariableNotUsedInsideIf")
     public void setNotificationIntent(Object notificationIntent) {
-        this.notificationIntent = notificationIntent;
-        isSupported = notificationIntent != null;
+        notificationIntent = notificationIntent;
+        if (notificationIntent != null) {
+            isSupported = true;
+        } else {
+            isSupported = false;
+        }
     }
 
     public Map<String, AirlockNotification> getNotifications() {
@@ -483,7 +492,7 @@ public class NotificationService {
                 }
             }
 
-        } catch (JSONException ignored) {
+        } catch (JSONException e) {
         }
         return null;
     }

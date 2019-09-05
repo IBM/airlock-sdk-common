@@ -23,6 +23,11 @@ public class AirlockContextManager {
     @Nullable
     private Script jsTranslations;
 
+    private final String name;
+
+    private final SafeContextFactory safeContextFactory;
+
+
     private final StateFullContext currentContext;
 
     private final StateFullContext runtimeContext;
@@ -35,9 +40,10 @@ public class AirlockContextManager {
     private final Hashtable<String, String> preCompiledScriptsMD5 = new Hashtable<>();
 
     public AirlockContextManager(String name) {
-        currentContext = new StateFullContext(name);
-        runtimeContext = new StateFullContext(name);
-        SafeContextFactory safeContextFactory = new SafeContextFactory();
+        this.name = name;
+        currentContext = new StateFullContext(this.name);
+        runtimeContext = new StateFullContext(this.name);
+        safeContextFactory = new SafeContextFactory();
     }
 
     public synchronized void overideRuntimeWithCurrentContext(){
@@ -68,10 +74,10 @@ public class AirlockContextManager {
     public void setJsUtilsScript(String script) {
 
         //create and enter safe execution context
-        Context rhino = Context.enter();
+        Context rhino = safeContextFactory.makeContext().enter();
 
         try {
-            String md5 = generateMD5(script);
+            String md5 = ganerateMD5(script);
             if (!md5.equals(preCompiledScriptsMD5.get(JS_UTILS_SCRIPT))) {
                 jsUtilsScript = rhino.compileString(script, "jsFunctions", 1, null);
                 preCompiledScriptsMD5.put(JS_UTILS_SCRIPT, md5);
@@ -89,7 +95,7 @@ public class AirlockContextManager {
     public void setJsTranslationsScript(String script) {
 
         //create and enter safe execution context
-        Context rhino = Context.enter();
+        Context rhino = safeContextFactory.makeContext().enter();
 
 
         String translations = "\nvar " +
@@ -99,7 +105,7 @@ public class AirlockContextManager {
                 "\")";
 
         try {
-            String md5 = generateMD5(translations);
+            String md5 = ganerateMD5(translations);
             if (!md5.equals(preCompiledScriptsMD5.get(JS_TRANSLATIONS_SCRIPT))) {
                 jsTranslations = rhino.compileString(translations, "jsTranslations", 1, null);
                 preCompiledScriptsMD5.put(JS_TRANSLATIONS_SCRIPT, md5);
@@ -125,7 +131,7 @@ public class AirlockContextManager {
         return jsTranslations;
     }
 
-    private String generateMD5(String script) throws NoSuchAlgorithmException {
+    private String ganerateMD5(String script) throws NoSuchAlgorithmException {
         MessageDigest m = MessageDigest.getInstance("MD5");
         m.update(script.getBytes(), 0, script.length());
         return new BigInteger(1, m.digest()).toString(16);

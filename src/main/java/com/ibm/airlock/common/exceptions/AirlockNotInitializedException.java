@@ -5,7 +5,6 @@ package com.ibm.airlock.common.exceptions;
  *
  * @author Denis Voloshin
  */
-@SuppressWarnings("ClassOnlyUsedInOnePackage")
 public class AirlockNotInitializedException extends Exception {
     private static final long serialVersionUID = -8931129311027230309L;
 

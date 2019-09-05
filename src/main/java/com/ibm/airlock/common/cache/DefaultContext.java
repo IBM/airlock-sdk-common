@@ -1,5 +1,6 @@
 package com.ibm.airlock.common.cache;
 
+import com.ibm.airlock.common.log.Logger;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -9,10 +10,13 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 
 /**
- * @author Denis Voloshin on 2019-06-28.
+ * Default implementation of Context class base on the File System persistence
+ *
+ * @author Denis Voloshin
  */
 public class DefaultContext implements Context {
 
+    private static final String TAG = "DefaultContext";
     private static final String DEFAULT_SEASON_ID = "DEFAULT_SEASON_ID";
     private static final String DEFAULT_PRODUCT_ID = "DEFAULT_PRODUCT_ID";
 
@@ -25,10 +29,12 @@ public class DefaultContext implements Context {
     private final String seasonId;
 
 
+    @SuppressWarnings({"ConstructorWithTooManyParameters", "JavaDoc"})
     public DefaultContext(String instanceId, String rootFolder, String defaults, String encryptionKey, String appVersion) {
         this(instanceId, rootFolder, defaults, getProductName(new JSONObject(defaults)), encryptionKey, appVersion);
     }
 
+    @SuppressWarnings({"ConstructorWithTooManyParameters", "JavaDoc"})
     public DefaultContext(String instanceId, String rootFolder, String defaults, String airlockProductName, String encryptionKey, String appVersion) {
         JSONObject defaultsJson = new JSONObject(defaults);
         seasonId = getSeasonId(defaultsJson).isEmpty() ? DEFAULT_SEASON_ID : getSeasonId(defaultsJson);
@@ -40,16 +46,18 @@ public class DefaultContext implements Context {
 
         contextFolder = new File(rootFolder + File.separator + airlockProductName + File.separator + seasonId);
         if (!contextFolder.exists()) {
-            //noinspection ResultOfMethodCallIgnored
-            contextFolder.mkdirs();
+            if (!contextFolder.mkdirs()) {
+                Logger.log.w(TAG, "Context folders creation " + contextFolder + " failed");
+            }
         }
     }
 
+    @SuppressWarnings("unused")
     public String getProductId() {
         return productId;
     }
-    @Override
 
+    @Override
     public String getSeasonId() {
         return seasonId;
     }
@@ -74,29 +82,36 @@ public class DefaultContext implements Context {
         return appVersion;
     }
 
+    @SuppressWarnings("unused")
     public void setAppVersion(String appVersion) {
         this.appVersion = appVersion;
     }
 
     @Override
     public File getFilesDir() {
-        return this.contextFolder;
+        return contextFolder;
     }
 
     @Override
     public SharedPreferences getSharedPreferences(String spName, int modePrivate) {
-        return null;
+        return new InMemorySharedPreferences();
     }
 
     @Override
-    public void deleteFile(String key) {
-        //noinspection ResultOfMethodCallIgnored
-        new File(key).delete();
+    public void deleteFile(String fileName) {
+        if (new File(fileName).delete()) {
+            Logger.log.w(TAG, "File " + fileName + " delete failed");
+        }
     }
 
     @Override
     public FileInputStream openFileInput(String preferenceName) throws FileNotFoundException {
         return new FileInputStream(new File(preferenceName));
+    }
+
+    @Override
+    public File openFile(String filePath) {
+        return new File(filePath);
     }
 
     @Override
@@ -118,12 +133,11 @@ public class DefaultContext implements Context {
         return defaultsJSON.optString("seasonId");
     }
 
-    public static String getProductId(JSONObject defaultsJSON) {
+    private static String getProductId(JSONObject defaultsJSON) {
         return defaultsJSON.optString("productId");
     }
 
-    public static String getProductName(JSONObject defaultsJSON) {
+    private static String getProductName(JSONObject defaultsJSON) {
         return defaultsJSON.optString("productName");
     }
-
 }

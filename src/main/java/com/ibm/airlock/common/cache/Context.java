@@ -1,11 +1,9 @@
 package com.ibm.airlock.common.cache;
 
-import javax.annotation.CheckForNull;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 
 /**
@@ -26,15 +24,15 @@ public interface Context {
 
     File getFilesDir();
 
-    @CheckForNull
     SharedPreferences getSharedPreferences(String spName, int modePrivate);
 
-    void deleteFile(String key);
+    void deleteFile(String fileName);
 
-    FileInputStream openFileInput(String preferenceName) throws FileNotFoundException;
+    InputStream openFileInput(String preferenceName) throws FileNotFoundException;
 
-    FileOutputStream openFileOutput(String name,
-                                    int mode) throws FileNotFoundException;
+    File openFile(String filePath) throws FileNotFoundException;
+
+    OutputStream openFileOutput(String name, int mode) throws FileNotFoundException;
 
     Object getSystemService(String name);
 

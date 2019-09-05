@@ -6,7 +6,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-@SuppressWarnings("ClassOnlyUsedInOnePackage")
 public class JsonUtils {
    public static void mergeJson(JSONObject to, JSONObject from) throws JSONException {
         Iterator<String> keys = from.keys();

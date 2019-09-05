@@ -6,14 +6,14 @@ package com.ibm.airlock.common.model;
  * @author Denis Voloshin
  */
 
-@SuppressWarnings({"unused", "ClassOnlyUsedInOnePackage"})
+@SuppressWarnings("unused")
 public class CalculateErrorItem {
 
     private String featureName;
     private String resultError;
 
     /**
-     * Constructor for CalculateErrorItem class
+     * Ctor for CalculateErrorItem class
      *
      * @param featureName feature name
      * @param resultError error details

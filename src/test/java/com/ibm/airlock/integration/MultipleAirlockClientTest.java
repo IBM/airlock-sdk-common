@@ -3,14 +3,13 @@ package com.ibm.airlock.integration;
 import com.ibm.airlock.BaseTestModel;
 import com.ibm.airlock.CommonSdkTestDataManager;
 
-import com.ibm.airlock.common.AirlockCallback;
-import com.ibm.airlock.common.AirlockClient;
+import com.ibm.airlock.common.*;
 import com.ibm.airlock.common.exceptions.AirlockInvalidFileException;
-import com.ibm.airlock.common.DefaultAirlockProductManager;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.Parameterized;
 
@@ -38,29 +37,54 @@ public class MultipleAirlockClientTest extends BaseTestModel {
         commonSdkTestDataManager = new CommonSdkTestDataManager();
     }
 
+
     @Test
-    public void multipleAirlockClientsShouldBeIndependent() throws JSONException, AirlockInvalidFileException, InterruptedException {
-        AirlockClient client1 = DefaultAirlockProductManager.builder().withAirlockDefaults(slurp(getDefaultFile()))
-                .withAppVersion(m_appVersion).build().createClient("111-111-111");
+    public void multiAirlockClientsFromSameAirlockProductShouldBeIndependent() throws JSONException, AirlockInvalidFileException, InterruptedException {
+        AirlockProductSeasonManager airlockProductSeasonManager = new AirlockProductSeasonManager("ManagerBasicTest", slurp(getDefaultFile()), "", m_appVersion);
 
-        AirlockClient client2 = DefaultAirlockProductManager.builder().withAirlockDefaults(slurp(getDefaultFile()))
-                .withAppVersion(m_appVersion).build().createClient("111-111-112");
+        AirlockClient client1 = airlockProductSeasonManager.createClient("111-111-111");
+        AirlockClient client2 = airlockProductSeasonManager.createClient("111-111-112");
 
-        pull(client1);
-        pull(client2);
+        pull(airlockProductSeasonManager);
         client1.calculateFeatures(new JSONObject("{'viewedLocation':{'lon':'IL'}}"), Collections.<String>emptyList());
         client2.calculateFeatures(new JSONObject("{'viewedLocation':{'lon':'US'}}"), Collections.<String>emptyList());
         client1.syncFeatures();
         client2.syncFeatures();
         Assert.assertFalse(client1.getFeature("ns.f8").isOn());
         Assert.assertTrue(client2.getFeature("ns.f8").isOn());
+        client1.getAirlockProductManager().reset();
+        client2.getAirlockProductManager().reset();
+        airlockProductSeasonManager.destroy();
     }
 
-    private void pull(AirlockClient client) throws InterruptedException {
+    @Test
+    public void multiAirlockClientsFromDiffAirlockProductShouldBeIndependent() throws JSONException, AirlockInvalidFileException, InterruptedException {
+
+        AirlockProductSeasonManager airlockProductSeasonManager = new AirlockProductSeasonManager("ManagerBasicTest", slurp(getDefaultFile()), "", "9.0");
+        AirlockClient client1 = airlockProductSeasonManager.createClient("111-111-111");
+
+        AirlockProductSeasonManager airlockProductSeasonManager1 = new AirlockProductSeasonManager("ManagerBasicTest", slurp(getDefaultFile()), "", "8.0");
+        AirlockClient client2 = airlockProductSeasonManager1.createClient("111-111-112");
+
+
+        pull(airlockProductSeasonManager1);
+        pull(airlockProductSeasonManager);
+        client1.calculateFeatures(new JSONObject("{'viewedLocation':{'lon':'IL'}}"), Collections.<String>emptyList());
+        client2.calculateFeatures(new JSONObject("{'viewedLocation':{'lon':'US'}}"), Collections.<String>emptyList());
+        client1.syncFeatures();
+        client2.syncFeatures();
+        Assert.assertFalse(client1.getFeature("ns.f8").isOn());
+        Assert.assertTrue(client2.getFeature("ns.f8").isOn());
+        client1.getAirlockProductManager().reset();
+        client2.getAirlockProductManager().reset();
+        airlockProductSeasonManager.destroy();
+    }
+
+    private void pull(AirlockProductSeasonManager airlockProductSeasonManager) throws InterruptedException {
         final CountDownLatch latch = new CountDownLatch(1);
 
         final List<Exception> error = new ArrayList<>();
-        client.pullFeatures(new AirlockCallback() {
+        airlockProductSeasonManager.pullFeatures(new AirlockCallback() {
             @Override
             public void onFailure(Exception e) {
                 error.add(e);

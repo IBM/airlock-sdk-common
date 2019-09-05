@@ -62,7 +62,7 @@ public class StateFullContext {
         //create and enter safe execution context
         this.contextVarName = escapeContextVarName(contextVarName);
         SafeContextFactory safeContextFactory = new SafeContextFactory();
-        Context rhino = Context.enter();
+        Context rhino = safeContextFactory.makeContext().enter();
         mergeDeepFunction = rhino.compileString(jsonMergeMethod + " ; var " + this.contextVarName + " = {};", "mergeDeep", 1, null);
         scope = rhino.initStandardObjects();
         mergeDeepFunction.exec(rhino, scope);
@@ -83,14 +83,13 @@ public class StateFullContext {
         if (!clearPreviousContext) {
             update(context);
         } else {
-            ReentrantReadWriteLock.WriteLock writeLock = reentrantReadWriteLock.writeLock();
             try {
-                writeLock.lock();
+                reentrantReadWriteLock.writeLock().lock();
                 SafeContextFactory safeContextFactory = new SafeContextFactory();
-                Context rhino = Context.enter();
+                Context rhino = safeContextFactory.makeContext().enter();
                 rhino.evaluateString(scope, this.contextVarName + " = " + context, "<cmd>", 1, null);
             } finally {
-                writeLock.unlock();
+                reentrantReadWriteLock.writeLock().unlock();
             }
         }
     }
@@ -105,7 +104,7 @@ public class StateFullContext {
             reentrantReadWriteLock.writeLock().lock();
             //create and enter safe execution context
             SafeContextFactory safeContextFactory = new SafeContextFactory();
-            Context rhino = Context.enter();
+            Context rhino = safeContextFactory.makeContext().enter();
             String contextScript = this.contextVarName + " = mergeDeep(" + this.contextVarName + ',' + context + ')';
             rhino.evaluateString(scope, contextScript, "<cmd>", 1, null);
             Context.exit();
@@ -123,7 +122,7 @@ public class StateFullContext {
         try {
             reentrantReadWriteLock.writeLock().lock();
             SafeContextFactory safeContextFactory = new SafeContextFactory();
-            Context rhino = Context.enter();
+            Context rhino = safeContextFactory.makeContext().enter();
             rhino.evaluateString(scope, "if (" + this.contextVarName + '.' + path + "){ delete " + this.contextVarName + '.' + path + " }", "<cmd>", 1, null);
             Context.exit();
         } finally {
@@ -135,7 +134,7 @@ public class StateFullContext {
 
     private Scriptable doScopeClone() {
         SafeContextFactory safeContextFactory = new SafeContextFactory();
-        Context rhino = Context.enter();
+        Context rhino = safeContextFactory.makeContext().enter();
 
         Scriptable scope = rhino.initStandardObjects();
         mergeDeepFunction.exec(rhino, scope);
@@ -166,7 +165,7 @@ public class StateFullContext {
             }
             scope.setPrototype(stateFullContext.doScopeClone());
             SafeContextFactory safeContextFactory = new SafeContextFactory();
-            Context rhino = Context.enter();
+            Context rhino = safeContextFactory.makeContext().enter();
             String contextScript = this.contextVarName + " = mergeDeep(" + stateFullContext.contextVarName + ',' + this.contextVarName + ')';
             rhino.evaluateString(scope, contextScript, "<cmd>", 1, null);
             Context.exit();
@@ -178,7 +177,7 @@ public class StateFullContext {
 
     private String doToString() {
         SafeContextFactory safeContextFactory = new SafeContextFactory();
-        Context rhino = Context.enter();
+        Context rhino = safeContextFactory.makeContext().enter();
         Object context = rhino.evaluateString(scope, "JSON.stringify(" + this.contextVarName + ')', "<cmd>", 1, null);
         Context.exit();
         return Context.toString(context);

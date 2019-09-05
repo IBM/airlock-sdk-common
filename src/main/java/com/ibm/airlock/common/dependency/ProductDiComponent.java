@@ -1,9 +1,11 @@
 package com.ibm.airlock.common.dependency;
 
+import com.ibm.airlock.common.AirlockProductManager;
 import com.ibm.airlock.common.DefaultAirlockProductManager;
 import com.ibm.airlock.common.services.*;
 import dagger.Component;
 
+import javax.inject.Singleton;
 
 @Component(modules = ProductDiModule.class)
 public interface ProductDiComponent {

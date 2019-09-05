@@ -15,37 +15,37 @@ import org.json.JSONArray;
 
 public class StreamTrace {
 
-    private static final int MAX_ENTRIES_COUNT = 200;
+    private static final int MAX_ENTERIES_COUNT = 200;
     private int nextIndex = 0;
-    private List<String> entriesArr = Arrays.asList(new String[MAX_ENTRIES_COUNT]);
+    private List<String> enteriesArr = Arrays.asList(new String[MAX_ENTERIES_COUNT]);
     private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd:HH.mm.ss");
 
     public StreamTrace(@Nullable JSONArray array) {
         if (array != null) {
             for (int i = 0; i < array.length(); i++) {
-                entriesArr.add(array.getString(i));
+                enteriesArr.add(array.getString(i));
             }
         }
     }
 
     public void getSize() {
-        entriesArr.size();
+        enteriesArr.size();
     }
 
     public void clearTrace() {
-        entriesArr = Arrays.asList(new String[MAX_ENTRIES_COUNT]);
+        enteriesArr = Arrays.asList(new String[MAX_ENTERIES_COUNT]);
         nextIndex = 0;
     }
 
     public void write(String traceInfo) {
-        entriesArr.set(nextIndex, traceInfo + ";;" + formatter.format(new Date()));
-        if (++nextIndex >= MAX_ENTRIES_COUNT) {
+        enteriesArr.set(nextIndex, traceInfo + ";;" + formatter.format(new Date()));
+        if (++nextIndex >= MAX_ENTERIES_COUNT) {
             nextIndex = 0;
         }
     }
 
     public JSONArray toJSONArray() {
-        return new JSONArray(entriesArr);
+        return new JSONArray(enteriesArr);
     }
 
     public void write(String[] traceInfo) {
@@ -55,6 +55,6 @@ public class StreamTrace {
     }
 
     public String[] getTraceArr() {
-        return entriesArr.toArray(new String[0]);
+        return enteriesArr.toArray(new String[0]);
     }
 }

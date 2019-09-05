@@ -1,6 +1,5 @@
 package com.ibm.airlock.common.util;
 
-import javax.annotation.Nullable;
 import java.util.Locale;
 
 public class DefaultLocaleProvider implements LocaleProvider {
@@ -8,7 +7,7 @@ public class DefaultLocaleProvider implements LocaleProvider {
     private Locale locale;
 
     public DefaultLocaleProvider(String locale) {
-        if (!locale.isEmpty()) {
+        if (locale != null && !locale.isEmpty()) {
             if (locale.split("_").length < 2) {
                 this.locale = new Locale(locale);
             } else {
