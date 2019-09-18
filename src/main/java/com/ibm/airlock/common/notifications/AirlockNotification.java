@@ -98,7 +98,7 @@ public class AirlockNotification {
 
         //check percentage
         JSONObject notificationsRandomNumber = ph.getNotificationsRandomMap();
-        if(isProcessingEnabled && notificationsRandomNumber.length() > 0) {
+        if(isProcessingEnabled && notificationsRandomNumber != null && notificationsRandomNumber.length() > 0) {
             double threshold = this.rolloutPercentage;
             if (threshold <= 0) {
                 isProcessingEnabled = false;

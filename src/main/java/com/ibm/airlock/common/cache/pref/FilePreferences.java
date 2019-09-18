@@ -259,7 +259,7 @@ public class FilePreferences extends AbstractPreferences {
                 synchronized (root) {
                     // If this node hasn't been removed, add back in any values
                     if (!isRemoved) {
-                        Set<String> keySet = new HashSet(root.keySet());
+                        Set<String> keySet = new HashSet<>(root.keySet());
                         for (String s : keySet) {
                             p.setProperty(path + s, root.get(s));
                         }

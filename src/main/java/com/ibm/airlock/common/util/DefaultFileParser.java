@@ -89,6 +89,7 @@ public class DefaultFileParser {
             setConfigurationProperty(sp, Constants.JSON_DEFAULT_LANG_FIELD_NAME, Constants.SP_DEFAULT_LANGUAGE, defaultJsonObject, false);
             setConfigurationProperty(sp, Constants.JSON_SUPPORTED_LANGUAGES_FIELD, Constants.SP_SUPPORTED_LANGUAGES, defaultJsonObject, false);
             if (initialAppRun) {
+                //noinspection ConstantConditions
                 setConfigurationProperty(sp, Constants.JSON_FEATURE_FIELD_PRODUCT_ID, Constants.SP_CURRENT_PRODUCT_ID, defaultJsonObject, true, initialAppRun);
             }
         } else {
@@ -159,6 +160,5 @@ public class DefaultFileParser {
         } else if (mandatory) {
             throw new AirlockInvalidFileException(String.format(AirlockMessages.ERROR_MISSING_OR_EMPTY_VALUE_FORMATTED, propertyName));
         }
-        return;
     }
 }

@@ -48,7 +48,7 @@ public class OkHttpConnectionManager implements ConnectionManager {
         getAndSetClient(builder, "");
     }
 
-    private void getAndSetClient(OkHttpClientBuilder builder, String key) {
+    private void getAndSetClient(OkHttpClientBuilder builder,@Nullable String key) {
         if (key == null) {
             key = "";
         }

@@ -23,7 +23,7 @@ public class PurchasesList extends FeaturesList {
 
     public PurchasesList(String json, Feature.Source source) {
         try {
-            if (json == null || json.isEmpty()) {
+            if (json.isEmpty()) {
                 features = new Hashtable<>();
             }
             JSONObject root = new JSONObject(json);

@@ -18,6 +18,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import javax.annotation.CheckForNull;
 import javax.inject.Inject;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -157,7 +158,7 @@ public class NotificationService {
         }
 
         //create array of allowed + period and check against each entry
-        List<AirlockNotificationRestriction> notificationsRestrictions = calculeteRestrictions();
+        List<AirlockNotificationRestriction> notificationsRestrictions = calculateRestrictions();
         if (!notificationsToAdd.isEmpty() && !notificationsRestrictions.isEmpty()) {
             for (int i = 0; i < notificationsToAdd.size(); i++) {
                 for (AirlockNotificationRestriction restriction : notificationsRestrictions) {
@@ -182,7 +183,7 @@ public class NotificationService {
         }
     }
 
-    private List<AirlockNotificationRestriction> calculeteRestrictions() {
+    private List<AirlockNotificationRestriction> calculateRestrictions() {
         List<AirlockNotificationRestriction> restrictions = new ArrayList<>();
         for (int i = 0; i < notificationsLimitations.length(); i++) {
             int viewedCounter = 0;
@@ -263,9 +264,13 @@ public class NotificationService {
             notifications = new LinkedHashMap<>();
 
             if (notificationsArray != null) {
+                JSONObject notificationRandomsMap = persistenceHandler.getNotificationsRandomMap();
+                if (notificationRandomsMap == null){
+                    notificationRandomsMap = new JSONObject();
+                }
                 try {
                     JSONObject newNotificationsRandoms = RandomUtils.calculateNotificationsRandoms(notificationsArray,
-                            persistenceHandler.getNotificationsRandomMap().length() > 0 ? new JSONObject() : persistenceHandler.getNotificationsRandomMap());
+                            notificationRandomsMap);
                     persistenceHandler.setNotificationsRandomMap(newNotificationsRandoms);
                 } catch (Exception e) {
                     //todo nothing ??
@@ -473,6 +478,7 @@ public class NotificationService {
         return notifications.get(name);
     }
 
+    @CheckForNull
     public PendingNotification getPendingNotificationById(String id) {
         try {
             JSONArray jsonPendingNotifications = new JSONArray(persistenceHandler.read(Constants.SP_PENDING_NOTIFICATIONS, "[]"));

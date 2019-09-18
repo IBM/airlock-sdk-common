@@ -222,8 +222,10 @@ public class InfraAirlockService {
         long startInit = System.currentTimeMillis();
         this.persistenceHandler = persistenceHandler;
         translatedStringsCache = new InMemoryCache();
-        airlockContextManager.getCurrentContext().
-                update(this.persistenceHandler.readJSON(Constants.SP_CURRENT_CONTEXT));
+        StateFullContext currentContext = airlockContextManager.getCurrentContext();
+        if (currentContext != null){
+            currentContext.update(this.persistenceHandler.readJSON(Constants.SP_CURRENT_CONTEXT));
+        }
 
         persistenceHandler.init(context, new AirlockCallback() {
             @Override
@@ -240,9 +242,7 @@ public class InfraAirlockService {
         this.connectionManager = connectionManager;
         sharedPreferenceHandlerInitialized = persistenceHandler.isInitialized();
         resetLocale();
-        if (defaultFile != null) {
-            persistenceHandler.write(Constants.SP_DEFAULT_FILE, defaultFile);
-        }
+        persistenceHandler.write(Constants.SP_DEFAULT_FILE, defaultFile);
         String previousVersion = "";
         if (sharedPreferenceHandlerInitialized) {
             previousVersion = persistenceHandler.read(Constants.SP_PRODUCT_VERSION, "");
@@ -252,15 +252,13 @@ public class InfraAirlockService {
         setAirlockUserUniqueId();
         // new version, need to parse ALL the default file, and reset persistenceHandler cached relevant to refresh.
         AirlockVersionComparator comparator = new AirlockVersionComparator();
-        if (previousVersion.equalsIgnoreCase("") || !comparator.equals(appVersion, previousVersion)) {
+        if (previousVersion.isEmpty() || !comparator.equals(appVersion, previousVersion)) {
             //reset the product's id on the app upgrade
             persistenceHandler.write(Constants.SP_DEFAULT_PRODUCT_ID, "");
             persistenceHandler.write(Constants.SP_CURRENT_PRODUCT_ID, "");
 
             resetSPOnNewSeasonId();
-            if (defaultFile != null) {
-                parseDefaultFile(defaultFile, false);
-            }
+            parseDefaultFile(defaultFile, false);
             persistenceHandler.write(Constants.SP_PRODUCT_VERSION, appVersion);
         } else {
             // look for  default that we downloaded previously.
@@ -342,7 +340,7 @@ public class InfraAirlockService {
     }
 
     /**
-     * Returns the airlock experiment inof for analytics
+     * Returns the airlock experiment info for analytics
      */
     public Map<String, String> getExperimentInfo() {
         HashMap<String, String> experimentInfo = new HashMap<>();
@@ -377,21 +375,20 @@ public class InfraAirlockService {
     /**
      * Reads the stored user groups list from the device.
      *
-     * @param ph handle to persitence handler
+     * @param ph handle to persistence handler
      * @param context the context used
      */
     private void readUserGroupsFromDevice(PersistenceHandler ph, Context context) {
         // stub
     }
 
-    @Nullable
     public String getAirlockUserUniqueId() {
-        return persistenceHandler.read(Constants.SP_AIRLOCK_USER_UNIQUE_ID, null);
+        return persistenceHandler.read(Constants.SP_AIRLOCK_USER_UNIQUE_ID, "");
     }
 
 
     private void setAirlockUserUniqueId() {
-        if (persistenceHandler.read(Constants.SP_AIRLOCK_USER_UNIQUE_ID, null) == null) {
+        if (persistenceHandler.read(Constants.SP_AIRLOCK_USER_UNIQUE_ID, "").isEmpty()) {
             persistenceHandler.write(Constants.SP_AIRLOCK_USER_UNIQUE_ID, UUID.randomUUID().toString());
         }
     }
@@ -986,8 +983,7 @@ public class InfraAirlockService {
                             }
                             if (usageStreams != null && usageStreams.length() > 0) {
                                 try {
-                                    JSONObject newStreamsRandoms = RandomUtils.calculateStreamsRandoms(usageStreams,
-                                            persistenceHandler.getStreamsRandomMap().length() > 0 ? persistenceHandler.getStreamsRandomMap() : new JSONObject());
+                                    JSONObject newStreamsRandoms = RandomUtils.calculateStreamsRandoms(usageStreams, persistenceHandler.getStreamsRandomMap());
                                     persistenceHandler.setStreamsRandomMap(newStreamsRandoms);
                                 } catch (Exception e) {
                                     callback.onFailure(e);
@@ -995,7 +991,7 @@ public class InfraAirlockService {
                                 }
                             }
 
-                            //Need to call the upateStreams method - so we do not call the regular persistTempResult method
+                            //Need to call the updateStreams method - so we do not call the regular persistTempResult method
                             persistenceHandler.write(Constants.SP_FEATURE_USAGE_STREAMS, tempResultsHolder.get(STREAMS_TEMP));
                             streamsService.updateStreams();
                         }

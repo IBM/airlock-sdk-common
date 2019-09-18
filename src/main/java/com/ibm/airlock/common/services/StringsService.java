@@ -33,7 +33,7 @@ public class StringsService {
     /**
      * Sets the whether SDK should be configured to return AirlockManager.getString as as a doubled value
      *
-     * @param doubleLengthStrings
+     * @param doubleLengthStrings true if should return as as a doubled value
      */
     public void setDoubleLengthStrings(boolean doubleLengthStrings) {
         isDoubleLengthStrings = doubleLengthStrings;

@@ -19,10 +19,10 @@ public class RandomUtils {
     /**
      * Generates a new feature-random-map, based on a previous feature-random-map and the legacy random number
      *
-     * @param json
+     * @param json existing randoms to expand
      * @param legacyUserRandomNumber
      * @param inputFeatureRandoms
-     * @throws JSONException
+     * @throws JSONException exception on case there was a problem reading writing json
      */
     public static JSONObject calculateFeatureRandoms(JSONObject json, int legacyUserRandomNumber,
                                                      @Nullable JSONObject inputFeatureRandoms) throws JSONException {
@@ -40,14 +40,14 @@ public class RandomUtils {
         if (entitlements != null) {
             JSONArray purchasesArray = entitlements.optJSONArray(Constants.JSON_FEATURE_FIELD_ENTITLEMENTS);
             if (purchasesArray != null && entitlements.length() > 0) {
-                inspectIntitlementsPercentage(purchasesArray, inputFeatureRandoms == null ? new JSONObject() : inputFeatureRandoms, outFeatureRandoms, legacyUserRandomNumber);
+                inspectEntitlementsPercentage(purchasesArray, inputFeatureRandoms == null ? new JSONObject() : inputFeatureRandoms, outFeatureRandoms, legacyUserRandomNumber);
             }
         }
         return outFeatureRandoms;
     }
 
     public static JSONObject calculateStreamsRandoms(JSONObject streams,
-                                                     @Nullable JSONObject inputStreamsRandoms) throws JSONException {
+                                                    JSONObject inputStreamsRandoms) throws JSONException {
 
         JSONArray streamsArray = streams.optJSONArray("streams");
 
@@ -72,7 +72,7 @@ public class RandomUtils {
 
 
     private static void inspectFeaturesPercentage(JSONObject features,
-                                                  @Nullable JSONObject inFeatureRandoms, JSONObject outFeatureRandoms, int legacyUserRandomNumber) throws JSONException {
+                                                  JSONObject inFeatureRandoms, JSONObject outFeatureRandoms, int legacyUserRandomNumber) throws JSONException {
         Feature.Type type = getNodeType(features);
         if (type == Feature.Type.FEATURE || type == Feature.Type.CONFIGURATION_RULE) {
             String name = getId(features);
@@ -175,20 +175,20 @@ public class RandomUtils {
         }
     }
 
-    private static void inspectIntitlementsPercentage(JSONArray entitlements, @Nullable JSONObject inFeatureRandoms,
+    private static void inspectEntitlementsPercentage(JSONArray entitlements, JSONObject inFeatureRandoms,
                                                       JSONObject outFeatureRandoms, int legacyUserRandomNumber) throws JSONException {
         for (int i = 0; i < entitlements.length(); i++) {
-            inspectIntitlementPercentage(entitlements.optJSONObject(i), inFeatureRandoms, outFeatureRandoms, legacyUserRandomNumber);
+            inspectEntitlementPercentage(entitlements.optJSONObject(i), inFeatureRandoms, outFeatureRandoms, legacyUserRandomNumber);
         }
     }
 
-    private static void inspectIntitlementPercentage(JSONObject entitlement, @Nullable JSONObject inFeatureRandoms,
+    private static void inspectEntitlementPercentage(JSONObject entitlement, JSONObject inFeatureRandoms,
                                                      JSONObject outFeatureRandoms, int legacyUserRandomNumber) throws JSONException {
 
         if (entitlement.has(Constants.JSON_FEATURE_FIELD_ENTITLEMENTS)) {
             JSONArray entitlements = entitlement.getJSONArray(Constants.JSON_FEATURE_FIELD_ENTITLEMENTS);
             for (int i = 0; i < entitlements.length(); i++) {
-                inspectIntitlementPercentage(entitlements.optJSONObject(i), inFeatureRandoms, outFeatureRandoms, legacyUserRandomNumber);
+                inspectEntitlementPercentage(entitlements.optJSONObject(i), inFeatureRandoms, outFeatureRandoms, legacyUserRandomNumber);
             }
         }
 
@@ -208,7 +208,7 @@ public class RandomUtils {
 
 
     private static void inspectExperimentsPercentage(JSONArray experiments,
-                                                     @Nullable JSONObject inFeatureRandoms, JSONObject outFeatureRandoms, int legacyUserRandomNumber) throws JSONException {
+                                                     JSONObject inFeatureRandoms, JSONObject outFeatureRandoms, int legacyUserRandomNumber) throws JSONException {
         for (int i = 0; i < experiments.length(); i++) {
             JSONObject experimentItem = experiments.optJSONObject(i);
             String name = experimentItem.optString("name");
@@ -258,7 +258,7 @@ public class RandomUtils {
 
     private static Feature.Type resolveFeatureType(String type, Feature.Type defaultValue) {
 
-        if (type == null) {
+        if (type.isEmpty()) {
             return defaultValue;
         }
 
@@ -271,28 +271,27 @@ public class RandomUtils {
 
     private static Feature.Type getNodeType(JSONObject obj) {
         String str = obj.optString(Constants.JSON_FEATURE_FIELD_TYPE, Feature.Type.FEATURE.toString());
-        return resolveFeatureType(str, Feature.Type.FEATURE); // null on error
+        return resolveFeatureType(str, Feature.Type.FEATURE); // empty on error
     }
 
     public static JSONObject calculateNotificationsRandoms(JSONArray notificationsArray,
-                                                           @Nullable JSONObject inputNotificationsRandoms) throws JSONException {
+                                                           JSONObject inputNotificationsRandoms) throws JSONException {
 
         JSONObject outNotificationsRandoms = new JSONObject();
 
-        if (notificationsArray != null) {
-            for (int i = 0; i < notificationsArray.length(); ++i) {
-                JSONObject stream = (JSONObject) notificationsArray.get(i);
-                String name = stream.optString(Constants.JSON_FEATURE_FIELD_NAME, "<unknown>");
-                //noinspection DynamicRegexReplaceableByCompiledPattern
-                name = name.replaceAll("[. ]", "_");
-                if (inputNotificationsRandoms.has(name)) {
-                    int previousRandom = inputNotificationsRandoms.optInt(name);
-                    outNotificationsRandoms.put(name, previousRandom);
-                } else {
-                    outNotificationsRandoms.put(name, anyRandom());
-                }
+        for (int i = 0; i < notificationsArray.length(); ++i) {
+            JSONObject stream = (JSONObject) notificationsArray.get(i);
+            String name = stream.optString(Constants.JSON_FEATURE_FIELD_NAME, "<unknown>");
+            //noinspection DynamicRegexReplaceableByCompiledPattern
+            name = name.replaceAll("[. ]", "_");
+            if (inputNotificationsRandoms.has(name)) {
+                int previousRandom = inputNotificationsRandoms.optInt(name);
+                outNotificationsRandoms.put(name, previousRandom);
+            } else {
+                outNotificationsRandoms.put(name, anyRandom());
             }
         }
+
         return outNotificationsRandoms;
     }
 

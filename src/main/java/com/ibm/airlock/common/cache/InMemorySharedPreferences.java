@@ -2,7 +2,6 @@ package com.ibm.airlock.common.cache;
 
 import org.jetbrains.annotations.TestOnly;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.Map;
@@ -40,9 +39,8 @@ public class InMemorySharedPreferences implements SharedPreferences {
         return Collections.unmodifiableMap(preferences);
     }
 
-    @CheckForNull
     @Override
-    public String getString(String key, @Nullable String defValue) {
+    public String getString(String key, String defValue) {
         if(!preferences.containsKey(key)){
             return defValue;
         }

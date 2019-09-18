@@ -66,7 +66,7 @@ public interface AirlockProductManager {
 //     * @param defaultFile    Defaults file. This defaults file should be part of the application. You can get this by running the Airlock
 //     *                       Code Assistant plugin.
 //     * @param productVersion The application version. Use periods to separate between major and minor version numbers, for example: 6.3.4
-//     * @param key            Encryption key will be used to encrype/decrypt the cached model
+//     * @param key            Encryption key will be used to encrypt/decrypt the cached model
 //     * @throws AirlockInvalidFileException Thrown when the defaults file does not contain the proper content.
 //     * @throws IOException                 Thrown when the defaults file cannot be opened.
 //     */

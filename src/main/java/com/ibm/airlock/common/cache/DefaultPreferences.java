@@ -31,20 +31,20 @@ public class DefaultPreferences implements SharedPreferences {
     public DefaultPreferences(String productName, Context context) {
         this.preferences = Preferences.userRoot().node(context.getFilesDir() + File.separator + productName + File.separator + PRODUCT_PREF);
         this.editor = new DefaultPreferencesEditor(preferences, this);
-        this.inMemoryCache = new InMemoryCache();
+        this.inMemoryCache = new InMemoryCache<>();
     }
 
     public DefaultPreferences(String prefFolder, String prefFileName) {
         this.preferences = Preferences.userRoot().node(prefFolder + File.separator + prefFileName);
         this.editor = new DefaultPreferencesEditor(preferences, this);
-        this.inMemoryCache = new InMemoryCache();
+        this.inMemoryCache = new InMemoryCache<>();
     }
 
     public DefaultPreferences(String productPreferencesFolder) {
         this.productPreferencesFolder = productPreferencesFolder;
         this.preferences = Preferences.userRoot().node(productPreferencesFolder + File.separator + PRODUCT_PREF);
         this.editor = new DefaultPreferencesEditor(preferences, this);
-        this.inMemoryCache = new InMemoryCache();
+        this.inMemoryCache = new InMemoryCache<>();
     }
 
 

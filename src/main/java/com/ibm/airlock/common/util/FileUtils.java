@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+@SuppressWarnings("ResultOfMethodCallIgnored")
 public class FileUtils {
 
     public static String fileToString(String fileName, String encoding, boolean unifyNewLine) throws IOException {

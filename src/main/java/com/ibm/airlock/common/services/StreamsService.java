@@ -68,8 +68,8 @@ public class StreamsService {
     /**
      * adds an event to the streams processing
      *
-     * @param events
-     * @param processImmediately
+     * @param events events array to be processed
+     * @param processImmediately true if should be processed now
      */
     public JSONArray addStreamsEvent(JSONArray events, boolean processImmediately) {
         try {
@@ -84,7 +84,7 @@ public class StreamsService {
     /**
      * adds an event to the streams processing
      *
-     * @param event
+     * @param event event to be added to stack
      */
     public JSONArray addStreamsEvent(JSONObject event) {
         JSONArray events = new JSONArray();
@@ -116,7 +116,7 @@ public class StreamsService {
      * @param events             the events list
      * @param processImmediately indicates whether the processing is immediate or not
      * @param streamsFilter      array of streams which should be processed
-     * @throws JSONException
+     * @throws JSONException exception thrown on processing
      */
     public synchronized JSONArray calculateAndSaveStreams(@Nullable JSONArray events, boolean processImmediately, @Nullable String[] streamsFilter) throws JSONException {
 
@@ -522,7 +522,6 @@ public class StreamsService {
         return streamResults.toString();
     }
 
-    @Nullable
     public List<AirlockStream> getStreams() {
         return streams == null ? Collections.<AirlockStream>emptyList() : streams;
     }

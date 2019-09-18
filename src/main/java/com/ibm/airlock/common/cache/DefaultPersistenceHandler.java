@@ -84,6 +84,7 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
         }
 
         //If first time the app starts or it is a tests mock app (files dir is null) - do not read from file system
+        //noinspection ConstantConditions
         if (isInitialized() && context.getFilesDir() != null) {
             new Thread(new FilePreferencesReader()).start();
         }
@@ -117,7 +118,7 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
     @Override
     public synchronized void init(Context context) {
         this.context = context;
-        this.inMemoryPreferences = new InMemoryCache();
+        this.inMemoryPreferences = new InMemoryCache<>();
     }
 
     @Override
@@ -250,6 +251,7 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
     public void writeStream(String streamName,@Nullable String jsonAsString) {
         if (jsonAsString != null && !jsonAsString.isEmpty()) {
             //if it is a tests mock app (files dir is null) - do not write to file system
+            //noinspection ConstantConditions
             if (this.context.getFilesDir() != null) {
                 final long startTime = System.currentTimeMillis();
                 FileOutputStream fos = null;
@@ -261,6 +263,7 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
                     //noinspection ResultOfMethodCallIgnored
                     outputFile.createNewFile();
                     fos = new FileOutputStream(outputFile);
+                    //noinspection ConstantConditions
                     if (fos == null) {
                         //On tests that use mock context the FileOutputStream could be null...
                         return;
@@ -287,6 +290,7 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
     @Override
     public void deleteStream(String name) {
         //if it is a tests mock app (files dir is null) - do not write to file system
+        //noinspection ConstantConditions
         if (this.context.getFilesDir() != null) {
             context.deleteFile(Constants.STREAM_PREFIX + name);
         }
@@ -306,7 +310,6 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
         return value;
     }
 
-    @CheckForNull
     @Override
     public String read(String key, String defaultValue) {
         String value;
@@ -323,6 +326,7 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
                 }
             }
         }
+        //noinspection ConstantConditions
         return value;
     }
 
@@ -502,6 +506,7 @@ public class DefaultPersistenceHandler extends BasePersistenceHandler {
                 outputFile.createNewFile();
                 fos = new FileOutputStream(outputFile);
 
+                //noinspection ConstantConditions
                 if (fos == null) {
                     //On tests that use mock context the FileOutputStream could be null...
                     return;

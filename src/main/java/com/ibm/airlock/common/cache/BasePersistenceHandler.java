@@ -49,7 +49,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
 
     ));
 
-    protected Cacheable inMemoryPreferences = new InMemoryCache();
+    protected Cacheable<String, Object> inMemoryPreferences = new InMemoryCache<>();
 
     protected SharedPreferences preferences;
 
@@ -81,7 +81,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     @Override
     public FeaturesList getCachedPreSyncedFeaturesMap() {
         String featureValues = read(Constants.SP_PRE_SYNCED_FEATURES_LIST, "");
-        //noinspection ConstantConditions
         if (featureValues.isEmpty()) {
             return new FeaturesList();
         }
@@ -91,7 +90,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     @Override
     public FeaturesList getCachedSyncedFeaturesMap() {
         String featureValues = read(Constants.SP_SYNCED_FEATURES_LIST, "");
-        //noinspection ConstantConditions
         if (featureValues.isEmpty()) {
             return new FeaturesList();
         }
@@ -102,7 +100,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     @Override
     public FeaturesList getCachedFeatureMap() {
         String featureValues = read(Constants.SP_SERVER_FEATURE_LIST, "");
-        //noinspection ConstantConditions
         if (featureValues.isEmpty()) {
             return new FeaturesList();
         }
@@ -124,13 +121,11 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     }
 
     @Override
-    @CheckForNull
     public JSONObject getFeaturesRandomMap() {
         return getRandomMap(JSON_FIELD_FEATURES);
     }
 
     @Override
-    @CheckForNull
     public JSONObject getStreamsRandomMap() {
         return getRandomMap(JSON_FIELD_STREAMS);
     }
@@ -204,7 +199,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      */
     @Override
     public String getDevelopBranchName() {
-        //noinspection ConstantConditions
         return read(Constants.SP_DEVELOP_BRANCH_NAME, "").trim();
     }
 
@@ -223,7 +217,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      */
     @Override
     public String getLastBranchName() {
-        //noinspection ConstantConditions
         return read(Constants.SP_BRANCH_NAME, JSON_FIELD_ROOT);
     }
 
@@ -242,7 +235,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      */
     @Override
     public String getDevelopBranchId() {
-        //noinspection ConstantConditions
         return read(Constants.SP_DEVELOP_BRANCH_ID, "").trim();
     }
 
@@ -261,7 +253,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      */
     @Override
     public String getDevelopBranch() {
-        //noinspection ConstantConditions
         return read(Constants.SP_DEVELOP_BRANCH, "").trim();
     }
 
@@ -285,7 +276,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     public List<String> getDeviceUserGroups() {
         List<String> result = new ArrayList<>();
         String groups = read(Constants.SP_USER_GROUPS, "");
-        //noinspection ConstantConditions
         if (groups.isEmpty()) {
             return result;
         }
@@ -342,7 +332,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
         }
     }
 
-    @CheckForNull
     @Override
     public String read(String key, String defaultValue) {
         String value;
@@ -355,6 +344,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
                 value = defaultValue;
             }
         }
+        //noinspection ConstantConditions
         return value;
     }
 
@@ -467,8 +457,9 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
         SharedPreferences.Editor spEditor = preferences.edit();
         spEditor.clear().apply();
         //On test scenario's context could be null or the filesDir could be null
+        //noinspection ConstantConditions
         if (context != null && context.getFilesDir() != null) {
-            for (String key : (Set<String>) inMemoryPreferences.keySet()) {
+            for (String key : inMemoryPreferences.keySet()) {
                 context.deleteFile(key);
             }
 
@@ -509,7 +500,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     public boolean isInitialized() {
         boolean result = false;
         if (preferences != null) {
-            //noinspection ConstantConditions
             result = !read(Constants.SP_SEASON_ID, "").isEmpty();
         }
         return result;

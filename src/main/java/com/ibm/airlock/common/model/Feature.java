@@ -563,7 +563,7 @@ public class Feature implements Serializable {
                 childJson.put(Constants.JSON_FIELD_ATTRIBUTES_FOR_ANALYTICS, attributesForAnalytics);
             }
             childJson.put(Constants.JSON_FEATURE_FIELD_PERCENTAGE, percentage);
-            childJson.put(Constants.JSON_ORDERED_WEIGTH, weight);
+            childJson.put(Constants.JSON_ORDERED_WEIGHT, weight);
             childJson.put(Constants.JSON_FIELD_BRANCH_STATUS, branchStatus);
 
             if (children != null && !children.isEmpty()) {
@@ -611,7 +611,7 @@ public class Feature implements Serializable {
         sb.append(Constants.JSON_FEATURE_CONFIGURATION + " = ").append(configuration).append('\n');
         sb.append(Constants.JSON_FEATURE_CONFIGURATES_STATUSES + " = ").append(configurationStatuses).append('\n');
         sb.append(Constants.JSON_FEATURE_FIELD_PERCENTAGE + " = ").append(percentage).append('\n');
-        sb.append(Constants.JSON_ORDERED_WEIGTH + " = ").append(weight).append('\n');
+        sb.append(Constants.JSON_ORDERED_WEIGHT + " = ").append(weight).append('\n');
         sb.append(Constants.JSON_FIELD_BRANCH_STATUS + " = ").append(branchStatus).append('\n');
         sb.append(Constants.JSON_FIELD_PURCHASED + " = ").append(isPurchased).append('\n');
         sb.append(Constants.JSON_FIELD_IS_PREMIUM + " = ").append(isPremium).append('\n');

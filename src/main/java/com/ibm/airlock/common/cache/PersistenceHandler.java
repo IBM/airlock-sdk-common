@@ -39,6 +39,9 @@ public interface PersistenceHandler {
     JSONObject getFeaturesRandomMap();
 
     @CheckForNull
+    JSONObject getNotificationsRandomMap();
+
+    @CheckForNull
     JSONObject getStreamsRandomMap();
 
     void setFeaturesRandomMap(JSONObject randomMap);
@@ -121,7 +124,6 @@ public interface PersistenceHandler {
     @CheckForNull
     Set<String> readSet(String key);
 
-    @CheckForNull
     String read(String key, String defaultValue);
 
     void write(String key, String value);
@@ -178,9 +180,6 @@ public interface PersistenceHandler {
     void setSyncedFeaturesMap(FeaturesList syncServerFeatureList);
 
     void setPreSyncedFeaturesMap(FeaturesList syncServerFeatureList);
-
-    @CheckForNull
-    JSONObject getNotificationsRandomMap();
 
     void setNotificationsRandomMap(JSONObject randomMap);
 

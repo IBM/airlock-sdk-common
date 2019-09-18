@@ -49,8 +49,8 @@ public class Servers {
     }
 
     public void setCurrentServer(Server currentServer) {
-        if (currentServer == null) {
-            Logger.log.d(TAG, "Can't set null as default server. No server matches the given name " + currentServer.getDisplayName());
+        if (currentServer.getDisplayName().isEmpty()) {
+            Logger.log.d(TAG, "Can't set null as default server. No server matches the given empty name ");
         }
         this.currentServer = currentServer;
         sp.write(Constants.SP_CURRENT_SERVER, currentServer.toJson());

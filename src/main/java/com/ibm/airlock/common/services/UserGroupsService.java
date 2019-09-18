@@ -8,6 +8,7 @@ import com.ibm.airlock.common.util.AirlockMessages;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -83,7 +84,10 @@ public class UserGroupsService {
                 } catch (Exception e) {
                     callback.onSuccess("[]");
                 } finally {
-                    response.body().close();
+                    ResponseBody body = response.body();
+                    if (body != null){
+                        body.close();
+                    }
                 }
             }
         });

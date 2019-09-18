@@ -82,7 +82,7 @@ public class ProductDiModule {
     }
 
     @Provides
-    public StreamsService provideStreamsManagere() {
+    public StreamsService provideStreamsManager() {
         return streamsService;
     }
 
@@ -148,7 +148,7 @@ public class ProductDiModule {
     }
 
     @Provides
-    public String provideAppVersiob() {
+    public String provideAppVersion() {
         return appVersion;
     }
 

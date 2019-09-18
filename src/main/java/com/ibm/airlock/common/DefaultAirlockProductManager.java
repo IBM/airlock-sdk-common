@@ -76,8 +76,9 @@ public class DefaultAirlockProductManager extends AbstractAirlockProductManager 
     @Override
     protected void setLocale(PersistenceHandler persistenceHandler) {
         DefaultLocaleProvider defaultLocaleProvider = null;
+        String locale = persistenceHandler.read(Constants.SP_CURRENT_LOCALE, Locale.getDefault().toString());
         try {
-            defaultLocaleProvider = new DefaultLocaleProvider(persistenceHandler.read(Constants.SP_CURRENT_LOCALE, Locale.getDefault().toString()));
+            defaultLocaleProvider = new DefaultLocaleProvider(locale);
         } catch (Exception e) {
             Logger.log.e(TAG, e.getMessage());
         }

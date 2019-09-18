@@ -436,7 +436,7 @@ public class FeaturesCalculator {
             result.setPercentage(child.optDouble(Constants.JSON_FEATURE_FIELD_PERCENTAGE, 100.0));
 
             //set ordering weight
-            result.setOrderingWeight(child.optDouble(Constants.JSON_ORDERED_WEIGTH, 0));
+            result.setOrderingWeight(child.optDouble(Constants.JSON_ORDERED_WEIGHT, 0));
 
             // send reordered feature  for analytics
             if (hasReOrderingRules || hasDirectOrWithinMXGroupReOrderingRule) {
@@ -691,7 +691,7 @@ public class FeaturesCalculator {
                     try {
                         weight_a = Double.parseDouble(weights.optString("mx" + '.' +
                                 child_a.optString(Constants.JSON_FIELD_UNIQUE_ID)));
-                        child_a.put(Constants.JSON_ORDERED_WEIGTH, weight_a);
+                        child_a.put(Constants.JSON_ORDERED_WEIGHT, weight_a);
                     } catch (NumberFormatException e) {
                         // do nothing the value remains 0
                     }
@@ -700,7 +700,7 @@ public class FeaturesCalculator {
                         try {
                             weight_a = Double.parseDouble(weights.optString(child_a.optString(Constants.JSON_FEATURE_FIELD_NAMESPACE) + '.' +
                                     child_a.optString(Constants.JSON_FIELD_NAME)));
-                            child_a.put(Constants.JSON_ORDERED_WEIGTH, weight_a);
+                            child_a.put(Constants.JSON_ORDERED_WEIGHT, weight_a);
                         } catch (NumberFormatException e) {
                             // do nothing the value remains 0
                         }
@@ -710,7 +710,7 @@ public class FeaturesCalculator {
                     try {
                         weight_b = Double.parseDouble(weights.optString("mx" + '.' +
                                 child_b.optString(Constants.JSON_FIELD_UNIQUE_ID)));
-                        child_b.put(Constants.JSON_ORDERED_WEIGTH, weight_b);
+                        child_b.put(Constants.JSON_ORDERED_WEIGHT, weight_b);
                     } catch (NumberFormatException e) {
                         // do nothing the value remains 0
                     }
@@ -719,7 +719,7 @@ public class FeaturesCalculator {
                         try {
                             weight_b = Double.parseDouble(weights.optString(child_b.optString(Constants.JSON_FEATURE_FIELD_NAMESPACE) + '.' +
                                     child_b.optString(Constants.JSON_FIELD_NAME)));
-                            child_b.put(Constants.JSON_ORDERED_WEIGTH, weight_b);
+                            child_b.put(Constants.JSON_ORDERED_WEIGHT, weight_b);
                         } catch (NumberFormatException e) {
                             // do nothing the value remains 0
                         }
@@ -1089,7 +1089,7 @@ public class FeaturesCalculator {
         embedChild.put(Constants.JSON_FEATURE_IS_ON, result.isAccept());
         embedChild.put(Constants.JSON_FEATURE_TRACE, result.getTrace());
         embedChild.put(Constants.JSON_FEATURES_ATTRS, result.attributes.toString());
-        embedChild.put(Constants.JSON_ORDERED_WEIGTH, result.getOrderingWeight());
+        embedChild.put(Constants.JSON_ORDERED_WEIGHT, result.getOrderingWeight());
         embedChild.put(Constants.JSON_FEATURE_FIELD_PERCENTAGE, result.getPercentage());
         embedChild.put(Constants.JSON_FIELD_BRANCH_STATUS, result.getBranchStatus());
         embedChild.put(Constants.JSON_FIELD_PURCHASED, result.isPurchased());
@@ -1146,7 +1146,7 @@ public class FeaturesCalculator {
             this.attributes = attributes;
         }
 
-        public Fallback(boolean accept, boolean premiumRuleOn, JSONObject attributes) {
+        public Fallback(boolean accept, boolean premiumRuleOn,@Nullable JSONObject attributes) {
             this.accept = accept;
             this.premiumRuleOn = premiumRuleOn;
             this.attributes = attributes;

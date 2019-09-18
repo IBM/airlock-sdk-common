@@ -245,23 +245,29 @@ public class PercentageService {
             return false;
         }
 
-        int featureRandom = 0;
+        int randomNumber = 0;
+        JSONObject randomMap = null;
 
         switch (section) {
             case STREAMS:
-                featureRandom = persistenceHandler.getStreamsRandomMap().optInt(name);
+                randomMap = persistenceHandler.getStreamsRandomMap();
                 break;
             case FEATURES:
             case EXPERIMENTS:
             case ENTITLEMENTS:
                 //The feature and experiments reside on same key on map.
-                featureRandom = persistenceHandler.getFeaturesRandomMap().optInt(name);
+                randomMap = persistenceHandler.getFeaturesRandomMap();
                 break;
             case NOTIFICATIONS:
-                featureRandom = persistenceHandler.getNotificationsRandomMap().optInt(name);
+                randomMap = persistenceHandler.getNotificationsRandomMap();
                 break;
         }
-        return threshold >= featureRandom;
+
+        if (randomMap != null){
+            randomNumber = randomMap.optInt(name);
+        }
+
+        return threshold >= randomNumber;
     }
 
     public Double getPercentage(PercentageManager.Sections section, String name) {

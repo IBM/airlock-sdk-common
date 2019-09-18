@@ -20,6 +20,7 @@ import java.util.UUID;
  * @author Denis Voloshin
  */
 
+@SuppressWarnings("WeakerAccess")
 public abstract class AbstractAirlockProductManager implements AirlockProductManager {
 
     private static final String TAG = "AbstractAirlockProductManager";
@@ -193,7 +194,7 @@ public abstract class AbstractAirlockProductManager implements AirlockProductMan
 
 
     public String getAirlockUserUniqueId() throws AirlockNotInitializedException {
-        if (infraAirlockService.getAirlockUserUniqueId() == null) {
+        if (infraAirlockService.getAirlockUserUniqueId().isEmpty()) {
             throw new AirlockNotInitializedException(AirlockMessages.ERROR_SDK_NOT_INITIALIZED);
         }
         return infraAirlockService.getAirlockUserUniqueId();

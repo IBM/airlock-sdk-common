@@ -62,7 +62,6 @@ public class ExperimentsCalculator extends FeaturesCalculator {
 
         //no pre-selected branch
         if (branchInfo == null) {
-            @SuppressWarnings("ConstantConditions")
             JSONObject previousExperimentInfo = new JSONObject(ph.read(Constants.SP_EXPERIMENT_INFO, "{}"));
             String previousVariantId = previousExperimentInfo.optString(Constants.JSON_FIELD_VARIANT);
             long previousDateJoined = previousExperimentInfo.optLong(JSON_FIELD_VARIANT_DATE_JOINED);

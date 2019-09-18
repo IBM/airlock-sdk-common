@@ -226,7 +226,7 @@ public class Constants {
     public static final String JSON_FIELD_DEVICE_EXPERIMENTS_LIST = "deviceExperimentsList";
     public static final String JSON_FIELD_NAME = "name";
     public static final String JSON_FIELD_UNIQUE_ID = "uniqueId";
-    public static final String JSON_ORDERED_WEIGTH = "weight";
+    public static final String JSON_ORDERED_WEIGHT = "weight";
     //Debug Screen
     public static final String DEVICE_CONTEXT = "deviceContext";
     public static final String DEFAULT_FILE_ID = "defaultFileId";

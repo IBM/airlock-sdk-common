@@ -119,7 +119,7 @@ public class BaseRawFeaturesJsonParser {
         childFeature.setAnalyticsAppliedOrderRules(getAppliedOrderRules(childAsJson));
 
         childFeature.setPercentage(childAsJson.optDouble(Constants.JSON_FEATURE_FIELD_PERCENTAGE, 100));
-        childFeature.setWeight(childAsJson.optDouble(Constants.JSON_ORDERED_WEIGTH, 0));
+        childFeature.setWeight(childAsJson.optDouble(Constants.JSON_ORDERED_WEIGHT, 0));
         childFeature.setBranchStatus(Feature.BranchStatus.valueOf(
                 childAsJson.optString(Constants.JSON_FIELD_BRANCH_STATUS, "NONE")));
 

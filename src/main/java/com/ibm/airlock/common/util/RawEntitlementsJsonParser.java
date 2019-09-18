@@ -56,7 +56,7 @@ public class RawEntitlementsJsonParser extends BaseRawFeaturesJsonParser {
             purchaseOptionsRoot.put(Constants.JSON_FEATURE_FIELD_TYPE, Feature.Type.PURCHASE_OPTIONS);
             purchaseOptionsRoot.put(Constants.JSON_FIELD_PURCHASE_OPTIONS, purchaseOptionsAsJson);
             if (childFeature instanceof Entitlement) {
-                ((Entitlement) childFeature).setPurchaseOptions(getPurchasOptions(purchaseOptionsRoot, source).getMutableChildrenList());
+                ((Entitlement) childFeature).setPurchaseOptions(getPurchaseOptions(purchaseOptionsRoot, source).getMutableChildrenList());
             } else if (childFeature instanceof PurchaseOption) {
                 ((PurchaseOption) childFeature).setStores(childAsJson.getJSONArray(Constants.JSON_FIELD_STORE_PRODUCTS));
             }
@@ -64,7 +64,7 @@ public class RawEntitlementsJsonParser extends BaseRawFeaturesJsonParser {
     }
 
 
-    private FeaturesList getPurchasOptions(JSONObject root, Feature.Source source) throws JSONException, ScriptExecutionException {
+    private FeaturesList getPurchaseOptions(JSONObject root, Feature.Source source) throws JSONException, ScriptExecutionException {
         PurchaseOption feature = new PurchaseOption(FeaturesCalculator.FeatureType.ROOT.toString().toLowerCase(Locale.getDefault()), true,
                 source == Feature.Source.UNKNOWN ? getSource(root) : source);
         FeaturesList out = new FeaturesList();
