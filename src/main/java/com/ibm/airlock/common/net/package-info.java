@@ -8,5 +8,5 @@ package com.ibm.airlock.common.net;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import com.ibm.airlock.common.util.ReturnValuesAreNonnullByDefault;
+import edu.umd.cs.findbugs.annotations.ReturnValuesAreNonnullByDefault;
 

@@ -1,22 +1,34 @@
 package com.ibm.airlock.common.engine;
 
+import com.ibm.airlock.common.cache.CacheManager;
 import com.ibm.airlock.common.cache.PersistenceHandler;
-import com.ibm.airlock.common.engine.entitlements.EntitlementsBranchMerger;
-import com.ibm.airlock.common.engine.entitlements.EntitlementsCalculator;
-import com.ibm.airlock.common.engine.features.FeaturesBranchMerger;
-import com.ibm.airlock.common.engine.features.FeaturesCalculator;
-import com.ibm.airlock.common.services.InfraAirlockService;
 import com.ibm.airlock.common.util.Constants;
 import com.ibm.airlock.common.util.Pair;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
 import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
-import java.util.*;
 
-import static com.ibm.airlock.common.util.Constants.*;
+import static com.ibm.airlock.common.util.Constants.JSON_FEATURE_FIELD_MAX_VERSION;
+import static com.ibm.airlock.common.util.Constants.JSON_FEATURE_FIELD_MIN_VERSION;
+import static com.ibm.airlock.common.util.Constants.JSON_FEATURE_FIELD_PERCENTAGE;
+import static com.ibm.airlock.common.util.Constants.JSON_FIELD_BRANCH_NAME;
+import static com.ibm.airlock.common.util.Constants.JSON_FIELD_VARIANT_DATE_JOINED;
 
 
 /**
@@ -28,7 +40,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
     private static final String DEV_MODE = "DevelopmentMode";
     private static final String MASTER_DEFAULT = "default";
 
-    public CalculationResults calculate(InfraAirlockService infraAirlockService, @Nullable JSONObject runtimeFeatures,
+    public CalculationResults calculate(CacheManager cacheManager, @Nullable JSONObject runtimeFeatures,
                                         @Nullable JSONObject context, String functions, JSONObject translations,
                                         @Nullable List<String> userGroups, @Nullable Map<String, Fallback> fallback,
                                         @Nullable String productVersion, @Nullable JSONObject featureRandomNumber,
@@ -36,7 +48,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
                                         boolean isAllowExperimentEvaluation)
             throws JSONException, FeaturesBranchMerger.MergeException, ScriptInitException {
 
-        final PersistenceHandler ph = infraAirlockService.getPersistenceHandler();
+        final PersistenceHandler ph = cacheManager.getPersistenceHandler();
 
         if (context == null) {
             context = new JSONObject("{}");
@@ -54,7 +66,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
             fallback = new Hashtable<>();
         }
 
-        ScriptInvoker invoker = createJsObjects(infraAirlockService.getAirlockContextManager(), context, functions, translations, userGroups);
+        ScriptInvoker invoker = createJsObjects(cacheManager.getAirlockContextManager(), context, functions, translations, userGroups);
         AdditionalData additionalData = new AdditionalData(userGroups, productVersion, featureRandomNumber, purchasedIds, null);
 
         // get selected branch if was selected (dev mode)....
@@ -76,7 +88,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
                 }
             } else {
                 branchInfo = findExperiments(ph, runtimeFeatures, invoker, additionalData, fallback);
-                if (!branchInfo.isEmpty()) {
+                if (branchInfo != null && !branchInfo.isEmpty()) {
                     if (!previousVariantId.isEmpty() && branchInfo.get(0).variant != null && branchInfo.get(0).variant.equals(previousVariantId)) {
                         branchInfo.get(0).dateJoinedVariant = previousDateJoined;
                     } else {
@@ -90,10 +102,9 @@ public class ExperimentsCalculator extends FeaturesCalculator {
             final String currentBranchName = branchInfo.get(0).branch;
             String previousBranchName = ph.getLastBranchName();
             if (!previousBranchName.equals(currentBranchName)) {
-                infraAirlockService.resetFeaturesToDefault();
-                infraAirlockService.resetEntitlementsToDefault();
+                cacheManager.resetFeaturesToDefault();
+                cacheManager.resetEntitlementsToDefault();
                 new Thread() {
-                    @Override
                     public void run() {
                         ph.write(Constants.SP_BRANCH_NAME, currentBranchName == null ? "" : currentBranchName);
                     }
@@ -102,7 +113,6 @@ public class ExperimentsCalculator extends FeaturesCalculator {
         } else {
             branchInfo = new ArrayList<>();
             new Thread() {
-                @Override
                 public void run() {
                     ph.write(Constants.SP_BRANCH_NAME, "");
                 }
@@ -115,9 +125,13 @@ public class ExperimentsCalculator extends FeaturesCalculator {
         JSONObject rootFeatures = getRoot(runtimeTree);
         AirlockEnginePerformanceMetric.getAirlockEnginePerformanceMetric().report(AirlockEnginePerformanceMetric.BRANCH_MERGING, start);
 
+
+        if (rootFeatures == null) {
+            return new CalculationResults();
+        }
         EntitlementsCalculator entitlementsCalculator = new EntitlementsCalculator();
 
-        final JSONObject entitlements = entitlementsCalculator.calculate(infraAirlockService, runtimeTree,
+        final JSONObject entitlements = entitlementsCalculator.calculate(cacheManager, runtimeTree,
                 context, functions, translations, userGroups, fallback,
                 productVersion, featureRandomNumber, null, null);
 
@@ -130,8 +144,9 @@ public class ExperimentsCalculator extends FeaturesCalculator {
         AirlockEnginePerformanceMetric.getAirlockEnginePerformanceMetric().report(AirlockEnginePerformanceMetric.CALCULATION_FEATURES, start);
         AirlockEnginePerformanceMetric.getAirlockEnginePerformanceMetric().reportValue(AirlockEnginePerformanceMetric.EVALS_COUNTER, invoker.getEvalsCounter());
 
+
         // handle Notifications
-        infraAirlockService.getNotificationService().calculateAndSaveNotifications(invoker);
+        cacheManager.getNotificationsManager().calculateAndSaveNotifications(invoker);
         invoker.exit();
 
         CalculationResults calculationResults = new CalculationResults();
@@ -149,7 +164,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
                 JSONObject calculatedExperiment = new JSONObject();
                 String experimentName = experiment.getString(Constants.JSON_FEATURE_FIELD_NAME);
                 calculatedExperiment.put(Constants.JSON_FEATURE_FIELD_NAME, experimentName);
-                calculatedExperiment.put(Constants.JSON_FEATURE_FIELD_VERSION_RANGE, experiment.getString(JSON_FEATURE_FIELD_MIN_VERSION) + (experiment.get(JSON_FEATURE_FIELD_MAX_VERSION).equals(JSONObject.NULL) ? (" to " + experiment.get(JSON_FEATURE_FIELD_MAX_VERSION)) : " and up"));
+                calculatedExperiment.put(Constants.JSON_FEATURE_FIELD_VERSION_RANGE, experiment.getString(JSON_FEATURE_FIELD_MIN_VERSION) + (experiment.get(JSON_FEATURE_FIELD_MAX_VERSION) == JSONObject.NULL ? (" to " + experiment.get(JSON_FEATURE_FIELD_MAX_VERSION)) : " and up"));
                 calculatedExperiment.put(Constants.JSON_FEATURE_FIELD_PERCENTAGE, experiment.optDouble(JSON_FEATURE_FIELD_PERCENTAGE, 100));
                 Result res = calculationResults.get(Pair.create(experimentName, ""));
                 if (res != null) {
@@ -188,7 +203,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
                 calculatedExperimentsArray.put(calculatedExperiment);
             }
             ph.write(Constants.JSON_FIELD_DEVICE_EXPERIMENTS_LIST, (new JSONObject().put(Constants.JSON_FIELD_EXPERIMENTS, calculatedExperimentsArray).toString()));
-        } catch (JSONException ignored) {
+        } catch (JSONException e) {
 
         }
     }
@@ -206,7 +221,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
     }
 
 
-    private static JSONObject applyBranchesToMainRuntimeTree(PersistenceHandler ph, @Nullable JSONObject masterAndBranches,@Nullable List<BranchInfo> branchInfo) throws JSONException,
+    private static JSONObject applyBranchesToMainRuntimeTree(PersistenceHandler ph, @Nullable JSONObject masterAndBranches, List<BranchInfo> branchInfo) throws JSONException,
             FeaturesBranchMerger.MergeException {
         if (masterAndBranches == null) {
             return new JSONObject();
@@ -238,7 +253,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
 
         JSONArray experimentNames = new JSONArray();
 
-        // the master's analytics are already merged into the experiments, just get the model from the experiments
+        // the master's analytics are already merged into the experiments, just get the data from the experiments
         JSONObject barInfo = new JSONObject();
         TreeSet<String> inputAnalytics = new TreeSet<>();
         TreeSet<String> nameAnalytics = new TreeSet<>();
@@ -255,7 +270,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
                     isDevMode = true;
                     experimentNames.put(DEV_MODE);
                 } else {
-                    experimentNames.put(info.experiment + '/' + info.variant);
+                    experimentNames.put(info.experiment + "/" + info.variant);
                 }
 
                 JSONObject branch;
@@ -278,7 +293,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
                 if (isDevMode) {
                     break;
                 }
-                // the experiment model is used even running with the default master
+                // the experiment data is used even running with the default master
                 if (info.experiment != null && !info.experiment.isEmpty()) {
                     JSONObject experiment = findExperiment(masterAndBranches, info.experiment);
                     addAnalytics(experiment, Constants.JSON_FIELD_INPUT_FIELDS_FOR_ANALYTICS, inputAnalytics);
@@ -298,7 +313,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
         copyAnalytics(featuresNamesMap, nameAnalytics);
         copyAnalytics(featuresNamesMap, attrAnalytics);
         String branchName = Constants.JSON_FIELD_ROOT;
-        if (!branchInfo.isEmpty()) {
+        if (branchInfo.size() > 0) {
             branchName = branchInfo.get(0).branch;
         }
         out.put(JSON_FIELD_BRANCH_NAME, branchName);//when branch is changed - cached feature list should not be used on merge.
@@ -407,6 +422,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
         }
     }
 
+
     private List<BranchInfo> findExperiments(PersistenceHandler ph, @Nullable JSONObject parent, ScriptInvoker invoker, AdditionalData additionalData, Map<String,
             Fallback> fallback) {
         ArrayList<BranchInfo> out = new ArrayList<>();
@@ -490,7 +506,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
         JSONObject features;
         JSONObject entitlements;
 
-        CalculationResults() {
+        public CalculationResults() {
             features = new JSONObject();
             entitlements = new JSONObject();
         }
@@ -504,7 +520,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
             return features;
         }
 
-        void setFeatures(JSONObject features) {
+        public void setFeatures(JSONObject features) {
             this.features = features;
         }
 
@@ -512,7 +528,7 @@ public class ExperimentsCalculator extends FeaturesCalculator {
             return entitlements;
         }
 
-        void setEntitlements(JSONObject entitlements) {
+        public void setEntitlements(JSONObject entitlements) {
             this.entitlements = entitlements;
         }
     }

@@ -3,7 +3,7 @@ package com.ibm.airlock.common;
 /**
  * Used for the application to receive callbacks for sync functions.
  *
- * @author Denis Voloshin
+ * @author Rachel Levy
  */
 public interface AirlockCallback {
     /**

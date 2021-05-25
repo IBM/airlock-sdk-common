@@ -11,7 +11,7 @@ import org.json.JSONObject;
 public class ConfigScriptExecutionException extends ScriptExecutionException {
     private JSONObject config;
 
-    public ConfigScriptExecutionException(String msg) {
+    ConfigScriptExecutionException(String msg) {
         super(msg);
     }
 

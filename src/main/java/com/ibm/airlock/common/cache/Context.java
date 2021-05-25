@@ -1,6 +1,5 @@
 package com.ibm.airlock.common.cache;
 
-import javax.annotation.CheckForNull;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,29 +13,18 @@ import java.io.InputStream;
 
 public interface Context {
 
-    String getAirlockProductName();
+    public File getFilesDir();
 
-    String getEncryptionKey();
+    public SharedPreferences getSharedPreferences(String spName, int modePrivate);
 
-    String getSeasonId();
+    public void deleteFile(String key);
 
-    String getInstanceId();
+    public FileInputStream openFileInput(String preferenceName) throws FileNotFoundException;
 
-    String getAppVersion();
+    public FileOutputStream openFileOutput(String name,
+            int mode) throws FileNotFoundException;
 
-    File getFilesDir();
+    public Object getSystemService(String name);
 
-    @CheckForNull
-    SharedPreferences getSharedPreferences(String spName, int modePrivate);
-
-    void deleteFile(String key);
-
-    FileInputStream openFileInput(String preferenceName) throws FileNotFoundException;
-
-    FileOutputStream openFileOutput(String name,
-                                    int mode) throws FileNotFoundException;
-
-    Object getSystemService(String name);
-
-    InputStream openRawResource(int name);
+    public InputStream openRawResource(int name);
 }

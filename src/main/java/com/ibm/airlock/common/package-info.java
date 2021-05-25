@@ -1,15 +1,12 @@
 /**
- * Domain classes used to produce root airlock objects
- * <p>
- * This package contains classes that let you create the main airlock management classes.
- * </p>
+ * This package contains public methods that developers use to air-lock features
  */
 
 @ParametersAreNonnullByDefault
 @ReturnValuesAreNonnullByDefault
 package com.ibm.airlock.common;
 
-import com.ibm.airlock.common.util.ReturnValuesAreNonnullByDefault;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import edu.umd.cs.findbugs.annotations.ReturnValuesAreNonnullByDefault;
 

@@ -1,112 +1,127 @@
 package com.ibm.airlock.common.cache;
 
-import com.google.common.annotations.VisibleForTesting;
+/**
+ * Created by Denis Voloshin on 05/11/2017.
+ */
+
 import com.ibm.airlock.common.AirlockCallback;
+import com.ibm.airlock.common.data.Feature;
+import com.ibm.airlock.common.data.FeaturesList;
 import com.ibm.airlock.common.log.Logger;
-import com.ibm.airlock.common.model.Feature;
-import com.ibm.airlock.common.model.FeaturesList;
-import com.ibm.airlock.common.services.StreamsService;
+import com.ibm.airlock.common.streams.StreamsManager;
 import com.ibm.airlock.common.util.Constants;
+
+import org.jetbrains.annotations.TestOnly;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Set;
+
 import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
-import java.io.*;
-import java.util.*;
 
-import static com.ibm.airlock.common.util.Constants.*;
+import static com.ibm.airlock.common.util.Constants.JSON_FEATURE_FIELD_FEATURES;
+import static com.ibm.airlock.common.util.Constants.JSON_FIELD_EXPERIMENTS;
+import static com.ibm.airlock.common.util.Constants.JSON_FIELD_FEATURES;
+import static com.ibm.airlock.common.util.Constants.JSON_FIELD_NOTIFICATIONS;
+import static com.ibm.airlock.common.util.Constants.JSON_FIELD_ROOT;
+import static com.ibm.airlock.common.util.Constants.JSON_FIELD_STREAMS;
+
 
 /**
- * Created by Denis Voloshin
+ * Created by Denis Voloshin on 01/11/2017.
  */
 
 public abstract class BasePersistenceHandler implements PersistenceHandler {
 
-    protected static final Object lock = new Object();
+    protected final static Object lock = new Object();
 
-    private static final String TAG = "BasePersistenceHandler";
+    protected final String TAG = "BasePersistenceHandler";
 
     protected final Set<String> filePersistPreferences = new HashSet<>(Arrays.asList(
-            Constants.SP_CURRENT_CONTEXT, Constants.SP_DEFAULT_FILE, Constants.SP_RAW_RULES,
+            new String[]{Constants.SP_CURRENT_CONTEXT, Constants.SP_DEFAULT_FILE, Constants.SP_RAW_RULES,
                     Constants.SP_RAW_JS_FUNCTIONS, Constants.SP_RAW_TRANSLATIONS, Constants
                     .SP_RANDOMS, Constants.SP_FEATURE_USAGE_STREAMS,
                     Constants.SP_NOTIFICATIONS, Constants.SP_FIRED_NOTIFICATIONS, Constants.SP_NOTIFICATIONS_HISTORY,
-                    Constants.SP_FEATURES_PERCENTAGE_MAP, Constants.SP_SYNCED_FEATURES_LIST,
+                    Constants.SP_FEATURES_PERCENAGE_MAP, Constants.SP_SYNCED_FEATURES_LIST,
                     Constants.SP_SERVER_FEATURE_LIST, Constants.SP_PRE_SYNCED_FEATURES_LIST,
                     Constants.SP_FEATURE_UTILS_STREAMS
-
+            }
     ));
     protected final Set<String> saveAsJSONPreferences = new HashSet<>(Arrays.asList(
-            Constants.SP_CURRENT_CONTEXT, Constants.SP_DEFAULT_FILE, Constants.SP_RAW_RULES,
+            new String[]{Constants.SP_CURRENT_CONTEXT, Constants.SP_DEFAULT_FILE, Constants.SP_RAW_RULES,
                     Constants.SP_RAW_TRANSLATIONS, Constants.SP_RANDOMS, Constants
                     .SP_FEATURE_USAGE_STREAMS, Constants.SP_NOTIFICATIONS,
                     Constants.SP_FIRED_NOTIFICATIONS, Constants.SP_NOTIFICATIONS_HISTORY,
-                    Constants.SP_FEATURES_PERCENTAGE_MAP, Constants.SP_SYNCED_FEATURES_LIST,
+                    Constants.SP_FEATURES_PERCENAGE_MAP, Constants.SP_SYNCED_FEATURES_LIST,
                     Constants.SP_SERVER_FEATURE_LIST, Constants.SP_PRE_SYNCED_FEATURES_LIST,
                     Constants.SP_PRE_SYNCED_ENTITLEMENTS_LIST, Constants.SP_SYNCED_ENTITLEMENTS_LIST
-
+            }
     ));
 
-    protected Cacheable<String, Object> inMemoryPreferences = new InMemoryCache<>();
+    protected Cacheable inMemoryPreferences = new InMemoryCache();
 
     protected SharedPreferences preferences;
 
     protected Context context;
 
-    BasePersistenceHandler() {
+    public BasePersistenceHandler() {
         super();
     }
 
-    protected BasePersistenceHandler(Context c) {
+    public BasePersistenceHandler(Context c) {
         init(c);
     }
 
-    protected void setContext(Context context) {
+    public void setContext(Context context) {
         this.context = context;
         init(context);
     }
 
-    @Override
     public abstract void init(Context c, AirlockCallback callback);
 
-    @Override
     public abstract void init(Context c);
 
-    @Override
     public abstract void reset(Context c);
 
 
-    @Override
     public FeaturesList getCachedPreSyncedFeaturesMap() {
         String featureValues = read(Constants.SP_PRE_SYNCED_FEATURES_LIST, "");
-        if (featureValues.isEmpty()) {
+        if (featureValues.length() == 0) {
             return new FeaturesList();
         }
         return new FeaturesList(featureValues, Feature.Source.UNKNOWN);
     }
 
-    @Override
     public FeaturesList getCachedSyncedFeaturesMap() {
         String featureValues = read(Constants.SP_SYNCED_FEATURES_LIST, "");
-        if (featureValues.isEmpty()) {
+        if (featureValues.length() == 0) {
             return new FeaturesList();
         }
         return new FeaturesList(featureValues, Feature.Source.UNKNOWN);
     }
 
 
-    @Override
     public FeaturesList getCachedFeatureMap() {
         String featureValues = read(Constants.SP_SERVER_FEATURE_LIST, "");
-        if (featureValues.isEmpty()) {
+        if (featureValues.length() == 0) {
             return new FeaturesList();
         }
         return new FeaturesList(featureValues, Feature.Source.UNKNOWN);
     }
 
-    private JSONObject getRandomMap(String key) {
+    public JSONObject getRandomMap(String key) {
         JSONObject randoms = readJSON(Constants.SP_RANDOMS);
         JSONObject result = randoms.optJSONObject(key);
         if (result == null){
@@ -115,47 +130,42 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
         return result;
     }
 
-    @Override
     public JSONObject getRandomMap() {
         return readJSON(Constants.SP_RANDOMS);
     }
 
-    @Override
+    @CheckForNull
     public JSONObject getFeaturesRandomMap() {
         return getRandomMap(JSON_FIELD_FEATURES);
     }
 
-    @Override
+    @CheckForNull
     public JSONObject getStreamsRandomMap() {
         return getRandomMap(JSON_FIELD_STREAMS);
     }
 
-    @Override
+    @CheckForNull
     public JSONObject getExperimentsRandomMap() {
         return getRandomMap(JSON_FIELD_EXPERIMENTS);
     }
 
-    @Override
+    @CheckForNull
     public JSONObject getNotificationsRandomMap() {
         return getRandomMap(JSON_FIELD_NOTIFICATIONS);
     }
 
-    @Override
     public void setFeaturesRandomMap(JSONObject randomsMap) {
         setRandomMap(JSON_FEATURE_FIELD_FEATURES, randomsMap);
     }
 
-    @Override
     public void setStreamsRandomMap(JSONObject randomsMap) {
         setRandomMap(JSON_FIELD_STREAMS, randomsMap);
     }
 
-    @Override
     public void setExperimentsRandomMap(JSONObject randomsMap) {
         setRandomMap(JSON_FEATURE_FIELD_FEATURES, randomsMap);
     }
 
-    @Override
     public void setNotificationsRandomMap(JSONObject randomsMap) {
         setRandomMap(JSON_FIELD_NOTIFICATIONS, randomsMap);
     }
@@ -170,10 +180,9 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      * Stores a map of user groups
      * each group could be selected on not.
      *
-     * @throws JSONException on case of JSON parsing error
+     * @throws JSONException
      */
-    @Override
-    public void storeDeviceUserGroups(@Nullable List<String> userGroups, @Nullable StreamsService streamsService) {
+    public void storeDeviceUserGroups(@Nullable List<String> userGroups, @Nullable StreamsManager streamsManager) {
         if (userGroups == null) {
             write(Constants.SP_USER_GROUPS, "");
             return;
@@ -182,12 +191,12 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
         for (int i = 0; i < userGroups.size(); i++) {
             sb.append(userGroups.get(i));
             if (i < userGroups.size() - 1) {
-                sb.append(',');
+                sb.append(",");
             }
         }
         write(Constants.SP_USER_GROUPS, sb.toString());
-        if (streamsService != null) {
-            streamsService.updateStreamsEnablement();
+        if (streamsManager != null) {
+            streamsManager.updateStreamsEnablement();
         }
     }
 
@@ -197,7 +206,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      *
      * @return the name of a selected develop branch
      */
-    @Override
     public String getDevelopBranchName() {
         return read(Constants.SP_DEVELOP_BRANCH_NAME, "").trim();
     }
@@ -205,7 +213,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     /**
      * Stores a selected develop branch name to the local store
      */
-    @Override
     public void setDevelopBranchName(String selectedDevelopBranchName) {
         write(Constants.SP_DEVELOP_BRANCH_NAME, selectedDevelopBranchName);
     }
@@ -215,7 +222,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      *
      * @return the name of the last branch name used
      */
-    @Override
     public String getLastBranchName() {
         return read(Constants.SP_BRANCH_NAME, JSON_FIELD_ROOT);
     }
@@ -223,7 +229,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     /**
      * Stores the current branch name to the local store
      */
-    @Override
     public void setLastBranchName(String selectedDevelopBranchName) {
         write(Constants.SP_BRANCH_NAME, selectedDevelopBranchName);
     }
@@ -233,7 +238,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      *
      * @return the id of a selected develop branch
      */
-    @Override
     public String getDevelopBranchId() {
         return read(Constants.SP_DEVELOP_BRANCH_ID, "").trim();
     }
@@ -241,7 +245,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     /**
      * Stores a selected develop branch id to the local store
      */
-    @Override
     public void setDevelopBranchId(String selectedDevelopBranchId) {
         write(Constants.SP_DEVELOP_BRANCH_ID, selectedDevelopBranchId);
     }
@@ -251,7 +254,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      *
      * @return the name of a selected develop branch
      */
-    @Override
     public String getDevelopBranch() {
         return read(Constants.SP_DEVELOP_BRANCH, "").trim();
     }
@@ -260,7 +262,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     /**
      * Stores a selected develop branch config (in JSON) to the local store
      */
-    @Override
     public synchronized void setDevelopBranch(String selectedDevelopBranch) {
         write(Constants.SP_DEVELOP_BRANCH, selectedDevelopBranch);
     }
@@ -272,24 +273,24 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      *
      * @return a list of user groups
      */
-    @Override
     public List<String> getDeviceUserGroups() {
         List<String> result = new ArrayList<>();
         String groups = read(Constants.SP_USER_GROUPS, "");
-        if (groups.isEmpty()) {
+        if (groups.equals("")) {
             return result;
         }
         String[] groupsArray = groups.split(",");
         return Arrays.asList(groupsArray);
     }
 
-    @Override
     public JSONObject readJSON(String key) {
         JSONObject value;
-        if (inMemoryPreferences.containsKey(key)) {
-            value = (JSONObject) inMemoryPreferences.get(key);
-        } else {
-            value = (JSONObject) readSinglePreferenceFromFileSystem(key);
+        synchronized (lock) {
+            if (inMemoryPreferences.containsKey(key)) {
+                value = (JSONObject) inMemoryPreferences.get(key);
+            } else {
+                value = (JSONObject) readSinglePreferenceFromFileSystem(key);
+            }
         }
         if (value == null) {
             value = new JSONObject();
@@ -297,14 +298,13 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
         return value;
     }
 
-    @Override
     @CheckForNull
-    public Set<String> readSet(@Nullable String key) {
-        if (key == null) {
+    public Set<String> readSet(String key) {
+        if (this.preferences.getString(key, key) == null) {
             return null;
         }
         try {
-            @SuppressWarnings("ConstantConditions") JSONArray array = new JSONArray(preferences.getString(key, key));
+            JSONArray array = new JSONArray(this.preferences.getString(key, key));
             Set<String> set = new HashSet<String>() {
             };
             int len = array.length();
@@ -318,21 +318,21 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
     }
 
 
-    @SuppressWarnings("ConstantConditions")
-    String readFromMemory(String key, String defaultValue) {
-        if (inMemoryPreferences.containsKey(key) && inMemoryPreferences.get(key) != null) {
-            return inMemoryPreferences.get(key).toString();
-        } else {
-            Object fileContent = readSinglePreferenceFromFileSystem(key);
-            if (fileContent != null) {
-                return fileContent.toString();
+    protected String readFromMemory(String key, String defaultValue) {
+        synchronized (lock) {
+            if (inMemoryPreferences.containsKey(key) && inMemoryPreferences.get(key) != null) {
+                return inMemoryPreferences.get(key).toString();
             } else {
-                return defaultValue;
+                Object fileContent = readSinglePreferenceFromFileSystem(key);
+                if (fileContent != null) {
+                    return fileContent.toString();
+                } else {
+                    return defaultValue;
+                }
             }
         }
     }
 
-    @Override
     public String read(String key, String defaultValue) {
         String value;
         if (filePersistPreferences.contains(key)) {
@@ -344,43 +344,35 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
                 value = defaultValue;
             }
         }
-        //noinspection ConstantConditions
         return value;
     }
 
-    @Override
     public abstract void write(String key, String value);
 
-    @Override
     public abstract void write(String key, JSONObject value);
 
     /**
-     * The reason this has a separate method is because it is called when app stops - so we need to persist synchronously
+     * The reason this has a seperate method is because it is called when app stopps - so we need to persist synchronously
      *
-     * @param jsonAsString the json value as string
+     * @param jsonAsString
      */
-    @Override
     public abstract void writeStream(String name, String jsonAsString);
 
     public abstract void deleteStream(String name);
 
     /**
-     * The reason this has a separate method is because it is called when app stops - so we need to persist synchronously
+     * The reason this has a seperate method is because it is called when app stopps - so we need to persist synchronously
      */
-    @Override
     public abstract JSONObject readStream(String name);
 
-    @Override
     public long read(String key, long defaultValue) {
         return preferences.getLong(key, defaultValue);
     }
 
-    @Override
-    public boolean isBooleanTrue(String key, boolean defaultValue) {
-        return preferences.isBooleanTrue(key, defaultValue);
+    public boolean readBoolean(String key, boolean defaultValue) {
+        return preferences.getBoolean(key, defaultValue);
     }
 
-    @Override
     public void write(String key, long value) {
         Logger.log.d(TAG, "Write to SP  " + key + " = " + value);
         SharedPreferences.Editor spEditor = preferences.edit();
@@ -388,7 +380,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
         spEditor.apply();
     }
 
-    @Override
     public void write(String key, int value) {
         Logger.log.d(TAG, "Write to SP  " + key + " = " + value);
         SharedPreferences.Editor spEditor = preferences.edit();
@@ -396,12 +387,10 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
         spEditor.apply();
     }
 
-    @Override
     public int read(String key, int defaultValue) {
         return preferences.getInt(key, defaultValue);
     }
 
-    @Override
     public void write(String key, boolean value) {
         Logger.log.d(TAG, "Write to SP  " + key + " = " + value);
         SharedPreferences.Editor spEditor = preferences.edit();
@@ -412,7 +401,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
 
     protected void updateSeasonIdAndClearRuntimeData(String seasonId) {
         String currentId = preferences.getString(Constants.SP_SEASON_ID, "");
-        if (currentId != null && !currentId.equalsIgnoreCase(seasonId)) {
+        if (!currentId.equalsIgnoreCase(seasonId)) {
             resetSeason(seasonId);
         }
     }
@@ -426,7 +415,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
         clearExperiments();
     }
 
-    private void resetSeason(String seasonId) {
+    protected void resetSeason(String seasonId) {
         SharedPreferences.Editor spEditor = preferences.edit();
         spEditor.putString(Constants.SP_SEASON_ID, seasonId);
         spEditor.putLong(Constants.SP_LAST_FEATURES_PULL_TIME, Constants.TIME_NOT_DEFINED);
@@ -440,54 +429,51 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
         spEditor.putString(Constants.SP_LAST_TIME_PRODUCT_CHANGED, "");
         spEditor.remove(Constants.SP_SERVER_FEATURE_LIST);
         spEditor.apply();
-        inMemoryPreferences.remove(Constants.SP_RAW_RULES);
-        inMemoryPreferences.remove(Constants.SP_RAW_TRANSLATIONS);
-        inMemoryPreferences.remove(Constants.SP_RAW_JS_FUNCTIONS);
+        synchronized (lock) {
+            inMemoryPreferences.remove(Constants.SP_RAW_RULES);
+            inMemoryPreferences.remove(Constants.SP_RAW_TRANSLATIONS);
+            inMemoryPreferences.remove(Constants.SP_RAW_JS_FUNCTIONS);
+        }
     }
 
-    @Override
     public void clearExperiments() {
         SharedPreferences.Editor spEditor = preferences.edit();
         spEditor.remove(Constants.SP_EXPERIMENT_INFO);
         spEditor.apply();
     }
 
-    @Override
     public void clear() {
         SharedPreferences.Editor spEditor = preferences.edit();
         spEditor.clear().apply();
         //On test scenario's context could be null or the filesDir could be null
-        //noinspection ConstantConditions
         if (context != null && context.getFilesDir() != null) {
-            for (String key : inMemoryPreferences.keySet()) {
-                context.deleteFile(key);
+            synchronized (lock) {
+                for (String key : (Set<String>) inMemoryPreferences.keySet()) {
+                    context.deleteFile(key);
+                }
             }
-
             Hashtable<String, String> filesShouldBeDeleted = new Hashtable<>();
             for (String file : filePersistPreferences) {
                 filesShouldBeDeleted.put(file, file);
             }
 
-            File list = new File(context.getFilesDir().getPath());
+            File list = new File(context.getFilesDir().toString());
             File[] files = list.listFiles();
-            if (files != null){
-                for (File file : files) {
-                    if (filesShouldBeDeleted.containsKey(file.getName())) {
-                        //noinspection ResultOfMethodCallIgnored
-                        file.delete();
-                    }
+            for (int i = 0; i < files.length; i++) {
+                if (filesShouldBeDeleted.containsKey(files[i].getName())) {
+                    files[i].delete();
                 }
             }
-
         }
         inMemoryPreferences.clear();
     }
 
     //This method is to simulate app restarting after definition exists on SharedPreferences and file system (but not in memory)
-    @Override
-    @VisibleForTesting
+    @TestOnly
     public void clearInMemory() {
-        inMemoryPreferences.clear();
+        synchronized (lock) {
+            inMemoryPreferences.clear();
+        }
     }
 
     /**
@@ -495,8 +481,6 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
      *
      * @return true is the airlock product season was set otherwise false.
      */
-    @Override
-    @SuppressWarnings("VariableNotUsedInsideIf")
     public boolean isInitialized() {
         boolean result = false;
         if (preferences != null) {
@@ -505,25 +489,21 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
         return result;
     }
 
-    @Override
     public void setPreSyncedFeaturesMap(FeaturesList map) {
         String features = map.toJsonObject().toString();
         write(Constants.SP_PRE_SYNCED_FEATURES_LIST, features);
     }
 
-    @Override
     public void setSyncedFeaturesMap(FeaturesList map) {
         String features = map.toJsonObject().toString();
         write(Constants.SP_SYNCED_FEATURES_LIST, features);
     }
 
-    @Override
     public void setServerFeatureMap(FeaturesList map) {
         String features = map.toJsonObject().toString();
         write(Constants.SP_SERVER_FEATURE_LIST, features);
     }
 
-    @Override
     public void setContextFieldsForAnalytics(String contextFieldsForAnalytics) {
         write(Constants.JSON_FIELD_INPUT_FIELDS_FOR_ANALYTICS, contextFieldsForAnalytics);
     }
@@ -531,7 +511,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
 
     @CheckForNull
     @Nullable
-    Object readSinglePreferenceFromFileSystem(String preferenceName) {
+    protected Object readSinglePreferenceFromFileSystem(String preferenceName) {
         //because of synchronization it is possible to reach this method but the value is inMemory...
         Object preferenceValue = null;
 
@@ -540,9 +520,11 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
                 return inMemoryPreferences.get(preferenceName);
             }
             final long startTime = System.currentTimeMillis();
+            FileInputStream fis = null;
             ByteArrayOutputStream result = new ByteArrayOutputStream();
-            try (FileInputStream fis = context.openFileInput(preferenceName)) {
-                long fisLength = fis.getChannel().size();
+            try {
+                fis = context.openFileInput(preferenceName);
+                int fisLength = (int) fis.getChannel().size();
                 if (fisLength > 0) {
                     byte[] buffer = new byte[(int) fis.getChannel().size()];
                     int length;
@@ -555,13 +537,19 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
                 } else {
                     preferenceValue = result.toString("UTF-8");
                 }
-                //inMemoryPreferences.put(preferenceName, preferenceValue);
             } catch (FileNotFoundException e) {
                 Logger.log.w(TAG, "Failed to get value for: " + preferenceName + " from file system. File not found.");
             } catch (IOException e) {
                 Logger.log.w(TAG, "Failed to get value for: " + preferenceName + " from file system. got exception while converting content to string");
+            } catch (JSONException e) {
+                Logger.log.w(TAG, "Failed to get value for: " + preferenceName + " from file system. got exception while converting content to JSON");
             } catch (Exception e) {
                 Logger.log.w(TAG, "Failed to get value for: " + preferenceName + " from file system. got exception while converting content to JSON");
+            } finally {
+                try {
+                    fis.close();
+                } catch (Throwable ignore) {
+                }
             }
             Logger.log.d(TAG, "Read from file system of : " + preferenceName + " took : " + (System.currentTimeMillis() - startTime));
         }

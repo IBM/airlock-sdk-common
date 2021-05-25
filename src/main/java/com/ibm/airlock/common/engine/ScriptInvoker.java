@@ -1,19 +1,21 @@
 package com.ibm.airlock.common.engine;
 
-import com.ibm.airlock.common.engine.context.AirlockContextManager;
 import org.json.JSONObject;
 
-import javax.annotation.Nullable;
 import java.util.Map;
+
+import javax.annotation.Nullable;
 
 
 public abstract class ScriptInvoker {
-    final Map<String, String> scriptObjects;
-    int evalCounter = 2;
+    protected final Map<String, String> scriptObjects;
+    protected int evalCounter = 2;
+    @Nullable
+    protected AirlockContextManager airlockScriptScope;
 
     // the map contains key/value pairs, where the key is the name of a JavaScript object ("profile", "context", etc)
     // and the value is the JSON string that will construct it.
-    ScriptInvoker(Map<String, String> scriptObjects) {
+    public ScriptInvoker(Map<String, String> scriptObjects) {
         this.scriptObjects = scriptObjects;
     }
 
@@ -35,13 +37,13 @@ public abstract class ScriptInvoker {
             this.error = error;
         }
 
-        public Output(Result result) {
+        Output(Result result) {
             this.result = result;
             this.error = "";
         }
     }
 
-    public static class InvokerException extends Exception {
+    static public class InvokerException extends Exception {
         private static final long serialVersionUID = 1L;
 
         InvokerException(String str) {
@@ -54,6 +56,7 @@ public abstract class ScriptInvoker {
     }
 
     public void setAirlockScriptScope(AirlockContextManager airlockScriptScope) {
+        this.airlockScriptScope = airlockScriptScope;
     }
 
 }

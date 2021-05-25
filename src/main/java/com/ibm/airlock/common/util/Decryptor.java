@@ -1,13 +1,13 @@
 package com.ibm.airlock.common.util;
 
-import javax.crypto.Cipher;
-import javax.crypto.spec.IvParameterSpec;
-import javax.crypto.spec.SecretKeySpec;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.security.SecureRandom;
 import java.util.Arrays;
+import javax.crypto.Cipher;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 
 
 /**
@@ -16,18 +16,38 @@ import java.util.Arrays;
 
 public class Decryptor {
 
-    private static final byte[] magic = new byte[] { 0x54, 0x39, 0x71, 0x12 };
-    private static final byte[] version = new byte[] { 0x00, 0x01 }; // for future use
+    static byte[] magic = new byte[] { 0x54, 0x39, 0x71, 0x12 };
+    static byte[] version = new byte[] { 0x00, 0x01 }; // for future use
 
-    private static final int blockSize = 16;
-    private static final int headerSize = magic.length + version.length + blockSize;
+    static final int blockSize = 16;
+    static final int headerSize = magic.length + version.length + blockSize;
+
+    private static byte[] getMagicNumber() {
+        return magic;
+    }
+
+
+    private static String getPassphraseSize16(String key) {
+        char controlChar = '\u0014';
+        String key16 = key + controlChar;
+        if (key16.length() < 16) {
+            while (key16.length() < 16) {
+                key16 += key + controlChar;
+            }
+        }
+        if (key16.length() > 16) {
+            key16 = key16.substring(key16.length() - 16, key16.length());
+        }
+        return key16;
+    }
+
 
     public static byte[] decryptAES(byte[] encrypted,byte[] key) throws GeneralSecurityException {
         if (encrypted.length <= headerSize) {
             throw new GeneralSecurityException("input size is too short");
         }
 
-        // extract initialization vector and encrypted model buffer
+        // extract initialization vector and encrypted data buffer
         byte[] ivBytes = Arrays.copyOfRange(encrypted, magic.length + version.length, headerSize);
         byte[] data = Arrays.copyOfRange(encrypted, headerSize, encrypted.length);
 
@@ -38,6 +58,8 @@ public class Decryptor {
         cipher.init(Cipher.DECRYPT_MODE, skeySpec, iv);
         return cipher.doFinal(data);
     }
+
+
 
     public static byte[] encryptAES(byte[] plain,byte[] key) throws GeneralSecurityException, IOException {
         Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
@@ -63,6 +85,7 @@ public class Decryptor {
         out.write(encrypted);
         return out.toByteArray();
     }
+
 
     public static boolean isDecryptionRequired(byte[] message) {
         return Arrays.equals(Arrays.copyOfRange(message, 0, magic.length), magic);

@@ -1,6 +1,5 @@
 package com.ibm.airlock.common.engine;
 
-import com.ibm.airlock.common.engine.context.StateFullContext;
 import org.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Before;

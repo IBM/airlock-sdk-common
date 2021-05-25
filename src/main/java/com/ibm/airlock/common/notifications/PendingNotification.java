@@ -6,19 +6,18 @@ import org.json.JSONObject;
 /**
  * Created by SEitan on 21/11/2017.
  */
-@SuppressWarnings({"ClassOnlyUsedInOnePackage", "unused"})
 public class PendingNotification {
-    private final String uniqueId;
+    private String uniqueId;
 
-    private final String title;
-    private final String name;
-    private final String text;
-    private final String sound;
-    private final String deepLink;
-    private final String thumbnail;
-    private final long dueDate;
-    private final JSONArray actions;
-    private final JSONObject additionalInfo;
+    private String title;
+    private String name;
+    private String text;
+    private String sound;
+    private String deepLink;
+    private String thumbnail;
+    private long dueDate;
+    private JSONArray actions;
+    private JSONObject additionalInfo;
 
     public PendingNotification(JSONObject obj){
         title = obj.optString("title");

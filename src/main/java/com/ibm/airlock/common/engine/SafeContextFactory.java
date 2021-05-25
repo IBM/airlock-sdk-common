@@ -12,7 +12,6 @@ import org.mozilla.javascript.Scriptable;
  *
  * @author Denis Voloshin
  */
-@SuppressWarnings("unused")
 public class SafeContextFactory extends ContextFactory {
 
 
@@ -29,7 +28,7 @@ public class SafeContextFactory extends ContextFactory {
      * Create safe execution context
      */
     @Override
-    public Context makeContext() {
+    protected Context makeContext() {
         SafeContext cx = new SafeContext(this);
         // Use pure interpreter mode to allow for
         // observeInstructionCount(Context, int) to work
@@ -46,7 +45,11 @@ public class SafeContextFactory extends ContextFactory {
         // Turn on maximum compatibility with MSIE scripts
         switch (featureIndex) {
             case Context.FEATURE_NON_ECMA_GET_YEAR:
+                return true;
+
             case Context.FEATURE_MEMBER_EXPR_AS_FUNCTION_NAME:
+                return true;
+
             case Context.FEATURE_RESERVED_KEYWORD_AS_IDENTIFIER:
                 return true;
 

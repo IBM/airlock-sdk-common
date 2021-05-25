@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.testng.annotations.Test;
 
 /**
- * @author Denis Voloshin
+ * Created by Denis Voloshin on 08/01/2019.
  */
 public class RhinoScriptInvokerTest {
 

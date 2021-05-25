@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+
+    <!-- it doesn't make sense to fail just because we don't use some alpha software -->
+    <issue id="NewerVersionAvailable" severity="ignore"/>
+
+    <issue id="Registered" >
+        <ignore path="src/com/weather/util/app/ErrorActivity.java" />
+    </issue>
+    <issue id="InvalidPackage">
+        <ignore path="**/okio-*.jar" />
+        <ignore path="**/rhino-*.jar" />
+        <ignore path="**/junit-*.jar" />
+    </issue>
+</lint>

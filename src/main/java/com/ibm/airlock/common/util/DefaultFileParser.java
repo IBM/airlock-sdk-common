@@ -1,9 +1,9 @@
 package com.ibm.airlock.common.util;
 
-import com.ibm.airlock.common.exceptions.AirlockInvalidFileException;
+import com.ibm.airlock.common.AirlockInvalidFileException;
 import com.ibm.airlock.common.cache.PersistenceHandler;
-import com.ibm.airlock.common.model.Feature;
-import com.ibm.airlock.common.model.FeaturesList;
+import com.ibm.airlock.common.data.Feature;
+import com.ibm.airlock.common.data.FeaturesList;
 import com.ibm.airlock.common.engine.ScriptExecutionException;
 
 import org.json.JSONArray;
@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 
 /**
- * @author Denis Voloshin
+ * @author Rachel Levy
  */
 
 public class DefaultFileParser {
@@ -70,7 +70,7 @@ public class DefaultFileParser {
         String fileVersion = defaultJsonObject.optString(Constants.JSON_DEFAULT_VERSION);
         if (!Constants.DEFAULT_FILE_VERSION_v3_0.equals(fileVersion) && !Constants.DEFAULT_FILE_VERSION_v2_1.equals(fileVersion) && !Constants
                 .DEFAULT_FILE_VERSION_v2_5.equals(fileVersion)) {
-            String msg = "Default file version doesn't supported, should be [" + Constants.DEFAULT_FILE_VERSION_v2_1 + '-' + Constants
+            String msg = "Default file version doesn't supported, should be [" + Constants.DEFAULT_FILE_VERSION_v2_1 + "-" + Constants
                     .DEFAULT_FILE_VERSION_v3_0 + "]. Found " + fileVersion;
             log.log(Level.WARNING, msg);
             throw new AirlockInvalidFileException(msg);
@@ -89,7 +89,6 @@ public class DefaultFileParser {
             setConfigurationProperty(sp, Constants.JSON_DEFAULT_LANG_FIELD_NAME, Constants.SP_DEFAULT_LANGUAGE, defaultJsonObject, false);
             setConfigurationProperty(sp, Constants.JSON_SUPPORTED_LANGUAGES_FIELD, Constants.SP_SUPPORTED_LANGUAGES, defaultJsonObject, false);
             if (initialAppRun) {
-                //noinspection ConstantConditions
                 setConfigurationProperty(sp, Constants.JSON_FEATURE_FIELD_PRODUCT_ID, Constants.SP_CURRENT_PRODUCT_ID, defaultJsonObject, true, initialAppRun);
             }
         } else {
@@ -140,25 +139,26 @@ public class DefaultFileParser {
     //returns the value in the SharedPreference
     //throws AirlockInvalidFileException if @mandatory = true and the name doesn't exist in the JsonObject
 
-    private static void setConfigurationProperty(PersistenceHandler sp, String propertyName, String sharePreferenceName, JSONObject defaultConfig,
+    private static String setConfigurationProperty(PersistenceHandler sp, String propertyName, String sharePreferenceName, JSONObject defaultConfig,
                                                    boolean mandatory) throws AirlockInvalidFileException {
-        setConfigurationProperty(sp, propertyName, sharePreferenceName, defaultConfig, mandatory, true);
+        return setConfigurationProperty(sp, propertyName, sharePreferenceName, defaultConfig, mandatory, true);
     }
 
-    private static void setConfigurationProperty(PersistenceHandler sp, String propertyName, String sharePreferenceName, JSONObject defaultConfig,
+    private static String setConfigurationProperty(PersistenceHandler sp, String propertyName, String sharePreferenceName, JSONObject defaultConfig,
                                                    boolean mandatory, boolean overwriteIfExist) throws AirlockInvalidFileException {
         // not overwrite and exist - return the value from preferences.
         if (!overwriteIfExist) {
             String spValue = sp.read(sharePreferenceName, "");
-            if (!spValue.isEmpty()) {
-                return;
+            if (!spValue.equals("")) {
+                return spValue;
             }
         }
         String value = defaultConfig.optString(propertyName);
-        if (!value.isEmpty()) {
+        if (value.length() > 0) {
             sp.write(sharePreferenceName, value);
         } else if (mandatory) {
             throw new AirlockInvalidFileException(String.format(AirlockMessages.ERROR_MISSING_OR_EMPTY_VALUE_FORMATTED, propertyName));
         }
+        return value;
     }
 }

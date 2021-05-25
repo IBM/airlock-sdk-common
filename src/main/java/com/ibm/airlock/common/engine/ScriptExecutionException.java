@@ -6,7 +6,7 @@ package com.ibm.airlock.common.engine;
  * @author Denis Voloshin
  */
 public class ScriptExecutionException extends Exception {
-    public ScriptExecutionException(String msg) {
+    ScriptExecutionException(String msg) {
         super(msg);
     }
 }

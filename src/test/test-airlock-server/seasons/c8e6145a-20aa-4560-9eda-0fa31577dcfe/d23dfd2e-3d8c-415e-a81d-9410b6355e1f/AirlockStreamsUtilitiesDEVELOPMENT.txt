@@ -1,4 +1,0 @@
-function vladAndAdinaTotal(){
-
- return context.streams.VladAdinaStream.total;
-}

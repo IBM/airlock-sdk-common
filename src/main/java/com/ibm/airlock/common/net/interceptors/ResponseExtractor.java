@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.zip.GZIPInputStream;
 
 import com.ibm.airlock.common.log.Logger;
-import com.ibm.airlock.common.util.Gzip;
+import com.weather.airlock.sdk.util.Gzip;
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
 import okhttp3.Request;
@@ -19,7 +19,7 @@ import okhttp3.ResponseBody;
 
 public class ResponseExtractor implements Interceptor {
 
-    private static final String TAG = "ResponseExtractor";
+    private static String TAG = "ResponseExtractor";
 
     @Override
     public Response intercept(Chain chain) throws IOException {
@@ -42,12 +42,12 @@ public class ResponseExtractor implements Interceptor {
     /**
      * Checks if an input stream is gzipped.
      *
-     * @param in bytes input
-     * @return true if is Gzipped
+     * @param in
+     * @return
      */
     public static boolean isGZipped(byte[] in) {
         byte[] twoBytes = Arrays.copyOfRange(in, 0, 2);
-        int magic;
+        int magic = 0;
         magic = twoBytes[0] & 0xff | ((twoBytes[1] << 8) & 0xff00);
         return magic == GZIPInputStream.GZIP_MAGIC;
     }

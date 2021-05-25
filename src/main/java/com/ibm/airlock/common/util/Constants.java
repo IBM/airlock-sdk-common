@@ -12,7 +12,7 @@ public class Constants {
     public static final String DEFAULT_FILE_VERSION_v2_5 = "V2.5";
     public static final String DEFAULT_FILE_VERSION_v3_0 = "V3.0";
 
-    //log Tag prefix
+    //log Tag
     public static final String LIB_LOG_TAG = "Airlock";
 
     //Airlock JSON fields
@@ -49,6 +49,7 @@ public class Constants {
     public static final String JSON_FEATURE_FIELD_CONFIGURATION_RULES = "configurationRules";
     public static final String JSON_DEFAULT_VERSION = "version";
     public static final String JSON_TRANSLATION_STRING = "strings";
+    public static final String JSON_AIRLYTICS_SHARD = "shard";
 
     // Multi Server Default File
     public static final String JSON_DEFAULT_SERVER_FIELD_NAME = "defaultServer";
@@ -114,6 +115,7 @@ public class Constants {
     public static final String JSON_FIELD_PURCHASE_OPTIONS = "purchaseOptions";
     public static final String JSON_FIELD_STORE_PRODUCTS = "storeProductIds";
     public static final String JSON_FIELD_STORE_TYPE = "storeType";
+    public static final String JSON_FIELD_ANALYTICS_SYSTEM = "analyticsSystem";
     public static final String JSON_FIELD_STORE_PRODUCT_ID = "productId";
     public static final String JSON_FIELD_PREMIUM = "premium";
     public static final String JSON_FIELD_PREMIUM_RULE = "premiumRule";
@@ -183,7 +185,8 @@ public class Constants {
     public static final String SP_LAST_NOTIFICATIONS_FULL_DOWNLOAD_TIME = "airlock.lastNotificationsDownloadTime";
     public static final String SP_CURRENT_LOCALE = "airlock.current.locale";
     public static final String SP_PRODUCT_KEY = "airlock.product.key";
-    public static final String SP_FEATURES_PERCENTAGE_MAP = "airlock.feature.percentage.map";
+    public static final String SP_FEATURES_PERCENAGE_MAP = "airlock.feature.percentage.map";
+    public static final String SP_AIRLYTICS_EVENT_DEBUG = "airlock.airlytics.event.debug";
 
     // select Server field
     public static final String SP_CURRENT_SERVER = "airlock.CurrentServer";
@@ -226,7 +229,7 @@ public class Constants {
     public static final String JSON_FIELD_DEVICE_EXPERIMENTS_LIST = "deviceExperimentsList";
     public static final String JSON_FIELD_NAME = "name";
     public static final String JSON_FIELD_UNIQUE_ID = "uniqueId";
-    public static final String JSON_ORDERED_WEIGHT = "weight";
+    public static final String JSON_ORDERED_WEIGTH = "weight";
     //Debug Screen
     public static final String DEVICE_CONTEXT = "deviceContext";
     public static final String DEFAULT_FILE_ID = "defaultFileId";
@@ -248,6 +251,12 @@ public class Constants {
     // user group
     public static final String USER_GROUP_CLICK_BOARD_PREFIX       = "userGroupPX:";
 
+    //Ads session encryption
+    public static final String ADS_KEY = "key";
+    public static final String ADS_SESSION_DETAILS_ARRAY = "sessionDetailsFields";
+    public static final String ADS_AIRLOCK_ID = "airlockId";
+    public static final String ADS_SESSION_ID = "sessionId";
+    public static final String ADS_SESSION_START_TIME = "sessionStartTime";
 
     // reordering
     public static final String JSON_APPLIED_REORDERED_RULE_NAMES = "appliedOrderedRuleNames";

@@ -1,11 +1,11 @@
 package com.ibm.airlock.common.util;
 
-import com.ibm.airlock.common.model.Entitlement;
-import com.ibm.airlock.common.model.Feature;
-import com.ibm.airlock.common.model.FeaturesList;
-import com.ibm.airlock.common.model.PurchaseOption;
-import com.ibm.airlock.common.model.PurchasesList;
-import com.ibm.airlock.common.engine.features.FeaturesCalculator;
+import com.ibm.airlock.common.data.Entitlement;
+import com.ibm.airlock.common.data.Feature;
+import com.ibm.airlock.common.data.FeaturesList;
+import com.ibm.airlock.common.data.PurchaseOption;
+import com.ibm.airlock.common.data.PurchasesList;
+import com.ibm.airlock.common.engine.FeaturesCalculator;
 import com.ibm.airlock.common.engine.ScriptExecutionException;
 
 import org.json.JSONArray;
@@ -19,15 +19,14 @@ import java.util.Locale;
  */
 public class RawEntitlementsJsonParser extends BaseRawFeaturesJsonParser {
 
-    static class SingletonHolder {
-        static final RawEntitlementsJsonParser HOLDER_INSTANCE = new RawEntitlementsJsonParser();
+    public static class SingletonHolder {
+        public static final RawEntitlementsJsonParser HOLDER_INSTANCE = new RawEntitlementsJsonParser();
     }
 
     public static RawEntitlementsJsonParser getInstance() {
         return RawEntitlementsJsonParser.SingletonHolder.HOLDER_INSTANCE;
     }
 
-    @Override
     public Feature getFeaturesTree(JSONObject root, Feature.Source source) throws JSONException, ScriptExecutionException {
         Feature feature = new Entitlement();
         FeaturesList out = new PurchasesList();
@@ -44,7 +43,6 @@ public class RawEntitlementsJsonParser extends BaseRawFeaturesJsonParser {
         return out;
     }
 
-    @Override
     protected void populateFeatureChild(Feature childFeature, Feature.Source source, JSONObject childAsJson) throws JSONException, ScriptExecutionException {
         super.populateFeatureChild(childFeature, source, childAsJson);
 
@@ -56,7 +54,7 @@ public class RawEntitlementsJsonParser extends BaseRawFeaturesJsonParser {
             purchaseOptionsRoot.put(Constants.JSON_FEATURE_FIELD_TYPE, Feature.Type.PURCHASE_OPTIONS);
             purchaseOptionsRoot.put(Constants.JSON_FIELD_PURCHASE_OPTIONS, purchaseOptionsAsJson);
             if (childFeature instanceof Entitlement) {
-                ((Entitlement) childFeature).setPurchaseOptions(getPurchaseOptions(purchaseOptionsRoot, source).getMutableChildrenList());
+                ((Entitlement) childFeature).setPurchaseOptions(getPurchasOptions(purchaseOptionsRoot, source).getMutableChildrenList());
             } else if (childFeature instanceof PurchaseOption) {
                 ((PurchaseOption) childFeature).setStores(childAsJson.getJSONArray(Constants.JSON_FIELD_STORE_PRODUCTS));
             }
@@ -64,7 +62,7 @@ public class RawEntitlementsJsonParser extends BaseRawFeaturesJsonParser {
     }
 
 
-    private FeaturesList getPurchaseOptions(JSONObject root, Feature.Source source) throws JSONException, ScriptExecutionException {
+    public FeaturesList getPurchasOptions(JSONObject root, Feature.Source source) throws JSONException, ScriptExecutionException {
         PurchaseOption feature = new PurchaseOption(FeaturesCalculator.FeatureType.ROOT.toString().toLowerCase(Locale.getDefault()), true,
                 source == Feature.Source.UNKNOWN ? getSource(root) : source);
         FeaturesList out = new FeaturesList();
@@ -73,7 +71,6 @@ public class RawEntitlementsJsonParser extends BaseRawFeaturesJsonParser {
     }
 
 
-    @Override
     protected JSONArray getChildren(JSONObject feature) {
         String childName = Constants.JSON_FEATURE_FIELD_ENTITLEMENTS;
         if (getType(feature) == Feature.Type.PURCHASE_OPTIONS) {
@@ -87,7 +84,6 @@ public class RawEntitlementsJsonParser extends BaseRawFeaturesJsonParser {
         return out;
     }
 
-    @Override
     protected Feature createEmptyFeature(Feature.Type type) {
         if (type == Feature.Type.ENTITLEMENT) {
             return new Entitlement();
@@ -98,7 +94,6 @@ public class RawEntitlementsJsonParser extends BaseRawFeaturesJsonParser {
         }
     }
 
-    @Override
     protected boolean isMutex(JSONObject feature) {
 
         switch (getType(feature)) {

@@ -1,7 +1,5 @@
 package com.ibm.airlock.common.engine;
 
-import com.ibm.airlock.common.engine.context.AirlockContextManager;
-import com.ibm.airlock.common.engine.context.StateFullContext;
 import com.ibm.airlock.common.util.Constants;
 import com.ibm.airlock.common.util.Strings;
 
@@ -23,13 +21,14 @@ import javax.annotation.Nullable;
  * Java script engine wrapper, the class is based in Rhino library to evaluate JS code. Created by DenisV on 8/22/16.
  */
 public class RhinoScriptInvoker extends ScriptInvoker {
+    private final static String TAG = "airlock.RhinoInvoker";
 
     // function definitions and device context objects are added into the shared scope.
     // all queries will use a new scope that refers to the shared scope
     private Scriptable scope;
     private Context rhino;
     @Nullable
-    private final AirlockContextManager airlockContextManager;
+    private AirlockContextManager airlockContextManager;
 
     public RhinoScriptInvoker(JSONObject runtimeContext, @Nullable AirlockContextManager airlockContextManager) throws JSONException, ScriptInitException {
         super(new TreeMap<String, String>()); // scriptObjects
@@ -67,7 +66,6 @@ public class RhinoScriptInvoker extends ScriptInvoker {
 
     private void init(String functions, String translations) throws ScriptInitException {
 
-        String translateScript = translations;
         StringBuilder ruleEngineContextBuffer = new StringBuilder();
         // add items such as profile, context etc as strings to the JS binding
         for (Map.Entry<String, String> e : scriptObjects.entrySet()) {
@@ -81,15 +79,19 @@ public class RhinoScriptInvoker extends ScriptInvoker {
                 ruleEngineContextBuffer.append("\")");
             }
             if (key.equals(Constants.JS_TRANSLATIONS_VAR_NAME)) {
-                translateScript = "\nvar " +
-                        key +
-                        " = JSON.parse(\"" +
-                        Strings.escapeCharactersForJSON(value) +
-                        "\")";
+                StringBuilder translateScript = new StringBuilder();
+                translateScript.append("\nvar ");
+                translateScript.append(key);
+                translateScript.append(" = JSON.parse(\"");
+                translateScript.append(Strings.escapeCharactersForJSON(value));
+                translateScript.append("\")");
+                translations = translateScript.toString();
             }
         }
 
-        rhino = Context.enter();
+        //create and enter safe execution context
+        SafeContextFactory safeContextFactory = new SafeContextFactory();
+        rhino = safeContextFactory.makeContext().enter();
 
         try {
             long start;
@@ -100,7 +102,7 @@ public class RhinoScriptInvoker extends ScriptInvoker {
             AirlockEnginePerformanceMetric.getAirlockEnginePerformanceMetric().report(AirlockEnginePerformanceMetric.JS_UTILS_LOADING, start);
 
             start = System.currentTimeMillis();
-            initTranslations(scope, translateScript, rhino);
+            initTranslations(scope, translations, rhino);
             AirlockEnginePerformanceMetric.getAirlockEnginePerformanceMetric().report(AirlockEnginePerformanceMetric.TRANSLATION_LOADING, start);
 
             start = System.currentTimeMillis();
@@ -111,8 +113,8 @@ public class RhinoScriptInvoker extends ScriptInvoker {
             if (this.airlockContextManager != null) {
                 scope.setPrototype(this.airlockContextManager.getRuntimeContext().getScopeClone());
                 rhino.evaluateString(scope, Constants.JS_CONTEXT_VAR_NAME + " = " + StateFullContext.MERGE_FUNCTION_NAME +
-                        "(JSON.parse(JSON.stringify(" + this.airlockContextManager.getRuntimeContext().getContextVarName() + "))" + ','
-                        + Constants.JS_CONTEXT_VAR_NAME + ')'
+                        "(JSON.parse(JSON.stringify(" + this.airlockContextManager.getRuntimeContext().getContextVarName() + "))" + ","
+                        + Constants.JS_CONTEXT_VAR_NAME + ")"
                         , "<init2>", 1, null);
             }
             AirlockEnginePerformanceMetric.getAirlockEnginePerformanceMetric().report(AirlockEnginePerformanceMetric.MERGE_SHARED_CONTEXT, start);
@@ -132,12 +134,11 @@ public class RhinoScriptInvoker extends ScriptInvoker {
         }
     }
 
-    @SuppressWarnings("SpellCheckingInspection")
-    private synchronized void initJSfunctions(Scriptable sharedScope, String functions, Context rhino) {
+    private synchronized void initJSfunctions(Scriptable sharedScope, String funtions, Context rhino) {
         if (this.airlockContextManager != null) {
             Script jsUtilsScript = this.airlockContextManager.getJsUtilsScript();
             if (jsUtilsScript == null) {
-                jsUtilsScript = rhino.compileString(functions, "jsFunctions", 1, null);
+                jsUtilsScript = rhino.compileString(funtions, "jsFunctions", 1, null);
             }
             // a method after proguard equals to 'exec'
             jsUtilsScript.exec(rhino, sharedScope);
@@ -201,7 +202,6 @@ public class RhinoScriptInvoker extends ScriptInvoker {
     /**
      * Destroys current context
      */
-    @Override
     public void exit() {
         Context.exit();
     }

@@ -1,13 +1,14 @@
 package com.ibm.airlock.common.engine;
 
 import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
 
 /**
  * The class holds as a map and exposes performance results of the airlock SDK performance metrics
- * per thread. The class is singleton which holds model per specific thread.
+ * per thread. The class is singleton which holds data per specific thread.
  * <p>
  * The usage:
  * AirlockEnginePerformanceMetric.getAirlockEnginePerformanceMetric().startMeasuring();
@@ -45,7 +46,7 @@ public class AirlockEnginePerformanceMetric {
     }
 
     /**
-     * The method should be called before a measuring model need to be collected for specific thread.
+     * The method should be called before a measuring data need to be collected for specific thread.
      */
     public void startMeasuring() {
         //metricPerThread.put(Thread.currentThread().getId(), new Hashtable<String, Long>());
@@ -66,12 +67,12 @@ public class AirlockEnginePerformanceMetric {
 //        if (metricPerThread.containsKey(Thread.currentThread().getId())) {
 //            metricPerThread.get(Thread.currentThread().getId()).put(metricName, System.currentTimeMillis() - startPoint);
 //        }
-        getThreadHash().put(metricName, System.currentTimeMillis() - startPoint);
+        getThreadHash(Thread.currentThread().getId()).put(metricName, System.currentTimeMillis() - startPoint);
     }
 
-    private Hashtable<String, Long> getThreadHash(){
+    private Hashtable<String, Long> getThreadHash(Long threadId){
         if(!metricPerThread.containsKey(Thread.currentThread().getId())){
-            Hashtable<String, Long> threadReport = new Hashtable<>();
+            Hashtable<String, Long> threadReport =  new Hashtable<String, Long>();
             metricPerThread.put(Thread.currentThread().getId(), threadReport);
             return threadReport;
         }else{
@@ -95,7 +96,7 @@ public class AirlockEnginePerformanceMetric {
         if(!isMeasuringStarted){
             return;
         }
-        getThreadHash().put(metricName, value);
+        getThreadHash(Thread.currentThread().getId()).put(metricName, value);
 
     }
 
@@ -109,9 +110,12 @@ public class AirlockEnginePerformanceMetric {
         Hashtable<String, Long> reports = new Hashtable<>();
 
         Set<Long> reportsKeyPerThread = metricPerThread.keySet();
-        TreeSet<Long> mutableSet = new TreeSet<>(reportsKeyPerThread);
+        TreeSet<Long> mutableSet = new TreeSet<>();
+        mutableSet.addAll(reportsKeyPerThread);
 
-        for (Long key : mutableSet) {
+        Iterator<Long> iterator = mutableSet.iterator();
+        while (iterator.hasNext()) {
+            Long key = iterator.next();
             reports.put(metricPerThread.get(key).toString(), key);
         }
         return reports;

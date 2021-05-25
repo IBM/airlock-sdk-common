@@ -1,6 +1,6 @@
 package com.ibm.airlock.common.engine;
 
-import com.ibm.airlock.common.model.Feature;
+import com.ibm.airlock.common.data.Feature;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -44,34 +44,32 @@ public class Result {
     public static final String RULE_AND_CONFIG_ERROR = "Rule and configuration [%1$s] errors; both obtained from fallback";
     public static final String FEATURE_TURNOFF = "Feature was on, but was turned off by configuration rule (%1$s)";
     public static final String RULE_CONFIG_TURNOFF = "Rule was successful, but configuration [%1$s] failed and the feature's fallback is off";
-    public static final String CANCEL_RULE_EVAL = "Cancellation rule evaluated as true and the Notification was UnScheduled";
-
     /**
      * whether the rule was accepted or not
      */
 
-    public boolean accept;
+    protected boolean accept;
     /**
      * holds configuration attrs
      */
-    public JSONObject attributes;
+    protected JSONObject attributes;
     /**
      * holds configuration rule names and is it's on/off after calculation
      */
-    public JSONArray configRuleStatuses;
+    protected JSONArray configRuleStatuses;
     /**
      * holds configuration attrs for analytics
      */
-    public JSONArray configAttributesForAnalytics;
+    protected JSONArray configAttributesForAnalytics;
     /**
      * whether the rule should be sent to analytics
      */
 
-    private boolean sendToAnalytics;
+    protected boolean sendToAnalytics;
     /**
      * trace information holds addition details.
      */
-    private String trace;
+    protected String trace;
 
     /**
      * feature percentage value
@@ -86,39 +84,38 @@ public class Result {
     /**
      * feature order  weight
      */
-    private String branchStatus = Feature.BranchStatus.NONE.name();
+    protected String branchStatus = Feature.BranchStatus.NONE.name();
     /**
      * holds the applied rules that are enabled for analytics
      */
-    @Nullable
     protected ArrayList<String> analyticsAppliedRules;
 
 
     @Nullable
-    private String storeProductId;
+    protected String storeProductId;
 
     /**
      * holds the feature type base on Feature.Type enum
      */
-    public Feature.Type type;
+    protected Feature.Type type;
 
     /**
      * holds if a feature is a premium
      */
-    public boolean isPremium;
+        protected boolean isPremium;
 
     /**
      * holds if a feature is purchased or not, is relevant only for premium feature
      */
-    public boolean isPurchased;
+    protected boolean isPurchased;
 
     /**
      * holds if a feature premium rule last result
      */
-    private ScriptInvoker.Result premiumRuleResult;
+    protected ScriptInvoker.Result premiumRuleResult;
 
 
-    public Result(boolean accept, String trace) {
+    Result(boolean accept, String trace) {
         this.accept = accept;
         this.trace = trace;
         this.attributes = new JSONObject();
@@ -162,7 +159,7 @@ public class Result {
         return storeProductId;
     }
 
-    public List<String> getPurchasesOptions() {
+    public List<String> getPuchasesOptions() {
         return Collections.emptyList();
     }
 
@@ -178,19 +175,19 @@ public class Result {
         this.type = type;
     }
 
-    public boolean isAccept() {
+    boolean isAccept() {
         return accept;
     }
 
-    public void setAccept(boolean accept) {
+    void setAccept(boolean accept) {
         this.accept = accept;
     }
 
-    public String getTrace() {
+    String getTrace() {
         return trace;
     }
 
-    public void setTrace(String trace) {
+    void setTrace(String trace) {
         this.trace = trace;
     }
 
@@ -198,7 +195,7 @@ public class Result {
         this.configRuleStatuses = configRuleStatuses;
     }
 
-    public void setConfigAttributesForAnalytics(JSONArray configAttributesForAnalytics) {
+    void setConfigAttributesForAnalytics(JSONArray configAttributesForAnalytics) {
         this.configAttributesForAnalytics = configAttributesForAnalytics;
     }
 
@@ -234,7 +231,7 @@ public class Result {
         return sendToAnalytics;
     }
 
-    public void setSendToAnalytics(boolean sendToAnalytics) {
+    void setSendToAnalytics(boolean sendToAnalytics) {
         this.sendToAnalytics = sendToAnalytics;
     }
 

@@ -1,33 +1,34 @@
 package com.ibm.airlock.common.util;
 
+import com.ibm.airlock.common.data.Feature;
+import com.ibm.airlock.common.data.FeaturesList;
+import com.ibm.airlock.common.engine.FeaturesCalculator;
 import com.ibm.airlock.common.engine.ScriptExecutionException;
 import com.ibm.airlock.common.engine.ScriptInvoker;
-import com.ibm.airlock.common.engine.features.FeaturesCalculator;
 import com.ibm.airlock.common.log.Logger;
-import com.ibm.airlock.common.model.Feature;
-import com.ibm.airlock.common.model.FeaturesList;
-import org.jetbrains.annotations.Nullable;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import javax.annotation.CheckForNull;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
+import javax.annotation.CheckForNull;
+
 
 /**
- * @author Denis Voloshin
+ * @author Rachel Levy
  */
 
 public class BaseRawFeaturesJsonParser {
 
     private static final String TAG = "airlock.JsonRulesParser";
 
-    static class SingletonHolder {
-        static final BaseRawFeaturesJsonParser HOLDER_INSTANCE = new BaseRawFeaturesJsonParser();
+    public static class SingletonHolder {
+        public static final BaseRawFeaturesJsonParser HOLDER_INSTANCE = new BaseRawFeaturesJsonParser();
     }
 
     public static BaseRawFeaturesJsonParser getInstance() {
@@ -53,12 +54,12 @@ public class BaseRawFeaturesJsonParser {
     }
 
 
-    Feature createEmptyFeature(Feature.Type type) {
+    protected Feature createEmptyFeature(Feature.Type type) {
         return new Feature();
     }
 
 
-    void descend(JSONObject current, Feature feature, Feature.Source source, FeaturesList out) throws JSONException, ScriptExecutionException {
+    protected void descend(JSONObject current, Feature feature, Feature.Source source, FeaturesList out) throws JSONException, ScriptExecutionException {
         JSONArray children = getChildren(current);
         if (!isMutex(current)) {
             feature.setName(getName(current));
@@ -80,8 +81,8 @@ public class BaseRawFeaturesJsonParser {
                 childFeature.setSource(source == Feature.Source.UNKNOWN ? getSource(current) : source);
                 feature.addUpdateChild(childFeature);
                 try {
-                    if (source == Feature.Source.DEFAULT) {
-                        childFeature.setOn(isDefaultOn(childAsJson));
+                    if (source.equals(Feature.Source.DEFAULT)) {
+                        childFeature.setOn(getDefaultIsOn(childAsJson));
                     } else {
                         populateFeatureChild(childFeature, source, childAsJson);
                     }
@@ -108,18 +109,18 @@ public class BaseRawFeaturesJsonParser {
         }
     }
 
-    void populateFeatureChild(Feature childFeature, Feature.Source source, JSONObject childAsJson) throws ScriptExecutionException {
-        childFeature.setOn(isOn(childAsJson));
+    protected void populateFeatureChild(Feature childFeature, Feature.Source source, JSONObject childAsJson) throws ScriptExecutionException {
+        childFeature.setOn(getIsOn(childAsJson));
         childFeature.setConfigurationStatuses(getConfigRuleStatuses(childAsJson));
         childFeature.setTraceInfo(getTrace(childAsJson));
-        childFeature.setEnabledForAnalytics(isSendToAnalytics(childAsJson));
+        childFeature.setEnabledForAnalytics(getIsSendToAnalytics(childAsJson));
         childFeature.setAttributesForAnalytics(getConfigAttributesToAnalytics(childAsJson));
         childFeature.setAnalyticsAppliedRules(getAnalyticsAppliedRules(childAsJson));
         childFeature.setAnalyticsOrderedFeatures(getReorderedChildren(childAsJson));
         childFeature.setAnalyticsAppliedOrderRules(getAppliedOrderRules(childAsJson));
 
         childFeature.setPercentage(childAsJson.optDouble(Constants.JSON_FEATURE_FIELD_PERCENTAGE, 100));
-        childFeature.setWeight(childAsJson.optDouble(Constants.JSON_ORDERED_WEIGHT, 0));
+        childFeature.setWeight(childAsJson.optDouble(Constants.JSON_ORDERED_WEIGTH, 0));
         childFeature.setBranchStatus(Feature.BranchStatus.valueOf(
                 childAsJson.optString(Constants.JSON_FIELD_BRANCH_STATUS, "NONE")));
 
@@ -131,7 +132,7 @@ public class BaseRawFeaturesJsonParser {
     }
 
 
-    Feature.Type getType(JSONObject feature) {
+    protected Feature.Type getType(JSONObject feature) {
         String typeAsString = feature.optString(Constants.JSON_FEATURE_FIELD_TYPE, FeaturesCalculator.FeatureType.FEATURE.toString());
         if (typeAsString == null) {
             return Feature.Type.FEATURE;
@@ -143,7 +144,7 @@ public class BaseRawFeaturesJsonParser {
         }
     }
 
-    JSONArray getChildren(JSONObject obj) {
+    protected JSONArray getChildren(JSONObject obj) {
         JSONArray out = obj.optJSONArray(Constants.JSON_FEATURE_FIELD_FEATURES);
         if (out == null) {
             out = new JSONArray();
@@ -151,7 +152,7 @@ public class BaseRawFeaturesJsonParser {
         return out;
     }
 
-    boolean isMutex(JSONObject obj) {
+    protected boolean isMutex(JSONObject obj) {
         String str = obj.optString(Constants.JSON_FEATURE_FIELD_TYPE, FeaturesCalculator.FeatureType.FEATURE.toString());
         FeaturesCalculator.FeatureType type = FeaturesCalculator.FeatureType.valueOf(str);
         return (type == FeaturesCalculator.FeatureType.MUTUAL_EXCLUSION_GROUP);
@@ -159,7 +160,7 @@ public class BaseRawFeaturesJsonParser {
 
     private JSONObject getConfiguration(JSONObject obj, Feature.Source source) {
         String attributes;
-        if (source == Feature.Source.DEFAULT) {
+        if (source.equals(Feature.Source.DEFAULT)) {
             attributes = obj.optString(Constants.JSON_DEFAULT_CONFIG_FIELD_NAME);
         } else {
             attributes = obj.optString(Constants.JSON_FEATURES_ATTRS);
@@ -172,9 +173,12 @@ public class BaseRawFeaturesJsonParser {
         }
     }
 
-    Feature.Source getSource(JSONObject obj) {
-        String source = obj.optString(Constants.JSON_FEATURE_SOURCE);
-        if (source.isEmpty()) {
+    protected Feature.Source getSource(JSONObject obj) {
+        String source = "";
+        if (obj != null) {
+            source = obj.optString(Constants.JSON_FEATURE_SOURCE);
+        }
+        if (source.equals("")) {
             return Feature.Source.UNKNOWN;
         }
         return Feature.Source.valueOf(source);
@@ -186,7 +190,7 @@ public class BaseRawFeaturesJsonParser {
             return FeaturesCalculator.FeatureType.ROOT.toString();
         }
         String fullName = obj.optString(Constants.JSON_FEATURE_FULL_NAME);
-        if (!fullName.isEmpty()) {
+        if (!fullName.equals("")) {
             return fullName;
         }
         String name = obj.optString(Constants.JSON_FEATURE_FIELD_NAME);
@@ -195,14 +199,14 @@ public class BaseRawFeaturesJsonParser {
             return name;
         }
         String nameSpace = obj.optString(Constants.JSON_FEATURE_FIELD_NAMESPACE);
-        return !name.isEmpty() ? nameSpace + '.' + name : "";
+        return nameSpace.length() > 0 || name.length() > 0 ? nameSpace + "." + name : "";
     }
 
-    private static boolean isDefaultOn(JSONObject obj) throws JSONException {
+    public static boolean getDefaultIsOn(JSONObject obj) throws JSONException {
         return obj.getBoolean(Constants.JSON_FEATURE_FIELD_DEFAULT);
     }
 
-    private static JSONArray getConfigRuleStatuses(JSONObject obj) throws JSONException {
+    public static JSONArray getConfigRuleStatuses(JSONObject obj) throws JSONException {
         return obj.optJSONArray(Constants.JSON_FEATURE_CONFIGURATES_STATUSES);
     }
 
@@ -210,16 +214,15 @@ public class BaseRawFeaturesJsonParser {
         return obj.optJSONArray(Constants.JSON_APPLIED_REORDERED_RULE_NAMES);
     }
 
-    @CheckForNull
     public static JSONArray getReorderedChildren(JSONObject obj) throws JSONException {
         return obj.optJSONArray(Constants.JSON_FIELD_REORDERED_CHILDREN);
     }
 
-    private static boolean isOn(JSONObject obj) throws JSONException {
+    public static boolean getIsOn(JSONObject obj) throws JSONException {
         return obj.getBoolean(Constants.JSON_FEATURE_IS_ON);
     }
 
-    public static boolean isSendToAnalytics(JSONObject obj) {
+    public static boolean getIsSendToAnalytics(JSONObject obj) {
         return obj.optBoolean(Constants.JSON_FIELD_SEND_TO_ANALYTICS, false);
     }
 
@@ -227,13 +230,12 @@ public class BaseRawFeaturesJsonParser {
         return obj.optJSONArray(Constants.JSON_FIELD_ATTRIBUTES_FOR_ANALYTICS);
     }
 
-    @Nullable
     public static List<String> getAnalyticsAppliedRules(JSONObject obj) {
         Object appliedRules = obj.opt(Constants.JSON_FEATURE_CONFIG_ANALYTICS_APPLIED_RULES);
         if (appliedRules != null && !(appliedRules instanceof JSONArray)) {
             return null;
         } else {
-            List<String> listdata = new ArrayList<>();
+            List<String> listdata = new ArrayList<String>();
             JSONArray jArray = (JSONArray) appliedRules;
             if (jArray != null) {
                 for (int i = 0; i < jArray.length(); i++) {
@@ -249,7 +251,7 @@ public class BaseRawFeaturesJsonParser {
     }
 
     @CheckForNull
-    public static String getFieldValueFromJsonObject(JSONObject object, String[] fieldName) {
+    public static Object getFieldValueFromJsonObject(JSONObject object, String[] fieldName, boolean returnAsStringValue) {
         try {
             int currentIndex = 0;
             String nextObj = fieldName[currentIndex];
@@ -264,16 +266,20 @@ public class BaseRawFeaturesJsonParser {
                 arrayAtIndex = Integer.valueOf(arrayIndex[1].substring(0, arrayIndex[1].length() - 1));
             }
             Object value = object.opt(nextObj);
-            if (arrayAtIndex > -1 && value instanceof JSONArray) {
+            if (value != null && arrayAtIndex > -1 && value instanceof JSONArray) {
                 value = ((JSONArray) value).optJSONArray(arrayAtIndex);
             }
 
             if (value == null) {
                 return null;
             } else if (currentIndex == (fieldName.length - 1) || !(value instanceof JSONObject)) {
-                return value.toString();
+                if (returnAsStringValue){
+                    return value.toString();
+                }else{
+                    return value;
+                }
             } else {
-                return getFieldValueFromJsonObject((JSONObject) value, Arrays.copyOfRange(fieldName, currentIndex + 1, fieldName.length));
+                return getFieldValueFromJsonObject((JSONObject) value, Arrays.copyOfRange(fieldName, currentIndex + 1, fieldName.length), returnAsStringValue);
             }
         } catch (Throwable th) {
             return null;

@@ -1,7 +1,5 @@
 package com.ibm.airlock.common.cache;
 
-import javax.annotation.CheckForNull;
-import javax.annotation.Nullable;
 import java.lang.ref.SoftReference;
 import java.util.Enumeration;
 import java.util.HashSet;
@@ -11,6 +9,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
+
+import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
 
 public class InMemoryCache<K, T> implements Cacheable<K, T> {
 
@@ -28,7 +29,7 @@ public class InMemoryCache<K, T> implements Cacheable<K, T> {
                 while (!Thread.currentThread().isInterrupted() && isEnabled) {
                     try {
                         for (InMemoryCache cache : caches.values()) {
-                            if (!cache.cleaningUpQueue.isEmpty()) {
+                            if (cache.cleaningUpQueue.size() > 0) {
                                 DelayedCacheEntry delayedCacheObject =
                                         (DelayedCacheEntry) cache.cleaningUpQueue.poll(10, TimeUnit.MICROSECONDS);
                                 if (delayedCacheObject != null) {
@@ -111,9 +112,6 @@ public class InMemoryCache<K, T> implements Cacheable<K, T> {
         return cache.size();
     }
 
-    /**
-     * Note: this class has a natural ordering that is inconsistent with equals.
-     */
     private static class DelayedCacheEntry<K, T> implements Delayed {
 
 

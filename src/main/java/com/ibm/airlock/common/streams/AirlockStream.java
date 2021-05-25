@@ -2,33 +2,44 @@ package com.ibm.airlock.common.streams;
 
 import com.ibm.airlock.common.cache.InMemoryCache;
 import com.ibm.airlock.common.cache.PersistenceHandler;
-import com.ibm.airlock.common.model.StreamTrace;
+import com.ibm.airlock.common.data.StreamTrace;
 import com.ibm.airlock.common.util.AirlockVersionComparator;
+
 import org.jetbrains.annotations.TestOnly;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+
 import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
-import java.util.List;
+
 
 /**
- * @author eitan.schreiber
+ * @author eitan.schreiber on 24/07/2017.
  */
 
-@SuppressWarnings("WeakerAccess")
 public class AirlockStream {
+
 
     private static final String STREAM_CACHE_IN_MEMORY_CACHE = "cache";
     private static final String RESULTS_IN_MEMORY_CACHE = "result";
 
-    public static final int KILOBYTE = 1024;
-    private static final int DEF_CACHE_SIZE = 1024;
-    private static final int DEF_MAX_CACHE_SIZE = 5120;
-    private static final int DEF_EVENTS_SIZE = 256;
-    private static final int DEF_MAX_EVENTS_SIZE = 5120;
-    private static final int DEFAULT_MAX_EVENTS_TO_PROCESS = 100;
+
+    public final static int KILLOBYTE = 1024;
+    private final static int DEF_CACHE_SIZE = 1024;
+    private final static int DEF_MAX_CACHE_SIZE = 5120;
+    private final static int DEF_EVENTS_SIZE = 256;
+    private final static int DEF_MAX_EVENTS_SIZE = 5120;
+    private final int DEFAULT_MAX_EVENTS_TO_PROCESS = 100;
     private String filter;
     private String processor;
     private StreamTrace trace;
@@ -44,7 +55,8 @@ public class AirlockStream {
     private long rolloutPercentage;
     private String stage;
     private String name;
-    private PersistenceHandler persistenceHandler;
+    private String origName;
+    private PersistenceHandler ph;
     private String appVersion;
     private int maxCacheSize;
     private int maxEventsSize;
@@ -59,19 +71,18 @@ public class AirlockStream {
     private final InMemoryCache<String, String> runtimeData = new InMemoryCache<>();
 
 
-    public AirlockStream(JSONObject obj, PersistenceHandler persistenceHandler, String appVersion) {
+    public AirlockStream(JSONObject obj, PersistenceHandler ph, String appVersion) {
         filter = obj.optString("filter", "false");
         processor = obj.optString("processor");
         maxQueuedEvents = obj.optInt("maxQueuedEvents", -1);
         if (maxQueuedEvents > DEFAULT_MAX_EVENTS_TO_PROCESS) {
             maxQueuedEvents = -1;
         }
-        processingSuspended = false;
-        this.persistenceHandler = persistenceHandler;
+        this.processingSuspended = false;
+        this.ph = ph;
         this.appVersion = appVersion;
-        name = obj.optString("name");
-        // noinspection DynamicRegexReplaceableByCompiledPattern
-        name = name.replaceAll("[. ]", "_");
+        origName = obj.optString("name");
+        name = origName.replaceAll("\\.", "_").replaceAll(" ", "_");
         trace = new StreamTrace(obj.optJSONArray("trace"));
         enabled = obj.optBoolean("enabled", false);
         internalUserGroups = obj.optJSONArray("internalUserGroups");
@@ -97,15 +108,12 @@ public class AirlockStream {
         runtimeData.put(RESULTS_IN_MEMORY_CACHE, "");
     }
 
-    public AirlockStream(String name, boolean processingEnabled,@Nullable String result) {
+    private AirlockStream(String name, boolean processingEnabled,@Nullable String result) {
         this.name = name;
         this.processingEnabled = processingEnabled;
-        if (result != null){
-            runtimeData.put(RESULTS_IN_MEMORY_CACHE, result);
-        }
+        runtimeData.put(RESULTS_IN_MEMORY_CACHE, result);
     }
 
-    @SuppressWarnings("unused")
     public void clearTrace() {
         trace.clearTrace();
     }
@@ -116,41 +124,39 @@ public class AirlockStream {
     }
 
     public void loadStreamRuntimeDataFormDisk() {
-        JSONObject persistedStreamData = persistenceHandler.readStream(name);
+        JSONObject persistedStreamData = ph.readStream(name);
         String events = persistedStreamData.optString("events");
-        JSONArray eventsArray = new JSONArray();
+        JSONArray eventsArray = null;
         if (!events.isEmpty()) {
             try {
                 eventsArray = new JSONArray(events);
             } catch (JSONException e) {
                 //
             }
-            setEvents(eventsArray);
+            this.setEvents(eventsArray);
         }
 
         String pendingEvents = persistedStreamData.optString("pendingEvents");
         if (!pendingEvents.isEmpty()) {
-            JSONArray pendingEventsArray = new JSONArray();
+            JSONArray pendingEventsArray = null;
             try {
                 pendingEventsArray = new JSONArray(pendingEvents);
             } catch (JSONException e) {
                 //
             }
-            setPendingEvents(pendingEventsArray);
+            this.setPendingEvents(pendingEventsArray);
         }
 
-        setProcessingSuspended(persistedStreamData.optBoolean("processingSuspended", false));
-        setCache(persistedStreamData.optString("cache", "{}"));
-        setResult(persistedStreamData.optString("result", "{}"));
-        setLastProcessedTime(persistedStreamData.optString("lastProcessedTime", ""));
+        this.setProcessingSuspended(persistedStreamData.optBoolean("processingSuspended", false));
+        this.setCache(persistedStreamData.optString("cache", "{}"));
+        this.setResult(persistedStreamData.optString("result", "{}"));
+        this.setLastProcessedTime(persistedStreamData.optString("lastProcessedTime", ""));
     }
 
-    @SuppressWarnings("unused")
     public String[] getTraceRecords() {
         return trace.getTraceArr();
     }
 
-    @SuppressWarnings("unused")
     public String getLastProcessedTime() {
         return lastProcessedTime;
     }
@@ -190,16 +196,14 @@ public class AirlockStream {
         return enabled;
     }
 
-    @SuppressWarnings("unused")
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
 
-    public JSONArray getInternalUserGroups() {
+    private JSONArray getInternalUserGroups() {
         return internalUserGroups;
     }
 
-    @CheckForNull
     public String getMinAppVersion() {
         return minAppVersion;
     }
@@ -208,12 +212,11 @@ public class AirlockStream {
         return rolloutPercentage;
     }
 
-    @SuppressWarnings("unused")
     public void setRolloutPercentage(long rolloutPercentage) {
         this.rolloutPercentage = rolloutPercentage;
     }
 
-    private String getStage() {
+    public String getStage() {
         return stage;
     }
 
@@ -229,7 +232,6 @@ public class AirlockStream {
         return name;
     }
 
-    @SuppressWarnings("unused")
     public String getId() {
         return id;
     }
@@ -242,18 +244,17 @@ public class AirlockStream {
         this.events.put(event);
     }
 
-    @TestOnly
     @CheckForNull
+    @TestOnly
     public String getResultForTest() {
         return runtimeData.get(RESULTS_IN_MEMORY_CACHE);
     }
 
-    @TestOnly
     @CheckForNull
+    @TestOnly
     public String getCacheForTest() {
         return runtimeData.get(STREAM_CACHE_IN_MEMORY_CACHE);
     }
-
 
     @CheckForNull
     public String getCache() {
@@ -263,7 +264,7 @@ public class AirlockStream {
         return runtimeData.get(STREAM_CACHE_IN_MEMORY_CACHE);
     }
 
-    public void setCache(String cache) {
+    private void setCache(String cache) {
         runtimeData.put(STREAM_CACHE_IN_MEMORY_CACHE, cache);
     }
 
@@ -283,22 +284,23 @@ public class AirlockStream {
         return events;
     }
 
-    public void setEvents(JSONArray events) {
+    public void setEvents(@Nullable JSONArray events) {
         this.events = events;
     }
 
     public void persist(PersistenceHandler ph) {
 
-        if (getCache() != null && getCache().length() * 2 / KILOBYTE > maxCacheSize) {
+        if (getCache() != null && getCache().length() * 2 / KILLOBYTE > maxCacheSize) {
             //If cache reached the max size - disable stream
             setProcessingEnabled("Stream reached maxCacheSize");
         }
         if (events != null) {
-            int eventsInKilo = events.toString().length() * 2 / KILOBYTE;
-            if (eventsInKilo > maxEventsSize) {
-                if (eventsInKilo > DEF_MAX_EVENTS_SIZE) {
+            int eventsInKillo = events.toString().length() * 2 / KILLOBYTE;
+            if (eventsInKillo > maxEventsSize) {
+                if (eventsInKillo > DEF_MAX_EVENTS_SIZE) {
                     setProcessingEnabled("Stream reached maxEventsSize");
                 } else {
+                    //trace.write("Stream " + this.name + " reached its queueSizeKB(" + maxEventsSize + ") the maxEventsSize was changed to "+ DEF_MAX_EVENTS_SIZE);
                     maxEventsSize = DEF_MAX_EVENTS_SIZE;
                 }
             }
@@ -315,20 +317,132 @@ public class AirlockStream {
         this.processingSuspended = processingSuspended;
     }
 
+    private void getFlattenJsonArray(@Nullable JSONArray array,String prefix,Map<String,Object> mapResults,List<String> fieldsToReport){
+        if(array == null){
+            return;
+        }
+        for (Object item:array){
+            getFlattenObject(item,prefix,mapResults,fieldsToReport);
+        }
+    }
+
+    private void getFlattenObject(@Nullable Object obj,String prefix,Map<String,Object> mapResults,List<String> fieldsToReport){
+        if(obj == null){
+            return;
+        }
+        if(obj instanceof JSONObject){
+            getFlattenJsonObject((JSONObject)obj,prefix,mapResults,fieldsToReport);
+        }else if (obj instanceof JSONArray){
+            getFlattenJsonArray((JSONArray)obj,prefix,mapResults,fieldsToReport);
+        }
+        if(fieldsToReport.contains(prefix)) {
+            mapResults.put(name+ "." + prefix, obj);
+        }
+    }
+
+    private void getFlattenJsonObject(@Nullable JSONObject obj,String prefix,Map<String,Object> mapResults,List<String> fieldsToReport){
+        if(obj == null){
+            return;
+        }
+        for (String curKey : obj.keySet()){
+            Object opt = obj.opt(curKey);
+            getFlattenObject(opt,prefix +((prefix.isEmpty())?"":".")+curKey,mapResults,fieldsToReport);
+        }
+    }
+
+    private List<String> getContextFieldsToCurrentStream(JSONArray fieldsToReport){
+        List<String> retList = new LinkedList<>();
+        String curContextField = "context.streams."+name;
+        int length = fieldsToReport.length();
+        for(int i=0;i<length;++i){
+            String curField = fieldsToReport.optString(i);
+            if(curField != null && curField.indexOf(curContextField) == 0){
+                int lengthOfPrefix = curContextField.length();
+                if(curField.length() > lengthOfPrefix + 1){
+                    retList.add(curField.substring(lengthOfPrefix+1));
+                }
+            }
+        }
+        return retList;
+    }
+
+
+    @CheckForNull
+    public Map<String,Object> getStreamResultsChanges(@Nullable String newResultMap,@Nullable JSONArray fieldsToReport){
+        if(newResultMap == null || fieldsToReport == null || fieldsToReport.length() == 0){
+            return null;
+        }
+        List<String> contextFieldsToCurrentStream = getContextFieldsToCurrentStream(fieldsToReport);
+        if(contextFieldsToCurrentStream.isEmpty()){
+            return null;
+        }
+
+        String currentResult = getResult();
+        if(currentResult == null || currentResult.isEmpty()){
+            if(!newResultMap.isEmpty()){
+                //no old results for the stream report all required fields
+                JSONObject newResultMapJsonObj = new JSONObject(newResultMap);
+                Map<String,Object> mapResults = new HashMap<>();
+                getFlattenJsonObject(newResultMapJsonObj,"",mapResults,contextFieldsToCurrentStream);
+                replaceNormalizedNameWithOrig(mapResults);
+                return mapResults;
+            }
+        }else{
+            //there are old results for the stream need to compare values of required fields
+            if (!currentResult.equals(newResultMap)){
+                JSONObject curObjResults = new JSONObject(currentResult);
+                JSONObject newResultMapJsonObj = (!newResultMap.isEmpty())?new JSONObject(newResultMap):new JSONObject();
+                Map<String,Object> mapResultsNew = new HashMap<>();
+                Map<String,Object> mapResultsOld = new HashMap<>();
+                getFlattenJsonObject(newResultMapJsonObj,"",mapResultsNew,contextFieldsToCurrentStream);
+                getFlattenJsonObject(curObjResults,"",mapResultsOld,contextFieldsToCurrentStream);
+                //remove all equals values in old and new results
+                List<String> resultsToRemove = new ArrayList<>();
+                for(String curKey:mapResultsNew.keySet()){
+                    if(mapResultsOld.containsKey(curKey)){
+                        Object newVal = mapResultsNew.get(curKey);
+                        Object oldVal = mapResultsOld.get(curKey);
+                        if(Objects.equals(newVal,oldVal)){
+                            resultsToRemove.add(curKey);
+                        }
+                    }
+                }
+                for (String key : resultsToRemove){
+                    mapResultsNew.remove(key);
+                }
+                replaceNormalizedNameWithOrig(mapResultsNew);
+                return mapResultsNew;
+            }
+        }
+        return null;
+    }
+
+    private void replaceNormalizedNameWithOrig(Map<String, Object> valuesChangedMap){
+        if (this.name.equals(origName)){
+            return;
+        }
+        List<String> keysToRemove = new ArrayList();
+        Set<String> keys = new HashSet<>(valuesChangedMap.keySet());
+        for (String key: keys){
+            valuesChangedMap.put(key.replace(this.name, this.origName), valuesChangedMap.get(key));
+            valuesChangedMap.remove(key);
+        }
+    }
+
     public void updateResults(@Nullable String resultMap, String cacheMap) {
         setResult(resultMap != null ? resultMap : "");
 
-        if (cacheMap.length() * 2 / KILOBYTE > maxCacheSize) {
+        if (cacheMap.length() * 2 / KILLOBYTE > maxCacheSize) {
             //If cache reached the max size - need to disable the stream.
             setProcessingEnabled("Stream reached maxCacheSize");
         } else {
             setCache(cacheMap);
         }
 
-        events = new JSONArray();
+        this.events = new JSONArray();
     }
 
-    public void setPendingEvents(JSONArray events) {
+    private void setPendingEvents(@Nullable JSONArray events) {
         this.pendingEvents = events;
     }
 
@@ -350,7 +464,7 @@ public class AirlockStream {
             //If trigger is -1 it means we should our default...
             eventsToProcess = maxQueuedEvents;
         }
-        return (events.length() >= eventsToProcess) || (events != null && events.toString().length() * 2 / KILOBYTE > maxEventsSize);
+        return (events.length() >= eventsToProcess) || (events != null && events.toString().length() * 2 / KILLOBYTE > maxEventsSize);
     }
 
     /**
@@ -364,12 +478,12 @@ public class AirlockStream {
         boolean isProcessingEnabled = true;
         String disableReason = "";
         if (enabled) {
-            //check min app version
+            //check minimum application version
             // the minAppVersion of the feature should be <= to the current productVersion
             // minAppVersion is now mandatory, so fail if missing
             String minAppVersion = getMinAppVersion();
             AirlockVersionComparator comparator = new AirlockVersionComparator();
-            if (minAppVersion == null || comparator.compare(minAppVersion, appVersion) > 0) {
+            if (comparator.compare(minAppVersion, appVersion) > 0) {
                 isProcessingEnabled = false;
                 disableReason = "app version is too low";
             }
@@ -380,20 +494,15 @@ public class AirlockStream {
         }
 
         //check percentage
-        JSONObject streamsRandomNumber = persistenceHandler.getStreamsRandomMap();
+        JSONObject streamsRandomNumber = ph.getStreamsRandomMap();
         if (isProcessingEnabled && streamsRandomNumber != null && streamsRandomNumber.length() > 0) {
             double threshold = getRolloutPercentage();
             if (threshold <= 0) {
                 isProcessingEnabled = false;
             } else if (threshold < 100.0) {
-                int userFeatureRand = streamsRandomNumber.optInt(getName());
-                if (userFeatureRand == 0) {
-                    isProcessingEnabled = false;
-                } else {
-                    isProcessingEnabled = userFeatureRand <= threshold * 10000;
-                }
+                isProcessingEnabled = streamsRandomNumber.optInt(getName()) <= threshold * 10000;
                 if (!isProcessingEnabled) {
-                    disableReason = "Stream did not reach rollout percentage";
+                    disableReason = "Stream did not reach roll out percentage";
                 }
             }
         }
@@ -418,7 +527,7 @@ public class AirlockStream {
             if (supportedUserGroups.length() == 0) {
                 return false;
             }
-            List<String> deviceUserGroups = persistenceHandler.getDeviceUserGroups();
+            List<String> deviceUserGroups = ph.getDeviceUserGroups();
             isAssociatedWithUserGroup = false;
             for (String userGroup : deviceUserGroups) {
                 for (int i = 0; i < supportedUserGroups.length(); i++) {
@@ -443,7 +552,7 @@ public class AirlockStream {
         return processingEnabled;
     }
 
-    public synchronized void setProcessingEnabled(@Nullable String disableReason) {
+    private synchronized void setProcessingEnabled(@Nullable String disableReason) {
         if (disableReason == null) {
             this.processingEnabled = true;
         } else {
@@ -456,7 +565,6 @@ public class AirlockStream {
     /**
      * the method is used by debug screen only
      */
-    @SuppressWarnings("unused")
     public void clearEvents() {
         this.events = new JSONArray();
     }
@@ -466,7 +574,7 @@ public class AirlockStream {
         setCache("");
         this.events = new JSONArray();
         this.pendingEvents = new JSONArray();
-        persistenceHandler.writeStream(name, "{}");
+        ph.writeStream(name, "{}");
     }
 
     public synchronized void update(AirlockStream stream) {
@@ -489,7 +597,7 @@ public class AirlockStream {
             streamWasUpdated = true;
         }
         try {
-            if (!areJSONArraysEqual(internalUserGroups, stream.getInternalUserGroups())) {
+            if (!compareJSONArrays(internalUserGroups, stream.getInternalUserGroups())) {
                 internalUserGroups = stream.getInternalUserGroups();
                 streamWasUpdated = true;
             }
@@ -539,11 +647,11 @@ public class AirlockStream {
             for (int i = 0; i < arrayLength; i++) {
                 JSONObject eventObject = (JSONObject) this.pendingEvents.get(i);
                 if (i > 0) {
-                    pendingEvents.append(',');
+                    pendingEvents.append(",");
                 }
                 pendingEvents.append(eventObject.toString());
             }
-            pendingEvents.append(']');
+            pendingEvents.append("]");
             objectAsJSON.put("processingSuspended", this.processingSuspended);
             objectAsJSON.put("pendingEvents", pendingEvents.toString());
             objectAsJSON.put("lastProcessedTime", this.lastProcessedTime);
@@ -553,7 +661,7 @@ public class AirlockStream {
         return objectAsJSON;
     }
 
-    public boolean areJSONArraysEqual(JSONArray arrayA, JSONArray arrayB) throws JSONException {
+    private boolean compareJSONArrays(JSONArray arrayA, JSONArray arrayB) throws JSONException {
 
         boolean matches = true;
         for (int i = 0; i < arrayA.length(); i++) {
@@ -582,7 +690,6 @@ public class AirlockStream {
         this.error = error;
     }
 
-    @Override
     @SuppressWarnings("MethodDoesntCallSuperMethod")
     public AirlockStream clone() {
         return new AirlockStream(name, processingEnabled, getResult());

@@ -1,5 +1,5 @@
 /**
- * This package contains utils classes
+ * This package contains classes of Airlock data.
  */
 
 @ParametersAreNonnullByDefault
@@ -8,4 +8,5 @@ package com.ibm.airlock.common.util;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import edu.umd.cs.findbugs.annotations.ReturnValuesAreNonnullByDefault;
 

@@ -1,12 +1,17 @@
 package com.ibm.airlock.common.net.interceptors;
 
-import com.ibm.airlock.common.log.Logger;
-import com.ibm.airlock.common.util.Decryptor;
-import okhttp3.*;
-
-import javax.annotation.Nullable;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+
+import com.ibm.airlock.common.log.Logger;
+import com.ibm.airlock.common.util.Decryptor;
+import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+
+import javax.annotation.Nullable;
 
 
 /**
@@ -15,10 +20,10 @@ import java.security.GeneralSecurityException;
 
 public class ResponseDecryptor implements Interceptor {
 
-    private static final String TAG = "ResponseDecryptor";
+    private static String TAG = "ResponseDecryptor";
 
     @Nullable
-    private final String encryptionKey;
+    private String encryptionKey;
 
     public ResponseDecryptor(@Nullable String encryptionKey) {
         this.encryptionKey = encryptionKey;

@@ -1,9 +1,6 @@
 package com.ibm.airlock.common.cache;
 
-import java.util.Map;
 import java.util.Set;
-import java.util.prefs.BackingStoreException;
-import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
 
 
@@ -19,8 +16,9 @@ public interface SharedPreferences {
      * @param key      The name of the preference to retrieve.
      * @param defValue Value to return if this preference does not exist.
      * @return Returns the preference value if it exists, or defValue.  Throws ClassCastException if there is a preference with this name that is not a boolean.
+     * @throws ClassCastException
      */
-    boolean isBooleanTrue(String key, boolean defValue);
+    boolean getBoolean(String key, boolean defValue);
 
     /**
      * Retrieve a long value from the preferences.
@@ -28,22 +26,9 @@ public interface SharedPreferences {
      * @param key      The name of the preference to retrieve.
      * @param defValue Value to return if this preference does not exist.
      * @return Returns the preference value if it exists, or defValue.  Throws ClassCastException if there is a preference with this name that is not a long.
+     * @throws ClassCastException
      */
     long getLong(String key, long defValue);
-
-
-    /**
-     * Retrieve all values from the preferences.
-     *
-     * <p>Note that you <em>must not</em> modify the collection returned
-     * by this method, or alter any of its contents.  The consistency of your
-     * stored data is not guaranteed if you do.
-     *
-     * @return Returns a map containing a list of pairs key/value representing
-     * the preferences.
-     *
-     */
-    Map<String, ?> getAll();
 
 
     /**
@@ -53,16 +38,16 @@ public interface SharedPreferences {
      * @param defValue Value to return if this preference does not exist.
      * @return Returns the preference value if it exists, or defValue.  Throws ClassCastException if there is a preference with this name that is not a String.
      */
-    @CheckForNull
-    String getString(String key, String defValue);
+    @Nullable
+    String getString(String key, @Nullable String defValue);
 
 
     /**
      * Create a new Editor for these preferences, through which you can make
-     * modifications to the model in the preferences and atomically doCommit those
+     * modifications to the data in the preferences and atomically commit those
      * changes back to the SharedPreferences object.
      * <p>
-     * <p>Note that you <em>must</em> call {@link Editor#doCommit} to have any
+     * <p>Note that you <em>must</em> call {@link Editor#commit} to have any
      * changes you perform in the Editor actually show up in the
      * SharedPreferences.
      *
@@ -77,26 +62,24 @@ public interface SharedPreferences {
      * @param key      The name of the preference to retrieve.
      * @param defValue Value to return if this preference does not exist.
      * @return Returns the preference value if it exists, or defValue.  Throws ClassCastException if there is a preference with this name that is not an int.
+     * @throws ClassCastException
      */
     int getInt(String key, int defValue);
 
-    @Nullable
     Set<String> getStringSet(String key, Object o);
 
-
-    void removeNode() throws BackingStoreException;
 
     /**
      * Interface used for modifying values in a {@link SharedPreferences}
      * object.  All changes you make in an editor are batched, and not copied
-     * back to the original {@link SharedPreferences} until you call {@link #doCommit}
+     * back to the original {@link SharedPreferences} until you call {@link #commit}
      * or {@link #apply}
      */
-    interface Editor {
+    public interface Editor {
 
         /**
          * Mark in the editor that a preference value should be removed, which
-         * will be done in the actual preferences once {@link #doCommit} is
+         * will be done in the actual preferences once {@link #commit} is
          * called.
          * <p>
          * <p>Note that when committing back to the preferences, all removals
@@ -110,7 +93,7 @@ public interface SharedPreferences {
 
         /**
          * Mark in the editor to remove <em>all</em> values from the
-         * preferences.  Once doCommit is called, the only remaining preferences
+         * preferences.  Once commit is called, the only remaining preferences
          * will be any that you have defined in this editor.
          * <p>
          * <p>Note that when committing back to the preferences, the clear
@@ -128,7 +111,7 @@ public interface SharedPreferences {
          * in the SharedPreferences.
          * <p>
          * <p>Note that when two editors are modifying preferences at the same
-         * time, the last one to call doCommit wins.
+         * time, the last one to call commit wins.
          * <p>
          * <p>If you don't care about the return value and you're
          * using this from your application's main thread, consider
@@ -136,7 +119,7 @@ public interface SharedPreferences {
          *
          * @return Returns true if the new values were successfully written to persistent storage.
          */
-        boolean doCommit();
+        boolean commit();
 
         /**
          * Commit your preferences changes back from this Editor to the
@@ -147,38 +130,38 @@ public interface SharedPreferences {
          * <p>Note that when two editors are modifying preferences at the same
          * time, the last one to call apply wins.
          * <p>
-         * <p>Unlike {@link #doCommit}, which writes its preferences out
-         * to persistent storage synchronously,
+         * <p>Unlike {@link #commit}, which writes its preferences out
+         * to persistent storage synchronously, {@link #apply}
          * commits its changes to the in-memory
          * {@link SharedPreferences} immediately but starts an
-         * asynchronous doCommit to disk and you won't be notified of
+         * asynchronous commit to disk and you won't be notified of
          * any failures.  If another editor on this
-         * {@link SharedPreferences} does a regular {@link #doCommit}
-         * while a  is still outstanding, the
-         * {@link #doCommit} will block until all async commits are
-         * completed as well as the doCommit itself.
+         * {@link SharedPreferences} does a regular {@link #commit}
+         * while a {@link #apply} is still outstanding, the
+         * {@link #commit} will block until all async commits are
+         * completed as well as the commit itself.
          * <p>
          * <p>As {@link SharedPreferences} instances are singletons within
-         * a process, it's safe to replace any instance of {@link #doCommit} with
-         *  if you were already ignoring the return value.
+         * a process, it's safe to replace any instance of {@link #commit} with
+         * {@link #apply} if you were already ignoring the return value.
          * <p>
          * <p>You don't need to worry about Android component
-         * life cycles and their interaction with {@code apply()}
+         * lifecycles and their interaction with <code>apply()</code>
          * writing to disk.  The framework makes sure in-flight disk
-         * writes from {@code apply()} complete before switching
+         * writes from <code>apply()</code> complete before switching
          * states.
          * <p>
          * <p class='note'>The SharedPreferences.Editor interface
          * isn't expected to be implemented directly.  However, if you
          * previously did implement it and are now getting errors
-         * about missing {@code apply()}, you can simply call
-         * {@link #doCommit} from {@code apply()}.
+         * about missing <code>apply()</code>, you can simply call
+         * {@link #commit} from <code>apply()</code>.
          */
         void apply();
 
         /**
          * Set an int value in the preferences editor, to be written back once
-         * {@link #doCommit} or {@link #apply} are called.
+         * {@link #commit} or {@link #apply} are called.
          *
          * @param key   The name of the preference to modify.
          * @param value The new value for the preference.
@@ -188,7 +171,7 @@ public interface SharedPreferences {
 
         /**
          * Set a long value in the preferences editor, to be written back once
-         * {@link #doCommit} or {@link #apply} are called.
+         * {@link #commit} or {@link #apply} are called.
          *
          * @param key   The name of the preference to modify.
          * @param value The new value for the preference.
@@ -198,7 +181,7 @@ public interface SharedPreferences {
 
         /**
          * Set a float value in the preferences editor, to be written back once
-         * {@link #doCommit} or {@link #apply} are called.
+         * {@link #commit} or {@link #apply} are called.
          *
          * @param key   The name of the preference to modify.
          * @param value The new value for the preference.
@@ -208,7 +191,7 @@ public interface SharedPreferences {
 
         /**
          * Set a boolean value in the preferences editor, to be written back
-         * once {@link #doCommit} or {@link #apply} are called.
+         * once {@link #commit} or {@link #apply} are called.
          *
          * @param key   The name of the preference to modify.
          * @param value The new value for the preference.
@@ -217,8 +200,6 @@ public interface SharedPreferences {
         Editor putBoolean(String key, boolean value);
 
 
-        void putString(String spSeasonId, String seasonId);
-        
-        
+        public void putString(String spSeasonId, String seasonId);
     }
 }

@@ -4,7 +4,6 @@ package com.ibm.airlock.common.util;
  * Created by Denis Voloshin on 02/11/2017.
  */
 
-@SuppressWarnings("ClassOnlyUsedInOnePackage")
 public class Pair<L, R> {
 
     private final L left;
@@ -19,9 +18,9 @@ public class Pair<L, R> {
         return new Pair(left, right);
     }
 
-    private L getLeft() { return left; }
+    public L getLeft() { return left; }
 
-    private R getRight() { return right; }
+    public R getRight() { return right; }
 
     @Override
     public int hashCode() { return left.hashCode() ^ right.hashCode(); }
@@ -31,8 +30,8 @@ public class Pair<L, R> {
         if (!(o instanceof Pair)) {
             return false;
         }
-        Pair pair = (Pair) o;
-        return this.left.equals(pair.getLeft()) &&
-                this.right.equals(pair.getRight());
+        Pair pairo = (Pair) o;
+        return this.left.equals(pairo.getLeft()) &&
+                this.right.equals(pairo.getRight());
     }
 }

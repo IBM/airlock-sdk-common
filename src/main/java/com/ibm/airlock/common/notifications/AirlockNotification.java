@@ -7,34 +7,33 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 /**
  * Created by SEitan on 21/11/2017.
  */
-@SuppressWarnings("unused")
 public class AirlockNotification {
-    private final String registrationRule;
-    private final String cancellationRule;
+    private String registrationRule;
+    private String cancellationRule;
 
     private String configuration;
 
     //basic fields
     private String name;
-    private final boolean enabled;
-    private final JSONArray internalUserGroups;
-    private final String minAppVersion;
-    private final long rolloutPercentage;
-    private final String stage;
-    private final long maxNotifications;
-    private final long minInterval;
+    private boolean enabled;
+    private JSONArray internalUserGroups;
+    private String minAppVersion;
+    private long rolloutPercentage;
+    private String stage;
+    private long maxNotifications;
+    private long minInterval;
     private JSONArray firedHistory;
     private JSONArray registrationHistory;
+    private int currentHistoryIndex;
     private boolean isPending;
-    private final String id;
-    private final PersistenceHandler ph;
-    private final String appVersion;
+    private String id;
+    private PersistenceHandler ph;
+    private String appVersion;
 
     private String traceInfo="";
 
@@ -63,8 +62,7 @@ public class AirlockNotification {
         configuration = obj.optString("configuration");
 
         name = obj.optString("name");
-        //noinspection DynamicRegexReplaceableByCompiledPattern
-        name = name.replaceAll("[. ]","_");
+        name = name.replaceAll("\\.","_").replaceAll(" ","_");
         enabled = obj.optBoolean("enabled",false);
         internalUserGroups = obj.optJSONArray("internalUserGroups");
         minAppVersion = obj.optString("minAppVersion");
@@ -85,7 +83,7 @@ public class AirlockNotification {
         boolean isProcessingEnabled = true;
         String disableReason ="";
         if (enabled) {
-            //check minapp version
+            //check minapp verison
             AirlockVersionComparator comparator = new AirlockVersionComparator();
             if (this.minAppVersion == null || comparator.compare(this.minAppVersion, appVersion) > 0) {
                 isProcessingEnabled = false;
@@ -103,8 +101,8 @@ public class AirlockNotification {
             if (threshold <= 0) {
                 isProcessingEnabled = false;
             } else if (threshold < 100.0) {
-                int userFeatureRand = notificationsRandomNumber.optInt(getName(), -1);
-                if (userFeatureRand == -1) {
+                Integer userFeatureRand = notificationsRandomNumber.optInt(getName());
+                if (userFeatureRand == null) {
                     isProcessingEnabled = false;
                 }else{
                     isProcessingEnabled = userFeatureRand <= threshold * 10000;
@@ -148,7 +146,7 @@ public class AirlockNotification {
         }
     }
 
-    private synchronized void setProcessingEnabled(@Nullable String disableReason){
+    public synchronized void setProcessingEnabled(String disableReason){
         if (disableReason == null){
             this.processingEnabled = true;
             setTraceInfo("");
