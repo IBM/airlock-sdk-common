@@ -39,12 +39,14 @@ javadoc {
 
 ext {
     SNAPSHOT = false
+    VERSION_MAJOR_SDK = releaseMajorBuildNumber
+    VERSION_MINOR_SDK = releaseMinorBuildNumber
     RELEASE_VERSION_MICRO = releaseMicroBuildNumber
     BUILD_NUMBER = System.getenv("BUILD_NUMBER") ?: devBuildNumber
     BUILD_NUMBER = SNAPSHOT ? BUILD_NUMBER : RELEASE_VERSION_MICRO
 }
 
-version = '5.3.' + BUILD_NUMBER
+version = VERSION_MAJOR_SDK + '.' + VERSION_MINOR_SDK + '.' + RELEASE_VERSION_MICRO
 jar.baseName = "debug/" + project.name
 
 task releaseJar(type: Jar) {
