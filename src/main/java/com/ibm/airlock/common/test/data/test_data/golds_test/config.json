@@ -1,0 +1,26 @@
+[
+  { "serverUrl": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+    "adminUrl": "https:\/\/api-stage.airlock.twcmobile.weather.com\/airlock\/api\/admin",
+    "products": [
+      "ProductWithOrderingRules"
+    ]
+  },
+  {
+    "serverUrl": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/STAGE\/",
+    "adminUrl": "https:\/\/api-stage.airlock.twcmobile.weather.com\/airlock\/api\/admin",
+    "products": [
+      "DevProdWithRulesTest",
+      "OverallProductBackwardCompatibility",
+      "ExperimentsAndVariantsPercentage",
+      "AnalyticsWithBranch",
+      "ConfigurationMutualExclusion",
+      "ConfigurationFeatureOn",
+      "ConfigurationNoRules2Configs",
+      "ConfigurationsWithSubConfig",
+      "ConfigurationWithRules",
+      "MTXGroupingConfiguration",
+      "SDKBranchesSubfeatures",
+      "UtilityInRule"
+    ]
+  }
+]
