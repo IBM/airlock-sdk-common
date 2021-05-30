@@ -1,4 +1,4 @@
-package com.weather.airlock.sdk.util;
+package com.ibm.airlock.common.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

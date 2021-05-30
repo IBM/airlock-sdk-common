@@ -280,7 +280,7 @@ public class NotificationsManager {
                 }
                 for (int i = 0; i < notificationsArray.length(); i++) {
                     JSONObject obj = notificationsArray.getJSONObject(i);
-                    com.ibm.airlock.common.notifications.AirlockNotification notification = new com.ibm.airlock.common.notifications.AirlockNotification(obj, ph, appVersion);
+                    AirlockNotification notification = new AirlockNotification(obj, ph, appVersion);
                     notifications.put(notification.getName(), notification);
                 }
             }
@@ -311,7 +311,7 @@ public class NotificationsManager {
         if (!isEnabled()) {
             return;
         }
-        for (com.ibm.airlock.common.notifications.AirlockNotification notification : this.notifications.values()) {
+        for (AirlockNotification notification : this.notifications.values()) {
             notification.setProcessingEnablement();
         }
     }
@@ -322,7 +322,7 @@ public class NotificationsManager {
             return;
         }
         int counter = 0;
-        for (com.ibm.airlock.common.notifications.AirlockNotification notification : this.notifications.values()) {
+        for (AirlockNotification notification : this.notifications.values()) {
             if (configurations.size() > counter) {
                 notification.setConfiguration(configurations.get(counter));
             }

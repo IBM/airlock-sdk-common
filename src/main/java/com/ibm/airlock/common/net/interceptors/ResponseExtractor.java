@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.zip.GZIPInputStream;
 
 import com.ibm.airlock.common.log.Logger;
-import com.weather.airlock.sdk.util.Gzip;
+import com.ibm.airlock.common.util.Gzip;
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
 import okhttp3.Request;

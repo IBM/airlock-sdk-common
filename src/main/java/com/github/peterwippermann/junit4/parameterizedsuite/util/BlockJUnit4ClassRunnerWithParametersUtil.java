@@ -142,11 +142,11 @@ public class BlockJUnit4ClassRunnerWithParametersUtil {
             return new Fail(e);
         }
 
-        List<TestRule> testRules = com.github.peterwippermann.junit4.parameterizedsuite.util.BlockJUnit4ClassRunnerUtil.getTestRules(test, testClass);
-        Statement statement = com.github.peterwippermann.junit4.parameterizedsuite.util.BlockJUnit4ClassRunnerUtil.withTestRules(testRules, description, baseStatementWithChildren);
+        List<TestRule> testRules = BlockJUnit4ClassRunnerUtil.getTestRules(test, testClass);
+        Statement statement = BlockJUnit4ClassRunnerUtil.withTestRules(testRules, description, baseStatementWithChildren);
 
-        statement = com.github.peterwippermann.junit4.parameterizedsuite.util.ParentRunnerUtil.withBeforeClasses(statement, testClass);
-        statement = com.github.peterwippermann.junit4.parameterizedsuite.util.ParentRunnerUtil.withAfterClasses(statement, testClass);
+        statement = ParentRunnerUtil.withBeforeClasses(statement, testClass);
+        statement = ParentRunnerUtil.withAfterClasses(statement, testClass);
         statement = ParentRunnerUtil.withClassRules(statement, testClass, description);
         return statement;
     }

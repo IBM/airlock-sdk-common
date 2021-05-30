@@ -24,7 +24,7 @@ public class RawEntitlementsJsonParser extends BaseRawFeaturesJsonParser {
     }
 
     public static RawEntitlementsJsonParser getInstance() {
-        return RawEntitlementsJsonParser.SingletonHolder.HOLDER_INSTANCE;
+        return SingletonHolder.HOLDER_INSTANCE;
     }
 
     public Feature getFeaturesTree(JSONObject root, Feature.Source source) throws JSONException, ScriptExecutionException {

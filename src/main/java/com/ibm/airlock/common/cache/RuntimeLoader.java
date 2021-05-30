@@ -5,8 +5,8 @@ import com.ibm.airlock.common.BaseAirlockProductManager;
 import com.ibm.airlock.common.net.interceptors.ResponseExtractor;
 import com.ibm.airlock.common.util.Constants;
 import com.ibm.airlock.common.util.Decryptor;
+import com.ibm.airlock.common.util.Gzip;
 import com.ibm.airlock.common.util.RandomUtils;
-import com.weather.airlock.sdk.util.Gzip;
 
 import org.json.JSONException;
 import org.json.JSONObject;

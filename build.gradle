@@ -38,7 +38,7 @@ javadoc {
 
 
 ext {
-    SNAPSHOT = false
+    SNAPSHOT = true
     VERSION_MAJOR_SDK = releaseMajorBuildNumber
     VERSION_MINOR_SDK = releaseMinorBuildNumber
     RELEASE_VERSION_MICRO = releaseMicroBuildNumber
@@ -46,7 +46,8 @@ ext {
     BUILD_NUMBER = SNAPSHOT ? BUILD_NUMBER : RELEASE_VERSION_MICRO
 }
 
-version = VERSION_MAJOR_SDK + '.' + VERSION_MINOR_SDK + '.' + RELEASE_VERSION_MICRO
+version = VERSION_MAJOR_SDK + '.' + VERSION_MINOR_SDK + '.' + BUILD_NUMBER
+
 jar.baseName = "debug/" + project.name
 
 task releaseJar(type: Jar) {

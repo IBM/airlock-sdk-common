@@ -9,7 +9,7 @@ import org.junit.runners.model.RunnerBuilder;
 import org.junit.runners.model.Statement;
 
 /**
- * This extension of {@link Suite} is used by {@link com.github.peterwippermann.junit4.parameterizedsuite.ParameterizedSuite} to fork
+ * This extension of {@link Suite} is used by {@link ParameterizedSuite} to fork
  * a run of the suite's children for a single parameter.
  * 
  * @author Peter Wippermann

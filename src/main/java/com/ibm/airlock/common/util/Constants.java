@@ -49,7 +49,6 @@ public class Constants {
     public static final String JSON_FEATURE_FIELD_CONFIGURATION_RULES = "configurationRules";
     public static final String JSON_DEFAULT_VERSION = "version";
     public static final String JSON_TRANSLATION_STRING = "strings";
-    public static final String JSON_AIRLYTICS_SHARD = "shard";
 
     // Multi Server Default File
     public static final String JSON_DEFAULT_SERVER_FIELD_NAME = "defaultServer";
