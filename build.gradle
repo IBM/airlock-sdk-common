@@ -42,7 +42,8 @@ ext {
     VERSION_MAJOR_SDK = project.hasProperty("releaseMajorBuildNumber") ? releaseMajorBuildNumber : 0
     VERSION_MINOR_SDK = project.hasProperty("releaseMinorBuildNumber") ? releaseMinorBuildNumber : 0
     RELEASE_VERSION_MICRO = project.hasProperty("releaseMinorBuildNumber") ? releaseMicroBuildNumber : 0
-    BUILD_NUMBER = System.getenv("BUILD_NUMBER") ?: project.hasProperty("devBuildNumber") ?: 0
+    BUILD_NUMBER = System.getenv("BUILD_NUMBER") ? System.getenv("BUILD_NUMBER") :
+            (project.hasProperty("devBuildNumber") ? devBuildNumber : 0)
     BUILD_NUMBER = SNAPSHOT ? BUILD_NUMBER : RELEASE_VERSION_MICRO
 }
 
