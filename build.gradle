@@ -38,13 +38,12 @@ javadoc {
 
 
 ext {
-    SNAPSHOT = true
+    SNAPSHOT = false
     VERSION_MAJOR_SDK = project.hasProperty("releaseMajorBuildNumber") ? releaseMajorBuildNumber : 0
     VERSION_MINOR_SDK = project.hasProperty("releaseMinorBuildNumber") ? releaseMinorBuildNumber : 0
     RELEASE_VERSION_MICRO = project.hasProperty("releaseMinorBuildNumber") ? releaseMicroBuildNumber : 0
-    BUILD_NUMBER = System.getenv("BUILD_NUMBER") ? System.getenv("BUILD_NUMBER") :
-            (project.hasProperty("devBuildNumber") ? devBuildNumber : 0)
-    BUILD_NUMBER = SNAPSHOT ? BUILD_NUMBER : RELEASE_VERSION_MICRO
+    BUILD_NUMBER = SNAPSHOT ? RELEASE_VERSION_MICRO + "-SNAPSHOT" : RELEASE_VERSION_MICRO
+    println(BUILD_NUMBER)
 }
 
 version = VERSION_MAJOR_SDK + '.' + VERSION_MINOR_SDK + '.' + BUILD_NUMBER
