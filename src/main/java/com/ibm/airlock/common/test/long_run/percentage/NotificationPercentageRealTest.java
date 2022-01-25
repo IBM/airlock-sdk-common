@@ -50,7 +50,7 @@ public class NotificationPercentageRealTest extends BaseTestModel {
     public void percentage1000DevicesTest() throws Exception {
         JSONObject metadata = new JSONObject();
         metadata.put("rolloutPercentage", 60.0);
-        PersistenceHandler sp = testHelper.getManager().getCacheManager().getPersistenceHandler();
+        PersistenceHandler sp = testHelper.getManager().getDebuggableCache().getPersistenceHandler();
         for (int i = 0; i < 1000; i++) {
             sp.write(Constants.SP_RANDOMS, "{}");
             List<PendingNotification> pendingNotifications = runSingleScenario(metadata);
@@ -66,9 +66,9 @@ public class NotificationPercentageRealTest extends BaseTestModel {
 
     private List<PendingNotification> runSingleScenario(JSONObject notification, boolean cleanPending) throws JSONException, ScriptInitException {
 
-        testHelper.getManager().getCacheManager().getPersistenceHandler().write(Constants.SP_NOTIFICATIONS, createDefaultNotification(notification).toString());
+        testHelper.getManager().getDebuggableCache().getPersistenceHandler().write(Constants.SP_NOTIFICATIONS, createDefaultNotification(notification).toString());
         if (cleanPending) {
-            testHelper.getManager().getCacheManager().getPersistenceHandler().write(Constants.SP_PENDING_NOTIFICATIONS, "[]");
+            testHelper.getManager().getDebuggableCache().getPersistenceHandler().write(Constants.SP_PENDING_NOTIFICATIONS, "[]");
         }
         testHelper.getManager().getNotificationsManager().initNotifications();
 

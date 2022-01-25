@@ -165,7 +165,7 @@ public class PercentageUpgradeRegTest extends BaseTestModel {
         This method is an important regression test
          */
         stage1();
-        PersistenceHandler ph = testHelper.getManager().getCacheManager().getPersistenceHandler();
+        PersistenceHandler ph = testHelper.getManager().getDebuggableCache().getPersistenceHandler();
         String randomsMap = ph.getFeaturesRandomMap().toString();
         //2. Pull-calc-sync
         testHelper.pull();
@@ -183,7 +183,7 @@ public class PercentageUpgradeRegTest extends BaseTestModel {
         This method is an important regression test
          */
         stage1();
-        String randomsMap = testHelper.getManager().getCacheManager().getPersistenceHandler().getFeaturesRandomMap().toString();
+        String randomsMap = testHelper.getManager().getDebuggableCache().getPersistenceHandler().getFeaturesRandomMap().toString();
         Assert.assertTrue(randomsMap != null);
         Assert.assertTrue(!randomsMap.replace("{}", "").trim().isEmpty());
         String[] randoms = randomsMap.split(",");

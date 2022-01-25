@@ -118,14 +118,14 @@ public abstract class AbstractBaseTest {
             manager.reset(mockedContext);
         }
         //init sdk
-        manager.initSDK(mockedContext, defaults, version, key);
+        manager.initSDK(mockedContext, defaults, version);
         //set user groups
         if (groups != null) manager.setDeviceUserGroups(groups);
         //set locale
         if (locale != null) Locale.setDefault(new Locale(locale));
         //write required randoms
         if (randoms != null)
-            manager.getCacheManager().getPersistenceHandler().write(Constants.SP_RANDOMS, randoms);
+            manager.getDebuggableCache().getPersistenceHandler().write(Constants.SP_RANDOMS, randoms);
         //clean streams
         if (cleanStreams) manager.getStreamsManager().clearAllStreams();
     }
@@ -138,14 +138,14 @@ public abstract class AbstractBaseTest {
             manager.reset(mockedContext);
         }
         //init sdk
-        manager.initSDK(mockedContext, slurp(getDefaultFile(), 1024), version, key);
+        manager.initSDK(mockedContext, slurp(getDefaultFile(), 1024), version);
         //set user groups
         if (groups != null) manager.setDeviceUserGroups(groups);
         //set locale
         if (locale != null) Locale.setDefault(new Locale(locale));
         //write required randoms
         if (randoms != null)
-            manager.getCacheManager().getPersistenceHandler().write(Constants.SP_RANDOMS, randoms);
+            manager.getDebuggableCache().getPersistenceHandler().write(Constants.SP_RANDOMS, randoms);
         //clean streams
         if (cleanStreams) manager.getStreamsManager().clearAllStreams();
     }
@@ -395,11 +395,11 @@ public abstract class AbstractBaseTest {
     }
 
     public void setDevelopmentBranch(String branchId, String branchName) throws InterruptedException {
-        manager.getCacheManager().getPersistenceHandler().setDevelopBranchName(branchName);
+        manager.getDebuggableCache().getPersistenceHandler().setDevelopBranchName(branchName);
         final CountDownLatch latch = new CountDownLatch(1);
 
         final List<Exception> error = new ArrayList<>();
-        AirlockDAO.pullBranchById(manager.getCacheManager(), branchId, new Callback() {
+        AirlockDAO.pullBranchById(manager.getDebuggableCache(), branchId, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 error.add(e);
@@ -422,7 +422,7 @@ public abstract class AbstractBaseTest {
                 try {
                     final JSONObject branchesFullResponse = new JSONObject(response.body().string());
                     response.body().close();
-                    manager.getCacheManager().getPersistenceHandler().setDevelopBranch(branchesFullResponse.toString());
+                    manager.getDebuggableCache().getPersistenceHandler().setDevelopBranch(branchesFullResponse.toString());
                     latch.countDown();
                 } catch (JSONException e) {
                     // Do nothing - stay with old copy
@@ -472,11 +472,11 @@ public abstract class AbstractBaseTest {
     }
 
     public Map<String, Feature> getFeatures() {
-        return manager.getCacheManager().getSyncFeatureList().getFeatures();
+        return manager.getDebuggableCache().getSyncFeatureList().getFeatures();
     }
 
     public void sdkChange(String constantKey, String toWrite, boolean updateStreams) {
-        manager.getCacheManager().getPersistenceHandler().write(constantKey, toWrite);
+        manager.getDebuggableCache().getPersistenceHandler().write(constantKey, toWrite);
         if (updateStreams)
             manager.getStreamsManager().updateStreams();
     }

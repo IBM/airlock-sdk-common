@@ -90,10 +90,13 @@ public abstract class BaseAirlockProductManager implements AirlockProductManager
         return streamsManager;
     }
 
+    public CacheManager getDebuggableCache(){
+        return this.cacheManager;
+    }
+
     public NotificationsManager getNotificationsManager() {
         return notificationsManager;
     }
-
 
     /**
      * @return whether AirlockManager.getString methods should return the same string as a doubled value
@@ -112,23 +115,23 @@ public abstract class BaseAirlockProductManager implements AirlockProductManager
     }
 
     @Override
-    public void initSDK(Context appContext, int defaultFileId, String productVersion) throws AirlockInvalidFileException, IOException {
+    public void initSDK(Context appContext, int defaultFileId, String productVersion, Object...additionalParams) throws AirlockInvalidFileException, IOException {
 
     }
 
     @Override
-    public void initSDK(Context appContext, String defaultFile, String productVersion) throws AirlockInvalidFileException, IOException {
+    public void initSDK(Context appContext, String defaultFile, String productVersion) {
 
     }
 
     @Override
-    public void initSDK(Context appContext, RuntimeLoader runtimeLoader, String encryptionKey) throws AirlockInvalidFileException, IOException {
+    public void initSDK(Context appContext, RuntimeLoader runtimeLoader, String encryptionKey) throws IOException {
 
     }
 
     /**
      * Returns the airlock session id the airlock instance was initialized with
-     * or null if {@link #initSDK(Context, int, String) initSDK} method hasn't called yet.
+     * or null if {@link #initSDK(Context, int, String, Object...)}  initSDK} method hasn't called yet.
      */
     @CheckForNull
     public String getSeasonId() {
@@ -137,7 +140,7 @@ public abstract class BaseAirlockProductManager implements AirlockProductManager
 
     /**
      * Returns the airlock version from the airlock instance was initialized with
-     * or null if {@link #initSDK(Context, int, String) initSDK} method hasn't called yet.
+     * or null if {@link #initSDK(Context, int, String, Object...) initSDK} method hasn't called yet.
      */
     @CheckForNull
     public String getAirlockVersion() {
@@ -147,7 +150,7 @@ public abstract class BaseAirlockProductManager implements AirlockProductManager
 
     /**
      * Returns the airlock product id the airlock instance was initialized with or null
-     * if {@link #initSDK(Context, int, String) initSDK} method hasn't called yet.
+     * if {@link #initSDK(Context, int, String, Object...) initSDK} method hasn't called yet.
      */
     @CheckForNull
     public String getProductId() {

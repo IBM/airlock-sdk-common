@@ -88,7 +88,7 @@ public class AnalyticsTest extends BaseTestModel {
         testHelper.reInitSDK("2.0");
         testHelper.pull();
         testHelper.calcSync(null,null);
-        JSONObject json = testHelper.getManager().getCacheManager().getSyncFeatureList().toJsonObject();
+        JSONObject json = testHelper.getManager().getDebuggableCache().getSyncFeatureList().toJsonObject();
         try {
             JSONObject root = (JSONObject) json.get("root");
             JSONArray features = (JSONArray) root.get("features");

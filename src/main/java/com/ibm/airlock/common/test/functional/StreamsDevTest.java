@@ -44,14 +44,14 @@ public class StreamsDevTest extends BaseTestModel {
     @Ignore
     public void featuresUsageBasicTest() throws JSONException, ScriptInitException {
 
-        String streams = testHelper.getManager().getCacheManager().getPersistenceHandler().read(Constants.SP_FEATURE_USAGE_STREAMS, "");
+        String streams = testHelper.getManager().getDebuggableCache().getPersistenceHandler().read(Constants.SP_FEATURE_USAGE_STREAMS, "");
         int counter = 0;
         while (streams.isEmpty() && counter < 10) {
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
             }
-            streams = testHelper.getManager().getCacheManager().getPersistenceHandler().read(Constants.SP_FEATURE_USAGE_STREAMS, "");
+            streams = testHelper.getManager().getDebuggableCache().getPersistenceHandler().read(Constants.SP_FEATURE_USAGE_STREAMS, "");
             counter++;
         }
 

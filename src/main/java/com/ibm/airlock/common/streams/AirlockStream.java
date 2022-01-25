@@ -141,10 +141,10 @@ public class AirlockStream {
             JSONArray pendingEventsArray = null;
             try {
                 pendingEventsArray = new JSONArray(pendingEvents);
+                this.setPendingEvents(pendingEventsArray);
             } catch (JSONException e) {
                 //
             }
-            this.setPendingEvents(pendingEventsArray);
         }
 
         this.setProcessingSuspended(persistedStreamData.optBoolean("processingSuspended", false));

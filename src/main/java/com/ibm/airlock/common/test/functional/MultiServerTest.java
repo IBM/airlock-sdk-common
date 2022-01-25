@@ -48,10 +48,10 @@ public class MultiServerTest extends BaseTestModel {
     public void doPullDefaultFileTest() {
         AirlockProductManager manager = testHelper.getManager();
 
-        Servers.Server server = manager.getCacheManager().getServers().getCurrentServer();
+        Servers.Server server = manager.getDebuggableCache().getServers().getCurrentServer();
         final CountDownLatch latch = new CountDownLatch(1);
         try {
-            manager.getCacheManager().pullProductList(server, new AirlockCallback() {
+            manager.getDebuggableCache().pullProductList(server, new AirlockCallback() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     failMessage = e.getClass() + ": " + e.getMessage();
@@ -81,7 +81,7 @@ public class MultiServerTest extends BaseTestModel {
 
         final CountDownLatch latch2 = new CountDownLatch(1);
         try {
-            manager.getCacheManager().pullDefaultFile(server, my_product, new AirlockCallback() {
+            manager.getDebuggableCache().pullDefaultFile(server, my_product, new AirlockCallback() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     failMessage = e.getClass() + ": " + e.getMessage();
@@ -99,7 +99,7 @@ public class MultiServerTest extends BaseTestModel {
             Assert.fail(e.getClass() + ": " + e.getMessage());
         }
         try {
-            String d_file = manager.getCacheManager().getPersistenceHandler().read(Constants.SP_UPDATED_DEFAULT_FILE, "").trim();
+            String d_file = manager.getDebuggableCache().getPersistenceHandler().read(Constants.SP_UPDATED_DEFAULT_FILE, "").trim();
             JSONObject read = new JSONObject(d_file);
             Assert.assertTrue("Unexpected product name was loaded.", read.get("productName").equals(PRODUCT_NAME));
         } catch (JSONException e) {

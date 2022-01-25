@@ -89,12 +89,7 @@ public abstract class BasePersistenceHandler implements PersistenceHandler {
         init(context);
     }
 
-    public abstract void init(Context c, AirlockCallback callback);
-
-    public abstract void init(Context c);
-
     public abstract void reset(Context c);
-
 
     public FeaturesList getCachedPreSyncedFeaturesMap() {
         String featureValues = read(Constants.SP_PRE_SYNCED_FEATURES_LIST, "");

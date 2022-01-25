@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.Future;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
@@ -22,11 +23,11 @@ import javax.annotation.Nullable;
  */
 public interface PersistenceHandler {
 
-    public void init(Context c, AirlockCallback callback);
+    void init(Context c);
 
-    public void init(Context c);
+    Future<Void> getUploadStatus();
 
-    public void reset(Context c);
+    void reset(Context c);
 
     FeaturesList getCachedFeatureMap();
 
@@ -35,22 +36,22 @@ public interface PersistenceHandler {
     FeaturesList getCachedPreSyncedFeaturesMap();
 
     @CheckForNull
-    public JSONObject getFeaturesRandomMap();
+    JSONObject getFeaturesRandomMap();
 
     @CheckForNull
-    public JSONObject getStreamsRandomMap();
+    JSONObject getStreamsRandomMap();
 
     @CheckForNull
-    public void setFeaturesRandomMap(JSONObject randomMap);
+    void setFeaturesRandomMap(JSONObject randomMap);
 
     @CheckForNull
-    public JSONObject getPurchasesRandomMap();
+    JSONObject getPurchasesRandomMap();
 
     @CheckForNull
-    public void setPurchasesRandomMap(JSONObject randomMap);
+    void setPurchasesRandomMap(JSONObject randomMap);
 
     @CheckForNull
-    public void setStreamsRandomMap(JSONObject randomMap);
+    void setStreamsRandomMap(JSONObject randomMap);
 
     /**
      * Stores a map of user groups
@@ -58,7 +59,7 @@ public interface PersistenceHandler {
      *
      * @throws JSONException
      */
-    public void storeDeviceUserGroups(@Nullable List<String> userGroups, StreamsManager streamsManage);
+    void storeDeviceUserGroups(@Nullable List<String> userGroups, StreamsManager streamsManage);
 
 
     /**
@@ -66,48 +67,48 @@ public interface PersistenceHandler {
      *
      * @return the name of a selected develop branch
      */
-    public String getDevelopBranchName();
+    String getDevelopBranchName();
 
     /**
      * Stores a selected develop branch name to the local store
      */
-    public void setDevelopBranchName(String selectedDevelopBranchName);
+    void setDevelopBranchName(String selectedDevelopBranchName);
 
     /**
      * returns the last branch name from the local store
      *
      * @return the name of the last branch name used
      */
-    public String getLastBranchName();
+    String getLastBranchName();
 
     /**
      * Stores the current branch name to the local store
      */
-    public void setLastBranchName(String selectedDevelopBranchName);
+    void setLastBranchName(String selectedDevelopBranchName);
 
     /**
      * Return a selected develop branch id from the local store
      *
      * @return the identification of a selected develop branch
      */
-    public String getDevelopBranchId();
+    String getDevelopBranchId();
 
     /**
      * Stores a selected develop branch id to the local store
      */
-    public void setDevelopBranchId(String selectedDevelopBranchId);
+    void setDevelopBranchId(String selectedDevelopBranchId);
 
     /**
      * Return a selected develop branch from the local store
      *
      * @return the name of a selected develop branch
      */
-    public String getDevelopBranch();
+    String getDevelopBranch();
 
     /**
      * Stores a selected develop branch config (in JSON) to the local store
      */
-    public void setDevelopBranch(String selectedDevelopBranch);
+    void setDevelopBranch(String selectedDevelopBranch);
 
 
     /**
@@ -116,71 +117,71 @@ public interface PersistenceHandler {
      *
      * @return a list of user groups
      */
-    public List<String> getDeviceUserGroups();
+    List<String> getDeviceUserGroups();
 
-    public JSONObject readJSON(String key);
+    JSONObject readJSON(String key);
 
     @CheckForNull
-    public Set<String> readSet(String key);
+    Set<String> readSet(String key);
 
-    public String read(String key, String defaultValue);
+    String read(String key, String defaultValue);
 
-    public void write(String key, String value);
+    void write(String key, String value);
 
-    public void write(String key, JSONObject value);
+    void write(String key, JSONObject value);
     /**
      * The reason this has a seperate method is because it is called when app stopps - so we need to persist synchronously
      *
      * @param jsonAsString
      */
-    public void writeStream(String name, String jsonAsString);
+    void writeStream(String name, String jsonAsString);
 
     /**
      * The reason this has a seperate method is because it is called when app stopps - so we need to persist synchronously
      */
-    public JSONObject readStream(String name);
+    JSONObject readStream(String name);
 
-    public long read(String key, long defaultValue);
+    long read(String key, long defaultValue);
 
-    public boolean readBoolean(String key, boolean defaultValue);
+    boolean readBoolean(String key, boolean defaultValue);
 
-    public void write(String key, long value);
+    void write(String key, long value);
 
-    public void write(String key, int value);
+    void write(String key, int value);
 
-    public int read(String key, int defaultValue);
+    int read(String key, int defaultValue);
 
-    public void write(String key, boolean value);
+    void write(String key, boolean value);
 
-    public void clearExperiments();
+    void clearExperiments();
 
     @TestOnly
-    public void clear();
+    void clear();
 
     //This method is to simulate app restarting after definition exists on SharedPreferences and file system (but not in memory)
     @TestOnly
-    public void clearInMemory();
+    void clearInMemory();
 
     /**
      * If the season is not set the SDK hasn't been initialized yet.
      *
      * @return true is the airlock product season was set otherwise false.
      */
-    public boolean isInitialized();
+    boolean isInitialized();
 
-    public void setContextFieldsForAnalytics(String s);
+    void setContextFieldsForAnalytics(String s);
 
-    public void setServerFeatureMap(FeaturesList preSyncServerFeatureList);
+    void setServerFeatureMap(FeaturesList preSyncServerFeatureList);
 
-    public void setSyncedFeaturesMap(FeaturesList syncServerFeatureList);
+    void setSyncedFeaturesMap(FeaturesList syncServerFeatureList);
 
-    public void setPreSyncedFeaturesMap(FeaturesList syncServerFeatureList);
+    void setPreSyncedFeaturesMap(FeaturesList syncServerFeatureList);
 
-    public JSONObject getNotificationsRandomMap();
-    public void setNotificationsRandomMap(JSONObject randomMap);
+    JSONObject getNotificationsRandomMap();
+    void setNotificationsRandomMap(JSONObject randomMap);
 
-    public JSONObject getExperimentsRandomMap();
-    public void setExperimentsRandomMap(JSONObject randomMap);
+    JSONObject getExperimentsRandomMap();
+    void setExperimentsRandomMap(JSONObject randomMap);
 
     void clearRuntimeData();
 

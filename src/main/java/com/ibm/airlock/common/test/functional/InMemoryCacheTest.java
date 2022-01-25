@@ -110,16 +110,16 @@ public class InMemoryCacheTest extends BaseTestModel {
         testHelper.customSetUp(m_version, KEY, m_ug, null, null, false, true, false, defaults);
         testHelper.pull();
         testHelper.calcSync(null, null);
-        Assert.assertNotNull(testHelper.getManager().getCacheManager().getCachedSyncFeatureList().get(CacheManager.SYNC_FEATURE_MAP));
-        Assert.assertNotNull(testHelper.getManager().getCacheManager().getCachedPreSyncFeatureList().get(CacheManager.PRE_SYNC_FEATURE_MAP));
+        Assert.assertNotNull(testHelper.getManager().getDebuggableCache().getCachedSyncFeatureList().get(CacheManager.SYNC_FEATURE_MAP));
+        Assert.assertNotNull(testHelper.getManager().getDebuggableCache().getCachedPreSyncFeatureList().get(CacheManager.PRE_SYNC_FEATURE_MAP));
 
-        Assert.assertEquals(true, testHelper.getManager().getCacheManager().getFeature("ns.F1").isOn());
-        Assert.assertEquals(false, testHelper.getManager().getCacheManager().getFeature("ns.F11").isOn());
+        Assert.assertEquals(true, testHelper.getManager().getDebuggableCache().getFeature("ns.F1").isOn());
+        Assert.assertEquals(false, testHelper.getManager().getDebuggableCache().getFeature("ns.F11").isOn());
         Thread.sleep(30000);
-        Assert.assertNull(testHelper.getManager().getCacheManager().getCachedSyncFeatureList().get(CacheManager.SYNC_FEATURE_MAP));
-        Assert.assertNull(testHelper.getManager().getCacheManager().getCachedPreSyncFeatureList().get(CacheManager.PRE_SYNC_FEATURE_MAP));
+        Assert.assertNull(testHelper.getManager().getDebuggableCache().getCachedSyncFeatureList().get(CacheManager.SYNC_FEATURE_MAP));
+        Assert.assertNull(testHelper.getManager().getDebuggableCache().getCachedPreSyncFeatureList().get(CacheManager.PRE_SYNC_FEATURE_MAP));
 
-        Assert.assertEquals(true, testHelper.getManager().getCacheManager().getFeature("ns.F1").isOn());
-        Assert.assertEquals(false, testHelper.getManager().getCacheManager().getFeature("ns.F11").isOn());
+        Assert.assertEquals(true, testHelper.getManager().getDebuggableCache().getFeature("ns.F1").isOn());
+        Assert.assertEquals(false, testHelper.getManager().getDebuggableCache().getFeature("ns.F11").isOn());
     }
 }

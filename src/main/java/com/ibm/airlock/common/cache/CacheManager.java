@@ -30,6 +30,7 @@ import com.ibm.airlock.common.util.Constants;
 import com.ibm.airlock.common.util.DefaultFileParser;
 import com.ibm.airlock.common.util.LocaleProvider;
 import com.ibm.airlock.common.util.RandomUtils;
+import com.sangupta.murmur.Murmur2;
 
 import org.jetbrains.annotations.TestOnly;
 import org.json.JSONArray;
@@ -49,6 +50,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 import javax.annotation.CheckForNull;
@@ -57,6 +59,8 @@ import javax.annotation.Nullable;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
+
+import static com.ibm.airlock.common.util.Constants.JSON_AIRLYTICS_SHARD;
 
 /**
  * This class will generate the feature map and manage it.
@@ -139,6 +143,8 @@ public class CacheManager {
 
     // we use this cache for the fast access to the strings table from stateless calculation
     private InMemoryCache translatedStringsCache;
+    private String defaultFile;
+    private Context context;
 
     public PersistenceHandler getPersistenceHandler() {
         return persistenceHandler;
@@ -185,88 +191,95 @@ public class CacheManager {
         this.preSyncedEntitlementsJSON.put(SYNC_ENTITLEMENTS_JSON, new FeaturesList(), getFeaturesMapTimeToLive());
     }
 
+    @SuppressWarnings("NewApi")
     public void init(String productName, Context context, String defaultFile,
                      String version, PersistenceHandler sp, final StreamsManager streamsManager,
                      NotificationsManager notificationsManager,
-                     ConnectionManager connectionManager) throws IOException,
-            AirlockInvalidFileException {
+                     ConnectionManager connectionManager) throws AirlockInvalidFileException {
         long startInit = System.currentTimeMillis();
         this.persistenceHandler = sp;
+        this.defaultFile = defaultFile;
+        this.context = context;
         this.airlockContextManager = new AirlockContextManager(productName);
         this.translatedStringsCache = new InMemoryCache();
+        productVersion = version;
+        this.connectionManager = connectionManager;
+        this.notificationsManager = notificationsManager;
+        this.streamsManager = streamsManager;
+        printPerformanceLog("CacheManager.init time:", startInit);
+        Future<Void> future = (Future<Void>) sp.getUploadStatus();
+        if (future != null && !future.isDone()) {
+            try {
+                onSpInitCompletion(future.get());
+                return;
+            } catch (Exception ignore) {
+            }
+        } else {
+            onSpInitCompletion(null);
+        }
+    }
+
+    private <Void> Void onSpInitCompletion(Void unused) throws AirlockInvalidFileException {
         this.airlockContextManager.getCurrentContext().
                 update(this.persistenceHandler.readJSON(Constants.SP_CURRENT_CONTEXT));
-        sp.init(context, new AirlockCallback() {
-
-            @Override
-            public void onFailure(Exception e) {
-                //do nothing
-            }
-
-            @Override
-            public void onSuccess(String msg) {
-                streamsManager.updateStreams();
-            }
-        });
-        this.connectionManager = connectionManager;
-        sharedPreferenceHandlerInitialized = sp.isInitialized();
+        streamsManager.updateStreams();
+        sharedPreferenceHandlerInitialized = this.persistenceHandler.isInitialized();
         resetLocale();
-        productVersion = version;
         if (defaultFile != null) {
-            sp.write(Constants.SP_DEFAULT_FILE, defaultFile);
+            this.persistenceHandler.write(Constants.SP_DEFAULT_FILE, defaultFile);
         }
         String previousVersion = "";
         if (sharedPreferenceHandlerInitialized) {
-            previousVersion = sp.read(Constants.SP_PRODUCT_VERSION, "");
+            previousVersion = this.persistenceHandler.read(Constants.SP_PRODUCT_VERSION, "");
         }
-
         setUserRandomNumber();
         setAirlockUserUniqueId();
         // new version, need to parse ALL the default file, and reset persistenceHandler cached relevant to refresh.
         AirlockVersionComparator comparator = new AirlockVersionComparator();
+
         if (previousVersion.equalsIgnoreCase("") || !comparator.equals(productVersion, previousVersion)) {
             //reset the product's id on the app upgrade
-            sp.write(Constants.SP_DEFAULT_PRODUCT_ID, "");
-            sp.write(Constants.SP_CURRENT_PRODUCT_ID, "");
+            this.persistenceHandler.write(Constants.SP_DEFAULT_PRODUCT_ID, "");
+            this.persistenceHandler.write(Constants.SP_CURRENT_PRODUCT_ID, "");
 
             resetSPOnNewSeasonId();
             if (defaultFile != null) {
                 parseDefaultFile(defaultFile, false);
             }
-            sp.write(Constants.SP_PRODUCT_VERSION, productVersion);
+            this.persistenceHandler.write(Constants.SP_PRODUCT_VERSION, productVersion);
         } else {
             // look for  default that we downloaded previously.
-            String updatedDefaultFile = sp.read(Constants.SP_UPDATED_DEFAULT_FILE, "");
+            String updatedDefaultFile = this.persistenceHandler.read(Constants.SP_UPDATED_DEFAULT_FILE, "");
             // we didn't download default file, use the one we received as parameter
             if (updatedDefaultFile.equals("")) {
                 updatedDefaultFile = defaultFile;
             }
             parseDefaultFile(updatedDefaultFile, true);
             FeaturesList cachedFeatures = new FeaturesList();
-            cachedFeatures.putAll(sp.getCachedFeatureMap());
+            cachedFeatures.putAll(this.persistenceHandler.getCachedFeatureMap());
             getSyncedFeaturedList().merge(cachedFeatures);
 
             // set the current cached entitlement to override the default if it exists
-            JSONObject syncedEntitlements = sp.readJSON(Constants.SP_SYNCED_ENTITLEMENTS_LIST);
+            JSONObject syncedEntitlements = this.persistenceHandler.readJSON(Constants.SP_SYNCED_ENTITLEMENTS_LIST);
             if (!syncedEntitlements.toString().equals(new JSONObject().toString())) {
                 putSyncedEntitlements(syncedEntitlements);
             }
         }
         // if Current product id == null - put the default product id as current.
-        if (sharedPreferenceHandlerInitialized && sp.read(Constants.SP_CURRENT_PRODUCT_ID, "").equals("")) {
-            sp.write(Constants.SP_CURRENT_PRODUCT_ID, sp.read(Constants.SP_DEFAULT_PRODUCT_ID, ""));
+        if (sharedPreferenceHandlerInitialized && this.persistenceHandler.read(Constants.SP_CURRENT_PRODUCT_ID, "").equals("")) {
+            this.persistenceHandler.write(Constants.SP_CURRENT_PRODUCT_ID, this.persistenceHandler.read(Constants.SP_DEFAULT_PRODUCT_ID, ""));
         }
 
         //read only if there is shared preferenceHandler is initialized
         if (sharedPreferenceHandlerInitialized) {
-            readUserGroupsFromDevice(sp, context);
+            readUserGroupsFromDevice(this.persistenceHandler, this.context);
         }
 
         this.serversList = new Servers(this.persistenceHandler);
 
         if (sharedPreferenceHandlerInitialized) {
             // If not new app - could have dev mode branch set- download the branch json file. (to reflect updates of branch)
-            String branchId = sp.getDevelopBranchId();
+            String branchId = this.persistenceHandler.getDevelopBranchId();
             if (!branchId.isEmpty()) {
                 setBranch(branchId);
             }
@@ -276,7 +289,7 @@ public class CacheManager {
         this.streamsManager = streamsManager;
         this.percentageManager = new PercentageManager(this);
         sharedPreferenceHandlerInitialized = true;
-        printPerformanceLog("CacheManager.init time:", startInit);
+        return unused;
     }
 
     @CheckForNull
@@ -1497,6 +1510,8 @@ public class CacheManager {
     public void calculateFeatures(@Nullable JSONObject userProfile,
                                   @Nullable JSONObject airlockContext,
                                   @Nullable Collection<String> purchasedProductIds) {
+
+        addAirlyticsShardToContext(airlockContext);
         final JSONObject runtimeFeatures = persistenceHandler.readJSON(Constants.SP_RAW_RULES);
         if (runtimeFeatures == null) {
             Logger.log.e(TAG, AirlockMessages.LOG_CALCULATE_MISSING_PULL_RESULT);
@@ -1541,6 +1556,15 @@ public class CacheManager {
         }.start();
     }
 
+    private void addAirlyticsShardToContext(@Nullable JSONObject airlockContext) {
+        if (airlockContext != null) {
+            final int NUMBER_OF_SHARDS = 1000;
+            byte[] value = getAirlockUserUniqueId().getBytes();
+            long no = Murmur2.hash(value, value.length, 894157739);
+            airlockContext.put(JSON_AIRLYTICS_SHARD, ((Long) (no % NUMBER_OF_SHARDS)).intValue());
+        }
+    }
+
     public Map<String, CalculateErrorItem> getLastJSCalculateErrors() {
         if (lastJSCalculateErrors == null) {
             return new HashMap<>();
@@ -1576,6 +1600,10 @@ public class CacheManager {
                                       JSONObject translationStrings,
                                       @Nullable Collection<String> purchaseIds) {
 
+        JSONObject clonedFeatures = runtimeFeatures;
+        if (runtimeFeatures != null){
+            clonedFeatures = new JSONObject(runtimeFeatures.toString());
+        }
         long start = System.currentTimeMillis();
         Map<String, FeaturesCalculator.Fallback> fallbackMap = getFallbacksMap();
         JSONObject featuresRandoms = persistenceHandler.getFeaturesRandomMap();
@@ -1593,7 +1621,7 @@ public class CacheManager {
             this.airlockContextManager.setJsUtilsScript(jsFunctions);
 
 
-            final ExperimentsCalculator.CalculationResults results = new ExperimentsCalculator().calculate(this, runtimeFeatures,
+            final ExperimentsCalculator.CalculationResults results = new ExperimentsCalculator().calculate(this, clonedFeatures,
                     airlockContext, jsFunctions, translationStrings, profileGroups, fallbackMap,
                     productVersion, featuresRandoms, purchaseIds, true);
 

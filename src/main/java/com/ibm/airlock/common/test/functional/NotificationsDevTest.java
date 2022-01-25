@@ -181,9 +181,9 @@ public class NotificationsDevTest extends BaseTestModel {
 
     private List<PendingNotification> runSingleScenario(JSONObject notification, boolean cleanPending) throws JSONException, ScriptInitException {
 
-        testHelper.getManager().getCacheManager().getPersistenceHandler().write(Constants.SP_NOTIFICATIONS, createDefaultNotification(notification).toString());
+        testHelper.getManager().getDebuggableCache().getPersistenceHandler().write(Constants.SP_NOTIFICATIONS, createDefaultNotification(notification).toString());
         if (cleanPending) {
-            testHelper.getManager().getCacheManager().getPersistenceHandler().write(Constants.SP_PENDING_NOTIFICATIONS, "[]");
+            testHelper.getManager().getDebuggableCache().getPersistenceHandler().write(Constants.SP_PENDING_NOTIFICATIONS, "[]");
         }
         testHelper.getManager().getNotificationsManager().initNotifications();
 

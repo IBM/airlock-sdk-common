@@ -1,5 +1,7 @@
 package com.ibm.airlock.common.engine;
 
+import androidx.annotation.Nullable;
+
 import com.ibm.airlock.common.cache.CacheManager;
 import com.ibm.airlock.common.data.Feature;
 import com.ibm.airlock.common.util.AirlockVersionComparator;
@@ -19,10 +21,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
-
-import javax.annotation.CheckForNull;
-import javax.annotation.Nullable;
-
 
 /**
  * The Rule engine for airlock features
@@ -120,18 +118,18 @@ public class FeaturesCalculator {
         }
     }
 
-    @CheckForNull
+    @Nullable
     private static boolean isPremium(JSONObject json) {
         return json.optBoolean(Constants.JSON_FIELD_PREMIUM, false);
     }
 
-    @CheckForNull
+    @Nullable
     private static String getPremiumRuleString(JSONObject json) {
         json = json.optJSONObject(Constants.JSON_FIELD_PREMIUM_RULE);
         return (json == null) ? null : json.optString(Constants.JSON_RULE_FIELD_RULE_STR);
     }
 
-    @CheckForNull
+    @Nullable
     private static String getRuleString(JSONObject json) {
         json = json.optJSONObject(Constants.JSON_FEATURE_FIELD_RULE);
         return (json == null) ? null : json.optString(Constants.JSON_RULE_FIELD_RULE_STR);
@@ -210,7 +208,6 @@ public class FeaturesCalculator {
         return "mx." + name;
     }
 
-    @CheckForNull
     @Nullable
     private static JSONObject evaluateConfigurationScript(ScriptInvoker invoker,
                                                           @Nullable String trigger, String attributesString) throws ScriptExecutionException {
@@ -344,7 +341,7 @@ public class FeaturesCalculator {
         return Constants.JSON_FEATURE_FIELD_FEATURES;
     }
 
-    @CheckForNull
+    @Nullable
     protected JSONObject getRoot(@Nullable JSONObject obj) {
         if (obj == null) {
             return null;
@@ -573,7 +570,7 @@ public class FeaturesCalculator {
         return featureResult;
     }
 
-    @CheckForNull
+    @Nullable
     private String getPremiumPurchaseName(JSONObject feature) {
         return feature.optString(Constants.JSON_FEATURE_FIELD_ENTITLEMENT);
     }
@@ -771,7 +768,7 @@ public class FeaturesCalculator {
         }
     }
 
-    @CheckForNull
+    @Nullable
     protected JSONArray getChildren(JSONObject obj, String childName) {
         return obj.optJSONArray(childName);
     }
@@ -827,7 +824,7 @@ public class FeaturesCalculator {
         return hasDirectOrder || hasWithinMXOrderingRule;
     }
 
-    @CheckForNull
+    @Nullable
     private int processCalculableChildren(JSONObject obj,
                                           ScriptInvoker invoker,
                                           AdditionalData additionalData,
@@ -895,7 +892,7 @@ public class FeaturesCalculator {
         return successes;
     }
 
-    @CheckForNull
+    @Nullable
     private int processCalculableChild(JSONObject obj, ScriptInvoker invoker, AdditionalData additionalData, ConfigResult out) throws
             ConfigScriptExecutionException, JSONException {
         String ruleId = getName(obj);
@@ -996,7 +993,7 @@ public class FeaturesCalculator {
         return Constants.JSON_FEATURE_FIELD_FEATURES;
     }
 
-    @CheckForNull
+    @Nullable
     protected JSONObject embedOneChild(JSONObject feature, String childName, Map<String, Result> resultMap, AdditionalData additionalData) throws JSONException {
         String type = feature.optString(Constants.JSON_FEATURE_FIELD_TYPE, Feature.Type.FEATURE.toString());
         JSONArray children = embedChildren(feature, childName, resultMap, additionalData);

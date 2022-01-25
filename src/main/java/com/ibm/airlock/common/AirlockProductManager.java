@@ -37,36 +37,36 @@ import javax.annotation.Nullable;
 
 public interface AirlockProductManager {
 
-    public CacheManager getCacheManager();
+    CacheManager getDebuggableCache();
 
-    public StreamsManager getStreamsManager();
+    StreamsManager getStreamsManager();
 
-    public PurchasesManager getPurchasesManager();
+    PurchasesManager getPurchasesManager();
 
-    public NotificationsManager getNotificationsManager();
+    NotificationsManager getNotificationsManager();
 
-    public FeaturesList getSyncFeatureList();
+    FeaturesList getSyncFeatureList();
 
-    public String readAsStringByKey(String key, String defaultValue);
+    String readAsStringByKey(String key, String defaultValue);
 
-    public AirlockContextManager getAirlockContextManager();
+    AirlockContextManager getAirlockContextManager();
 
-    public PersistenceHandler getPersistenceHandler();
+    PersistenceHandler getPersistenceHandler();
 
-    public String getLastBranchName();
+    String getLastBranchName();
 
 
     /**
      * @return whether AirlockManager.getString methods should return the same string as a doubled value
      */
-    public boolean isDoubleLengthStrings();
+    boolean isDoubleLengthStrings();
 
     /**
      * Sets the whether SDK should be configured to return AirlockManager.getString as as a doubled value
      *
      * @param doubleLengthStrings
      */
-    public void setDoubleLengthStrings(boolean doubleLengthStrings);
+    void setDoubleLengthStrings(boolean doubleLengthStrings);
 
     /**
      * Initializes AirlockManager with application information.
@@ -80,27 +80,9 @@ public interface AirlockProductManager {
      * @throws AirlockInvalidFileException Thrown when the defaults file does not contain the proper content.
      * @throws IOException                 Thrown when the defaults file cannot be opened.
      */
-    public void initSDK(Context appContext, int defaultFileId, String productVersion) throws AirlockInvalidFileException, IOException;
+    void initSDK(Context appContext, int defaultFileId, String productVersion, Object...additionalParams) throws AirlockInvalidFileException, IOException;
 
-
-    public void initSDK(Context appContext, RuntimeLoader runtimeLoader, String encryptionKey) throws AirlockInvalidFileException, IOException;
-
-
-    /**
-     * Initializes AirlockManager with application information.
-     * InitSDK loads the defaults file specified by the defaultFileId and
-     * merges it with the current feature set.
-     *
-     * @param appContext     The current airlock context.
-     * @param defaultFile    Defaults file. This defaults file should be part of the application. You can get this by running the Airlock
-     *                       Code Assistant plugin.
-     * @param productVersion The application version. Use periods to separate between major and minor version numbers, for example: 6.3.4
-     * @param key            Encryption key will be used to encrype/decrypt the cached data
-     * @throws AirlockInvalidFileException Thrown when the defaults file does not contain the proper content.
-     * @throws IOException                 Thrown when the defaults file cannot be opened.
-     */
-    public void initSDK(Context appContext, String defaultFile, String productVersion, String key) throws AirlockInvalidFileException, IOException;
-
+    void initSDK(Context appContext, RuntimeLoader runtimeLoader, String encryptionKey) throws AirlockInvalidFileException, IOException;
 
     /**
      * Initializes AirlockManager with application information.
@@ -114,7 +96,7 @@ public interface AirlockProductManager {
      * @throws AirlockInvalidFileException Thrown when the defaults file does not contain the proper content.
      * @throws IOException                 Thrown when the defaults file cannot be opened.
      */
-    public void initSDK(Context appContext, String defaultFile, String productVersion) throws AirlockInvalidFileException, IOException;
+    void initSDK(Context appContext, String defaultFile, String productVersion) throws AirlockInvalidFileException, IOException;
 
 
     /**
@@ -122,33 +104,33 @@ public interface AirlockProductManager {
      * or null if {@link #initSDK(Context, int, String) initSDK} method hasn't called yet.
      */
     @CheckForNull
-    public String getSeasonId();
+    String getSeasonId();
 
     /**
      * Returns the airlock version from the airlock instance was initialized with
      * or null if {@link #initSDK(Context, int, String) initSDK} method hasn't called yet.
      */
     @CheckForNull
-    public String getAirlockVersion();
+    String getAirlockVersion();
 
     /**
      * Returns the airlock product id the airlock instance was initialized with or null
      * if {@link #initSDK(Context, int, String) initSDK} method hasn't called yet.
      */
     @CheckForNull
-    public String getProductId();
+    String getProductId();
 
     /**
      * Returns the airlock ExperimentList
      */
-    public Map<String, String> getExperimentInfo();
+    Map<String, String> getExperimentInfo();
 
     /**
      * Returns the data provider mode that the SDK is using.
      *
      * @return The data provider mode that the SDK is using.
      */
-    public AirlockDAO.DataProviderType getDataProviderType();
+    AirlockDAO.DataProviderType getDataProviderType();
 
     /**
      * Sets the data provider mode that is configured for the SDK instance. Airlock must be initialized;
@@ -156,7 +138,7 @@ public interface AirlockProductManager {
      *
      * @param type The DataProviderType to be used.
      */
-    public void setDataProviderType(AirlockDAO.DataProviderType type);
+    void setDataProviderType(AirlockDAO.DataProviderType type);
 
     /**
      * Asynchronously downloads the current list of features from the server.
@@ -164,36 +146,24 @@ public interface AirlockProductManager {
      * @param callback Callback to be called when the function returns.
      * @throws AirlockNotInitializedException if the Airlock SDK has not been initialized.
      */
-    public void pullFeatures(final AirlockCallback callback) throws AirlockNotInitializedException;
+    void pullFeatures(final AirlockCallback callback) throws AirlockNotInitializedException;
 
     /**
      * Gets the raw list of features and their rules from server.
      */
     @CheckForNull
-    public JSONObject getFeaturesConfigurationFromServer();
+    JSONObject getFeaturesConfigurationFromServer();
 
 
     /**
      * Calculates the status of the features according to the pullFeatures results and return the Features as a tree.
      *
      * @param context     the airlock context provided by caller
-     * @param purchaseIds the list of purchased product an user bought so far.
+     * @param purchasedProductIds the list of purchased product an user bought so far.
      * @throws AirlockNotInitializedException if the Airlock SDK has not been initialized
      * @throws JSONException                  if the pullFeature results, the userProfile or the deviceProfile is not in the correct JSON format.
      */
-    public void calculateFeatures(@Nullable JSONObject context, Collection<String> purchasedProductIds) throws AirlockNotInitializedException, JSONException;
-
-
-    /**
-     * Calculates the status of the features according to the pullFeatures results and return the Features as a tree.
-     *
-     * @param context the airlock context provided by caller
-     * @param locale  locale the feature rules will be based on.
-     * @throws AirlockNotInitializedException if the Airlock SDK has not been initialized
-     * @throws JSONException                  if the pullFeature results, the userProfile or the deviceProfile is not in the correct JSON format.
-     */
-    public Feature calculateFeatures(@Nullable JSONObject context, String locale) throws AirlockNotInitializedException, JSONException;
-
+    void calculateFeatures(@Nullable JSONObject context, Collection<String> purchasedProductIds) throws AirlockNotInitializedException, JSONException;
 
     /**
      * Calculates the status of the features according to the pullFeatures results.
@@ -204,7 +174,7 @@ public interface AirlockProductManager {
      * @throws AirlockNotInitializedException if the Airlock SDK has not been initialized
      * @throws JSONException                  if the pullFeature results, the userProfile or the deviceProfile is not in the correct JSON format.
      */
-    public void calculateFeatures(@Nullable JSONObject userProfile, @Nullable JSONObject airlockContext) throws AirlockNotInitializedException, JSONException;
+    void calculateFeatures(@Nullable JSONObject userProfile, @Nullable JSONObject airlockContext) throws AirlockNotInitializedException, JSONException;
 
     /**
      * Asynchronously returns the list of user groups defined on the Airlock server.
@@ -212,17 +182,17 @@ public interface AirlockProductManager {
      * @param callback Callback to be called when the function returns.
      */
 
-    public void getServerUserGroups(final AirlockCallback callback);
+    void getServerUserGroups(final AirlockCallback callback);
 
-    public void getProductBranches(final AirlockCallback callback);
+    void getProductBranches(final AirlockCallback callback);
 
-    public String getStreamsSummary();
+    String getStreamsSummary();
 
-    public void persistStreams();
+    void persistStreams();
 
-    public JSONArray addStreamsEvent(JSONArray events, boolean processImmediately);
+    JSONArray addStreamsEvent(JSONArray events, boolean processImmediately);
 
-    public JSONArray addStreamsEvent(JSONObject event);
+    JSONArray addStreamsEvent(JSONObject event);
 
     /**
      * Returns a list of user groups selected for the device.
@@ -230,7 +200,7 @@ public interface AirlockProductManager {
      * @return a list of user groups selected for the device.
      * @throws JSONException if the provided value breaks the JSON serialization process.
      */
-    public List<String> getDeviceUserGroups();
+    List<String> getDeviceUserGroups();
 
     /**
      * Specifies a list of user groups selected for the device.
@@ -238,7 +208,7 @@ public interface AirlockProductManager {
      * @param userGroups List of the selected user groups.
      * @throws JSONException if the provided value breaks the JSON serialization process.
      */
-    public void setDeviceUserGroups(@Nullable List<String> userGroups);
+    void setDeviceUserGroups(@Nullable List<String> userGroups);
 
     /**
      * Synchronizes the latest refreshFeatures results with the current feature set.
@@ -246,7 +216,7 @@ public interface AirlockProductManager {
      *
      * @throws AirlockNotInitializedException if the SDK has not been initialized.
      */
-    public void syncFeatures() throws AirlockNotInitializedException;
+    void syncFeatures() throws AirlockNotInitializedException;
 
 
     /**
@@ -257,7 +227,7 @@ public interface AirlockProductManager {
      * @param entitlementName Entitlement name in the format namespace.name.
      * @return Returns the Entitlement object.
      */
-    public Entitlement getEntitlement(String entitlementName);
+    Entitlement getEntitlement(String entitlementName);
 
 
 
@@ -271,7 +241,7 @@ public interface AirlockProductManager {
      * @return Returns the list of Entitlement object.
      */
 
-    public Collection<Entitlement> getPurchasedEntitlements(Collection<String> productIds);
+    Collection<Entitlement> getPurchasedEntitlements(Collection<String> productIds);
 
 
     /**
@@ -283,7 +253,7 @@ public interface AirlockProductManager {
      * @return Returns the feature object.
      */
 
-    public Feature getFeature(String featureName);
+    Feature getFeature(String featureName);
 
     /**
      * Returns a cloned list of the ROOT children features.
@@ -291,7 +261,7 @@ public interface AirlockProductManager {
      *
      * @return A cloned list of the ROOT children.
      */
-    public List<Feature> getRootFeatures();
+    List<Feature> getRootFeatures();
 
     /**
      * Returns a cloned list of the entitlements.
@@ -299,48 +269,48 @@ public interface AirlockProductManager {
      *
      * @return A cloned list of the entitlements
      */
-    public Collection<Entitlement> getEntitlements();
+    Collection<Entitlement> getEntitlements();
 
     /**
      * Check if the device locale has been changed.
      * If it changed, clear all available runtime data and return the
      * application to the default state.
      */
-    public void resetLocale();
+    void resetLocale();
 
     /**
      * Method nullifies the last pull timestamp to initial value.
      */
-    public void resetLastPullTime();
+    void resetLastPullTime();
 
     /**
      * Returns the date and time of the last calculate.
      *
      * @return the date and time of the last calculate.
      */
-    public Date getLastCalculateTime();
+    Date getLastCalculateTime();
 
     /**
      * Returns the date and time when calculate results were synchronized with the current feature set.
      *
      * @return the date of the last sync time.
      */
-    public Date getLastSyncTime();
+    Date getLastSyncTime();
 
     /**
      * Returns the date and time of the last successfully completed pull request from the server.
      *
      * @return the date and time
      */
-    public Date getLastPullTime();
+    Date getLastPullTime();
 
     @CheckForNull
-    public JSONArray getContextFieldsForAnalytics();
+    JSONArray getContextFieldsForAnalytics();
 
-    public String getDefaultFile();
+    String getDefaultFile();
 
     @CheckForNull
-    public JSONObject getContextFieldsValuesForAnalytics(JSONObject contextObject, boolean returnValueAsString);
+    JSONObject getContextFieldsValuesForAnalytics(JSONObject contextObject, boolean returnValueAsString);
 
     /**
      * Returns a translated UI string based on the current device locale. When the key (string ID) is not found, returns null.
@@ -350,52 +320,52 @@ public interface AirlockProductManager {
      * @return translated UI string based on the current device locale
      */
     @CheckForNull
-    public String getString(String key, String... args);
+    String getString(String key, String... args);
 
-    public String getDevelopBranchName();
+    String getDevelopBranchName();
 
-    public String getAppVersion();
+    String getAppVersion();
 
-    public boolean isAllowExperimentEvaluation();
+    boolean isAllowExperimentEvaluation();
 
-    public void setAllowExperimentEvaluation(boolean allowExperimentEvaluation);
+    void setAllowExperimentEvaluation(boolean allowExperimentEvaluation);
 
-    public boolean isCurrentServerDefault();
+    boolean isCurrentServerDefault();
 
-    public void reset(Context context, boolean simulateUninstall);
+    void reset(Context context, boolean simulateUninstall);
 
-    public void reset(Context context);
+    void reset(Context context);
 
-    public void reInitSDK(Context appContext, int defaultFileId, String productVersion) throws AirlockInvalidFileException, IOException;
+    void reInitSDK(Context appContext, int defaultFileId, String productVersion) throws AirlockInvalidFileException, IOException;
 
-    public void updateProductContext(String context);
+    void updateProductContext(String context);
 
-    public void updateProductContext(String context, boolean clearPreviousContext);
+    void updateProductContext(String context, boolean clearPreviousContext);
 
-    public void removeProductContextField(String fieldPath);
+    void removeProductContextField(String fieldPath);
 
-    public void setSharedContext(StateFullContext stateFullContext);
+    void setSharedContext(StateFullContext stateFullContext);
 
-    public void setLocaleProvider(LocaleProvider localeProvider);
+    void setLocaleProvider(LocaleProvider localeProvider);
 
-    public Locale getLocale();
+    Locale getLocale();
 
-    public Map<String, String> getAllStrings();
+    Map<String, String> getAllStrings();
 
-    public void setDeviceInItemPercentageRange(PercentageManager.Sections section, String featureName, boolean inRange);
+    void setDeviceInItemPercentageRange(PercentageManager.Sections section, String featureName, boolean inRange);
 
-    public boolean isDeviceInItemPercentageRange(PercentageManager.Sections section, String featureName);
+    boolean isDeviceInItemPercentageRange(PercentageManager.Sections section, String featureName);
 
-    public String getAirlockUserUniqueId() throws AirlockNotInitializedException;
+    String getAirlockUserUniqueId() throws AirlockNotInitializedException;
 
-    public void addPurchasedProductsId(String productId);
+    void addPurchasedProductsId(String productId);
 
-    public void removePurchasedProductId(String productId);
+    void removePurchasedProductId(String productId);
 
-    public void clearPurchasedProductId(String productId);
+    void clearPurchasedProductId(String productId);
 
-    public Collection<String> getPurchasedProductIds();
+    Collection<String> getPurchasedProductIds();
 
-    public String resetAirlockId();
+    String resetAirlockId();
 }
 

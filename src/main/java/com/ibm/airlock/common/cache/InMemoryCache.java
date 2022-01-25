@@ -93,21 +93,13 @@ public class InMemoryCache<K, T> implements Cacheable<K, T> {
     @Override
     @CheckForNull
     public T get(K key) {
-        try {
-            return cache.get(key) == null ? null : cache.get(key).get();
-        } catch (Exception ex) {
-            return null;
-        }
+        return cache.get(key) == null ? null : cache.get(key).get();
     }
 
     @Override
     public boolean containsKey(K key) {
-        try {
-            SoftReference<T> value = this.cache.get(key);
-            return value != null && value.get() != null;
-        } catch (Exception ex) {
-            return false;
-        }
+        SoftReference<T> value = this.cache.get(key);
+        return value != null && value.get() != null;
     }
 
     @Override

@@ -80,22 +80,22 @@ public class DevProdSeparationTest extends BaseTestModel {
         manager.setDataProviderType(AirlockDAO.DataProviderType.CACHED_MODE);
 
         // -----------mode cached, no user groups (prod)
-        airlockPullFeaturesUrl = AirlockDAO.getPullFeaturesUrl(manager.getCacheManager());
+        airlockPullFeaturesUrl = AirlockDAO.getPullFeaturesUrl(manager.getDebuggableCache());
         pullFeaturesUrl = String.format(URL_REFRESH_FEATURES_STRING_FORMAT, s3Path, productId, seasonId, URL_PROD_SUFIX);
         Assert.assertEquals(airlockPullFeaturesUrl, pullFeaturesUrl);
 
-        airlockPullTransUrl = AirlockDAO.getPullTranslationsUrl(manager.getCacheManager(), "en", "us");
+        airlockPullTransUrl = AirlockDAO.getPullTranslationsUrl(manager.getDebuggableCache(), "en", "us");
         pullTransUrl = String.format(URL_TRANSLATIONS_STRING_FORMAT, s3Path, productId, seasonId, "en", "us", URL_PROD_SUFIX);
         Assert.assertEquals(airlockPullTransUrl, pullTransUrl);
 
         // ----------mode direct, no user groups (prod)
         manager.setDataProviderType(AirlockDAO.DataProviderType.DIRECT_MODE);
 
-        airlockPullFeaturesUrl = AirlockDAO.getPullFeaturesUrl(manager.getCacheManager());
+        airlockPullFeaturesUrl = AirlockDAO.getPullFeaturesUrl(manager.getDebuggableCache());
         pullFeaturesUrl = String.format(URL_REFRESH_FEATURES_STRING_FORMAT, devS3Path, productId, seasonId, URL_PROD_SUFIX);
         Assert.assertEquals(airlockPullFeaturesUrl, pullFeaturesUrl);
 
-        airlockPullTransUrl = AirlockDAO.getPullTranslationsUrl(manager.getCacheManager(), "en", "us");
+        airlockPullTransUrl = AirlockDAO.getPullTranslationsUrl(manager.getDebuggableCache(), "en", "us");
         pullTransUrl = String.format(URL_TRANSLATIONS_STRING_FORMAT, devS3Path, productId, seasonId, "en", "us", URL_PROD_SUFIX);
         Assert.assertEquals(airlockPullTransUrl, pullTransUrl);
 
@@ -105,21 +105,21 @@ public class DevProdSeparationTest extends BaseTestModel {
         manager.setDataProviderType(AirlockDAO.DataProviderType.CACHED_MODE);
 
         // mode cached, with user groups (prod)
-        airlockPullFeaturesUrl = AirlockDAO.getPullFeaturesUrl(manager.getCacheManager());
+        airlockPullFeaturesUrl = AirlockDAO.getPullFeaturesUrl(manager.getDebuggableCache());
         pullFeaturesUrl = String.format(URL_REFRESH_FEATURES_STRING_FORMAT, s3Path, productId, seasonId, URL_DEV_SUFIX);
         Assert.assertEquals(airlockPullFeaturesUrl, pullFeaturesUrl);
 
-        airlockPullTransUrl = AirlockDAO.getPullTranslationsUrl(manager.getCacheManager(), "en", "us");
+        airlockPullTransUrl = AirlockDAO.getPullTranslationsUrl(manager.getDebuggableCache(), "en", "us");
         pullTransUrl = String.format(URL_TRANSLATIONS_STRING_FORMAT, s3Path, productId, seasonId, "en", "us", URL_DEV_SUFIX);
         Assert.assertEquals(airlockPullTransUrl, pullTransUrl);
 
         // mode direct, with user groups (prod)
         manager.setDataProviderType(AirlockDAO.DataProviderType.DIRECT_MODE);
-        airlockPullFeaturesUrl = AirlockDAO.getPullFeaturesUrl(manager.getCacheManager());
+        airlockPullFeaturesUrl = AirlockDAO.getPullFeaturesUrl(manager.getDebuggableCache());
         pullFeaturesUrl = String.format(URL_REFRESH_FEATURES_STRING_FORMAT, devS3Path, productId, seasonId, URL_DEV_SUFIX);
         Assert.assertEquals(airlockPullFeaturesUrl, pullFeaturesUrl);
 
-        airlockPullTransUrl = AirlockDAO.getPullTranslationsUrl(manager.getCacheManager(), "en", "us");
+        airlockPullTransUrl = AirlockDAO.getPullTranslationsUrl(manager.getDebuggableCache(), "en", "us");
         pullTransUrl = String.format(URL_TRANSLATIONS_STRING_FORMAT, devS3Path, productId, seasonId, "en", "us", URL_DEV_SUFIX);
         Assert.assertEquals(airlockPullTransUrl, pullTransUrl);
 
@@ -128,11 +128,11 @@ public class DevProdSeparationTest extends BaseTestModel {
         manager.setDataProviderType(AirlockDAO.DataProviderType.CACHED_MODE);
 
         // mode cached, with user groups (prod)
-        airlockPullFeaturesUrl = AirlockDAO.getPullFeaturesUrl(manager.getCacheManager());
+        airlockPullFeaturesUrl = AirlockDAO.getPullFeaturesUrl(manager.getDebuggableCache());
         pullFeaturesUrl = String.format(URL_REFRESH_FEATURES_STRING_FORMAT, s3Path, productId, seasonId, URL_PROD_SUFIX);
         Assert.assertEquals(airlockPullFeaturesUrl, pullFeaturesUrl);
 
-        airlockPullTransUrl = AirlockDAO.getPullTranslationsUrl(manager.getCacheManager(), "en", "us");
+        airlockPullTransUrl = AirlockDAO.getPullTranslationsUrl(manager.getDebuggableCache(), "en", "us");
         pullTransUrl = String.format(URL_TRANSLATIONS_STRING_FORMAT, s3Path, productId, seasonId, "en", "us", URL_PROD_SUFIX);
         Assert.assertEquals(airlockPullTransUrl, pullTransUrl);
 

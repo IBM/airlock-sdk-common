@@ -65,7 +65,7 @@ public class MinMaxVersionTest extends BaseTestModel {
             //Product version should be >= 7.6 (Mismatch season bug was here - should be verified)
             String defaultFile = testHelper.getDataFileContent("test_data/defaults_files/airlock_defaults_qa_max_version_product_78.json");
             testHelper.customSetUp(version, KEY, m_ug, null, null, false, true, false, defaultFile);
-            if (clearCache) manager.getCacheManager().clearRuntimeData();
+            if (clearCache) manager.getDebuggableCache().clearRuntimeData();
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Was unable to parse default file. " + e.getMessage());
@@ -129,7 +129,7 @@ public class MinMaxVersionTest extends BaseTestModel {
 
         testHelper.pull();
         testHelper.calcSync(null, null);
-        Set<String> features = manager.getCacheManager().getSyncFeatureList().getFeatures().keySet();
+        Set<String> features = manager.getDebuggableCache().getSyncFeatureList().getFeatures().keySet();
         for (String name : features) {
             Feature f = manager.getFeature(name);
             Assert.assertTrue("SERVER source is expected for all features. Got: " + f.getSource() + " for " + f.getName(), f.getSource().equals(Feature.Source.SERVER));
