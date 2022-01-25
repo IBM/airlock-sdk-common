@@ -1,3 +1,22 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        flatDir dirs: '../airlock-sdk-common/libs'
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.2'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+
+}
+
+plugins {
+    id "org.barfuin.gradle.taskinfo" version "1.3.1"
+}
+
 apply plugin: 'idea'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
@@ -10,16 +29,6 @@ idea {
     }
 }
 
-buildscript {
-    repositories {
-        jcenter()
-        flatDir dirs: '../airlock-sdk-common/libs'
-    }
-    dependencies {
-        classpath 'net.sf.proguard:proguard-gradle:5.2.1'
-    }
-}
-
 allprojects {
     repositories {
         jcenter()
@@ -27,8 +36,8 @@ allprojects {
 }
 
 
-targetCompatibility = '1.8'
-sourceCompatibility = '1.8'
+targetCompatibility = "1.8"
+sourceCompatibility = "1.8"
 
 
 javadoc {
@@ -38,16 +47,13 @@ javadoc {
 
 
 ext {
+    RELEASE_VERSION_MICRO = releaseMicroBuildNumber
     SNAPSHOT = false
-    VERSION_MAJOR_SDK = project.hasProperty("releaseMajorBuildNumber") ? releaseMajorBuildNumber : 0
-    VERSION_MINOR_SDK = project.hasProperty("releaseMinorBuildNumber") ? releaseMinorBuildNumber : 0
-    RELEASE_VERSION_MICRO = project.hasProperty("releaseMinorBuildNumber") ? releaseMicroBuildNumber : 0
-    BUILD_NUMBER = SNAPSHOT ? RELEASE_VERSION_MICRO + "-SNAPSHOT" : RELEASE_VERSION_MICRO
-    println(BUILD_NUMBER)
+    BUILD_NUMBER = System.getenv("BUILD_NUMBER") ?: devBuildNumber
+    BUILD_NUMBER = SNAPSHOT ? BUILD_NUMBER : RELEASE_VERSION_MICRO
 }
 
-version = VERSION_MAJOR_SDK + '.' + VERSION_MINOR_SDK + '.' + BUILD_NUMBER
-
+version = '5.4.' + BUILD_NUMBER
 jar.baseName = "debug/" + project.name
 
 task releaseJar(type: Jar) {
@@ -66,39 +72,26 @@ build.dependsOn testClasses
 build.finalizedBy(releaseJar)
 
 dependencies {
+    implementation group: 'com.sangupta', name: 'murmur', version: '1.0.0'
+    implementation 'androidx.annotation:annotation:1.3.0'
     compileOnly fileTree(dir: 'libs', include: ['*.jar'])
-    compileOnly 'org.jetbrains:annotations-java5:15.0'
+    compileOnly 'org.jetbrains:annotations:13.0'
+    compileOnly 'com.github.spotbugs:spotbugs-annotations:4.3.0'
     compileOnly 'com.squareup.okhttp3:okhttp:3.4.1'
     compileOnly 'com.squareup.okhttp3:okhttp-urlconnection:3.4.1'
     compileOnly 'org.json:json:20171018'
-    compileOnly 'com.google.code.findbugs:annotations:2.0.3'
-    compileOnly 'junit:junit:4.12'
+
+    compileOnly 'junit:junit:4.13.2'
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.28.2'
     testImplementation 'org.json:json:20171018'
     testImplementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'org.testng:testng:6.9.10'
-    testImplementation 'org.jetbrains:annotations-java5:15.0'
-    testImplementation 'com.google.code.findbugs:annotations:2.0.3'
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.testng:testng:6.13.1'
+    testImplementation 'org.jetbrains:annotations:13.0'
+    testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.json:json:20171018'
     testImplementation 'com.squareup.okhttp3:okhttp:3.4.1'
     testImplementation 'com.squareup.okhttp3:okhttp-urlconnection:3.4.1'
-    implementation 'com.sangupta:murmur:1.0.0'
 }
-
-task proguard(type: proguard.gradle.ProGuardTask) {
-    configuration 'proguard.pro'
-    injars 'build/libs/airlock-sdk-common-' + version + '.jar'
-    outjars 'build/release/libs/airlock-sdk-common-' + version + '.jar'
-    libraryjars files(configurations.compileOnly.collect())
-    outputs.upToDateWhen { false }
-}
-
-
-proguard.dependsOn classes
-testClasses.dependsOn proguard
-proguard.enabled = false
-
 
 sourceSets {
     test {
