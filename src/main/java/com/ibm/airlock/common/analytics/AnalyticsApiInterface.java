@@ -33,7 +33,6 @@ public interface AnalyticsApiInterface {
 
     boolean doesAnalyticsEnvironmentExists(String name);
     String getSessionDetails(String featureName);
-    void enableAnalyticsLifecycle(boolean enable);
     void verifyAnalyticsState();
 
     //get airlock feature names - the ones relevant for airlytics
